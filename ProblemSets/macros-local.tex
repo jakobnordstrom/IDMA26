@@ -1,0 +1,35 @@
+%%%
+%%% SOME LOCAL MACROS FOR THE IDMA COURSE
+%%%
+
+% GCD
+%   \DeclareMathOperator{\gcd}{gcd}
+
+% Two-norm
+\newcommand{\twonorm}[1]{\lVert#1\rVert_2}
+\newcommand{\Twonorm}[1]{\bigl\lVert#1\bigr\rVert_2}
+\newcommand{\TWONORM}[1]{\left\lVert#1\right\rVert_2}
+
+% Formal language grammars
+%   \newcommand{\produces}{\rightarrow}
+%   \newcommand{\terminalf}[1]{\mathtt{#1}}
+%   \newcommand{\tokenf}[1]{\text{\textbf{#1}}}
+%   \newcommand{\emptystring}{\varepsilon}
+%   \newcommand{\numtoken}{\tokenf{num}}
+
+% For checkmark and xmark
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}
+
+% For formatting induction proofs
+\newcommand{\indproofstep}[1]%
+{
+  \smallskip
+  \noindent
+  \textbf{\textit{#1:}}
+}
+
+\newcommand{\indbase}[1]{\indproofstep{Base case (#1)}}
+\newcommand{\indstep}{\indproofstep{Induction step}}
+\newcommand{\indclaim}{\indproofstep{Claim}}
+

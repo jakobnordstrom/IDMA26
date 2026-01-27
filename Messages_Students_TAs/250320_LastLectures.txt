@@ -1,0 +1,31 @@
+Some information about the final lectures
+
+Hi again,
+
+Below follows some information about the final lectures next week, but first a friendly piece of advice just to make sure we are on the same page.
+
+BLACKBOARD PICTURES
+
+I have noticed that some of you take pictures of the blackboard during or after the lectures. This is perfectly fine to do, of course, but I just want to make sure that you are aware that essentially all of the handwritten notes that you see on the board during the lectures are also available as scanned PDF files (with the notes in more cleaned-up form, usually) on Absalon.
+
+MONDAY LECTURE LAST WEEK
+
+We did not quite finish our discussion of how to implement priority queues last Wednesday, but you saw enough to be able to convince yourselves that this should work.
+
+Therefore, on Monday Amir Yehudayoff will move on and tell you how to find short paths in graphs. You will see again the algorithm by Dijkstra that you encountered during the very first minutes of this course, but this time we have all necessary tools at our disposal to implement the algorithm correctly, understand how it works, and prove that it is correct.
+
+As you might have noticed, the lectures are getting harder and harder now at a quite scary pace as we are getting towards the end of the course, so it is highly recommended to prepare properly for the lecture by reading the relevant passages in CLRS in advance.
+
+WEDNESDAY MORNING LECTURE
+
+As announced this week, we will use the backup time slot on Wednesday morning to cover all the remaining details about heaps and priority queues (and, who knows, maybe we could even try to do a dry-run of heap-sort if there is interest).
+
+WEDNESDAY AFTERNOON LECTURE: QUESTION-AND-ANSWER SESSION
+
+The very final lecture will not be a lecture but a Q&A session. As I said in class on Wednesday, if there is anything in particular that you would like to see, and that would need to be prepared in advance, then you need to send me messages about this on Absalon. I will do my best to react to any requests, but realistically I will need your input at the latest on Tuesday for anything that needs more serious preparations.
+
+As you are thinking about what to ask about at the Q&A session, perhaps it can be helpful to look at the summary of the IDMA course contents at https://absalon.ku.dk/courses/80492/files/9310264?module_item_id=2632609 (in the "Course information and material" module).
+
+Good luck with your studies as you start preparing in earnest for the exam!
+
+Jakob

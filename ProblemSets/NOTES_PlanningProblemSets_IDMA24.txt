@@ -1,0 +1,104 @@
+IDEAS FOR PROBLEM SETS FOR IDMA 2024
+====================================
+
+Sources of problems:
+(1) Exam problems from DMFS 2023 (as usual)
+(2) Not too nasty problems from 2021 problem sets.
+(3) DMFS problem set 4 problem 3 (really hard) --- maybe save for pset in 2025
+
+
+IDMA 2024 PROBLEM SET 1
+=======================
+
+1: DMFS 2021 pset 1:1
+2: DMFS 2023 exam problem 1
+3: DMFS 2021 pset 1:3
+
+
+IDMA 2024 PROBLEM SET 2
+=======================
+
+1: DMFS 2021 pset 2:1
+2: DMFS 2023 exam problem 2
+3: Combination of:
+  - DMFS 2021 pset 2: 2b and 2d
+  - DMFS 2023 exam problem 3
+
+
+IDMA 2024 PROBLEM SET 3
+=======================
+
+1: DMFS 2021 pset 3:2
+2: DMFS 2023 exam problem 4
+3: DMFS 2023 exam problem 5
+4: DMFS 2023 exam problem 6
+
+
+IDMA 2024 PROBLEM SET 4
+=======================
+
+1: DMFS 2021 pset 3:3
+2: DMFS 2023 exam problem 7 
+3: DMFS 2021 pset 4:1
+
+DMFS 2023 pset 5:3 would be an option, but maybe we will save this for next year?
+
+
+CANDIDATES TO SAVE FOR THE EXAM 2024
+====================================
+
+1. PSEUDOCODE PROBLEM
+Nested for loops i < j
+fail if ever A[i] = A[j]
+Give promise that all elements are within range [-n, n] and ask for better algorithm + optimality
+
+2. SORTING
+DMFS 2021 pset 4:4 heapsort
+
+3. RELATIONS
+DMFS 2021 pset 3:4 (but < instead of > and much smaller matrix, maybe 6 x 6 or 7 x 7?)
+Or graphs-and-relations problem on fridge? Or save that for next year?
+
+4. GRAPHS
+Maybe DMFS 2021 pset 4:3 Dijkstra again (but smaller graph)
+
+5. PROPOSITIONAL LOGIC
+Ask students to patch formulas in simplest way possible to get tautologies?
+Something more creative than just producing truth tables...
+Or maybe graphs-and-relations problem on fridge, and skip logics this year?
+
+6. SIMPLE INDUCTION PROBLEMS
+From DMFS exam 2020
+
+7. COMBINATORICS
+Daniels vikter
+
+8. HARD INDUCTION PROBLEM
+
+[Flip colours red and black?]
+You play a game with a friend: he deals cards face up one a time from a uniformly shuffled deck of 26 black cards and 26 red cards. At some point before all the cards have been dealt, you must call "bet". When you do, your friend flips the next card, and you win if it's black and lose if it's red. What's the highest win probability you can achieve with any strategy?
+
+The rules are: the cards, shuffled uniformly, are dealt one by one. You can say "stop" at any moment, and you win if and only if the next card is red.
+You have to say stop at the latest when there is one card left (or, phrased differently, if you don't say "stop", the last card determines whether or not you win.)
+
+Jakob played this game obsessively, but was never able to get a success probability better than 50% (which is trivial to achieve). He then did an exhaustive analysis on a small deck with 5 red and 5 black cards and claims to have proven 50%, but unfortunately the proof is unreadable. Is Jakob right?
+
+With R red and B black cards, probability to get red is R / (R + B).
+
+Assume inductively that R / (R + B) is optimal (induction over R + B)
+
+Say stop directly gives R / (R + B)
+
+Wait for one card gives winning probability
+
+R / (R + B) * (R - 1) / (R + B - 1) 
++ 
+B / (R + B) * R / (R + B - 1)
+= 
+(R (R - 1) + (B * R))
+/ ((R + B) (R + B - 1))
+=
+(R (B + R - 1))
+/ ((R + B) (R + B - 1))
+= 
+R  / (R + B) 

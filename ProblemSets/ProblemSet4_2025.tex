@@ -1,0 +1,1074 @@
+\documentclass{jn-pset}
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+\newcommand{\psetno}{4}
+\newcommand{\duedate}{Wednesday March 26 at 17:15 CET}
+
+\newcommand{\thresholdforpass}{$120$~points\xspace}
+
+\input{course-macros.tex}
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%    \usepackage{draftwatermark}
+%    % \SetWatermarkFontSize{20 cm}
+%    \SetWatermarkScale{5}
+
+% For METAPOST logo as \hologo{METAPOST}
+%   \usepackage{hologo}
+
+% For TikZ
+%   \input{Figures/tikz-packages.tex}
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: Problem Set \psetno}
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Pset_GeneralInstructions}
+
+
+\begin{problem}
+  (60 p)
+  The purpose of this problem is to gain 
+  an understanding of 
+  strongly connected components in directed graphs.
+
+
+\begin{subproblem}%
+  \label{problem:ssc}%
+  (30 p)
+  Compute the strongly connected components of the graph in
+  \reffig{fig:ssc-graph}
+  by making a dry-run of the algorithm in
+  CLRS. 
+%     CLRS (which is also discussed in the part of the lecture notes
+%     that we did not have time to discuss in class).
+  Make sure to explain carefully the different steps in the algorithm
+  execution,
+  including in which order vertices are dealt with during graph traversal
+  and why,
+  and also what the final output is.
+
+\input{Figures/figSSCgraph.tex}
+
+  We assume that 
+  the graph is given to us
+  in adjacency list representation,
+  with the  out-neighbours in each adjacency list sorted in lexicographic
+  order, so that this is the order
+  in which vertices  are encountered when going through neighbour
+  lists.
+  (For instance, the out-neighbour list of $a$ is
+  $(b, d, e)$
+  sorted in this order.)
+
+\end{subproblem}
+
+\begin{solution}
+  The algorithm for computing the strongly connected
+  components of a graph~$G$   in CLRS and the lecture notes is as follows:
+  \begin{enumerate}
+  \item 
+    Run a depth-first search for~$G$ 
+    in \reffig{fig:ssc-graph}, and note the finishing times.
+
+  \item
+    Run a depth-first search for the inverted graph~$G^T$
+    \reffig{fig:ssc-graph-inverted},
+    but iterate over the vertices
+    in decreasing order of finishing times
+    in step~$1$.
+
+\input{Figures/figSSCgraph-inverted.tex}
+
+
+  \item
+    Output the subset of vertices in each tree
+    in the forest constructed in step~$2$ as the strongly connected
+    components of~$G$.
+
+  \end{enumerate}  
+% 
+  Note that we are not asked here to argue why this algorithm is
+  correct, so it is sufficient to make an accurate dry-run including a
+  clear but concise explanation of the different steps in the computations.  
+
+  \input{Figures/figSSCgraphWithDFStree.tex}
+  
+  The result of the depth-first search for~$G$ is illustrated in
+  \reffig{fig:ssc-graph-with-DFS-tree}, with discovery and finish times
+  marked as
+  $
+  \langle
+  \mathit{discovery\ time}
+  \rangle
+  /
+  \langle
+  \mathit{finish\ time}
+  \rangle
+  $
+  above or below each vertex.
+  Note that when we write ``neighbour'' below we mean
+  ``out-neighbour'' unless specified otherwise.
+  The chain of recursive calls are as follows (starting at time~$1$):
+  \begin{itemize}
+  \item 
+    At time~$1$ we visit the vertex~$a$, the first neighbour of which
+    is~$b$, which is undiscovered and so we recursively visit this vertex.
+
+  \item
+    At time~$2$ we visit~$b$. The first neighbour~$a$ of~$b$ has
+    already been discovered, but the second neighbour~$c$ has not yet
+    been visited and so we recursively visit it.
+
+  \item
+    At time~$3$ we visit~$c$. The first neighbour~$a$ of~$c$ has
+    already been discovered, but the second neighbour~$e$
+    is now visited.
+    
+  \item
+    At time~$4$ we visit $e$, and since the first neighbour~$d$ of
+    this vertex has not yet been discovered we visit it.
+    
+  \item
+    At time~$5$ we visit~$d$. The first neighbour~$e$ is marked as
+    discovered, but the second neighbour~$f$ gets a visit.
+    
+  \item
+    At time~$6$ we visit~$f$, whose only neighbour~$g$ has not yet
+    been discovered and therefore gets a visit.
+    
+  \item
+    At time~$7$ we visit~$g$ and immediately continue to its only
+    neighbour~$h$, since this vertex has not yet been discovered.
+    
+  \item
+    At time~$8$, we visit~$h$.
+    
+  \item
+    At this point, all vertices in~$G$ have been discovered, and
+    so we will just finish the processing of all vertices in the
+    reverse order of the calls above and stamp them with finishing
+    times accordingly
+    (so that $h$~gets finishing time~$9$,
+    $g$~gets finishing time~$10$,
+    $f$~gets finishing time~$11$,
+    et cetera).
+  \end{itemize}
+
+  \input{Figures/figSSCgraphWithDFStree-inverted.tex}
+
+  We now invert all vertices in~$G$ to obtain~$G^T$
+  as in \reffig{fig:ssc-graph-inverted}
+  and run a DFS for~$G^T$ where we iterate over vertices in decreasing
+  order with respect to their finishing times above.
+  The result of this second DFS is shown in
+  \reffig{fig:ssc-graph-with-DFS-tree-inverted}
+  (where we include also the discovery and finishing times for
+  completeness, although they are not needed for the discussion below).
+  \begin{itemize}
+  \item 
+    We start with~$a$, since this vertex has finishing time~$16$.
+    From~$a$ we visit~$b$ and immediately finish processing of this
+    latter vertex, since the only out-neighbour of~$b$ in~$G^T$ is the
+    already discovered vertex~$a$.
+    Returning to~$a$, we visit the second neighbour~$c$, which is also
+    immediately finished since its only out-neighbour~$b$ in~$G^T$ has
+    already been processed.
+    There are no more neighbours of~$a$, and so the first DFS-visit
+    call at top level terminates, leading to the conclusion that
+    $\set{a,b,c}$
+    is a strongly connected component in~$G$.
+
+  \item
+    The currently non-discovered vertex with the highest finishing
+    time from step~$1$ is~$e$, and so we make a DFS-visit call for
+    this vertex. The neighbours $a$ and $c$ of~$e$ have already been
+    processed, but $d$~has not yet been discovered and so gets a
+    visit. When we visit~$d$,
+    all out-neighbours $a$, $b$, and~$e$ in~$G^T$ have already been
+    discovered, and so $d$~is immediately finished. When we return
+    to~$e$ there are no more out-neighbours in~$G^T$ to process, so
+    the second DFS-visit call at top level terminates, resulting in
+    the strongly connected \mbox{component $\set{d,e}$.}
+
+  \item
+    Among the remaining  non-discovered vertices the one with the
+    highest finishing time is~$f$. From~$f$ we visit the only
+    out-neighbour~$h$ in~$G^T$, and from~$h$ we visit the only
+    out-neighbour~$g$. Now all vertices in~$G^T$ have been discovered,
+    and so we just return from all recursive visit calls.
+    The final connected component reported by the algorithm is
+    $\set{f,g,h}$.
+  \end{itemize}
+  % 
+  Summing up, at the end of execution the algorithm has determined
+  that the strongly connected components of the graph~$G$ in
+  \reffig{fig:ssc-graph}
+  are
+  $\set{a,b,c}$,
+  $\set{d,e}$,
+  and
+  $\set{f,g,h}$.
+\end{solution}
+
+
+\begin{subproblem}
+  (30 p)
+% 15 p for explanation, 15 p for complexity analysis
+  In order to get a deeper understanding of operations on Boolean
+  matrices, Jakob has performed some fairly extensive experiments on
+  adjacency matrices~$A_G$ for small directed graphs~$G$.
+  He now claims to have made the discovery that if he computes
+  \begin{equation*}
+    \Lor_{i=1}^{\infty}
+%     \bigodot
+    \bigl( A_G
+    \bigr)_{\odot}^{i}
+    =
+    A_G \lor
+    (A_G \odot A_G) \lor
+    (A_G \odot A_G \odot A_G) \lor 
+    (A_G \odot A_G \odot A_G \odot A_G) \lor 
+    \ldots    
+    \eqcomma
+  \end{equation*}
+  then it holds 
+  (possibly after reordering the vertices in~$G$, corresponding to swapping
+  rows and columns in~$A_G$)
+  that this matrix can be written on the form
+  \begin{equation*}
+    \Lor_{i=1}^{\infty}
+%     \bigodot
+    \bigl( A_G
+    \bigr)_{\odot}^{i}
+    =
+    \begin{pmatrix}
+      M_{1, 1} & M_{1, 2} & \cdots & M_{1,s}
+      \\ 
+      M_{2, 1} & M_{2, 2} & \cdots & M_{2,s}
+      \\
+      \vdots & \vdots & \ddots & \vdots 
+      \\
+      M_{s, 1} & M_{s, 2} & \cdots & M_{s,s}
+    \end{pmatrix}
+  \end{equation*}
+  where the submatrices
+  $M_{i,j}$
+  provide information about the strongly connected components of~$G$
+  in the following sense.
+  If
+  $G$ has $s$~strongly connnected components
+  $
+  C_1, \, C_2, \, \ldots, \, C_s
+  $
+  of sizes
+  $
+  n_1, \, 
+  n_2, \, 
+  \ldots , 
+  n_s 
+  $, respectively, then:
+  \begin{itemize}
+  \item
+    Each matrix $M_{i,j}$ has dimensions $n_i \times n_j$.
+
+  \item
+    If there is a path from some
+    $u \in C_i$
+    to some
+    $v \in C_j$
+    in~$G$,
+    then $M_{i,j}$ contains $1$s everywhere.
+    (In particular, all matrices
+    $M_{i,i}$ on the diagonal contain only~$1$s.)
+
+  \item
+    If there is no path from any
+    $u \in C_i$
+    to any
+    $v \in C_j$
+    in~$G$,
+    then $M_{i,j}$ contains $0$s everywhere.
+
+  \end{itemize}
+%
+  Sadly, Jakob is completely unable to explain this amazing fact,
+  and he also cannot determine any upper bound on the time complexity
+  of computing
+  $
+  \Lor_{i=1}^{\infty}
+  \bigl( A_G
+  \bigr)_{\odot}^{i}
+  $.
+  
+  
+  Is Jakob right about his claim? If so, present a concise and clear
+  explanation
+  to help Jakob see why this is so. If he is wrong,
+%     why this is correct. If not, 
+  give a simple, concrete
+  counter-example. 
+%   
+  Also, regardless of whether Jakob is correct or not, can you 
+  provide an efficient algorithm for computing
+  $
+  \Lor_{i=1}^{\infty}
+  \bigl( A_G
+  \bigr)_{\odot}^{i}
+  $
+  (for the plain adjacency matrix~$A_G$ without any row or column swaps)
+  together with as tight an upper bound as possible for the time complexity?
+\end{subproblem}
+
+\begin{solution}
+  Yes, Jakob is actually right this time.
+%%
+  In what follows, let us identify the integer indices of the rows and
+  columns in~$A_G$ with the vertices, so that we think of the vertices
+  in~$G$ as numbered from~$1$ to~$n$.
+
+  First we note that   for any positive integer~$t$ it holds that
+  the $(i,j)$-entry of the Boolean matrix~%
+  $
+  \bigl( A_G  \bigr)_{\odot}^{t}
+  $
+  is~$1$ precisely when there is a path from vertex~$i$ to vertex~$j$ of length 
+  exactly~$t$.
+  This can be shown by induction. The base case is that
+  $A_G$ contains all length-$1$ paths, also known as edges.
+  Suppose the claim is true for~$t$.
+  Consider any path from $i$ to~$j$ of length exactly~$t+1$ and let
+  $\ell$ be the last vertex before~$j$ on this path.
+  Then by the induction hypothesis it holds that entry
+  $(i,\ell)$ in 
+  $
+  \bigl( A_G  \bigr)_{\odot}^{t}
+  $  
+  is~$1$, and since
+  $(\ell, j)$ is an edge we have that the entry
+  $(\ell,j)$ in~$A_G$ is also~$1$.
+  By the definition of Boolean matrix multiplication, 
+  it follows that entry $(i,j)$ in
+  $
+  \bigl( A_G  \bigr)_{\odot}^{t+1}
+  =
+  \bigl( A_G  \bigr)_{\odot}^{t}
+  \odot A_G
+  $
+  is~$1$.
+  Our claim now follows by the induction principle.
+%%%
+%%%
+  Furthermore, we can conclude that the
+  $(i,j)$-entry of
+  $
+  \Lor_{t=1}^{\infty}
+  \bigl( A_G  \bigr)_{\odot}^{t}
+  $
+  is~$1$ precisely when there is some path from~$i$ to~$j$ in~$G$
+  of \emph{some length}~$t$, regardless of what this exact length is.
+
+  Rearrange the vertices of~$G$ so that
+  the $n_1$~first vertices are in the strongly connected component~$C_1$,
+  the $n_2$~next vertices are in the strongly connected
+  component~$C_2$,
+  et cetera. 
+  This renumbering of vertices just corresponds to a sequence of
+  pairwise swaps of rows and the same pair of columns of 
+  the matrix~$A_G$.
+  Let us next write
+  \begin{equation}
+    \label{eq:A_G-infty-partition}
+    \Lor_{i=1}^{\infty}
+%     \bigodot
+    \bigl( A_G
+    \bigr)_{\odot}^{i}
+    =
+    \begin{pmatrix}
+      M_{1, 1} & M_{1, 2} & \cdots & M_{1,s}
+      \\ 
+      M_{2, 1} & M_{2, 2} & \cdots & M_{2,s}
+      \\
+      \vdots & \vdots & \ddots & \vdots 
+      \\
+      M_{s, 1} & M_{s, 2} & \cdots & M_{s,s}
+    \end{pmatrix}
+  \end{equation}
+  where we simply define the submatrices
+  $M_{i,j}$ to have dimensions $n_i \times n_j$.
+  Let us analyse what we know about these submatrices.
+%%
+  \begin{itemize}
+  \item
+    Consider first any two vertices $k,\ell \in C_i$.
+    Since these two vertices are in the same strongly connected
+    component, there are paths from~$k$ to~$\ell$ and from~$\ell$
+    to~$k$, and hence     the 
+    $(k,\ell)$-
+    and
+    $(\ell,k)$-entries in
+    \refeq{eq:A_G-infty-partition}
+    are both~$1$ by the reasoning above.
+    Hence, the submatrix $M_{i,i}$ consists of all~$1$s.
+
+  \item
+    Consider next any pair of vertices
+    $k \in C_i$
+    and
+    $\ell \in C_j$
+    for $i \neq j$
+    and suppose that there is
+    a path from~$k$ to~$\ell$. Then the
+    $(k,\ell)$-entry in~\refeq{eq:A_G-infty-partition}
+    is~$1$, again by the reasoning above. 
+    Furthermore, since there is a path from any vertex
+    in~$C_i$ to~$k$ and from~$\ell$  to any vertex in~$C_j$,
+    we conclude that 
+    the submatrix $M_{i,j}$ must consist of all~$1$s in this case.
+
+
+  \item
+    Consider finally any pair of vertices
+    $k \in C_i$
+    and
+    $\ell \in C_j$
+    for $i \neq j$
+    such that there is no 
+    path from~$k$ to~$\ell$. Then 
+    it follows from the previous case in our case analysis
+    that there cannot exist any path from any vertex in~$C_i$
+    to any vertex in~$C_j$, and so 
+    $M_{i,j}$ must contain $0$s everywhere.
+
+  \end{itemize}
+% 
+  This establishes all the properties that Jakob claimed.
+     
+  Let us finally consider the time complexity of computing
+  $
+  \Lor_{i=1}^{\infty}
+  \bigl( A_G
+  \bigr)_{\odot}^{i}
+  $.
+  We make three key observations:
+  \begin{enumerate}
+  \item 
+    If there is a path between any two vertices in an $n$-vertex
+    graph, then a shortest such path cannot have length larger than~$n$.
+    Hence, it holds that
+    $
+    \Lor_{i=1}^{\infty}
+    \bigl( A_G
+    \bigr)_{\odot}^{i}
+    =
+    \Lor_{i=1}^{n}
+    \bigl( A_G  \bigr)_{\odot}^{i}
+    $.
+
+  \item 
+    If we have already computed
+    $
+    \bigl( A_G  \bigr)_{\odot}^{t}
+    $, 
+    then we can compute
+    $
+    \bigl( A_G  \bigr)_{\odot}^{t+1}
+    =
+    \bigl( A_G  \bigr)_{\odot}^{t}
+    \odot
+    A_G
+    $
+    in time~$\Bigoh{n^3}$
+    just by coding up the definition of Boolean matrix multiplication
+    in the most straightforward way possible.
+
+  \item 
+    The Boolean disjunction $A \lor B$
+    of two $n \times n$ matrices~$A$ and~$B$
+    can be computed in time~$\Bigoh{n^2}$,
+    again by just writing down the definition in code.
+    Hence, if we have already computed 
+    the two matrices
+    $
+    \Lor_{i=1}^{t}
+    \bigl( A_G  \bigr)_{\odot}^{i}
+    $
+    and
+    $
+    \bigl( A_G  \bigr)_{\odot}^{t+1}
+    $,
+    then 
+    we can compute
+    $
+    \Lor_{i=1}^{t+1}
+    \bigl( A_G  \bigr)_{\odot}^{i}
+    =
+    \Lor_{i=1}^{t}
+    \bigl( A_G  \bigr)_{\odot}^{i}
+    \lor
+    \bigl( A_G  \bigr)_{\odot}^{t+1}
+    $
+    in time~$\Bigoh{n^2}$.
+  \end{enumerate}
+  Putting all of this together, 
+  we can compute
+  $
+  \Lor_{i=1}^{t+1}
+  \bigl( A_G  \bigr)_{\odot}^{i}
+  $
+  from
+  $
+  \Lor_{i=1}^{t}
+  \bigl( A_G  \bigr)_{\odot}^{i}
+  $
+  in time~$\Bigoh{n^3}$,
+  and doing this for $t = 1, 2, \ldots, n$
+  yields a total time complexity of~$\Bigoh{n^4}$.
+  Note that we do not claim that this is a tight bound, 
+%     but it is certainly as tight as possible 
+  but this certainly enough for a full score 
+  given what we have learned
+  during this course.
+\end{solution}
+\end{problem}
+
+
+\begin{problem}
+    (80 p)
+%%% a: 30 p, b: 10 p, c: 20 p, d: 20 p
+    The purpose of this problem is
+    to deepen our understanding of minimum spanning trees in
+    undirected graphs.
+  
+  \begin{subproblem}%
+    \label{problem:mst}%
+    (30 p)
+%       We assume again that this graph is represented in adjacency list
+%       format, with the neighbours in each adjacency list sorted in
+%       lexicographic order.
+%       
+    Generate a minimum spanning tree by running Kruskal's
+    algorithm by hand on the 
+    graph    in \reffig{fig:mst-graph}.
+%
+    Assume that edges of the same weight are sorted in lexicographic
+    order 
+    (so that for three hypothetical edges
+    $(u,v)$, $(u,w)$, and
+    $(v,w)$ of the same weight, 
+    we would have~$(u,v)$ coming before $(u,w)$, which would in turn come before
+    $(v,w)$).
+    
+    Describe how the forest
+    changes at each step (but you do not need to describe in detail
+    how the set operations are implemented).
+    Also show the final tree produced by the algorithm.
+
+    \input{Figures/figMSTgraph.tex}  
+
+  \end{subproblem}
+
+\begin{solution}
+  We illustrate the result of running Kruskal's algorithm in 
+  \reffig{fig:mst-graph-with-spanning-tree}.
+  A detailed description of the execution follows.
+  After sorting the edges in increasing order of weight
+  and splitting ties as specified in the problem statement, 
+  we will have the edges listed in the following order, which is also
+  the order in which they will be processed:
+  \begin{description}
+  \item[\emph{Weight 1:}]
+    $(b,c)$,
+    $(g,h)$.
+
+    \input{Figures/figMSTgraphWithSpanningTree.tex}  
+
+  \item[\emph{Weight 2:}]
+    $(c,d)$.
+
+  \item[\emph{Weight 3:}]
+    $(b,d)$.
+
+  \item[\emph{Weight 4:}]
+    $(a,d)$,
+    $(e,f)$.
+
+  \item[\emph{Weight 5:}]
+    $(a,b)$.    
+
+  \item[\emph{Weight 6:}]
+    $(a,c)$,
+    $(d,e)$.
+
+
+  \item[\emph{Weight 7:}]
+    $(c,e)$,
+    $(d,f)$.
+
+  \item[\emph{Weight 8:}]
+    $(c,f)$,
+    $(e,g)$.
+
+  \item[\emph{Weight 9:}]
+    $(f,h)$.
+
+
+  \end{description}
+  The algorithm now does the following, starting with a set of
+  singleton subtrees
+  $\set{a}$,
+  $\set{b}$,
+  $\set{c}$,
+  $\set{d}$,
+  $\set{e}$,
+  $\set{f}$,
+  $\set{g}$,
+  and
+  $\set{h}$:    
+  \begin{enumerate}
+  \item
+    Looking first at edges of weight~$1$, 
+    according to the sorting order specified in the problem statement the edge
+    $(b,c)$
+    is considered first. 
+    This edge merges
+    $\set{b}$ and
+    $\set{c}$
+    into a subtree $\set{b,c}$ and is added.
+
+  \item
+    Next we consider the edge
+    $(g,h)$,
+    which merges 
+    $\set{g}$ and
+    $\set{h}$
+    into  another subtree $\set{g,h}$ and is added.
+
+  \item 
+    Moving on to edges of weight~$2$, 
+    the edge $(c,d)$ grows the subtree $\set{b,c}$ further to
+    $\set{b,c,d}$ and is added.
+
+  \item
+    The edge
+    $(b,d)$
+    of weight $3$ creates a cycle and so is discarded.
+
+
+  \item 
+    For the edges of weight~$4$,
+    according to our sorting order the edge
+    $(a,d)$ is considered first.
+    This edge
+    grows the subtree $\set{b,c,d}$ to
+    $\set{a,b,c,d}$ and is added.
+
+  \item The edge $(e,f)$
+    creates a subtree $\set{e,f}$
+    and is added.
+
+  \item
+    The edge $(a,b)$ of weight~$5$ creates a cycle and is thrown away.
+
+  \item
+    Considering next edges of weight~$6$, 
+    $(a,c)$ also creates a cycle and is discarded.
+
+  \item
+    The edge $(d,e)$ joins the two trees
+    $\set{a,b,c,d}$
+    and
+    $\set{e,f}$
+    into a larger tree
+    $\set{a,b,c,d,e,f}$,
+    and so is added.
+
+  \item
+    For edges of weight~$7$, 
+    both edges
+    $(c,e)$
+    and
+    $(d,f)$
+    create cycles and are discarded.
+
+  \item
+    For weight~$8$,
+    we first consider the edge
+    $(c,f)$,
+    which also creates a cycle and so is thrown away.
+
+  \item
+    The edge
+    $(e,g)$
+    creates a spanning tree for the full graph, and so is added.
+    Since we know we now have the  the right number of
+    edges, and adding any more edge must create a cycle somewhere, 
+    we can terminate without considering the final remaining edge
+    $(f,h)$.
+  \end{enumerate}
+\end{solution}
+
+
+  \begin{subproblem}
+    (10 p)
+    Suppose that some vertex~$v$ 
+    with several neighbours
+    in a graph~$G$ has a unique
+    neighbour~$u$
+    such that the edge~$(u,v)$ has strictly smaller weight than any
+    other edge incident to~$v$. Is it true that the edge~$(u,v)$ must
+    be included in any minimum spanning tree? 
+    Prove this or give a simple counter-example.
+  \end{subproblem}
+
+  
+\begin{solution}
+  Yes, any
+%     MST 
+  minimum spanning tree
+  has to include the edge $(u,v)$,
+  since this is the unique light edge in a cut with vertex~$v$ on one side and
+  the rest of the graph on the other side.
+  If there were an MST without the edge~$(u,v)$,
+  then adding that edge to the MST would create a cycle, from which we
+  could remove a heavier edge and get another spanning tree for the
+  graph. 
+  This contradicts that the tree we started with was an MST.
+\end{solution}
+
+  \begin{subproblem}
+    (20 p)
+    Suppose that some vertex~$v$ 
+    with several neighbours
+    in a graph~$G$ has a unique
+    neighbour~$u$
+    such that the edge~$(u,v)$ has strictly larger weight than any
+    other edge incident to~$v$. Is it true that the edge~$(u,v)$ 
+    can never 
+    be included in any minimum spanning tree? 
+    Prove this or give a simple counter-example.
+  \end{subproblem}
+  
+  
+\begin{solution}
+  No, this is not true. Consider the case when $u$ has only one
+  neighbour and  this neighbour is~$v$. Then the edge~$(u,v)$ has to
+  be included in any MST.  
+\end{solution}
+
+
+  \begin{subproblem}
+    (20 p)
+    Suppose that $T$ is a minimum spanning tree for a weighted,
+    undirected graph~$G$. Modify~$G$ by adding some 
+    constant~$c \in \R^+$ to all edge weights. Is
+    $T$ still a minimum spanning tree? 
+    Prove this or give a simple counter-example.
+  \end{subproblem}
+
+\begin{solution}
+  If the spanning tree has $M$~edges, then after the edge weight increase
+  the new tree has a total weight that increased by an amount
+  $M \cdot c$.
+  But any spanning tree for a graph~$G$ will have the same number of
+  edges, and hence the weight increase will be exactly the same for
+  all spanning trees. This means, in particular, that all MSTs before
+  the weight increase remain MSTs also after the weight increase.
+\end{solution}
+
+\end{problem}
+
+
+\begin{problem}
+  (100 p)
+% a: 60 p; b, c: 10 p; d: 20 p
+%     \label{problem:dijkstra}%
+  Assume that we are given the directed graph
+  in  \reffig{fig:directed-graph}.
+  The graph is given to us
+  in adjacency list representation,
+  with the  out-neighbours in each adjacency list sorted in lexicographic
+  order, so that this is the order
+  in which vertices  are encountered when going through neighbour
+  lists.
+  (For instance, the out-neighbour list of $a$ is
+  $(b, d, e, g)$
+  sorted in this order.)
+
+\input{Figures/figDirectedGraph.tex}
+
+  \begin{subproblem}%
+    \label{problem:dijkstra}%
+    (60 p)
+    Run Dijkstra's algorithm by hand on  this graph, starting in the
+    vertex~$a$. Use a heap for the priority queue implementation.
+    Assume that in the array representing the heap, the vertices
+    are initially listed in lexicographic order.
+
+    During the execution of the algorithm,
+    describe for every vertex which neighbours are being
+    considered and how they are dealt with.
+    Show for the first two dequeued vertices how the heap changes
+    after the dequeueing operations and all ensuing key value updates
+    in the priority queue.
+    For the rest of the vertices, it is sufficient to just describe
+    how the key values are updated, without redrawing the heap after
+    each operation, but you still have to describe how the algorithm
+    considers all neighbours of the dequeued vertices.
+    Finally, show the directed tree~$T$ produced at the end of the algorithm.
+  \end{subproblem}
+
+\begin{solution}
+  We illustrate the heap used for the priority queue and how it changes in 
+  \reffig{fig:heaps}. 
+  At the outset, the vertex $a$ has key~$0$ and all other vertices
+  have key~$\infty$.
+  We will use the
+  notation  $v:k$  in the heap when vertex $v$ has key value~$k$.
+  
+  \input{Figures/figHeapsDijkstra-large.tex}
+
+  \begin{enumerate}
+  \item 
+    After $a$ has been dequeued, vertex~$h$ is moved to the top of the heap
+    and we have the configuration in
+    \reffig{fig:heap-1}.
+    Relaxing the edge $(a,b)$ shifts $b$ to the top
+    and pushes~$h$ down, yielding
+    \reffig{fig:heap-2}.
+    Relaxing~$(a,d)$ swaps $d$ and~$h$, yielding
+    \reffig{fig:heap-3}.
+    Relaxing~$(a,e)$ updates the key of~$e$, but since it is
+    still larger than the key of the parent~$d$ nothing moves in the
+    heap (see \reffig{fig:heap-4}).
+    Finally, relaxing~$(a,g)$ makes~$g$ bubble up and $c$ bubble down,
+    so that we have the configuration in 
+    \reffig{fig:heap-5}
+    when all outgoing edges from~$a$ have been relaxed.
+
+  \item 
+    Since $b$ is now at the top of the heap, it is the vertex dequeued
+    next. This will add the edge~$(a,b)$ to the shortest path tree,
+    which we indicate in
+    \reffig{fig:directed-graph-with-tree}.
+    When $b$ is removed, $c$~is moved to the top. This violates the
+    min-heap property, since the key of~$c$ is larger than that of its
+    children.  Since $d$~has     smaller key than~$g$, we swap $d$
+    and~$c$. The min-heap property in the subtree rooted at~$c$, i.e., the
+    left subtree of the heap, is now violated
+    since the key of~$c$ is still not smaller than or equal to that of
+    its children. Since $e$ has smaller key than~$h$, $c$~and $e$
+    trade places. The subtree rooted at $c$ is now a single vertex,
+    and so is a legal min-heap, and the full heap after removal of~$b$
+    looks as in 
+    \reffig{fig:heap-6}.    
+
+  \input{Figures/figDirectedGraphWithTree.tex}
+
+    Relaxing the edge~$(b,c)$ decreases the key value of~$c$ to
+    $1 + 1 = 2$. Since the key value of~$c$ is now smaller than that
+    of~$e$, $c$~bubbles up and $e$ bubbles down, and since $c$ also
+    has a smaller key than~$d$ these two vertices also trade places,
+    yielding the heap in
+    \reffig{fig:heap-7}.
+    Relaxing~$(b,e)$ swaps $d$ and~$e$, resulting in    \reffig{fig:heap-8}.    
+    Finally, relaxing $(b,f)$ updates the key of~$f$ but does not
+    change the structure of the heap, since the parent~$g$ of~$f$  has
+    a smaller key (see \reffig{fig:heap-9}).
+
+  \item
+    Since $c$ is now at the top of the heap, it is dequeued next,
+    and the edge~$(b,c)$ is added to the shortest paths tree.
+    When we relax~$(c,e)$, we see that the distance~$2$ to~$c$ plus
+    the edge weight~$4$ sum to~$6$, which is larger than the current
+    key~$3$ of~$c$, so no update of~$c$ is made. 
+    Relaxing the edge~$(c,f)$ decreases the key of~$f$ to $2+7 = 9$,
+    however.
+
+  \item
+    Vertex~$e$ now has the smallest key~$3$ and is dequeued next.
+    This adds the edge~$(b,e)$ to the shortest paths tree, since
+    the key of~$e$ was last updated when $(b,e)$ was relaxed.
+    Relaxing 
+    $(e,d)$,
+    $(e,f)$,
+    and
+    $(e,h)$
+    yields updated key values $4$, $8$, and~$7$, respectively.
+
+  \item
+    Now vertex~$d$ has the smallest key~$4$ and so is dequeued,
+    adding~$(e,d)$ to the shortest paths tree.
+    When we relax~$(d,g)$, we see that the distance~$4$ to~$d$ plus
+    the edge weight~$5$ sum to~$9$, which is not smaller than the current
+    key~$9$ of~$g$, so no update is made. 
+    Relaxing~$(d,h)$ decreases the key of~$h$ to~$6$, however.
+
+  \item
+    Vertex~$h$ is dequeued next, adding the just relaxed edge~$(d,h)$
+    to the shortest paths tree. 
+    Relaxing
+    $(h,g)$
+    and
+    $(h,f)$
+    leads to decreased keys $8$ and~$7$, respectively.
+
+  \item
+    Next, $f$ is dequeued, adding the just relaxed edge~$(h,f)$.
+
+  \item
+    Since $f$~has no out-neighbours, we proceed to dequeueing the
+    final vertex~$g$ in the queue, adding the edge    $(h,g)$.
+
+  \end{enumerate}
+%   
+  The computed shortest paths tree is indicated by the bold edges in
+  \reffig{fig:directed-graph-with-tree}.
+\end{solution}
+
+  \begin{subproblem}
+    (10 p)
+    Consider the directed tree of shortest paths~$T$
+    produced in 
+    Problem~\ref{problem:dijkstra}.
+    Suppose that all edge weights in~$G$ are changed by some additive
+    constant
+    $c \in \Rplus$.
+    Is it true that $T$ is still a directed tree of shortest paths
+    for the modified graph?
+    Please make sure to motivate your answer clearly.
+  \end{subproblem}
+
+\begin{solution}
+  No, this is not true.
+  If we choose $c$ to be large enough, 
+  then the shortest path between two vertices will always be the one with
+  the fewest edges. This is not the case for the tree~$T$
+  computed in   Problem~\ref{problem:dijkstra}.
+  (Consider, e.g., the shortest path
+  $a 
+  \to b 
+  \to e 
+  \to d 
+  \to h 
+  \to f
+  $
+  from~$a$ to~$f$, which has many more edges than
+  $
+  a \to b \to f$.)
+%     Incidentally, we discussed precisely this question in class during
+%     one of the lectures,  so for that reason this should hopefully have
+%     been a very easy subproblem.
+\end{solution}
+
+
+  \begin{subproblem}
+    (10 p)
+    Consider the directed tree of shortest paths~$T$
+    produced in 
+    Problem~\ref{problem:dijkstra}.
+    Suppose that all edge weights in~$G$ are changed by some multiplicative
+    constant
+    $c \in \Rplus$.
+    Is it true that $T$ is still a directed tree of shortest paths
+    for the modified graph?
+    Please make sure to motivate your answer clearly.
+  \end{subproblem}
+
+\begin{solution}
+  Yes, this is true.
+  Since all weights change by a factor~$c$,
+  the cost of all paths also change by a factor~$c$.
+  Hence, all shortest paths remain shortest paths, and the tree~$T$ is
+  still good. 
+%     (As far as the instructor can remember, this was not discussed in
+%     class, but it was an exercise for one of the exercise sessions.)    
+\end{solution}
+
+
+  \begin{subproblem}
+    (20 p)
+    Suppose that we want to give an extra bonus to paths with few
+    hops, so that the length of a path is calculated as
+    the sum of the weight of all the edges in the path 
+    \emph{plus} the number of edges in the path.
+    Describe an algorithm that can solve this problem
+    (for any directed graph~$G$ with non-negative edge weights)
+    and analyze its time complexity.
+  \end{subproblem}
+
+\begin{solution}
+  This problem can be solved in different ways.
+  The easiest way is probably to read in the graph, 
+  add~$1$ to all edge weights, and then run Dijkstra's algorithm as
+  before.
+  The length of any path after this change will clearly be 
+  the sum of the weight of all the edges in the path 
+  plus the number of edges in the path,
+  and so Dijkstra's algorithm will return the answers we are looking for.
+  Since the preprocessing step can be performed in time
+  $\bigoh
+  {
+    \setsize{V} + \setsize{E}
+  }$  
+  for a graph with vertex set~$V$ and edge set~$E$, the running time of
+  Dijkstra's algorithm dominates, and the asymptotic time complexity
+  is the same as for the original version of Dijkstra's algorithm,
+  i.e.,~$\bigoh{\setsize{E} \log \setsize{V}}$.
+\end{solution}
+
+
+\end{problem}
+
+
+
+
+\end{document}
+
+

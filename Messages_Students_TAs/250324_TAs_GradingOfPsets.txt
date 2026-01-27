@@ -1,0 +1,15 @@
+Grading of problem sets before March 28
+
+To follow up on this, let my just clarify that by noon Friday March 28 what is needed for every student in the grading system is:
+- For problem sets 1, 2, and 3, a final score.
+- For problem set 4 either a final score or an integer in the range [0,2], where
+  o 0 means not at all serious submission; could not pass the threshold in any universe (this should be rare, since it is essentially saying that the submission is equivalent to handing in a blank paper).
+  o 1 means a serious submission; does not seem unreasonable that something like this might pass after a hypothetical resubmission (even if the score before resubmission might be bad).
+  o 2 means that at least based on a quick look, this actually looks quite promising and potentially a first-round pass without resubmission.
+
+This is so that we can report exam eligibility.
+
+For problem set 4, by the morning of Monday March 31, students need to get their fully graded psets back so that they can use your feedback as they prepare for the exam. At this point, I also need to be able to see the actual score in the grading system.
+
+Jakob
+

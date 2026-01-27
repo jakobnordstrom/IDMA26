@@ -1,0 +1,193 @@
+%%%%
+%%%% THIS FILE IS INTENDED TO BE READ-ONLY --- PLEASE DO NOT EDIT.
+%%%% PLEASE CONTACT JAKOB NORDSTRÖM AT jakobn@kth.se REGARDING ANY ISSUES.
+%%%%
+
+%
+% DETECTION OF DOCUMENT TYPE
+%----------------------------
+%
+% Version date: Jun 07, 2019
+%
+% First versions by Jakob Nordström <jakobn@kth.se>
+% Cleaned up version by Marc Vinyals <vinyals@kth.se>
+% Minor later additions by Jakob Nordström and Susanna F. de Rezende
+%
+% This file needs to be included or input(ted) so that the conditional
+% macro definitions in other LaTeX files will not generate compilation
+% errors. Most document classes are detected using \@ifclassloaded.
+%
+% Use the file 'testdoctypedetection.tex' to double-check that these
+% Boolean detectors work.
+%
+%
+%%% The report class is not detected correctly in view of later
+%%% updates, but this should be easy to fix when needed. 
+%%% [Jakob Nordström, May 16, 2016]
+% detectedReport is set to true if none of detectedArticle, detectedThesis,
+% detectedSTOC, detectedFOCS, detectedSIAM, detectedIEEE, detectedICS,
+% or detectedPoster is true.
+%
+
+
+\usepackage{ifthen}
+
+\provideboolean{detectedSTOC}
+\provideboolean{detectedFOCS}
+\provideboolean{detectedElsevier}
+\provideboolean{detectedNOW}
+\provideboolean{detectedLMCS}
+\provideboolean{detectedIEEE}
+\provideboolean{detectedPoster}
+\provideboolean{detectedSIAM}
+\provideboolean{detectedLNCS}
+\provideboolean{detectedACM}
+\provideboolean{detectedACMconf}
+\provideboolean{detectedSigplanconf}
+\provideboolean{detectedToC}
+\provideboolean{detectedLIPIcs}
+\provideboolean{detectedAAAI}
+\provideboolean{detectedIJCAI}
+\provideboolean{detectedCompCplx}
+\provideboolean{detectedEasyChair}
+\provideboolean{detectedArticle}
+\provideboolean{detectedReport}
+\provideboolean{detectedThesis}
+
+\makeatletter
+
+\@ifclassloaded{sig-alternate}
+{\setboolean{detectedSTOC}{true}}
+{\setboolean{detectedSTOC}{false}}
+
+\@ifclassloaded{elsarticle}
+{\setboolean{detectedElsevier}{true}}
+{\setboolean{detectedElsevier}{false}}
+
+\@ifclassloaded{now}
+{\setboolean{detectedNOW}{true}}
+{\setboolean{detectedNOW}{false}}
+
+\@ifclassloaded{lmcs}
+{\setboolean{detectedLMCS}{true}}
+{\setboolean{detectedLMCS}{false}}
+
+\@ifclassloaded{IEEEtran} {
+  \setboolean{detectedIEEE}{true}
+  \ifCLASSOPTIONconference {
+    \setboolean{detectedFOCS}{true}
+  }
+  \else {
+    \setboolean{detectedFOCS}{false}
+  }
+  \fi
+}
+{
+  \setboolean{detectedFOCS}{false}
+  \setboolean{detectedIEEE}{false}
+}
+
+%%% Obsolete SIAM class file
+%   \@ifclassloaded{siamltex1213} 
+%   {\setboolean{detectedSIAM}{true}}
+%   {\setboolean{detectedSIAM}{false}}
+\@ifclassloaded{siamart171218}
+{\setboolean{detectedSIAM}{true}}
+{\setboolean{detectedSIAM}{false}}
+
+\@ifclassloaded{llncs}
+{\setboolean{detectedLNCS}{true}}
+{\setboolean{detectedLNCS}{false}}
+
+\@ifclassloaded{acmsmall}
+{\setboolean{detectedACM}{true}}
+{\setboolean{detectedACM}{false}}
+
+\@ifclassloaded{acmart}
+{\setboolean{detectedACMconf}{true}}
+{\setboolean{detectedACMconf}{false}}
+
+\@ifclassloaded{sigplanconf}
+{\setboolean{detectedSigplanconf}{true}}
+{\setboolean{detectedSigplanconf}{false}}
+
+\@ifclassloaded{toc}
+{\setboolean{detectedToC}{true}}
+{\setboolean{detectedToC}{false}}
+
+\@ifclassloaded{lipics}
+{\setboolean{detectedLIPIcs}{true}}
+{\@ifclassloaded{lipics-v2019}
+  {\setboolean{detectedLIPIcs}{true}}
+  {\@ifclassloaded{oasics-v2019}
+    {\setboolean{detectedLIPIcs}{true}}
+    {\setboolean{detectedLIPIcs}{false}}
+  }
+}
+
+%   
+%   \@ifclassloaded{lipics}
+%   {\setboolean{detectedLIPIcs}{true}}
+%   {\@ifclassloaded{lipics-v2016}
+%     {\setboolean{detectedLIPIcs}{true}}
+%     {\@ifclassloaded{oasics-v2016}
+%       {\setboolean{detectedLIPIcs}{true}}
+%       {\setboolean{detectedLIPIcs}{false}}
+%     }
+%   }
+%   
+
+\@ifclassloaded{cc}
+{\setboolean{detectedCompCplx}{true}}
+{\setboolean{detectedCompCplx}{false}}
+
+\@ifclassloaded{easychair}
+{\setboolean{detectedEasyChair}{true}}
+{\setboolean{detectedEasyChair}{false}}
+
+%%%
+%%% AAAI and IJCAI have special style files that needs to be detected.
+%%% It seems they update the name with the year of the conference also.
+%%%
+\@ifpackageloaded{aaai}
+{\setboolean{detectedAAAI}{true}}        
+{\@ifpackageloaded{aaai18}
+  {\setboolean{detectedAAAI}{true}}
+  {\@ifpackageloaded{aaai20}       
+    {\setboolean{detectedAAAI}{true}}
+    {\setboolean{detectedAAAI}{false}}}}
+
+\@ifpackageloaded{ijcai18}
+{\setboolean{detectedIJCAI}{true}}        
+{\@ifpackageloaded{ijcai19}
+  {\setboolean{detectedIJCAI}{true}}        
+  {\setboolean{detectedIJCAI}{false}}}
+
+\@ifclassloaded{sciposter}
+{\setboolean{detectedPoster}{true}}
+{\setboolean{detectedPoster}{false}}
+
+\@ifclassloaded{article}
+{\setboolean{detectedArticle}{true}}
+{\setboolean{detectedArticle}{false}}
+
+\makeatother
+
+\ifthenelse{\not \isundefined{\examen} 
+  \and \not \isundefined{\disputationsdatum} 
+  \and \not \isundefined{\disputationslokal}}   
+  {\setboolean{detectedThesis}{true}}
+  {\setboolean{detectedThesis}{false}}
+
+%%%
+%%% Not entirely sure whether detectedReport is set correctly in view
+%%% of later updates [Jakob Nordström, May 16, 2016]
+%%%
+           
+\ifthenelse{\boolean{detectedArticle} \or \boolean{detectedThesis}
+  \or \boolean{detectedSTOC} \or \boolean{detectedFOCS}
+  \or \boolean{detectedSIAM} \or \boolean{detectedIEEE}
+  \or \boolean{detectedPoster}}
+{\setboolean{detectedReport}{false}}
+{\setboolean{detectedReport}{true}}
+

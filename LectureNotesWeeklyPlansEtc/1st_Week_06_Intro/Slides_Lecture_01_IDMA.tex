@@ -1,0 +1,531 @@
+%
+% LECTURE 1: PRACTICAL COURSE INFO FOR IDMA COURSE
+%
+
+\documentclass[aspectratio=169]{beamer}
+%   \documentclass[18pt,aspectratio=169]{beamer}
+%   \documentclass{beamer}
+
+
+% The file generic-beamer-preamble.tex contains settings which are the
+% same for all lectures in this series. The file lecture-preamble.tex
+% contains data specific to this lectures (such as the title).
+
+\input{../generic-beamer-preamble}
+\input{lecture-preamble}
+
+
+\newcommand{\lectureyear}{2024\xspace}
+
+% Sam Buss's package for formatting proofs
+\usepackage{bussproofs}
+
+% Formatting of algorithms  
+%   \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage[linesnumbered,vlined]{algorithm2e}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% To get bold italic math
+\usepackage{bm}  
+
+% Some hacks for getting a bibliography that doesn't take up too much space
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+
+% Get usual references in bibliography, not icons
+\setbeamertemplate{bibliography item}[text] 
+
+% For striking through text
+\usepackage[normalem]{ulem}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+  
+\part{Practical Info}
+  
+\begin{frame}
+  \frametitle{Introduction to Discrete Mathematics\ldots}
+
+  \textbf{Discrete}
+  \begin{itemize}
+  \item
+    numbers, logic, graphs, combinations
+  \item
+    \textbf{\emph{not}}
+    continuous functions, derivatives, integrals,
+    et cetera
+  \end{itemize}
+
+  \bigskip
+  
+  \textbf{Mathematics}
+  \begin{itemize}
+  \item
+    Start from obvious facts
+    --- \alertred{axioms}
+    
+  \item
+    \alertblue{Derive true facts} from these axioms
+    
+  \item
+%       We won't give fully axiomatic treatment
+%       (far from it)
+    We'll be far from fully axiomatic treatment,
+    but will stress \alertblue{rigorous reasoning}
+   
+  \item
+    In mathematics, we establish
+    \alertred{absolute truths}
+
+  \item
+    Very different from other fields of science
+    using hypotheses and experiments
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\ldots{} and Algorithms}
+
+  
+  \begin{itemize}
+  \item
+    Our computational problems have
+    \alertblue{concrete, correct answers}
+    (so no ML predictions)
+    
+  \item
+    \alertred{Algorithms}
+    are
+    \alertblue{precise descriptions
+      of automated methods}
+    for solving such problems
+    (focusing on discrete objects)
+    
+  \item
+    Can be coded up in different programming languages
+    
+  \item
+    But we won't have programming assignments in this course
+    ---
+    focus on descriptions in pseudocode
+    rather than exact syntax
+    
+    
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Pro Tips}
+
+  \begin{itemize}
+  \item
+    Read course material before lectures
+
+  \item
+    Maybe even watch online videos for
+    challenging topics
+    (on Absalon or the internet)
+
+  \item
+    Read course material again after lectures
+
+  \item
+    Work on exercises
+
+  \item
+    The material covered in this course is
+    absolutely fundamental 
+    ---
+    learning it well will save you tons of time
+    throughout your studies
+    
+  \end{itemize}
+
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Course Contents}
+
+  \textbf{Mathematics}
+  \begin{itemize}
+  \item
+    Definitions of important concepts
+  \item
+    Theorems (and lemmas)
+  \item
+    \alertred{Proofs}
+  \item
+    Develop your abilities for
+    \alertblue{rigorous (but creative!) reasoning}
+  \end{itemize}
+
+  \bigskip
+  
+  \textbf{Algorithms}
+  \begin{itemize}
+  \item
+    (Pseudo)code
+  \item
+    Proofs of correctness
+  \item
+    Analysis of efficiency/complexity
+  \end{itemize}
+  
+\end{frame}
+
+
+\providecommand{\blankline}{\bigskip}
+\providecommand{\blanklinehalf}{\medskip}
+\renewcommand{\blanklinehalf}{\smallskip}
+
+
+\begin{frame}
+  \frametitle{Main Lecturer}
+
+  \begin{columns}
+%        \column[t]
+    \column%
+    {.54\textwidth}%    
+    \textbf{Jakob Nordstr\"om}      
+
+    \blanklinehalf
+
+    Professor  
+
+%%%
+%%% DIKU VERSION
+%%%
+    \blanklinehalf
+    
+    Algorithms and Complexity Section
+    
+    \blanklinehalf
+    
+    Department of Computer Science  (DIKU) 
+    
+    \blanklinehalf
+    
+    University of Copenhagen
+       
+    \blanklinehalf
+       
+    (and Lund University)
+   
+%%%
+%%% LUND VERSION
+%%%
+%       \blanklinehalf
+%   
+%   %       Department of Computer Science
+%   
+%       \blanklinehalf
+%   
+%       University of Copenhagen \\
+%       and
+%       Lund University
+%   
+
+    \blanklinehalf
+    
+%       \texttt{jn@di.ku.dk}
+    \texttt{www.jakobnordstrom.se}
+
+    \bigskip
+
+    In my day job, I do
+    research on
+    \begin{itemize}
+    \item
+      Proving
+%         that
+      really hard problems are really hard
+    \item
+      Solving them as fast as possible anyway
+    \item
+      Generating proofs that solutions are correct
+    \end{itemize}
+
+    
+
+%        \column[t]
+    \column%
+    {.45\textwidth}%    
+    \includegraphics[scale=.40]%
+    {../PictureJakobNordstrom.jpg}
+%       \includegraphics[scale=.15]%
+%       {../JakobNordstrom_LTH.jpg}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{All instructors}
+  
+  \textbf{Lecturers}
+  \begin{itemize}
+  \item
+    Jakob Nordström
+    % (main lecturer, jakobnordstrom.se)
+    
+  \item
+    Srikanth Srinivasan
+    % (srikanth-srinivasan.bitbucket.io)
+    
+  \item
+    Amir Yehudayoff
+    % (https://amiryehudayoff.github.io/home/) 
+    
+  \end{itemize}
+  
+  \bigskip
+  
+  \textbf{Teaching assistants}
+  \begin{itemize}
+  \item
+    Magnus Aabech 
+  \item
+    Florestan Brunck  
+  \item
+    Theo Fabris  
+  \item
+    Anton Friis  
+  \item
+    Monika Haubro   
+  \item
+    Peter Trip Malmroes  
+  \item
+    Tove Eggert Olsen  
+  \item
+    Johannes Reuss  
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Language of Tuition}
+
+  \begin{itemize}
+  \item
+    \textbf{The good news:}
+    You have a legal right to
+    have this course taught in Danish
+
+  \item
+    \textbf{The bad news:}
+    According to university rules,
+    Swedish counts as Danish
+    for official purposes
+    
+  \item
+    \textbf{The pragmatic solution:}
+    Let's continue in English\ldots    
+
+    
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{What \textbf{You} Need to Do}
+
+
+  \begin{itemize}
+  \item
+    Be on top of \alertblue{course planning}
+
+  \item
+    Follow \alertblue{lectures}
+    (or digest course material on your own)
+
+  \item
+    Read \alertblue{textbooks}
+    before and in between lectures
+    (\alertred{lectures do \textbf{\emph{not}}
+      cover everything})
+    
+  \item
+    Work on \alertblue{exercises}
+    (and use TAs at exercise classes)
+    
+  \item
+    Solve and hand in
+    \alertblue{problem sets}
+    (\alertred{required for exam})
+    
+  \item
+    Interact with coursemates
+    ---
+    help each other!
+    
+  \end{itemize}
+
+  \bigskip
+
+  \textbf{Do yourself a big favour:}
+  \begin{itemize}
+  \item
+    \alertred{Work really hard}
+    on this course!
+  \item
+    Will help you massively in later courses
+  \item
+    (And pay back all time invested)
+  \end{itemize}
+  
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Problem Sets}
+  \begin{itemize}
+  \item
+    Will help you study throughout the course
+    (instead of panicking the week before the exam,
+    when it will be far too late)
+
+  \item
+    Problems are from old exams,
+    so tell you what to expect
+%       ---
+%       perfect way to prepare
+
+  \item
+    Graded in the same way that exam
+    will be graded
+    
+  \item
+    You get individualized
+    coaching for your attempted solutions
+
+  \item
+    And even personal feedback on whether
+%       your
+    revised solutions
+%       have been
+    are
+    corrected as needed
+
+  \item
+    \alertred{And it's for free!}
+    You don't even have to pay for it!
+    Amazing\ldots
+
+  \item    
+    It is hard to think about a better way of preparing
+    for the exam
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Summary of Problem Set Rules (Check Absalon for
+    Details)}
+
+
+  \begin{itemize}
+  \item
+    Collaborate in groups of 2--3
+%       
+%     \item
+%       But
+    but
+    \alertred{write everything up individually}
+    
+  \item
+    \alertred{\textbf{No copying or sharing}}
+    of text, pseudocode, formulas, figures, whatever
+    \begin{itemize}
+    \item
+      from each other
+    \item
+      from the internet
+    \end{itemize}
+    
+  \item
+    Plagiarism will be reported
+    (but more importantly, it's stupid
+    and self-destructive)
+    
+  \item
+    \alertred{Submit on time}
+    via Absalon as PDF file
+    
+  \item
+    Write up in \LaTeX{}
+    (or possibly other math-aware
+    typesetting system)
+
+  \item
+    Graded solutions returned after roughly one week
+    
+  \item
+    Corrections needed?
+    One week for resubmission
+
+  \item    
+    \alertred{Need to pass all problem sets}
+    to be eligible for exam
+
+  \item
+    Any problems or questions regarding the problem sets?
+    Ask your TAs!
+    
+  \end{itemize}
+
+  \Pause
+
+  \begin{center}
+    {\Large
+      \emph{Questions?
+        Ask now or
+        see me after the lecture!}
+    }
+  \end{center}
+  
+  
+\end{frame}
+
+
+%
+% Save fram number counter at this point
+%
+
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+%   
+%   \appendix 
+%       
+%   \begin{frame}[allowframebreaks,t]
+%     \frametitle{References}
+%     
+%     \begingroup
+%     \scriptsize
+%   %   \footnotesize
+%                 
+%     \bibliography{refArticles,refBooks,refOther}
+%     \bibliographystyle{alpha}
+%     
+%     \endgroup
+%     
+%   \end{frame}
+%
+
+%
+% Reset framecounter to number of frames before reference slides
+%
+    
+\setcounter{framenumber}{\value{finalframe}}
+    
+\end{document}

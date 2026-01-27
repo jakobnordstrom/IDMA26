@@ -1,0 +1,60 @@
+IDMA25 FAQ for exam grading, re-exam, and TAing
+
+Hi all,
+
+I have received a number of messages after reporting the grades for the IDMA25 exam (again, my sincere apologies that it took so long), and since there is significant overlap in some of the questions, let me try to answer all of them below.
+
+If you have any remaining questions about the IDMA26 course, then before sending a message to me on Absalon please double-check that the answer to your question is not already given below.
+
+WHY IS THE GRADE DISTRIBUTION YOU POSTED WRONG?
+
+It is not. But administration has, for some unknown reason, split the IDMA course up under two different course codes, depending on which study program you are following, and so there are two different sets of statistics at https://karakterstatistik.stads.ku.dk/. What you can see on Absalon at https://absalon.ku.dk/courses/80492/pages/exam-solutions-grading-guidelines-and-statistics-for-the-idma-exam-april-2-2025 is the total aggregate for everybody who took the course.
+
+WHAT CAN I DO IF MY EXAM GRADE IS WRONG?
+
+Most likely your grade is not wrong. The grading process is quite thorough, and we try to double-check results before reporting them.
+
+Of course we are only human, and so it is not ruled out that mistakes can happen. But if you believe that your exam has been graded incorrectly, you need to help by providing more specific information.
+
+On the Absalon pages for the course you can find both grading guidelines and worked-out exam solutions. If you want us to double-check your exam, we need you to provide first of all your exam number, and then also, and more importantly, your estimate on a problem-per-problem basis how much you should have scored. Note that you should be able to work this out by reading the exam solutions carefully and comparing to what you did in your solutions, and then looking at the grading guidelines to compute roughly how many points you should have received.
+
+This means that you cannot just ask us to double-check your exam for you because your grade is not what you would have wished for --- you need to provide some kind of explanation why you think there are reasons to suspect that your grade is actually wrong. The reason for this, in turn, is that checking exams again takes significant time on our side, which is time that has to be taken from helping students in other ways. And during all the years I have been at the University of Copenhagen, it has not happened a single time that we have had to correct a grade. Now, that obviously does not mean that I never make mistakes (as anyone who has been to my lectures knows), but it means that I need for you to do your part of the work before I do mine, in order not to lose valuable time that would be better spent for other educational purposes (such as addressing the shortcomings you have identified in your course evaluations, which is something that I definitely take seriously).
+
+WHY CAN'T I SIMPLY GET MY GRADED EXAM BACK AND SEE FOR MYSELF?
+
+Now *that* is a *truly* *excellent* *question*! And it is a question that you should ask each and every person at study administration with whom you are in contact, and any other person at the university that is in any way involved in running your study program.
+
+To me it is completely, utterly weird that you don't get your graded exams back so that you can read and learn from them. This is what I am used to myself from my university studies in Sweden (though admittedly this was during the stone age). I have absolutely no idea why Danish university students don't get their graded exams back in physical form.
+
+If I were you, I would fight, and fight vigorously, for my right to see my graded exam. And in all kinds of student representative elections, I would make sure to vote for candidates who said they would advocate this.
+
+But this is a fight that you as students will have to fight. I have no mandate to change this on my own, and I have absolutely zero possibility to manage the process of returning individual exams to individual students. This is a question for the university, and for people at the university who have the responsibility and authority to make such decisions. I wish you the very best of luck in this fight, and you have my full moral support.
+
+What I can do on my side, and what I already do, is to try to provide all kind of information about the exam and the exam grading (in terms of written-out solutions, grading guidelines, and statistics) that would seem to be way beyond what is standard practice, at least compared to other courses I have seen at DIKU:
+
+CAN YOU GIVE SOME INFORMATION ABOUT THE RE-EXAM?
+
+In case you failed the exam, then as previously announced the re-exam will be on Monday June 30. This will be a 30-minute oral exam without preparation (which means that students will get asked technical questions on problems similar to those on the exam in April, but easier, for ca 20 minutes, and then the examiners will confer for ca 5 minutes before announcing the grade).
+
+The schedule for the exam will be announced something like the week before or so. You cannot ask for a specific time during the day, so please make sure to block out all of Monday June 30 in your calendar if you are planning to take the IDMA re-exam.
+
+I believe that the best way of preparing for the re-exam is the same as for the regular exam: Read the textbooks carefully; go over your notes; work on old problem sets and exam problems, and carefully read the suggested solutions to make sure you understand them.
+
+HOW CAN I BECOME ELIGIBLE FOR THE RE-EXAM?
+
+If you did the IDMA problem sets this year and passed, or if if you did them last year and passed, then you are already eligible for the exam this year. You just have to register.
+
+If you have not passed a full collection of IDMA problem sets in either 2024 or 2025, then you have to do work corresponding to a four problem sets in order to be allowed to take the re-exam. Please contact me immediately via Absalon to receive more information about this.
+
+HOW CAN I APPLY FOR A TA POSITION FOR IDMA26?
+
+Right, if you enjoyed this course and scored a 12 or 10 on the exam, then please do consider applying for an IDMA TA position next year! We have seen from your course evaluations, this year as well as previous years, that the teaching assistants have played a very important role for many of you. We need your assistance to ensure that this will be the case for next year's students as well! We crucially need all help we can get from you students to keep the aspects that are good about this course and to work on aspects that, saying it politely, still leave room for improvement.
+
+TA positions for IDMA26 (and all other courses in block 3 and 4 2026) will be advertised at https://employment.ku.dk/teaching-positions/ in the autumn. If last year is any guide, the announcement should be posted in September or October, and the application deadline will probably be in late October or early November.
+
+Please note that there is no other way to become a TA than applying via the official opening. However, you are of course welcome to contact me if you have questions about what it entails to work as a TA, and if and when you apply you are encouraged to mention that you have been in contact with me --- this will increase the probability that the people who go over TA applications will send your papers my way.
+
+Thanks again for taking the IDMA course! I wish you the best of luck in your future studies at the University of Copenhagen, and also a well-deserved summer break (before or after the re-exam)!
+
+Jakob
+

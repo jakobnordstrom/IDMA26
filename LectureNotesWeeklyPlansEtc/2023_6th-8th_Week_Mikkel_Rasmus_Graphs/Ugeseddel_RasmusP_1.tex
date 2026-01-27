@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{fullpage}
+%\usepackage{multicols}
+
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+	
+\title{DMFS 2023 Lectures on Graphs by Rasmus Pagh, Part 1}
+%   \author{Rasmus Pagh}
+\date{}
+
+\begin{document}
+	\maketitle
+
+
+\section*{Litteratur}
+
+\begin{itemize}
+\item[-] \emph{\href{https://absalon.ku.dk/courses/60107/files/6656269}{Noter om grafer}} 
+%   (alt indhold bortset fra dybde-først søgning dækkes i denne uge)
+\item[-] CLRS 20.1, 20.2 (dækker emner fra noten, men med flere detaljer)
+\item[-] CLRS 22.0, 22.3 (dækker emner fra noten, men med flere detaljer)
+\end{itemize}
+
+
+\section*{Mål 
+%   for ugen
+}
+
+
+\begin{itemize}
+\item[-] Kendskab til terminologi for grafer
+\item[-] Kendskab til repræsentationer af grafer (tætte og tynde)
+\item[-] Forståelse af bredde-først søgning og Dijkstra's algoritme
+\end{itemize}
+
+
+
+\section*{Plan
+%    for ugen
+}
+
+\begin{itemize}
+\item[-]
+%   Mandag: 
+Repræsentation af grafer (Noter om grafer / CLRS~20.1), bredde-først søgning (Noter om grafer / CLRS~20.2)
+
+\item[-]
+%   Tirsdag: 
+Korteste vej, Dijkstra's algoritme (Noter om grafer / CLRS 22.0, 22.3)
+
+%   \item[-]
+%   Fredag: Ingen forelæsning, juleferie!
+
+\end{itemize}
+
+
+
+\section*{Opgaver}
+
+For opgaver markeret med $\dagger$ kan du finde svar i \href{https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/11599/selected-solutions.pdf}{CLRS løsningsmanual}, men det er vigtigt at du forsøger at løse opgaven, evt.~med hjælp fra din instruktor, inden du kigger dér.
+
+%   \subsection*{Mandag}
+
+\begin{itemize}
+\item CLRS~20.1-1, 20.1-2, 20.2-1, 20.2-2, 20.2-4, 22.2-5$\dagger$, 20.1-7*$\dagger$
+
+%   
+%   \end{itemize}
+%   
+%   \subsection*{Tirsdag}
+%   
+%   
+%   \begin{itemize}
+%   
+
+\item CLRS 22.3-1, 22.3-3$\dagger$ 
+\item Løs CLRS 20.2-1 igen, men erstat BFS med Dijkstra's algoritme hvor alle vægte er~1.
+\item CLRS 22.3-8, 22.3-2*, 22.3-11*
+\end{itemize}
+
+%   
+%   \subsection*{Fredag}
+%   \begin{itemize}
+%   \item Find den korteste vej til julehyggen!
+%   \end{itemize}
+%   
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

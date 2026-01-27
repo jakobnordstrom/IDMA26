@@ -1,0 +1,74 @@
+﻿GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 3
+==============================================
+
+Grading guidelines for IDMA 2025 problem set 3
+
+
+PROBLEM 1
+
+PROBLEM 1a (20 p)
+Fully correct expression with fully correct analysis/argument 20 p
+Argument/analysis is half-correct 10 p
+Fragments of a relevant argument, but not even close to a correct solution 5 p
+Just expression; no real explanation 0 p
+Counting straight flushes as flushes: -10 p
+
+PROBLEM 1b (20 p)
+Fully correct expression with fully correct analysis/argument 20 p
+Argument/analysis is half-correct 10 p
+Fragments of a relevant argument, but not even close to a correct solution 5 p
+Counting straight flushes as straights: -10 p
+Just expression; no real explanation 0 p
+
+(An example of a half-correct solution in 1a and/or 1b could be not deducting the number of straight flushes.)
+
+PROBLEM 2 (40 p)
+Fully correct solution 40 p
+Correct use of PHP (pigeonhole principle) and making meaningful progress towards a solution 20 p
+Use of PHP to show that two numbers 1^m and 1^n have same remainder mod 2025 10 p
+Reporting concrete solution found by computer, but no more than number 10 p
+Reporting concrete solution found by computer, and stating explicitly the factorization 20 p
+Reporting concrete solution found by computer, stating explicitly the factorization, and carrying out the multiplication to show that it is correct 40 p
+Vague discussion without any clear connection to the problem at hand 0 p.
+Some solutions appear to try to use induction to prove that 3^k | 1^(3^k)0^0 and also show 2025 | 8100, for the purpose of reaching something like 3^4 = 81,  and 3^4*100 | 1^(3^4)0^2.  This could be made into a correct solution, but we have not seen any student solutions getting there.
+
+PROBLEM 3 (40 p)
+Fully correct solution 40 p
+Almost correct solution except for small details 30 p
+Using hint to solve problem correctly, but not proving hint 20 p
+Using PHP to obtain fully correct solution of task in hint 20 p
+Meaningful progress towards solving task in hint, but hint not fully correctly solved 10 p
+Vague discussion without any clear connection to the problem at hand 0 p.
+
+(An example of meaningful progress towards the hint could be to identify that PHP should be used and constructing relevant "pigeon holes".)
+
+PROBLEM 4
+
+PROBLEM 4a (20 p)
+Correct except for using set notation on matrices (strictly speaking undefined) [no deduction, but point out in feedback]
+Describes only what a symmetric closure is (in general); not what this closure is or represents: 0 p
+No or wrong matrix representation: -10 p
+Completely missing interpretation of relation: -10 p
+Doing correct operations but on wrong relation: -10 p
+Partly missing interpretation of relation: -5 p
+
+PROBLEM 4b (20 p)
+Describes only what a transitive closure is (in general); not what this closure is or represents: 0p
+No or wrong matrix representation: -10 p
+Completely missing interpretation of relation: -10 p
+Doing correct operations but on wrong relation: -10 p
+Partly missing interpretation of relation: -5 p
+
+PROBLEM 4c (30 p; correct answer for S’ and T 10 p, correct answer in general 20 p)
+Correct answer for S’ and T but no motivation/calculation -10 p
+Correct answer for S’ and T but partially missing motivation -5 p
+Correct answer for general case but no motivation/calculation -20 p
+Correct answer for general case but partially missing motivation -10 p
+Correct general answer, but based on wrong relation -25 p
+
+PROBLEM 5 (120 p)
+
+For each of the predicate logic formulas:
+o 0 p for wrong answer, or correct answer without any motivation.
+o 10 p for correctly determining what the match (or non-match) is, together with an explanation of what the formula means that indicates some level of understanding, but that has minor errors.
+o 20 p for a correct match/non-match together with a clear and correct translation of the formula into natural language (or, equivalently, a clear argument why it matches the description given in the list of descriptions).

@@ -1,0 +1,71 @@
+GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 2
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1kmw7dwmRI3aOIjfOmR0MxOjxiNWCEHTP507HvEJv0TE/edit?tab=t.0 ***
+*** Current version copied March 20, 2025 ***
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1
+
+PROBLEM 1a (40 p)
+Fully correct dry-run 10 p
+Fully correct analysis of correctness 20 p
+Fully correct analysis of time complexity 10 p
+For each item above, give half of the score for a half-correct solution (for instance, providing a picture but very little textual information regarding how to interpret this picture).
+
+PROBLEM 1b (30 p)
+Correct recursive split down to subcases 10 p
+Correct merge steps 20 p
+For each item above, give half of the score for a half-correct solution except as noted below.
+Merging lists from different recursive calls (which also means that explanations are wrong) -20 p
+Solving the problem but for a completely different input 0 p
+Only top split-merge step; nothing else 5 p
+Only figures without any text 5 p
+[We really want to teach the students that they should *explain* what they are doing]
+
+PROBLEM 1c (20 p)
+Students have to argue why the running times are the way the are for inputs that satisfy the specific conditions in the problem statement.
+Specific input for this problem not considered; only general case -10 p
+Correct answer, but incomplete justification -5 p
+
+PROBLEM 1d (20 p)
+Students have to argue why the running times are the way they are for inputs that satisfy the specific conditions in the problem statement.
+Specific input for this problem not considered; only general case -10 p
+Correct answer, but incomplete justification -5 p
+
+PROBLEM 2
+
+Issues for all subproblems 2a-2c, assuming that they are solved using induction:
+- No mention at all of base case -10 p
+- Base case clearly mentioned, but never verified (not even pointed out that it is obvious) - 5 p
+- Unclear where or how induction hypothesis is used -10 p
+- Missing details, but broad outlines OK (clear base case, induction hypothesis use explicit) -5 p
+- Doing several base cases (unnecessarily) but the whole induction proof as such is OK --- no deduction
+- Base case correct, but nothing else 5 p
+- Base case correct; induction hypothesis stated; but from there onwards no progress is made 10 p
+- Nothing else as above, but at least getting the yes/no answer right, and providing some kind of indication that relevant mental processes have led to this answer 5 p
+
+PROBLEM 2a (30 p)
+A total of 20 p for the induction proof.
+General intuition of proof correct, but no formal use of induction and no clear formal argument why the claim holds --- max 10 p for the induction proof part.
+Points out that odd number of children is crucial and explains why 5 p
+Points out that distinct distances are crucial and explains why 5 p
+
+PROBLEM 2b (30 p)
+A total of 20 p for the induction proof.
+General intuition of proof correct, but no formal use of induction and no clear formal argument why the claim holds --- max 10 p for the induction proof part.
+Points out that most charged car should not necessarily start, and explains why/gives example 10 p
+
+PROBLEM 2c (30 p)
+A correct, carefully done base case gives 10 p
+A correct, carefully done inductive step gives 20 p
+For each item above, give half of the score for a half-correct solution.
+

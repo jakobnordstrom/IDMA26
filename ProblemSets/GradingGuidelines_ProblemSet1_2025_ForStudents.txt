@@ -1,0 +1,110 @@
+GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 1
+==============================================
+
+
+PROBLEM 1 (60 p)
+
+PROBLEM 1a (30 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect - 20 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -25 p
+Just a brief answer what the algorithm does with no explanation of or connection to the pseudocode: -25 p
+
+PROBLEM 1b (10 p)
+General grading guidelines for this type of 60 = 30 + 10 + 20 problems:
+- Correct answer but not full justification (why n^2)? -5 p
+- Big-oh notation including also lower-order terms: 0 p
+- Unclear answer that does not clearly state complexity O(n^2) 0 p
+- Just stating the time complexity without any motivation 0 p
+Students need to provide a clear argument about the number of iterations. It is not sufficient to just state O(n^2) --- we want to see that the students understand that the number of iterations is 1 + 2 + 3 + 4 + ... and that this is O(n^2)
+Students don’t need to prove Omega(n^2), but it is a bonus to provide an argument for a matching lower bound for the algorithm.
+
+PROBLEM 1c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+General grading guidelines for this type of problems:
+- Improvement only by constant factor, not asymptotically 5 p
+- Asymptotic improvement, but not optimal 10 p
+- Essentially optimal solution, but off-by-one errors or similar in code -5 p
+- Some meaningful attempt at improvement that displays some understanding, but details wrong -10 p
+- Nowhere in the full solution of the problem is there enough information to display that the student understands what the pseudocode does -10 p
+- Missing argument for optimality (i.e., linear time is needed to read the input and compute the output) -5 p
+
+
+PROBLEM 2 (60 p)
+
+PROBLEM 2a (30 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect -20 p
+Just a brief answer what the algorithm does with no explanation of or connection to the pseudocode: -25 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -25 p
+For a full score, we need a clear statement that "success" means that A is sorted.
+
+PROBLEM 2b (10 p)
+General grading guidelines for this type of 60 = 30 + 10 + 20 problems:
+- Correct answer but not full justification (why n^2)? -5 p
+- Big-oh notation including also lower-order terms: 0 p
+- Unclear answer that does not clearly state complexity O(n^2) 0 p
+- Just stating the time complexity without any motivation 0 p
+Students need to provide a clear argument about the number of iterations. It is not sufficient to just state O(n^2) --- we want to see that the students understand that the number of iterations worst-case is 1 + 2 + 3 + 4 + ... and that this is O(n^2)
+Students don’t need to prove Omega(n^2), but it is a bonus to provide an argument for a matching lower bound for the algorithm.
+
+PROBLEM 2c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+General grading guidelines for this type of problems:
+- Improvement only by constant factor, not asymptotically 5 p
+- Asymptotic improvement, but not optimal 10 p
+- Essentially optimal solution, but off-by-one errors or similar in code -5 p
+- Some meaningful attempt at improvement that displays some understanding, but details wrong -10 p
+- Nowhere in the full solution of the problem is there enough information to display that the student understands what the pseudocode does -10 p
+- Missing argument for optimality (i.e., linear time is needed to read the input and compute the output) -5 p
+
+
+PROBLEM 3 (80 p)
+
+PROBLEM 3a (40 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect - 20 p
+Just a brief answer what the algorithm does with no explanation of or connection to the pseudocode: -25 p
+No explanation of out-of-bounds check (but otherwise OK) -5 p
+No explanation of what the B array is used for (but otherwise OK) -5 p
+Explanation of main algorithm mostly correct except for other details than specified above -5 p
+Correct answer, but explanation does not make any sense: -35 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -35 p
+
+PROBLEM 3b (20 p)
+Correct answer 2n^2 O(n^2)but only claim of "nested loops" -10 p
+No explanation why inner while loop runs in linear time -5 p
+Big-oh notation including also lower-order terms: -15 p
+Unclear answer that does not clearly state complexity O(n^2) 0 p
+Just stating the time complexity without any motivation 0 p
+
+PROBLEM 3c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+General grading guidelines for this type of problems:
+- Improvement only by constant factor, not asymptotically 5 p
+- Asymptotic improvement, but not optimal 10 p
+- Essentially optimal solution, but off-by-one errors or similar in code -5 p
+- Some meaningful attempt at improvement that displays some understanding, but details wrong -10 p
+- Nowhere in the full soluton of the problem is there enough information to display that the student understands what the pseudocode does -10 p
+- Missing argument for optimality (i.e., linear time is needed to read the input and compute the output) -5 p
+
+
+PROBLEM 4 (80 p)
+
+PROBLEM 4a (40 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect - 20 p
+Explanation of main algorithm correct except for minor details -5 p
+Correct answer, but explanation does not make any sense: -35 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -35 p
+
+PROBLEM 4b (20 p)
+Missing argument why algorithm terminates -5 p
+Correct answer O(log n) but missing justification (i.e., that recursive call essentially halves size of input) -10 p
+Correct but non-tight upper bound O(n^2) with convincing argument: 10 p
+Correct but non-tight upper bound O(n^2) with not-so-convincing argument: 5 p
+Big-oh notation including also lower-order terms: -15 p
+Time complexity analysis fails to consider recursion: 0 p
+
+PROBLEM 4c (20 p)
+Claim that "failure" can be returned also for recursive calls -5p
+Claim that element distinctness is sufficient -5p
+Claim that sortedness is sufficient -5p
+Correct claim that sortedness + distinctness required, but missing justification -5 p

@@ -1,0 +1,61 @@
+********** TA E-MAIL ADDRESSES **********
+
+PhD students:
+Florestan Brunck <flbr@di.ku.dk>
+Theo Fabris <thfa@di.ku.dk>
+
+Regular students:
+Magnus Aabech <mhaa@di.ku.dk>
+Monika Haubro <moha@math.ku.dk>
+Peter Trip Malmroes <petermalmroes@gmail.com>
+Johannes Reuss <johannestangreuss@gmail.com>
+Tove Eggert Olsen <tool@di.ku.dk>
+Anton Friis <antonwfriis@gmail.com>
+
+
+********** TA KU USERNAMES **********
+
+To add regular students to Absalon as TAs, their address should have suffix @alumni.ku.dk
+
+Florestan Brunck <flbr@di.ku.dk>
+Theo Fabris <thfa@di.ku.dk>
+
+Magnus Aabech dkg322@alumni.ku.dk
+Anton Friis scj896@alumni.ku.dk
+Monika Haubro qhg541@alumni.ku.dk
+Peter Trip Malmroes wbl189@alumni.ku.dk
+Tove Eggert Olsen kxd956@alumni.ku.dk
+
+LEFT TO ADD
+
+Johannes Reuss 
+Johannes Tang Reuss <jtre@di.ku.dk>
+
+
+********** ADDRESSES TO SHARE FOR GOOGLE DOCUMENTS **********
+
+monika.haubro@gmail.com
+m.h.aabech@gmail.com
+tove.eggert@gmail.com
+antonwfriis@gmail.com
+petermalmroes@gmail.com
+johannestangreuss@gmail.com
+theo.fabris@gmail.com
+florestan.brunck@gmail.com
+
+srinivasan.srikanth@gmail.com
+
+
+********** TEACHING ASSISTANTS SORTED BY SURNAME **********
+
+Magnus Aabech 
+Florestan Brunck
+Theo Fabris
+Anton Friis
+Monika Haubro 
+Peter Trip Malmroes
+Tove Eggert Olsen
+Johannes Reuss 
+
+
+

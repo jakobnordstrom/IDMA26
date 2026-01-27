@@ -1,0 +1,102 @@
+\documentclass{jn-pset}
+% Uncomment to get version with solutions and also do
+%   \setboolean{versionwithsolutions}{true}
+% a few lines down
+%   \documentclass[solutions]{jn-pset}
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+%%%
+%%% VERSION WITH OR WITHOUT SOLUTIONS
+%%%
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+%   \setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+%   \newcommand{\psetno}{5}
+%   \newcommand{\duedate}{Wednesday April 2 at 13:00 CET}
+% Dummy formatting for draft versions
+%   \newcommand{\thresholdA}{$\langle A \rangle$~points\xspace}
+%   \newcommand{\thresholdB}{$\langle B \rangle$~points\xspace}
+%   \newcommand{\thresholdC}{$\langle C \rangle$~points\xspace}
+%   \newcommand{\thresholdD}{$\langle D \rangle$~points\xspace}
+%   \newcommand{\thresholdE}{$\langle E \rangle$~points\xspace}
+% Add actual grading thresholds here with \renewcommand 
+%   \renewcommand{\thresholdA}{$200$~points\xspace}
+%   \renewcommand{\thresholdB}{$170$~points\xspace}
+%   \renewcommand{\thresholdC}{$140$~points\xspace}
+%   \renewcommand{\thresholdD}{$110$~points\xspace}
+%   \renewcommand{\thresholdE}{$80$~points\xspace}
+
+\newcommand{\thresholdforpass}{$220$~points\xspace}
+
+
+% Compact lists
+\usepackage{paralist}
+
+% COURSE-SPECIFIC MACROS
+
+\input{../ProblemSets/course-macros.tex}
+
+\newcommand{\examheading}{\mbox{Exam April 2, 2025}}
+
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
+
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: 
+  \examheading}
+
+
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Exam_GeneralInstructions.tex}
+
+
+\end{document}
+
+

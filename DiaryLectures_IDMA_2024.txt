@@ -1,0 +1,118 @@
+DIARY FOR IDMA 2024
+===================
+
+PREPARATIONS FOR 2025
+
+Find some new problems for problem sets and the exam by looking in books by Vaderlind etc.
+If possible, do NOT recycle psets from 2022. Instead, let students have three complete sets of problems from 2022, 2023, and 2024.
+Clean up lecture notes ahead of time (as noted below)
+
+
+1ST WEEK
+
+*** Fill in details later, but: ***
+
+Monday mostly according to plan, but I struggled a bit with time.
+The introduction about algorithms and complexity seems hard. Probably I should change it to something else, more accessible and more inspirational.
+In any case, the handwritten notes should be updated, and should contain less complexity (we don't need to define P, for instance).
+Also, students got confused by notation like (v_{i-1}, v_i) and did not understand that i was ranging from 1 to n, so make all such things explicit.
+
+Wednesday double lecture: A little bit short on time, perhaps, but I believe I did end perfectly in time.
+
+Ugeseddel: 
+
+Tove: Looking at the Ugeseddel to prepare for the TA sessions, I notice that in exercise 4, the students are asked to run Selection Sort on an array and compare with Merge Sort. However, selection sort is only mentioned in CLRS exercise 2.2-2, which is set later on the list of exercises, and here they are asked to come up with pseudo-code for selection sort. This confused me for a while - I can spin it for the TA session, but students that just go at the exercises chronologically might hit a wall here, since they don't actually have the selection sort algorithm at hand.
+
+Frederik: The pseudocode examples in the beginning are too hard.
+
+Exercise class attendance: Something like 40 + 30 + 40 + 20?
+
+
+2ND WEEK   [*** Clean up notes for Wednesday ***]
+
+Monday: Went according to plan. I had time to do two induction proofs.
+
+Wednesday: I should have been a bit faster with the integer part.
+I messed up the proof of the GCD theorem. Make clearer structure:
+- Define d^* > 0.
+- Argue common divisor c divides d^*.
+- Point out that if c | d^* > 0, then c <= d^*.
+- So the only thing remaining to prove is that d^* divides both a and b --- do it.
+
+I had time for one strong induction proof only, and went slightly over time. But the students seemed to like the lecture --- it was the first one that generated spontaneous applause.
+
+
+3RD WEEK (Srikanth)
+
+Monday online. Srikanth says that the second part of the lecture was a little bit rushed.
+
+Wednesday: Proofs and proof techniques took only something like 50 minutes.
+Could we do some more proofs by contradiction? Maybe that the number of primes is infinite? And/or some other nice proof?
+One or two more induction proofs would be an obvious candidate. Maybe 2^n < n! or something?
+
+FACT: Every number can be written as a product of primes (by definition; just factor).
+Suppose p_1 up to p_n all primes. Consider N = p1_ p_2 \cdots p_n + 1. Not divisible by any prime, since remainder is 1.
+So N is either prime, or its prime factorization contains a prime not in the list.
+
+
+4TH WEEK  [*** Clean up notes for Monday ***]
+
+Monday: Ran out of time with multiset counting.
+It would be good to go over the notes and make them nicer in general
+(and more streamlined to save time).
+The multiset notes definitely need a revision. 
+For multisets, use the same values for n and r in all examples!
+Write new notes to clean up the proof.
+Find a nice argument for MULTISET2COLOURING why we never write out of bounds.
+Also try to give some intuition for the proof
+
+Wednesday morning: Do recap of multiset counting. Write up these notes more nicely.
+Then I did combinatorial proof of \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}. I think this was good.
+Then PHP and probabilities.
+Two pairs is wrong --- should divide by factor 2
+
+Wednesday afternoon: Online with written lecture notes.
+Matrix multiplication research results needs updating.
+Otherwise this worked fine.
+
+
+5TH WEEK
+
+I need to eliminate a lot of the boring stuff about relations...
+What is really important?
+Equivalence relations, partial orders, probably closure.
+
+
+6TH WEEK
+
+One lecture on graph basics plus isomorphism
+One lecture on BFS + DFS (do BFS first)
+One lecture on DFS properties (white-path theorem) + topological sort + strongly connected components
+I did not have time to do a full proof for SSC --- only to give some fairly detailed intuition.
+
+The notes for the first two lectures should be cleaned up a bit so that they contain:
+- first graph basics;
+- then directed trees;
+- then BFS;
+- finally DFS.
+
+The pseudocode should make clear what the directed version looks like.
+Time should be counted from 1, not 0.
+Maybe I could do an example with 8 or 7 vertices instead of 9, though I am not sure...
+
+Topological sort and SSCs notes are mostly OK, I think, except that time should be counted from 1, not 0.
+
+This felt like an appropriate chunk of material for 3 lectures, and the students seem to be quite blown away by the topsort and SSC applications.
+
+
+7TH WEEK
+
+Spanning tree lecture: Kruskal was (very) rushed. So go faster earlier in the lecture.
+
+Heaps: Ran out of time. Go faster. Have smaller examples?
+
+Single-source-shortest paths: The example took a lot of time. Do a smaller one.
+Think about how to do the proof better. Seems like students get really lost.
+Write down proof of v.d >= \delta(s,v) on the board. At least one student was worried that we were somehow using the correctness of Dijkstra to prove this.Not clear what the problem was.
+
+Stress earlier in the course that students not only need to go to lectures and study lecture notes, but also read the textbooks!

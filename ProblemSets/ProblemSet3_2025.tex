@@ -1,0 +1,809 @@
+\documentclass{jn-pset}
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+\newcommand{\psetno}{3}
+\newcommand{\duedate}{Wedneday March 12 at 12:59 CET}
+
+\newcommand{\thresholdforpass}{$120$~points\xspace}
+
+\input{course-macros.tex}
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%    \usepackage{draftwatermark}
+%    % \SetWatermarkFontSize{20 cm}
+%    \SetWatermarkScale{5}
+
+% For METAPOST logo as \hologo{METAPOST}
+%   \usepackage{hologo}
+
+% For TikZ
+%   \input{Figures/tikz-packages.tex}
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: Problem Set \psetno}
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Pset_GeneralInstructions}
+
+
+\begin{problem}%
+  (40 p)
+  Recall that a standard deck of cards has $52$~cards
+  partitioned into four \emph{suits}
+  (hearts, spades, clubs, and diamonds)
+  with $13$~ranks each
+  ($2$--$10$ plus jack, queen, king, and ace).
+%%
+  In this problem, we assume that you are dealt $5$~cards from a
+  perfectly shuffled deck  of cards,
+  and we wish to analyse the probability of getting flushes and/or straights.
+  Note that there are two straights involving the ace: both ace--2--3--4--5 and
+  10--jack--queen--king--ace are valid straights.
+
+  \begin{subproblem}
+    What is the probability that you get a \emph{flush},
+    i.e., 
+    $5$~cards of the same suit
+    but not all in sequence with respect to rank?
+    (Because  five cards of the same suit in sequential rank
+    would be  a \emph{straight flush}.)
+  \end{subproblem}
+
+\begin{solution}
+  The number of flushes, straight or not,
+  is obtained by first choosing a suit in $4$~ways,
+  and then choosing $5$~cards in $\binom{13}{5}$
+  ways.
+  After choosing the suit, 
+  the number of straight flushes is obtained by
+%     choosing the lowest ranked card
+%     $2$--$10$ in $9$ possible ways.
+  choosing the lowest card in the straight
+  $ace$--$10$ in $10$ possible ways.
+  Hence, the total number of (non-straight) flushes is
+  $
+%     4 \bigl( \binom{13}{5} - 9 \bigr)
+  4 \bigl( \binom{13}{5} - 10 \bigr)
+  $.
+  The total possible number of outcomes for a hand of $5$~cards is
+  $\binom{52}{5}$.
+  Since all outcomes are equally likely, 
+  the probability of getting a (non-straight) flush is
+  \begin{equation*}
+    \frac
+%       {4 \bigl( \binom{13}{5} - 9 \bigr)}
+    {4 \bigl( \binom{13}{5} - 10 \bigr)}
+    {\binom{52}{5}}
+    \eqcomma
+  \end{equation*}
+  i.e., the number of successful outcomes divided by the total number
+  of outcomes.
+\end{solution}
+
+  \begin{subproblem}
+    What is the probability that you get a \emph{straight},
+    i.e., 
+    $5$~cards of sequential rank
+    but not all of the same suit?
+    (Because if the latter condition also held, we would again have a
+    straight flush.) 
+  \end{subproblem}
+
+\begin{solution}
+  The number of straights,  flushes or not,
+  is obtained by first choosing
+%     the rank of the lowest ranked card
+%     $2$--$10$ in $9$ possible ways,
+  the rank of the lowest card
+  $2$--$10$ in $10$ possible ways,
+  and then for each of the $5$~cards
+  choosing the suit  in a total of  $4^5$~ways.
+  To get a straight flush, we can choose the suit of the first card in
+  $4$~ways, but then there is no freedom of choice for the rest of the cards.
+  Hence, the total number of (non-flush) straights is
+  $
+%     9 \bigl(4^5 - 4    \bigr)
+  10 \bigl(4^5 - 4    \bigr)
+  $.
+  The total possible number of outcomes for a hand of $5$~cards is
+  still
+  $\binom{52}{5}$, and so 
+  the probability of getting a (non-flush) straight is
+  \begin{equation*}
+    \frac
+%       {  9 \bigl(4^5 - 4    \bigr) }
+    {  10 \bigl(4^5 - 4    \bigr) }
+    {\binom{52}{5}}
+    \eqperiod
+  \end{equation*}
+\end{solution}
+
+
+\end{problem}
+
+
+\begin{problem}%
+  (40 p)
+%     Show
+  Prove mathematically 
+  that among all numbers on the form
+  $11\ldots{}1
+  00\ldots{}0$,
+  i.e., numbers consisting of $m$~ones followed by $n$~zeros
+  for some $m,n \in  \Nplus$
+%     (jumping ahead a bit, later in the course we will introduce
+%     the notation $1^m0^n$ to describe
+%     the text strings corresponding to such numbers),
+  (sometimes notation like $1^m0^n$ is used to describe
+  text strings constructed in such a way),
+  there is some number that is divisible by~$2025$.
+  
+  \smallskip
+  \noindent
+  \emph{Hint:} 
+  Look at all numbers $1^m  =  11\ldots{}1$ 
+  and consider what their remainders can be modulo~$2025$.
+
+\begin{solution}
+    Using the notation introduced within parentheses above,
+    among the first $2026$ numbers on the form
+    $11\ldots{}1$ 
+    there have to be two numbers 
+    $1^m$
+    and
+    $1^n$
+    (i.e., with $m$~and $n$~digits~$1$, respectively)
+    for $m > n$
+    with the same remainder
+    modulo~$2025$.
+%
+    Here we are using the pigonhole principle with the numbers 
+    $11\ldots{}1$
+    serving
+    as pigeons and the possible remainders modulo~$2025$ serving as holes.
+%
+    But that means that $2025$ divides the difference of these two numbers,
+    and subtracting the smaller number from the larger one we get a
+    number on the form
+    $1^m0^n$
+    that is divisible by~$2025$, as desired.
+
+%       
+%       As a side note, in a mathematical context the word ``show'' should
+%       be understood as a synonym for ``prove''.  If a student ran
+%       computer experiments and found a large number on the form $1^m0^n$
+%   
+
+    As a side note, if one would run computer experiments to find a
+    large number on the form $1^m0^n$
+    that the computer claims is divisible by~$2025$, such a number
+    cannot just be reported without any further evidence---there is no
+    obvious reason why we should believe such a claim. In order to get
+    a full score for such a solution,
+%       the student also needs
+    one would also need
+    to state
+    clearly the factorization and work out the details to show that it
+    is correct. (Another matter is that it should be fairly clear that
+    this is not how the problem was intended to be solved, and that
+    problems on the exam will not be possible to solve in a similar
+    way, so it is arguably a somewhat short-sighted approach to try to
+    solve the problem in this way.)
+\end{solution}
+\end{problem}
+
+
+\begin{problem}
+  (40 p)
+  Let $a \in \Rplus$ be any positive real number.
+  Show that for any
+%     positive 
+  integer $n \geq 2$
+  there is a rational number
+  $\frac{c}{d}$,   %%%   $c/d$,
+  $c, d \in \Z$,
+  $d \leq n$,
+  that approximates~$a$ to within error
+  $\frac{1}{dn}$,
+  i.e.,
+  $
+  \Abs{a - \frac{c}{d}} \leq \frac{1}{dn}
+  $.
+
+  \smallskip
+  \noindent
+  \emph{Hint:} 
+  Consider the numbers $a, 2a, \ldots, n \cdot a$ 
+  and show that one of these numbers is at distance at most $1/n$ from
+  some integer.  
+
+%   
+%   \abs{da - c} <= 1/n
+%   \abs{a - c/d} <= 1/dn
+%   
+\begin{solution}
+  Using the hint, for some $d = 1, \ldots, n$
+  we would like to find
+  an integer~$c$ such that
+  $\abs{d \cdot a - c} \leq \frac{1}{n}$.
+  To this end, we will use the pigeonhole principle.
+
+  For every number
+  $d \cdot a$, $1 \leq d \leq n$,
+  let 
+  $c_d = \floor{d \cdot a}$
+  be the closest smallest integer.
+  Clearly, by construction we have
+  $0 \leq d \cdot a - c_d < 1$.
+
+
+  Divide the interval~$[0,1]$ between $0$ and~$1$
+  into $n$~evenly spaced subintervals
+  $
+  \big[
+  \frac{i-1}{n},
+  \frac{i}{n}
+  \big]
+  $
+  for $1 \leq i \leq 1$.
+  If for some~$d$ and~$c_d$ 
+  we have that
+  $d \cdot a - c_d$
+  is in the subinterval
+  $
+  \big[
+  0,
+  \frac{1}{n}
+  \big]
+  $,
+  then fix~$c = c_d$.
+  Otherwise, all other subintervals will serve as $n-1$ pigeonholes,
+  and the numbers
+  $d \cdot a - c_d $
+%     $c_d = \floor{d \cdot a}$
+  for
+  $1 \leq d \leq n$
+  will serve as pigeons.
+  By the pigeonhole principle,
+  there are two numbers
+  $c_{d'}$ and~$c_{d''}$
+  for
+  $d' > d''$
+  such that
+  $d' \cdot a - c_{d'} $
+  and
+  $d'' \cdot a - c_{d''} $
+  end up in the same subinterval/pigeonhole.
+  But this means that
+  $c = c_{d'} - c_{d''}$
+  and
+  $d = d' - d''$
+  are integers such that
+  $\abs{d \cdot a - c} \leq \frac{1}{n}$.
+
+  We have now found integers $c$ and~$d$ such that
+  $\abs{d \cdot a - c} \leq \frac{1}{n}$.
+  Dividing this inequality by~$d$, we get that
+  $\Abs{a - \frac{c}{d}} \leq \frac{1}{dn}$
+  as desired.
+  (Just in case we worry whether dividing like this is in order, we
+  can see that the   inequality with absolute sign is equivalent to 
+  the two inequalities
+  $ 
+  -\frac{1}{n}
+  \leq
+  d \cdot a - c
+  \leq 
+  \frac{1}{n}$,
+  and dividing by the positive integer~$d$ yields
+  $ 
+  -\frac{1}{dn}
+  \leq
+  a - \frac{c}{d}
+  \leq 
+  \frac{1}{n}$,
+  which is the same inequality with absolute sign as above.)
+\end{solution}
+
+\end{problem}
+
+
+
+\begin{problem}%
+  \label{problem:relations}%
+  (70 p)
+%%% 20 p for first two subproblems, 30 p for 3rd problem
+  In this problem we focus on relations.
+%     In particular,
+  Suppose that
+  $A = \set{e_0, e_1, \ldots, e_5} $   
+  is a set of $6$~elements and consider the relation~$R$
+  on~$A$
+  represented by the matrix
+  \begin{equation*}
+    M_R = 
+    \begin{pmatrix}
+      0 & 0 & 1 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 1 \\
+      1 & 0 & 0 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 & 0 & 0 
+    \end{pmatrix}
+  \end{equation*}
+  (where element $e_i$ corresponds to row and column~$i+1$).
+
+  \begin{subproblem}
+%       (20 p)
+    Let us write~$S$ to denote the symmetric closure of the relation~$R$.
+    What is the matrix representation of~$S$?
+    Can you explain in words what the relation~$S$ is
+    by describing how it can be interpreted?
+  \end{subproblem}
+
+\begin{solution}
+  Let us identify the elements $e_0, e_1, \ldots, e_5$
+  with the numbers $0, 1, \ldots, 5$
+  for the purposes of this discussion.
+
+%     Firstly, by 
+  By
+  studying the matrix~$M_R$ we can conclude that
+  $a$ and~$b$ are related by~$R$---which we have learned
+  to denote by $a R b$, or $(a,b) \in R$---precisely when
+  $
+  b \equiv a + 2 \pmod{6}
+  $.
+  Taking the symmetric closure means that 
+  $a$ and~$b$ can switch places,
+  so we get that
+  $(a,b) \in S$
+  if
+  $b \equiv a \pm 2 \pmod{6}$,
+  and
+%     which is expressed by the matrix
+  \begin{equation*}
+    M_S = 
+    \begin{pmatrix}
+      0 & 0 & 1 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1 & 0 & 1 \\
+      1 & 0 & 0 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 0 & 0 & 1 \\
+      1 & 0 & 1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 1 & 0 & 0 
+    \end{pmatrix}
+  \end{equation*}
+  is the matrix representation of this relation.
+  
+  We can also compute directly on the matrix and obtain
+  $M_S$
+  as the coordinate-wise Boolean or of
+  $M_R$
+  and~$(M_R)^{\top}$.
+%     and~$(M_R)^{T}$.
+\end{solution}
+
+  \begin{subproblem}%
+    \label{problem:trans-clos}%
+%       (20 p)
+   Now let~$T$ be the transitive closure of the relation~$S$.
+    What is the matrix representation of~$T$?
+    Can you explain in words what the relation~$T$ is
+    by describing how it can be interpreted?
+  \end{subproblem}
+  
+\begin{solution}
+  As just noted, we have
+  $(a,b) \in S$  
+  if
+  $
+  b \equiv a \pm 2 \pmod{6}
+  $.
+  Now, if for $a, b, c$ it holds that
+  $
+  b \equiv a \pm 2 \pmod{6}
+  $
+  and
+  $
+  c \equiv b \pm 2 \pmod{6}
+  $,
+  then
+  $c$ and~$a$ differ
+  by $0$, $2$, or~$4$
+  $(\bmod\ 6)$.
+  Or, in other words,
+  $a$~and~$c$ are both odd or both even.
+  This shows that
+  $S^2$ is the relation such that 
+  $(a,b) \in S^2$ 
+  if $a$ and~$b$ are both odd or both even.
+  If 
+  $(a,b) \in S^2$ 
+  and
+  $(b,c) \in S^2$, then again we can conclude that
+  $a$~and~$c$ are both odd or both even, i.e., 
+  that $(a,c) \in S^2$
+  Hence, $T = S^2 = S^3$ is closed under transitivity, 
+  and so is the transitive closure of~$S$.
+
+  Since we have concluded that
+  $
+  (a, b) \in T
+  $
+  if $a$ and~$b$ are both odd or both even,
+  we see that this relation can be represented as
+  \begin{equation*}
+    M_T = 
+    \begin{pmatrix}
+      1 & 0 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 & 0 & 1 
+    \end{pmatrix}
+  \end{equation*}
+  in matrix form.
+    
+\end{solution}
+
+
+  \begin{subproblem}
+%       (30 p)
+    Suppose that we instead let~$T'$ be the transitive closure of the
+    relation~$R$, and then let $S'$ be the symmetric closure of~$T'$.
+    Are $S'$ and $T$ the same relation? 
+    If they are not the same, show some way in which they differ.
+    If they are the same, is it true 
+    that $S'$ and~$T$ constructed in this way from some relation~$R$
+    on    a set~$A$ will always be the same?
+    Please make sure to motivate your answers clearly.
+  \end{subproblem}
+
+\begin{solution}
+  Applying the same kind of reasoning as in
+  Problem~\ref{problem:trans-clos},
+  we get that if
+  $
+  b \equiv a + 2 \pmod{6}
+  $
+  and
+  $
+  c \equiv b + 2 \pmod{6}
+  $,
+  then
+  $
+  c \equiv a \pm 2 \pmod{6}
+  $,
+  and one more application of transitivity gives us the relation~$T$.
+  Since we already argued that $T$ is closed under transitivity, we
+  have
+  $T' = T$.
+  This relation is also symmetric, so taking the symmetric closure
+  does not change it. Hence,
+  we indeed have
+  $S' = T' = T$.
+
+  This does not hold in general, however.
+  Let 
+  $A = \set{1,2}$
+  and let $R$ be the relation containing only the pair
+  $(1,2)$.
+  Then taking the transitive closure does not affect anything,
+  so the relation stays the same, 
+  and taking the symmetric closure of the transitive closure yields the relation 
+  $
+  \set{
+    (1,2), (2,1)
+  }
+  $
+  with  two pairs.
+  However, if we take the symmetric closure first, so that we get
+  $
+  \set{
+    (1,2), (2,1)
+  }
+  $,
+  then the transitive closure will also relate
+  $1$ and~$2$ with themselves, so that the final relation 
+  after symmetric closure followed by transitive closure 
+  is
+  $
+  \set{
+    (1,1), (1,2)
+    (2,1), (2,2)
+  }
+  $.
+  Expressed in in slightly more fancy language, we have now shown that
+  the two operations of symmetric closure and transitive closure do
+  not commute.
+\end{solution}
+
+\end{problem}
+
+
+
+%%% Macros for logical connectives
+\newcommand{\distinct}[2]{\mathsf{setsize}\left(#2, #1\right)}
+\providecommand{\Land}{\bigwedge}
+\providecommand{\limpl}{\to}
+%%% No, \sim for negation just looks insane...
+\providecommand{\mylnot}{\sim}
+\renewcommand{\mylnot}{\lnot}
+%%%
+
+\begin{problem}%
+  (120 p)
+  Recall that an undirected graph $G = (V,E)$ consists of a set of
+  vertices $V$ connected by edges $E$, where every edge is an
+  unordered pair of vertices. If there is an edge $(u,v)$ between two
+  vertices $u$ and $v$, then we say that $u$ and $v$ are the \emph{endpoints}
+  of the edge, and the two vertices are said to be \emph{neighbours}.  
+  We say that a  sequence of edges
+  $
+  (v_1, v_2), \,
+  (v_2, v_3), \,
+  (v_3, v_4), \,
+  \ldots, \,
+  (v_{k-1}, v_k), 
+  $
+  in~$E$
+  is a \emph{path} from $v_1$ to~$v_k$.
+
+  In this problem, we wish to express properties of graphs in both
+  natural language and predicate logic, and to translate between
+  the two forms. 
+  We do this as follows:
+  \begin{itemize}
+  \item 
+    The universe is  the set of vertices $V$ of $G$.
+  \item
+    The binary predicate $E(u,v)$ holds if and only if there is an
+    edge between $u$ and $v$ in $G$. 
+  \item
+    The unary predicate $S(v)$ is used to identify a subset of vertices
+    $S = \{v \mid v \in V, \, S(v) \text{ is true}\}$
+    for which some property might or might not hold.
+  \end{itemize}
+  For example, we can write
+  the natural language statement 
+  ``$S$ is a set containing exactly $k$~distinct elements''
+  as a 
+%   predicate
+  formula
+  \begin{equation}
+    \begin{split}
+      \distinct{k}{S} 
+    \ := \qquad
+  %   \eqdef{} 
+    &
+    \exists u_1 \cdots \exists u_k 
+    \left( \Land_{i=1}^{k-1}\Land_{j=i+1}^{k} \l(u_i \neq u_j) 
+     \land \Land_{i=1}^{k} S(u_i) 
+    \right)\\
+    \land \ &
+    \lnot \exists u_1 \cdots \exists u_{k+1} 
+    \left( \Land_{i=1}^{k}\Land_{j=i+1}^{k+1} \l(u_i \neq u_j) 
+     \land \Land_{i=1}^{k} S(u_i) 
+    \right)
+    \end{split}
+%       \eqcomma
+  \end{equation}
+  where $\Land_{i=1}^k \phi_i$ is shorthand for $\phi_1 \land \phi_2
+  \land \cdots \land \phi_k$,
+  and where we use standard notation
+  $\lnot$
+  for logical negation.
+%%%
+  In natural language, this formula can be read as: 
+  ``There exist $k$ elements $u_1$ to $u_k$ such that 
+  (i)~for every  pair $(u_i,u_j)$,
+  $i \neq j$,
+  the elements themselves are also distinct ($u_i\neq u_j$); and
+  (ii)~all the $u_i$ for $i=1,\ldots,k$ are members of $S$,
+  but no such set of 
+  $k+1$ elements $u_1$ to $u_{k+1}$ exists.''
+
+
+  Below you find 
+  six graph properties defined in natural language
+  and
+  six graph properties written as predicate logic formulas.
+  Most of the natural language definitions have equivalent predicate
+  logic formulas, but not all.
+
+  Your task is to translate each predicate logic formula
+  (a), \ldots, (f) into a natural language description, and argue
+  which---if any---of the natural language definitions (1), \ldots, (6)
+  it matches.
+
+\bigskip
+
+\noindent
+\textbf{Natural Language Definitions:}
+\begin{enumerate}[(1)]
+    \item 
+      A \emph{dominating set} of size~$k$ for a graph $G=(V,E)$ is a set $S$ of $k$ 
+        distinct vertices such that every vertex $v$ in the graph either is in $S$ or is a neighbour of a vertex in  $S$.
+      \item
+        A \emph{clique} $S$ of size~$k$ in a graph $G=(V,E)$ is a set $S$ of $k$ 
+        distinct vertices such that all vertices in $S$ are neighbours with each other. 
+    \item  %%% NOT MATCHED
+      A \emph{disconnected vertex set} of size~$k$ in a graph $G=(V,E)$ is a
+      set $S$ of $k$ distinct vertices such that there are no edges from any
+      $u \in S$ to any $v \in V \setminus S$.
+      [Here $V \setminus S$ denotes set subtraction, so that
+      $V \setminus S = \{ v \mid v \in V \text{ and } v \notin S \}$.]
+        
+    \item 
+      A \emph{vertex cover} of size~$k$ of a graph $G=(V,E)$ is a set $S$ of $k$ 
+      distinct vertices such that for every edge $(u,v) \in E$ it holds that at least one of the endpoints is in $S$.
+    
+    \item 
+      A graph $G = (V,E)$ is \emph{bipartite},
+      with one of the parts in the bipartition having size~$k$,
+      if there a set $S$ of $k$ 
+      distinct vertices such that all edges in the graph go between $S$ and $V \setminus S$.
+
+    \item %%% NOT MATCHED
+      A \emph{connected component} $S$ of size~$k$ in a graph $G=(V,E)$ is a set $S$ of $k$ 
+        distinct vertices such that for every pair of distinct vertices $u$ and $v$ in $S$ there is a path from $u$ to~$v$
+        consisting of vertices in $S$.        
+\end{enumerate}
+
+
+\bigskip
+
+\noindent
+\textbf{Predicate Logic Formulas:}
+\begin{enumerate}[(a)]
+\item %% Vertex cover --- match (4)-(a)
+      $
+\distinct{k}{S} 
+    \, \land \,
+    \forall v \forall w \bigl( E(v,w) \limpl ( S(v) \lor S(w)  ) \bigr)
+    $
+
+    
+    \item %% Dominating set --- match (1)-(b)
+    $
+\distinct{k}{S} 
+    \, \land \,
+    \forall v \bigr( S(v) \lor \exists w (S(w) \land E(v,w)) \bigl)
+    $
+    
+    \item %% Unmatched! Intended to maybe look a bit similar to connectivity, but the formula is not right
+    %% S is a vertex set of size k such that any two distinct vertices in S have a common neighbour in the graph
+    $
+\distinct{k}{S} 
+    \, \land \,
+    \forall u \forall w \bigl( ( u \neq w \land  S(u) \land S(w) )
+    \limpl
+    \exists v (E(u, v) \land E(v,w ) \bigr)
+    $
+
+    \item %% Bipartiteness --- match (5)-(d)
+    $
+\distinct{k}{S} 
+    \, \land \,
+    \forall v \forall w \bigl( E(v,w) \limpl 
+    (
+    (S(v) \land \mylnot S(w)) 
+    \lor 
+    (\mylnot S(v) \land S(w)) 
+    )
+    \bigr)
+    $
+
+    %% Unmatched! NOT disconnected set, but somewhat close except for obvious mistake with wrongly placed negation in the encoding
+    %% S is a vertex set of size k such that every vertex v in S has an edge to some vertex w outside of S 
+  \item
+    $
+    \distinct{k}{S}
+    \, \land \,
+    \forall v \bigl( S(v) \limpl \exists w (\mylnot S(w) \land E(v,w)) \bigr)
+    $
+    
+    \item %% Clique --- match (2)-(f)
+    $
+\distinct{k}{S} 
+    \, \land \,
+    \forall v \forall w \bigl( ( v \neq w \land  S(v) \land S(w)) \limpl E(v, w) \bigr)
+    $
+
+\end{enumerate}
+
+\medskip
+\noindent
+For every predicate logic formula that matches 
+a natural language description, explain clearly why there is a match.
+For formulas that do not match a description, write a natural language
+definition along the lines of (1), \ldots, (6)
+that describes the property that the formula encodes.
+
+
+
+
+\begin{solution}
+Formula 
+(a) matches the description (4) of vertex cover. It says that if there is an edge between two vertices $v$ and $w$,
+then at least one of these vertices is in~$S$. This is the definition of $S$ being a vertex cover.  
+
+Formula 
+(b) matches the description (1)  of dominating set. It says that for every vertex~$v$ it holds that either $v$ is in the set $S$
+or there is some vertex~$w$ in $S$ that is connected to $v$ via an edge. This precisely matches the given description of what a dominating set is.
+
+Formula 
+(c) is unmatched. It encodes that
+$S$ is a vertex set of size $k$ such that any two distinct vertices in $S$ have a common neighbour in the graph.
+
+Formula 
+(d) matches the description (5) of bipartiteness. It says that if there is an edge between $v$ and $w$,
+then either $v$ is in $S$ and $w$ is not, or the other way round. That is, exactly one of the vertices is any edge is in~$S$,
+which shows that $(S, V\setminus S)$ is indeed a bipartition of the graph.
+
+Formula 
+(e) is unmatched. It encodes that
+$S$ is a vertex set of size $k$ such that every vertex~$v$ in $S$ has an edge to some vertex $w$ outside of $S$. 
+
+Formula (f) matches the description (2) of clique.  It says that if
+two distinct vertices $v$ and~$w$ are both in $S$, then there has to
+be an edge between them.  This is exactly the condition for vertices
+in a clique.
+\end{solution}
+
+\end{problem}
+
+
+
+
+
+\end{document}
+
+

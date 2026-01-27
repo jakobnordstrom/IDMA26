@@ -1,0 +1,14 @@
+Bug in solutions for pset 5
+
+Hi all,
+
+Some students have had problems with parsing the solution to problem 4a on problem set 5.
+
+It turns out that the claim about the grammar being an LL(2) grammar is incorrect.
+
+I have to confess that I constructed this problem a bit too quickly a bit too late at night before last year's exam, and tagged on the question about the number of characters of look-ahead because it seemed like a nice extra question. However, the parser I had in mind will not gracefully deal with superfluous parantheses. For instance, with two characters of look-ahead it is difficult to tell apart "(num) + num" and "(num)", and adding more parantheses will make this even harder.
+
+I apologize for this error. But if you are one of the students who got stuck on this, then I think this is very good news --- chances are that you are excellently prepared for the exam.
+
+Best regards,
+Jakob

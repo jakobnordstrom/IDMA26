@@ -1,0 +1,86 @@
+﻿GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 3
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1hVvFiA3XMlYjrHeAS1mzxbv5ab-dG2xxWeJMP346EN8/edit?tab=t.0 ***
+*** Current version copied March 20, 2025 ***
+
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1
+
+Note that there is a small subtlety in this problem in that it was not clear before what straights there are that include the ace. The sequence ace-king-queen-jack-10 is definitely a straight, but it is apparently standard that ace-2-3-4-5 is also a straight. The problem statement and solution have been revised to reflect this.
+
+PROBLEM 1a (20 p)
+Fully correct expression with fully correct analysis/argument 20 p
+Argument/analysis is half-correct 10 p
+Fragments of a relevant argument, but not even close to a correct solution 5 p
+Just expression; no real explanation 0 p
+Counting straight flushes as flushes: -10 p
+
+PROBLEM 1b (20 p)
+Fully correct expression with fully correct analysis/argument 20 p
+Argument/analysis is half-correct 10 p
+Fragments of a relevant argument, but not even close to a correct solution 5 p
+Counting straight flushes as straights: -10 p
+Just expression; no real explanation 0 p
+
+(An example of a half-correct solution in 1a and/or 1b could be not deducting the number of straight flushes.)
+
+PROBLEM 2 (40 p)
+Fully correct solution 40 p
+Correct use of PHP (pigeonhole principle) and making meaningful progress towards a solution 20 p
+Use of PHP to show that two numbers 1^m and 1^n have same remainder mod 2025 10 p
+Reporting concrete solution found by computer, but no more than number 10 p
+Reporting concrete solution found by computer, and stating explicitly the factorization 20 p
+Reporting concrete solution found by computer, stating explicitly the factorization, and carrying out the multiplication to show that it is correct 40 p
+Vague discussion without any clear connection to the problem at hand 0 p.
+Some solutions appear to try to use induction to prove that 3^k | 1^(3^k)0^0 and also show 2025 | 8100, for the purpose of reaching something like 3^4 = 81,  and 3^4*100 | 1^(3^4)0^2.  This could be made into a correct solution, but we have not seen any student solutions getting there.
+
+PROBLEM 3 (40 p)
+Fully correct solution 40 p
+Almost correct solution except for small details 30 p
+Using hint to solve problem correctly, but not proving hint 20 p
+Using PHP to obtain fully correct solution of task in hint 20 p
+Meaningful progress towards solving task in hint, but hint not fully correctly solved 10 p
+Vague discussion without any clear connection to the problem at hand 0 p.
+
+(An example of meaningful progress towards the hint could be to identify that PHP should be used and constructing relevant "pigeon holes".)
+
+PROBLEM 4
+
+PROBLEM 4a (20 p)
+Correct except for using set notation on matrices (strictly speaking undefined) [no deduction, but point out in feedback]
+Describes only what a symmetric closure is (in general); not what this closure is or represents: 0 p
+No or wrong matrix representation: -10 p
+Completely missing interpretation of relation: -10 p
+Doing correct operations but on wrong relation: -10 p
+Partly missing interpretation of relation: -5 p
+
+PROBLEM 4b (20 p)
+Describes only what a transitive closure is (in general); not what this closure is or represents: 0p
+No or wrong matrix representation: -10 p
+Completely missing interpretation of relation: -10 p
+Doing correct operations but on wrong relation: -10 p
+Partly missing interpretation of relation: -5 p
+
+PROBLEM 4c (30 p; correct answer for S’ and T 10 p, correct answer in general 20 p)
+Correct answer for S’ and T but no motivation/calculation -10 p
+Correct answer for S’ and T but partially missing motivation -5 p
+Correct answer for general case but no motivation/calculation -20 p
+Correct answer for general case but partially missing motivation -10 p
+Correct general answer, but based on wrong relation -25 p
+
+PROBLEM 5 (120 p)
+
+For each of the predicate logic formulas:
+o 0 p for wrong answer, or correct answer without any motivation.
+o 10 p for correctly determining what the match (or non-match) is, together with an explanation of what the formula means that indicates some level of understanding, but that has minor errors.
+o 20 p for a correct match/non-match together with a clear and correct translation of the formula into natural language (or, equivalently, a clear argument why it matches the description given in the list of descriptions).

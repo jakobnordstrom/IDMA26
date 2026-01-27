@@ -1,0 +1,297 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+%\usepackage{multicols}
+
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+
+% Course name
+\usepackage{xspace}
+\newcommand{\coursename}{Introduction to Discrete Mathematics and Algorithms\xspace}
+\newcommand{\coursenameshort}{IDMA 2025\xspace}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 7 -- \\[0.5em]}
+\end{center}
+\noindent
+
+\section*{General Plan}
+%   \section*{Work instructions}
+
+This week we will continue talking about graphs and graph algorithms. After rounding off the discussion of the graph traversal algorithms (and applications) that we began the previous week, we will discuss minimum spanning trees as in CLRS Chapter 21 and then
+make a detour to learn about the useful heap data structure in CLRS
+Chapter~6 (this will be useful in computing shortest paths in graphs next week). %finally study how to compute shortest paths in graphs as in CLRS Chapter~22.
+
+As already mentioned, graphs are a truly foundational topic in
+computer science. They can be used to model all kinds of real-world
+problems, and efficient graph algorithms therefore have applications
+that are too numerous to list.  Since this is an introductory course
+in discrete math and algorithms, though, we do not really have time to
+get into any serious applications at this point (you will see them
+later during your studies), but will focus on covering some of the
+basic algorithms used to manipulate these objects.
+
+
+\section*{Reading Instructions}
+%   \section*{Assigned reading}
+
+As usual, I will do my best to try to cover as much as possible of the
+most important material in class, but it is very important that you
+also read the textbook, which contains additional material.
+
+
+\begin{itemize}
+\item
+  CLRS Chapter 21 about minimum spanning trees (all of it).
+
+
+\item CLRS introduction to Part II
+  % (pages 147--150) %%% page numbers from 3rd edition?!?!
+  (especially if you want to get a bit of an overview why we are so
+  interested in sorting data).
+
+\item 
+  CLRS Chapter 6 about heaps (all of it).
+
+\end{itemize}
+
+
+\section*{Exercises}
+
+Some of the exercises below were listed also last week, 
+but I am mentioning them here as well to give an
+overview of good exercises concerning graphs.
+
+\subsection*{CLRS Chapter 20: Elementary Graph Algorithms}
+
+\begin{enumerate}
+\item
+  Draw some moderately sized directed graphs
+  and make sure that you can run DFS and BFS on them.
+%   
+%     and make sure that you can run DFS, BFS, and Dijkstra's algorithm on
+%     these graphs (where for Dijkstra's algorithm you will also need to
+%     add weights on the edges).
+%   
+
+\item
+  Run topological sort on the same algorithms. Check that
+  the algorithm works precisely when your directed graphs are acyclic.
+
+\item
+  Use the algorithm in Sec 20.5 to compute strongly connected
+  components of some of your directed graphs. 
+
+
+\item
+  CLRS Section 20.1 exercises
+  20.1-1,  20.1-3, 20.1-7.
+%     22.1-3,
+%     22.1-4,
+%     22.1-5, and
+%     22.1-6.
+
+\item
+  CLRS Section 20.2 exercises
+  20.2-1, 20.2-2, 20.2-4, 20.2-5, 20.2-7
+%     22.2-2,
+%     22.2-4,
+%     22.2-7, and
+%     22.2-9.
+
+\item
+  CLRS Section 20.3 exercises
+  20.3-2, 20.3-11,  20.3-12
+%     22.3-2 and   22.3-7.
+
+\item
+  CLRS Section 20.4 exercise
+  20.4-1
+%     22.4-3.
+
+\item
+  CLRS exercise 20-3.
+
+\end{enumerate}
+
+\subsection*{CLRS Chapter 21:
+  Minimum spanning trees}
+
+
+\begin{enumerate}
+
+ 
+\item
+  Draw some moderately sized undirected graphs
+  with edge weights (making sure to consider also graphs with several
+  edges of the same weight) and run Prim's algorithm starting from
+  different vertices. Can you find graphs where different starting
+  points yield different MSTs?
+
+
+\item
+  Draw some moderately sized undirected graphs
+  with edge weights (making sure to consider also graphs with several
+  edges of the same weight) and run Kruskal's algorithm.
+  Can you find graphs for which you get different MSTs depending on
+  which order edges of the same weight happen to be sorted?
+
+
+\item
+  CLRS Section 21.1 exercises
+  21.1-1,
+  21.1-3--21.1-7,
+  and
+  21.1-9
+
+\item
+  CLRS Section 21.2 exercises
+  21.2-1 and
+  21.2-2
+
+\item{}[*]
+  CLRS
+%     exercises
+%     21.2-7 and
+  exercise
+  21-4
+
+
+%   
+%     \item
+%     Suppose that a weighted undirected graph~$G$ has unique heaviest
+%     edge~$e$.
+%     Could this edge ever be included in an MST?
+%     Give an example of how this can happen or prove that it is impossible.
+%   
+%   
+
+\end{enumerate}
+
+
+\subsection*{CLRS Chapter 6: Heaps}
+
+\begin{enumerate}
+\item
+  Take some moderately sized arrays filled with numbers (or comparable
+  keys of your choice) and build min-heaps and max-heaps from them.
+
+\item
+  CLRS Section 6.1 exercises
+  6.1-1--6.1-7
+
+\item
+  CLRS Section 6.2 exercises
+  6.2-1
+  and
+  6.2-3--6.2-6
+
+\item
+  CLRS Section 6.3 exercises
+  6.3-1--6.3-3
+
+\item
+  CLRS Section 6.4 exercises
+  6.4-1--6.4-4
+
+\item
+  CLRS Section 6.5 exercises
+  6.5-1,
+  6.5-2,
+  6.5-5,
+  and
+  6.5-7--6.5-9
+
+\item
+  CLRS  exercise 6-1
+
+\end{enumerate}
+
+%\subsection*{CLRS Chapter 22:  Single-source shortest paths}
+%
+%\begin{enumerate}
+%\item
+%  Draw some moderately sized directed graphs
+%  with weights on the edges and run 
+%  Dijkstra's algorithm on these graphs.
+%  Work out the details of how the priority queue heap changes during
+%  execution.
+%
+%\item
+%  CLRS Section 22.3 exercises
+%  22.3-1,
+%  22.3-2,
+%%     22.3-3,
+%%     22.3-4,
+%  and
+%  22.3-6.
+%
+%\item
+%  CLRS Section 22.5 exercises
+%  22.5-1,
+%  22.5-4,
+%  and
+%  22.5-7.
+%
+%\item
+%  Let $T$ be a shortest path tree from a vertex~$s$ in a graph~$G$.
+%  Suppose that we add some constant~$c$ to all edge weights in~$G$. 
+%  Is $T$ still a shortest path tree? Prove that this is so or give a
+%  counter-example. 
+%
+%\item{}[*]
+%  Let $G$ be a directed graph where all \emph{vertices} have weights,
+%  and where the weight of a path in~$G$ is the sum of the weights of
+%  all vertices on the path. Give an algorithm for computing the
+%  shortest path between two vertices~$s$ and~$t$ in~$G$.
+%
+%\item{}[*]
+%  In some modern programming languages there are efficient
+%  implementations of priority queues in the standard libraries, but
+%  without support for 
+%  \textsc{Decrease-Key} (that is, once an element is inserted with a
+%  certain priority this cannot be changed).
+%  Can you modify Dijkstra's algorithm to run as efficiently as before
+%  (asymptotically)
+%  even with this kind of priority queue?
+%
+%
+%
+%  
+%\end{enumerate}
+
+
+
+\end{document}

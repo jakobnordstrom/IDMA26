@@ -1,0 +1,24 @@
+Schedule, reading material, et cetera
+
+Hi all,
+
+Some quick pieces of information.
+
+SCHEDULE AND COURSE INFORMATION
+
+As previously announced, the official course information with the schedule can be found on Absalon at https://absalon.ku.dk/courses/80492/files/9310261?module_item_id=2632608 . You do not need to send any questions about the schedule --- the information you need about the lectures is in there.
+
+READING MATERIAL
+
+Please note that for each week you need to check the weekly module for course material.
+
+For the first week, many of you who asked questions on Monday did not seem to have read the notes on asymptotic analysis at https://absalon.ku.dk/courses/80492/files/9313249?module_item_id=2631705 .
+
+For this week, it is highly, highly recommended (not to say compulsory) to read the notes on mathematical induction at https://absalon.ku.dk/courses/80492/files/9313258?module_item_id=2631712 .
+
+PROBLEM SET 1 DUE BEFORE NEXT LECTURE
+
+And, just to repeat information that you are all aware of, the first problem set is due in slightly less than 13 hours from now, before we meet next time.
+
+Until then,
+Jakob

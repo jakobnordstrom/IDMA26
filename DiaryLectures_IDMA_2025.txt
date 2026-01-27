@@ -1,0 +1,150 @@
+DIARY FOR IDMA 2025
+===================
+
+
+TO FIX FOR ALL UGESEDDLER IN 2026: Mention explicitly the extra reading in the weeks that have extra reading.
+
+
+1ST WEEK
+--------
+
+TO FIX FOR UGESEDDEL 1 IN 2026 (SHOULD HAVE BEEN DONE ALREADY IN 2025): 
+- Tove: Looking at the Ugeseddel to prepare for the TA sessions, I notice that in exercise 4, the students are asked to run Selection Sort on an array and compare with Merge Sort. However, selection sort is only mentioned in CLRS exercise 2.2-2, which is set later on the list of exercises, and here they are asked to come up with pseudo-code for selection sort. This confused me for a while - I can spin it for the TA session, but students that just go at the exercises chronologically might hit a wall here, since they don't actually have the selection sort algorithm at hand.
+- Frederik: The pseudocode examples in the beginning are too hard.
+
+MONDAY
+New material on algorithm and complexity
+More explicit description of algorithms for problems discussed.
+New dry-run of Dijkstra's algorithm.
+All this seemed to go reasonably well, and there was a round of applause at the end of the lecture.
+But there was not enough time to introduce the RAM model, so this has to be shifted to Wednesday (which is perhaps better anyway).
+
+WEDNESDAY (Lecturer: Srikanth)
+2 lectures with a plan of covering Searching, Sorting, Asymptotics followed by some slides on Stacks, Queues and Linked Lists.
+Went slower than anticipated: Only started insertion sort towards the end of the first lecture.
+Plenty of interaction, students correcting mistakes etc.. But the same students each time.
+Worked out an explicit example of Merging algorithm. I think this was appreciated.
+Mistakes in the slides for Mergesort created confusion.
+Went really fast while covering the final material on stacks, queues and linked lists. Most students probably got nothing out of it. One student asked for it to be covered again.
+
+
+2ND WEEK
+--------
+
+MONDAY
+Went according to plan.
+The first part of the lecture takes a lot of time. Would it be better to have slides for this?
+I had time to do two induction proofs (but forgot to emphasize the punchline what our argument was like, so I did that as an Absalon post.
+Several students seemed to be confused about asymptotic notation, so I did an improvised explanation of the difference between big-oh and little-oh, basically saying that big-oh is f(n) / g(n) <= constant and little-oh is f(n) / g(n) -> 0.
+
+WEDNESDAY
+The new detailed GCD proof took much more time, but this was probably a good thing. When the structure of the proof was made much clearer, it unfortunately also became much clearer how much the students struggled even with simpler aspects of the proof (like: what are we proving in the first place?).
+But I should probably have tried to go a bit faster anyway.
+I went 5 minutes over time, and still was not able to talk about base-b expansion.
+I will have to talk about base-b expansion first thing Monday morning, and then move on to induction.
+
+
+3RD WEEK
+--------
+
+MONDAY
+Base-b expansion and induction proofs. Managed to do one strong induction proof, but no asymptotic analysis for recursive algorithms (as usual).
+
+WEDNESDAY MORNING
+Propositional and predicate logic.
+Lots of writing on the board, but my feeling is that it was good to write on the board and go slowly, because students seemed to be struggling to follow even this tempo.
+I went slightly over time, and still did not manage to cover all of predicate logic.
+
+WEDNESDAY AFTERNOON
+I did the last bit of predicate logic plus proof techniques.
+I proved that sqrt(2) is irrational and also that there are infinitely many primes, but not the two final exercises/theorems in the notes.
+I went slightly over time, but could have finished in time with better time management.
+
+
+4TH WEEK
+--------
+
+MONDAY
+Did almost everything in the notes *except* the proof of correctness for counting multisets and the example counting the number of outcomes with three identical dice. 
+We looked at a dry-run of the algorithms translating from multisets to sets (rows of coloured boxes) in both directions, but did not argue correctness.
+The pace was quite rushed in the second half, and I went 5 minutes over time.
+I think it would be hard to go much faster than I did today.
+This was probably a fairly difficult lecture (but then maybe some lectures have to be difficult).
+
+WEDNESDAY (ONLINE)
+Did lots of online questions with sendsteps. The lecture went well. (More than 100 attending and at least 60 responded to each question. Lots of errors in the answers, though.)
+
+
+5TH WEEK
+--------
+
+MONDAY
+Matrices. I went a bit too slow in the beginning, which made the end of the lecture rushed.
+The amount of material seems appropriate, but the speed of delivery could be faster during the first half of the lecture.
+
+WEDNESDAY
+The lecture about relations contains lots of definitions and terminology and feels pretty boring...
+Is there any way to make this material more interesting?
+What is really important? Equivalence relations, partial orders, probably closure.
+The proof that equivalence relations and partitions are the same thing took a lot of time, but that was probably needed.
+
+6TH WEEK
+--------
+
+MONDAY 
+Finished up material on posets and talked about basic graph definitions.
+Deviation from notes: tried to prove that different definitions of a tree were equivalent. Could show (1) <=> (4) but not (1) <=> (3) (proof is in the slides).
+Finished on time.
+
+WEDNESDAY
+The first half of the lecture was on BFS. Started with adjacency list/matrix definitions and then BFS.
+Not as much interaction as in previous lectures.
+Did a complete example of BFS and stated some properties (shortest paths etc.) without proofs. No time for proofs in this half of the lecture.
+The second half of the lecture was spent on DFS. Again not so much interaction (maybe it would be better to let the students run the algorithm themselves for 5 minutes?).
+Proved the parenthesis and white path theorems but lost essentially everybody by the final slide (which also had a typo that couldn't have helped).
+Figured out a better way to explain the white path theorem after the lecture and added it to the slides.
+
+7TH WEEK
+--------
+
+MONDAY
+Applications of DFS
+Did topological sort fairly carefully, including proof of correctness.
+For strongly connected component, I just did a dry-run to show how the algorithm works, but did not argue correctness. (I think this is as previous years.)
+
+WEDNESDAY MORNING
+Spanning tree lecture.
+Spent 10-15 minutes at the beginning talking about the course and the exam in general --- maybe I should not have done this.
+Then tried to get more questions and interaction regarding MST, which succeeded, but also slowed me down.
+I did *not* have time to do Kruskal.
+
+WEDNESDAY AFTERNOON
+Started with presentation of Kruskal (except how to implement union-find).
+Then did heaps.
+Didn't have time to finish the material on how to implement priority queues, but I showed how to implement dequeueing efficiently.
+
+
+8TH WEEK
+--------
+
+MONDAY
+Dijkstra with Amir
+
+WEDNESDAY MORNING
+The rest of the material on heaps, including priority queues.
+
+WEDNESDAY AFTERNOON
+Questions and answers
+In contrast to previous years, lots of questions had been submitted in advance, and we did not have time to go over all of them.
+
+
+********** NOTES FROM 2024 BELOW **********
+
+In the probability lecture notes "two pairs" is wrong --- should divide by factor 2
+
+Single-source-shortest paths: The example took a lot of time. Do a smaller one.
+Think about how to do the proof better. Seems like students get really lost.
+Write down proof of v.d >= \delta(s,v) on the board. At least one student was worried that we were somehow using the correctness of Dijkstra to prove this. Not clear what the problem was.
+
+Stress earlier in the course that students not only need to go to lectures and study lecture notes, but also read the textbooks!
+

@@ -1,0 +1,152 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+%\usepackage{multicols}
+
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+% Course name
+\usepackage{xspace}
+\newcommand{\coursename}{Introduction to Discrete Mathematics and Algorithms\xspace}
+\newcommand{\coursenameshort}{IDMA 2025\xspace}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 6 -- \\[0.5em]}
+\end{center}
+\noindent
+
+\section*{General Plan}
+
+\emph{%
+  I am taking the risk of publishing this ugeseddel mostly in
+  Danish. Apologies in advance for any errors, which are the
+  responsibility of your lecturer only\ldots 
+}
+
+
+Vi skal i denne uge og i uge 7 arbejde med grafalgoritmer. 
+Vi har tidligere i kurset set grafer og eksempler på brug af grafer i
+algoritmik. Som I måske har fået  fornemmelse af kan grafer ofte
+bruges til at modellere strukturer i konkrete data: vi har blandt
+andet talt om facebook-grafer og veje mellem byer som nogle få
+eksempler på en meget lang række anvendelser af
+grafer. Nerveforbindelser mellem hjernedele, design af computerchips,
+datanetværk (som f.eks. internettet) og transportnetværk,
+afhængigheder i statistik, og tildeling af variable til CPU-registre i
+oversættere er nogle yderligere eksempler. Grafer er nogle af de mest
+benyttede modelleringsstrukturer, og grafalgoritmer er derfor
+tilsvarende vigtige.
+
+Vi vil specielt se på algoritmer til at finde forskellige strukturer i
+grafer, vise deres køretid, og bevise korrekthed af algoritmerne.
+
+Uge 6 fokuserer på repræsentation af grafer i computere og strategier
+for søgning i grafer. Søgning kan løst beskrives som at gå en tur i
+grafen hvor alle knuder besøges. Her har vi to overordnede strategier:
+bredde-først søgning og dybde-først søgning
+(which in English is
+breadth-first search, abbreviated BFS, and
+depth-first search, abbreviated DFS, respectively).
+
+%   
+%   {\it Kursusevaluering af DMA foregår i ugerne 5 og 6. Der er sat tid
+%     af til at lave kursusevaluering til øvelserne torsdag uge 6. Det er
+%     meget vigtigt for os og for de studerende på kurset næste år at I
+%     udfylder kursusevaluering senest til fristen søndag d. 13/1.}
+%   
+
+\section*{Program for forelæsninger}
+
+Repræsentation af grafer (CLRS~20.1);
+bredde-først søgning (CLRS~20.2)
+og
+dybde-først søgning  (CLRS~20.3);
+%   Fortsættelse af
+%   bredde-først søgning og
+%   dybde-først søgning;
+topologisk sortering  (CLRS~20.4);
+og sammenhængskomponenter (CLRS~20.5).
+
+%   og sammenhængskomponenter
+%   CLRS~22.3 indtil 'Properties of depth-first search' 
+%   \mbox{s. 606}, 22.4, 22.5).
+
+%   
+%   \subsection*{Onsdag}
+%   %   Intro til m
+%   Mindste udspændende træer
+%   %   og Kruskals algoritme (CLRS~23 \mbox{s.~624-636})
+%   og Prims og Kruskals algoritmer (CLRS~23).
+%   
+
+\section*{Program for øvelser}
+
+
+Løs opgaverne
+\begin{itemize}
+\item CLRS~20.1-1,  20.1-3, 20.1-7.
+\item CLRS 20.2-1, 20.2-2, 20.2-4
+\end{itemize}
+
+Løs udvalgte af opgaverne
+\begin{itemize}
+\item CLRS
+  20.3-2, 20.3-11,  20.3-12
+
+\item
+  CLRS
+  20.4-1, 20.2-5, 20.2-7
+%     , 22.2-6
+
+\end{itemize}
+
+%%%
+%%% Numbers as in CLRS 3rd edition below
+%%%
+%   Løs opgaverne
+%   \begin{itemize}
+%     \item håndkør Kruskals algoritme på en vægtet graf. Diskuter ved hver Union
+%       hvorfor kanten er 'safe'.
+%   \item CLRS~23.1-1 23.1-3 23.1-4 23.1-6 23.1-9 23.2-2 23.2-5
+%   \end{itemize}
+%   
+
+
+%   \section*{Fordybelsesopgaver}
+\subsection*{Fordybelsesopgaver}
+ \begin{itemize}
+  \item{[*]} CLRS~20.2-8 (diameter af træer)
+ \end{itemize}
+
+\end{document}

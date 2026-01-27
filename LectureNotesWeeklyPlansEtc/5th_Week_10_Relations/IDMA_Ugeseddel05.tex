@@ -1,0 +1,332 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%    \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+%    \usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+\usepackage{multicol}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+% Domain and range
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\dom}{\operatorname{Dom}}
+
+% Course name
+\usepackage{xspace}
+\newcommand{\coursename}{Introduction to Discrete Mathematics and Algorithms\xspace}
+\newcommand{\coursenameshort}{IDMA 2025\xspace}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 5 -- \\[0.5em]}
+\end{center}
+\noindent
+
+
+\section*{General Plan}
+
+We will start this week by talking a bit about \textbf{matrices} and how they can be useful in
+discrete mathematics. Most (or all) of you would also be taking a
+separate course on linear algebra, but for many (or all) of you it
+comes after this course, and so cannot help us with the material we
+need.  Therefore, just to make sure we are on the same page, we will
+make sure to quickly cover the basics in a self-contained and
+elementary way.
+
+We then come to the topic of \textbf{relations}. As we all know, relations are some of the most important topics in life,
+and that holds true also in mathematics, so we will focus on relations this week.
+Only, in mathematics the word ``relation'' has a very precise meaning,
+which might be slightly different from our every-day usage.
+In fact, we have already been using mathematical relations, and
+properties of them,  in several previous lectures, and so it is high
+time that we pin down exactly what we mean.
+
+Informally, relations between integers are things like
+\emph{``$a$ is less than~$b$''} (which we usually denote $a < b$)
+or
+\emph{``$a$ divides~$b$''} (denoted $a | b$).
+Other examples of relations are between people, such as
+\emph{``A~is a friend of B''}
+or
+\emph{``A~is a parent of B.''}
+
+Mathematically, 
+relations can be viewed in  different ways: 
+\begin{itemize}
+\item
+  as a logical predicate $P(a,b)$ regarding a pair of elements $a\in
+  A$ and $b\in B$,  
+\item 
+  as a subset of the \emph{product set} $A\times B$,
+\end{itemize}
+and if $A$ and $B$ are finite sets:
+\begin{itemize}
+\item as a Boolean matrix, 
+\item as a directed graph (digraph) when $A = B$. 
+\end{itemize}
+It might seem a little extreme to have four different descriptions of
+the same concept. However, it is useful to be able to represent
+relations in different ways, as then we have the freedom to choose the
+description best suited for the task at hand.  
+
+During our treatment of relations, we will also make a 
+%   quick 
+detour to
+talk about \textbf{functions} to see that they are
+%   
+%   During our treatment of KBR Chapter 4, we will make a quick detour to
+%   KBR 5.1 in order to see that functions are
+%   
+relations of a special form,
+and then discuss the concepts of \emph{injective}, 
+\emph{surjective}, \emph{bijective}, and \emph{inverse}
+functions.
+
+
+We will then talk about 
+properties of relations
+such as \emph{reflexivity},  \emph{symmetry}, and
+\emph{transitivity}. These three properties together define an
+important family of \textbf{equivalence relations}. 
+
+Continuing our discussion of relations, we will
+consider two important types: \textbf{order relations} and
+\textbf{trees}. The former is relevant in computer science because
+this type of relation is what we use when we sort data.  The latter
+will lead us on to a more general discussion of \textbf{graphs}---which
+will be the topic of the last two weeks of lectures on the course.
+
+
+\section*{Reading Instructions}
+%   \section*{Assigned reading}
+
+\begin{itemize}
+   \item 
+     KBR Section 1.5 on matrices (Monday)
+     \item 
+  KBR Chapter 4 except sections 4.6 and 4.8 (Wednesday morning)
+\item 
+  KBR Section 5.1  (Wednesday morning)
+  \item KBR Sections 6.1--6.2 (Wedesday afternoon)
+\item KBR Sections 7.1 and 7.2 (Wednesday afternoon)
+%     (except we will not talk about spanning trees quite yet)
+\item KBR Section 8.1 (Wednesday afternoon)
+\end{itemize}
+
+Please note that there is quite a lot of material in Chapter~4, 
+and a substantial part of it is introducing formal terminology for
+different notions. We will not be able to cover all of this in detail
+in class, so it is important (as is always the case, but even more so
+here) that you also read through the material carefully on your own.
+
+%\section*{Reading Instructions
+%  Mostly for Wednesday
+%}
+%%   \section*{Assigned reading}
+%
+%As usual, I will try to cover the most important material during the
+%lecture, but it is very important that you also read the textbook,
+%which contains additional material. 
+%\begin{itemize}
+%\item KBR Sections 6.1--6.2
+%\item KBR Sections 7.1 and 7.2
+%%     (except we will not talk about spanning trees quite yet)
+%\item KBR Section 8.1
+%\end{itemize}
+
+
+
+Although we will not talk about it this week, parts of Section~7.5
+will be covered in a week or two.  The same goes for Section~7.3 with
+traversals of trees. In other words, it does not hurt reading these
+sections already now (and in any case they are part of your general
+computer science education).
+
+Also, in case you want to read on after Section~8.1, then in
+Sections~8.2 and~8.3 you find a discussion of Eulerian and Hamiltonian
+cycles, which you might remember is what we started talking about in
+the very first lecture on the course. We probably will not have time
+to talk about these sections, though (or at least that is not in the
+plans as they are looking now).
+
+%   
+%   \emph{\textbf{Update:} It said Section~7.4 instead of Section~7.2 above
+%     previously---my apologies for the typo.}
+%   
+
+\emph{Just to avoid confusion---in case you would start wondering why
+  there is no mention of Section~7.5 in the course plan---the reason
+  for this is that while we will cover this material, we will do so by
+  reading CLRS instead.}
+
+
+
+
+\section*{Exercises}
+
+Note that as for previous weeks, there are quite a few exercises
+suggested below. 
+%   
+%    One question that came up in connection with a
+%   lectures is how many of these exercises you are supposed to do. The
+%   answer is that this depends on how many exercises you yourself need to
+%   solve in order to digest the material.
+%   
+If you feel that you understood what was covered in class and/or what
+you read in the textbook, and if the exercises seem straightforward,
+then it is fine to just do some of them (where I good idea would be to
+try to focus on the one that seem hardest to you). If some of the
+material seems harder, though, then it is a good idea to do more
+exercises until you really understand what is going on.
+
+Monday material: 
+
+\begin{enumerate}
+\item Solve KBR exercises 1.5.5, 1.5.9, 1.5.12, 1.5.16, and 1.5.21.
+\item Solve KBR exercises 1.5.40, 1.5.42, 1.5.43.
+\end{enumerate}
+
+Wednesday material:
+
+\begin{enumerate}
+\item Solve KBR exercises 4.1.5, 4.1.10 %Cartesian products
+\item Solve KBR exercises 4.2.4, 4.2.9, 4.2.10, 4.2.23, 4.2.25 
+% The definition of a relation
+% 4.2.29, 4.2.37 - remoed because they don't exist?
+
+%   
+%   \item A relation $R$ from $A$ to $B$ can be represented as a list of pairs from the product set $A \times B$.
+%   % (this is actually how relations are defined on page 128 in KBR). 
+%   Discuss the following two exercises among yourselves:
+%   \begin{itemize}
+%   \item Write a pseudocode that, given a list as described above, finds
+%     the \emph{range} $\ran R$. 
+%   \item In the same spirit, write a pseudocode that finds the
+%     \emph{domain} $\dom R$. 
+%   \end{itemize}
+%   \item A relation $R$ from $A$ to $B$ can also be represented as a
+%     Boolean matrix. How should the above algorithms be adapted to
+%     accommodate a matrix as input instead of a list of elements in
+%     $A\times B$? 
+%   \item {[*]} \emph{(Proof exercise)} Solve KBR 4.2.20. Time permitting,
+%     instructor presents a sample proof on the board. 
+%   
+
+
+\item Solve KBR exercises 4.3.1--2, 4.3.4--8, 4.3.19 %Basic definitions of digraphs
+\item Solve KBR exercises 4.4.1, 4.4.13 
+% Reflexive, symmetric, transitive etc.
+% 4.4.31--32, 4.4.35 don't exist?
+\item Solve KBR exercises 4.5.3, 4.5.4, 4.5.8, 4.5.12 %Equivalence relations
+\item Solve KBR exercises 4.7.2, 4.7.7, 4.7.12, 4.7.16--17, 4.7.19 % Closures of relations
+\item Solve KBR exercises 5.1.1, 5.1.11, 5.1.30 %Functions
+
+%   
+%   \item The instructor facilitates a discussion of \emph{injective},
+%     \emph{surjective}, \emph{bijective}, and \emph{inverse} functions.
+%   
+
+
+
+
+% \item {[*]} \emph{(Proof exercise)} Solve KBR 4.5.23.  % Doesn't exist?
+%   Time permitting, instructor presents a sample proof on the board at
+%   the end of the exercise session. 
+
+%   \item Finish any leftover exercises from Monday and Tuesday.
+
+
+\item Solve KBR exercises 6.1.2, 6.1.6, 6.1.9, 6.1.13, 
+
+
+\item Solve KBR exercises 6.2.1, 6.2.2, 6.2.9, 6.2.10, 6.2.13--14
+%   \item The instructor introduces the concept of  ``lexicographical order''.
+%   \item Solve KBR exercises 6.1.19, 6.1.20.
+
+\item Solve KBR exercises  7.1.1--4, 7.1.9--13, 7.2.1--2, 7.1.24--26
+
+%   
+%   \item  Discuss the following exercise in class:
+%     \begin{enumerate}
+%     \item Write a pseudo code that determines if a relation, given as a subset of $A\times A$, is a tree.
+%     \end{enumerate}
+%   
+
+%   
+%   \item Solve KBR exercises 7.4.1, 7.4.2, 7.4.3.
+%   %   \item The instructor introduces Prim's algorithm for finding spanning trees.
+%    \item Solve KBR exercises 7.4.7, 7.4.8, 7.4.9
+%   
+
+\item Solve KBR exercises 8.1.1--2, 8.1.5, 8.1.17, 8.1.19, 8.1.20.
+\end{enumerate}
+
+More advanced exercises:
+
+\begin{enumerate}
+\item  Discuss the following among yourselves:
+\begin{itemize}
+\item Write pseudocode that determines whether a relation given as a list of elements from $A\times B$ is
+\begin{itemize}
+\item reflexive
+\item irreflexive 
+\item symmetric
+\item asymmetric
+\item antisymmetric
+\end{itemize}
+\item Write pseudocode that does the same for a relation given as a Boolean matrix.
+\end{itemize}
+
+\item Solve KBR exercises 6.1.19, 6.1.20.
+
+   \item Solve KBR exercises 6.1.21, 6.1.22.
+
+\item{\textit{(Partitioning a poset into linear orders)}} Solve parts
+  (e) and (d) of \mbox{KBR~6.1.26--27}
+\item {\textit{(Proof exercise)}} Solve KBR 6.1.28
+
+\item Solve KBR exercises  6.2.17--18, 6.2.36
+\item {\textit{(Proof exercise)}} KBR 6.2.20
+
+\item {\textit{(Proof exercises)}} Solve KBR 7.1.29--30, 7.1.31
+
+\end{enumerate}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

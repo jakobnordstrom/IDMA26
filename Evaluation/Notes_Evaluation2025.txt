@@ -1,0 +1,91 @@
+
+********** GENERAL NOTES (FOR MYSELF) **********
+
+The course is considered to be demanding, covering a wide array of topics, and to require substantial work. However, students also feel that they get the opportunity to learn the topics covered in the course. The students find the course well-organized and assess it as useful. The free-text answers reinforce many of these points. In addition, the comments point out how important the TAs and exercises classes are, and the TAs mostly get a very positive assessment.
+
+Jakob Nordström is assessed as an excellent teacher overall, but also as quite demanding. The handwriting on the blackboard can be hard to read. The fact that he emphasized the importance of studying hard throughout the course was perceived as intimidating by some students, and could also make it hard to ask quetions. It would be worth thinking about how the same message can be conveyed in a more positive way.
+
+Srikanth Srinivasan got almost uniformly positive reviews, with the main complaint being that he did not give a larger share of the lectures.
+
+The exam seemed appropriate, and more so than last year. This agrees with my own assessment --- I was just more successful this year in composing a well-rounded exam.
+
+Overall, the student assessment of the 2024/25 edition of IDMA was slightly less positive than for 2023/24, but based on impressions from the exam the student results seem be clearly better. So maybe students were inspired to work harder, or were nudged to work harder, and therefore performed much better, but were less happy with this stronger performance.
+
+
+The course evaluation had a fairly substantial part with additional questions. The main take-aways from this part are:
+
+The students consider problem sets to be very helpful, but also consider the problems to be too hard.
+
+The exercise classes are very valuable, especially when TAs go over solutions on the board. Several students request more worked-through exercises by the TAs. The students also note that it is valuable that different TAs have different approaches, so that students can shop around for a TA that suits them.
+
+
+
+
+********** POSITIVE FEEDBACK **********
+
+The course is considered to be demanding, covering a wide array of topics, and to require substantial work. However, students also feel that they get the opportunity to learn the topics covered in the course. The students find the course well-organized and assess it as useful. The free-text answers reinforce many of these points. In addition, the comments point out how important the TAs and exercises classes are, and the TAs mostly get a very positive assessment.
+
+Jakob Nordström is assessed as an excellent teacher overall, but also as quite demanding and sometimes intimidating. Srikanth Srinivasan got almost uniformly positive reviews, with the main complaint being that he did not give a larger share of the lectures.
+
+The exam seemed appropriate, and more so than last year. This agrees with my own assessment --- I was just more successful this year in composing a well-rounded exam.
+
+The course evaluation has a fairly substantial part with additional questions. The main take-aways from this part are:
+
+The students consider problem sets to be very helpful, but also consider the problems to be too hard.
+
+The exercise classes are very valuable, especially when TAs go over solutions on the board. Several students request more worked-through exercises by the TAs. The students also note that it is valuable that different TAs have different approaches, so that students can shop around for a TA that suits them.
+
+
+********** KONSTRUKTIV KRITIK **********
+
+As already mentioned, Jakob Nordström is assessed as an excellent teacher overall, but also as quite demanding. The handwriting on the blackboard can be hard to read. The fact that he emphasized the importance of studying hard throughout the course was perceived as intimidating by some students, and could also make it hard to ask quetions. It would be worth thinking about how the same message can be conveyed in a more positive way.
+
+Some students express that the amount of material covered on the course is too large. I believe that this is to some extent true, but this is also what the study programs have requested.
+
+Overall, the student assessment of the 2024/25 edition of IDMA was slightly less positive than for 2023/24, but based on impressions from the exam the student results seem be clearly better. So maybe students were inspired to work harder, or were nudged to work harder, and therefore performed much better, but were less happy with this stronger performance.
+
+
+********** DIN MUNDTLIGE EVALUERING MED STUDERENDE **********
+
+Jeg har ikke lavet en mundtlig evaluering
+
+
+********** HER BEDES DEN KURSUSANSVARLIGE (DU) KORT FORHOLDE SIG TIL VÆSENTLIGE KRITIKPUNKTER FRA EVALUERINGEN. Det kan fx være ved at beskrive, hvordan eventuelle problemer kan imødekommes fremover – eller hvorfor visse forhold ikke kan ændres. Det er også relevant at nævne positive elementer i kurset og evt. planer for at fastholde disse. Prioriter gerne det vigtigste. **********
+
+IDMA is perceived as a demanding course, but I believe this is unavoidable. For most students, this is the first time in their life that they encounter rigorous mathematical reasoning, and this takes some getting used to.
+
+My understanding is that the curriculum has to be kept mostly the same in order to ensure that students can take follow-up courses on algorithms, such as AD and AADS.
+
+This is the second year the IDMA course has been given in its new format (changed from the earlier DMFS course), and my assessment is that many of the pieces that were a bit missing last year now fell into place. An indication of this would seem to be that the exam results (based on what we have seen so far, though the final grading is being prepared as we speak) were substantially better than in previous years. The student evaluations confirm that they perceive the course as well organized, with the different activities creating a logical whole.
+
+In summary, this is a tough course, but many students enjoy it and learn from it.
+
+
+********** HVIS RELEVANT, BEDES KURSUSANSVARLIGE KORT FORHOLDE SIG TIL, HVORDAN DE VIGTIGSTE TILTAG FRA SIDSTE ÅRS OPFØLGNING ER BLEVET GENNEMFØRT, og hvilken effekt de eventuelt har haft. **********
+
+Many adjustments have been made, and most or all of them seem to have had the intended effect.
+
+In the evaluation last year, many students requested more time spent on mathematical proofs and formal reasoning. This part of the course has been expanded, though some students are asking for even more in the evaluation this year.
+
+Some of the detours during the lectures to related problems at the research frontier have been removed, to give some more time to cover material that students will be asked about on the exam. The most important research highlights have been kept, however, and I believe that they serve an important function to show the students that even material in an introductory course can be connected to cutting-edge research.
+
+The teaching assistants were asked this year to spend more time during the exercise classes on the board going over solutions to problems, but also to encourage the students to work on problems before they see the solutions. Many students seem to appreciate this, though some ask for even more worked-out solutions.
+
+Study cafés seem to have worked better this year than in previous years, though it is not immediately clear to me why this is so.
+
+Extra effort has been made to put all relevant course information on Absalon, and to send out frequent reminders about the most important points. It is clear from the evaluations that several students still failed to digest this information (claiming that information was only shared close to the exam, when it was in fact available at the beginning of the course), but it seems that most students have been very happy with the current structure of the Absalon course room.
+
+
+********** REFLEKSION OVER EKSAMEN (EGNE OG STUDERENDES FEEDBACK PÅ EKSAMEN) **********
+
+I think I managed to structure the exam better this year, and found better ways of designing problems which students who knew the material could answer quickly and clearly while students who were less knowledgeable could not just look up the answer in the book (which is a challenge for any introductory course with an open-book exam).
+
+It seems that the students were also happier with the exam this year, and the results seem clearly better. These better results could of course also be due to that other parts of the course, such as lectures, exercise classes, and/or problem sets, worked better. But, all in all, the exam as such seemed well-structured this year, and I will try to use what I have learned from this to design better exams also in future years.
+
+
+********** BEHOV FOR ÆNDRINGER I DEN GÆLDENDE KURSUSBESKRIVELSE? I SÅ FALD HVILKE? **********
+
+I see no real need for changes.
+
+A more philosophical point is that I find it a bit strange to have open-book exams on courses like this. When I was a BSc student back in the 1990s, I think we had roughly the same amount of material, but were supposed to learn it by heart. However, it seems this would be such a radical change as to be un-implementable, and so this is nothing that I am suggesting...
+

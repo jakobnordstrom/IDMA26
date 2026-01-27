@@ -1,0 +1,37 @@
+IDMA problem set grading and more
+
+Hi TAs,
+
+Here are some quick remarks about problem sets.
+
+RESUBMISSIONS OF PROBLEM SET 2
+
+Please let Srikanth know on Monday if all resubmissions of problem set 2 are in, or if you are still waiting for students to submit.
+
+As soon as we have received all resubmissions, I can release the grading guidelines and also the suggested solutions for all problem sets 2 (as I have now done for pset 1).
+
+DEALING WITH DELAYED SUBMISSIONS
+
+Please note that as TAs you have a wide-ranging mandate to grant personal extensions for a couple of days if students were ill or similar, as long as this does not disrupt your own grading workflow. If students are so late that you would prefer to *disallow* them do submit, then please talk to Srikanth or me first so that we are aware of it (since passing all psets is a requirement to be able to sit the exam).
+
+Officially, we of course insist on keeping the deadlines, because this is important, and we could not keep running the course if everybody were late. But we also want to be pragmatic, and we are not out to get the students. Granting just a couple of extensions is something you can do precisely because this works as long as these are just a couple of exceptions.
+
+GRADING OF PROBLEM SET 4
+
+Problem set 4 is due Wednesday March 26. By noon Friday March 28 I need to be able to report which students are eligible to take the exam. This means that there is no time to grade problem set 4 before deciding about exam eligibility, and much less to allow resubmissions. Therefore, the rule for problem set 4 is that anything that would have allowed a resubmission for the other problem sets is counted as a pass for problem set 4 (but it is still possible for students in need to rack up extra points).
+
+In view of this, we will need to do the grading of pset 4 as follows:
+- By the morning of Friday March 28, I need to be able to see the following information in the system for each submission:
+  o 0 means not at all serious submission; could not pass the threshold in any universe.
+  o 1 means a serious submission; does not seem unreasonable that something like this might pass after a hypothetical resubmission.
+  o 2 means that at least based on a quick look, this actually looks quite promising and potentially a first-round pass without resubmission.
+  o Any number in the grading system larger than 2 will be interpreted as the actual score of the pset.
+- By the morning of Monday March 31, students need to get their fully graded psets back so that they can use your feedback as they prepare for the exam. At this point, I also need to be able to see the actual score in the grading system.
+
+POSSIBLE DEADLINE EXTENSION FOR PROBLEM SET 4
+
+As you can see, the time frame for grading pset 4 is fairly tight. Nevertheless, last year we made this even tighter by extending the deadline from Wednesday morning till Wednesday afternoon, so that students could get help with the problem set during the final exercise session.
+
+It would be good if you could discuss on Monday whether it seems like a good idea to do so this year as well. If so, i would change the submission deadline for pset 4 to 17:15 CET or so on Wednesday March 26.
+
+Jakob

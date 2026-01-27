@@ -1,0 +1,162 @@
+IDMA ORAL EXAM JUNE 24, 2024 
+
+Time User ID Name 
+
+08:30 BKQ979 Syed, Fatima
+
+Exam 4. Time 9:02. Looks in notes. Does not remember word truth table. Has a column in the table that is just an arrow, without saying what expression it means. Says that we can conclude that 1 is a tautology without referring to the table. Skips. Also skips graph algorithms. Relations: Says you can go to M1 and not the other ones. Says with incorrect terminology that we can get to M1 by reflexive closure. Then says we need symmetric closure, but cannot explain what it is. Skips. Skips merge sort. Stops the exam. Grade -3.
+
+ 
+
+09:00 KVB125 Rohde, Carl-Emil
+
+Exam 4. Time 9:21. Writes truth table. Explains reasons for truth values of implications. Concludes it is not a tautology. Does not remember what a contradiction is, but guesses the right definition. Concludes it is a tautology. Runs Dijkstra’s alg, drawing up table of all distances. Can construct the SP-tree, but cannot explain clearly how it is constructed by the algorithm. Says we keep track of the previous vertex of each vertex. Explains DFS. Grade 4.
+
+ 
+
+09:30 FGP424 Cai, Peter
+
+Exam 2. Time 9:50. Merge sort. Draws the splitting diagram, but cannot explain merge step. Says splitting time is log n and merge is n. Considers the algorithm as a two step approach (not recursive), first splitting and then merging. Goes to next question. Skips relations. Logic. Says the first one is a tautology. Says AND means that the values are the same. Writes it as a truth table. Fixes after much help. Concludes that 2 is a tautology. Says 1 is a contradiction. Skips to combinatorics. Says 1 matches a. Cannot explain binomial coefficients. Says the BC is a statement and many other strange things. Grade -3.
+
+ 
+
+09:30 PLW219 Ahmed, Hira.
+
+Udeblevet.
+
+ 
+
+10:00 KMX630 Nielsen, Morten Birch
+
+Udeblevet
+
+ 
+
+10:30 WDZ535 Pedersen, Victor Abildgaard Cadier
+
+Time 10:16. Combinatorics. Explains binomial coefficient and fractions as probabilities. Jumps a bit around, but arrives with good explanation that 1 matches c. Explains 2 matches b. Explains 3 matches a. Graph algorithms. Explains DFS informally, but seems confused about explaining what spanning tree it produces. Jumps to Dijkstra’s alg. instead. Explains quite OK. Grade 7.
+
+ 
+
+11:00 QBX492 Petersson, Frederikke Albæk Juhl
+
+Time 10:43. Exam 4. Remembers wrong def of implication, but when helped correctly writes truth tables. Explains DFS well. Relations. Explains M1 can be created with reflexive. Grade 7.
+
+ 
+
+11:30 FNS992 Safin, Lau Dana
+
+Time 11:50. Exam 2. Merge sort. Explains splitting, but cannot explain merge. Says that the merge operation shifts elements. Skips. Skips logic. Relations. Explains how to get M1 and M3. Says M2 cannot be made, but does not prove it. Does not remember how to make truth table. Combinatorics. Match 2 with b and can explain. Grade 02.
+
+ 
+
+12:00 CZL702 Østergaard, Laura Cecilie Møller 
+
+Time 12:20. Exam 3. Combinatorics. Match 2 with b, gives good explanation. Then stops and skips. Explains DFS and Dijkstra nicely. Alg analysis, can figure out what B will be and give upper bound O(n^2), but not explain better. Grade 7.
+
+ 
+
+12:00 BKN639 Bitzer, Mads Salling
+
+Time 12:47. Exam 4. Logic. Writes truth tables answers questions. Explains DFS nicely. Explains Dijkstra, but not how the alg outputs edges. Relations. Explains M1, and that we cannot do M2. Explains M3 is inverse and then transitive. Grade 10.
+
+ 
+
+12:30 MSL693 Adan, Abubakar Mohamed Said
+
+Time 13:15. Exam 3. Combinatorics. Skips. Wants to explain Dijkstra’s algorithm. Explains Dijkstra’s alg as DFS where we always pick the cheapest edge. Says Dijkstra’s alg does not need to find paths to all vertices. Gets some wrong paths. Says the alg should be run again to get the right ones. Skips. Alg analysis. Says the running time is n^2 because there are two for-loops. Says B[1] will always be 1. Grade -3.
+
+ 
+
+13:00 DGB923 Bahogb Khoshnodi, Adrian
+
+Time 13:37. Exam 4. Logic. Writes truth tables and explains. Graph algorithms. Explains DFS. Can run Dijkstra, but not explain how it outputs edges. Relations. Explains M1 is reflexive closure. Says M2 cannot be made, but not why. Explains M3. Grade 10. 
+
+ 
+
+13:00 MVG871 Sinanovic, Emma, udeblevet 
+
+ 
+
+13:30 LCS203 Bregensøe, Xenia
+
+Time 14:05. Exam 1. Alg analysis. Arrives at B[i]=A[1]+…+A[i]. Can vaguely explain O(n^2) upper bound on time, but not lower bound. Cannot improve alg. Skips. Knows binomial coefficients. Matches 1 with c. Grade 02.
+
+ 
+
+14:00 NWF871 Danielsen, Josephine Bianca Uyet
+
+Time 14:37. Exam 4. Logic. Draws truth tables. Runs DFS. Can put in start and finishing times, but not explain well how edges in spanning tree are found. Runs Dijkstra. Says the result is an MST. Not clear explanation, but knew the basics. Relations. Says RC gives M1. Explains M3. Says M2 cannot be made. Grade 7.
+
+ 
+
+14:30 KHT619 Ebak, Oskar Christian Gliese
+
+Time 15:07. Exam 1. Alg. analysis. Skips. Combinatorics. Matches 2 to b. Skips. Explains merge sort. Says merge takes O(n^2), but corrects to O(n). Says total running time is O(n). Could make truth tables with a bit help. Grade 00. 
+
+ 
+
+14:30 ZRH601 Visser, Alisa Marie Simona Bello, UB
+
+
+15:00 ZDC553 Foverskov, Andreas Ahrenst , UB
+
+ 
+
+15:30 CHS380 Haybout, Manar 
+
+Time 15:41. Exam 1. Starts 15:44. Alg analysis. Confuses i with B[i] repeatedly. Says B[i] = A[1] for all i. Skips. Combinatorics. Says 52 choose 5 is 5/52. Grade -3.
+
+ 
+
+16:00 RBJ866 Johansen, William Debes
+
+Time 16.29. Exam 1. Alg. analysis. Says running time is O(n^2), but no good explanation. Otherwise nothing sensible. Skips. Combinatorics. Matches full house to b. Does not remember definition of binomial coefficient. Finds answers in notes, which are different from what they first claimed. Skips. Sorting. Draws sorting diagram and explains merge with some help. Says merge is O(log n) and there are O(n) layers of split. Changes to merge takes O(n log n). Changes to O(n^2). Says the merge step is faster than the whole algorithm. Grade 00.
+
+ 
+
+16:00 SKR486 Sigurthorsson, Johann Arnar, UB
+
+ 
+
+16:30 KWZ566 John, Adam Elliot
+
+Time 16:59. Exam 2. Merge sort. Explains algorithm well. Changes mind many times on what is the running time of merge is. Says O(n) and then O(n^2). Says total time complexity is O(n log n), so merge must be O(n), but does not give good explanation. Says M1 comes from reflexive closure. Explains M3. Says M2 cannot be made, but no clear reason. Logic. Says  T -> F is the same as F -> T. Skips. Combinatorics. Explains that full house matches b. Grade 4.
+
+ 
+
+17:00 MXQ470 Kristensen, Kristian Aksel Ertner
+
+Time 17:31. Exam 2. Merge sort. Cannot explain merge sort. Explains some splitting, but not sensible merge. Skips. Also skips relations. Logic. Says p -> q means “if not p then q”. Tries to write truth table, but writes p -> q as p = q. Grade -3.
+
+ 
+
+17:30 BGR250 Olsen, Maja Bach
+
+Time 17:56. Exam 3. Combinatorics. Knows binomial coefficients, but cannot match, so skips. Explains DFS. Explains Dijkstra, but is unclear about priority queues and how the spanning tree appears. Algorithm analysis. Confuses i and B[i], etc. Cannot say what B will be. Grade 00. 
+
+ 
+
+17:30 SHR228 Sørensen, Mark Wiskum
+
+Time 18:26. Exam 1. Alg analysis. Skips to asymptotic analysis. Skips. Combinatorics. Knows binomial coefficient. Says full house is b. Says four of a kind is a. Then says 3 is a. Gave some explanations. Skips. Sorting. Explains merge sort. Knows O(n log n) time for merge sort, but not time for merging. Logic. Fills truth table. Grade 02.
+
+ 
+
+LRN949 Aksel Bjørn Buur Christiansen
+
+Time 18:58. Exam 3. Combinatorics. Says 1 is a, but changes to c. Says 3 is a, with good explanation. Explains 2 matches b. Needs much help for the last and skips before reaching a conclusion. Graph algorithms. Says DFS uses a heap, changes to queue. Should be stack. Explains DFS very confusingly and changes often. Thinks a queue is a stack. Does not know what a stack is. Gives explanation of DFS without a data structure. Grade 00.
+
+ 
+
+18:00 XTB111 Thoning, Freja Pedrero
+
+Time 19:26. Exam 1. Starts 19:29. Alg. analysis. Confuses i with B[i] etc. Does not say anything substantial. Skips. Combinatorics. Says full house is matched to b, but no explanation. Knows binomial coefficients. Explains 3 matches a. Skips. Sorting. Explains some version of insertion sort. In final merge, says we first compare 5 and 1. Then 5 with 6. Then 3 with 1. Arrives at the correct comparisons after much speculation. Says merge takes O(n^2) time. Grade 00. 
+
+ 
+
+18:00 TZD124 Varga, Vincent
+
+Time 19:57. Exam 2. Starts 19:59. Merge sort. Says we make a kind of three-way merge. Says everything is merged at once. Skips. Relations. Says M1 is reflexive closure. Says M3 is by transitive closure. With help, says you also need to apply inverse. Says it does not work to do it in the other order. Logic. Writes truth tables and concludes correctly. Combinatorics. Matches everything. Grade 7.
+
+ 

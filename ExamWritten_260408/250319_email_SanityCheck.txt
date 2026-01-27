@@ -1,0 +1,142 @@
+Amir Yehudayoff <amir.yehudayoff@gmail.com>,
+Srikanth Srinivasan <srinivasan.srikanth@gmail.com>,
+Florestan Brunck <flbr@di.ku.dk>,
+Theo Fabris <thfa@di.ku.dk>
+
+Sanity check for final version of IDMA exam
+
+Hi again,
+
+With apologies for the short notice, I would be supergrateful if you could help with a final sanity check of the complete IDMA exam (in particular, what what I claim to be correct answers seems to be correct).
+
+The exam PDF file should already have been submitted today Wednesday, so I will have to do it at the very latest early tomorrow Thursday morning. I am sorry for being behind on this, but my work situation is quite challenging right now.
+
+Let me first say that the tentative threshold of 220 points for pass (which is probably too harsh) is based on the following rough estimate of what an A-student and an E-student could/should score:
+
+PROBLEM       MAX    A-STUDENT    E-STUDENT
+1        50     40          20
+2        50     40          20
+3        60     50          30    
+4        90     60          30
+5        60     40          30
+6        80     20           0
+7        90     60          30
+8        90     60          30
+9       120     90          30
+SUM       690    370         220
+
+This will probably need to be adjusted downwards once we see the submitted exam solutions --- it can often be hard to assess in advance how hard or easy a problem is.
+
+Below follow a summary of the problems what what (I believe) are the solutions. Florestan, Theo: At the risk of stating the obvious, please make sure during the last week of exercise classes to not leak any information about what type of problems that exam focuses on this year.
+
+
+1. NUMBER REPRESENTATION
+
+These problems are very straightforward, but we haven't had any such exam problems previously, so it is not clear if the students have practised this. I have done exactly this type of problems in class and have alerted the students to that these are likely exam problems
+
+2. EUCLIDEAN ALGORITHM
+
+Determine d = gcd(M, N) and write d as a linear combination of M and N. The problem statement is intentionally generic, so that students will have to understand themselves that the Euclidean algorithm is what they should use for this.
+
+(a) M = 38, N = 14
+
+Computations:
+38 = 2 * 14 + 10
+14 = 1 * 10 +  4
+10 = 2 *  4 +  2
+4  = 2 *  2 +  0
+gcd (38, 14) = 2
+These numbers are small enough that the students should be able to find the right answer by brute force, for which we can give partial credit
+
+(b) M = 117, N = 69
+
+Computations:
+117 = 1 * 69 + 48
+ 69 = 1 * 48 + 21
+ 48 = 2 * 21 + 6
+ 21 = 3 *  6 + 3
+  6 = 2 *  3 + 0
+gcd(117, 69) = 3
+These numbers are large enough that students probably need to use the algorithm.
+
+
+3. SIMPLE INDUCTION PROBLEMS
+
+Both of these should be very straightforward, and the students have seen exactly this type of problems.
+
+
+4. RELATIONS
+
+Let A = {1, 2, 3, 4} and consider the following binary relations on A:
+
+R = { (2,1), (3,1), (3,2), (4,1), (4,2), (4,3) }
+S = { (1,1), (2,2), (3,3), (4,4) }
+T = { (1,1), (1, 4), (2,2), (2,3), (3,2), (3,3), (4,1), (4,4) }
+
+(a) For each relation, determine whether it is:
+- reflexive,
+- symmetric,
+- antisymmetric,
+- transitive.
+
+R: Antisymmetric, transitive (greater-than).
+S: Everything (identity).
+T: Reflexive, symmetric, transitive.
+
+(b) Which of the relations, if any, are equivalence relations or partial orders? Justify your answers.
+
+R: None.
+S: Equivalence relation and partial order (for vacuous reasons).
+T: Equivalence relation.
+
+
+5. LOGIC
+
+Ask whether formulas are tautologies, or can be patched by adding a single connective to make them tautologies.
+
+(a) This formula is a tautology.
+
+(b) This formula can be made into a tautology by negating q on either side of the equivalence.
+
+
+6. TRICKY INDUCTION PROOF
+
+Prove that the Fibonacci numbers F_{n+1} and F_n are relatively prime, and that for n >= 2 the Euclidean algorithm for F_{n+1} and F_n makes n-1 recursive calls to decide this.
+
+F_{n+1} divided by F_n leaves remainder F_{n-1}, and if the students realize this the proof should be very straightforward. But this might be hard to see.
+
+
+7. COMBINATORICS
+
+Selecting ordered and unordered sets.
+
+(a) 3! * 3! * 2 ways of lining up for the photo:
+- Order women in 3! ways.
+- Order men in 3! ways.
+- Decide whether leftmost person is male or female.
+
+(b) 1 * 2 * 3 ways to select the committee:
+- Susanna has to be a member as the only representative from Lund University.
+- Exactly one of Nutan and Paloma from ITU due to gender balance.
+- Select whom of Amir, Jakob, and Srikanth to exclude to get two male members.
+
+
+8. TRAVEL DIRECTIONS
+
+This is just a shortest path problem.
+Students should model this as an undirected graph and then run Dijkstra's algorithm.
+The best route is (I think):
+Kastrup -- Kongens Nytorv -- Københavns H -- Nørreport -- Universitetsparken.
+
+
+9. OUTPUT FROM DIFFERENT GRAPH ALGORITHMS
+
+Sequence 1: Dijkstra shortest path starting in a.
+Sequence 2: BFS starting in a.
+Sequence 3: Spoiler sequence that cannot be produced by any of the algorithms.
+Sequence 4: DFS starting in a.
+
+
+Please do let me know if you find any typos, stupid mistakes, or whatever!
+
+Jakob

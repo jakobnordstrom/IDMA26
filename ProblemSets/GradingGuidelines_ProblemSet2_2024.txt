@@ -1,0 +1,85 @@
+GRADING GUIDELINES FOR IDMA 2024 PROBLEM SET 2
+
+*** This document lives at https://docs.google.com/document/d/1a-SdszMHLkmi4Gg0g-EgViVVgpkdSyA3k_rMvNN8mJM/edit ***
+*** Current version copied March 25, 2024 ***
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well.
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1
+
+PROBLEM 1a (30 p)
+Wrong explanations or somewhat lacking in detail -10 p
+Only an illustration or similar; completely missing explanations -25 p
+Solving the problem, but for a completely different input 0 p
+Note that the algorithm execution does not have to be explained in excruciating detail. If the solution explains the first iterations clearly and in detail, and why the rest of the iterations will be very similar, then this is enough.
+
+PROBLEM 1b (30 p)
+Correct recursive split down to subcases 10 p; correct merge steps 20 p
+For each item above, give half of the score for a half-correct solution except as noted below.
+Only an illustration or similar; completely missing explanations -25 p
+Merging lists from different recursive calls (which also means that explanations are wrong) -20 p
+Solving the problem but for a completely different input 0 p
+Only top split-merge step; nothing else 5 p
+Only figures without any text 5 p
+Claim that split step is arbitrary; merging from singleton lists; no pseudo-code 5 p [We really want students to *explain* what they are doing]
+For a full score of 20 p for the merge part, we want to see a convincing solution for at least one of the subtrees plus the full final merge step, or something else that convinces beyond all doubt that the student could fill in these details. [That is, a few very simple merge cases for lists of size 1 or 2 plus a claim that "the rest is the same" or similar is not enough, and should be assessed as half-correct.]
+
+PROBLEM 1c (20 p)
+Students have to argue why the running times are the way they are for inputs that satisfy the specific conditions in the problem statement.
+Specific input for this problem not considered; only general case -15 p
+Correct answer, but incomplete justification: -5 p
+
+PROBLEM 1d (20 p)
+Students have to argue why the running times are the way they are for inputs that satisfy the specific conditions in the problem statement.
+Specific input for this problem not considered; only general case: -15 p
+Correct answer, but incomplete justification: -5 p
+
+
+PROBLEM 2
+
+PROBLEM 2a (20 p)
+Claims that pigeonhole principle should be used (implicitly or explicitly), but does not get much further: -15 p
+Clear use of pigeonhole principle, but the actual details of the argument are wrong: -10 p
+Fairly clear use of pigeonhole principle, but lacking detailed explanation: -5 p
+Vague statements without any clear relation to the problem at hand: 0 p
+
+PROBLEM 2b (40 p)
+Claims that invariant argument should be used, but gets no further: -30 p
+Some kind of argument (e.g., from examples) that outcome is always the same, but no formal proof: -20 p
+Almost correct argument with invariant (or otherwise), but details wrong: -10 p
+Vague statements without any clear relation to the problem at hand: 0 p
+Fully formal, correct proof, but not set up as induction proof with base case and induction step: No deduction (what counts is the mathematical content, not the magic words)
+
+
+PROBLEM 3
+Issues for all subproblems:
+- No mention at all of base case -10 p
+- Base case clearly mentioned, but never verified (not even pointed out that it is obvious) -5 p
+- Unclear where or how induction hypothesis is used -10 p
+- Missing details, but broad outlines OK (clear base case, IH use explicit) -5 p
+- Doing several base cases (unnecessarily) but the whole induction proof as such is OK --- no deduction
+- Base case correct, but nothing else 5 p
+- Base case correct; induction hypothesis stated; but from there onwards no progress is made 10 p
+
+PROBLEM 3a (20 p)
+Proof completely without induction, but fully correct: No deduction
+Base case s=0 missing (starting from s=1) -5 p
+Attempting induction over k: 0 p, since this is completely wrong
+
+PROBLEM 3b (30 p)
+Claim that sequence is "obviously" non-decreasing --- no deduction (but a brief explanation would have been nice)
+
+PROBLEM 3c (30 p)
+Missing that two base cases are needed, or other problems with the base cases: -10 p
+Induction hypothesis does not have two cases (and also strong induction is not used): -10 p
+Completely missing induction hypothesis: -20 p
+Not clear where induction hypothesis is used: -10 p
+Clearly correct attempt at induction step, but computations are wrong or do not go through: -10 p
+Correct use of Theorem 1 on page 115 in KBR textbook (with clear reference that this is what is being used): No deduction

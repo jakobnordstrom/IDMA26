@@ -1,0 +1,38 @@
+ABSALON MESSAGE
+
+Information about the IDMA oral re-exam
+
+Hi all,
+
+Here comes some information for those of you who are taking the IDMA oral re-exam.
+
+The exam date is Monday June 24. You need to block the whole day, since we cannot say now at which exact time during the day your exam will be. In fact, there is a sufficient number of students registered that we might also need to run some exams on Tuesday June 25.
+
+We will send out e-mail messages shortly to ask all registered students to confirm whether they are actually planning to attend the exam. Once we have more information about this, we will post a more detailed exam schedule.
+
+The oral exam will most likely be held in office 3-1-09 in the Algorithms and Complexity Section at Universitetsparken 1. Enter through the main door (with the statues in front), take a right after the stairs from the main entrance, and then another right turn up the stairs to the second floor of BARC and the AC Section. You will be able to wait outside the entrance door to our corridor, and we will invite you in when it is your turn. Please make sure to arrive for your exam 5-10 minutes in advance, so that we can start on time.
+
+The set-up for the oral exam is that you are expected to answer all questions "online" without any separate time for preparations ("mundtlig prøve uden forberedelsestid"). The total time for the exam is 30 minutes, out of which roughly 20 minutes will constitute the actual exam for you, and the remaining 10 minutes is me and my co-examiner Mikkel Abrahamsen deliberating and then announcing the grade to you. You can take the exam in either English or Danish.
+
+So what is a good way to prepare for the exam? I think that strategies that were good for the written exam will also be good for the oral one. Studying the course material carefully is, of course, a no-brainer. In particular, you have been provided with many problem sets with worked-out solutions, and they are especially relevant in that they give some kind of indication as to what material is deemed to be especially important (although you should note that there is also important material that was *not* covered in the problem sets or on the regular exam for any given year, and that it is thus *not* safe to just skip material missing any given year).
+
+The re-exam is intended to be an "abbreviated, oral version of the written exam", though, of course, the difference between 4 hours and 20-30 minutes, and between written and oral examination, will change things quite a lot. We are planning to have problems of similar flavour as in the written exam, but to make them significantly easier to answer (sometimes my having multiple-choice alternatives) in view of the condensed time frame.
+
+At the outset of the exam, we will choose a random number by using https://www.random.org/. That random number will determine in which order the questions are presented to each student (except that for students who have previously taken the oral exam we reserve the right to adjust the randomness if needed). In general, you should not expected to get through all of the questions during the oral exam. At the end of the exam, you will be assessed on how many of the questions you answered and how well you answered them. If you feel that a question is too hard, then you can ask to skip forward to the next question, but the fact that you did not answer the question will of course be considered when assigning the grade (so that students cannot just flip through all questions and answer the ones that they like best).
+
+Just as during a written exam, whether you solve a problem or not is not a binary yes-or-no question. In contrast to the written exam, we now have the possibility for dialogue, and we will use this to take into consideration how well you reason, even if you do not manage to solve a problem completely.
+
+Finally, I have said this before, but I will say it again: please do make sure to invest significant time to learn the course material properly. This is not just a question of passing this particular course. The material covered in this course is truly foundational, and you will need it over and over again, in one form or another, in later courses. Every hour of high-quality study time spent on this course might easily save you two or three hours on later courses. So, be smart, and be kind to yourself, and make sure to study hard for the IDMA re-exam.
+
+Good luck on the exam!
+
+Jakob
+
+
+**********
+
+Hej,
+
+There is a message on Absalon now answering your questions.
+
+Jakob

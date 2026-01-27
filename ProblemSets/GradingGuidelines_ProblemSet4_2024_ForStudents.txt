@@ -1,0 +1,76 @@
+GRADING GUIDELINES FOR IDMA 2024 PROBLEM SET 4
+
+*** This document lives at https://docs.google.com/document/d/1KEkM09SqkP8M4Uz6hGTEmlA8lAEcVpLdgBDeKUt_pD4/edit ***
+*** Current version copied April 8, 2024 ***
+
+
+PROBLEM 1: COMBINATORICS (100 p)
+
+PROBLEM 1a (40 p)
+Correct calculations but no explanation (why do we get binomial coefficients?): 10 p
+Realizes #turns is what matters; but calculations messed up: 20 p
+Answering with a count of the number of ways, not a probability: 20 p
+Dividing by the total number of outcomes, but no explanation that this is what is happening: -10 p
+Correct formula with explanation of derivation, but no answer as to which end vertex is most likely: -20 p
+Only correct answer, nothing else: 0 p  
+
+PROBLEM 1b (60 p)
+Correct calculations but no explanation (why do we get binomial coefficients?): 10 p
+Only gives a recursion like f[L][j]=f[L-1][j]+f[L-1][j-1], but no final answer: 10 p
+Explanation that the walk is most likely to end up in the middle + formula with binomial coefficients, but no more details in solution: 20 p
+Showing calculations visually via Pascal’s triangle, but not explaining what these calculations are and/or why they make sense: 20 p
+Correct calculations, but explanations are sketchy and/or hard to follow: -20 p
+Minor calculation errors, e.g., mixing up layers L and L-1: -10 p
+Dividing by the total number of outcomes, but no explanation that this is what is happening: -15 p
+Not dividing by the total number of outcomes: -20 p
+Only correct answer, nothing else: 0 p
+Only doing problem 1b, but then using this solution to read off and motivate fully correct solution to problem 1a: Full score on both subproblems.
+Parts of the general reasoning for problem 1b presented already in the solution to problem 1a and then not repeated again: Graded as if the information was present for both subproblems.    
+
+
+PROBLEM 2: GRAPH THEORY [MINIMUM SPANNING TREES] (80 p)
+
+PROBLEM 2a (50 p)
+[Correct heaps 20 p; correct algorithm with relaxations 20 p, correct MST 10 p]
+Completely missing heap and/or completely misunderstood heap representation: -20 p
+Heap only updated once all relaxations have been made for a dequeued vertex (and so becomes incorrect): -10 p
+Partially missing details for heap: -5 p
+Derivations for heap due to wrong initial order (not alphabetic): -1 p [i.e., very minor issue]
+No details on "relax" operations: -20 p
+Partially missing or wrong details for relax operations (e.g., failing to explain/point out which edges lead to updates or not): -10 p
+Partially missing details for minimum spanning tree: -5 p
+Missing most or all details for MST: -10 p
+Refers to the queue as a stack: -10 p
+Deviations due to non-lexicographic order of neighbours: -1 p [i.e., very minor issue]
+
+PROBLEM 2b (30 p)
+[Pointing out that algorithm is wrong 15 p; pointing out that time complexity is wrong 15 p]
+Clear counter-example to algorithm: 15 p
+Fairly convincing argument that the algorithm does not seem correct (e.g., it does not add safe edges): 10 p
+Claim that algorithm is incorrect with some kind of motivation headed in right direction: 5 p
+Clear argument why time complexity is wrong (like: not constant time per edge): 15 p
+Fairly convincing argument why time complexity is wrong: 10 p
+Claim that time complexity is wrong with some kind of motivation headed in right direction: 5 p
+Only correct answers, nothing else: 0 p
+
+
+PROBLEM 3: GRAPH THEORY [GRAPH TRAVERSAL]
+
+PROBLEM 3a (30 p)
+Minor mistakes during graph traversal (such as missing discovery and finishing times): -10 p
+Overall correct approach but some mistakes: -15 p
+Correct spanning tree but almost all details missing: -20 p
+Using other algorithm (e.g., with stack) and getting different answer because of this): -10 p
+Not lexicographic order of neighbours: -1 p [i.e., very minor issue]
+
+PROBLEM 3b (30 p)
+Minor mistakes during graph traversal: -10 p
+Wrong terminology, e.g. talking about discovery time & finish time for BFS to refer to distance: -10 p
+Overall correct approach but some mistakes: -15 p
+Correct spanning tree but almost all details missing: -20 p
+Not lexicographic order of neighbours: -1 p [i.e., very minor issue]
+
+PROBLEM 3c (20 p)
+For a full score we want to see a clear answer that BFS and Dijkstra is the same in this case but that there is no relation to DFS.
+Realizing and motivating that BFS and Dijkstra are the same: 10 p
+Realizing and motivating that there is no relation betwen DFS and Dijkstra: 10 p

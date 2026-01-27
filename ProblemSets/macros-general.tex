@@ -1,0 +1,823 @@
+%%%%
+%%%% THIS FILE IS INTENDED TO BE READ-ONLY --- PLEASE DO NOT EDIT.
+%%%% PLEASE CONTACT JAKOB NORDSTRÖM AT jakobn@kth.se REGARDING ANY ISSUES.
+%%%%
+
+% GENERAL MACROS TO USE IN LaTeX-FILES
+%======================================
+%
+% AUTHOR
+%   Jakob Nordström <jakobn@kth.se>
+%   Some improvements added by Marc Vinyals <vinyals@kth.se>
+%
+% VERSION
+%   Last updated June 7, 2019
+%    
+% KNOWN ISSUES:
+%   References with page numbers such as \refsecP, \refthP, etc will not
+%   work with the Elsevier and SIAM document classes. No work-arounds
+%   have been added, so compilation will fail if these macros are used
+%   for Elsevier or SIAM articles.
+
+%
+% MACRO NAMING CONVENTION FOR MATHEMATICAL MACROS WITH DELIMITERS 
+%-----------------------------------------------------------------
+%
+% For mathematical macros with delimiters there are usually
+% three different flavours corresponding to different sizes of 
+% the delimiters as follows:
+%
+%    \newcommand{\mycommand}[1]{<command> ( {#1} )}
+%    \newcommand{\Mycommand}[1]{<command> \bigl( {#1} \bigr)}
+%    \newcommand{\MYCOMMAND}[1]{<command> \left( {#1} \right)}
+%
+
+%
+% REQUIRED PACKAGES
+%-------------------
+%
+
+\usepackage{ifthen}
+\usepackage{xspace}
+% varioref does not seem to mix well with the Elsevier document class
+\ifthenelse
+{\boolean{detectedElsevier} \or \boolean{detectedSIAM} 
+  \or \boolean{detectedLIPIcs}}
+{}
+{\usepackage{varioref}}
+
+
+%
+% M I S C E L L A N E O U S 
+%---------------------------
+%
+
+\DeclareMathAlphabet{\mathsfsl}{OT1}{cmss}{m}{sl}
+
+
+%
+% G E N E R A L   F O R M A T T I N G   R U L E S 
+%-------------------------------------------------
+%
+% To achieve some kind of consistency in the notation
+%
+
+% Format of functions to integers or real numbers
+\newcommand{\formatfunctiontonumbers}[1]{\mathrm{#1}}
+
+% Format of functions to sets
+\newcommand{\formatfunctiontoset}[1]{\mathit{#1}}
+
+% Dots in x_1 \lor ... \lor x_n and the like
+% (make a generic macro that can be changed according to publisher
+% requirements)  
+\newcommand{\formuladots}{\cdots}
+
+
+%
+% B I G - O H   N O T A T I O N 
+%-------------------------------
+%
+
+\newcommand{\BIGOH}[1]{\mathrm{O} \left( #1 \right)}
+\newcommand{\Bigoh}[1]{\mathrm{O} \bigl( #1 \bigr)}
+\newcommand{\bigoh}[1]{\mathrm{O} ( #1 )}
+\newcommand{\LITTLEOH}[1]{\mathrm{o} \left( #1 \right)}
+\newcommand{\Littleoh}[1]{\mathrm{o} \bigl( #1 \bigr)}
+\newcommand{\littleoh}[1]{\mathrm{o} ( #1 )}
+\newcommand{\BIGTHETA}[1]{\Theta \left( #1 \right)}
+\newcommand{\Bigtheta}[1]{\Theta \bigl( #1 \bigr)}
+\newcommand{\bigtheta}[1]{\Theta ( #1 )}
+\newcommand{\BIGOMEGA}[1]{\Omega \left( #1 \right)}
+\newcommand{\Bigomega}[1]{\Omega \bigl( #1 \bigr)}
+\newcommand{\bigomega}[1]{\Omega ( #1 )}
+\newcommand{\LITTLEOMEGA}[1]{\omega \left( #1 \right)}
+\newcommand{\Littleomega}[1]{\omega \bigl( #1 \bigr)}
+\newcommand{\littleomega}[1]{\omega ( #1 )}
+\newcommand{\POLYBOUND}[1]{\mathrm{poly} \left( #1 \right)}
+\newcommand{\Polybound}[1]{\mathrm{poly} \bigl( #1 \bigr)}
+\newcommand{\polybound}[1]{\mathrm{poly} ( #1 )}
+\newcommand{\POLYLOGBOUND}[1]{\mathrm{polylog} \left( #1 \right)}
+\newcommand{\Polylogbound}[1]{\mathrm{polylog} \bigl( #1 \bigr)}
+\newcommand{\polylogbound}[1]{\mathrm{polylog} ( #1 )}
+            
+\DeclareMathOperator{\polylog}{polylog}
+
+
+%
+% G E N E R A L  M A T H E M A T I C A L   N O T A T I O N
+%----------------------------------------------------------
+%
+
+% N, Z, Q, R as symbols for classes of numbers
+\ifthenelse{\boolean{detectedToC}}{}
+{
+  \newcommand{\Q}         {\mathbb{Q}}
+  \newcommand{\R}         {\mathbb{R}}
+  \newcommand{\Rplus}     {\mathbb{R}^{+}}
+  \newcommand{\N}         {\mathbb{N}}
+  \newcommand{\Nplus}     {\mathbb{N}^{+}}
+  \newcommand{\Nzero}     {\mathbb{N}_{0}}
+  \newcommand{\Z}         {\mathbb{Z}}
+}
+
+% Sigma sum sign with indices to the right, not below and above
+\newcommand{\sumnodisplay}{{\textstyle \sum}}
+
+% Absolute value and norm
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\bigl\lvert#1\bigr\rvert}
+\providecommand{\ABS}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\Norm}[1]{\bigl\lVert#1\bigr\rVert}
+\providecommand{\NORM}[1]{\left\lVert#1\right\rVert}
+
+% Exists unique
+\newcommand{\existsunique}{\exists!}
+
+% Rounding
+\newcommand{\ceiling}[1]{\lceil #1 \rceil}
+\newcommand{\Ceiling}[1]{\bigl \lceil #1 \bigr \rceil}
+\newcommand{\CEILING}[1]{\left \lceil #1 \right \rceil}
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\Floor}[1]{\bigl \lfloor #1 \bigr \rfloor}
+\newcommand{\FLOOR}[1]{\left \lfloor #1 \right \rfloor}
+
+\newcommand{\intpart}[1]{\lceil #1 \rfloor}
+\newcommand{\Intpart}[1]{\bigl \lceil #1 \bigr \rfloor}
+\newcommand{\INTPART}[1]{\left \lceil #1 \right \rfloor}
+
+% Max and min
+% Don't use \maxof and \minof to avoid conflict with calc package
+\newcommand{\MAXOFEXPR}[2][]{\max_{#1} \left\{ #2 \right\}}
+\newcommand{\MINOFEXPR}[2][]{\min_{#1} \left\{ #2 \right\}}
+\newcommand{\Maxofexpr}[2][]{\max_{#1} \bigl\{ #2 \bigr\}}
+\newcommand{\Minofexpr}[2][]{\min_{#1} \bigl\{ #2 \bigr\}}
+\newcommand{\maxofexpr}[2][]{\max_{#1} \{ #2 \}}
+\newcommand{\minofexpr}[2][]{\min_{#1} \{ #2 \}}
+
+\newcommand{\maxofset}[3][:]{\max \{ #2 #1 #3 \}}
+\newcommand{\minofset}[3][:]{\min \{ #2 #1 #3 \}}
+ 
+\newcommand{\MAXOFSET}[3][:]%
+     {\ifthenelse{\equal{#1}{;}}%
+     {\MAXOFEXPR{ #2 \,;\, #3 }}
+     {\ifthenelse{\equal{#1}{:}}%
+     {\MAXOFEXPR{ #2 \,:\, #3 }}
+     {\max \twincommandJN{\left\{}{#2}{\left#1}{\right}{\,#3}{\right\}}}}}
+\newcommand{\MINOFSET}[3][:]%
+     {\ifthenelse{\equal{#1}{;}}%
+     {\MINOFEXPR{ #2 \,;\, #3 }}
+     {\ifthenelse{\equal{#1}{:}}%
+     {\MINOFEXPR{ #2 \,:\, #3 }}
+     {\min \twincommandJN{\left\{}{#2}{\left#1}{\right}{\,#3}{\right\}}}}}
+
+\newcommand{\Maxofset}[3][:]%
+     {\ifthenelse{\equal{#1}{;}}%
+     {\Maxofexpr{ #2 \,;\, #3 }}
+     {\ifthenelse{\equal{#1}{:}}%
+     {\Maxofexpr{ #2 \,:\, #3 }}
+     {\max \twincommandJN{\bigl\{}{#2}{\bigl#1}{\bigr}{\,#3}{\bigr\}}}}}
+\newcommand{\Minofset}[3][:]%
+     {\ifthenelse{\equal{#1}{;}}%
+     {\Minofexpr{ #2 \,;\, #3 }}
+     {\ifthenelse{\equal{#1}{:}}%
+     {\Minofexpr{ #2 \,:\, #3 }}
+     {\min \twincommandJN{\bigl\{}{#2}{\bigl#1}{\bigr}{\,#3}{\bigr\}}}}}
+
+
+%
+% A L G E B R A
+%---------------
+%
+
+% Some linear algebra
+\newcommand{\transpose}[1]{\ensuremath{#1^{\top}}}
+\newcommand{\innerproduct}[2]{\langle #1, #2 \rangle}
+\newcommand{\Innerproduct}[2]{\bigl\langle #1, #2 \bigr\rangle}
+\newcommand{\INNERPRODUCT}[2]{\left\langle #1, #2 \right\rangle}
+
+% Generic field
+\newcommand{\fieldstd}{\mathbb{F}}
+\newcommand{\fieldf}{\mathbb{F}}
+\newcommand{\F}{\mathbb{F}}
+
+% Finite fields
+\newcommand{\GF}[1]{\mathrm{GF} ( #1 )}
+\newcommand{\gf}[1]{\mathrm{GF} ( #1 )}
+\newcommand{\GFmul}[1]{\mathrm{GF} ( #1 )^{*}}
+\newcommand{\gfmul}[1]{\mathrm{GF} ( #1 )^{*}}
+
+
+%
+% P R O B A B I L I T Y   T H E O R Y 
+%-------------------------------------
+
+% AMS-TeX defines an operator name \Pr
+\DeclareMathOperator{\Expop}{E}
+\DeclareMathOperator{\Varianceop}{Var}
+
+% Probability
+\newcommand{\PROB}[2][]{\Pr_{#1} \left[ #2 \right]}
+\newcommand{\Prob}[2][]{\Pr_{#1} \bigl[ #2 \bigr]}
+\ifthenelse{\boolean{detectedLMCS}}
+{\renewcommand{\prob}[2][]{\Pr_{#1} [ #2 ]}}
+{\newcommand{\prob}[2][]{\Pr_{#1} [ #2 ]}}
+
+% Expectation
+\newcommand{\EXPECTATION}[2][]{\Expop_{#1} \left[ #2 \right]}
+\newcommand{\Expectation}[2][]{\Expop_{#1} \bigl[ #2 \bigr]}
+\newcommand{\expectation}[2][]{\Expop_{#1} [ #2 ]}
+\newcommand{\VARIANCE}[1]{\Varianceop \left( #1 \right)}
+\newcommand{\Variance}[1]{\Varianceop \bigl( #1 \bigr)}
+\newcommand{\variance}[1]{\Varianceop ( #1 )}
+
+% 
+% INTERLUDE: MATCHING MIDDLE SEPARATORS (FROM THE UK TeX FAQ)
+% 
+% 
+% One of the few glaring omissions from TeX's mathematical typesetting
+% capabilities is a means of setting separators in the middle of
+% mathematical expressions. In all sorts of mathematical enterprises one
+% may find oneself needing a \middle command, to be used in expressions
+% like \left\{ x \in \mathbb{N} \middle| x \mbox{ even} \right\} to
+% specify the set of even natural numbers. The e-TeX system defines just
+% such a command, but users of Knuth's original need some support.
+% Donald Arseneau's braket package provides commands for set
+% specifications (as above) and for Dirac brackets (and bras and kets).
+% The package uses the e-TeX built-in command if it finds itself running
+% under e-TeX.
+% 
+% See ftp://cam.ctan.org/tex-archive/macros/latex/contrib/misc/braket.sty .
+% 
+% Or one can do as below.
+%
+
+\newcommand{\twincommandJN}[6]%
+    {#1#2#3\vphantom{#2#5}\mspace{-2.05mu}#4.#5#6}
+
+% Perhaps this is superfluous---in text mode there is no need for measuring
+% with \vphantom, I think, since \bigl[ and \bigr] are what they are 
+% independent of what is inside (are they not?).
+%
+% The length -2.25mu probably should be set instead by doing sth like
+%    
+%    \newlength{\lengthJN}
+%    \settowidth{\lengthJN}{$\left.\right.$}
+%    \setlength{\lengthJN}{0.5\lengthJN}
+%
+% and then using \mspace{-\lengthJN}, but the difference appears to be
+% very small so I have not implemented this.
+
+
+% CONDITIONAL EXPECTATION
+\newcommand{\condexp}[2]{\Expop{#1  \mid  #2}}
+\newcommand{\CondExp}[2]%
+    {\Expop\twincommandJN{\bigl[}{#1}{\bigl|}{\bigr}{\,#2}{\bigr]}}
+\newcommand{\CONDEXP}[2]%
+     {\Expop\twincommandJN{\left[}{#1}{\left|}{\right}{\,#2}{\right]}}
+
+% CONDITIONAL PROBABILITY
+\newcommand{\condprob}[3][]{\prob[#1]{#2  \mid  #3}}
+\newcommand{\Condprob}[3][]%
+    {\Pr_{#1}\twincommandJN{\bigl[}{#2}{\bigl|}{\bigr}{\,#3}{\bigr]}}
+\newcommand{\CONDPROB}[3][]%
+    {\Pr_{#1}\twincommandJN{\left[}{#2}{\left|}{\right}{\,#3}{\right]}}
+
+%
+% Example code:
+%    
+%    \begin{displaymath}
+%     \CONDEXP{\sum_{i=1}^kX_i}{Z}\quad\mbox{and}\quad%
+%     \CONDPROB{B\land C}{\bigwedge_{i\in S}A_i}
+%    \end{displaymath}
+%    
+%    $\CondExp{\sum_{i=1}^k X_i}{Z}$  
+%    and
+%    $\CondProb{B\land C}{\bigwedge_{i\in S}A_i}$
+%    
+
+
+%
+% F U N C T I O N S
+%-------------------
+%
+
+% DESCRIPTION OF FUNCTION
+\newcommand{\funcdescr}[3]{\ensuremath{ #1 : #2 \to #3}}
+
+% DOMAIN
+\newcommand{\domainof}[1]{\ensuremath{\mathrm{dom} ( #1 )}}
+\newcommand{\Domainof}[1]{\ensuremath{\mathrm{dom}\bigl( #1 \bigr)}}
+
+% INVERSE IMAGE
+\newcommand{\invimageof}[2]{{\ensuremath{{#1}^{-1} \left( #2 \right)}}}
+
+%
+% G R A P H S
+%-------------
+%
+
+\newcommand{\edges}[1]{E( #1 )}
+\newcommand{\Edges}[1]{E\bigl( #1 \bigr)}
+\newcommand{\vertices}[1]{V( #1 )}
+\newcommand{\Vertices}[1]{V\bigl( #1 \bigr)}
+
+\newcommand{\vdegree}[2][]{\mathrm{deg}_{#1}(#2)}
+\newcommand{\Vdegree}[2][]{\mathrm{deg}_{#1}\bigl(#2\bigr)}
+\newcommand{\vneighbour}[2][]{N_{#1}({#2})}
+\newcommand{\Vneighbour}[2][]{N_{#1}\bigl({#2}\bigr)}
+
+% Boundary
+\newcommand{\boundary}[1]{\ensuremath{\partial #1}}
+
+\newcommand{\pathstd}{\ensuremath{P}}
+\newcommand{\pathalt}{\ensuremath{Q}}
+\newcommand{\pathfromto}[3]{#1 : #2 \rightsquigarrow #3}
+
+
+%
+% S E T S   A N D   T U P L E S
+%-------------------------------
+%
+
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\Set}[1]{\bigl\{ #1 \bigr\}}
+\newcommand{\SET}[1]{\left\{ #1 \right\}}
+
+\newcommand{\setdescr}[3][\mid]{\set{ #2 #1 #3 }}
+\newcommand{\Setdescr}[3][|]%
+     {\ifthenelse{\equal{#1}{;}}%
+     {\Set{ #2 \,;\, #3 }}
+     {\ifthenelse{\equal{#1}{:}}%
+     {\Set{ #2 \,:\, #3 }}
+     {\twincommandJN{\bigl\{}{#2\,}{\bigl#1}{\bigr}{\,#3}{\bigr\}}}}}
+\newcommand{\SETDESCR}[3][|]%
+     {\twincommandJN{\left\{}{#2\,}{\left#1}{\right}{\,#3}{\right\}}}
+
+\newcommand{\setbrackets}[1]{[ #1 ]}
+\newcommand{\Setbrackets}[1]{\bigl[ #1 \bigr]}
+\newcommand{\SETBRACKETS}[1]{\left[ #1 \right]}
+
+\newcommand{\setdescrbrackets}[3][\mid]{{\setbrackets{ #2 #1 #3 }}}
+\newcommand{\Setdescrbrackets}[3][|]%
+     {\twincommandJN{\bigl[}{#2}{\bigl#1}{\bigr}{\,#3}{\bigr]}}
+\newcommand{\SETDESCRBRACKETS}[3][|]%
+     {\twincommandJN{\left[}{#2}{\left#1}{\right}{\,#3}{\right]}}
+
+\newcommand{\SETSIZE}[1]{\left\lvert#1\right\rvert}
+\newcommand{\Setsize}[1]{\bigl\lvert#1\bigr\rvert}
+\newcommand{\setsize}[1]{\lvert#1\rvert}
+
+% Set complement
+\newcommand{\setcompl}[1]{\overline{#1}}
+
+% Intersection and union
+\newcommand{\intersection}{\cap}
+\newcommand{\Intersection}{\bigcap}
+\newcommand{\Intersectionnodisplay}{\textstyle \bigcap}
+
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\Unionnodisplay}{\textstyle \bigcup}
+
+% Intersection and union with some space
+\newcommand{\unionSP}{\, \union \, }
+\newcommand{\intersectionSP}{\, \intersection \, }
+
+% Disjoint union 
+%
+% Can see no difference between below definition and \mathbin{\dot{\cup}}
+\newcommand{\disjointunion}{\overset{.}{\cup}}
+\newcommand{\disjointunionSP}{\disjointunion}
+\newcommand{\Disjointunion}{\overset{.}{\bigcup}}
+\newcommand{\disjunion}{\disjointunion}
+\newcommand{\Disjunion}{\Disjointunion}
+
+% First n positive integers
+\newcommand{\nset}[1]{[{#1}]}
+\newcommand{\Nset}[1]{\bigl[ {#1} \bigr]}
+
+
+%
+% L O G I C
+%-----------
+%
+
+%
+% Logic connectives
+%
+% Logic or is \lor. Logic and is \land. Logic not is \lnot.
+% They can be used in math mode only.
+\newcommand{\Lor}{\bigvee}
+\newcommand{\Land}{\bigwedge}
+
+% nodisplay = indices to the right, not below and above
+\newcommand{\Lornodisplay}{{\textstyle \bigvee}}
+\newcommand{\Landnodisplay}{{\textstyle \bigwedge}}
+
+\newcommand{\limpl}{\rightarrow}
+\newcommand{\lequiv}{\leftrightarrow}
+
+% Prefixed NOT (pfnot):  \lnot x
+% Overlined NOT (olnot): \overline{x}
+% \stdnot{lit} is the standard NOT notation for variables and literals
+
+\newcommand{\pfnot}[1]{\lnot #1}
+\newcommand{\olnot}[1]{\overline{#1}}
+\newcommand{\stdnot}[1]{\olnot{#1}}
+    
+% syntactic equivalence
+\newcommand{\synteq}{\doteq}
+
+% constants "true" and "false"
+\newcommand{\FALSE}{\mathit{FALSE}}
+\newcommand{\TRUE}{\mathit{TRUE}}
+
+\newcommand{\false}{\bot}
+\newcommand{\true}{\top}
+
+\newcommand{\falsenum}{0}
+\newcommand{\truenum}{1}
+
+%
+% Notation and terms for CNF/DNF formulas
+%
+% Standard notation for parameters in k-CNF formulas
+\newcommand{\nvar}{n}
+\newcommand{\nvars}{\nvar}
+\newcommand{\nclause}{m}
+\newcommand{\nclauses}{\nclause}
+\newcommand{\clwidth}{k}
+\newcommand{\density}{\Delta}
+
+% Formatting of k-CNF/k-DNF in running text
+\newcommand{\xdnf}[1]{\mbox{\ensuremath{#1}-DNF}\xspace}
+\newcommand{\kdnf}{\xdnf{\clwidth}}
+\newcommand{\xdnfform}[1]{\mbox{\ensuremath{#1}-DNF} formula\xspace}
+\newcommand{\kdnfform}{\xdnfform{\clwidth}}
+
+\newcommand{\xcnf}[1]{\mbox{\ensuremath{#1}-CNF}\xspace}
+\newcommand{\kcnf}{\xcnf{\clwidth}}
+\newcommand{\xcnfform}[1]{\mbox{\ensuremath{#1}-CNF} formula\xspace}
+\newcommand{\kcnfform}{\xcnfform{\clwidth}}
+\newcommand{\xclause}[1]{\mbox{\ensuremath{#1}-clause}\xspace}
+\newcommand{\kclause}{\xclause{\clwidth}}
+
+\newcommand{\Excnf}[1]{\mbox{\ensuremath{\mathrm{E}#1}-CNF}\xspace}
+\newcommand{\Ekcnf}{\Excnf{\clwidth}}
+\newcommand{\Excnfform}[1]{\mbox{\ensuremath{\mathrm{E}#1}-CNF} formula\xspace}
+\newcommand{\Ekcnfform}{\Excnfform{\clwidth}}
+
+\newcommand{\xterm}[1]{\mbox{\ensuremath{#1}-term}\xspace}
+\newcommand{\kterm}{\xterm{\clwidth}}
+\newcommand{\Exterm}[1]{\mbox{\ensuremath{\mathrm{E}#1}-term}\xspace}
+\newcommand{\Ekterm}{\Exterm{\clwidth}}
+
+%
+% Distributions for random k-CNF formulas
+%
+% fixed # random clauses chosen with replacement
+% \randkcnfnclwrepl{clause width}{#variables}{#clauses}
+%
+\newcommand{\randkcnfnclwrepl}[3][\clwidth]%
+        {\ensuremath{\mathcal{F}^{#2, #3}_{#1}}}
+\newcommand{\randkcnfnclwreplstd}% 
+        {\randkcnfnclwrepl{\clwidth}{\nvar}{\nclause}}
+
+
+%
+% C O M P L E X I T Y   T H E O R Y 
+%-----------------------------------
+%
+
+% NOTATION FOR LANGUAGES/PROBLEMS
+\newcommand{\problemlanguageformat}[1]{\textsc{#1}\xspace}
+\newcommand{\problemlanguageformatnospace}[1]{\textsc{#1}}
+\newcommand{\langstd}{\ensuremath{L}}
+\newcommand{\langcompl}[1]{\ensuremath{\overline{#1}}}
+
+\newcommand{\PROP}{\problemlanguageformat{PROP}}
+\newcommand{\TAUT}{\problemlanguageformat{TAUT}}
+\newcommand{\TAUTOLOGY}{\problemlanguageformat{Tautology}}
+\newcommand{\SAT}{\problemlanguageformat{Sat}}
+\newcommand{\CNFSAT}{\problemlanguageformat{CnfSat}}
+\newcommand{\SATISFIABILITY}{\problemlanguageformat{Satisfiability}}
+\newcommand{\THREESAT}{\text{$3$-}\problemlanguageformat{Sat}}
+\newcommand{\TWOSAT}{\text{$2$-}\problemlanguageformat{Sat}}
+\newcommand{\ONEINTHREESAT}{\text{$1$-}\problemlanguageformatnospace{In}%
+        \text{-$3$-}\problemlanguageformat{Sat}}
+\newcommand{\MAXSAT}{\problemlanguageformat{MaxSat}}
+\newcommand{\MAXTWOSAT}{\problemlanguageformatnospace{Max}%
+        \text{-$2$-}\problemlanguageformat{Sat}}
+\newcommand{\CIRCUITSAT}{\problemlanguageformat{CircuitSat}}
+\newcommand{\NAESAT}{\problemlanguageformat{NotAllEqualSat}}
+\newcommand{\DOMINATINGSET}{\problemlanguageformat{DominatingSet}}
+\newcommand{\VERTEXCOVER}{\problemlanguageformat{VertexCover}}
+\newcommand{\MAXCUT}{\problemlanguageformat{MaxCut}}
+\newcommand{\DOMATICNUMBER}{\problemlanguageformat{DomaticNumber}}
+\newcommand{\MONOCHROMTRI}{\problemlanguageformat{MonochromaticTriangle}}
+\newcommand{\CLIQUECOVER}{\problemlanguageformat{CliqueCover}}
+\newcommand{\INDSET}{\problemlanguageformat{IndependentSet}}
+\newcommand{\GCLIQUE}{\problemlanguageformat{Clique}}
+\newcommand{\GCOLOURING}{\problemlanguageformat{Colouring}}
+\newcommand{\SUBGRAPHISO}{\problemlanguageformat{Subgraph\-Isomorphism}}
+\newcommand{\GKERNEL}{\problemlanguageformat{Kernel}}
+\newcommand{\MINMAXMATCHING}{\problemlanguageformat{MinMaxMatching}}
+\newcommand{\CUBICSUBGRAPH}{\problemlanguageformat{CubicSubgraph}}
+
+% NOTATION FOR COMPLEXITY CLASSES
+\newcommand{\complclassformat}[1]%
+        {\textrm{\upshape{\textsf{#1}}}\xspace}
+\newcommand{\cocomplclass}[1]%
+        {\textrm{\upshape{\textsf{co#1}}}\xspace}
+
+\newcommand{\TIMEclass}[1]{\ensuremath{\complclassformat{TIME}\bigl(#1\bigr)}}
+\newcommand{\SPACEclass}[1]{\ensuremath{\complclassformat{SPACE}\bigl(#1\bigr)}}
+\newcommand{\DTIMEclass}[1]{\ensuremath{\complclassformat{DTIME}\bigl(#1\bigr)}}
+\newcommand{\DTIMEadviceclass}[2]%
+    {\ensuremath{\complclassformat{DTIME}\bigl(#1\bigr)/{#2}}}
+\newcommand{\Pclass}{\complclassformat{P}}
+\newcommand{\NP}{\complclassformat{NP}}
+\newcommand{\NPclass}{\NP}
+\newcommand{\coNP}{\cocomplclass{NP}}
+\newcommand{\coNPclass}{\coNP}
+\newcommand{\CoNP}{\coNP}
+\newcommand{\Ppoly}{\complclassformat{P/poly}}
+\newcommand{\Pslashpoly}{\Ppoly}
+\newcommand{\Pslashpolyclass}{\Pslashpoly}
+\newcommand{\PSPACE}{\complclassformat{PSPACE}}
+\newcommand{\PSPACEclass}{\PSPACE}
+\newcommand{\NPSPACE}{\complclassformat{NPSPACE}}
+\newcommand{\NPSPACEclass}{\NPSPACE}
+\newcommand{\pspace}{\PSPACE}
+\newcommand{\EXPTIME}{\complclassformat{EXPTIME}}
+\newcommand{\exptime}{\complclassformat{EXPTIME}}
+\newcommand{\EXPSPACE}{\complclassformat{EXPSPACE}}
+\newcommand{\expspace}{\complclassformat{EXPSPACE}}
+\newcommand{\EXP}{\complclassformat{EXP}}
+\newcommand{\NEXP}{\complclassformat{NEXP}}
+\newcommand{\coNEXP}{\cocomplclass{NEXP}}
+\newcommand{\Lclass}{\complclassformat{L}}
+\newcommand{\LOGSPACE}{\complclassformat{L}}
+\newcommand{\NL}{\complclassformat{NL}}
+\newcommand{\NLclass}{\NL}
+\newcommand{\coNL}{\cocomplclass{NL}}
+\newcommand{\NCclass}{\complclassformat{NC}}
+\newcommand{\DP}{\complclassformat{DP}}
+\newcommand{\DPclass}{\DP}
+\newcommand{\SIGMACLASS}[1]{\ensuremath{\Sigma^p_{#1}}}
+\newcommand{\Sigmaclass}[1]{\SIGMACLASS{#1}}
+\newcommand{\PICLASS}[1]{\ensuremath{\Pi^p_{#1}}}
+\newcommand{\Piclass}[1]{\PICLASS{#1}}
+\newcommand{\PH}{\complclassformat{PH}}
+\newcommand{\EXPEXP}{\complclassformat{EXPEXP}}
+\newcommand{\NEXPEXP}{\complclassformat{NEXPEXP}}
+\newcommand{\coNEXPEXP}{\cocomplclass{NEXPEXP}}        
+\newcommand{\BPP}{\complclassformat{BPP}}
+\newcommand{\ZPP}{\complclassformat{ZPP}}
+\newcommand{\RP}{\complclassformat{RP}}
+\newcommand{\coRP}{\cocomplclass{RP}}
+\newcommand{\MIParg}[1]{\ensuremath{\complclassformat{MIP}[#1]}}
+\newcommand{\MIP}{\complclassformat{MIP}}
+\newcommand{\IP}{\complclassformat{IP}}
+\newcommand{\PCPnot}{\complclassformat{PCP}}
+% PCP{completeness}{soundness}{randomness}{queries}{alphabet size}
+\newcommand{\PCPalph}[5]%
+    {\ensuremath{\complclassformat{PCP}_{{#1},{#2}}[{#3}, {#4}, {#5}]}}
+\newcommand{\PCP}[4]%
+    {\ensuremath{\complclassformat{PCP}_{{#1},{#2}}[{#3}, {#4}]}}
+
+\newcommand{\SAC}{\complclassformat{SAC}}
+\newcommand{\NC}{\complclassformat{NC}}
+\newcommand{\ACzero}{\ensuremath{\complclassformat{AC}^{0}}}
+\newcommand{\SC}{\complclassformat{SC}}
+\newcommand{\TISP}{\complclassformat{TISP}}
+\newcommand{\LOGCFL}{\complclassformat{LOGCFL}}
+
+
+%
+% T E X T   F O R M A T T I N G
+%-------------------------------
+%
+
+% introducing a new term or mentioning a familiar one for the first time
+%\newcommand{\introduceterm}[1]{{\textsl{#1}}}
+\newcommand{\introduceterm}[1]{{\emph{#1}}}
+
+% Spacing before punctuation in displayed equations according to LLNCS
+% (But SIAM disagrees, so it is convenient to have a macro for this.)
+\newcommand{\eqperiod}{\enspace .}
+\newcommand{\eqcomma}{\enspace ,}
+
+% For description lists with items in italics (to avoid confusion
+% with theorem headers, for instance)
+\newcommand{\italicitem}[1][]{\item[\textit{#1}]}
+
+
+%
+% A B B R E V I A T I O N S   O F   F R E Q U E N T     E X P R E S S I O N S
+%-----------------------------------------------------------------------------
+%
+
+% GENERAL EXPRESSIONS
+\newcommand{\wrt}{with respect to\xspace}
+\newcommand{\wrtabbrev}{w.r.t.\ }
+\ifthenelse{\boolean{detectedToC}}{}
+  {\newcommand{\eg}{for instance\xspace} % should be surrounded by commas 
+    \newcommand{\Eg}{For instance\xspace}}
+\ifthenelse{\boolean{detectedToC}}{}{
+\newcommand{\ie}{i.e.,\ }
+\newcommand{\Ie}{I.e.,\ }
+}
+\newcommand{\ieComma}{i.e.,\ }  %%%% Special hack to use when adapting to ToC
+\newcommand{\ieNoComma}{i.e.\ }
+\ifthenelse{\boolean{detectedLIPIcs} \or \boolean{detectedIJCAI}}
+{\renewcommand{\st}{\errmessage{Please do not use st}}}
+{\ifthenelse{\isundefined{\st}}
+  {\newcommand{\st}{such that\xspace}}
+  {}}      
+%   \newcommand{\st}{such that\xspace}}
+
+\newcommand{\etal}{et al.\@\xspace}
+\newcommand{\etalS}{et al\@. }
+
+\newcommand{\vs}{vs.\ }
+
+% TYPICAL MATHEMATICAL EXPRESSIONS
+\newcommand{\ifaoif}{if and only if\xspace}
+\newcommand{\wolog}{without loss of generality\xspace}
+\newcommand{\Wolog}{Without loss of generality\xspace}
+\newcommand{\iid}{independently and identically distributed\xspace}
+\ifthenelse{\boolean{detectedIEEE}}{}{\newcommand{\QED}{Q.E.D.}}
+\newcommand{\qedlong}{which was to be proved\xspace}
+
+\newcommand{\whp}{with high probability\xspace}
+\newcommand{\Whp}{With high probability\xspace}
+\newcommand{\aas}{asymptotically almost surely\xspace}
+\newcommand{\Aas}{Asymptotically almost surely\xspace}
+
+
+%
+% R E F E R E N C E S 
+%---------------------
+%
+% Macros with capital initial letter intended for use at start of sentence.
+%
+
+%
+% REFERENCES TO SECTIONAL UNITS AND PAGE INTERVALS
+%
+% The LLNCS document class and instructions says that in the running text, 
+% but not at the beginning of a sentence, Sect., Chap. and Fig. should be 
+% abbreviated.
+%
+% LLNCS wants, e.g., "Section 4.3" with capital S, SIAM doesn't.
+%
+
+% Sections
+\newcommand{\refsec}[1]{Section~\ref{#1}}
+\newcommand{\refsecP}[1]{Section~\vref{#1}}
+\newcommand{\Refsec}[1]{Section~\ref{#1}}
+\newcommand{\RefsecP}[1]{Section~\vref{#1}}
+\newcommand{\reftwosecs}[2]{Sections~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreesecs}[3]{Sections~\ref{#1}, \ref{#2}, and~\ref{#3}}
+
+% Chapters
+\newcommand{\refch}[1]{Chapter~\ref{#1}}
+\newcommand{\Refch}[1]{Chapter~\ref{#1}}
+\newcommand{\reftwochs}[2]{Chapters~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreechs}[3]{Chapters~\ref{#1}, \ref{#2} and~\ref{#3}}
+
+% Appendices
+\newcommand{\refapp}[1]{Appendix~\ref{#1}}
+\newcommand{\Refapp}[1]{Appendix~\ref{#1}}
+\newcommand{\reftwoapps}[2]{Appendices~\ref{#1} and~\ref{#2}}
+
+% Figures
+\newcommand{\reffig}[1]{Figure~\ref{#1}}
+\newcommand{\reffigP}[1]{Figure~\vref{#1}}
+\newcommand{\Reffig}[1]{Figure~\ref{#1}}
+\newcommand{\ReffigP}[1]{Figure~\vref{#1}}
+\newcommand{\reftwofigs}[2]{Figures~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreefigs}[3]{Figures~\ref{#1}, \ref{#2}, and~\ref{#3}}
+
+
+%
+% REFERENCES TO THEOREM-LIKE ENVIRONMENTS
+%
+% Requires \usepackage{varioref}
+%
+% Adapted to LLNCS document class and instructions. Definition, Theorem etc
+% should be capitalized when followed by a number.
+%
+
+% Theorems
+\newcommand{\refth}[1]{Theorem~\ref{#1}}
+\newcommand{\reftwoths}[2]{Theorems~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreeths}[4][and]{Theorems~\ref{#2}, \ref{#3}, {#1}~\ref{#4}}
+\newcommand{\refthm}[1]{Theorem~\ref{#1}}
+\newcommand{\reftwothms}[2]{Theorems~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreethms}[4][and]{Theorems~\ref{#2}, \ref{#3}, {#1}~\ref{#4}}
+
+% Lemmas
+\newcommand{\reflem}[1]{Lemma~\ref{#1}}
+\newcommand{\reftwolems}[2]{Lemmas~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreelems}[4][and]{Lemmas~\ref{#2}, \ref{#3}, {#1}~\ref{#4}}
+
+% Propositions
+\newcommand{\refpr}[1]{Proposition~\ref{#1}}
+\newcommand{\reftwoprs}[2]{Propositions~\ref{#1} and~\ref{#2}}
+
+% Corollaries
+\newcommand{\refcor}[1]{Corollary~\ref{#1}}
+\newcommand{\reftwocors}[2]{Corollaries~\ref{#1} and~\ref{#2}}
+
+% Definitions
+\newcommand{\refdef}[1]{Definition~\ref{#1}}
+\newcommand{\reftwodefs}[2]{Definitions~\ref{#1} and~\ref{#2}}
+\newcommand{\refthreedefs}[3]{Definitions~\ref{#1}, \ref{#2}, and~\ref{#3}}
+
+% Remarks
+\newcommand{\refrem}[1]{Remark~\ref{#1}}
+\newcommand{\reftworems}[2]{Remarks~\ref{#1} and~\ref{#2}}
+
+% Observations
+\newcommand{\refobs}[1]{Observation~\ref{#1}}
+\newcommand{\reftwoobs}[2]{Observations~\ref{#1} and~\ref{#2}}
+
+% Facts
+\newcommand{\reffact}[1]{Fact~\ref{#1}}
+
+% Conjectures
+\newcommand{\refconj}[1]{Conjecture~\ref{#1}}
+\newcommand{\reftwoconjs}[2]{Conjectures~\ref{#1} and~\ref{#2}}
+
+% Examples
+\newcommand{\refex}[1]{Example~\ref{#1}}
+\newcommand{\reftwoexs}[2]{Examples~\ref{#1} and~\ref{#2}}
+
+% Properties
+\newcommand{\refproperty}[1]{Property~\ref{#1}}
+\newcommand{\reftwoproperties}[2]{Properties~\ref{#1} and~\ref{#2}}
+ 
+% Claims
+\newcommand{\refclaim}[1]{Claim~\ref{#1}}
+\newcommand{\reftwoclaims}[2]{Claims~\ref{#1} and~\ref{#2}}
+
+% References at start of sentence
+\newcommand{\Refth}[1]{Theorem~\ref{#1}}
+\newcommand{\Reflem}[1]{Lemma~\ref{#1}}
+\newcommand{\Refpr}[1]{Proposition~\ref{#1}}
+\newcommand{\Refcor}[1]{Corollary~\ref{#1}}
+\newcommand{\Refdef}[1]{Definition~\ref{#1}}
+\newcommand{\Refrem}[1]{Remark~\ref{#1}}
+\newcommand{\Refobs}[1]{Observation~\ref{#1}}
+\newcommand{\Refconj}[1]{Conjecture~\ref{#1}}
+\newcommand{\Refex}[1]{Example~\ref{#1}}
+\newcommand{\Refclaim}[1]{Claim~\ref{#1}}
+
+% References with page numbers
+\newcommand{\refthP}[1]{Theorem~\vref{#1}}
+\newcommand{\reflemP}[1]{Lemma~\vref{#1}}
+\newcommand{\refprP}[1]{Proposition~\vref{#1}}
+\newcommand{\refcorP}[1]{Corollary~\vref{#1}}
+\newcommand{\refdefP}[1]{Definition~\vref{#1}}
+\newcommand{\refremP}[1]{Remark~\vref{#1}}
+\newcommand{\refobsP}[1]{Observation~\vref{#1}}
+\newcommand{\refconjP}[1]{Conjecture~\vref{#1}}
+\newcommand{\refexP}[1]{Example~\vref{#1}}
+\newcommand{\refpropertyP}[1]{Property~\vref{#1}}
+
+% Some more references
+\newcommand{\refrule}[1]{rule~\ref{#1}}
+\newcommand{\reftworules}[2]{rules~\ref{#1} and~\ref{#2}}
+
+\newcommand{\refpart}[1]{part~\ref{#1}}
+\newcommand{\Refpart}[1]{Part~\ref{#1}}
+\newcommand{\reftwoparts}[2]{parts~\ref{#1} and~\ref{#2}}
+\newcommand{\Reftwoparts}[2]{Parts~\ref{#1} and~\ref{#2}}
+
+\newcommand{\refitem}[1]{item~\ref{#1}}
+\newcommand{\Refitem}[1]{Item~\ref{#1}}
+\newcommand{\reftwoitems}[2]{items~\ref{#1} and~\ref{#2}}
+\newcommand{\Reftwoitems}[2]{Items~\ref{#1} and~\ref{#2}}
+
+\newcommand{\refcase}[1]{case~\ref{#1}}
+\newcommand{\Refcase}[1]{Case~\ref{#1}}
+\newcommand{\reftwocases}[2]{cases~\ref{#1} and~\ref{#2}}
+\newcommand{\Reftwocases}[2]{Cases~\ref{#1} and~\ref{#2}}
+
+% References to equations (alias for \eqref just for simplicity)
+%
+% The definition of \refeq overwrites a command in the mathtools package
+% if this package has been loaded
+
+\ifthenelse
+{\isundefined{\refeq}}
+{\newcommand{\refeq}[1]{\eqref{#1}}}
+{\renewcommand{\refeq}[1]{\eqref{#1}}}
+\newcommand{\refeqP}[1]{\eqref{#1} on page~\pageref{#1}}
+
+

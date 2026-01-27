@@ -1,0 +1,64 @@
+Exam shedule and information for Introduction to Discrete Mathematics and Algorithms (IDMA) oral re-exam in June 2025
+
+Dear all,
+
+Below you find the exam schedule and some more information for the upcoming IDMA exam.
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 25, 2025
+
+Time	User ID	Name
+13:00	QJH771	Mortensen, William Risgaard
+13:30	XSV967	Thuesen, Jeanette Vahr
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 30, 2025
+
+Time	User ID	Name
+09:00	DRX515	Damkjær-Bruun, Emilie Michelle
+09:30	NVM924	Hovgaard, Line Thorup
+10:00	KHM950	Mortensen, Leonora Batoosingh
+10:00	ZMR518	Andreasen, Thomas Krüger
+10:30	LMQ466	Nielsen, Felix Herforth
+11:00	PZG908	Abou-Hayt, Jasmin Imad
+11:30	LQS211	Hansen, Alberte Pløger
+12:00	XWJ436	Henriksen, Simon
+12:00	JSX430	Ismail, Sabrina khalid	
+12:30	TCP541	Ismaili, Jora
+13:00	DHG991	Kho, Izabela Emelia
+13:30	MXQ470	Kristensen, Kristian Aksel Ertner
+14:00	PLT271	Oldenburg, Viktor Sand
+14:00	MKJ655	Plesner, Andrea Nikoline	
+14:30	MXC836	mxc836
+15:00	GDB373	Fristrup, Aksel
+
+
+EXAM INSTRUCTIONS
+
+Please make sure to read through all of the instructions below carefully --- this is important so that you come well-prepared to the exam, where there will not be time to explain everything in detail.
+
+The oral exam will be held in office 3-1-09 in the Algorithms and Complexity Section at Universitetsparken 1. Enter through the main door (with the statues in front), take a right after the stairs from the main entrance, and then another right turn up the stairs to the second floor of BARC and the AC Section. You can wait for your turn outside the entrance door to our corridor, and we will invite you in when it is your turn.
+
+Please make sure to arrive for your exam 5-10 minutes in advance, so that we can start on time. Also please note that although it can be hard to stick exactly to the schedule during a long exam day like this, you have to show up in time for your exam --- late arrival counts as a no-show.
+
+The set-up for the oral exam is that you are expected to answer all questions "online" without any separate time for preparations ("mundtlig prøve uden forberedelsestid"). The total time for the exam is 30 minutes, out of which roughly 20 minutes will constitute the actual exam for you, and the remaining 10 minutes is me and my co-examiner Srikanth Srinivasan deliberating and then announcing the grade to you. You can take the exam in either English or Danish. (Since neither Srikanth nor myself is a native Danish speaker, English might be preferable, but you can definitely do the exam in Danish if this is your wish.)
+
+So what is a good way to prepare for the exam? I think that strategies that were good for the written exam will also be good for the oral one. Studying the course material carefully is, of course, a no-brainer. In particular, you have been provided with many problem sets with worked-out solutions, and they are especially relevant in that they give some kind of indication as to what material is deemed to be especially important (although you should note that there is also important material that was *not* covered in the problem sets or on the regular exam for any given year, and that it is thus *not* safe to just skip material missing any given year).
+
+The re-exam is intended to be an "abbreviated, oral version of the written exam", though, of course, the difference between 4 hours and 20-30 minutes, and between written and oral examination, will change things quite a lot. We are planning to have problems of similar flavour as in the written exam, but to make them significantly easier to answer (sometimes my having multiple-choice alternatives) in view of the condensed time frame.
+
+At the outset of the exam, we will choose a random number by using https://www.random.org/. That random number will determine in which order the questions are presented to each student. In general, you should not expected to get through all of the questions during the oral exam. At the end of the exam, you will be assessed on how many of the questions you answered and how well you answered them. If you feel that a question is too hard, then you can ask to skip forward to the next question, but the fact that you did not answer the question will of course be considered when assigning the grade (so that students cannot just flip through all questions and answer the ones that they like best).
+
+Just as during a written exam, whether you solve a problem or not is not a binary yes-or-no question. In contrast to the written exam, we now have the possibility for dialogue, and we will use this to take into consideration how well you reason, even if you do not manage to solve a problem completely.
+
+Finally, I have said this before, but I will say it again: please do make sure to invest significant time to learn the course material properly. This is not just a question of passing this particular course. The material covered in this course is truly foundational, and you will need it over and over again, in one form or another, in later courses. Every hour of high-quality study time spent on this course might easily save you two or three hours on later courses. So, be smart, and be kind to yourself, and make sure to study hard for the IDMA re-exam.
+
+Good luck on the exam!
+
+Jakob
+
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se

@@ -1,0 +1,17 @@
+evaluering.ku.dk
+
+Hi all,
+
+I hope that most of you enjoyed the exam this morning, and that even more of you enjoy that the exam is now over!
+
+Regarding the exam grading, it might unfortunately take up to a week before we get your exams, and due to other calendar constraints it will then not be possible to get the grading done before the Easter holiday week, but we are planning and hoping to get this done as soon as is humanly possible after Easter.
+
+As a final request, please don't forget to fill in the course evaluation at evaluering.ku.dk!
+
+The standard course evaluation closes on Monday April 7 at midnight. We are aware that many students feel that IDMA is not an easy course, and we are most grateful for all constructive feedback regarding things that could or should be changed (or perhaps, on the contrary, stay the same) to help you as much as possible to learn this material. For this reason we have also added some extra questions on top of the standard course evaluation form. Please do let us know what you think --- all answers will be read carefully, and we will use your feedback to (hopefully) improve the course for next year. 
+
+The exam evaluation will stay open until Sunday April 13 at midnight. Over the years we have had quite extensive discussions among the teachers and TAs about the exam format and whether the number of problems is too small, too large, or just Goldilocks right, but it would be even more interesting to hear what you students think about this. Also, all comments and constructive proposals as to what would be a reasonable allowed set of exam aids (that can checked by someone who is completely unfamiliar with the course) would be more than welcome! (Or if you would prefer to be able to bring your own printed-out material without restrictions, but at the price of that we would stop sharing worked-out solutions to problem set and exam problems, please let us know about that.)
+
+Now I hope that you can all have some well-deserved rest, after which your newfound interest in algorithms will lead you to explore what other superexciting courses the Algorithms and Complexity Section at DIKU can offer!
+
+Jakob

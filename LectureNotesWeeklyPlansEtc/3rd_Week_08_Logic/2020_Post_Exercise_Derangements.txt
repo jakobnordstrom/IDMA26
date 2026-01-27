@@ -1,0 +1,80 @@
+Exercise on derangements
+
+Hi all,
+
+I got a question about a tricky exercise yesterday that I couldn't immediately answer, so let me make a quick post about it instead.
+
+Stripping away the textual description, the problem boiled down to counting the number of permutations of a set without fixpoints, i.e., such that no element appears in its original position. Such a permutation is called a derangement, and you can read more about it at, e.g., https://en.wikipedia.org/wiki/Derangement (where you can also learn some stuff that I definitely didn't know before ;-) ). 
+
+This problem can be solved by using the inclusion-exclusion principle. Let me do two examples, and you can hopefully see the pattern.
+
+Let us first consider three elements A, B, and C. They can be permuted in 6 ways:
+
+A B C 
+A C B
+B A C
+B C A  ***
+C A B  ***
+C B A
+
+The permutations marked by "***" are the ones without fixpoints. In all other permutations, either A appears in the first position, and/or B in the second, and/or C in the third.
+
+We can count the derangements in a systematic way by considering all 3! = 6 permutations and then remove the ones that are *not* derangements, i.e., that have some position fixed.
+
+For i = 1, 2, 3, let S_i be the set of permutations with a fixed point in position i. Then S_1 = {A B C, A C B}, S_2 = {A B C, C B A}, and S_3 = {A B C, B A C}. Writing \cup for union and \cap for intersection in LaTeX-speak, we want to count |S_1 \cup S_2 \cup S_3|. By inclusion-exclusion, this is
+
+|S_1 \cup S_2 \cup S_3| = |S_1| + |S_2| + |S_3| - |S_1 \cap S_2| - |S_1 cap S_3| - |S_2 \cap S_3| + |S_1 \cap S_2 \cap S_3| .
+
+There are 3 sets S_i, and each S_i has 2 elements, since the two non-fixed elements can be permuted in 2! = 2 ways.
+
+There are 3-choose-2 = \binom{3}{2} = 3 intersections S_i \cap S_j for i < j, and each S_i \cap S_j has 1 element since there is only one choice left. 
+
+Finally, there is clearly only one element in S_1 \cap S_2 \cap S_3, namely the permutation A B C leaving everything fixed.
+
+Hence, the number of non-derangements is 3 * 2! - 3 * 1 + 1 = 4, and the number of derangements 6 - 4 = 2, which we indeed know is the right answer.
+
+If we instead look at 4 elements A B C D, the 4! = 24 permutations are
+
+A B C D
+A B D C
+A C B D
+A C D B
+A D B C
+A D C B
+B A C D
+B A D C ***
+B C A D
+B C D A ***
+B D A C ***
+B D C A
+C A B D
+C A D B ***
+C B A D
+C B D A
+C D A B ***
+C D B A ***
+D A B C ***
+D A C B
+D B A C
+D B C A
+D C A B ***
+D C B A ***
+
+where the derangements have been marked by stars again (unless I screwed up). We can count in the same way: Letting S_i be the set of permutations with position i fixed, we want to count
+
+|S_1 \cup S_2 \cup S_3 \cup S_4| = 
+= \sum_{i} |S_i| - \sum_{i<j} |S_i \cap S_j| + \sum_{i<j<k} |S_i \cap S_j \cap S_j| - |S_1 \cap S_2 \cap S_3 \cap S_4|  
+
+There are 4 S_i that all contain 3! permutations each (of the other 3 elements).
+
+There are 4-choose-2 = 6 intersections S_i \cap S_j, and they each contain 2! permutations (of the other 2 elements).
+
+There are 4-choose-3 = 4 intersections S_i \cap S_j \cap S_j which contain a single permutation each, and S_1 \cap S_2 \cap S_3 \cap S_4 also contains a single permutation.
+
+Hence, the number of non-derangements are
+
+4 * 3! - 6 * 2! + 4 * 1! - 1 = 24 - 12 + 4 - 1 = 15 ,
+
+and indeed the number of derangements are 24 - 15 = 9, which agrees with what we computed by exhaustive case analysis.
+
+In the exercise you were supposed to consider 5 elements, but the principle is hopefully clear from the examples above (which were small enough that we could also work them out by hand).

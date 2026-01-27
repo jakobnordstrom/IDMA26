@@ -1,0 +1,59 @@
+IDMA: TAing for the Introduction to Discrete Mathematics and Algorithms course
+
+Shuyi Yan <shya@di.ku.dk>
+Florestan Brunck <flbr@di.ku.dk>
+Theo Fabris <thfa@di.ku.dk>
+
+Monika Haubro <moha@math.ku.dk> 
+Magnus Hauberg Aabech <mhaa@di.ku.dk>
+Tove Eggert Olsen <tool@di.ku.dk>
+
+Andrea Sebro Rasmussen <andreasebro@hotmail.com>
+Anton Friis <antonwfriis@gmail.com>
+Peter Trip Malmroes <petermalmroes@gmail.com>
+
+Hi all,
+
+This message is to let you know that I have asked DIKU administration to hire you as teaching assistants for the course Introduction to Discrete Mathematics and Algorithms or IDMA (https://kurser.ku.dk/course/ndab23002u/) during block 3 this spring.
+
+Please note that I make no formal decisions about hiring, so I should emphasize that this message is in no way a formal confirmation that you will actually work on this course. However, any other outcome would be quite surprising, and since I know by experience that DIKU can be very slow in contacting TAs, I wanted to give you a heads-up that you should expect to hear from them.
+
+Florestan, Shuyi, Theo: Your TA duties are formally decided by the head of the AC Section Mikkel Thorup, and my understanding is that you have been assigned to do IDMA. I actually don't know if DIKU will contact you about this.
+
+Magnus, Monika, Tove: I look forward to working with you again, and I believe that the fact you have been TAing on this course before makes the hiring process easier on the DIKU side.
+
+Andrea, Anton, Peter: In the hope that all hiring practicalities will work out, I am taking the risk of welcoming you as new TAs on the course!
+
+Let me take the opportunity with this message to also send some additional information. You should also expect to get more messages after the holidays (at which point the hiring practicalities will hopefully have been sorted out).
+
+(1) E-MAIL ADDRESSES: It would be great if you could confirm, in private reply to me only, if I got your e-mail addresses right or if there is any other e-mail address that you would prefer to use (and that I am e-mailing the right persons --- I hope and believe so).
+
+(2) SCHEDULE AND WORKLOAD: I do not yet have a schedule, but the exercise classes are on Mondays 15:15-17:00 and Wednesdays 15:15-17:00 during weeks 6-13 except for the Easter vacation. You will also need to take turns manning three study cafes, which I will have more information about later. The third big component of your workload is to grade the problem sets and the written exam. Based on feedback from previous years I should also point out that we will have a weekly 1-hour TA meeting which we all have to attend (but we will find a meeting time to make this possible). This is not meant to be an exhaustive list, but I think it covers most things.
+
+(3) TEXTBOOKS: We will be using two textbooks:
+- Kolman, Busby, and Ross: Discrete Mathematical Structures, University of Copenhagen version (KBR)
+- Cormen, Leiserson, Rivest, and Stein: Introduction to algorithms, 4th edition (CLRS)
+
+All TAs can get access to KBR in electronic form but not printed on paper (but you are not missing much). I have usually been successful in getting instructor copies for CLRS from MIT Press, although it tends to be quite complicated.
+
+It would be good if you could let me know (by private reply) if you need any of these books or if you already have them.
+
+(4) COURSE PLANNING: For those of you who know IDMA (or DMFS) from before, I do not anticipate any major changes. We will have 4 problem sets. As in previous years, the problems will be a mix of last year's exam problems and some new (or not so new) ones cobbled together by yours truly. We will talk about this later, but it goes without saying that any suggestions for pset problems are most welcome --- this goes especially for the PhD TAs.
+
+(5) REQUEST FOR COMMENTS: One final request, which I address to all of you, but especially to the non-PhD TAs:
+
+Thank you all for the nice words in your applications (this year or previous years) regarding how stimulating and inspirational and so on the IDMA course has been for you. This was very kind of you --- so thanks again!
+
+And these nice words worked, because you are now hired. ;-) Which means that now you can stop being nice, and I would instead like you to focus on what could and should be better with this course! I have not yet started the detailed planning for next year's edition of the course, so now is an excellent time if you have any suggestions for things that you think could or should be done differently (or perhaps stay the same).
+
+Just to aid your memory, with this message I am attaching the course plan as it looked last year. Please do let me know any thoughts you might have about things that should be changed regarding the lectures, exercise classes, problem sets, exam, or anything else. For any comments on this, you should feel free to do reply-all or send your messages only to me, whatever you prefer.
+
+Let me end this message by saying that I am very much looking forward to teaching this course together with you!
+
+Best regards, 
+Jakob
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se

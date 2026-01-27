@@ -1,0 +1,415 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+%   \usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+\usepackage{xcolor}
+
+\usepackage{multicol}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+% Course name
+\usepackage{xspace}
+\newcommand{\coursename}{Introduction to Discrete Mathematics and Algorithms\xspace}
+\newcommand{\coursenameshort}{IDMA 2025\xspace}
+
+
+%   \newcommand{\lnote}[1]{\textcolor{magenta}{\small {\textbf{(Laura:} #1\textbf{) }}}}
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 3 -- \\[0.5em]}
+\end{center}
+\noindent
+
+%   
+%   \begin{center}
+%   \textbf{\large 
+%     DMFS 2021
+%     \\[0.5em] 
+%     -- 
+%     Reading 
+%   %     Instructions 
+%     and Exercises
+%     for Monday
+%     3rd Week 
+%     -- 
+%     \\[0.5em]}
+%   \end{center}
+%   \noindent
+%
+   
+%   \newcommand{\lnote}[1]{\textcolor{magenta}{\small {\textbf{(Laura:} #1\textbf{) }}}}
+
+%   
+%   \emph{The plan for week 3 of the course is in need of some minor updating,
+%     but the information below should hopefully still be helpful.}
+%   
+
+\section*{General Plan}
+%   \section*{Work instructions}
+
+In the first lecture of the week, we will wrap up the part of the course that deals with the important technique of \textbf{mathematical induction.}
+
+Next up on our agenda is to 
+%   talk about mathematical logic and proofs.
+talk more formally about \textbf{mathematical logic} and \textbf{proofs}.
+%
+We will show how
+propositional logic can be used to structure and analyse mathematical
+arguments. Next, we will introduce predicate logic, which provides a
+convenient language for formalizing properties of objects (like ``the
+integer $n$ is a prime'' or ``the matrix $A$ is invertible'').  After this, we will
+move on to a discussion of proof techniques such as direct
+proofs, proofs by contraposition, and proof by contradiction. (There
+is obviously lots of fancy terminology flying around here---the
+important thing is not that you memorize all of it, but that you
+understand what we are doing.)
+
+
+Note that mathematical logic is nothing magical---it is just a way to
+formalize well-known logical concept, and to describe in a clear,
+structured way different ways of reasoning that we already know to be valid. 
+%   
+%   Mathematical logic can be viewed as a formalization of well-known
+%   logical concepts.  Note that
+%   
+Indeed, in many cases common sense is sufficient to construct a valid
+mathematical argument. However, when mathematical statements become
+increasingly complicated it can be helpful to have a formal toolbox to
+keep track of the reasoning and to be sure that everything is correct.
+(As an illustration of this, already the proof we did of
+Theorem~4 on page~22 of KBR 
+during the second week
+was not entirely trivial.)
+%
+%   it may also be necessary to use a formal toolbox to
+%   evaluate the truth values of such statements.  
+%
+
+We will also introduce some pieces of mathematical notation that
+allow us to make very precise statements in a brief, efficient way.
+For instance, we can describe that an
+%   
+%   We will, e.g., introduce a notation suitable for describing what it
+%   means that an
+%   
+asymptotically positive sequence $(a_n)$ is $O(1)$ by writing
+\[
+\exists c>0\; \exists k>0\; \forall n\geq k \;\; a_n \leq c
+\ .
+\]
+In plain English, this  can be read as
+\emph{``there exist 
+$c$ greater than~$0$ 
+and
+$k$ greater than~$0$ 
+such that for all~$n$ greater
+than or equal to~$k$
+it holds that $a_n$ is less than or equal to~$c$.''}
+%such that if we want to know what it means that $(a_n)$ is \textbf{not} $O(1)$, we can with little effort describe this as 
+%\[
+%\forall c>0\forall k>0\exists n\geq k: |a_n|> c
+%\]
+%The same strategy is used when programming computers (which does not have sense of logic or common sense)  to process statements.
+This is still slightly informal, in that we assume that the reader
+understands from context that $c$ is any positive real number whereas
+$k$ and $n$ are integers. If we wanted to be even more precise, then
+we could write
+\[
+\exists c \in \RR^+\; \exists k \in \ZZ^+ \; 
+  \forall n \in \ZZ^+ (n\geq k \Rightarrow a_n \leq c)
+\ .
+\]
+However, this second, more detailed version adds a lot of clutter, and
+sometimes it is preferable to be slightly more concise when the extra
+details are understood from context.
+There are no hard and fast rules here, but we will try during the
+lectures to learn by example what a suitable level of detail is. Also,
+when in doubt, it is never wrong to add extra details for clarity.
+At the end of the day, the reason we use mathematical notation is in
+order to communicate as clearly as possible.  
+
+As most other material in this course, our discussion of logic and
+proofs will involve fundamental topics that will reappear in later
+courses, and so you will do yourself great service by making sure to
+learn it inside out already now.
+
+The course will cover KBR Sections 2.1--2.4 in detail. 
+\textbf{Please make sure to read these sections before the lecture}, 
+since much of it is better suited for self-study than for lecturing. 
+Once we have covered all of it,
+then read all of it again and check that you have digested
+the material.
+Section~2.5 is not as important, and Section~2.6 we will not touch upon at
+all, but this is still useful reading.
+%   
+% Furthermore, we will (as an advanced example with computer science
+% flavor) go through the argument about the runtime of Euklid's
+% algorithm, which is found on pages 935--936 in CLRS.
+%   
+
+%   \section*{Work instructions}
+
+\section*{Reading Instructions}
+%   \section*{Assigned reading}
+\begin{itemize}
+\item KBR Sections~2.1--2.4 in depth.
+%    Read this carefully. We will use (parts of) 2.1--2.2 on Monday and
+%    cover the rest on Tuesday and Friday. 
+\item KBR Section~2.5 is part of the course, but is not as important
+  as  Sections~2.1--2.4 and we will probably not be able to cover it
+  in class.
+
+\item KBR Section~2.6 is not required to pass the course, but is
+  recommended reading.
+
+%   
+%   \item KBR 2.4-2.6. 
+%   It is enough to skim these sections. 
+%   
+\end{itemize}
+
+%   
+%   \section*{Lecture plan}
+%   
+%   \subsection*{Monday Oct.~21st 09:15-10:00}
+%   Propositions, logical operations/connectives ($\wedge,\vee,\sim,\Rightarrow,\Leftrightarrow$), truth tables, tautologies, and absurdities.
+%   
+%   \subsection*{Tuesday Oct.~22nd, 13:15-14:00}
+%   \begin{itemize}
+%   \item Predicates, quantifiers ($\forall$ and $\exists$), negation of statements with quantifiers.
+%   \item Proof methods.
+%   \end{itemize}
+%   
+%   \subsection*{Friday Oct.~25th, 09:15-10:00}
+%   Proof methods. Examples.
+%   
+%   
+
+\section*{Exercises}
+
+Note that as for previous weeks, there are quite a few exercises
+suggested below.  One question that tends to come up is how many of
+these exercises you are supposed to do. The answer is that this
+depends on how many exercises you yourself need to solve in order to
+digest the material.
+
+If you feel that you understood what was covered in class and/or what
+you read in the textbook, and if the exercises seem straightforward,
+then it is fine to just do some of them (where I good idea would be to
+try to focus on the one that seem hardest to you). If some of the
+material seems harder, though, then it is a good idea to do more
+exercises until you really understand what is going on.
+
+At the obvious risk of repeating myself, you will do yourself a great service 
+by learning the material on this course well, because much (or most?) of what
+you will do in later courses will build on this material in one way or 
+another.
+
+
+
+
+\begin{enumerate}
+
+\item More exercises on induction 2.4.10, 2.4.17, 2.4.22.
+
+\item 
+  If you wish to check your basic understanding,
+  solve KBR exercises 2.1.1, 2.1.2, 2.1.8.
+
+\item 
+  If you wish to check your basic understanding,
+  solve  KBR exercises 2.1.15, 2.1.16, 2.1.18.
+
+\item 
+  To check your basic understanding,
+  solve KBR exercises 
+  2.1.27, 2.1.28.
+
+\item Check De-Morgan's laws by computing and comparing the truth tables of the left-hand-side and right-hand-side in each of the following
+\begin{enumerate}
+\item $\sim(p \vee q) \equiv (\sim p) \wedge (\sim q)$
+\item $\sim(p \wedge q) \equiv (\sim p) \vee (\sim q)$
+\end{enumerate}
+
+%   \item Solve KBR exercises 2.1.37, 2.1.38.
+
+\item
+  To check your basic understanding,
+ solve KBR exercises 2.2.10, 2.2.11.
+
+\item 
+  To get slightly more interesting challenges, 
+  solve KBR exercises 2.2.13, 2.2.15.
+
+ \item Let \texttt{xor}
+   (also known as \emph{exclusive or})
+   be the logical connective with the following truth table:\vspace{-.05in}
+\begin{center}
+\begin{tabular}{cc|c}
+$P$ & $Q$ & $P$ \texttt{xor} $Q$\\
+\hline
+T & T & F \\
+T & F & T \\
+F & T & T \\
+F & F & F 
+\end{tabular}\vspace{-.05in}
+\end{center}
+Find an equivalent expression for 
+\[P\; \texttt{xor} \;Q\] 
+using only $\wedge$(and), $\vee$(or), and $\sim$(not). You can use $P$ and $Q$ any number of times and indicate the order of the operations using parentheses.
+Verify your answers by computing the truth table of your expression. (See Example 5 in KBR 2.1 for an example.) 
+
+
+\item  Let $f,g:\RR^+\to\RR$ be asymptotically positive functions. We
+  can express the definition of ``$f(x)$ is $O(g(x))$''{} 
+%   from Week 3 
+using logical connectives and quantifiers as
+\begin{equation}
+  \exists c>0 \; \exists x_0\in \RR^+ \; \forall x\ge x_0 \;f(x) \le cg(x)
+\end{equation} 
+Recall 
+%   from Week 3 
+that we defined ``$f$ is $o(g)$''{} as ``for any constant $c>0$ we can find $x_0\in\RR^+$ such that
+\[ f(x) <  c g(x)\]
+for all $x\ge x_0$.''
+\begin{enumerate}
+\item Express the above definition of ``$f(x)$ is $o(g)$'' using logical connectives and quantifiers.
+\item Write the negation of the proposition~from~the previous part and simplify it so that it does not contain the negation ($\sim$). \\
+\textit{Hint: Theorem 3 from KBR 2.2 can be helpful here.}
+\item Write a sentence in English that corresponds to your statement from the previous part.
+\end{enumerate}
+
+\item
+  If you wish to solve some more exercises to test basic understanding,
+ solve  KBR exercises 2.2.6, 2.2.21, 2.2.27.
+
+
+\item 
+  To develop your mastery of the proof techniques that we learned in  class,
+  make sure to solve (and understand) a generous selection of 
+  KBR exercises  %2.3.7, 2.3.8, 2.3.10
+  2.3.18, 2.3.23, 2.3.24, 2.3.27, 2.3.31, 2.3.34.
+%2.4.34, 2.4.35
+
+%%%
+%%% Similar to what is found in KBR
+%%%
+%   \item Let $k$ be a positive integer. Prove the following statement by
+%     proving its contrapositive: If $k^3$ is odd then $k$ is odd. Make
+%     sure to start by explicitly stating the contrapositive.
+%   
+%   
+%   \item Solve any potentially leftover exercises from the previous
+%     exercise classes. 
+%   ;-)
+%   
+\end{enumerate}
+
+
+
+\subsection*{A Couple of Extra Challenging Exercises}
+ \begin{enumerate}[(1)]
+
+ \item{[*]} 
+   Recall that we have discussed in class the
+   \emph{least number principle}, which can be formally stated as
+   follows.
+
+\begin{framed}
+  If $S$ is a non-empty set of non-negative integers, then
+  there is a minimum element
+  $x \in S$ (i.e., such that for all $y\in S$ it holds that $y \geq x$).
+\end{framed}
+
+
+\begin{itemize}
+\item 
+  Note that it is essential that we are talking about
+  (a) integers that are (b) non-negative.
+  Give examples showing that the least-number principle does not hold if
+  if $S$ is any non-empty set of integers, or if $S$ is any set of 
+  non-negative rational numbers.
+
+\item 
+  Prove that  the least number principle implies the induction principle. 
+  That is, we can prove a theorem saying that if the least number
+  principle is true, then the induction principle (repeated below for
+  your convenience) is also true.
+  
+  \begin{framed}
+    If a collection of statements $P(n)$, where $n$ takes the values from 
+    a set of non-negative integers
+    $\{n_0,n_0+1,n_0+2,\dots\}$, 
+    satisfy that 
+    \[
+      P(n_0)\text{ is true}
+  %   \tag{S}
+    \]
+    and that for all $n\geq n_0$, we have that 
+    \[
+       \text{If }P(n)\text{ is true, then }P(n+1)\text{ is true}
+  %   \tag{T}
+     \]
+     then $P(n)$ is true for all $n\geq n_0$. 
+   \end{framed}
+   
+   \emph{Hint:} 
+   Let $S$ be the set of all~$n$ for which $P(n)$ fails to hold.
+   
+ \item 
+   Prove that the induction principle implies the least number
+   principle.
+   
+   \emph{Hint:} Let $S$ be a set of non-negative integers without a
+   minimum element. 
+   Let $P(n)$ be the property that $m \notin S$ for all $m \leq n$
+   and use  induction to prove that the set $S$ is empty.
+%   
+%     Let $P(n)$ be the property that $n \notin S$ and use strong
+%     induction to prove that the set $S$ is empty.
+%   
+
+\end{itemize}
+
+ \item{[**]} 
+   Find the mistake in the proof given in KBR Example 2.4.7
+   (page 73).
+   \emph{[This is a tricky one, since what is claimed in the example is
+   definitely true, but the proof is taking a shortcut.]}
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,11 @@
+Any edition of the official textbooks is fine
+
+Hi all,
+
+In response to questions, any edition of the two official textbooks on the IDMA course are fine to bring to the exam.
+
+For CLRS, this means that not only the 4th but also the 3rd edition (or earlier editions) can be used.
+
+For KBR, you don't need to have the special University of Copenhagen edition --- if you have the full textbook, then this is also fine.
+
+Jakob

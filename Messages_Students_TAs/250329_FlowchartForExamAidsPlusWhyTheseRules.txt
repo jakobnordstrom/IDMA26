@@ -1,0 +1,49 @@
+Flowchart for exam aids + why these rules?
+
+Hi all,
+
+Since there are still questions about what material is allowed at the exam, let me repeat this information in the form of a flowchart (which is equivalent to the information you have received before).
+
+The second half of this message then tries to explain why we have these particular rules.
+
+If you have any more questions about what you can bring to the exam, then I would like you ask you to demonstrate, when you send your question, how you ran the flowchart, and how it failed to give an answer (because the intention is that this should be impossible).
+
+If you have questions about why the rules look the way they do, then hopefully the second part of the message can give some more details, but the short answer is that weeks of work (literally) has gone into trying to figure this out, and it seems that what we currently have is the best we can do within the system that the University of Copenhagen offers.
+
+FLOWCHART FOR EXAM AIDS 
+
+QUESTION 1: Is the material you would like to bring to the exam electronic or paper-based?
+(a) Electronic: Unfortunately, no electronic material is allowed on the exam.
+(b) Paper-based: Please go to Question 2.
+
+QUESTION 2: Is the paper-based material that you would like to bring handwritten or typewritten?
+(a) Handwritten: You are in luck --- please bring these papers to the exam (and this goes also for copies of handwritten papers).
+(b) Typewritten: Please go to Question 3.
+
+QUESTION 3: Is your typewritten material in the form of an actual, proper book?
+(a) Yes, it is a book: Please go to Question 4.
+(b) No, it is not a book: Typewritten material other than the course literature in book form is unfortunately not allowed.
+
+QUESTION 4: Is your book KBR or CLRS, i.e., the official course literature?
+(a) Yes: You are in luck --- please bring these paper-based textbooks to the exam.
+(b) No: Other textbooks than the official course literature are unfortunately not allowed on the exam.
+
+Please note that students with special needs can have other rules, but this will have been communicated by study administration.
+
+WHY THESE RULES?
+
+The reason students are not allowed to bring electronic aids is, to my understanding, that it would just be way too hard to ensure that this is not used for cheating. It is fully understandable that it is seriously annoying that one cannot bring the official course textbooks in electronic form, for instance. However, the problem is that it is very hard for the exam invigilators to check that the electronic textbooks are the only files stored on electronic devices, that these electronic devices do not provide a means of communication with the outside world, et cetera. The use of electronic aids is generally prohibited at this type of exam, and this is nothing that the course responsible for the IDMA course can do much about.
+
+What we can decide about, however, is what type of paper-based material students are allowed to bring. Here our reasoning is based on the following considerations.
+
+(1) We want you to have a wealth of high-quality material to study as you prepare for the exam. Therefore, every year we have a new problem sets for the students to work on, and every year we release detailed solutions to these problem sets as well as to problem sets from the most recent years and also to some recent exams. This is far from standard procedure at DIKU, but we put in all the extra work of producing this material and sharing it with students in the hope that it will help you learn.
+
+(2) However, if students were allowed to bring detailed, neatly typed-up solutions to problem sets and exams from the last few years to the exam, then this would make it extremely challenging to construct new exam problems. For an introductory course like this, many of the questions will tend to be somewhat standard (which, incidentally, is why AI chatbots can do so well on such problems, because the amount of training data from universities all over the world is just huge). We would not want the exam to turn into a chase for what typed-up solutions seem to match the problem at hand most closely. Such an exam would not test the skills that students are meant to acquire on this course, and grading such exam solutions would turn into a nightmare.
+
+(3) So what we would like to do is to allow students to bring the official textbooks, but no other textbooks, and all other papers related to the IDMA course except for worked-out typed-up solutions to problem sets and exams. The problem is that it is not possible to have such a rule. There is no way the exam invigilators could tell by just looking at a print-out whether it is from the right textbook of from some other book, or whether it is a typed-up solution to an IDMA problem or some other typed-up material. Therefore, when we proposed this rule, we got a hard "no" from administration (and hopefully their explanation why this is not possible makes sense).
+
+(4) However, after long and nontrivial negotiations with administration, we managed to reach the agreement, basically, that any papers that look handwritten should be fine to bring to the exam, but that typewritten material (other than the official textbooks in their physical published form) is not allowed.
+
+The only realistic alternative to this that we had available was to allow any print-outs that could not be identified as being from books other than the official textbooks, but to stop sharing with students our worked-out typed-up solutions to IDMA problem sets and exams. We hope and believe you agree that this alternative would have been worse.
+
+Jakob

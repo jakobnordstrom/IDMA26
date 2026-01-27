@@ -1,0 +1,20 @@
+
+
+Litteratur / Reading Instructions
+-	CLRS introduction to Part III
+-	CLRS Chapter 10 (except Section 10.3) Elementary Data Structures
+
+
+Læringsmål / Learning Goals
+-	Lists: What operations they support and how to implement them.
+-	Stacks, queues, and binary trees. Examples of what they can be used for (breadth-first search on graphs).
+-	Heaps: What they are and what they can be used for (sorting, priority queues).
+-	Graphs: Just a very quick first acquaintance (with the unweighted, undirected kind). After the lecture you should know that a graph G = (V, E) consists of a set of vertices V and a set of edges E, where an edge e = (u, v) connects two vertices u and v (which are called neighbours). A graph can be represented, for instances, as a collection of lists, one for each vertex v, containing the neighbours of v.
+
+
+
+OMITTED
+
+-	CLRS introduction to Part II
+-	CLRS Chapter 6 Heapsort (with a focus on understanding what heaps are)
+(Since this course is being given for the first time, there will be a need to adapt the planning as we go along. The intention is to cover most or all of Chapter 6 on Wednesday, but worst-case we will return to this material again later during the course.)

@@ -1,0 +1,589 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%\usepackage[english,danish]{babel} 
+\usepackage[applemac]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}        
+\usepackage{xcolor}            
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+
+\newcommand{\GCD}{\operatorname{GCD}}
+\newcommand{\LCM}{\operatorname{LCM}}
+
+
+% Course name
+\input{../course-name}
+
+
+% Dates
+\newcommand{\mondaylecturedate}{Monday Feb 10\xspace}
+\newcommand{\wednesdaylecturedate}{Wednesday Feb 12\xspace}
+\newcommand{\deadlinefirstpset}{Wednesday Feb 12 at 12:59 CET\xspace}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 2 -- \\[0.5em]}
+\end{center}
+\noindent
+
+\section*{General Plan}
+
+This week we will
+\textbf{move on to the more mathematical parts of the \coursenameshort course.}
+We will start by drawing
+%   We will draw 
+upon your knowledge about functions like 
+\[
+2^x\qquad x^{10}\qquad \log_{10} x
+\]
+from your highschool curriculum
+(which you were already reminded about in the notes on Absalon last week
+about asymptotic analysis).
+You will, however, soon experience
+that the typical math tools within computer science are quite
+different from the ones you 
+%   already know. 
+have dealt with before.
+Formally speaking, the mathematics
+you already know is mostly \textbf{continuous},
+while in computer science we mostly care about
+\textbf{discrete}
+math.
+
+This means that we start at the very beginning with many of the
+topics. For this, we have chosen the book  
+\begin{center}
+\emph{B. Kolby, R.C. Busby, and S.C. Ross}\\
+\emph{Discrete mathematical structures, 6th edition}
+\end{center}
+which we will refer to as \emph{KBR}. We will use a special edition of
+the book in the course as you have probably already noticed.  
+In addition to this, some of the mathematical contents will come from
+the book
+\begin{center}
+\emph{T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein}\\
+\emph{Introduction to Algorithms, 4th edition}
+\end{center}
+which we will refer to as \emph{CLRS}. 
+
+
+\emph{Note that problem set 1 is due on 
+  \textbf{\deadlinefirstpset}.}
+
+
+\section*{Lectures}
+
+We will begin the week by
+%   On Monday, we will start
+talking about \textbf{sets, sequences and sums.}
+In particular, when analyzing algorithms it will not seldom be the case that
+the running time can be expressed as a sum, and so we will be interested in
+\textbf{summation formulas}
+when performing
+\textbf{asymptotic analysis} (which we already started getting
+acquainted with last week).
+The asymptotic notation used in KBR differs from the one introduced in
+CLRS. We will favour the CLRS notation as it is the one commonly used
+in the context of computer science. The summation formulas are covered
+later on in the KBR book and could thus be difficult to read.
+
+We will
+%   continue with sets, sequences and sums,
+%   on  \textbf{Wednesday morning}, and
+then switch to considering
+\textbf{fundamental properties of integers} related to
+division and discuss concepts such as divisor, multiple, prime,
+greatest common divisor ($\GCD$), and least common multiple
+($\LCM$). In particular, we will go over Euclid's algorithm, one of
+the first algorithmic discoveries of mankind, which lets us calculate
+$\GCD$ of two integers efficiently. We will also discuss different
+ways to represent integers: first, in terms of their prime
+factorization and, second, using the base-$b$ positional
+notation. Note that positional notation with $b = 10$ is our standard
+way of writing numbers while $b = 2$ is used to represent numbers on a
+computer.  All of this is nicely covered in KBR Section 1.4, and quite
+likely you are already familiar with most of it.
+
+Towards the end of the week, 
+%   On \textbf{Wednesday afternoon}
+we will reach 
+\emph{one of the most important topics in this whole course},
+namely
+\textbf{mathematical induction}. This will be our preferred method to prove
+%   a sequence of
+statements  such as  
+\[
+%   P(n) :
+ \sum_{k=1}^nk=\frac{n(n + 1)}{2}
+\]
+(which is, strictly speaking,  a sequence of
+statements $P(n)$ parameterized by the positive integer~$n$).
+We will discuss how to set up and execute a proof by induction, and we
+will see that this type of argument is well-suited for proving
+statements about recursive algorithms.
+
+Since mathematical induction is such an important element
+of the course, wealso provide some
+brief notes on mathematical induction on Absalon that 
+might be an easier read than KBR.
+The difference, however, is not that big, and so you should also read 
+Section~2.4 in KBR.  
+There might be some terminology in Section~2.4 that is not yet fully
+familiar---if so, please just ignore this for now, and we will get to
+it later
+(next week if everything goes according to plan).
+
+
+
+\section*{Reading Instructions}
+\begin{itemize}  
+\item
+  \textbf{\textit{Recap:} CLRS Chapter 3:} 
+  We talked about asymptotics already last week, but stressed the
+  intuition that this is all about \emph{``focusing on the highest-order
+  term and shaving away the constant factor in front.''} This is a good
+  intuition, and will help you solve most problems you will encounter
+  regarding asymptotic analysis, but of course we also need a firm,
+  mathematical understanding of what it is we are doing. For this
+  reason, do make sure to have read the discussion of asymptotic
+  notation on  
+%   pages 43--53.  %% 3rd edition
+  pages 50--63.
+  All of 
+%     pages 43--53 
+  this material
+  is needed, although \mbox{little-o ($o$)} and \mbox{little-omega ($\omega$)}
+  are  less   important   that the other pieces of notation.
+%     Pages 53--58    %% 3rd edition
+  Pages 63--68 
+  discuss common functions and standard notation that you
+  will want to become friends with.
+  The more advanced material on 
+%     pages 58--60    %% 3rd edition
+  pages 68--70 
+  about function
+  iteration, iterated logarithms, and Fibonacci sequences is not so
+  important for now 
+  (but please note that for a basic course like this, pretty much
+  anything you run into has a high chance/risk of appearing in later
+  courses, so it might be a good time investment for the future to at
+  least look at it anyway).
+
+
+%   \item
+%     \textbf{CLRS Chapter 10}
+%     on elementary data structures such as stacks, queues, and linked lists.
+%   
+
+\item
+  \textbf{KBR Sections 1.1--1.3:}
+  We will need all of this material on 
+  sets, sequences, and sums.
+
+
+
+\item \textbf{KBR Section~1.4} on integers.   
+  (Make sure you can follow the steps of the proof of Theorem~4, as
+  this is a good example of a more advanced proof. 
+%     
+%     Expect that you
+%     will need to pause and think after reading every sentence or
+%     two. You will probably need to read this proof more than once to
+%     understand it. 
+%   
+  In general, a good test for whether you have fully
+  understood a proof is whether you can reproduce it---or at the main
+  steps in it---without looking in the book.)
+
+\item 
+  \textbf{KBR Section~1.5} on matrices
+  will be needed later in the course---why not read it right away?
+
+\item KBR Section~1.6 is \textbf{not}    
+  part of the required reading, but could be useful if you want to go
+  deeper into the mathematics and think more abstractly about what is
+  going on.
+
+\item
+  \textbf{KBR Section 2.4} on mathematical induction.
+  Again, it cannot be stressed enough how important the concept of
+  mathematical induction is, so this is something that you should
+  really study, and study hard (not just for this course). 
+
+\item
+  \textbf{Notes:}
+  There are also notes posted on Absalon which mostly overlap with
+  the material above.  It is recommended to read these notes to see a
+  second exposition of the same material, and thus double your chances
+  of getting a deep understanding of it. ;-)
+  
+\end{itemize}
+%
+\emph{\textbf{Please note that all of the above is
+    foundational material that we will use over
+    and over again in the course}
+  and that you will also be assumed to know well in later courses.
+  Therefore, it is to do good service to yourself to read this carefully, 
+  and do enough exercises
+  (see below) to be sure that you understand 
+  what is going on.}
+
+
+\section*{Suggested Exercises}
+
+\emph{How many exercises should you do?}
+The short answer to this is that you should solve enough problems
+to be sure that you know the material.
+In general, we provide many exercises to work on, just to be sure that
+you will not run out of entertainment, but there is
+no need per se to solve absolutely all of these exercises.
+What you need to do, though, is to make sure that you work on enough
+exercises that you have fully digested the topics covered in the
+lectures and the textbooks.
+
+
+As already mentioned, you are also encouraged to work on the problem
+set problems from previous years that are posted on Absalon, but it is
+probably a good idea to do some of the exercises below first to make
+sure that you have understood the course material.
+
+
+
+\subsection*{Exercises from KBR on Integers and Induction}
+
+At the end of the KBR book you can find solution to all odd-numbered
+exercises. 
+%   However, 
+It goes without saying, though, that
+it is advisable not to look at the solution until
+after you have solved the exercise or if you are completely stuck.
+Many of the early KBR exercises are testing basic understanding
+and so should hopefully be fairly quick to solve---if not, then 
+do make use of the fact that the TAs are there to help you!
+
+
+\begin{enumerate}[(1)]
+
+%   \begin{itemize}
+\item 
+KBR exercises
+%   Do exercises KBR 
+%   1.1.4, 
+1.2.1, 
+%   1.2.14, 
+1.3.7, 
+and 1.3.10
+%   , and 1.3.38.
+
+
+\item
+  KBR exercises 1.4.10,  1.4.13, 
+%   1.4.16, 
+1.4.24, 
+%    1.4.25,
+  and 1.4.35. 
+%   
+%     Time permitting, instructor presents a sample proof of 1.4.24 at the
+%     end of class.
+%   
+
+%   
+%   \item 
+%     Consider the algorithm from KBR for testing if an integer $n$ is a prime. Let's call this algorithm $\mathcal{A}$. 
+%   \begin{enumerate}[(a)] 
+%   \item  Argue that the running time of $\mathcal{A}$ is $O(\sqrt n)$.
+%   \item  Argue that the running time of $\mathcal{A}$ is not $O(1)$\footnote{Recall that $O(1)$ means constant.}. 
+%   \item {[*]} Let $t_n$ be the maximum running time of $\mathcal{A}$ over all inputs $k\in\ZZ$, where $1 \le k \le n$. Argue that  $t_n$ is $\Theta(\sqrt n)$.
+%   \end{enumerate}
+%   
+
+
+\item 
+  Solve KBR exercises
+  1.4.43 and 
+  1.4.44, and
+\begin{enumerate}[(a)]
+\item Argue that the running time of the algorithm given in KBR for finding the base $b$ expansion of $n\in\ZZ$ is $O(\log n)$. 
+\item Why is it clear that the runtime of this algorithm must be $\Theta(\log n)$? 
+\end{enumerate}
+\item
+  KBR exercises 2.4.3, 
+%   2.4.4, 
+%   2.4.8,
+%   \item
+%     Solve KBR exercises 
+  2.4.6, 
+%     2.4.8,
+%     2.4.10,  
+and 2.4.16.
+
+\item
+  If you read about matrices, then 
+  solve (some selection of) 
+  KBR exercises 1.5.5, 1.5.9, 1.5.12, 1.5.16, and 1.5.21
+  to verify your basic understanding of  the relevant concepts
+  (we will return to this later in the course).
+
+\end{enumerate}
+
+
+
+\subsection*{Some More Exercises on Asymptotic Analysis and Such}
+
+Unless explicitly stated otherwise, you are free to use theorems from
+the notes on Absalon without a proof, as well as make use of any
+previously solved exercises.
+
+\begin{enumerate}[(1)]
+
+\item 
+KBR exercises
+%   as well as 
+5.3.1, 
+5.3.5, 
+%   5.3.7, 
+and 5.3.9. 
+%   and 5.3.10.
+
+%   \end{itemize}
+%   
+
+
+%   
+%   \item Solve the equation (you are welcome to use a computer program)
+%   \[
+%   10\cdot N^{10}=2^N
+%   \]
+%   What does the solution mean in terms of the previous exercise? 
+%   
+%   
+%   \item Team 1 and Team 2 have access to two different computers. It takes $c_1>0$ seconds to compute one step for Team 1 and $c_2>0$ seconds to compute a step for Team 2. One of the following statements must hold: 
+%   \begin{enumerate}[(A')]
+%   \item Team 1's algorithm finishes faster for all $N$.
+%   \item Team 2's algorithm finishes faster for all $N$.
+%   \item Team 1's algorithm runs finishes faster for some choices of $N$, while Team 2's algorithm finishes faster for some other choices of $N$. 
+%   \end{enumerate}
+%   Is it possible to dismiss one or more of the statements (A'), (B'), and (C') as being true without knowing the exact value of $c_1$ and $c_2$?
+%\item Analyze, in a similar way, the situation where the number of steps for the two algorithms are
+%\[
+%g_1(N)=N^2-N
+%\]
+%and
+%\[
+%g_2(N)=3N^2+2N
+%\]
+
+
+\item Let $f,g:\RR^+ \to \RR$ be asymptotically positive functions. Prove the following:
+\begin{itemize}
+\item{} {\bf ($\Theta$-relation is symmetric)}  $f(x)$ is $\Theta(g(x))$ if and only if $g(x)$ is~$\Theta(f(x))$.
+\item{} If $f(x)$ is $o(g(x))$ then $g(x)$ is \emph{not} $\Theta(f(x))$.
+\end{itemize}
+
+%   Time permitting, instructors provide sample proof of one or both of the directions at the end of the exercise session.
+%   
+%   \end{enumerate}
+%   
+%   \subsection*{Tuesday Sept.~17th, 15:15-17:00}
+%   
+%   Unless explicitly stated otherwise, you are free to use theorems from
+%   this week's notes without a proof as well as make use of any
+%   previously solved exercises.
+%   
+%   \begin{enumerate}
+%   
+
+
+\item Assume that $a,b,c>0$. Use the properties of the logarithms from
+  last week's notes on functions and asymptotic analysis
+  to show that
+\begin{itemize}
+\item  $\left(\log_{a}b\right)\left(\log_{c}d\right)=\left(\log_{a}d\right)\left(\log_cb\right)$.
+\item $\log_b a = (\log_a b)^{-1}$
+ \end{itemize}
+where, in each equation above, logarithm bases are not~$1$.
+
+
+
+%   
+%   \end{enumerate}
+%   
+%   
+%   \subsection*{Friday~Sept. 20th, 10:15-12:00}
+%   
+%   
+%   Do exercises KBR 5.3.1, 5.3.5, 5.3.7, 5.3.9, 5.3.10 and the exercises
+%   below. 
+%   
+%   Also, don't forget to complete this week's quiz to check your
+%   understanding of this week's material. 
+%   
+%   \begin{enumerate}[(1)]\addtocounter{enumi}{6}
+%   
+
+
+\item Use summation formulas to calculate 
+\[
+\sum_{k=1}^{100}(k^2+k)+
+\sum_{k=0}^{10}5^k
+\]
+%%%
+%%% Why is this fun?
+%%%
+%   \item {[*]} 
+%   \item {[Tricky]} 
+%   Find an explicit expression for the series 
+%   \[
+%   \sum_{k=n}^{2n}(k+3)
+%   \]
+%%%
+%%% I think this one is just too hard... -JN
+%%%
+%   \item {[**]} 
+%   \item {[Even trickier]} 
+%   Find an explicit expression for the series 
+%   \[
+%   \sum_{k=1}^{n}\frac{k}{2^k}
+%   \]
+\end{enumerate}
+
+%   
+%   \section*{Additional exercises}
+%   \begin{enumerate}
+%   \item Exercises 1.1.4, 1.2.1, 1.2.14, 1.3.7, 1.3.10 and 1.3.38 from KBR.
+%   \end{enumerate}
+%   
+
+
+
+
+%   
+%   \subsection*{Extra Exercises on Primality}
+%   \begin{enumerate}[(1)]\addtocounter{enumi}{5}
+%   \item
+%   We want to find an efficient algorithm which can output a list of all primes between $2$ and $n$.
+%   \begin{enumerate}[(a)]
+%   \item {[*]} Argue that the algorithm, which checks all integers
+%     between $2$ and~$n$ using the algorithm from KBR has running time
+%     $\Theta(n^{3/2})$. 
+%   \item {[*]} Read about the sieve of Erathosthenes online and produce
+%     pseudocode for it. 
+%   \item {[***]} Show that the sieve-algorithm is asymptotically
+%     faster\footnote{More formally: we want to show that $f(n)$ is
+%       $o(g(n))$, where $f(n)$ and $g(n)$ are the running times of the
+%       sieve and naive algorithms respectively.} than the naive algorithm
+%     discussed above. \textsl{[Hint: Show and then use that
+%       $\sum_{k=1}^n\frac{n}{k}$ 
+%    is $\Theta(n \log n)$.]}
+%   \end{enumerate}
+%   \end{enumerate}
+%   
+%   
+
+
+\subsection*{Some Additional Exercises (Possibly for Later)}
+
+Here are some extra exercises that might be useful if
+you want to repeat this material when preparing for the exam.
+%
+\begin{enumerate}[(1)]
+
+\item
+KBR exercises
+%   1.1.4, 
+1.2.14
+and 1.3.38.
+
+\item
+  KBR exercises 1.4.11--12, 
+  1.4.16,
+  and 
+  1.4.25.
+
+\item
+  KBR exercise  1.4.41.
+
+\item
+  KBR exercises
+  2.4.8,   2.4.10, 2.4.27,  
+  and 2.4.29. 
+
+\item
+  KBR exercises
+  5.3.7
+   and 5.3.10.
+
+\item Use the definition of big-$O$ to prove or disprove the following
+\begin{itemize}
+\item $2^{x+1}$ is $O(2^x)$
+\item $2^{2x}$ is $O(2^x)$
+\end{itemize}
+
+
+\item \label{Props}  Let $f,g: \RR^+ \to \RR$ be asymptotically positive functions. Consider the following two statements:
+\begin{enumerate}
+\item $g(x)$ is $O(f(x))$ and $f(x)$ is $O(g(x))$. 
+\item There exist constants $c_1,c_2>0$ and $x_0$ such that $c_1 g(x) \le f(x) \le  c_2 g(x) $ for all $x \ge x_0$.
+\end{enumerate}
+Show that (a) holds if and only if (b) holds thus establishing the equivalence of the two definition of big-$\Theta$ from
+last week's notes on functions and asymptotic analysis.
+
+\emph{Remember that proving an ``if and only if" statement involves
+  showing two directions.}
+
+
+\item Use the rules (\emph{B1})--(\emph{B6}), (\emph{L1})--(\emph{L6}), (\emph{M1})--(\emph{M4}) from
+last week's notes on functions and asymptotic analysis
+to show the following. 
+\begin{itemize}
+\item $10x^{10}$ is $O(2^x)$
+%\item $2^x$ is not $O( 10x^{10})$
+\item $10x^{10}$ is $o(2^x)$
+\item $x^2-x$ is $O(3x^2+2x)$
+\item $3x^2+2x$ is $O(x^2-x)$.
+\item $x^2-x$ is $\Theta(3x^2+2x)$
+\item $x^3$ is $o(x2^x)$
+\item $\frac{\log_2 x}{x^2}$ is $O(1)$
+\end{itemize}
+
+\item Let $f,g:\RR^+ \to \RR$ be asymptotically positive functions. Prove rule~(\emph{L1}) from
+  the notes on functions and asymptotic analysis.
+In your proof you can use the rest of the rules and theorems from the notes as well as the following rule:
+
+\emph{(L1')} If $f(x)$ is $o(g(x))$ then $g(x) \pm f(x)$ is~$\Theta(g(x))$.
+
+\item Would rule (\emph{M2}) hold if we dropped the requirement that the constant~$c$ is positive? Justify your answer.
+
+\item Let $f(n)=2^{\log_3(n)}$ and $g(n)=n$. Find $a$ such that $f(n)= n^a$. Then determine whether $f(n)$ is $O(g(n))$ and whether $g(n)$ is $O(f(n))$.
+% grows faster or slower than $g(n)=n$.
+\end{enumerate}
+
+
+\end{document}

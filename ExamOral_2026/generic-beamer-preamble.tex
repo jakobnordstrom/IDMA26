@@ -1,0 +1,357 @@
+% The file my-beamer-preamble.tex contains settings which are very
+% similar from talk to talk, although for each talk the author, the
+% title, the presentation mode et cetera needs to be specified (so
+% my-beamer-preamble.tex is a local file in the same directory as the
+% presentation). 
+
+% 
+% TILL TANTAU'S GENERAL SUGGESTIONS FOR TALKS (15--45 MINUTES)
+%    
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame (so about 15-30 frames, all told). 
+%    
+
+%    
+% SOME PACKAGES   
+%    
+
+%    \usepackage[swedish, english]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{bigstrut}
+%    \usepackage{array}
+
+% Smart spacing after macros
+\usepackage{xspace}
+
+% To get smiley
+% The package wasysym has a conflict with \descnode in definitions.tex
+\usepackage{wasysym}
+
+%
+% CONDITIONAL COMPILATION OF SLIDES
+%
+%    \usepackage{ifthen}
+%    \newboolean{longversiontalk}          
+% Assign by doing
+%    {\setboolean{longversiontalk}{false}}
+%    {\setboolean{longversiontalk}{true}}
+% Use by doing
+%    \ifthenelse{\boolean{longversiontalk}}{long version}{short version}
+
+%
+% WORK ON A LIMITED NUMBER OF SLIDES
+%
+% \includeonlyframes{<labellist>}, e.g. {current}
+%
+% \begin{frame}[label=current]
+%  \frametitle{}
+%\end{frame}
+%
+% \includeonlyframes{current}
+
+
+%
+% SLIDES WITH OR WITHOUT NOTES
+%
+% Uncomment the next line to get file without notes (use for presentation)
+%    \setbeameroption{hide notes}
+% Uncomment the next line to get file with slides and notes interleaved    
+%    \setbeameroption{show notes}
+% Uncomment the next line to get only notes for what I should say, no slides
+%    \setbeameroption{show only notes}
+
+%
+% HANDOUT/PRINTOUT VERSION OR PRESENTATION VERSION
+%
+% Uncomment this for printing the presentation
+%    \newcommand{\Pause}{}
+% Uncomment this to get file for presentation (show items one after another)    
+\newcommand{\Pause}{\pause}
+
+
+%    
+% FOR HANDOUTS   
+%    This doesn't seem to work, although it's copy-pasted from the manual
+%    
+%    \mode<handout>{	
+%      \setbeamercolor{background canvas}{bg=black!5}
+%      \usepackage{pgfpages}
+%      \pgfpagelayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+%      \renewcommand{\Pause}{}
+%    }
+
+
+%
+% GRAPHICS
+%
+% For including METAPOST encapsulated PostScript files using either 
+% latex or pdflatex (it seems latex gets confused by mps rule!?)
+\usepackage{ifpdf}
+\usepackage{graphicx}  
+\ifpdf         
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi            
+
+%
+% PRESENTATION THEME
+%
+
+\mode<presentation>{
+% WARSAW, COPENHAGEN, LUEBECK and MALMOE are in the same ``theme family''
+% WARSAW is the flashiest one
+%      \usetheme{Warsaw}
+% COPENHAGEN is like Warsaw but without shadows
+  \usetheme{Copenhagen}
+% LUEBECK is pretty much like Copenhagen, but more angular
+%      \usetheme{Luebeck}
+% MALMOE is the most stripped-down theme of the four (less is more)
+%      \usetheme{Malmoe}
+
+% BOADILLA is a nice, clean theme without navigational info on top
+% (so we can squeeze in a bit more on the pages).
+% The option secheader adds a bit of navigational info
+%     \usetheme[secheader]{Boadilla}
+% MADRID is like the Boadilla theme, except that stronger colors are used 
+% and that the itemize icons are not modified. The same options as for the 
+% Boadilla theme may be given.
+%     \usetheme[secheader]{Madrid}
+
+% CRANE colour theme has Lufthansa-like colours...
+  \usecolortheme{crane}
+% ALBATROSS has light text on dark background
+%    \usecolortheme{albatross}
+% BEAVER: based on MIT colours (but was not present in my installation)
+%  \usecolortheme{beaver}
+
+%      \usecolortheme{dolphin}
+
+% 
+% SOME SETTINGS FROM MIKI HERMANN (changing from default Warsaw settings)
+%
+%     \usecolortheme{seahorse}    % Takes care of borders
+%     \usecolortheme{rose}        % Takes care of slide proper
+
+
+%
+% REDEFINED FOOTER DISPLAYING:
+%    
+%  -----------------------------------------------------------------
+% | Name (affiliation)  | Short title of talk | Date  frame#/total# |
+%  -----------------------------------------------------------------
+% 
+% Also set colours in header and footer to match
+% (though this should probably be done in a more elegant way)
+%    
+  \setbeamercolor{frametitle}{parent=palette primary}
+  \setbeamercolor{subsection in head/foot}{parent=palette secondary}
+  \setbeamercolor{section in head/foot}{parent=palette quaternary}
+  \setbeamercolor*{title in head/foot}{parent=subsection in head/foot}
+  \setbeamercolor*{date in head/foot}{parent=frametitle}
+  \setbeamercolor*{author in head/foot}{parent=section in head/foot}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}%
+      \insertshortauthor~~(\insertshortinstitute)
+    \end{beamercolorbox}%
+%        \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \begin{beamercolorbox}[wd=.50\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2ex}%
+      % DIDN'T GET THIS TO WORK, SO MADE A HACK INSTEAD
+      %          \insertframenumber{}/\insertpresentationendpage\hspace*{2ex} 
+      \insertframenumber{}/\inserttotalframenumber\hspace*{2ex} 
+      %    %      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+%
+% REDEFINED FOOTER DISPLAYING:
+%    
+%  ------------------------------------------------------------
+% |         Short title of talk | Date         frame# / total# | 
+%  ------------------------------------------------------------
+% 
+% 
+% \setbeamertemplate{footline}
+% {%
+%   \leavevmode%
+%   \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshorttitle
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshortdate \hfill \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+
+
+%
+% FONTS (the things below do not really work that well)
+%
+
+%    \usepackage{times}
+%    \usepackage[T1]{fontenc}
+%
+
+% 
+% SOME FONT SETTINGS FROM MIKI HERMANN 
+%
+
+\usefonttheme{professionalfonts}
+\usefonttheme[onlymath]{serif}
+
+% Uncomment this to use Times (though it spoils all formatting by the theme!?)
+% Need to look closer at this later
+%    \usepackage{mathptmx}
+%    \usepackage{helvet}
+%    \setbeamerfont{normal text}{serif} 
+
+%
+% NAVIGATION SYMBOLS OR NOT
+%
+  \setbeamertemplate{navigation symbols}{}
+
+%    
+% DISPLAYING OF NON-DISPLAYED TEXT   
+%                    
+% Determines how much you want to see of text that has not yet appeared.  
+% (0-100, default 15)
+  \setbeamercovered{transparent=0}
+%      \setbeamercovered{transparent=15}
+}    % END of \mode<presentation>{
+
+%    
+% LOGO IN LOWER RIGHT CORNER ON ALL SLIDES
+%    
+%    \pgfdeclareimage[height=2cm]{KTH-logo}{KTH_eng_CMYK} % omit file suffix
+%    \logo{\pgfuseimage{KTH-logo}}    
+%    
+
+%    
+% LOGO ON TITLE PAGE
+%    
+% Optimized by hand to work with the KTH logo EPS-file and 
+% my home-made PDF-version (but the home-made version 
+% turns out ugly)
+%
+
+%    \ifpdf
+%    \pgfdeclareimage[height=3cm]{KTH-logo}{KTH_eng_CMYK}  
+%    % JPEG file turns out ugly, even in high resolution
+%    %    \pgfdeclareimage[height=1.6cm]{KTH-logo}{KTH_eng_rgb}  
+%    \titlegraphic{\vspace{-4.35cm}\pgfuseimage{KTH-logo}\hfill{ }}
+%    \else
+%    \pgfdeclareimage[height=2cm]{KTH-logo}{KTH_eng_CMYK}  
+%    \titlegraphic{\vspace{-3.9cm}\pgfuseimage{KTH-logo}\hfill\vspace{3cm}}
+%    \fi
+    
+% Two logos on title page:
+% \titlegraphic{\vspace{-3cm}\pgfuseimage{TCS-Logo}\hfill\pgfuseimage{Uni-Logo}\vspace{2.8cm}}
+% \pgfdeclareimage[height=1.6cm]{TCS-Logo}{/home/arpe/support/TCS-Logo}
+% \pgfdeclareimage[height=1.8cm]{Uni-Logo}{/home/arpe/support/Uni-Logo}
+ 
+%    
+% TABLE OF CONTENTS DIPLAYED AT BEGINNING OF EACH SUBSECTION    
+%    
+
+% Comment this out if you do not want the table of contents to pop up at
+% the beginning of each subsection (and we normally don't, do we?):
+%\AtBeginSubsection[]{
+%  \begin{frame}<beamer>
+%    \frametitle{Agenda}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+
+%
+% MY LATEX MACRO FILES AND SOME MACRO DEFINITIONS
+%
+
+\usepackage{mathtools}
+
+% To avoid conditional compilation errors in Beamer.
+\input{doctypedetection.tex}
+
+% REMOVE
+%   \input{definitions.tex}
+% REPLACE BY
+\input{macros-general.tex}
+% REMOVE
+%   \input{notationProofComplexity.tex}
+%   \input{notationClauseSpacePebbling.tex}
+
+% Change my macro \introduceterm to use Beamer's stronger emphasis
+\providecommand{\introduceterm}[1]{\alert{#1}}
+\renewcommand{\introduceterm}[1]{\alert{#1}}
+
+% Change definition of Ordo and polynomial bounds
+\providecommand{\BIGOH}[1]{{\ensuremath{\mathcal{O} \left( #1 \right)}}}
+\renewcommand{\BIGOH}[1]{{\ensuremath{\mathcal{O} \left( #1 \right)}}}
+\providecommand{\Bigoh}[1]{{\ensuremath{\mathcal{O} \bigl( #1 \bigr)}}}
+\renewcommand{\Bigoh}[1]{{\ensuremath{\mathcal{O} \bigl( #1 \bigr)}}}
+\providecommand{\bigoh}[1]{{\ensuremath{\mathcal{O} ( #1 )}}}
+\renewcommand{\bigoh}[1]{{\ensuremath{\mathcal{O} ( #1 )}}}
+
+%   \renewcommand{\polybound}[1]{\ensuremath{\mathit{poly} ( #1 )}}
+%   \renewcommand{\polyboundsmall}[1]{\ensuremath{\mathit{poly} ( #1 )}}
+%   \renewcommand{\polyboundlarge}[1]{\ensuremath{\mathit{poly} \left( #1 \right)}}
+%   \renewcommand{\polyboundcompact}[1]{\ensuremath{\mathit{poly} \bigl( #1 \bigr)}}
+
+% Provide environments for proposition, observation, conjecture etc
+\newtheorem{proposition}{Proposition}
+\newtheorem{observation}{Observation}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{openproblem}{Open Problem}
+\newtheorem{openproblems}{Open Problems}
+\newtheorem{openquestion}{Open Question}
+
+% Highlight text in different colours 
+% (red is default in \alert, use other colours *very* sparingly)
+\newcommand<>{\alertred}[1]{{\color#2{red}#1}}
+%    \newcommand<>{\alertblue}[1]{{\color#2[rgb]{0,0,0.8}#1}}
+\newcommand<>{\alertblue}[1]{{\color#2[rgb]{0,0,0.9}#1}}
+%    \newcommand<>{\alertgreen}[1]{{\color#2[rgb]{0,0.75,0}#1}}
+\newcommand<>{\alertgreen}[1]{{\color#2[rgb]{0,0.6,0}#1}}
+
+
+\newcommand<>{\shadegrey}[1]{{\color#2[rgb]{0.7,0.7,0.7}#1}}
+
+% This is an ugly-hack-way of getting blank lines between text. Use
+% (or rather do not use) like this
+%        
+%        Here the text in the previous paragraph ends.
+%                        < leave a blank line here >
+%        \blankline
+%                        < leave a blank line here >
+%        Here the new paragraph starts
+
+\newcommand{\blankline}{\vspace{2.5mm}}
+\newcommand{\blanklinehalf}{\vspace{1.25mm}}
+
+%
+% Horizontal line across page
+%
+\newlength{\myrulerlength}
+\setlength{\myrulerlength}{0.3mm}
+\newcommand{\horizontalrule}{\rule{\textwidth}{\myrulerlength}}
+
+%
+%
+%
+
+\makeatletter
+\newcommand{\srcsize}{\@setfontsize{\srcsize}{5pt}{5pt}}
+\makeatother

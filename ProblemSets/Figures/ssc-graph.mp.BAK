@@ -1,0 +1,297 @@
+%
+% Code for drawing directed and undirected graphs
+%
+% Used in this file to draw directed graphs for SSC computation
+%
+%    Compile by doing "mpost ssc-graph.mp"
+%
+
+color gray;
+pen   fatedgepen;
+ 
+fatedgepen = pencircle scaled 2.5;
+
+
+gray          :=  0.80 white;
+csize         :=  6.0 mm;        % diameter of nodes
+vdist         := 40.0 mm;
+stdedgeoffset :=  5.0 mm;
+stdlbloffset  :=  3.0 mm;
+edgebendval   :=  5.0 mm;
+
+%%%
+%%% MACROS FOR DEFINING CONCRETE GRAPH
+%%%
+
+%
+% Define nodes and draw them
+%
+def definegraphnodes =
+  i := 0;
+
+  % Define points
+  for col := 1 upto 4:
+    for row := 1 upto 2:
+      i := i + 1;
+      z[i] = origin + ((col -1) * vdist, -(row - 1) * vdist);
+    endfor
+  endfor
+
+  % Define nodes and draw them
+  for i := 1 upto 8:
+    c[i] = fullcircle scaled csize shifted z[i];
+    draw c[i];
+  endfor
+enddef;
+
+%
+% Draw vertex labels
+%
+def labelgraphvertices = 
+  label(btex $a$ etex , z[1]);
+  label(btex $b$ etex , z[2]);
+  label(btex $c$ etex , z[3]);
+  label(btex $d$ etex , z[4]);
+  label(btex $e$ etex , z[5]);
+  label(btex $f$ etex , z[6]);
+  label(btex $g$ etex , z[7]);
+  label(btex $h$ etex , z[8]);
+enddef;
+
+%
+% Draw edges
+%
+
+def drawgraphedges =
+  pair midpt;
+
+  % Edges from vertex a
+  
+  drawcurveddiredge (1, 2, 1, 
+      false, false, false, false);
+
+  drawstraightdiredge (1, 4,
+      false, false, false, false);
+
+%     drawcurveddiredge (1, 4, 1, 
+%         true, btex $42$ etex, 1, 0.4);
+
+  drawcurveddiredge (1, 5, 1.5, 
+      false, false, false, false);
+  
+  % Edges from vertex b
+
+  drawcurveddiredge (2, 1, 1,
+      false, false, false, false);
+  
+  drawstraightdiredge (2, 3,
+      false, false, false, false);
+  
+  drawstraightdiredge (2, 4,
+      false, false, false, false);
+  
+%     drawstraightdiredge (2, 4,
+%         true, btex $17$ etex, -1, 0.5);
+  
+  % Edges from vertex c
+
+  drawstraightdiredge (3, 1,
+      false, false, false, false);
+  
+  drawstraightdiredge (3, 5,
+      false, false, false, false);
+  
+  drawstraightdiredge (3, 6,
+      false, false, false, false);
+  
+  % Edges from vertex d
+
+  drawcurveddiredge (4, 5, 1,
+      false, false, false, false);
+  
+  drawstraightdiredge (4, 6,
+      false, false, false, false);
+  
+  % Edges from vertex e
+
+  drawcurveddiredge (5, 4, 1,
+      false, false, false, false);
+  
+  drawstraightdiredge (5, 6,
+      false, false, false, false);
+  
+  drawstraightdiredge (5, 8,
+      false, false, false, false);
+  
+  % Edges from vertex f
+
+    drawstraightdiredge (6, 7,
+      false, false, false, false);
+  
+  % Edges from vertex g
+
+  drawstraightdiredge (7, 8,
+      false, false, false, false);
+  
+  % Edges from vertex h
+
+  drawstraightdiredge (8, 6,
+      false, false, false, false);
+enddef;
+ 
+
+
+%%%
+%%% GENERIC CODE FOR DRAWING DIRECTED EDGES
+%%%
+
+% drawdiredge
+%
+% Most general function for drawing directed edges. Non-obvious parameters:
+% - midpt is a waypoint "midway" along the edge
+% - uselbl is true if the edge should be labelled
+% - lbl is the label (typically btex $<label>$ etex
+% - lbloffsetfac: how far away to put the label, and on which side; a number 
+% - lblfrac: fractionally how far along the edge is the label?
+
+def drawdiredge (expr startpt, midpt, endpt,
+    uselbl, lbl, lbloffsetfac, lblfrac) =
+  pair lbloffsetpt;
+  path edgepath;
+
+  edgepath := z[startpt]..midpt..z[endpt];
+
+  drawarrow edgepath cutbefore c[startpt] cutafter c[endpt];
+  
+  if uselbl:
+%       draw point 2* lblfrac of edgepath withpen pencircle scaled 3;
+
+    lbloffsetpt :=
+      point 2 * lblfrac of edgepath
+      + lbloffsetfac * stdlbloffset *
+      dir (angle (z[endpt] - z[startpt]) + 90);
+    
+    label(lbl, lbloffsetpt);
+  fi;
+  
+enddef;
+
+
+% *** drawdiredgefat IS OBSOLETE ***
+def drawdiredgefat (expr startpt, midpt, endpt, uselbl, lbl, lblpos) =
+  drawarrow z[startpt]..midpt..z[endpt] cutbefore c[startpt] cutafter c[endpt]
+    withpen fatedgepen;
+
+  if uselbl:
+    label(lbl, lblpos);
+  fi;
+enddef;
+
+
+def drawstraightdiredge (expr startpt, endpt, uselbl, lbl, lbloffsetfac, lblfrac) =
+  drawdiredge (startpt, 1/2[z[startpt], z[endpt]], endpt,
+      uselbl, lbl, lbloffsetfac, lblfrac);
+enddef;
+
+
+% offsetfac determines to which side, and how much, the edge curves.
+% Values 1 or -1 give standard curving
+
+def drawcurveddiredge (expr startpt, endpt, offsetfac,
+    uselbl, lbl, lbloffsetfac, lblfrac) =
+
+  pair offsetpt;
+  
+  offsetpt := 1/2[z[startpt], z[endpt]]
+    + offsetfac * stdedgeoffset *
+    dir (angle (z[endpt] - z[startpt]) + 90);
+
+  drawdiredge (startpt, offsetpt, endpt,
+      uselbl, lbl, lbloffsetfac, lblfrac);
+enddef;
+
+ 
+%%%
+%%% GENERIC CODE FOR DRAWING UNDIRECTED EDGES
+%%%
+
+%
+% Most general function for drawing edges. Parameters:
+% - midpt is a waypoint "midway" along the edge
+% - uselbl is true if the edge should be labelled
+% - lbl is the label (typically btex $<label>$ etex
+% - lbloffsetfac: how far away to put the label, and on which side; a number 
+% - lblfrac: fractionally how far along the edge is the label?
+
+def drawundiredge (expr startpt, midpt, endpt, uselbl, lbl, lbloffsetfac, lblfrac) =
+  pair lbloffsetpt;
+  path edgepath;
+
+  edgepath := z[startpt]..midpt..z[endpt];
+
+  draw edgepath cutbefore c[startpt] cutafter c[endpt];
+  
+  
+  if uselbl:
+%       draw point 2* lblfrac of edgepath withpen pencircle scaled 3;
+
+    lbloffsetpt :=
+      point 2 * lblfrac of edgepath
+      + lbloffsetfac * stdlbloffset *
+      dir (angle (z[endpt] - z[startpt]) + 90);
+    
+    label(lbl, lbloffsetpt);
+  fi;
+  
+enddef;
+
+
+% *** drawundiredgefat IS OBSOLETE ***
+def drawundiredgefat (expr startpt, midpt, endpt, uselbl, lbl, lblpos) =
+  draw z[startpt]..midpt..z[endpt] cutbefore c[startpt] cutafter c[endpt]
+    withpen fatedgepen;
+
+  if uselbl:
+    label(lbl, lblpos);
+  fi;
+enddef;
+
+
+def drawstraightundiredge (expr startpt, endpt, uselbl, lbl, lbloffsetfac, lblfrac) =
+  drawundiredge (startpt, 1/2[z[startpt], z[endpt]], endpt,
+      uselbl, lbl, lbloffsetfac, lblfrac);
+enddef;
+
+
+% offsetfac determines to which side, and how much, the edge curves.
+% Values 1 or -1 give standard curving
+
+def drawcurvedundiredge (expr startpt, endpt, offsetfac,
+    uselbl, lbl, lbloffsetfac, lblfrac) =
+
+  pair offsetpt;
+  
+  offsetpt := 1/2[z[startpt], z[endpt]]
+    + offsetfac * stdedgeoffset *
+    dir (angle (z[endpt] - z[startpt]) + 90);
+
+  drawundiredge (startpt, offsetpt, endpt,
+      uselbl, lbl, lbloffsetfac, lblfrac);
+enddef;
+
+
+%
+% FIGURE 1: Directed graph with edges
+%
+beginfig(1);
+  path c[];
+  
+  definegraphnodes;
+
+  labelgraphvertices;
+
+  drawgraphedges;
+endfig;
+
+
+end

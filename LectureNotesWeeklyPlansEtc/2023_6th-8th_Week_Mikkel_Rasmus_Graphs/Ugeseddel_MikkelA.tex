@@ -1,0 +1,511 @@
+%\newif\iffull
+%\fulltrue
+
+\documentclass{article}
+\usepackage{amssymb, amsmath, amsthm}
+
+\usepackage{fullpage}
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+%\usepackage[subtle]{savetrees}
+%\usepackage{comment}
+% \usepackage{todonotes}
+% \usepackage{cleveref}
+% \usepackage{caption}
+% \usepackage{subcaption}
+%\usepackage{lineno}
+% \usepackage{changes}
+% \usepackage{comment}
+\usepackage{xcolor}
+% \usepackage{mathtools}
+
+% \usepackage{framed}
+\usepackage[nobreak=true]{mdframed}
+
+
+%\linenumbers
+
+\title{DMFS 2023: Ugeseddel for Mikkel Abrahamsen's Lecture on Heaps}
+
+% \author{Mikkel Abrahamsen\footnote{Basic Algorithms Research Copenhagen (BARC), University of Copenhagen.
+% BARC is supported by the VILLUM Foundation grant 16582.}}
+\date{}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\mydef}{:=}%should maybe more fancy, but now easy to change.
+
+\newcommand{\OPT}{\textsc{Opt}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% \theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+% \newtheorem{construction}[theorem]{Construction}
+\newtheorem{remark}[theorem]{Remark}
+
+% \sloppy % This is for avoiding lines going into the margin
+
+\begin{document}
+	\maketitle
+
+\section*{Litteratur}
+%   
+%   Uge 4 vil vi primært bruge på:
+%   \begin{itemize}
+%   \item[-]
+%   CLRS introduktion til Part III, side 249--251.
+%   
+%   \item[-]
+%   CLRS kapitel 10, dog ikke afsnit 10.3.
+%   
+%   \item[-]
+%   CLRS kapitel 6.
+%   \end{itemize}
+%   
+CLRS kapitel 6.
+
+\section*{Mål  %% for ugen
+}
+%   
+%   \begin{itemize}
+%   \item[-]
+%   Overordnet: Kendskab til elementære datastrukturer.
+%   
+%   \item[-]
+%   Kendskab til stakke, køer, hægtede lister, hobe, prioritetskøer.
+%   
+%   \item[-]
+%   Kendskab til heap sort.
+%   \end{itemize}
+
+Kendskab til heap sort.
+
+%   
+%   \section*{Plan for ugen}
+%   \begin{itemize}
+%   \item[-]
+%   Mandag: Stakke, køer og hægtede lister (CLRS kapitel 10, dog ikke afsnit 10.3).
+%   
+%   \item[-]
+%   Tirsdag: Prioritetskøer og hobe (CLRS kapitel 6).
+%   
+%   \item[-]
+%   Fredag: Heap sort (CLRS kapitel 6). Opsummering og afrunding.
+%   \end{itemize}
+%   
+
+
+\section*{Opgaver 
+%   til tirsdag
+}
+
+\begin{enumerate}
+\item
+\textbf{Hobeegenskaber og håndkørsel}
+\begin{enumerate}
+\item
+Hvilke af følgende træer er hobe?
+
+\noindent
+\includegraphics[page=4]{figs.pdf}
+
+\item
+Hvilke af følgende arrays er hobe?
+$$A=[9,7,8,3,4]\quad\quad B=[12,4,7,1,2,10]\quad\quad C=[5,7,8,3]$$
+
+\item
+Lad $S=(4,8,11,5,21,*,2,*)$ være en sekvens af operationer hvor alle tal svarer til en indsættelse af tallet og $*$ svarer til en \textsc{Extract-Max}-operation.
+Startende med en tom hob $H$, vis hvordan $H$ ser ud efter hver operation i $S$.
+
+\item
+Tegn hvordan nedenstående max-hob ser ud efter indsættelse af et element med nøgle $19$.
+
+\noindent
+\includegraphics[page=5]{figs.pdf}
+
+\item
+Tegn hvordan nedenstående max-hob ser ud efter en \textsc{Extract-Max}-operation.
+
+\noindent
+\includegraphics[page=5]{figs.pdf}
+\end{enumerate}
+
+\item \textbf{Hobe}
+\begin{enumerate}
+\item
+CLRS 6.1-4.
+
+\item
+CLRS 6.1-6.
+\item
+CLRS 6.1-7 (ekstra).
+\item
+CLRS 6.1-8 (ekstra). \emph{Hint:} Tænk over hvor i tabellen den sidste knude som har børn ligger.
+\end{enumerate}
+
+\item
+\textbf{\textsc{Max-Heapify}}
+\begin{enumerate}
+\item
+CLRS 6.2-1.
+\item
+CLRS 6.2-4.
+\item
+CLRS 6.2-5.
+\end{enumerate}
+
+\item
+\textbf{Build-Max-Heap}
+\begin{enumerate}
+\item
+CLRS 6.3-1.
+\item
+CLRS 6.3-3.
+\end{enumerate}
+
+%   
+%   \end{enumerate}
+%   
+%   \section{Opgaver til fredag}
+%   
+%   \begin{enumerate}
+%   
+
+\item \textbf{Heapsort}
+\begin{enumerate}
+\item
+CLRS 6.4-1.
+
+\item
+CLRS 6.4-3.
+Denne opgave er svær hvis man skal regne køretiden præcist ud (også asymptotisk).
+Her behøver du bare at undersøge om det tilsyneladende hjælper hvis arrayet $A$ til at begynde med er sorteret eller omvendt sorteret.
+\end{enumerate}
+
+%   
+%   \item
+%   \textbf{Kø med stakke.} CLRS 10.1-7.
+%   
+
+\item
+\textbf{Prioritetskøer.}
+\begin{enumerate}
+\item
+CLRS 6.5-1.
+\item
+CLRS 6.5-2.
+\item
+CLRS 6.5-3.
+\end{enumerate}
+
+%   
+%   \item
+%   \textbf{Listevending}
+%   \begin{enumerate}
+%   \item
+%   CLRS 10.2-5.
+%   
+%   \item
+%   (*) Lav en rekursiv procedure som vender en liste. Bruger den ligeledes konstant ekstra plads?
+%   \end{enumerate}
+%   
+
+\item
+\textbf{0-indekseret hob.}
+I CLRS er alle hob-funktionerne opskrevet med 1-indeksering.
+Denne opgave handler om hvilke ændringer der skal laves hvis vi i stedet bruger 0-indeksering, hvor vi gemmer roden af hoben in $A[0]$.
+\begin{enumerate}
+\item
+Opskriv funktionerne {\sc{Parent}}($i$), {\sc{Left}}($i$) og {\sc{Right}}($i$) (CLRS side 162) hvis vi bruger 0-indeksering.
+
+\item
+Hvad skal der ellers ændres i {\sc{Heapsort}}($A$), når man 0-indekserer?
+\end{enumerate}
+
+\item
+\textbf{Hob-konstruktion vha.~indsættelser.}
+CLRS problem 6-1.
+
+\end{enumerate}
+
+\section*{Stjerneopgaver (svære ekstraopgaver)}
+
+\begin{enumerate}
+
+\item
+\textbf{Prioritetspolitik.}
+Teknokratisk alternativ vil gerne have hjælp til at implementere deres ``frisk luft''-politik.
+Der skal designes et register over borgere og deres indkomst, således man effektivt kan finde dem med lavest indkomst og deportere dem.
+Specifikt skal systemet understøtte følgende operationer.
+\begin{itemize}
+\item \textsc{Indsæt}$(c, i)$: Indsæt person med cpr.-nr.~$c$ og årlig indkomst $i$ i systemet.
+\item \textsc{Slet-Laveste-Indkomst}$()$: Fjern og returnér (deportér) person med laveste indkomst.
+\end{itemize}
+\begin{enumerate}
+\item
+Foreslå en effektiv datastruktur $M$ til systemet.
+
+\item (*) Antiteknokraterne, et andet ekstrem, får senere magten og indfører et system hvor dem med de højeste indkomster deporteres.
+Landets statslige IT leverandør laver derfor en ny datastruktur $H$ der understøtter dette system.
+Senere overtager Fjolleristerne magten.
+De vil have et system $F$ der kan deportere den person som har den midterste (median) indkomst.
+Vis hvorledes $F$ kan implementeres vha.~$H$ og $M$.
+\end{enumerate}
+
+
+%   
+%   
+%   \item
+%   \textbf{Træer.} Læs CLRS afsnit 10.3 og lav følgende opgaver.
+%   \begin{enumerate}
+%   
+%   \item
+%   CLRS 10.3-1.
+%   
+%   \item
+%   CLRS 10.3-2.
+%   
+%   \item
+%   CLRS 10.3-3.
+%   
+%   \item
+%   CLRS 10.3-4.
+%   
+%   \item
+%   (*) CRLS 10.3-5.
+%   
+%   \item
+%   (*) CLRS 10.3-6.
+%   \end{enumerate}
+%   
+%   
+%   \item
+%   \textbf{Rækkefølger som kan laves med en stak.}
+%   Lad $S$ være en tom stak.
+%   For $i=1,2,\ldots,n$ gør vi følgende.
+%   Vi putter tallet $i$ på $S$.
+%   Vi popper dernæst $0$ eller flere elementer fra $S$.
+%   Efter at tallet $n$ er puttet på $S$ popper vi alle tilbageværende elementer fra $S$.
+%   Vi er interesserede i hvilke rækkerfølger tallene $1,2,\ldots,n$ kan forlade stakken i.
+%   F.eks.~kan vi lave rækkefølgen $n,n-1,\ldots,2,1$ ved først at poppe efter at $n$ er puttet på, og vi kan lave $1,2,\ldots,n$ ved at poppe hvert tal lige efter det er puttet på $S$. 
+%   \begin{enumerate}
+%   \item
+%   Opskriv for $n=4$ to lister: én med alle de rækkefølger man kan lave og én med alle dem man ikke kan lave.
+%   
+%   \item
+%   Hvilke rækkefølger kan laves hvis vi bruger en kø i stedet for en stak?
+%   
+%   \item
+%   (*) Vis at en rækkefølge $p_1,p_2,\ldots,p_n$ ikke kan laves (med en stak) hvis der findes tre indekser $i,j,k$, hvor $1\leq i<j<k\leq n$ og $p_i > p_k > p_j$.
+%   
+%   \item
+%   (**)
+%   Vis at hvis der \emph{ikke} findes tre indekser $i,j,k$ som beskrevet ovenfor, så kan rækkefølgen godt laves.
+%   
+%   \item
+%   (***) Find en formel for antallet $a(n)$ af rækkefølger der kan laves med et givet $n$.
+%   \end{enumerate}
+%   
+
+\item
+\textbf{Nedre grænse for heap sort.}
+Løs CLRS 6.4-4.
+
+\item
+\textbf{Dynamiske mængder med forening.}
+Vi er interesseret i at vedligeholde en familie af mængder af heltal $\mathcal F = \{S_1, \ldots, S_k\}$.
+Her er hvert $S_i$ en mængde af heltal.
+Vi vil gerne understøtte følgende operationer.
+\begin{itemize}
+\item
+$\textsc{Make-Set}(x)$:
+Tilføj mængden $\{x\}$ til $\mathcal F$.
+
+\item
+$\textsc{Report}(S_i)$:
+Rapportér (f.eks.~udskriv til skærmen) alle elementerne i $S_i$.
+
+\item
+$\textsc{Union}(S_i, S_j)$:
+Tilføj mængden $S_i \cup S_j$ til $\mathcal F$.
+Mængderne $S_i$ og $S_j$ slettes fra $\mathcal F$.
+
+\item
+$\textsc{Disjoint-Union}(S_i, S_j)$:
+Ligesom $\textsc{Union}(S_i, S_j)$ på nær at det antages at $S_i$ og $S_j$ er disjunkte, dvs., at $S_i$ og $S_j$ ikke har nogle elementer til fælles.
+Hvis $S_i$ og $S_j$ ikke er disjunkte er resultatet af operationen udefineret.
+\end{itemize}
+
+\emph{Eksempel:} Lad $\mathcal F$ bestå af 3 mængder $S_1 = \{2, 12, 5, 13\}$, $S_2 = \{6, 7, 1\}$ og $S_3 = \{8, 1, 7\}$.
+Et kald til $\textsc{Disjoint-Union}(S_1, S_2)$ producerer mængden $S_1 \cup S_2 = \{2, 12, 5, 13, 6, 7, 1\}$, hvorefter $\mathcal F$ består af $S_1 \cup S_2$  og $S_3$.
+Et kald til $\textsc{Union}(S_1\cup S_2, S_3)$ producerer mængden $S_1 \cup S_2 \cup S_3  = \{2, 12, 5, 13, 6, 7, 1, 8\}$ hvorefter $\mathcal F$  består af $S_1 \cup S_2 \cup S_3$.
+Løs følgende opgaver.
+
+\begin{enumerate}
+\item
+Giv en datastruktur, der understøtter $\textsc{Make-Set}$ og $\textsc{Disjoint-Union}$ i $O(1)$ tid og $\textsc{Report}(S_i)$ i $\Theta(|S_i|)$ tid.
+\emph{Hint:} Benyt en passende listedatastruktur.
+
+\item
+Udvid din datastruktur således at den også understøtter $\textsc{Union}$ og analysér tidskompleksiteten af din løsning.
+
+\item
+(*) Giv en datastruktur, der understøtter $\textsc{Make-Set}$ i $O(1)$ tid, $\textsc{Report}(S_i)$ i $\Theta(|S_i|)$ tid og $\textsc{Union}(S_i,S_j)$ i $\Theta(|S_i| + |S_j|)$ tid (bemærk at $\textsc{Disjoint-Union}$  ikke skal understøttes).
+\end{enumerate}
+
+
+\item (*) Vis at \textsc{Insert}, \textsc{Extract-Max} og \textsc{Increase-Key} bibeholder hobeordenen.
+\item (*) CLRS 6.5-11.
+
+\item \textbf{Hobegenskaber (*)}
+\begin{enumerate}
+\item
+Lad $T$ være et komplet binært træ af højde $h$.
+Højden $h$ er defineret som antallet af kanter på vejen fra et blad til roden.
+Vis at antallet af knuder i $T$ er $n = 2^{h+1}  - 1$.
+Hint: vi har at $n = 1 + 2 + 4 + \ldots + 2^h$.
+Multiplicér summen med $2$ og træk summen fra.
+Eller tænk på summen i binær repræsentation.
+\item
+Lad $n' = 2^{h+1}$ for et heltal $h\geq 1$.
+Definér $S = n'/4 \cdot 1 + n'/8 \cdot 2 + n'/16 \cdot 3 + n'/32 \cdot 4 +\ldots + n'/2^{h+1}\cdot h$, og vis at $S= \Theta (n')$.
+(Hint: Udregn $S - S/2$.)
+Udled af denne udregning at \textsc{Build-Max-Heap} på en tabel af størrelse $n=2^{h+1}-1$ (svarende til et komplet binært træ af højde $h$) tager $\Theta(n)$ tid.
+
+\item
+CLRS 6.1-1.
+
+\item
+CLRS 6.1-2.
+
+\item
+CLRS 6.3-4.
+\end{enumerate}
+
+% \item
+% \textbf{Ændret prioritetskøoperation og anden definition af $\Theta$.}
+% Betragt en prioritetskø $Q$ af størrelse $n$ implementeret som en hob.
+% Vores prioritetskø $Q$ har en særlig operation $\textsc{Extract-Max-Even-Only}()$: Hvis $n$ er et lige tal, så køres den sædvanlige operation $\textsc{Extract-Max}()$ på $Q$.
+% Hvis derimod $n$ er ulige, laves ingen forandring på $Q$ og der returneres blot \textsc{Nil}.
+% \begin{enumerate}
+% \item
+% Opskriv en øvre grænse for køretiden af $\textsc{Extract-Max-Even-Only}()$ med $O$-notation i tilfældet $n$ er lige og $n$ er ulige.
+
+% \item
+% Argumentér for at køretiden af $\textsc{Extract-Max-Even-Only}()$ er $O(\log n)$.
+
+% \item
+% Argumentér for at køretiden af $\textsc{Extract-Max-Even-Only}()$ \emph{ikke} er $\Theta(\log n)$.
+
+% \item
+% Definér en funktion $f(n)$ til at være $\widehat\Theta(g(n))$ hvis
+% \begin{itemize}
+% \item
+% $f(n)=O(g(n))$, og
+
+% \item
+% der findes en konstant $c>0$ så for alle $N>0$ findes $N'\geq N$ så $c\cdot g(N')\leq f(N')$.
+% \end{itemize}
+% Argumentér for at hvis $f(n)=\Theta(g(n))$, så har vi også $f(n)=\widehat\Theta(g(n))$.
+
+% \item
+% Argumentér for at $\textsc{Extract-Max-Even-Only}()$ kører i tid $\widehat\Theta(\log n)$.
+
+% \item
+% Det er lidt forskelligt hvordan folk definerer $\Theta$.
+% Det mest almindelige er den definition vi bruger her på kurset, men nogle definerer $\Theta$ ligesom vi har defineret $\widehat\Theta$ i denne opgave.
+% Hvilken definition synes du er mest praktisk/naturlig når man skal beskrive køretiden af algoritmer, den sædvanlige $\Theta$ eller $\widehat\Theta$?
+% \end{enumerate}
+
+
+
+\item
+\textbf{Prioritetskøoperationer.}
+Vi vil gerne tilføje nogle operationer til vores (maks)prioritetskø.
+Vi er interesseret i at tilføje følgende operationer.
+I nedestående er $x$ og $y$ objekter.
+Værdierne $x.key$ og $y.key$ er deres nøgler i prioritetskøen (objekterne kan have andre satellitdata).
+Hvis en implementation af prioritetskøen sker som i CLRS kapitel 6 kan tabellen være en tabel af objekter -- hvert objekt kan altså indeholde mere information end blot nøgleværdien.
+Fx kan $x$ og $y$ tænkes at have en attribut $i$, således at $x.i$ og $y.i$ angiver deres plads (index) i en tabel som definerer prioritetskøen.
+\begin{itemize}
+\item
+$\textsc{Remove-Largest}(m)$: fjern de $m$ største elementer i hoben.
+
+\item
+$\textsc{Delete}(x )$: fjern elementet $x$ fra prioritetskøen.
+
+\item
+$\textsc{Fusion}(x , y)$: fjern $x$ og $y$ fra hoben og tilføj elementet $z$ med nøgle $z.key=x .key + y.key$.
+
+\item
+$\textsc{Find-Large}(k )$: returner de elementer i hoben med nøgle $\geq k $.
+
+\item
+$\textsc{Extract-Min}()$: fjern og returnér et element med den mindste nøgle.
+\end{itemize}
+
+Vi vil gerne implementere disse operationer, mens vi stadig bibeholder kompleksiteten af de sædvanlige prioritetskøoperationer.
+Lad $n$ være antallet af elementer i prioritetskøen.
+Løs følgende opgaver.
+\begin{enumerate}
+\item
+Udvid prioritetskøen til at understøtte $\textsc{Remove-Largest}(m)$ i $O(m \log n)$ tid.
+
+\item
+Udvid prioritetskøen til at understøtte \textsc{Delete} og \textsc{Fusion} i $O(\log n)$ tid.
+
+\item
+(*) Udvid prioritetskøen til at understøtte $\textsc{Find-Large}(k)$ i $O(m)$ tid, hvor $m$ er antallet af elementer med nøgle $\geq k$.
+
+\item
+(**) Udvid prioritetskøen til også at understøtte \textsc{Extract-Min} i $O(\log n)$ tid.
+
+
+\end{enumerate}
+
+\item
+\textbf{Delsummer.}
+Lad $A[0,\ldots,n - 1]$ være en tabel af heltal.
+Vi er interesseret i følgende operationer på~$A$.
+\begin{itemize}
+\item $\textsc{Sum}(i, j)$: beregn $A[i] + A[i + 1] + \cdots + A[ j]$.
+\item $\textsc{Change}(i, x )$: sæt $A[i] = x$.
+\end{itemize}   
+
+Løs følgende opgaver. (Det er i den sidste delopgave at man muligvis har brug for en hobelignende struktur.)
+\begin{enumerate}
+\item
+Giv en datastruktur, der understøtter \textsc{Sum} i $O(1)$ tid og bruger $O(n^2)$ plads.
+\item
+(*) Giv en datastruktur, der understøtter \textsc{Sum} i $O(1)$ tid og bruger $O(n)$ plads.
+\item
+(***) Giv en datastruktur, der understøtter både \textsc{Sum} og \textsc{Change} i $O(\log n)$ tid og bruger $O(n)$ plads.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\noindent
+\textbf{Bemærkninger:}
+Nogle opgaver er stærkt inspireret af opgaver stillet af Philip Bille og Inge Li Gørtz i kurset Algoritmer og Datastrukturer på DTU,
+
+\noindent
+\href{http://www2.compute.dtu.dk/courses/02105+02326/2015/#generelinfo}{\texttt{http://www2.compute.dtu.dk/courses/02105+02326/2015/\#generelinfo}}.
+
+
+\end{document}

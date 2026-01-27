@@ -1,0 +1,83 @@
+IDMA 2025 exam grading and grades
+
+Hi Srikanth,
+
+I am sorry for sending this message very late, but for various reasons I am desperately behind on reporting the IDMA grades. I have struggled to find the time to sit down and go through the exam again post-grading and think about the results.
+
+In an ideal world, you and I should have had a meeting to go over the grading, look at some exams to double check that the threshold seem reasonable, et cetera, but given that the results should have been reported several weeks ago I would like to ask if you could approve of what I suggest in this message based on the couple of hours I have now spent on thinking this over and comparing to previous years.
+
+To summarize, I am actually quite happy with how the exam turned out. Last year's exam was clearly too hard. This one was better. One slightly odd thing was that quite a lot of students got really high grades, but maybe that is thanks to that students who really knew the material well could solve most problems quickly (which was the intention). Or maybe they were able to cheat by using generative AI on their cell phones, or I don't know --- one student was apparently able to use a calculator for some time during the exam before this was detected, although no such aids are to be allowed. But maybe the students really worked harder this year. This would agree with Florestan's assessment that few of the problem set assignments he graded this year was solved using genAI.
+
+Anyway, here  are the grades I propose:
+
+PROPOSED GRADE DISTRIBUTION FOR IDMA 2025
+
+12 = A: 18.03% (33 students); threshold: 420 pts
+10 = B:  8.20% (15 students); threshold: 355 pts
+7 = C:  10.93% (20 students); threshold: 290 pts
+4 = D:  20.77% (38 students); threshold: 225 pts
+2 = E:  14.21% (26 students); threshold: 160 pts
+0 = Fx: 14.75% (27 students); threshold: 100 pts
+-3 = F:  6.01% (11 students)
+U:       7.10% (13 students)
+# results reported: 183
+Maximal possible score on exam 620 pts
+
+For comparison, here are the statistics for the last two years:
+
+GRADE DISTRIBUTION FOR IDMA 2024 FOR COMPARISON
+
+12 = A:  7.14% (11 students); threshold: 300 pts
+10 = B: 10.39% (16 students); threshold: 255 pts
+7 = C:  12.34% (19 students); threshold: 210 pts
+4 = D:  20.78% (32 students); threshold: 165 pts
+2 = E:  19.48% (30 students); threshold: 120 pts
+0 = Fx: 16.88% (26 students); threshold: 70 pts
+-3 = F:  8.44% (13 students)
+U:       4.55% (7 students)
+Number of results reported: 154
+Maximal possible score on exam 620 pts
+
+GRADE DISTRIBUTION FROM DMFS 2023 FOR COMPARISON
+
+12 = A: 12.26% (13 students); threshold: 370 pts
+10 = B: 13.21% (14 students); threshold: 320 pts
+7 = C:  17.92% (19 students); threshold: 270 pts
+4 = D:  13.21% (14 students); threshold: 220 pts
+2 = E:  19.81% (21 students); threshold: 170 pts
+0 = Fx: 13.21% (14 students); threshold: 100 pts
+-3 = F:  2.83% (3 students)
+U:       7.55% (8 students)
+# results reported: 106
+Maximal possible score on exam 570 pts
+
+Just for your convenience, here are the links to some relevant documents again:
+- The grading sheet is at https://docs.google.com/spreadsheets/d/11UoT9UpvebjL9GdIq6FWedVcSA000DiroFcIcPk5-B4/ .
+- The grading guidelines (which will be released to the students) are at https://docs.google.com/document/d/18eU-ZdrwSaPdMWTAaHA-2bITuvvbCautuUSPUMltuao/ .
+
+If you agree with the above proposal, then I will fill in the grades and send them to administration (and you will probably also have to print, sign, and scan them, at which point I would ask you to double check the list against the grading spreadsheet just to confirm that I have not introduced any off-by-one-row errors or similar).
+
+Again, I apologize for sending this so very late, but I would be most grateful if you could act on this quickly.
+
+Jakob
+
+**********
+
+Thanks for your very swift reply! I will send a message reporting the grades (which has to be done with pen and paper) within a couple of hours. As I already mentioned, I believe you will need to print, sign, and scan all papers, although you could try with a quick reply-all follow-up saying "this is all fine --- is an e-mail confirmation OK, or do I need to print, sign, and scan the actual papers?" or something along those lines.
+
+Also, a small correction: I had missed one no-show. The correct statistics are as below:
+
+GRADE DISTRIBUTION 
+
+12 = A: 17.93% (33 students); threshold: 420 pts
+10 = B:  8.15% (15 students); threshold: 355 pts
+7 = C:  10.87% (20 students); threshold: 290 pts
+4 = D:  20.65% (38 students); threshold: 225 pts
+2 = E:  14.13% (26 students); threshold: 160 pts
+0 = Fx: 14.67% (27 students); threshold: 100 pts
+-3 = F:  5.98% (11 students)
+U:       7.61% (14 students)
+# results reported: 184
+Maximal possible score on exam 620 pts
+
+Jakob

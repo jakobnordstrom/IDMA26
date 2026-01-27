@@ -1,0 +1,37 @@
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Algorithm Analysis}
+
+
+
+Below,  \verb+A+ and \verb+B+ are arrays indexed from $1$ to~$n$ containing numbers
+\begin{verbatim}
+for i := 1 upto n {
+    B[i] := 0
+    for j := 1 upto i {
+        B[i] := B[i] + A[j]
+    }
+}
+\end{verbatim}
+
+
+  \begin{enumerate}
+  \item 
+    Explain in plain language what the algorithm does
+
+  \item
+    Provide an asymptotic analysis of the running time
+
+  \item
+    Can you improve the code to run faster while retaining the same
+    functionality?
+
+
+  \end{enumerate}
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "DMFS_Exam_200624"
+%%% End:

@@ -1,0 +1,202 @@
+GRADING GUIDELINES FOR IDMA EXAM APRIL 10, 2024
+===============================================
+
+*** This document lives at https://docs.google.com/document/d/1lsMDWrMHMYVuBvkc4RKZ3xxV3Xnzwepl8P4uPP66tT0/edit ***
+*** Current version copied May 11, 2024 ***
+
+GENERAL COMMENTS
+
+Please note that just giving the right answer is never enough. Unless stated otherwise below, just stating a correct solution without explanation gives zero points. Students have to provide explanations of how they solved the problems and why their solutions are correct. Just referring to a figure or table or whatever is not enough (although if some kind of material that partly explains the answer has been given, then this material should be graded and can give points).
+
+
+PROPOSED GRADE DISTRIBUTION FOR IDMA 2024
+
+12 = A:  7,14% (11 students); threshold: 300 pts
+10 = B: 10,39% (16 students); threshold: 255 pts
+7 = C:  12,34% (19 students); threshold: 210 pts
+4 = D:  20,78% (32 students); threshold: 165 pts
+2 = E:  19,48% (30 students); threshold: 120 pts
+0 = Fx: 16,88% (26 students); threshold: 70 pts
+-3 = F:  8,44% (13 students)
+U: 4,55% (7 students)	
+# results reported: 154
+Maximal possible score on exam 620 pts
+
+
+GRADE DISTRIBUTION FROM DMFS 2023 FOR COMPARISON
+
+12 = A: 12.26% (13 students); threshold: 370 pts
+10 = B: 13.21% (14 students); threshold: 320 pts
+7 = C:  17.92% (19 students); threshold: 270 pts
+4 = D:  13.21% (14 students); threshold: 220 pts
+2 = E:  19.81% (21 students); threshold: 170 pts
+0 = Fx: 13.21% (14 students); threshold: 100 pts
+-3 = F:  2.83% (3 students)
+U: 7.55% (8 students)
+# results reported: 106
+Maximal possible score on exam 570 pts
+
+
+PROBLEM 1: ALGORITHM ANALYSIS
+
+PROBLEM 1a (30 p)
+Almost correct explanation except for small details: -5 p
+Clear display of understanding, but description not fully correct: -10 p
+Fails to explain the meaning of the pair (i,j) returned: -10 p
+Correct and specific answer, but essentially no explanation of how answer is reached: -15 p
+Solution headed in the right direction, but serious mistakes along the way: -15 p
+Correct answer, but explanation does not make sense: -20 p
+Vague high-level statements which nevertheless indicate some level of understanding: -20 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: 0 p
+
+PROBLEM 1b (10 p)
+Just argument "two nested loops ==> n^2" without further explanation: 5 p  
+Correct analysis, but at so high a level that it is hard to understand which part of the code is being analyzed where: -5 p
+Big-oh notation including also lower-order terms: -5 p
+Just claim of some (correct) bound without any clear argument: 0 p
+
+PROBLEM 1c (30 p)
+Algorithm in time O(n log n) with sorting: 10 p
+Correct complexity analysis O(n log n for sorting approach): +5 p
+Correct linear-time algorithm with motivation why this is correct (can be short if 1a clearly analysed): 20 p
+Explanation why linear time is optimal: 10 p
+Correct algorithm, but no asymptotic improvement over 1a: 0 p
+Algorithm only returns TRUE/FALSE, but does not return a pair (i,j) such that A[i] == A[j]: -5 p
+Note on using hash tables or dictionaries: No material like this has been covered in the course, so any students who use such material have to make sure that the solution is understandable to a fellow student, as per the exam instructions. Also, hash tables and dictionaries do not provide the provable worst-case upper bounds that the problem statement asks for. An extra complication in this case is that we don't even know what the objects are --- they are just black boxes to us that can be compared --- which makes it very hard to talk about how to hash them in the first place. Just assuming that "there is a method for hashing whatever object, and this process will behave fully randomly" is a far, far too strong assumption for this course. If the objects can only be inspected by comparisons only, then the claim of a correct O(n)-time algorithm is in fact *wrong*. Therefore:
+- Claiming that hashing works in the fully general case: max 5 p
+- Claiming that we need integers for hashing to work: max 10 p
+- If there are solutions both with hash maps and a sorting algorithm solution, then the scores for the two solutions do not add up. That is, it is not possible to get extra points for hashing on top of a solution using sorting.
+
+
+PROBLEM 2: INDUCTION
+[30 p each for Problem 2a and 2b]
+
+Issues for both subproblems:
+- No mention at all of base case -10 p
+- Base case clearly mentioned, but never verified (not even pointed out that it is obvious) - 5 p
+- Unclear where or how induction hypothesis is used (it is important to state this clearly in any induction proof): -10 p
+- Missing details, but broad outlines OK (clear base case, IH use explicit) -5 p
+- Doing several base cases (unnecessarily) but the whole induction proof as such is OK --- no deduction
+- Base case correct, but nothing else 5 p
+- Base case correct; induction hypothesis stated; but from there onwards no progress is made 10 p
+- Base case wrong, induction hypothesis stated correctly; from there on no progress: 5 p
+- Induction step fully correct, but serious issues with base case or missing first case: 20 p
+    
+PROBLEM 2b
+Base case q=0 missing (starting from q=1): -5 p
+Serious arithmetic errors (but overall proof structure correct): -15 p
+
+
+PROBLEM 3: HEAP SORT
+
+PROBLEM 3a (50 p)
+[Correct build-max-heap: 30 p; correct extractions of elements 10 and 9: 20 p]
+Completely missing heap and/or completely misunderstood heap representation: -40 p
+Correct result of build-max-heap, but no explanation of how this was done: -20 p
+Tries to run build-max-heap by heapifying top-down rather than bottom-up: -25 p
+Missing recursive calls in max-heapify: -20 p
+Minor glitches in heap operations, but overall approach looks sound and is well explained: -10 p
+Explanations very hard to understand due to lack of details: -20 p
+Fully correct heap operations, but min-heap instead of max-heap is used: 20 p (in total)
+
+PROBLEM 3b (10 p)
+A clear counter-example is required for a full score.
+Somewhat convincing argument for the right answer: 5 p
+
+
+PROBLEM 4: COMBINATORICS
+
+PROBLEM 4a (10 p)
+For a full score, a correct formula (a binomial coefficient is sufficient) plus a clear explanation that we want 3-multisets are required.
+Halfway correct solution, but details lacking: 5 p
+
+PROBLEM 4b (50 p)
+Realization that all chosen weights have to be different with clear argument: 20 p
+Realization that all chosen weights have to be in the range [3,9] with clear argument: 20 p
+Only analyzing the case of distinct weights (without motivation) but otherwise fully correct: -10 p
+Correct brute-force argument getting halfway to correct conclusion: 25 p
+Brute-force argument with unclear motivation why case analysis is correct: 25 p
+Fully correct brute-force argument with motivations of cases: 50 p
+
+PROBLEM 4c (20 p)
+Full score for a full solution plus a clear argument why this is in fact a solution
+Just a solution with zero explanation: 0 p
+Correct solution with claim that manual inspection of all partial sums shows that full range [3,9] covered: no deduction.
+
+PROBLEM 4d (20 p)
+Optimal solution of weight 9 together with explanation/argument why this is solution (if not already argued in 4c): 10 p
+Proof of optimality: 10 p
+Solution {1,2,3,4}, which is optimal for all weights being distinct, together with clear argument for optimality (in this setting): 10 p
+
+
+PROBLEM 5: TOPOLOGICAL SORT
+
+PROBLEM 5a (10 p)
+For a full score, a correct graph (in some unambiguous representation) plus a clear (if brief) explanation is needed.
+Essentially correct graph, but missing details or sketchy explanations: 5 p
+
+PROBLEM 5b (50 p)
+[Correct choice of algorithm: 10 p; correct execution of DFS: 30p; correctly reading of solution: 10 p]
+Overall approach seems sound, but mistakes in DFS leads to wrong answer: -20 p
+Correct DFS, but no real explanation of how algorithm execution proceeds: -20 p
+Only gives topological sort without running any algorithm, but argues clearly why solution is correct: 20 p
+Processing vertices in non-alphabetical order, but DFS and topological sort correct: -10 p
+Choosing completely wrong algorithm, such as Dijkstra or BFS: 0 p
+
+
+PROBLEM 6: RELATIONS
+
+PROBLEM 6a (20 p)
+Full score for correct matrix plus clear explanation how it was generated
+No explanation what the relation is: -5 p
+Lacking details in explanations: -5 p
+Clear explanations but slip-up in details of matrix representation: no deduction
+Claiming that this relation IS greater-than (not just a linear order on a set): No deduction (although, strictly speaking, since we don’t know what the elements are, how can we know whether one can be “greater than” another)
+
+PROBLEM 6b (20 p)
+Full score for correct matrix plus clear explanation how it was generated
+No explanation what the relation is, or explanation not quite correct: -5 p
+Lacking details in explanations: -5 p
+One of the closure operations correct and well explained; the other wrong: 10 p
+Doing fully correct and well explained closures, but on relation T: 5 p
+Clear explanations but slip-up in details of matrix representation: no deduction
+Correct description of matrix though no actual matrix shown: no deduction
+
+PROBLEM 6c (20 p)
+Solves the special case; no answer for the general case -10p
+Correct answer but unclear/lacking motivation -10p
+Only answering the special case, and this special case is wrong due to mistakes in 6b: 0 p
+
+
+PROBLEM 7: GRAPHS AS RELATIONS
+
+PROBLEM 7a (10 p)
+Any answer demonstrating a clear understanding of what an equivalence relation is and why graph isomorphism is such a relation is fine.
+Just quoting that an equivalence relation is reflexive, symmetric, and transitive without explaining why this holds for isomorphism: 0 p
+Stating clearly the conditions of reflexivity, symmetry, and transitivity, and partially but not fully explaining why this holds for graph isomorphism: 5 p
+
+PROBLEM 7b (50 p)
+[15 p each for placing G_2 and G_4 in their own partitions with clear arguments; 20 p for isomorphism between G_1 and G_3 with clear argument]
+Correct answer that G_1 and G_3 are isomorphic but missing details in explanations: -10 p
+Somewhat convincing argument for non-isomorphism, but details missing: 10 p per case
+Some kind of argument for non-isomorphism, but most details missing: 5 p per case
+
+PROBLEM 7c
+[Statement 1: 20 p; Other statements: 10 p each]
+Correct answer with halfway correct/convincing argument: Half of score for statement.
+Just answer without argument: 0 p
+Mistaken claim that statement 3 is TRUE, but some clear understanding of that G^n encodes reachability (perhaps mixing this up with G^\infty): 5 p
+Answering for statement 1 with a clear reference to KBR: full score for that statement
+
+
+PROBLEM 8: PROBABILITY AND INDUCTION (100 p)
+Fully correct analysis for deck with 1 black and 1 red card (but not 2-cards-each): 20 p
+Fully correct analysis for deck with 2 black and 2 red cards (includes 1-card-each as subcase): 50 p
+Partially correct analysis for deck with 2 black and 2 red cards, but missing details: 15p
+(s.t. if the partially correct analysis above includes correct 1-card-each subcase or an intuitive argument as described below): 35p
+Intuitive and plausible argument why correct answer should be 50%, but clearly missing details: 20 p [but max 70 p total]
+Attempt at some kind of inductive proof, but clearly missing details: 10 p [but max 80 p total]
+Very close to correct solution for general case, but some details messed up or somewhat unclear induction proof: -10 p
+Correct analysis for B black and R red card that betting immediately wins with probability B / (B + R): 10 p
+Assuming that dealt cards are put back into the deck and analyzing that game: 0 p
+ 

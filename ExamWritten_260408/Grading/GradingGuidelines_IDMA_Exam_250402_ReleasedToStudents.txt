@@ -1,0 +1,200 @@
+GRADING GUIDELINES FOR DMFS EXAM APRIL 2, 2025
+===============================================
+
+PAGE TITLE
+
+Exam solutions, grading guidelines, and statistics for the IDMA exam April 2, 2025
+
+PAGE CONTENTS
+
+For reference, here are PDF copies of the IDMA exam on April 2, 2025 and of suggested solutions to the exam problems. Statistics for the exam results and grading guidelines follow below.
+
+
+GENERAL COMMENTS
+
+Please note that just giving the right answer is never enough unless explicitly stated otherwise. Normally, just stating a correct solution without explanation gives zero points. Students have to provide explanations of how they solved the problems and why their solutions are correct. Just referring to a figure or table or whatever is not enough (although if some kind of material that partly explains the answer has been given, then this material should be graded and can give points).
+
+
+GRADE DISTRIBUTION 
+
+12 = A: 17.93% (33 students); threshold: 420 pts
+10 = B:  8.15% (15 students); threshold: 355 pts
+7 = C:  10.87% (20 students); threshold: 290 pts
+4 = D:  20.65% (38 students); threshold: 225 pts
+2 = E:  14.13% (26 students); threshold: 160 pts
+0 = Fx: 14.67% (27 students); threshold: 100 pts
+-3 = F:  5.98% (11 students)
+U:       7.61% (14 students)
+# results reported: 184
+Maximal possible score on exam 620 pts
+
+
+GRADING GUIDELINES
+
+
+PROBLEM 1: REPRESENTATION OF INTEGERS
+
+GENERAL GUIDELINES
+Clear and correct solutions to this problem give full scores, regardless of what “methods” are used.
+
+PROBLEM 1a (10 p)
+Method seems correct, but minor slip-ups in calculations: -5p
+
+PROBLEM 1b (20 p)
+Method seems correct, but minor slip-ups in calculations: -5p
+General approach makes sense, but the details are wrong: -10 p
+Exhibits basic understanding of what binary representation means, but not more: 5 p
+Correct method, but writes binary number in wrong order: 5 p
+
+PROBLEM 1c (20 p)
+Method seems correct, but slip-ups in calculations: -5p
+General approach makes sense, but the details are wrong: -10 p
+Exhibits basic understanding of what octal representation means, but not more: 5 p
+
+
+PROBLEM 2: GCD CALCULATIONS
+
+GENERAL GUIDELINES FOR BOTH SUBPROBLEMS
+Understands that Euclidean algorithm should be used, but not more: 10 p (given only once)
+Basic understanding of Euclidean algorithm, but failure to apply to problems at hand: 15 p (given only once)
+Determines GCD by whatever means and show convincingly that this is the GCD: 5 p (per subproblem)
+Writes GCD as linear combination of the numbers by whatever means: 5 p (per subproblem)
+
+PROBLEM 2a (20 p)
+Correctly executed Euclidean algorithm: 10 p
+Mostly correctly executed Euclidean algorithm, but minor slip-ups: 5p
+Correct use of algorithm execution to write GCD as linear combination: 10 p
+Describes clearly how to write the GCD as linear combination, but does not do it: 5 p (given only once)
+
+PROBLEM 2b (30 p)
+Correctly executed Euclidean algorithm: 15 p
+Mostly correctly executed Euclidean algorithm, but minor slip-ups: -5p
+Correct use of algorithm execution to write GCD as linear combination: 15 p
+Describes clearly how to write the GCD as linear combination, but does not do it: 5 p (given only once)
+
+
+PROBLEM 3: MATHEMATICAL INDUCTION
+
+GENERAL GUIDELINES FOR BOTH SUBPROBLEMS:
+- No mention at all of base case: -10 p
+- Base case clearly mentioned, but never verified (not even pointed out as obvious): - 5 p
+- Unclear where/how induction hypothesis is used (important to state clearly): -10 p
+- Missing details, but broad outlines OK (clear base case, IH use explicit): -5 p
+- Doing several base cases (unnecessarily) but whole proof as such is OK: no deduction
+- Base case correct, but nothing else: 5 p
+- Base case correct; induction hypothesis stated; but no further progress: 10 p
+- Base case wrong, induction hypothesis stated correctly; but no further progress: 5 p
+- Induction step fully correct, but serious issues with base case or missing first case: 20 p
+    
+PROBLEM 3a (30 p)
+Missing base case n=1: -5 p
+
+PROBLEM 3b (30 p)
+Base case n=0 missing (starting from n=1): -5 p
+
+
+PROBLEM 4: RELATIONS
+
+PROBLEM 4a (60 p)
+[3 relations R, S, T and 4 properties: 5 p per correctly determined and argued property]
+[Note that if a relation does *not* have a property, then a concrete counterexample is required]
+[It is worth 10 p to describe all properties correctly, but the total score can never exceed 60 p. That is, if all properties are correctly determined, but there is no description of what these properties are, then this cannot yield more than 50 p]
+
+Shows understanding of what properties mean (by describing correctly), but nothing more: 10 p
+No description of what properties mean: -10 p
+Represents relations as matrices and argues about properties of these matrices: This is perfectly OK if correctly argued.
+Argues about properties of these matrices or graphs, but does not explicitly show the matrix representations or graphs: Half the points rounded up.
+
+PROBLEM 4b (30 p)
+[3 concrete relations R, S, T and 2 types of relations:  5 p per correct and correctly argued answer]
+[In order to argue correctly, there needs to be a description of what equivalence relations and partial orders are]
+[It is worth 10 p to describe equivalence relations and partial orders correctly, but the total score can never exceed 30 p]
+
+Shows understanding of what the mentioned types of relations are (by describing correctly), but nothing more: 10 p
+No description of what the mentioned types of relations are: -10 p
+
+
+PROBLEM 5: PROPOSITIONAL LOGIC
+
+PROBLEM 5a (30 p)
+Correct answer with some kind of convincing argument, but not fully correct/complete: 15 p
+Truth table filled in almost completely correctly, but wrong answer due to minor slip-ups: 20 p
+Truth table provided that is somewhat correct, but with significant mistakes: 10 p
+Argument by almost completely correctly rewriting subformulas,  but wrong answer due to minor slip-ups: 20 p
+Argument by somewhat correctly rewriting subformulas, but with significant mistakes: 10 p
+Not understanding that three variables requires a truth table with 2^3 = 8 rows: 0 p
+
+PROBLEM 5b (30 p)
+[10 p for correctly saying that formula is not tautology; 20 p for fixing it]
+Minor mistake in truth table: 5p
+Mistakes in falsifying assignment, but proposed assignment still makes some sense: 5 p
+Fixed formula certified with truth table filled in almost completely correctly: 15 p
+Fixed formula certified with truth table that is somewhat correct: 10 p
+Fixed formula certified by almost completely correctly rewriting subformulas: 15 p
+Fixed formula certified by rewriting subformulas, but with significant mistakes: 10 p
+Fixed formula, but no argument certifying that the formulas has been fixed: 0p
+Fixing formula by changing a connective rather than adding one: 10 p
+Fixing formula by adding two connectives: 5p
+Fixing by adding three connectives: 0p
+
+
+PROBLEM 6: INDUCTION PROBLEM FOR FIBONACCI NUMBERS (80 p)
+Showing understanding of what relatively prime means, but nothing more: 5 p
+No mention at all of base case: -20 p
+Base case clearly mentioned, but never verified (not even pointed out as obvious): -10 p
+Unclear where or how induction hypothesis is used: -20 p
+Missing details, but broad outlines OK (clear base case, IH use explicit): -10 p
+Doing several base cases (unnecessarily) but whole proof as such is OK: no deduction
+Base case correct, but nothing more: 10 p
+Base case correct; induction hypothesis stated; but no further progress: 30 p
+Base case wrong, induction hypothesis stated correctly; but no further progress: 10 p
+Induction step fully correct, but serious issues with base case or missing first case: -30 p
+    
+
+PROBLEM 7: COMBINATORICS
+
+PROBLEM 7a (50 p)
+Forgetting factor 2 for choice of male or female leftmost/rightmost, but otherwise correct: -10 p
+Understands factor 2 for choice of male or female leftmost/rightmost: +10 p
+Understands that factors 3! come into play for arranging female and male researchers: +20 p
+Claim of 6! ways of arranging all researchers: Max 10 p
+Brute force analysis that gives correct answer but with limited explanation: 30 p
+Error in final calculation: -10p
+
+PROBLEM 7b (40 p)
+General approach seems sound, but details are wrong: 20 p
+Brute force analysis that gives correct answer but with limited explanation: 20 p
+
+
+PROBLEM 8: SHORTEST PATH
+
+PROBLEM 8a (20 p)
+Displays understanding that edge weights are related to travel times, but not much more: 5 p
+Models problem as directed graph: -10 p
+Correct graph modelling except for typos in edge weights or similar: -5 p
+Isolated typo(s) in edge weights: No deduction
+Adds random constant to account for waiting times: -10 p
+
+PROBLEM 8b (70 p)
+[Choice of algorithm 20 p; Overall execution of algorithm 30 p; heap operations 20 p]
+Correct execution but of wrong algorithm: 0 p
+Unclear motivation why Dijkstra should be used: -10 p
+Completely missing heap and/or completely misunderstood heap operations: -20 p
+Heap operations mostly OK, but with significant mistakes: -10 p
+Heap configurations correct, but no explanation other than pictures: -10 p
+Description of algorithm execution mostly OK, but with significant mistakes: -10 p
+Description of algorithm execution very hard to understand due to lack of details: -20 p
+Not stating clearly final answer or explaining how this is found: -10 p
+No algorithm execution, but the shortest path found by hand and somewhat convincingly argued: 10 p
+Running Dijkstra correctly, but on wrong graph: max 15 p for execution, max 10 p for heap.
+
+
+PROBLEM 9: GRAPH ALGORITHMS
+[30 p per correctly identified sequence]
+
+For the spoiler sequence 3, 10 p/each for explaining why this is not BFS, DFS, or Dijkstra
+For the other sequences where there is a correct answer for an algorithm:
+- Correct answer, no argument: 10 p
+- Correct answer, meaningful argument: 20 p
+- Correct answer, fully correct and detailed argument: 30 p
+

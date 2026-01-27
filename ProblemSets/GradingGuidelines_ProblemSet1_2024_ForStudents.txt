@@ -1,0 +1,74 @@
+GRADING GUIDELINES FOR IDMA 2024 PROBLEM SET 1
+==============================================
+
+
+PROBLEM 1 (60 p)
+
+PROBLEM 1a (30 p)
+Explanation of B mostly correct, but details wrong -10 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -25 p
+
+PROBLEM 1b (10 p)
+Correct answer but not full justification (why n^2)? -5 p
+Unclear answer that does not clearly state complexity O(n^2) 0 p
+Just stating the time complexity without any motivation 0 p
+
+PROBLEM 1c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+Improvement only by constant factor, not asymptotically 5 p
+Asymptotic improvement, but not optimal 10 p
+Essentially optimal solution, but off-by-one errors or similar in code -5 p
+Lacking clear explanation of pseudocode -10 p
+
+
+PROBLEM 2 (70 p)
+
+PROBLEM 2a (30 p)
+Almost correct explanation except for small details: -5 p
+Clear display of understanding, but description not fully correct: -10 p
+Solution headed in the right direction, but serious mistakes along the way: -15 p
+Correct except that recursion is completely ignored: -20p
+Correct answer, but explanation does not make sense: -20 p
+Vague high-level statements which nevertheless indicate some level of understanding: -20 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -25 p
+
+PROBLEM 2b (20 p)
+Correct bound O(n log n) with only argument that "this is like merge sort" (or similar): 15 p
+Upper bound O(n^2) with convincing argument: 10 p
+Upper bound O(n^2) with not-so-convincing argument: 5 p
+Upper bound O(n^2) because of two while loops: 0 p
+Just claim of some (correct) bound without any clear argument: 0 p
+Correct analysis, but at so high a level that it is hard to understand which part of the code is being analyzed where: -5 p
+Big-oh notation including also lower-order terms: -15 p
+Time complexity analysis fails to consider recursion: 0 p
+
+PROBLEM 2c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+Correct linear-time algorithm with motivation why this is correct (can be short if 1a clearly analysed): 10 p
+Explanation why linear time is optimal: 5 p
+Correct algorithm, but no asymptotic improvement over 1a: 0 p
+Checking the whole array instead of adhering strictly to the functionality of the code, which checks A[lo..ji]: -5 p
+Other off-by-one errors or similar in the code: -5 p
+Note: Using hash tables or dictionaries: No material like this has been covered in the course, so any students who use such material have to make sure that the solution is understandable to a fellow student, as per the problem set instructions. Also, hash tables and dictionaries do not provide the provable worst-case upper bounds that we are after.
+
+
+PROBLEM 3 (70 p)
+
+PROBLEM 3a (20 p)
+Missing that the three positions should be distinct -5 p
+Claiming that numbers in positions are returned rather than positions -5 p
+
+PROBLEM 3b (20 p)
+2b Correct answer but not full justification (why n^3)? -10 p
+Argument with nested loops, but not why while loop will run for linear #steps -5 p
+
+PROBLEM 3c (30 p)
+*No* *deduction* for using information found online (in view of task in problem 3d)
+Algorithm of complexity O(n^2 log n) instead of O(n^2) -10 p
+Algorithm of complexity O(n^2), but no analysis of this time complexity: Max 10 p
+Missing that the three positions should be distinct -5 p
+Using hash tables, dictionaries, or similar: See above.
+No motivation whatsoever why the pseudocode is correct; just a chunk of code: Max 5 p.
+
+PROBLEM 3d (40 p)
+Only answers, but no references to where the information was found 10 p
+Correct, but very limited information (e.g., O(n^2) upper bound missing) -10 p
+No points for completely unrelated information (lower bound for sorting, discussion of NP-completeness, et cetera).

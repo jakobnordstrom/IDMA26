@@ -1,0 +1,91 @@
+﻿GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 4
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1wbLmUdsNsE3gweHtwcrhLfH24adrFgjcjtiuQZsCNYU/edit?tab=t.0 ***
+*** Current version copied March 25, 2025 ***
+
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1
+
+PROBLEM 1a (30 p)
+Fully correct DFS for G with discovery and finishing times plus explanations 15 p
+Fully correct DFS for G^T with explanations 10 p
+Fully correct output of strongly connected components 5 p
+Missing DFS spanning tree for G -5 p
+Missing DFS spanning tree for G^T -5 p [this can be deducted for both G and G^T]
+Mostly correct DFS for G but no other significant contributions 10 p
+Just pictures without explanations of what is going on 0 p
+Visiting out-neighbours not in alphabetic order --- no deduction, as long as end result is the same (which it should be)
+Discovery and finishing time missing for DFS of G^T --- no deduction
+Starting and finishing times start from 0; or start from 1 --- both OK, as long as solution is consistent
+
+PROBLEM 1b (30 p)
+Fully correct explanation of why the claim is correct 15 p
+Algorithm in time O(n^4) with correct complexity analysis 15 p
+Mostly but not fully correct explanation of why the claim is correct 10 p
+Answer that claim is correct with somewhat convincing argument that starts out in the right direction 5 p
+Just answering that claim is correct; no explanation -15 p [so none of the 15 p of the "explanation part"]
+Convincing proof that (A_G)_{\odot}^{t} indicates paths of length exactly t, or at least something along those lines, but nothing more 5 p
+Convincing proof that OR_{i=1}^{\infty} (A_G)_{\odot}^{i} is reachability matrix for G but nothing more 10 p
+Algorithm in polynomial time but no clear analysis of exponent or worse than n^4 10 p
+Algorithm in finite time but without complexity analysis 5 p
+
+
+PROBLEM 2
+
+PROBLEM 2a (30 p)
+Minor mistakes building MST -5p
+Some missing/wrong details building MST but overall correct and with convincing explanations -10p
+Some missing/wrong details but overall correct; however, explanations quite poor -20p
+Just pictures without explanations of what is going on 0 p
+Inspecting edges not in alphabetic order --- no deduction, as long as end result is the same (which it should be)
+
+PROBLEM 2b (10 p)
+Correct answer; shaky/wrong motivation -5p
+Correct answer; clearly wrong motivation 0 p
+
+PROBLEM 2c (20 p)
+Correct answer; shaky motivation -10p
+Correct answer; clearly wrong motivation 0 p
+
+PROBLEM 2d (20 p)
+Correct answer; shaky motivation -10p
+Correct answer; clearly wrong motivation 0 p
+
+
+PROBLEM 3
+
+PROBLEM 3a (60 p; correct heap 20 p, correct algorithm with relaxing 30 p, correct SSSP tree 10 p)
+Completely missing heap and/or completely misunderstood heap representation: -20 p
+Heap only updated once all relaxations have been made for a dequeued vertex (and so becomes incorrect): -15 p
+Partially missing details for heap: -10 p
+No details on "relax" operations: -20 p
+Partially missing or wrong details for relax operations (e.g., failing to explain/point out that edges (c,e) and (d,g) do not lead to updates): -10 p
+Partially missing details for shortest paths tree: -5 p
+More substanial missing details for shortest paths tree: -10 p
+Refers to the queue as a stack: -5 p
+Deviations due to non-lexicographic order of neighbours --- very minor -1p
+
+PROBLEM 3b (10 p)
+Vague (or wrong) explanation not clearly related to problem: 0 p
+
+PROBLEM 3c (10 p)
+Vague (or wrong) explanation not clearly related to problem: 0 p
+Answers "yes" but argues by referring to MST: 0 p
+
+PROBLEM 3d (20 p; 15 p for correct solution, 5 p for time complexity)
+Vague (or wrong) algorithm not clearly related to problem: -15 p
+Wrong or missing time complexity: -5 p
+Off-by-one error in calculation of new path "length": -5 p
+Partially correct algorithm, but wrong details: -10 p
+Completely missing motivation: -15 p
+

@@ -1,0 +1,28 @@
+ABSALON SETTINGS FOR DMFS 2022
+==============================
+
+Right menu --> Choose home page and select "Course modules"
+
+Left menu --> Settings --> Navigation and disable everything except
+• Home
+• Announcements
+• Modules
+• Pages
+• Assignments
+• Files
+• Media Gallery
+• Quizzes
+• People
+
+File folder strucure:
+• GeneralCourseMaterial: Course plan, graph notes, etc
+• LectureNotes: My handwritten lecture notes
+• WeeklyPlans: Ugeseddler
+• OldPsetsAndExams
+
+Added recorded lectures to the Media Gallery (and clicked "Publish" after selection):
+- DMFS lectures from 2022 (a few)
+- DMFS all lectures from 2021 (19 lectures)
+- DMA lectures on graphs from 2021 (6 lectures)
+- LICS lectures from 2021 (for fun)
+

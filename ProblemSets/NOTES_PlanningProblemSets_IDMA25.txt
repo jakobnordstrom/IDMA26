@@ -1,0 +1,88 @@
+IDEAS FOR PROBLEM SETS FOR IDMA 2024
+====================================
+
+Sources of problems for 2025:
+- Just recycle the problem sets for 2022
+
+Sources of problems for 2026:
+(a) Exam problems in 2024
+(b) Exam problems in 2025
+(c) DMFS 2023 problem set 4 problem 3 (really hard)
+(d) Old note: DMFS 2023 pset 5:3 would be an option, but maybe we will save this for next year?
+
+
+CANDIDATES TO SAVE FOR THE EXAM 2025
+====================================
+
+Which of these did I already use for the IDMA exam in 2024?
+
+1. PSEUDOCODE
+
+Or no?
+
+Maybe:
+
+1. Run Euclidean algorithm on two suitably large numbers M and N. Find d = GCD(M, N) and write it as a linear combination of M and N.
+Fibonacci numbers are good, rescaled along the way to get more interesting calculations
+
+M = 117
+N = 69
+
+2. Representation of numbers
+- Write the binary number 110 in decimal notation.
+- Write the decimal number 110 in binary notation.
+- Suppose that 2025 is an octal number. Write it in decimal notation.
+
+3. SORTING
+
+We had a heap sort problem in 2024
+
+4. RELATIONS
+
+In 2024 we had the relation < over 6 elements
+
+5. GRAPHS
+
+In 2024 we had:
+- a scheduling problem
+- a graph isomorphism problem
+
+Maybe strongly connected components
+
+- Start with directed graph and view graph as edge relation.
+- Maybe even give small graph on 6 or 7 vertices as example
+- Take transitive closure T  of this relation. What is this? Give matrix representation.
+- Take reflexive closure R of (a). What is this? Give matrix representation.
+- Define new relation S(u,v) such at S(u,v) holds precisely with R(u,v) and R(v,u) holds. This gives a particular type of relation that we discussed in class. What is this type of relation called? Prove that we indeed get this type of relation.
+- In fact, we have even seen an algorithm for computing this relation. Run this algorithm on our small example graph, in the same way as we did in class, 
+
+But this is probably very hard...
+
+
+6. PROPOSITIONAL LOGIC
+Ask students to patch formulas in simplest way possible to get tautologies?
+Something more creative than just producing truth tables...
+
+7. A COUPLE OF SIMPLE INDUCTION PROBLEMS
+
+(Not the ones in the 2024 exam)
+Some induction problem from Vaderlind?
+
+Recall that the Fibonacci numbers are defined as
+
+F_1 = F_2 = 1 and
+F_n = F_{n - 1} +  F_{n - 2} for n >= 3.
+Prove that the Fibonacci numbers F_{n+1} and F_n are relatively prime, and that for n >= 2 the
+Euclidean algorithm for F_{n+1} and F_n takes n-1 steps to determine this fact (i.e., it reaches remainder 0 after exactly n-1 steps)
+
+
+
+Prove that for all n >=1 the number 4^n + 5 is divisible by 3
+
+Define a_1 = 1, a_n = 2 a_{n-1} + 1. Prove that for all n a_n = 2^n - 1.
+
+
+
+8. COMBINATORICS
+
+

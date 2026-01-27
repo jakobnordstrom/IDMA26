@@ -1,0 +1,57 @@
+IDMA: Getting ready for course start
+
+Florestan Brunck <flbr@di.ku.dk>
+Theo Fabris <thfa@di.ku.dk>
+Magnus Aabech <mhaa@di.ku.dk>
+Monika Haubro <moha@math.ku.dk>
+Peter Trip Malmroes <petermalmroes@gmail.com>
+Johannes Reuss <johannestangreuss@gmail.com>
+Tove Eggert Olsen <tool@di.ku.dk>
+Anton Friis <antonwfriis@gmail.com>
+
+CC: Srikanth
+
+Hi IDMA 25 TAs,
+
+As you will already have heard from Srikanth, he will help me run the Introduction to Discrete Mathematics and Algorithms (IDMA) course this year. Due to a complicated family situation I am not able to work full time right now, but I hope and believe that it will still be possible to run this course reasonably smoothly.
+
+Here are some quick pieces of information from me.
+
+(1) ORGANIZATION: Srikanth will handle the weekly TA meetings and most day-to-day contacts with you. We will play this a little bit by ear, though, and if you are ever in doubt whom to contact, please feel free to shoot an e-mail to both of us.
+
+(2) EMPLOYMENT: All except Florestan and Theo, I hope that you have been contacted by DIKU HR and have received confirmation that you are hired. If you have any doubts or problems in this regard, please do let Srikanth and me know.
+
+(3) ABSALON: You should all be invited to the IDMA Absalon pages at https://absalon.ku.dk/courses/80492 now. Most things should now be there, at least for the first half of the course (but if anything seems off, I would be most grateful if you let me know).
+
+(4) COURSE PLAN: With this message I attach the current course plan. For those of you who are familiar with the IDMA 24 course, there are essentially no changes from last year.
+
+(5) GMAIL ADDRESSES OR SIMILAR: Florestan and Theo, I would need your Gmail addresses (or whatever username you use for Google) so that we can edit grading guidelines documents together. Please respond to me privately with this information. I think I already have the addresses for all regular student TAs.
+
+(6) TA WORK: Your work as TAs consists of:
+(a) Doing exercise classes on Mondays 15:15-17:00 and Wednesdays 15:15-17:00 during weeks 6-13.
+(b) Meeting with Srikanth (probably on Zoom) for ca 1 hour per week. Please note that these meetings are a compulsory part of the job.
+(c) Making sure with joint efforts that the 3 study cafees are somewhat evenly manned with TAs (1 cafe per TA).
+(d) Grading 4 problem sets with resubmissions (and providing feedback on the psets before they are posted).
+(e) Grading the written exam on April 2 (and providing feedback on the exam before it is sent to exam administration).
+
+During the exercise classes, you are highly encouraged to be active instructors and spend maybe half of the time working out exercises on the board. At https://absalon.ku.dk/courses/80492/files/folder/ProblemSetsCollection you find problem sets from previous years with solutions, and you can use them in whichever way you see fit, except you should *not* hand out solutions to the students, because they should come to the exercise classes and interact with you instead. (Also, you should not use any problem sets from DMFS 2022 if you happen to have them around, because we will recycle those problem sets this year.) You should try to figure out which exercise class style works best for you --- we will encourage students to shop around and try to find TAs that work well for them.
+
+I should also inform you right away that we will need to grade the final problem set with deadline March 26 quite quickly, but the grading there will be a bit unusual in the following sense:
+- By noon Thursday March 27, we will need to know which students at least made an honest attempt to solve the problems (which is used to determine exam eligibility).
+- By morning Monday March 31, the students should receive their graded psets back (so that they get feedback before the exam on Wednesday April 2).
+
+(7) TEXTBOOKS: As mentioned before, we will be using two textbooks:
+- Kolman, Busby, and Ross: Discrete Mathematical Structures, University of Copenhagen version (KBR)
+- Cormen, Leiserson, Rivest, and Stein: Introduction to algorithms, 4th edition (CLRS)
+
+As usual, the textbooks I have ordered are missing in action, so I have put PDF copies (strictly for your personal use for this course) in the course material folder https://absalon.ku.dk/courses/80492/files/folder/GeneralCourseMaterial .
+
+FINALLY, although the usual creative chaos reigns this final weekend before the course starts, I will do my very best to give the students an interesting, stimulating, memorable, and useful (as well as somewhat well-organized) course, and I am very much looking forward to doing so together with you!
+
+Best regards, 
+Jakob
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +46 70 742 21 98 / +45 28 78 38 11
+http://www.jakobnordstrom.se

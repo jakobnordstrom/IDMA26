@@ -1,0 +1,256 @@
+June 25
+=======
+
+William Risgaard Mortensen
+--------------------------
+
+Number 3
+
+Q1: Wrong binomial coefficients for counting 4 of same rank. Asked definition of binomial coefficient. Gets right after some prodding and looking at notes. Hint: Look at the options given. After scanning, makes a guess 1 <-> (a) (wrong). Full house 2 gets the right expression. Flush: unable to get (correct answer (a) but that's taken).
+
+Q2: For Dijkstra, starts running algo, but unclear if the next node is chosen using weight of the edge or the distance from the source. Confusion between Prim and Dijkstra. Distances are set incorrectly. For DFS, gives high level idea correctly but implements incorrectly on example (uses edge weight to pick next node to visit).
+
+
+Grade: 0
+
+
+Jeanette Thuesen
+----------------
+
+Number 3
+
+Q1: Skip
+
+Q2: Implements DFS correctly on given example. Unable to answer question on start and finish times. Dijkstra implemented incorrectly (only considers neighbours of current vertex to see which vertex to visit next, also updates weights of edges rather than distances to vertices). Unable to answer how to compute paths rather than just distances (parent pointers not mentioned). Does not know the formal algorithm but can implement on some instances.
+
+Q3: Some high-level description of what code does. Unable to answer concrete questions (what is the value of B[1]?). Unable to analyze running time (linear rather than quadratic). 
+
+
+Grade: 0
+
+
+Emilie Bruun
+------------
+
+Number 4
+
+Q1: Will use truth table. Writes possibilities for p, q. Needs notes for p->q. Constructs a truth table. Gets the first right (neither contradiction nor tautology). For the second, needs truth table of AND for notes. Finishes the second as tautology.
+
+Q2: Starts with DFS. Uses the weight to choose next neighbour (lightest next vertex). Notes start and finish times correctly (assuming this ordering). Also mentions that can use for Topological sort and can explain how that is done. (Extra qs: what will it do with this graph (with cycle)? A: doesn't work with cycles. Q: what else can we use DFS for? Strongly connected components, doesn't formally explain what these are. Q: what if there were no edge weights? A: Can still do the same.) Dijkstra: says computes MST but defines all shortest paths. Updates weights for vertices corrrectly. Chooses next vertex correctly. Can run dijkstra. (Q: how to get weight of next vertex? A: gets with some hints. Q: how to get shortest paths from the algorithm? A: Unclear. Q: shortest path same as MST? A: guesses that it is.)
+
+Grade: 10
+
+
+Line Hovgaard
+-------------
+
+Number 2
+
+Q1: High-level idea of merge sort. Writes the entire recursion tree (but in which order is this done?). Sorts recursively. (Q: Explain algorithm for merging? A: Unable to formally describe so wants to move on.) Analyzes running time by summing over the recursion tree to say O(n log n). Mentions divide-and-conquer paradigm.
+
+Q2: Correctly answers that M1 is the reflexive closure with justification. Incorrectly says that M2 is transitive closure (but can correctly describe what transitive closure is). None are symmetric. Inverse defined. Can get inverse of R. Gets M3 = inverse of transitive closure. Can't see how to get to M2. (Q: why can't we get to M2? A: Justifies.) Full answer.
+
+Q3: Defines tautology, contradiction and how to get via truth table. TT for implications given correctly. Answers first one correctly. Some confusion with AND truth table but fixes with notes. Answers second one correctly.
+
+Q4: Can define a binomial coefficient as number of combinations and give math definition. Can define factorials and use that to compute them efficiently. Gets 4 of a kind incorrectly. Gets full house correctly with some inspired guesswork.
+
+Grade: 10
+
+
+
+Leonora Mortensen
+-----------------
+
+Number 2
+
+Q1: Divide and conquer paradigm. Splits list correctly. Does merge correctly on lists of size 1 and 2. Merges correctly. Running time given correctly with justification.
+
+Q2: Draws graph of R. Defines symmetric closure of R. M1 is reflexive. Guesses that M1 is the reflexive closure. Defines transitive closure. Does not correctly compute closure (only one step). Gets a counterexample. Does not know how to compute correctly. With help gets the transitive closure. Wrongly says that symmetric closure would give M3? Fixes mistake upon questioning. But doesn't get to M3. Lots of confusion in this question.
+
+Q3: Writes truth table. Mistake made but corrected. Gets first one correctly. Gets second one correctly.
+
+Grade: 7
+
+
+
+Thomas Andreasen
+-----------------
+
+Grade: U
+
+
+Felix Nielsen
+-------------
+
+
+Number 2
+
+Q1: Splits correctly. Confused about when merge begins. After some help can merge lists of size 1. Merges correctly. Running time correctly with justification.
+
+Q2: Reflexive, symmetric closure defined. Gets M1 = reflexive closure. Guesses M2 not possible. Realizes closure only adds to the matrix. Writes inverse of R. Computes transitive closure correctly and guesses correctly M3 = inverse + transitive closure. Full answer.
+
+Q3: Truth table written correctly. First one correct. Second one with a little bit of help. 
+
+Grade: 10
+
+
+
+Jasmin Abou-Hayt
+----------------
+
+
+Number 3
+
+Q1: Knows that binomial coefficients count number of ways of choosing k out of n but struggles with math formula for this. Skips to next question.
+
+Q2: Implements DFS with weights. Cannot justify why a vertex is visited before its sibling (as neighbour of current vertex). Says that we need to avoid cycles (repetitions?). Unsure of reasoning upon questioning. Skips to next question.
+
+Q3: Says wrongly that algorithm compares elements of A and B. Given concrete examples of A and B at the beginning. Says wrongly that A is copied to B. 
+
+Grade: -3
+
+
+
+Alberte Hansen
+--------------
+
+
+Number 4
+
+Q1: Defines tautology and contradictions. Starts with No. 2. Confused with truth table of implication (gets it with notes). Gets the definition of implication wrong ("true when both sides have same value"). Gets final truth table wrong (mistake while taking OR). Fixes with some help. On No. 1: Gets the truth table of implication wrong (F->F is False) but fixes after some discussion. Finishes the rest correctly.
+
+Q2: Says something about DFS using stacks. Does not use weights (good) but then changes to using weights. Does not do recursion correctly (does more BFS traversal). Restarts and uses alphabetical order. Confusion+notes consultation. This time does recursion correctly. Takes lots of time. Quick description of Dijkstra: Heaps+priority queues mentioned. Shows how to update relax steps with heaps. Says what Dijkstra accomplishes at the end.
+
+
+Grade: 2 	
+
+
+
+Simon Henriksen
+----------------
+
+
+Number 1
+
+Q1: Explains code line by line. Does not clearly explain what happens to B[1].  Given concrete example. Gets B[1] correctly. After some help, gets B[2] correctly. does not get the pattern. Computes line-by-line to find B[3]. Understands the pattern after a bit of questioning. Gives a general answer with some help. Running time correctly given (O(n)*O(n) = O(n^2)). Does not have an idea to improve RT. [Took nearly 16 minutes.]
+
+Q2: Gives word explanation of binomial coefficient. Math definition given incorrectly (permutation coefficient instead of binomial). Knows the definition of factorials and uses that to simplify. Explains roughly what the numerator and denominator are (uses wrong terminology). Wrongly matches (1) to (a) [pattern matching?]. [essentially out of time]
+
+Q3: Divide-and-conquer paradigm at a high level.
+
+Reasoning for grade: Struggled on first question (which was tough admittedly) and made some progress. Completely failed on second question (not even right on definition of binomial coeff).
+
+Grade: 0
+
+
+
+Lunch
+
+
+Sabrina Khalid Ismail
+---------------------
+
+Number 4
+
+Q1: Knows tautology and contradictions. Consults some notes throughout. Implication truth table written incorrectly. Defines implication as AND in words. But she is not consistent in doing this even. After some questioning and hints, skips to next question.
+
+Q2: starts with DFS. Implements incorrectly (finishes a vertex before scanning all neighbours). With reasonable help, fixes the implementation. Also gets start and finish times. On to Dijkstra. "Need to account for weights here". Lots of time (up to 1 minute each time) spent in gathering up notes. Mentions the use of min-heaps for fast implementation. Implements Dijkstra correctly with inaccuracies (finding paths everytime instead of looking at stored distance) but a couple of times she did say the right thing (so confusion?). Explains how to maintain parent pointers.
+
+Reasoning for grade: Very bad showing on first question and partly correct on second question [needed help for DFS].
+
+
+Grade: 0
+
+
+Jora Ismaili
+------------
+
+Number 1
+
+Q1: Explains what code does line-by-line. Unable to say properly the final value of B[1]. Says inner loop runs n times. Given concrete example. Initially confused regarding the number of times inner loop runs. Fixes after prodding. Gets the pattern (though she does not give mathematical form). Running time is O(n^2) by natural upper bound. Given the sum of 1,...,n, does not know how to estimate. After some prodding, gets improved RT on concrete example.
+
+Q2: Knows the word explanation of binomial coefficient. Writes definition from notes. Asked to simplify but unable to. Calculates 4 of a kind correctly but cannot match with options. After lots of help, gets 1 <-> (a). 
+
+
+Grade: 7
+
+
+Izabela Kho
+-----------
+
+Number 2
+
+Q1: Splits done correctly. Merge done correctly. RT is O(n log n). Justifies log n, but cannot say where the n comes from.
+
+Q2: Defines reflexive relations. Gives reflexive closure of R (same as M1). Also gives symmetric closure. Knows the definition of transitive closure and computes with some help. Realizes that inverse of transitive closure gives M3. Does not think we can get M2 with reasonable justification. 
+
+Q3: Goes via truth table. Implication table is correct. Gets no. 1 and no. 2 both right very quickly.
+
+Grade: 12
+
+
+Kristian Kristensen
+-------------------
+
+Number 3
+
+Q1: Knows high-level definition of binomial coefficients in this context (number of possible poker hands). Struggles with the math definition. Writes with notes. Simplifies to 5!/5! but recants. Gets a simplified expression with reasonable help. Gets 4 of a kind but cannot find it among options. Does not immediately know what (13 choose 1) is but gets with a hint. Matches 1 <-> c correctly. Gets full house and matches 2 <-> (b) correctly. Finally matches 3 <-> (a) correctly.
+
+Q2: Starts with DFS. Starts correctly (with some help regarding justification of which node to explore first). Implements with discovery and finish times. Problem with backtracking (backtracks to a vertex much higher in the recursion tree). Makes the mistake with 2 different vertices.  Reasoning to backtrack is unclear (need to backtrack to some vertex that is still open). Gets to right implementation with some prodding. Knows DFS is useful for topological sort. Dijkstra: useful for shortest paths. Implements with parent pointers. Does correctly with some help (bit of a hurry). Some confusion on how to choose next vertex, but clarified later on. Knows how to find shortest paths using parent pointers.
+
+Q3: 
+
+Grade: 10
+
+
+Viktor Oldenburg
+----------------
+
+Number 1
+
+Q1: Explains code line-by-line. Can reason about what the code is doing somewhat abstractly (small cases of i without a concrete example) with some help. Gets the pattern after 3 cases. RT is upper bounded by n^2 with justification. Given the actual RT 1 + ... + n. Unable to estimate. Gets confused into saying it is linear time. Given concrete expressions, sees how to compute faster. Gives abstract form by himself. Analyzes time complexity.
+
+Q2: Binomial coefficient in words. Math defn is wrong. Tries to compute 4 of a kind but stuck because of wrong binomial coefficient. Given correct binomial coefficient. Matches 1 <-> c correctly with lots of help. Guesses 2 <-> (b) and justifies quickly in words. 
+
+
+Grade: 7
+
+
+Andrea Plesner
+--------------
+
+Number 1
+
+Q1: 
+
+Q2: 
+
+Q3: 
+
+Grade: U
+
+
+
+mxc836 (Yanghuaqiang)
+------
+
+Number 3
+
+Q1: Binomial coefficient in words. Math defn is correct (but says that 5! removed "repetitions"). Can simplify the definition to get a simple expression. Gets 2 <-> (b) with justification. Matches 3 <-> (a) with justification (some help). Matches 1 <-> (d) incorrectly. Struggles with counting 4 of a kind. Gets 1 <-> (c) with plenty of help.
+
+Q2: Starts with DFS. "Uses stacks (LIFO)". Implements correctly (little help) with start and finish times. On to Dijkstra: aim to find single source shortest paths. Uses distance parameter and parent pointers (latter after some prodding). Updates distances and parents correctly (cannot complete because of lack of time). Unclear on how to find shortest path.
+
+Grade: 7
+
+
+Aksel Fristrup
+--------------
+
+Number 3
+
+Q1: Binomial coefficient in math directly. Also defined in words. Simplifies the expression easily. Matches 1 <-> (a) incorrectly. After some prodding, gets the right answer (1 <-> (c)).  Matches 2 <-> (b) correctly. Matches 3 <-> (a) correctly.
+
+Q2: Starts with DFS. Uses a stack to keep track of recursion. Doesn't increment when finishing vertices (fixed later). Stops after discovering every vertex. With some help, continues and gets the discovery and finish times for each vertex (not quite right though). Reasonable amount of help here. On to Dijkstra. Implements just with distances. Looks up the path instead of table look up each time, but fixed in a later iteration. Confusion while implementing algorithm (tries to update previously removed vertices while exploring new vertices). Unclear how to compute shortest paths.
+
+Grade: 4
+

@@ -1,0 +1,19 @@
+Hi all,
+
+Just in case it can be helpful, here are some notes on what I expect you to have digested and remember from the first week.
+
+Bridges of Konigsberg: This was just intended as an example for inspiration.
+
+Discrete mathematics: Deals with mathematical structures that are finite or countable (like integers, propositional logic formulas, graphs, sets, et cetera)
+Algorithms: Well-defined sets of rules for calculating solutions to problems (often by a computer, but not always).
+RAM (random-access machine) model: The model we will use for what a computer is.
+Pseudo-code: Description of an algorithm that is detailed enough that you could translate it into concrete code in your favourite programming language.
+Search: Linear search, binary search (in a sorted array).
+Sorting: Insertion sort, merge sort, the latter being an example of divide & conquer.
+Analysis of time complexity: The running time of insertion sort for n elements scales like n^2 while merge sort scales like n log n. This means that even an amazingly efficient insertion sort implementation will never, ever be able to compete with a merge sort implementation when the lists get long enough. (Bonus empirical exercise: When does merge sort, or other fast sorting algorithms like quick sort or heap sort, start to dominate in practice, actually? How large do the lists need to get?)
+Asymptotic notation: A convenient way, when we are analyzing algorithms, to avoid a lot of not so relevant information and focus on the big picture.
+
+A final word: Asymptotic analysis is a great tool when we want to understand fundamental properties of algorithms, but it is also throwing away information that might be relevant in the real world. For a sorting algorithm, it is (pretty much) always true that we will prefer a O(n log n) algorithm to a O(n^2) algorithm, and this is true even if the constant factors are such that the first algorithm runs in time 100 n log n whereas the second algorithm runs in time 2 n^2. Therefore, asymptotic notation just throws away these constant factors. However, once we have decided on which algorithm to use, and are coding it up in practice, then of course a factor 100 is a very big deal, and even a factor 2 can be a big deal and lead to a lot of fine-tuning to make the algorithm run as fast as possible. Note, though, that this kind of optimization is only reasonanable to do once you have the right algorithm in place, because no fine-tuning of insertion sort will ever help it to beat merge sort.
+
+Venlig hilsen
+Jakob

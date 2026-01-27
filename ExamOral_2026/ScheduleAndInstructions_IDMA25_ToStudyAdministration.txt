@@ -1,0 +1,319 @@
+EKSAMEN-NØRRE <eksamen-noerre@adm.ku.dk>
+
+Re: SV: Deadline 16. Juni Opsætning af mundtlig eksamen i Digital Eksamen blok 3 reeksamen// Setting up the oral exam in Digital Exam block 3 re-exam
+
+Hej Jette,
+
+Please find below (an excerpt of) the information that has been sent to the students taking the IDMA oral re-exam on June 25 or June 30. I have double-checked the exam dates with all students, and have scheduled them on dates that are acceptable to them (and these dates have changed in both directions compared to the list I received earlier from administration, just in case you compare to that list and wonder).
+
+Venlig hilsen
+Jakob Nordström
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 25, 2025
+
+Time	User ID	Name
+13:00	QJH771	Mortensen, William Risgaard
+13:30	XSV967	Thuesen, Jeanette Vahr
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 30, 2025
+
+Time	User ID	Name
+09:00	DRX515	Damkjær-Bruun, Emilie Michelle
+09:30	NVM924	Hovgaard, Line Thorup
+10:00	KHM950	Mortensen, Leonora Batoosingh
+10:00	ZMR518	Andreasen, Thomas Krüger
+10:30	LMQ466	Nielsen, Felix Herforth
+11:00	PZG908	Abou-Hayt, Jasmin Imad
+11:30	LQS211	Hansen, Alberte Pløger
+12:00	XWJ436	Henriksen, Simon
+12:00	JSX430	Ismail, Sabrina khalid
+12:30	TCP541	Ismaili, Jora
+13:00	DHG991	Kho, Izabela Emelia
+13:30	MXQ470	Kristensen, Kristian Aksel Ertner
+14:00	PLT271	Oldenburg, Viktor Sand
+14:00	MKJ655	Plesner, Andrea Nikoline
+14:30	MXC836	mxc836
+15:00	GDB373	Fristrup, Aksel
+
+
+EXAM INSTRUCTIONS
+
+The oral exam will be held in office 3-1-09 in the Algorithms and Complexity Section at Universitetsparken 1. Enter through the main door (with the statues in front), take a right after the stairs from the main entrance, and then another right turn up the stairs to the second floor of BARC and the AC Section. You can wait for your turn outside the entrance door to our corridor, and we will invite you in when it is your turn.
+
+Please make sure to arrive for your exam 5-10 minutes in advance, so that we can start on time. Also please note that although it can be hard to stick exactly to the schedule during a long exam day like this, you have to show up in time for your exam --- late arrival counts as a no-show.
+
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se
+
+
+**********
+
+On 2025-06-19 18:03, EKSAMEN-NØRRE wrote:
+>
+> Hej Jakob,
+>
+> Thank you for name of internal assessor.
+>
+> Do you also have an exam schedule for both exams (NDAB23002E  and NDAB23K02E)?
+>
+> Please send it as quick as possible.
+>
+> Thanks in advance.
+>
+> Best regards
+>
+> Jette Giovanni Møller
+>
+> Study administrative officer
+>
+>  
+>
+> University of Copenhagen
+>
+> Campus Administration North
+> Education North
+>
+> Education and Exam 1
+>
+> Blegdamsvej 3B
+>
+> København N
+>
+>  
+>
+> DIR +45 29 61 16 92
+>
+> eksamen-noerre@adm.ku.dk
+>
+> www.ku.dk/
+>
+>  
+>
+> Titel: SD_Logo 
+>
+>  
+>
+> Sådan beskytter vi persondata
+>
+>  
+>
+>  
+>
+>  
+>
+> Fra: Jakob Nordström <jn@di.ku.dk>
+> Sendt: 13. juni 2025 17:24
+> Til: EKSAMEN-NØRRE <eksamen-noerre@adm.ku.dk>
+> Cc: Srikanth Srinivasan <srsr@di.ku.dk>
+> Emne: Re: Deadline 16. Juni Opsætning af mundtlig eksamen i Digital Eksamen blok 3 reeksamen// Setting up the oral exam in Digital Exam block 3 re-exam
+>
+>  
+>
+> Hej,
+>
+> I will do the IDMA oral re-exams together with Srikanth Srinivasan.
+>
+> Venlig hilsen
+> Jakob Nordström
+>
+> On 2025-06-12 09:27, EKSAMEN-NØRRE wrote:
+>
+>     English version below
+>
+>     Hvis der er angivet flere kursusansvarlige i kursusbeskrivelsen, har I alle fået denne mail.
+>
+>      
+>
+>     Kære kursusansvarlig
+>
+>     Den mundtlige reeksamen i Introduktion til diskret matematik og algoritmer administreres i Digital Eksamen, hvilket betyder at bedømmelsen afgives i Digital Eksamen. Bemærk venligst at bedømmelserne skal indtastes i Digital Eksamen af eksaminator(-er) og intern medbedømmer(-e)/censorer på selve eksamensdagen. Hvis en studerende ikke møder op til den mundtlige prøve, skal du registrere resultatet U (Udeblevet), som betyder 'ikke mødt op'.
+>
+>      
+>
+>     Husk at trykke på 'Send', når du er færdig med at bedømme - det vil offentliggøre resultaterne for de studerende.
+>
+>      
+>
+>     Hvornår afvikles eksamen
+>
+>     Den mundtlige eksamen i Introduktion til diskret matematik og algoritmer afvikles d. 25-06-2025
+>
+>     (annonceret på Eksamensdatoskemaet)
+>
+>      
+>
+>     Hvad skal du gøre?
+>
+>     For at vi kan opsætte kursuseksamen i Digital Eksamen har vi brug for følgende informationer fra dig:
+>
+>      
+>
+>     Bedømmere – deadline 16. juni kl. 12
+>
+>     Hvis bedømmerne ikke er de samme som ved den ordinære eksamen
+>
+>     Hvis det ikke er de samme bedømmere til denne reeksamen, som der var til den ordinære eksamen, skal vi i administrationen have dette at vide. Dette kan I fortælle os ved at svare denne mail. På den måde kan vi sætte eksamen op korrekt i Digital Eksamen.
+>
+>             
+>
+>     Afvikles kursuseksamen med flere eksaminatorer, interne medbedømmere eller med censorer, skal du melde tilbage hvilken fordeling af bedømmere og studerende der ønskes:
+>
+>         Bedømmerne bliver tilknyttet alle studerende
+>         Systemet fordeler bedømmer vilkårligt på de studerende
+>         Du sender en fordeling til os, som vi manuelt indtaster i Digital eksamen
+>
+>      
+>
+>     Oplysningerne skal indsendes ved at svare på denne mail senest d. 16. juni kl. 12
+>
+>     Hvis du ikke allerede har fået booket lokaler til din mundtlige eksamen, bedes du kontakte eksamen-noerre@adm.ku.dk så vil vi hjælpe med dette.
+>     Vi beklager virkelig den korte deadline.
+>
+>      
+>
+>     Eksamensplan
+>
+>     Eksamensplanen for mundtlige prøver skal offentliggøres i Digital Eksamen (og ikke længere i Absalon).
+>
+>      
+>
+>     Eksamensplanen skal indeholde:
+>
+>         Studerendes navn/KU-id
+>         Lokale
+>         Studerendes eksamenstidspunkt (og evt. forberedelsestidspunkt)
+>
+>      
+>
+>     Planen skal offentliggøres i Digital Eksamen senest 7 dage før den mundtlige eksamen.
+>     Du bedes indsende eksamensplanen til os ved at svare på denne mail senest 7 dage før den første eksamensdato.
+>
+>      
+>
+>     Vejledning til Digital Eksamen kan findes her: Vejledning til Digital Eksamen 
+>
+>     Har du spørgsmål til afvikling af kursuseksamen i Digital Eksamen, er du altid velkommen til at kontakte os.
+>
+>     Venlig hilsen
+>
+>     Uddannelse Nørre
+>
+>      
+>
+>     __________________________________________________________________________________________________________________________________________________________
+>
+>     English version
+>
+>     If multiple course coordinators are listed in the course description, you have all received this email.
+>
+>      
+>
+>     Dear course coordinator
+>
+>      
+>
+>     The oral reexamination in Introduktion til diskret matematik og algoritmer is administered in Digital Exam, which means that the assessment is given in Digital Exam. Please note that the assessments must be entered into Digital Exam by the examiner(s) and internal co-examiner(s)/external examiners on the day of the exam. If a student does not show up for the oral exam, you must register the result as U (Udeblevet), which means 'did not show up'.
+>
+>      
+>
+>     Remember to click 'Send' when you have finished assessing - this will publish the results for the students.
+>
+>      
+>
+>     When is the exam held?
+>
+>     The oral exam in Introduktion til diskret matematik og algoritmer will be held on 6/25/2025 (announced on The list of exam dates)
+>
+>      
+>
+>     What do we need from you?
+>
+>     To set up the exam in Digital Exam, we need the following information from you:
+>
+>      
+>
+>     Assessors – deadline 16 June at 12:00
+>
+>     Examiners
+>
+>         Please send us the names and e-mails on examiners/external examiners by replying to this mail.
+>
+>     In order for us to set up the exam correctly in Digital Exam, we must know if there is a difference in the list of examiners. Otherwise, we will add the same examiners to the exam as those who were listed in the ordinary exam.
+>
+>      
+>
+>     If the exam is conducted with multiple assessors, you must report back which distribution of examiners and students is preferred:
+>
+>         The assessors are assigned to all students
+>         The system randomly distributes assessors to the students
+>         You send a distribution to us, which we manually enter into Digital Exam
+>
+>      
+>
+>     The information must be sent to us no later than 16 June at 12:00. Please send us the information by replying to this email.
+>
+>     If you have not already booked rooms for your oral exam, please contact eksamen-noerre@adm.ku.dk so it can be arranged.
+>     We are very sorry for the short notice.
+>
+>      
+>
+>     Exam schedule
+>
+>     The exam schedule for oral exams must be published in Digital Exam (and no longer in Absalon).
+>
+>     The exam schedule must include:
+>
+>         Student's name/KU-id
+>         Room
+>         Student's exam time (and possibly preparation time)
+>
+>      
+>
+>     The schedule must be published in Digital Exam no later than 7 days before the oral exam. Please send the exam schedule to us no later than 7 days before the first exam date.
+>
+>      
+>
+>     A guide for Digital Exam can be found here: Guide for Digital Exam
+>
+>      
+>
+>     If you have any questions about the exam (or Digital Exam), you are always welcome to contact us.
+>
+>     Kind regards
+>
+>     Study administration Nørre C
+>
+>      
+>
+>     Københavns Universitet
+>
+>     Campusadministration Nørre
+>
+>     Uddannelse Nørre
+>
+>     Undervisning og eksamen 1
+>
+>     Blegdamsvej 3B
+>
+>     2200 København N
+>
+>      
+>
+>     www.ku.dk
+>
+>      
+>
+>     Logo for Københavns Universitet
+>
+>      
+>
+>      
+>
+>
+>
+

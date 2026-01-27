@@ -1,0 +1,274 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+%   \usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+\usepackage{xcolor}
+
+\usepackage{multicol}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+% Course name
+\usepackage{xspace}
+\newcommand{\coursename}{Introduction to Discrete Mathematics and Algorithms\xspace}
+\newcommand{\coursenameshort}{IDMA 2025\xspace}
+
+\begin{document}
+
+\begin{center}
+\textbf{\large \coursenameshort \\[0.5em] -- Ugeseddel 4 -- \\[0.5em]}
+\end{center}
+\noindent
+
+
+\section*{General Plan}
+
+
+This week will be dedicated to 
+\textbf{combinatorics}
+as discussed in Chapter~3 of KBR.
+In combinatorics we consider questions like:
+\begin{itemize}
+\item 
+  In how many ways can one draw a hand of 5 cards from a set of 52
+  different cards?  
+\item 
+  What happens to the number if the order of the cards matter? 
+\end{itemize}
+%
+One particularly important combinatorial principle that will come up
+is the \textbf{pigeonhole principle}, which simply says that if you
+put strictly more than $n$~objects (pigeons) in $n$~containers
+(pigeonholes), then there will be more than one object in at least one
+of the containers.  Although this is completely, blindingly obvious,
+it can be a surprisingly useful fact.
+
+When talking about combinatorics it is also natural to 
+touch briefly on
+\textbf{probability theory},  so that we can answer questions like 
+\begin{itemize}
+\item
+  What is the probability that two of the cards that are drawn are spades? 
+\end{itemize}
+We will see that it is essential to differentiate between combinatoric
+questions where the elements are ordered and questions where the order
+does not matter.  
+
+Just as a side note, an important application of probabilities in
+computer science is when we go beyond worst-case analysis to perform
+\emph{average-case running time analysis}, where one looks at how
+efficient an algorithm is on average instead of focusing on the
+worst-case performance.
+Another application is in
+\emph{randomized algorithms},
+which can make random choices during execution to find the answer
+faster (but might also commit errors with small probability).
+Such things are beyond the scope of this course, however, so you will
+have to wait until your next course on algorithms for this.
+
+%We will also talk a bit about \textbf{matrices} and how they can be useful in
+%discrete mathematics. Most (or all) of you would also be taking a
+%separate course on linear algebra, but for many (or all) of you it
+%comes after this course, and so cannot help us with the material we
+%need.  Therefore, just to make sure we are on the same page, we will
+%make sure to quickly cover the basics in a self-contained and
+%elementary way.
+%
+%Depending on how things go, we might also be able to discuss
+%\textbf{relations}
+%on Wednesday, but most of this will be saved for next week.   
+
+
+\section*{Reading Instructions}
+%   \section*{Assigned reading}
+\begin{itemize}
+\item 
+  Our lectures will cover
+  KBR \mbox{Sections 3.1--3.4}.
+  
+\item
+  \mbox{Section 3.5} is not included in the course requirements, 
+  but is \emph{definitely} useful to read if you feel that you have already
+  mastered the rest of the material.
+
+%\item 
+%  KBR Section 1.5 is about matrices.
+%\item 
+%  To learn about relations, we will read
+%  KBR Chapter 4, except sections 4.6 and 4.8,
+%  and
+%  KBR Section 5.1,
+%  but most or all of this will be covered next week.
+
+\end{itemize}
+
+
+\section*{Exercises}
+%   \section*{Exercise plan}
+
+
+%   \subsection*{Monday Oct. 28th, 10:15-12:00}
+
+
+\begin{enumerate}
+\item
+  Here are two exercises 
+  to understand the proof we did in class of how many different multisets of
+  size~$r$ can be chosen from a universe of size~$n$.
+
+  \begin{enumerate}
+  \item  
+  Do the translation from multisets and coloured boxes for the multiset
+  $[2,3,5,5,8,8]$
+  chosen from the universe
+  $S = \{1,2,3,4,5,6,7,8\}$.
+  Then take the row of coloured boxes that you get and translate them
+  back to a  multiset, just to check that you get back the multiset
+  with which you started. 
+
+  (This example also illustrates an
+  interesting corner case in the proof, namely when there are copies
+  of the last element in the universe in the multiset. 
+  It is hard to find time to talk properly about this during the lecture,
+  but the details are ironed out in the lecture notes that are
+  posted on Absalon.)
+
+  \item
+    With the same parameters $n=8$ and $r=6$,
+    consider the row of boxes where all prime numbers between~$1$
+    and~$13$ are coloured red. Which multiset does this correspond to?
+    Take this multiset and run the colouring translation to check that
+    you get the same coloured boxes back.
+
+ \end{enumerate}
+
+\item 
+  To test your basic understanding,
+  solve KBR exercises 3.1.1, 3.1.4, 3.1.8, 3.1.9
+
+\item 
+  For some more interesting problems,
+  solve KBR exercises
+  3.1.22 and 3.1.31.
+   
+\item 
+  For some more interesting problems,
+  solve KBR exercises 
+  3.1.33 and 3.1.34.
+%   
+%     \begin{itemize}
+%     \item{}[*] 
+%       Write pseudocode for the procedure (algorithm) you came up
+%       with in 3.1.34 for counting the number of zeroes at the end of $n!$ 
+%     \item{} 
+%       Analyze the runtime of your algorithm in terms of the input $n$ and
+%       express it using the big-$O$ notation. 
+%     \item{} [**] 
+%       Can you find an algorithm that runs in time $O(\log(n))$?
+%     \end{itemize}
+%   
+\item 
+  For a mix of combinatorial problems,
+  solve KBR exercises 
+  3.2.1, 
+%   3.2.2, 
+  3.2.6,
+  3.2.16,
+%     3.2.17,
+  3.2.25, 
+%     3.2.26, 
+  3.2.33.
+
+\item 
+  For a mix of combinatorial problems,
+  solve KBR exercises 
+  3.3.6, 3.3.23 
+
+\item 
+  To work on probability theory,
+  solve KBR exercises 
+%     3.4.1, 
+  3.4.12, 3.4.20, 3.4.33, 3.4.34.
+
+\item 
+  For a challenging probability problem,
+  solve KBR exercise
+  KBR 3.4.36 (part (c) is [**]).
+
+\item 
+  Continue the discussion
+  from the lecture 
+%   regarding the fairness of the rules of 
+  about
+  poker 
+%     (likely to happen on Wednesday)
+  by calculating and comparing the associated probabilities 
+  that we did not already compute in class. The hierarchy is as follows:
+  % where the hierarchy is 
+  \begin{itemize}
+    \begin{multicols}{3}  
+    \item[(1)] Straight flush
+    \item[(2)] Four of a kind
+    \item[(3)] Full house
+    \item[(4)] Flush
+    \item[(5)] Straight
+    \item[(6)] Three of a kind
+    \item[(7)] Two pairs
+    \item[(8)] A pair
+    \item[] {} \phantom{m}% High card
+    \end{multicols}
+  \end{itemize}%\vspace{-}
+
+%   
+%   \item
+%     \emph{Recap problem:}
+%     Prove that the sum of the first $n$ odd positive integers is~$n^2$.
+%   
+%   \item
+%     \emph{Recap problem:}
+%     Prove that there is some constant~$k$ such that
+%     for \mbox{all $n \geq k$} it holds that
+%     $n! > 2^n$.
+%   
+%   
+%   \item
+%     Finish any leftover exercises from the previous exercise classes 
+%   %   of this week. 
+%     so far,
+%     if this would be helpful for you to understand what has been covered
+%     in the course up to this point.
+%   
+\end{enumerate}
+
+
+\end{document}
+

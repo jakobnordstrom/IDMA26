@@ -1,0 +1,92 @@
+
+
+\begin{frame}
+  \frametitle{Combinatorics}
+
+%   Recall that a 
+A deck of card has
+\begin{itemize}
+\item 
+  $4$ \textbf{suits:}
+  $\heartsuit$,
+  $\spadesuit$,
+  $\clubsuit$,
+  $\diamondsuit$
+
+\item 
+  $13$ \textbf{ranks:} $2$--$10$, jack, queen, king, and ace
+\end{itemize}
+
+\blankline
+
+\blankline
+
+A \textbf{poker hand}  contains $5$ cards.
+%   Can you match the three poker hands below
+%   with the correct probabilities of drawing them?
+Match the three poker hands below
+with the correct probabilities of drawing them!
+
+\blankline
+
+\blankline
+
+\textbf{(1) Four of a kind:}
+$4$ of the cards have the same rank
+
+\blankline
+
+
+\textbf{(2) Full house:}
+$3$ cards of one rank,
+$2$ cards of another rank
+
+\blankline
+
+
+\textbf{(3) Flush}
+(including \textbf{straight flush})\textbf{:}
+All cards are of the same suit
+
+\blankline
+
+
+\begingroup
+%   \small
+%   \footnotesize
+\scriptsize
+\begin{equation*}
+  \mathrm{(a)} \ \frac{4 \cdot \binom{13}{5}}{\binom{52}{5}}
+  \qquad
+  \mathrm{(b)} \ 
+  \frac{
+    13 \cdot \binom{4}{3} \cdot
+    12 \cdot \binom{4}{2}
+  }
+  {\binom{52}{5}}
+  \qquad
+  \mathrm{(c)} \ 
+  \frac{
+    13 \cdot 48
+  }
+  {\binom{52}{5}}
+  \qquad
+  \mathrm{(d)} \ 
+  \frac{
+    \binom{13}{2} \cdot \binom{4}{2} \cdot
+    \binom{4}{2} \cdot 44
+%   
+%       13 \cdot \binom{4}{2} \cdot
+%       12 \cdot \binom{4}{2} \cdot 11 \cdot 4
+%   
+  }
+  {\binom{52}{5}}
+\end{equation*}
+\endgroup
+
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "DMFS_Exam_200624"
+%%% End:

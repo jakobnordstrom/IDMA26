@@ -1,0 +1,59 @@
+% COURSE-SPECIFIC MACROS FOR IDMA 2025
+
+\newcommand{\coursenameabbrev}{IDMA}
+\newcommand{\coursenameshort}{Introduktion til diskret matematik og algoritmer}
+\newcommand{\coursenamelong}{NDAB23002U Introduktion til diskret matematik og algoritmer}
+%    
+\newcommand{\submissionemail}{jn@di.ku.dk\xspace}
+%   \newcommand{\courseinstructor}{Jakob Nordstr\"om}
+\newcommand{\courseinstructor}
+        {Jakob Nordstr\"om and Srikanth Srinivasan}
+\newcommand{\courseperiod}{2024/2025}
+
+% PACKAGES, MACROS, ET CETERA
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%%% Apparently a newer version of babel doesn't play well with nada-ten
+%    \usepackage[english]{babel}
+
+\usepackage{hyperref}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+% Provide calligraphic \mathscr font
+\usepackage{mathrsfs}
+
+% Enable use of MetaPost generated PostScript files
+\usepackage{ifpdf}
+\usepackage{graphicx}  
+\ifpdf         
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi            
+
+% For getting subfigures 1(a), 1(b) etc
+% The package "subfigure" is obsolete, so switch to subcaption
+%    \usepackage[sf,SF]{subfigure}
+\usepackage{subcaption} 
+
+% Sam Buss's package for formatting proofs
+\usepackage{bussproofs}
+
+% Extensions to verbatim commands
+\usepackage{verbatim}
+
+% Smiley
+\usepackage{wasysym}
+
+% To choose how to enumerate lists
+\usepackage{enumerate}
+
+\input{doctypedetection.tex}
+
+\input{macros-general}
+
+\input{macros-local}
+

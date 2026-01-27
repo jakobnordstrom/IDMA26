@@ -1,0 +1,72 @@
+GRADING GUIDELINES FOR IDMA 2024 PROBLEM SET 3
+
+
+PROBLEM 1 LOGIC (80 p; 20 p per formula)
+[Correct truth tables are sufficient for a full score]
+
+Issues for all subproblems 1a-1d:
+- Truth tables are missing, but good explanations are provided -5 p / problem
+- Truth tables are missing, and explanations are missing --- no points
+- Correct truth table, but the conclusion is missing 10 p
+- Missing to point explicitly to satisfying assignment -5 p
+- Mistake(s) in truth table, and no explanations show whether this is just a typo 10 p
+- Truth tables missing for subformulas but correct for full formula 5 p
+ 
+ 
+
+PROBLEM 2 LOGIC (100 p)
+20 p per predicate logic formula correctly matched or non-matched and explained
+10 p for parsing formula syntactically and matching it correctly, but giving no explanation except for the parsing 
+10 p per predicate formula for giving meaningful explanation of what the formula encodes (but without succeeding with the match/non-match) 
+Only answers without explanations: 0 p 
+If one alternative is matched to two, but one of them is correct, then the correct match is given half the score of what had been the case if the other one had not been there.
+
+
+PROBLEM 3 COMBINATORICS (60 p)
+
+PROBLEM 3a (30 p)
+Correct expression with clear explanation: 30 p
+Almost correct answer, but with some mistakes in expression or explanation: 20 p
+Clear attempt to compute probability as quotient of #(desired hands) and #(total hands), but not more: 10 p
+
+PROBLEM 3b (30 p)
+It is sufficient to argue only about the case of a full house for a full score
+Clear, convincing explanation why probability is higher for republican deck: 30 p
+Correct computations (with n-choose-k expressions) plus reading off the answer: 30 p
+Just giving numbers, but not “combinatorial expressions”: 5 p
+Almost correct explanation, but some mistakes: 20 p
+Correct answer, and some kind of explanation that is headed in the right direction: 10 p
+Only answer without explanations: 0 p
+
+
+PROBLEM 4 RELATIONS (60 p)
+
+PROBLEM 4a (10 p)
+Fully correct explanation, but minor slips in translation to matrix (clearly mistakes in view of the explanation): no deduction.
+Mostly correct explanation, but mistakes in translation to matrix: -5 p
+Correct translation to matrix, but unclear explanation: -5 p
+Correct answer without any motivation: 0 p
+
+PROBLEM 4b (10 p)
+Fully correct explanation, but minor slips in execution (clearly mistakes in view of the explanation): no deduction.
+Mostly correct explanation, but mistakes in execution: -5 p
+Correct answer, but unclear explanation: -5 p
+Doing correct operations but on wrong relation: -5 p
+Describes only what an inverse relation is in general; not what this concrete closure is: 0 p
+Correct answer without any motivation: 0 p
+
+PROBLEM 4c (10 p)
+Fully correct explanation, but minor slips in execution (clearly mistakes in view of the explanation): no deduction.
+Mostly correct explanation, but mistakes in execution: -5 p
+Correct answer, but unclear explanation: -5 p
+Doing correct operations but on wrong relation: -5 p
+Only adding "one level" of transitivity, but not taking transitive closure: 0 p
+Describes only what transitive closure is in general; not what this concrete closure is: 0 p
+Correct answer without any motivation: 0 p
+
+PROBLEM 4d (30 p)
+Clear, convincing explanation that R is the subset relation on universe of three elements: 30 p 
+Clear, convincing explanation that R is a lattice: 20 p
+Clear, convincing explanation that R is a poset: 15 p
+Explanations showing nontrivial insight into what R is: 10 p
+Correct matrix representation (with explanation) but nothing else: 10 p

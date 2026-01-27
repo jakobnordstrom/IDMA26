@@ -1,0 +1,278 @@
+\documentclass[12pt,a4paper]{article}
+
+%%% Packages
+%   \usepackage[english,danish]{babel}
+%   \usepackage[applemac]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+
+\theoremstyle{plain}
+\newtheorem{thm}{Dummy}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+
+\begin{document}
+
+\begin{center}
+\textbf{\large 
+  IDMA Course Material
+  \\[0.5em] 
+  -- Some Notes on Mathematical Induction -- 
+  \\[0.5em]}
+\end{center}
+\noindent
+
+
+\section*{A Word of Advice}
+
+\emph{You really, really, really want to learn what mathematical
+  induction is and how it works.  Please do yourself a favour, and
+  don't let yourself rest until you have grasped this. It is very hard
+  to overemphasize how absolutely fundamental this will be for your
+  future studies.}
+
+
+
+\section*{Preliminaries}
+Let us try to prove that for every $n\in\NN$, we have that
+the formula
+\begin{equation}
+  \label{oprf}
+\sum_{k=1}^n k^2 = \dfrac{n(n + 1)(2n + 1)}{6}
+\end{equation}
+holds.
+Proving this gives a summation formula for the series of the first $n$ square numbers.
+
+The naive approach is to start from the beginning of the series. Explicit calculation gives us that 
+\begin{gather*}
+  \label{eq:1}
+1^{2} =1=\dfrac66=\dfrac{1(1 + 1)(2 + 1)}{6},\\
+1^{2} +2^2=5=\dfrac {30} 6= \dfrac{2(2 + 1)(4 + 1)}{6},\\
+1^{2} +2^2+3^2=14=\dfrac {84} 6= \dfrac{3(3 + 1)(6 + 1)}{6},
+\end{gather*}
+It is tempting to continue in this manner, calculate a couple of statement more, and then just write  
+\begin{gather*}
+\vdots\\
+\text{\textsl{etc.}}
+\end{gather*}
+and say that the statment has been proven.
+This is, however, very much not a mathematical proof,
+and is actually bordeline false as illustrated by the following example.  
+
+\begin{example}\sl
+Consider the following two sequences explicitly defined by 
+\[
+a_n=\left\lfloor \frac{2n}{\ln 2}\right\rfloor
+\]
+and
+\[
+b_n=\left\lceil \frac 2{{2}^{1/n}-1}\right\rceil.
+\]
+Both of them start as
+\begin{gather*}
+2, 5, 8, 11, 14, 17, 20, 23, 25, 28, 31, 34, 37, 40, 43, 46, 49, 51, 54, 57,\\
+60, 63, 66, 69, 72, 75, 77, 80, 83, 86, 89, 92, 95, 98, 100, 103, 106,\\
+ 109, 112, 115, 118, 121, 124, 126, 129, 132, 135, 138, 141, 144
+\end{gather*}
+It is actually easy to check on a computer that the two sequences have identical elements for the first couple of million values of $n$. It is therefore tempting to conclude that  $a_n=b_n$ for all $n$ but it turns out that 
+\[
+a_{777451915729368}=                        2243252046704766
+                        \not= 2243252046704767=b_{777451915729368}
+\]
+\end{example}
+
+
+
+
+The above example illustrates that even if we used a computer to check that the formula \eqref{oprf} was true for the all $n$ between 1
+and 100000, we would still not be able to answer the following two questions: 
+\begin{enumerate}[(i)]
+\item Is the formula valid for \emph{all} $n\in\NN$?
+\item Why is it true?
+\end{enumerate}
+These two questions are highly connected and it is difficult to answer (i) without also answering (ii).
+
+We will therefore try another approach. Let us define a sequence $(a_n)$
+by 
+\[
+a_n = \frac{n(n+1)(2n+1)}6
+\]
+(note this is the right-hand side of the formula \eqref{oprf}) and try to prove the statement 
+\begin{eqnarray}
+\label{eq:2}
+a_n+(n+1)^{2}=a_{n+1}
+\end{eqnarray}
+instead. This turns out to be relatively easy since by lifting the parenthesis, we get 
+\begin{eqnarray*}
+  a_n+(n+1)^2&=&\frac16\left[n(n+1)(2n+1)+6(n+1)^2\right]\\
+&=&\frac16\left[2n^3+9n^2+13n+6\right]
+\end{eqnarray*}
+and
+\begin{eqnarray*}
+  a_{n+1}&=&\frac16\left((n+1)(n+1+1)(2(n+1)+1)\right)\\
+&=&\frac16\left[2n^3+9n^2+13n+6\right]
+\end{eqnarray*}
+The formula \eqref{eq:2} implies that \textbf{if} we know that \eqref{oprf}
+applies to some particular value of $n$ then we can conclude that it also applies to $n+1$ since
+\begin{align*}
+ 1^2+\dots +n^2+(n+1)^2&=a_n+(n+1)^2\qquad\qquad\quad\quad\text{\textsl{\small[Formula \eqref{oprf} is valid for $n$]}}\\
+&=a_{n+1}\qquad\qquad\qquad\qquad\qquad\qquad\quad\quad\quad\text{\textsl{\small
+[Formula \eqref{eq:2}]}}\\
+&=\frac{[n+1]([n+1]+1)(2[n+1]+1)}6\quad\qquad\text{\small\textsl{\small[Def.\ of $a_n$]}}
+\end{align*}
+
+We have already shown that the formula is valid for $n=3$. The above argument then shows that it is also valid for $n=4$. This means that it is also valid for $n=5$, which means that it is valid for $n=6$ \dots\textsl{etc}.
+
+We are now getting close to answering questions (i) and (ii). But our argument still contains a sequence of dots and the statement ``et cetera (etc.)''. Mathematical induction, which we will describe below, is the standard method to deal with
+``\dots \textsl{etc.}''.
+
+Note how the statement  \eqref{eq:2}
+turned out to be the \emph{key} for finding a proof. It is worth noticing how one can get the idea to construct such a statement by 
+ \emph{analyzing} the problem. Because \textbf{if}
+\eqref{oprf} was true then
+\[
+a_{n+1}=1^2+2^2+\dots+n^2 +(n+1)^2=a_n+(n+1)^2.
+\]
+In more advanced proofs by induction, a significant part of the task is to find statements that can act as the key to a proof in the same way as  \eqref{eq:2}. 
+
+\section*{Mathematical induction}
+
+ Let us now formalize the above ideas as \emph{the principle of mathematical induction}.
+
+\begin{framed}
+If a collection of statements $P(n)$, where $n$ takes the values from $\{n_0,n_0+1,\dots\}$, satisfy that 
+\[
+P(n_0)\text{ is true}\tag{S}
+\]
+and that for all $n\geq n_0$, we have that 
+\[
+\text{If }P(n)\text{ is true, then }P(n+1)\text{ is true}\tag{T}
+\]
+then $P(n)$ is true for all $n\geq n_0$. 
+\end{framed}
+We refer to the statement (S) as \emph{the base case} and the statement  (T) as \emph{the induction step}. 
+
+Let us complete the argument for \eqref{oprf} formally using this framework. We let $P(n)$ be the statement 
+\[
+P(n):\qquad \sum_{k=1}^n k^2= \dfrac{n(n + 1)(2n + 1)}{6}
+\]
+and we wish to show that $P(n)$ is true for all $n\geq n_0=1$. 
+
+\noindent{\textbf{base case:}} We need to show that $P(1)$ is true, i.e., that
+\[
+\sum_{k=1}^1 k^2=\dfrac{1(1 + 1)(2\cdot 1 + 1)}{6}.
+\]
+This follow trivially since both sides of the equality evaluate to $1$.
+
+\noindent{\textbf{Induction step:}} We need to show that if $P(n)$ is true then $P(n+1)$ is also true. We can therefore assume that 
+\[
+\sum_{k=1}^n k^2= \dfrac{n(n + 1)(2n + 1)}{6}.
+\]
+We see that
+\begin{eqnarray*}
+\sum_{k=1}^{n+1} k^2&=&\sum_{k=1}^{n} k^2+(n+1)^2\\
+&=&\dfrac{n(n + 1)(2n + 1)}{6}+(n+1)^2\\
+&=&\frac16\left[n(n+1)(2n+1)+6(n+1)^2\right]\\
+&=&\frac16\left[2n^3+9n^2+13n+6\right]\\
+&=&\frac{[n+1]([n+1]+1)(2[n+1]+1)}6,
+\end{eqnarray*}
+which means that $P(n+1)$ is true.
+
+\noindent{\textbf{Conclusion:}} Using the principle of mathematical induction we see that $P(n)$ is true for all $n\geq n_0$.
+
+In some situations, it is necessary to use the \emph{strong} principle of induction where the induction step does not only assume that $P(n)$ is true but that all $P(k)$, with  $k\leq n$, are true. Formally:
+
+\begin{framed}
+If a collection of statements $P(n)$ indexed from the set $\{n_0,n_0+1,\dots\}$ satisfy that
+\[
+P(n_0)\text{ is true}\tag{S}
+\]
+and that for all $n\geq n_0$, we have that
+\[
+\text{If }P(n_0), \dots, P(n)\text{ are all true, then }P(n+1)\text{ is true}\tag{T'}
+\]
+then $P(n)$ is true for all $n\geq n_0$. 
+\end{framed}
+Depending on how the induction step is carried out in some cases as part of the base case it may be necessary to check extra statements in addition to $P(n_0)$. One case where this happens is if we need to make use of more than one of the previous statements $P(n_0), \dots, P(n)$ in order to complete the induction step.
+
+
+We will conclude with an example of how to use the principle of strong induction. We define a sequence $(b_n)$ recursively by setting $b_1=0$ and 
+\[
+b_n=b_{\lfloor n/2\rfloor}+1
+\]
+for all $n>1$. We want to show that
+\[
+P(n):\qquad b_n=\lfloor \log_2(n)\rfloor.
+\]
+
+\noindent{\textbf{Base case:}} We need to show that $P(1)$ is true, i.e,
+\[
+b_1=\lfloor \log_2(1)\rfloor,
+\]
+which follows because both sides of the equality are $0$.
+
+
+\noindent{\textbf{Induction step:}} We use the principle of strong induction and thus, we have to show that if all statements $P(1),P(2),\dots P(n)$ are true, then $P(n+1)$ is also true. Let us set $m=\lfloor (n+1)/2\rfloor$. Then we have $b_{n+1}=b_m+1$. We will use that $P(m)$ is true, which follows from our assumption since $m=\lfloor (n+1)/2\rfloor\leq n$. 
+
+If $n$ is odd then $n+1$ is even and we have that $m= (n+1)/2$ and 
+\begin{eqnarray*}
+b_{n+1}&=&b_{m}+1\\
+&=&\lfloor \log_2(m)\rfloor+1\qquad\qquad\qquad \textsl{[Here we use that $P(m)$ is true!]}\\
+&=&\lfloor \log_2(m)+1\rfloor\\
+&=&\lfloor \log_2(m)+\log_2(2)\rfloor\\
+&=&\lfloor \log_2(2m)\rfloor\\
+&=&\lfloor \log_2(n+1)\rfloor.
+\end{eqnarray*}
+It follows that $P(n+1)$ is true.
+
+If $n$ is even then $n+1$ is odd and we have that $m= n/2$ and
+\begin{eqnarray*}
+b_{n+1}&=&b_{m}+1\\
+&=&\lfloor \log_2(m)\rfloor+1\qquad\qquad\qquad \textsl{[Here we use that $P(m)$ is true!]}\\
+&=&\lfloor \log_2(m)+1\rfloor\\
+&=&\lfloor \log_2(m)+\log_2(2)\rfloor\\
+&=&\lfloor \log_2(2m)\rfloor\\
+&=&\lfloor \log_2(n)\rfloor.
+\end{eqnarray*}
+This is not yet the desired statement $P(n+1)$. However, note that for all $n$ between  the even number $2^k$ and the odd number $2^{k+1}-1$, we have that $\lfloor \log_2(n)\rfloor = k$. Hence, for all even $n>0$, we
+have $\lfloor \log_2(n)\rfloor=\lfloor \log_2(n+1)\rfloor$.  So we conclude that $b_{n+1} = \lfloor \log_2(n+1)\rfloor$ and thus $P(n+1)$ is true in this case too.
+
+\noindent{\textbf{Conclusion:}} Using the principle of strong induction we see that $P(n)$ is true for all $n\geq 1$.
+
+
+
+\mbox{  } \\
+
+\noindent
+\emph{\textbf{Credits:}
+  This is a lightly edited version of notes prepared for 
+  the DMA~2019 course by
+  Laura Mancinska,
+  who was in turn inspired by notes written by
+  Søren Eilers.
+}
+
+\end{document}

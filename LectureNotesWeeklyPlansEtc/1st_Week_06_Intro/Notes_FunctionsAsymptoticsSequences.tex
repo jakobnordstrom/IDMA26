@@ -1,0 +1,958 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%\usepackage[english,danish]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+
+%\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+%\newcommand{\lnote}[1]{\textcolor{magenta}{\small {\textbf{(Laura:} #1\textbf{) }}}}
+
+
+
+\begin{document}
+
+\begin{center}
+\textbf{\large 
+  IDMA Course Material
+  \\[0.5em] 
+  -- Some Notes 
+%     for the 2nd Week
+  on Functions and Asymptotic 
+%   Notation
+  Analysis
+  -- 
+  \\[0.5em]}
+\end{center}
+\noindent
+\section{Functions 
+%   and Graphs
+}
+
+In this section, we recall the concept of \textbf{functions} and
+introduce some relevant functions for the course.
+
+\begin{itemize}
+\item A \textbf{power function} is of the form 
+\[
+f(x)=x^a
+\]
+%
+where the exponent $a$ is a constant.  The expression is well-defined
+for all $x \neq 0$ when $a\in\{1,2,3,\dots\}$ but it is sometimes necessary
+to restrict to $x>0$ for other values of $a$ 
+(for instance, for $x^{1/2}$, which we recall is more often denoted
+$\sqrt{x}$).
+
+\item
+An \textbf{exponential function} is of the form
+\[
+f(x)=b^x
+\]
+where the base $b>0$ is a constant. The expression is well-defined for all $x\in\RR$.
+\item
+A \textbf{logarithmic function}  is of the form
+\[
+f(x)=\log_b(x)
+\]
+where the base $b>1$ is a constant. The expression is well-defined for all $x>0$. Logarithmic functions are the inverse functions of exponential functions with the same base. Thus, 
+\[
+b^x=y\Longleftrightarrow \log_b(y)=x
+\ .
+\]
+\begin{thm}[Properties of logarithms]
+For all $a,b,c > 0$ and all $r\in\RR$ we have
+\begin{align}
+ \log_c(ab) &= \log_c(a) + \log_c(b) \\
+ \log_b(a^r) &= r \log_b(a)  \\
+ \log_b(a) &= \frac{\log_c(a)}{\log_c(b)} 
+\end{align}
+where, in each equation above, logarithm bases are not 1.
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  The easiest way to prove this kind of statements (and to avoid
+  having to memorize them) is to just go back to the definition. For
+  instance, since by definition
+  $  a = c^{\log_c(a)}$,
+  $  b = c^{\log_c(b)}$, 
+  and
+  $
+  ab    = c^{\log_c(ab)}
+  $,
+  just playing around with these expressions we see that
+  \begin{equation*}
+    c^{\log_c(ab)}
+%       =     ab
+    = a \cdot b
+    = c^{\log_c(a)} \cdot c^{\log_c(b)}
+    = c^{\log_c(a) + \log_c(b)}
+    \ ,
+  \end{equation*}
+  and hence
+  $
+  {\log_c(ab)}
+  =
+  {\log_c(a) + \log_c(b)}
+  $
+  as claimed. The other properties are proven in a very similar way.
+\end{proof}
+
+\item
+The \textbf{absolute value} is given by
+\[
+|x|=\begin{cases}x&\text{if }x\geq 0\\-x&\text{if }x<0\end{cases}
+\]
+\item \textbf{Floor} is the function $\lfloor x\rfloor$, which rounds a real number $x$ to the largest integer less than or equal to $x$. Thus, 
+\[
+\left\lfloor \frac12\right\rfloor=0\qquad \left\lfloor -\frac12\right\rfloor=-1\qquad \lfloor \pi\rfloor=3\qquad
+\lfloor 7\rfloor=7
+\]
+We can define the \textbf{ceiling} function in a similar way; $\lceil x\rceil$ is the smallest integer larger than or equal to $x$.
+\end{itemize}
+
+In computer science, it is often convenient to combine other functions with the floor and ceiling functions. In order to perform calculations in such situations, it is advantageous to notice that 
+\[
+\lfloor x \rfloor =n\Longleftrightarrow n\leq x<n+1
+\]
+and
+\[
+\lceil x \rceil =n\Longleftrightarrow n-1<x\leq n.
+\]
+
+\begin{example}
+We have that
+\[
+\lceil \log_2x\rceil =n
+\]
+when
+\[
+n-1< \log_2x\leq n,
+\]
+which gives
+\[
+2^{n-1}< 2^{\log_2x}\leq 2^{n}
+\]
+or just
+\[
+2^{n-1}<  x \leq 2^{n}
+\]
+Thus, we see that  $\lceil \log_2 x\rceil=n$ exactly when  $2^{n-1} < x\leq 2^{n}$.
+\end{example}
+
+
+%%%
+%%% Missing these plots for now
+%%%
+%   
+%   Recall that functions that map numbers to numbers can be shown in a
+%   \textbf{graph}, which is often the easiest way to understand the most
+%   important properties of a function. See figures \ref{nogleex} and
+%   \ref{flereex} for some examples of graphs.
+%   
+%   \begin{figure}
+%   \begin{center}
+%   \includegraphics[width=0.35\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{floorplot}\qquad
+%   \includegraphics[width=0.35\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{absplot}
+%   \end{center}
+%   \caption{Graphs of $\lfloor x\rfloor$ and $|x|$} \label{nogleex}
+%   \end{figure}
+%   
+%   \begin{figure}
+%   \begin{center}
+%   \includegraphics[width=0.45\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{floorlogplot}
+%   \end{center}
+%   \caption{The graph of $\lfloor \log_2 x\rfloor$.} \label{flereex}
+%   \end{figure}
+%   
+
+%%%%%%%%%%%%%%%%%
+
+
+\section{Asymptotic Growth of Functions} 
+\label{sec:functionorder}
+
+\subsection{Collection of Definitions}
+In this section we collect the definitions regarding asymptotic growth
+of functions. 
+Further explanations are available in the~CLRS textbook.
+%   and we will also talk about this in class.
+%    and during lectures.
+
+\begin{definition}
+  \label{def:AsymptPos}
+  We say that a function $f:\RR^+ \to \RR$ is \emph{asymptotically
+    positive} if there exists some $x_0\in\RR^+$ such that
+  for all $x\ge x_0$ it holds that
+%   $0 < f(x)$
+  $ f(x) > 0 $.
+%   for all $x\ge x_0$.
+\end{definition}
+
+We will also apply the above definition for functions that are defined
+on some subset of the positive reals. A common choice of such a subset
+will be positive integers 
+$\ZZ^+ = \{1,2,3,\ldots\}$ 
+or natural numbers 
+$\NN  = \{0, 1,2,\ldots\}$.
+(We note in passing that sometimes the notation
+$\NN^+$
+is used to mean the same as
+$\ZZ^+$---hopefully this should not be too confusing.)
+
+
+\begin{definition}[Asymptotic notation]
+\label{def:Asympt}
+Let $f$ and $g$ be asymptotically positive functions. 
+\begin{itemize}
+\item We say that \emph{$f(x)$ is $O(g(x))$} if there exists a constant $c>0$ and $x_0$ such that
+\[ f(x) \le  c g(x)\]
+for all $x\ge x_0$.
+
+\item We say that \emph{$f(x)$ is $\Theta(g(x))$} if $f$ is $O(g(x))$ and $g(x)$ is $O(f(x))$.
+
+\item We say that \emph{$f(x)$ is $o(g(x))$} if for any constant $c>0$ we can find $x_0$ such that
+\[ f(x) <  c g(x)\]
+for all $x\ge x_0$.
+\end{itemize}
+\end{definition}
+
+Asymptotic notation is a very, very convenient tool, that we will need
+to get well acquainted with. At the end of the day, though, it is
+important to understand that it is no mysterious mathematical voodoo, but
+just a convenient way of expressing common-sense facts.
+As we have discussed in class, a good way to think about
+this is that we want to 
+\emph{focus only on the highest-order term of the function, 
+  and shave off the constant factor in front of this term.}
+This description is, of course, not the formal definition, but it is 
+the intuition what the formal definition tries to make precise.
+
+As an example, 
+%   For instance, if 
+suppose 
+we have two functions
+$
+f(n) = 2n^3 - 10 n^2 - 5n 
+$
+and
+$
+g(n) = n^3 + 8 n^2
+$.
+In this case,  the notation
+$f(n) = \Theta(g(n))$
+is just a way to say that when $n$ gets large enough, then these two
+functions behave essentially in the same way except for constant
+factors
+(namely, they will be scaling like~$n^3$ within a  constant
+factor of~$2$).
+Note that this matches our intuitive understanding: the highest-order term in
+$f(n)$ with the constant factor shaved off is $n^3$, and for $g(n)$
+the highest-order term  with constant factor shaved off is also~$n^3$, 
+so asymptotically the two functions are the same. This is what
+$f(n) = \Theta(g(n))$
+means.
+
+As another example, if
+%   Also, if
+$
+h(n) = 1000 n^2 + 1000000 n
+$,
+then 
+$
+h(n) = o(f(n))
+$
+(for our function
+$
+f(n) = 2n^3 - 10 n^2 - 5n 
+$
+above)
+is just convenient notation for the fact that although
+$h(n)$ will be much larger than $f(n)$ for small values of~$n$, 
+as $n$ goes to infinity $h(n)$ will become vanishingly small compared
+to~$f(n)$. 
+
+
+
+One can use the definition of big-$O$ to show that big-$\Theta$ can equivalently be defined in the following manner.
+
+\begin{definition}[Second definition of big-$\Theta$]
+\label{def:BigTheta}
+Let $f$ and $g$ be asymptotically positive functions. 
+We say that \emph{$f(x)$ is $\Theta(g(x))$} if there exist constants $c_1,c_2>0$ and $x_0$ such that
+\[ c_1 g(x) \le f(x) \le  c_2 g(x)\]
+for all $x\ge x_0$.
+\end{definition}
+
+For purposes of intuition, it can be useful to think \emph{informally}
+of the above defined asymptotic notions as being analogous to
+comparison of numbers. Specifically,
+\begin{center}
+\begin{tabular}{lcc}
+$f(x)$ is $O(g(x))$ &  is like & ``$f\le g$''  \\
+$f(x)$ is $o(g(x))$ &  is like & ``$f < g$''  \\
+$f(x)$ is $\Theta(g(x))$ &  is like & ``$f=g$''  \\
+\end{tabular}
+\end{center}
+One must be careful and only use the above analogy to build intuition as some properties that hold for comparison of numbers do not carry over for functions. For instance, if $a$ and $b$ are numbers, then we have that $a \le b$ or $b\le a$. For functions, however, we can have a situation where $f$ is not $O(g)$ and $g$ is not $O(f)$. Can you think of such an example?
+
+Both little-$o$ and big-$O$ give upper bounds. Intuitively, little-$o$ gives a strict upper bound while big-$O$ gives an upper bound that is potentially not strict. More formally, we have the following.
+\begin{thm}
+Let $f,g:\RR^+\to\RR$ be asymptotically positive functions such that $f(x)$ is $o(g(x))$. Then we have that
+\begin{enumerate}
+\item $f(x)$ is $O(g(x))$ and 
+\item $g(x)$ is \emph{not} $O(f(x))$.
+\end{enumerate}
+\end{thm}
+%\newpage
+
+\subsection{Collection of Rules}
+\begin{thm} Let $f,g,h:\RR^+ \to \RR$ be asymptotically positive functions.\medskip
+
+\noindent \textbf{Rules for big-O}:
+  \begin{enumerate}[(B1)]
+\item {\bf Addition:} If $f(x)$ and $g(x)$ are both $O(h(x))$ then
+  $f(x)+g(x)$ is~$O(h(x))$.%
+\footnote{This addition rule has to be applied with
+%     some 
+  care in order
+  not to get absurd results. For instance, by carelessly using it over
+  and over again we can derive the amazing ``fact'' that
+  \begin{equation*}
+    n 
+    = 
+    \underbrace{1 + 1 + \cdots + 1}_{\text{$n$ times}}
+    = 
+    O(1)
+    \ ,
+  \end{equation*}
+  since certainly 
+  $1 = O(1)$, and then it also holds that $1 + 1 = O(1)$, et cetera.
+  The mistake here is that the addition rule can only be used a
+  constant number of times in any asymptotic analysis.
+  This will be important later for, e.g., the asymptotic analysis of
+  recursive algorithms.
+  If in doubt, just go back to the formal definition.
+}
+
+ \item If $c>0$ is a constant then $c$ is $O(\log_a(x))$ for all $a>1$.  
+ \item $\log_a(x)$ is $O(x^b)$ for all $a>1$ and $b>0$.
+  \item $x^a$ is $O(x^b)$ for $a\leq b$.
+  \item $a^x$ is $O(b^x)$ for $0<a\leq b$.
+ \item $x^a$ is $O(b^x)$ for all $a$ and all $b>1$.
+\end{enumerate}
+
+\medskip
+
+\noindent \textbf{Rules for little-$o$}:
+ \begin{enumerate}[(L1)]
+\item {\bf Linear combination:} If $f(x)$ is $o(g(x))$ then $c_1 g(x) + c_2 f(x)$ is~$\Theta(g(x))$, where $c_1>0$ and $c_2\in\RR$ are constants.
+\item If $c>0$ is a constant then $c$ is $o(\log_a(x))$ for
+  all $a>1$. 
+\item $\log_a(x)$ is $o(x^b)$ for all $a>1$ and $b>0$.
+ \item $x^a$ is $o(x^b)$ if $a<b$.
+ \item $a^x$ is $o(b^x)$ if $0<a<b$.
+\item $x^a$ is $o(b^x)$ for all $a$ and all $b>1$.
+\end{enumerate}
+
+\medskip
+
+\noindent \textbf{Mixed rules}:
+ \begin{enumerate}[(M1)]
+\item{} {\bf Transitivity:}  \\
+If $f(x)$ is $O(g(x))$ and $g(x)$ is $O(h(x))$ then $f(x)$ is~$O(h(x))$.\\
+If $f(x)$ is $o(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is~$o(h(x))$.\\
+If $f(x)$ is $\Theta(g(x))$ and $g(x)$ is $\Theta(h(x))$ then $f(x)$ is~$\Theta(h(x))$.
+
+\item{} {\bf Constant:} \\
+If $c>0$ is a constant then $cf(x)$ is~$O(f(x))$.\\
+If $c>0$ is a constant then $cf(x)$ is~$\Theta(f(x))$.
+
+\item {\bf Multiplication:} \\
+If $f(x)$ is $O(g(x))$, then $h(x)f(x)$ is $O(h(x)g(x))$.\\
+If $f(x)$ is $o(g(x))$, then $h(x)f(x)$ is $o(h(x)g(x))$.\\
+If $f(x)$ is $\Theta(g(x))$, then $h(x)f(x)$ is $\Theta(h(x)g(x))$.
+
+\item{\bf Chaining:} \\
+If $f(x)$ is $o(g(x))$ and $g(x)$ is $O(h(x))$ then $f(x)$ is $o(h(x))$. \\
+If $f(x)$ is $O(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is $o(h(x))$.\\
+If $f(x)$ is $o(g(x))$ and $g(x)$ is $\Theta(h(x))$ then $f(x)$ is $o(h(x))$. \\
+If $f(x)$ is $\Theta(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is $o(h(x))$.
+ \end{enumerate}
+\end{thm}
+
+\begin{example}
+Let us use the rules above to show that
+\[
+f(x)=\frac12 x^3+\frac12 x^2
+\]
+and
+\[
+g(x)=x^3
+\]
+have the same asymptotic order (in other words, $f$ is $\Theta(x^3)$). First, note that by \emph{(L4)}  we have that $x^2$ is $o(x^3)$. Then, using \emph{(L1)}, we conclude that  $\frac{1}{2}x^3+\frac{1}{2}x^2$ is $\Theta(x^3)$ thus showing that $f$ and $g$ have the same asymptotic order.
+%
+%From \emph{(M3)} it follows that $f(x)$ has the same asymptotic order as $x^3+x^2$. Furthermore, we know from rule \emph{(L4)} that $x^2$ is $o(x^3)$, and it then follows from rule \emph{(L1)} that $x^3+x^2$ has the same asymptotic order as $x^3=g(x)$.
+\end{example}
+
+\begin{example}
+All logarithms have the same asymptotic order. This is seen from the general rule 
+\[
+\log_b(x)=\frac{\log_a(x)}{\log_a(b)},
+\]
+which shows that two logarithms are equal up to multiplication with a constant. It then follows from (\emph{M2}) that all logarithms have the same asymptotic order. 
+\end{example}
+
+Example 9 tells us that we do not need to worry about the base of
+logarithms when dealing with asymptotic growth. We will therefore
+simply write $\log x$ when the base is irrelevant.
+Another comment in this context is that for a computer scientist 
+(at least for one of the theoretical sort)
+the most natural base for logarithms is~$2$, so, e.g., in
+more advanced textbooks or  research papers $\log$ denotes logarithms
+to the base~$2$ unless otherwise stated.
+
+
+
+%\section{Asymptotic growth of functions} \label{sec:functionorder}
+%\subsection{Collection of definitions}
+%In this section we collect the definitions regarding asymptotic growth of functions. Further explanations are available in the [CLRS] book and during lectures.
+%
+%\begin{definition}
+%\label{def:AsymptPos}
+%We say that a function $f:\RR^+ \to \RR$ is \emph{asymptotically positive} if there exist $x_0\in\RR^+$ such that
+%$0 < f(x)$
+%for all $x\ge x_0$.
+%\end{definition}
+%We will also apply the above definition for functions that are defined on some subset of the positive reals. A common choice of such a subset will be positive integers $\ZZ^+$ or natural numbers $\NN$.
+%
+%\begin{definition}[Asymptotic notation]
+%\label{def:Asympt}
+%Let $f$ and $g$ be asymptotically positive functions. 
+%\begin{itemize}
+%\item We say that \emph{$f(x)$ is $O(g(x))$} if there exist a constant $c>0$ and $x_0$ such that
+%\[ f(x) \le  c g(x)\]
+%for all $x\ge x_0$.
+%
+%\item We say that \emph{$f(x)$ is $\Theta(g(x))$} if $f$ is $O(g(x))$ and $g(x)$ is $O(f(x))$.
+%
+%\item We say that \emph{$f(x)$ is $o(g(x))$} if for any constant $c>0$ we can find $x_0$ such that
+%\[ f(x) \le  c g(x)\]
+%for all $x\ge x_0$.
+%\end{itemize}
+%\end{definition}
+%
+%One can use the definition of big-$O$ to show that big-$\Theta$ can equivalently be defined in the following manner.
+%
+%\begin{definition}[Second definition of big-$\Theta$]
+%\label{def:BigTheta}
+%Let $f$ and $g$ be asymptotically positive functions. 
+%We say that \emph{$f(x)$ is $\Theta(g(x))$} if there exist a constants $c_1,c_2>0$ and $x_0$ such that
+%\[ c_1 g(x) \le f(x) \le  c_2 g(x)\]
+%for all $x\ge x_0$.
+%\end{definition}
+%
+%It can be useful to \emph{informally}(!) think of the above defined asymptotic notions as being analogous to comparison of numbers. Specifically,
+%
+%\begin{center}
+%\begin{tabular}{lcc}
+%$f(x)$ is $O(g(x))$ &  is like & ``$f\le g$''  \\
+%$f(x)$ is $o(g(x))$ &  is like & ``$f < g$''  \\
+%$f(x)$ is $\Theta(g(x))$ &  is like & ``$f=g$''  \\
+%\end{tabular}
+%\end{center}
+%One must be careful and only use the above analogy to build intuition as some properties that hold for comparison of numbers do not carry over for the functions. For instance, if $a$ and $b$ are numbers, then at least one of $a \le b$ and $b\le a$ is a true statement. For functions, however, we can have a situation where $f$ is not $O(g)$ and $g$ is not $O(f)$. Can you think of such an example?
+%\newpage
+%
+%\subsection{Collection of rules}
+%
+%
+%
+% \begin{thm} Let $f,g,h:\RR^+ \to \RR$ be asymptotically positive functions.\medskip
+%
+%\noindent \textbf{Rules for big-O}:
+%  \begin{enumerate}[(B1)]
+%% \item {\bf Transitivity:}  If $f(x)$ is $O(g(x))$ and $g(x)$ is $O(h(x))$ then $f(x)$ is~$O(h(x))$.
+%%\item  {\bf Multiplication by a constant:} If $c>0$ is a constant then $cf(x)$ is $O(f(x))$.
+%%\item {\bf Multiplication:} If $f(x)$ is $O(g(x))$, then $h(x)f(x)$ is $O(h(x)g(x))$.
+%\item {\bf Addition:} If $f(x)$ is $O(g(x))$ then $f(x)+g(x)$ is $O(g(x))$.
+%
+% \item If $c>0$ is a constant then $c$ is $O(\log_a(x))$ for all $a>1$.  
+% \item $\log_a(x)$ is $O(x^b)$ for all $a>1$ and $b>0$.
+%  \item $x^a$ is $O(x^b)$ for $a\leq b$.
+%  \item $a^x$ is $O(b^x)$ for $0<a\leq b$.
+% \item $x^a$ is $O(b^x)$ for all $a$ and all $b>1$.
+%\end{enumerate}
+%
+%%\medskip
+%%\noindent \textbf{Rules for big-Theta}:
+%%\begin{enumerate}[(T1)]
+%%%\item {\bf Transitivity:}  If $f(x)$ is $\Theta(g(x))$ and $g(x)$ is $\Theta(h(x))$ then $f(x)$ is~$\Theta(h(x))$.
+%%\item  {\bf Constant:} If $c>0$ is a constant then $cf(x)$ is~$\Theta(f(x))$.
+%%%\item {\bf Addition/Subtraction:} If $f(x)$ is $o(g(x))$ then $g(x)\pm f(x)$ is $\Theta(g(x))$.
+%%\end{enumerate}
+%
+%\medskip
+%
+%\noindent \textbf{Rules for little-$o$}:
+% \begin{enumerate}[(L1)]
+%% \item {\bf Transitivity:}  If $f(x)$ is $o(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is~$o(h(x))$.
+%%\item {\bf Multiplication:} If $f(x)$ is $o(g(x))$, then $h(x)f(x)$ is~$o(h(x)g(x))$.
+%\item {\bf Addition/Subtraction:} If $f(x)$ is $o(g(x))$ then $g(x)\pm f(x)$ is $\Theta(g(x))$.
+%\item If $c>0$ is a constant then $c$ is $o(\log_a(x))$ for
+%  all $a>1$. 
+%\item $\log_a(x)$ is $o(x^b)$ for all $a>1$ and $b>0$.
+% \item $x^a$ is $o(x^b)$ if $a<b$.
+% \item $a^x$ is $o(b^x)$ if $0<a<b$.
+%\item $x^a$ is $o(b^x)$ for all $a$ and all $b>1$.
+%\end{enumerate}
+%
+%\medskip
+%
+%\noindent \textbf{Mixed rules}:
+% \begin{enumerate}[(M1)]
+%\item{} {\bf Transitivity:}  \\
+%If $f(x)$ is $O(g(x))$ and $g(x)$ is $O(h(x))$ then $f(x)$ is~$O(h(x))$.\\
+%If $f(x)$ is $o(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is~$o(h(x))$.\\
+%If $f(x)$ is $\Theta(g(x))$ and $g(x)$ is $\Theta(h(x))$ then $f(x)$ is~$\Theta(h(x))$.
+%
+%\item{} {\bf Constant:} \\
+%If $c>0$ is a constant then $cf(x)$ is~$O(f(x))$.\\
+%If $c>0$ is a constant then $cf(x)$ is~$\Theta(f(x))$.
+%
+%\item {\bf Multiplication:} \\
+%If $f(x)$ is $O(g(x))$, then $h(x)f(x)$ is $O(h(x)g(x))$.\\
+%If $f(x)$ is $o(g(x))$, then $h(x)f(x)$ is $o(h(x)g(x))$.\\
+%If $f(x)$ is $\Theta(g(x))$, then $h(x)f(x)$ is $\Theta(h(x)g(x))$.
+%
+%\item{\bf Chaining:} \\
+%If $f(x)$ is $o(g(x))$ and $g(x)$ is $O(h(x))$ then $f(x)$ is $o(h(x))$. \\
+%If $f(x)$ is $O(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is $o(h(x))$.\\
+%If $f(x)$ is $o(g(x))$ and $g(x)$ is $\Theta(h(x))$ then $f(x)$ is $o(h(x))$. \\
+%If $f(x)$ is $\Theta(g(x))$ and $g(x)$ is $o(h(x))$ then $f(x)$ is $o(h(x))$.
+% \end{enumerate}
+%\end{thm}
+
+\section{Sequences}
+
+We will think of a \textbf{sequence} as an infinite, linearly ordered collection of numbers. An example would be
+\begin{equation}\label{squares}
+1,4,9,16,25,36,49,64,81,100,\dots
+\end{equation}
+or
+\begin{equation}\label{alter}
+0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,\dots
+\end{equation}
+We will often use the notation $(a_n)$ to describe the elements of a
+sequence and refer to $a_n$ as the $n$th element of the sequence. The
+number $n$ is an index and we often start a sequence at index 0 or 1.
+
+We can succinctly specify a sequence via a function $f$ that is defined on, say, the positive integers
+%A  succinct way of defining a sequence is to consider a function $f$ defined, e.g., for the positive integers %$]0;\infty[$ kun i værdierne 
+$\{1,2,3,4\dots\}$. In that case, we can write an explicit expression for a sequence by setting
+\[
+a_n=f(n).
+\]
+For example, the sequence in~\eqref{squares} is defined by the function $f(x)=x^2$ and we would write the sequence as 
+\[
+b_n=n^2 \text{ for }n\geq 1.\]
+In a similar way, we can explicitly specify sequence~\eqref{alter} as follows:
+%give an explicit expression for the sequence from Eq.~\eqref{alter} as
+\[
+c_n=n-2\left\lfloor\frac n2\right\rfloor \text{ for }n\geq 0.
+\]
+%   
+%   But in this case, it would also be fine to write
+%   \begin{equation*}
+%     c_n =
+%     \begin{cases}
+%       0 & \text{$n$ odd} \\
+%       1 & \text{$n$ even} 
+%     \end{cases}
+%   \end{equation*}
+%   which might be simpler to understand.
+%   
+%\begin{remark}
+%Vi vil også sige at følgen er eksplicit givet hvis den kan beskrives ved et udtryk der ikke giver mening for alle $x$ som fx
+%\[
+%c_n=\frac12\left(1-(-1)^n\right), n\geq 1
+%\]
+%der netop beskriver følgen \eqref{alter}.
+%\end{remark}
+
+%This way of defining sequences is very similar to the way we are used to define functions. 
+%It is, however, also possible to 
+We can also define sequences \textbf{recursively}. A recursive definition works by explicitly specifying some of the first elements in a sequence and then defining the rest by referring back to previous elements one or more indices away.  One example would be to define
+\begin{eqnarray*}
+c_0&=&0\\ c_1&=&1\\
+ c_n&=&c_{n-2}\text{ for }n\geq 2
+\end{eqnarray*}
+The above recovers the sequence \eqref{alter} since we can use the rule $c_n=c_{n-2}$ to convince ourselves that $c_2$ must be equal to $c_0=0$ and that $c_3$ must be equal to $c_1=1$ etc.
+
+\begin{example}
+We define a sequence $f_n$ by setting  $f_0=1$ and
+\[
+f_n=nf_{n-1}\text{ for } n\geq 1.
+\]
+The first elements of the sequence are
+\[
+1,1,2,6,24,120,720,5040,  \ldots
+\]
+This sequence is referred to as the \textbf{factorial sequence} and we
+usually write $f_n$ as $n!$ (which is pronounced ``$n$-factorial''). Note that
+\[
+n!=1\cdot 2\cdot 3\cdots n.
+\]
+\end{example}
+
+A special class of recursively defined sequences consists of \textbf{series} (sums of sequences). A series is defined from some sequence $(a_n)$ by summing its elements. If $n_0$ is the first index of a sequence $(a_n)$, we define the series $(s_n)$ recursively as 
+\begin{eqnarray*}
+s_{n_0}&=&a_{n_0}\\
+s_n&=&s_{n-1}+a_n \text{ for }n>n_0
+\end{eqnarray*}
+We will often write
+\[
+s_n=a_{n_0}+a_{n_0+1}+\cdots +a_n
+\]
+or
+\[
+s_n=\sum_{k=n_0}^n a_k
+\]
+to define a series. 
+
+A \textbf{summation formula} is the explicit expression of a series.
+
+\begin{example}
+Let $(a_n)$ be the constant sequence $1$, i.e. $a_n=1$, $n\geq 1$. The series of $(a_n)$ is then given by the sequence 
+\[
+1,2,3,4,5,6,7,8,9,\dots
+\]
+and we have obtained our first summation formula:
+\begin{equation}
+\sum_{k=1}^n1=n\label{sumet}
+\end{equation}
+\end{example}
+
+The derivation and proof of summation formulas are very connected to the concept of  \textbf{mathematical induction}, which we will return to later in the course. For now, we postulate some commonly used summation formulas without proofs:
+
+\begin{thm}
+\label{thm:sumexpressions}
+\begin{eqnarray*}
+\sum_{k=1}^n k&=&\frac{n^2+n}2\\
+\sum_{k=1}^n k^2&=&\frac{2n^3+3n^2+n}6\\
+\sum_{k=1}^n c^k&=&\frac{c^{n+1}-c}{c-1}\\
+\end{eqnarray*}
+The last formula is valid for all $c\not=1$.
+\end{thm}
+
+When $c=1$ in the last summation formula, one can use formula from \eqref{sumet} instead.
+
+We will get back to later how to prove expressions as in
+Theorem~\ref{thm:sumexpressions}
+formally, but note that already now you have enough information to
+establish that they are at least asymptotically correct,
+i.e., that
+$
+\sum_{k=1}^n k = \Theta(n^2)
+$,
+for instance. 
+(Exercise: How can you prove this? What about the other expressions above?)
+
+As we will discover in the exercises, one can often go a long way by combing the four summation formulas above with the general sum rules:
+
+\begin{thm}
+\begin{eqnarray*}
+\sum_{k=1}^n (a_k+b_k)&=&\sum_{k=1}^n a_k+\sum_{k=1}^n b_k\\
+\sum_{k=1}^n ca_k&=&c\sum_{k=1}^n a_k\\
+\sum_{k=1}^n a_k&=&\sum_{k=1}^{m-1} a_k+\sum_{k=m}^{n} a_k
+\end{eqnarray*}
+\end{thm}
+
+\section{Asymptotic Growth of Sequences}
+
+We can treat the asymptotic behaviour of sequences completely
+analogously to functions by simply replacing the functions $f(x)$, $g(x)$
+with sequences \mbox{$(a_n)$, $(b_n)$} in Section~\ref{sec:functionorder} in
+all definitions and rules.   
+% Vi kan tale om  at en følge er $O$ af en anden på præcis samme måde som for funktioner. Definitionen ser så ud på følgende måde
+%\begin{definition}
+%Lad $(a_n)$ og $(b_n)$ være følger. Vi siger at $(a_n)$ er $O(b_n)$  hvis der findes en konstant  $c>0$ således at
+%\[
+%|a_n|\leq c|b_n|
+%\]
+%for alle $n$ hvor følgerne er defineret.
+%\end{definition}
+
+%Vi definerer begreberne lavere størrelsesorden, højere størrelsesorden, samme størrelsesorden på samme måde som for funktioner, og bemærker at alle vores regneregler O1--O9 samt S1--S9 virker lige så godt for følger, ved bare at skrive $n^a$, $b^n$ osv.\ i stedet for $x^a$, $b^x$ osv. Vi vil ikke spilde plads på at gøre det her.
+
+%\begin{definition}\label{Oseq}
+%Hvis en følge $(a_n)$ er af samme størrelsesorden som en følge $(b_n)$ skriver vi at $(a_n)$ er $\Theta(b_n)$ \textsl{[Læses: store Theta]}.
+%\end{definition}
+We are going to be particularly interested in situations where a
+sequence~$(a_n)$ describes the worst-case running time of an algorithm on an input of size $n$. It is very common that such sequences are of asymptotic order 
+\[
+\Theta(1), \Theta(\log n),  \Theta(n),  \Theta(n\log n),  \Theta(n^2), \Theta(n^2\log n),   \Theta(n^3),  \Theta(2^n)
+\]
+(although this is of course not an exhaustive list of possibilities).
+During the course, we will repeatedly see that if one can replace an algorithm with another of lower asymptotic order, a significant improvement can be achieved. 
+
+%\begin{remark}
+%Bemærk at definition \ref{Oseq} er lidt simplere end definition \ref{Ocont} derved at der kun er én konstant i spil.
+
+
+%Vore to lærebøger KBR og CLRS er ikke helt enige om definitionen af $O$ og $\Theta$ --- KBR vil sige at $-n^2$ er $\Theta(n^2)$, men det vil CLRS ikke. Det er kun et problem når talfølgerne har uendeligt mange negative indgange, og det vil vi alligevel kun sjældent støde på. CLRS skriver $a_n=\Omega(b_n)$ når $b_n$ er $O(a_n)$, mens KBR undlader at indføre denne notation. CLRS indfører også symboler $o$ og $\omega$ for koncepter der er nært beslægtede med vor ``lavere størrelsesorden''.   Vi vil primært følge KBR.
+%\end{remark}
+
+An essential challenge when analyzing the efficiency of algorithms is to find the asymptotic order of recursively defined sequences and series, in particular. 
+%We will return to this problem later on. 
+For now, let us only note 
+(as we already touched on above)
+that our sum rules imply that $\sum_{k=1}^nk$ is of the same asymptotic order as  $n^2$ and that $\sum_{k=1}^nk^2$ is of same asymptotic order as $n^3$. We will also make use of the following relation:
+
+\begin{thm} $\log(n!)$ is  $\Theta(n\log n)$
+\end{thm}
+\begin{proof}
+As mentioned previously, it is irrelevant what base we choose for the logarithm. We will therefore choose to use $\log_2$.  We want to show that $\log_2(n!)$ is $O(n\log_2 n)$ and that $n\log_2 n$ is $O(\log_2(n!))$.
+
+The first proof is easy since we have that
+\[
+n!=1\cdot 2\cdots  n\leq n\cdot n\cdots  n\leq n^n
+\]
+and thus,
+\[
+\log_2(n!)\leq \log_2(n^n)=n\log_2 n \ ,
+\]
+where the inequality follows from the fact that the logarithm is an increasing function and the equality is a fundamental property of logarithms. This shows that  $\log_2(n!)$ is $O(n\log_2 n)$ (with $c=1$ in the definition).
+
+For the second proof, we need to be a bit more resourceful. When $1\leq i\leq n$, we have that $i-1\geq 0$ and $n-i\geq 0$. Thus,
+\[
+(i-1)(n-i)\geq 0 \ .
+\]
+Expanding, we get 
+\[
+i\cdot n-i^2-n+i\geq 0
+\]
+or
+\[
+i\cdot n-i^2+i\geq n \ ,
+\]
+which can be written as
+\[
+i(n-i+1)\geq n \ .
+\]
+This means that all products of the form $1\cdot n$, $2\cdot (n-1), 3\cdot (n-2),\dots, n\cdot 1$ are greater than or equal to $n$.
+%   This means that
+Using this fact, and playing around with the laws of logarithms, 
+we obtain
+\begin{eqnarray*}
+n\log_2n&=&\log_2n+\log_2n+\cdots+\log_2n\\
+&\leq&\log_2(1\cdot n)+\log_2(2\cdot (n-1))+\cdots+\log_2(n\cdot 1)\\
+&=&[\log_2 1+\log_2n]+[\log_2 2+\log_2(n-1)]+\cdots +[\log_2 n+\log_21]\\
+&=&2\log_21+2\log_22+\cdots+2\log_2n\\
+&=&2\sum_{i=1}^n\log_2 i\\
+&=&2\log_2(1\cdot 2\cdots n)\\
+&=&2\log_2(n!)
+\ ,
+\end{eqnarray*}
+where we have rearranged the terms at the third equality sign but otherwise just used the standard rules for logarithms. 
+This shows that  $n\log_2n$ is $O(\log_2(n!))$ (with $c=2$ in the definition).
+\end{proof}
+
+We end the notes with the following result that we will state without a proof:
+
+\begin{thm} The series
+\[
+\sum_{k=1}^n \frac1k
+\]
+is $\Theta(\log n)$.
+\end{thm}
+
+\mbox{  } \\
+
+\noindent
+\emph{\textbf{Credits:}
+  This is a lightly edited version of notes prepared for 
+  the DMA~2019 course by
+  Laura Mancinska,
+  who was in turn inspired by notes written by
+  S�ren Eilers.
+}
+
+\end{document}
+
+
+
+
+\section{Størrelsesorden af funktioner}
+
+\begin{definition}
+Lad $f$ og $g$ være funktioner begge defineret på den positive halvakse $]0,\infty[$. Vi siger at $f$ er $O(g)$ \textsl{[læses: $f$ er store O af $g$]} hvis der findes konstanter $k\geq 0$ og $c>0$ således at
+\[
+|f(x)|\leq c|g(x)|
+\]
+for alle $x>k$.
+\end{definition}
+
+
+
+Vi vil ofte se på situationer hvor $f(x)$ og $g(x)$ er positive funktioner, og så behøver vi ikke at skrive absolutværdierne og kan bare interessere os for om der gælder
+\[
+f(x)\leq cg(x)
+\]
+for alle $x>k$. Tankegangen i definitionen er så at $f$ er $O(g)$ hvis der for en tilstrækkelig stor konstant $c$ gælder at $cg$ er større end $f$, i det mindste for $x$ der er tilstrækkeligt store. %Se figur \ref{Oide} for en illustration.
+
+\begin{definition}\label{Ocont}
+Lad $f$ og $g$ være funktioner begge defineret på intervallet $]0,\infty[$. Vi siger at $f$ er af \textbf{samme størrelsesorden} som $g$ hvis $f$ er $O(g)$ og $g$ er $O(f)$. Vi siger at $f$ er af \textbf{lavere størrelsesorden} end $g$ hvis $f$ er $O(g)$ men  $g$ ikke er $O(f)$. Vi siger at $f$ er af \textbf{højere størrelsesorden} end $g$ hvis $g$ er $O(f)$ men  $f$ ikke er $O(g)$.
+\end{definition}
+
+Det følger af definitionerne at hvis $f(x)$ er af samme størrelsesorden som $g(x)$, så findes der konstanter $c_1,c_2,k$ således at
+\begin{equation}
+c_1|f(x)|\leq |g(x)|\leq c_2|f(x)|\label{ss}
+\end{equation}
+for alle $x> k$. Dette fænomen er illustreret på figur \ref{sammestoer}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{sammestoer}
+\end{center}
+\caption{To funktioner af samme størrelsesorden. $f(x)$ og $2f(x)$ er afbildet fuldt optrukket, $g(x)$ stiplet. Altså kan vi sætte $c_1=1, c_2=2, k=7$ i \eqref{ss}} \label{sammestoer}
+\end{figure}
+
+\begin{example}
+Lad $f,g$ være givet ved forskrifterne
+\[
+f(x)=\frac12 x^3+\frac12 x^2
+\]
+og
+\[
+g(x)=x^3
+\]
+Vi har
+\[
+f(x)=\frac12 x^3+\frac12 x^2\leq \frac12 x^3+\frac12 x^3=x^3=g(x)
+\]
+for alle $x>1$, så ved at sætte $k=1$ og $c=1$ ser vi at $f$ er $O(g)$. Men vi har også
+\[
+g(x)=x^3=2\left(\frac12 x^3\right)\leq 2\left(\frac12 x^3+\frac12 x^2\right)= 2f(x)
+\]
+ så ved at sætte $k=0$ og $c=2$ ser vi at $g$ er $O(f)$. Altså er $f$ og $g$ af samme størrelsesorden.
+ \end{example}
+
+ \begin{example}
+Lad $f,g$ være givet ved forskrifterne
+\[
+f(x)=x^5
+\]
+og
+\[
+g(x)=x^7
+\]
+Vi har
+\[
+f(x)=x^5\leq x^7=g(x)
+\]
+for alle $x>1$, så ved at sætte $k=1$ og $c=1$ ser vi at $f$ er $O(g)$. Antag at $g$ var $O(f)$, så fandtes der jo $c$ og $k$ således at
+\begin{equation}\label{tilmodst}
+g(x)=x^7\leq cx^5=cg(x)
+\end{equation}
+for alle $x>k$. Vi kan vælge et tal $x_0$ således at $x_0>k$ og $x_0^2>c$. Men så gælder jo
+\[
+x_0^7=x_0^2\cdot x_0^5>cx_0^5
+\]
+hvilket strider mod \eqref{tilmodst}.  Altså er $f$ af lavere  størrelsesorden end $g$.
+ \end{example}
+
+ Argumentet til sidst i ovenstående var et \emph{modstridsbevis}. Dem vender vi systematisk tilbage til senere i kurset.
+
+ Det er meget tungt at afgøre hvorvidt konkrete par af funktioner står
+ i stør\-rel\-ses\-ordens\-forhold til hinanden som i de ovenstående
+ eksempler. Derfor introducerer vi nu en samling af regneregler der kan benyttes til at afgøre sådanne spørgsmål nogenlunde smertefrit. Vi giver reglerne i to former, en formuleret med $O$-notation og en formuleret med størrelsesorden. Vi vil ikke forsøge at føre bevis for reglernes korrekthed, men se figur \ref{tregrafer} for en illustration af fænomenet at logaritmefunktioner
+altid er af lavere størrelsesorden end potensfunktioner der altid er af lavere størrelsesorden end eksponentialfunktioner (når disses grundtal er større end 1).
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{tregrafer}
+\end{center}
+\caption{Graferne for $10\log_e(x)$ \textcolor{blue}{[$--$]}, $x^2$ \textcolor{red}{[fuldt optrukket]} og $(3/2)^x$ \textcolor{green}{[$-\cdot-$]}.} \label{tregrafer}
+\end{figure}
+
+\begin{thm}\label{Sregler}\hfil
+\begin{enumerate}[S1]
+ \item Hvis $f(x)$ er af lavere størrelsesorden end $g(x)$, og $g(x)$ er af lavere størrelsesorden end $h(x)$, så er $f(x)$ af lavere størrelsesorden end $h(x)$.
+\item En konstant $c$ er af lavere størrelsesorden end $\log_a(x)$ for
+  alle $a>1$. 
+\item $\log_a(x)$ er af lavere størrelsesorden end $x^b$ for alle $a>1$ og $b>0$.
+ \item $x^a$ er af lavere størrelsesorden end $x^b$ netop når $a<b$.
+ \item $a^x$ er af lavere størrelsesorden end $b^x$ netop når $0<a<b$.
+\item $x^a$ er af lavere størrelsesorden end $b^x$ for alle $a$ og alle $b>1$
+\item $cf(x)$ er af samme størrelsesorden som $f(x)$ når $c\not=0$ er konstant.
+\item Hvis $f(x)$ er af lavere størrelsesorden end $g(x)$, og $h(x)$
+  er en funktion forskellig fra 0 for alle $x>k$ for en given
+  konstant $k$, så er $h(x)f(x)$ af lavere størrelsesorden end $h(x)g(x)$.
+\item Når $f(x)$ er at lavere størrelsesorden end $g(x)$, så er $f(x)+g(x)$ af samme størrelsesorden som $g(x)$.
+\end{enumerate}
+\end{thm}
+
+ \begin{thm}\label{Oregler}\hfil
+ \begin{enumerate}[O1]
+ \item Hvis $f(x)$ er $O(g(x))$ og  $g(x)$ er $O(h(x))$, så vil $f(x)$ være $O(h(x))$.
+ \item $c$ er $O(\log_a(x))$ for alle $a>1$ når $c$ er
+    konstant. 
+  \item $\log_a(x)$ er $O(x^b)$ for alle $a>1$ og $b>0$.
+  \item $x^a$ er $O(x^b)$ netop når $a\leq b$.
+  \item $a^x$ er $O(b^x)$ netop når $0<a\leq b$.
+ \item $x^a$ er $O(b^x)$ for alle $a$ og alle $b>1$.
+  \item $cf(x)$ er $O(f(x))$ når $c\not=0$.
+\item Hvis $f(x)$ er $O(g(x))$, så vil $h(x)f(x)$ være $O(h(x)g(x))$.
+\item Hvis $f(x)$ er $O(g(x))$ så vil $f(x)+g(x)$ være $O(g(x))$.
+\end{enumerate}
+\end{thm}
+
+\begin{example}
+Lad os bruge regnereglerne til igen at se at
+\[
+f(x)=\frac12 x^3+\frac12 x^2
+\]
+og
+\[
+g(x)=x^3
+\]
+har samme størrelsesorden. Regel S7 siger at $f(x)$ har samme størrelsesorden som $x^3+x^2$. Regel S4 siger at $x^2$ har lavere størrelsesorden end $x^3$, og så giver regel S9 at $x^3+x^2$ har samme størrelsesorden som $x^3=g(x)$.
+\end{example}
+
+\begin{example}
+Alle logaritmefunktioner har samme størrelsesorden, for der gælder regnereglen
+\[
+\log_b(x)=\frac{\log_a(x)}{\log_a(b)}
+\]
+der viser at to logaritmer er ens på nær multiplikation med en konstant. Så giver regel S7 det ønskede.
+\end{example}
+
+Af ovenstående grund vil vi ikke holde styr på grundtallet for logaritmer når vi er kun er interesserede i størrelsesordensbetragtninger, og bare skrive $\log x$ når grundtallet er uinteressant.
+

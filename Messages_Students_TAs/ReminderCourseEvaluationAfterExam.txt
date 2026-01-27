@@ -1,0 +1,15 @@
+evaluering.ku.dk
+
+Hi all,
+
+I hope that most of you enjoyed the exam this morning, and that even more of you enjoy that it is over.
+
+I am hoping to get your exams early next week or so, at which point the TAs and I will get started on the grading.
+
+As a final request, please don't forget to fill in the course evaluation at evaluering.ku.dk!
+
+The standard course evaluation closes this Friday April 12 at midnight. The exam evaluation will stay open until Sunday April 21 at midnight. I had quite interesting discussions with the TAs this year about the exam format and whether the number of problems is too small, too large, or just Goldilocks right, but it would be even more interesting to hear *your* opinions. Also, all comments and constructive proposals as to what would be a reasonable level of exam aids (and that can checked by someone who is completely unfamiliar with the course) would be more than welcome!
+
+Now I hope that you can all have some well-deserved rest, after which your new-found interest in algorithms will lead you to explore what other superexciting courses the Algorithms and Complexity Section at DIKU can offer!
+
+Jakob

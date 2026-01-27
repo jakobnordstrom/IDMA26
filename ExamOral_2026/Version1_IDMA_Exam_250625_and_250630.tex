@@ -1,0 +1,99 @@
+%
+% SLIDES FOR DMFS ORAL EXAM JUNE 24, 2020
+%
+
+\documentclass{beamer}
+
+%%% Special hack to avoid compilation error message
+%%% 
+%%%     ! No room for a new \dimen .
+%%%
+%%% after adding Tikz code
+%    \usepackage{etex}
+
+% The file my-beamer-preamble.tex contains settings which are very similar 
+% from talk to talk, although for each talk the author, the title, the
+% presentation mode et cetera needs to be specified (so my-beamer-preamble.tex
+% is a local file in the same directory as the presentation).
+
+\usepackage{ifthen}
+
+\newcommand{\oralexamnumber}{1}
+
+\input{generic-beamer-preamble.tex}
+
+\input{exam-beamer-preamble.tex}
+
+\usepackage{verbatim}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+  
+% If \section{} is empty, ghostview refuses to display the PDF file!
+%      \section*{\mbox{ }}
+%    \section*{Outline}
+  
+%    
+% Outline of talk
+%    
+\part{Exam}
+
+
+\input{problem-1-code.tex}
+\input{problem-4-combinatorics.tex}
+\input{problem-7-mergsort.tex}
+\input{problem-2-logic.tex}
+%   \input{problem-5-regexp.tex}
+\input{problem-8-graphs.tex}
+\input{problem-3-relations.tex}
+%   \input{problem-6-cfg.tex}
+       
+       
+
+%
+% Save fram number counter at this point
+%
+
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+%   
+%   \appendix 
+%   
+%   \begin{frame}[allowframebreaks,t]
+%     \frametitle{References}
+%   
+%     \begingroup
+%   %%% \tiny is too small, but something strictly between \tiny and
+%   %%% \scriptsize would have been great
+%   %      \tiny
+%     \scriptsize
+%   %      \footnotesize
+%   
+%     \bibliography{refArticles,refBooks,refOther,refLocal}
+%     \bibliographystyle{alpha}
+%     
+%     \endgroup
+%     
+%   \end{frame}
+%   
+
+%
+% Reset framecounter to number of frames before reference slides
+%
+
+\setcounter{framenumber}{\value{finalframe}}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+

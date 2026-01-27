@@ -1,0 +1,27 @@
+Grading of IDMA problem set 1
+
+Hi all,
+
+I have now posted grading guidelines for problem set 1 at https://docs.google.com/document/d/1LgYQztUo971zTeyJJzIt7ySXpwpEn26sHKVjF42KE0E/edit?usp=sharing . The hope is that the (fairly general) instructions in there should be possible to extrapolate to cover most issues you will encounter during the grading. However, if there are corner cases that you are not sure how to handle, this is what the TA meeting on Monday is for! Or, if you have urgent questions that cannot wait until that meeting, then you can post questions as comments in the document, and Srikanth or I will try to respond as soon as we can.
+
+With this message I am attaching the problem set with written-up solutions (which, obviously, are strictly confidential at this point, but which will be released to the students as soon as all resubmissions have been made). Please note that there are correct solutions to the problems that do not look exactly like my proposed solutions, and you should grade whether the solution is correct or not, not whether it looks exactly like my proposal or not.
+
+After the TA meeting on Monday the idea is that everybody should be clear on how to grade, and also that we are more or less on the same page when it comes how to grade.
+
+The plan is then that the students should get their graded problem sets back on Wednesday February 19 before the exercise class. The exact timing in terms of minutes is not important, but it it good if all TAs coordinate so that you all release the graded psets roughly at the same time of day (i.e., within an interval of a few hours in the morning, or in the early afternoon, or whatever).
+
+Please note that some care is needed in the grading system to make sure that the results are actually released to the students. Hopefully our TAs from last year can help everybody identify the pitfalls to avoid.
+
+Students will then have a week to revise their solutions. The exact deadline for submissions has not been clearly communicated, but let us agree on midnight local time one week after the release of the graded problem set --- that is, by midnight Wednesday February 26.
+
+Let me also provide some general comments about grading.
+
+For us the four problem sets is a calibration exercise --- you are doing exactly the same kind of grading that you will do for the written exam, and the grading guidelines are intended to look very similar. Just so that you know, all grading guidelines for the problem sets (and also the exam) will eventually be released to the students.
+
+Importantly, we want to get the grading right, of course. But we are not shooting for absolutely perfect, but rather for good enough. Ultimately, what we need to get rights are the *grades* (for the problem sets pass/fail; for the exam the grade 12, 10, 7, or whatever). The *scores* are meant to guide us to the right grades, but is not intended to be absolute, eternal truth (because establishing absolute, eternal truth would take more time than DIKU has set aside for us for this course).
+
+The back-and-forth you will have with Srikanth and myself about how to grade different problems and deduct point for different mistakes is a natural and important part of our calibration process. In the end, though, I don't expect that problem set 1 will be graded exacty 100% identically the same by all TAs, but I do hope that all clear passes will be graded as passes and all clear fails as fails. And all borderline cases will have a chance to resubmit. By the time we reach problem set 4 and the written exam, I hope we will have calibrated enough to feel reasonably comfortable that we are maintaining reasonably uniform standards. However, when we grade the written exam we will probably divide up problems among the TAs so that each problem is graded by the same TA for all students as an extra way of ensuring uniformity. This is something we will talk more about later.
+
+One question that often arises in grading is how to deal with follow-up errors, and what follows next is meant to describe our general approach to this problem: When student get some problem wrong, and then continue in the direction of the tangent, problems can change in major ways, and can become harder or (often) easier to solve. It is very hard to deal with this in a clear and consistent way, and to assess what is a reasonable misunderstanding and how this affects what score should be given for following subproblems. The one clear and consistent approach I can see here is to grade according to what is in fact the correct answer, and deduct points for wrong answers. So if you have a major misunderstanding on the first subproblem, then that will mean that you lose points also on the following problems. (I agree it is not an easy question how to deal with this kind of errors, but, again, I think what I am stating here is the most consistent way, and what has been done previous years.)
+
+Jakob

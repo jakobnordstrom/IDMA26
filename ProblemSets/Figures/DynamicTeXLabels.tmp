@@ -1,0 +1,6 @@
+label (btex $1$ etex, z[1]);
+label (btex $2$ etex, z[2]);
+label (btex $3$ etex, z[3]);
+label (btex $4$ etex, z[4]);
+label (btex $5$ etex, z[5]);
+label (btex $6$ etex, z[6]);

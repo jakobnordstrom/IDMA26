@@ -1,0 +1,1634 @@
+% VERSION WITHOUT SOLUTIONS
+\documentclass{jn-pset}
+% Uncomment to get VERSION WITH SOLUTIONS and also do
+%   \setboolean{versionwithsolutions}{true}
+% a few lines down
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+% *** NOT USED FOR EXAM ***
+%
+% \newcommand{\psetno}{5}
+%%% The formatting macro \duedate is not used for the exam
+%   \newcommand{\duedate}{Wednesday April 10 at 13:00 CET}
+% Dummy formatting for draft versions
+%   \newcommand{\thresholdA}{$\langle A \rangle$~points\xspace}
+%   \newcommand{\thresholdB}{$\langle B \rangle$~points\xspace}
+%   \newcommand{\thresholdC}{$\langle C \rangle$~points\xspace}
+%   \newcommand{\thresholdD}{$\langle D \rangle$~points\xspace}
+%   \newcommand{\thresholdE}{$\langle E \rangle$~points\xspace}
+% Add actual grading thresholds here with \renewcommand 
+%   \renewcommand{\thresholdA}{$200$~points\xspace}
+%   \renewcommand{\thresholdB}{$170$~points\xspace}
+%   \renewcommand{\thresholdC}{$140$~points\xspace}
+%   \renewcommand{\thresholdD}{$110$~points\xspace}
+%   \renewcommand{\thresholdE}{$80$~points\xspace}
+
+% Threshold guaranteed to pass the exam
+\newcommand{\thresholdforpass}{$220$~points\xspace}
+
+
+% Compact lists
+\usepackage{paralist}
+
+% COURSE-SPECIFIC MACROS
+
+\input{../ProblemSets/course-macros.tex}
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{\newcommand{\examheading}{\mbox{Exam April 2, 2025} \\
+    Problems and Solutions}}
+{\newcommand{\examheading}{\mbox{Exam April 2, 2025}}}
+
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
+
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: 
+  \examheading}
+
+
+
+\begin{document}
+
+\maketitle
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{
+\noindent
+\emph{%
+  Please note that the main purpose of this document is to explain
+  what the correct solutions are and how to arrive at them.  Thus,
+  while the text below is certainly intended to provide good examples
+  of how to solve problems and reason about solutions, these examples
+  do not necessarily specify exactly how the handed-in exams were
+  expected to look like.
+%
+  This is especially so since for many problems there are more than
+  one correct way of solving them.  
+%   
+%     In general, the solutions provided below tend to be much more
+%     detailed than what would be expected for the exam submissions.
+%   
+  As communicated during the course, the course notes
+  published on Absalon, which contain many problems that we worked out
+  in class, are probably the best indicator of what level of detail is
+  expected from the exam solutions.
+}
+
+
+}
+{\input{IDMA_Exam_GeneralInstructions.tex}}
+
+%%%
+%%% NUMBER REPRESENTATION PROBLEM
+%%%
+
+\begin{problem}
+  (50 p)
+% 10 p for problem (a)
+% 20 p each for problems (b) and (c)
+%
+  This problem is about different representations of integers.
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(10 p)}
+  {\ignorespaces}
+  Write the binary number $(110)_2$ in decimal notation.
+\end{subproblem}
+
+\begin{solution}
+  We have
+  $(110)_2
+  =
+  1 \cdot 2^2 + 
+  1 \cdot 2^1 + 
+  0 \cdot 2^0
+  =
+  6
+  $.
+\end{solution}
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Write the decimal number $110$ in binary notation.
+\end{subproblem}
+
+\begin{solution}
+  Dividing by~$2$ and outputting the remainders will give us the
+  bits in the binary expansion in reverse order. We obtain 
+  \begin{align*}
+    110 &= 55 \cdot 2 + 0 \\
+    55  &= 27 \cdot 2 + 1 \\
+    27  &= 13 \cdot 2 + 1 \\
+    13  &=  6 \cdot 2 + 1 \\
+    6   &=  3 \cdot 2 + 0 \\
+    3   &=  1 \cdot 2 + 1 \\
+    1   &=  0 \cdot 2 + 1 
+  \end{align*}
+  from which we see that
+  $
+  (110)_{10}
+  = 
+  (1101110)_2
+  $.
+  Just to verify that we have not made any mistake, we can check our answer by 
+  computing
+  $
+  (1101110)_2
+  =
+  1 \cdot 2^6 + 
+  1 \cdot 2^5 + 
+  0 \cdot 2^4 + 
+  1 \cdot 2^3 + 
+  1 \cdot 2^2 + 
+  1 \cdot 2^1 + 
+  0 \cdot 2^0 
+  =
+  64 + 
+  32 + 
+  8 + 
+  4 + 
+  2
+  =
+  110
+  $.
+\end{solution}
+
+  
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Write the octal number $(2025)_8$ in decimal notation.
+\end{subproblem}
+
+\begin{solution}
+  We have
+ $(2025)_8
+ =
+ 2 \cdot 8^3 + 
+ 0 \cdot 8^2 + 
+ 2 \cdot 8^1 + 
+ 5 \cdot 8^0
+ =
+ 2 \cdot 512 + 
+ 2 \cdot 8 +
+ 5
+ = 
+ 1045
+ $.
+\end{solution}
+
+\end{problem}
+
+%%%
+%%% GCD PROBLEM
+%%%
+
+\begin{problem}
+  (50 p)
+% 20 p for easy problem
+% 30 p for harder problem
+%
+%%% VERY EXPLICIT STATEMENT
+%     Run the Euclidean algorithm on the numbers
+%     $m$ and~$n$ below to find
+%     $d = \gcd (m, n)$, 
+%   %     showing all  steps in the execution,
+%     showing all recursive calls,
+%     and then express~$d$ as a linear combination of $m$ and~$n$.
+%%%     LESS EXPLICIT STATEMENT
+  Use the algorithm we have learned for determining
+  $d = \gcd (m, n)$ for the numbers below,
+  showing details of all function calls made, 
+  and then express~$d$ as a linear combination of $m$ and~$n$.
+  
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  $m = 38$ and $n=14$.
+\end{subproblem}
+
+\begin{solution}
+  We use the Euclidean algorithm, which is based on the observation
+  that
+  $
+  \gcd (m, n) 
+  =
+  \gcd (n, m \bmod n) 
+  $.
+  
+  For
+  $m = 38$
+  and
+  $n = 14$
+  we obtain
+  \begin{align*}   
+    38 &= 2 \cdot 14 + 10 \\
+    14 &= 1 \cdot 10 +  4 \\
+    10 &= 2 \cdot  4 +  2 \\
+    4  &= 2 \cdot  2 +  0
+  \end{align*}
+  from which we see that 
+  $
+  \gcd (38, 14) = 2
+  $.
+  By considering the above equalities in reverse order we
+  can write the greatest common divisor
+  \begin{align*}
+    2 &=
+        10 -  2 \cdot 4
+    \\
+      &=
+        10 -  2 \cdot ( 14 - 1 \cdot 10 )
+    \\
+      &=
+        3 \cdot 10 -  2 \cdot  14 
+    \\
+      &=
+        3 \cdot
+        ( 38 - 2 \cdot 14  )
+        -  2 \cdot  14 
+    \\
+      &=
+        3 \cdot 38
+        -  8 \cdot  14
+  \end{align*}
+  as a linear combination of
+  $38$ and~$14$ as desired.
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(30 p)}
+  {\ignorespaces}
+  $m = 117$ and $n=69$.
+\end{subproblem}
+
+\begin{solution}
+  For
+  $m = 117$
+  and
+  $n = 69$
+  we obtain
+  \begin{align*}   
+    117 &= 1 \cdot 69 + 48 \\
+    69  &= 1 \cdot 48 + 21 \\
+    48  &= 2 \cdot 21 +  6 \\
+    21  &= 3 \cdot 6 +  3 \\   
+    6  &= 2 \cdot  3 +  0
+  \end{align*}
+  from which we see that 
+  $
+  \gcd (117, 69) = 3
+  $.
+  Processing these equalities in reverse order we obtain
+  \begin{align*}
+     3 &= 
+         21 - 3 \cdot  6          
+    \\
+       &=
+         21 - 3 \cdot ( 48 - 2 \cdot 21 )
+    \\
+       &=
+         7 \cdot 21 - 3 \cdot  48    
+    \\
+       &=
+         7 \cdot ( 69 - 1 \cdot 48 )
+         - 3 \cdot  48
+    \\
+       &=
+         7 \cdot  69 - 10 \cdot  48
+    \\   
+       &=
+         7 \cdot  69 - 10 \cdot (117 - 1 \cdot 69 )         
+    \\   
+       &=
+         17 \cdot  69 - 10 \cdot 117 
+  \end{align*}
+  as a linear combination of
+  $117$ and~$69$ as desired.
+\end{solution}
+
+
+\end{problem}
+
+%%%
+%%%   MATHEMATICAL INDUCTION PROBLEM
+%%%
+\begin{problem}
+  (60 p)
+  Provide formal proofs of the following claims
+  using proof techniques that we have learned during the course.
+
+
+  \begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Define
+    $a_1 = 1$
+    and
+    $a_n = 2 a_{n-1} + 1$
+    for
+    $n \geq 2$.
+    Prove that for all positive integers
+    $n \in \Nplus$
+    it holds that 
+    $a_n = 2^n - 1$.
+  \end{subproblem}
+
+\begin{solution}
+We prove this equality by induction over~$n$.
+
+\begin{description}
+\item[\emph{Base case ($n=1$):}]
+  We have
+  $a_1 = 1 = 2^1 - 1$
+  by definition.
+
+\item[\emph{Induction step:}]
+  Assume that the equality holds for $n-1$ and consider $n$.
+  We have
+  \begin{align*}
+    a_n &= 2 a_{n-1} + 1
+    \\                           
+    &= 2 \cdot (2 ^{n-1} - 1) + 1
+    &&[\text{by the induction hypothesis}]
+    \\
+    &= 2 ^{n} - 2 + 1    
+    \\
+    &= 2 ^{n} - 1
+  \end{align*}
+  which is the desired equality.
+\end{description}
+The claim now follows by the induction principle.  
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(30 p)}
+  {\ignorespaces}
+  Prove that for all non-negative integers
+  $n \in \N$
+  it holds that
+  $
+  3 \mid 4^n + 5 
+  $.
+\end{subproblem}
+
+\begin{solution}
+%     This is very similar to a problem we did in class, 
+%     and we will solve this one in the same way by arguing by
+  We prove this by 
+  induction over~$n$.
+  \begin{description}
+  \item[\emph{Base case ($n=0$):}]
+    For $n=0$ we have that
+    $
+    4^0 + 5 
+    =
+    6
+    $
+    is divisible by~$3$.
+    
+  \item[\emph{Induction step:}]
+    Suppose that
+    $
+    3 \mid 4^n + 5
+    $,
+    which is the same  as saying that
+    $
+    4^n + 5 = 3 \cdot M
+    $
+    for some integer~$M$.
+    Fixing this $M$, and
+    working on the expression \mbox{for $n+1$}, we get
+    \begin{align*}
+      4^{n+1} + 5
+      &= 
+        3 \cdot 4^{n}
+        + 
+        4^{n} + 5
+      &&[\text{since $4^{n+1} = (3 + 1) \cdot 4^n$}]
+      \\
+      &= 
+        3 \cdot 4^{n}
+        + 
+        3 \cdot M
+      &&[\text{by the induction hypothesis}]
+      \\
+      &=
+        3 \cdot ( 4^{n} + M )
+    \end{align*}
+    which shows that this expression is divisible by~$3$.
+  \end{description}
+  The claim follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+%%%
+%%% RELATIONS
+%%%
+
+\begin{problem}%
+  \label{problem:relations}%
+  (90 p)  
+  Let
+  $A = \set{1, 2, 3, 4}$
+  and consider the following binary relations on $A$:
+  \begin{align*}
+    R &= \set{ (2,1), (3,1), (3,2), (4,1), (4,2), (4,3) } \\
+    S &= \set{ (1,1), (2,2), (3,3), (4,4) } \\
+    T &= \set{ (1,1), (1, 4), (2,2), (2,3), (3,2), (3,3), (4,1), (4,4) }
+  \end{align*}
+
+%%% 5 points per correctly identified property
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(60 p)}
+    {\ignorespaces}
+    For each of the relations above, determine whether it is
+    \begin{compactenum}
+    \item
+      reflexive,      
+    \item
+      symmetric,
+    \item
+      antisymmetric,
+    \item
+      transitive.
+    \end{compactenum}
+    Please make sure to explain, briefly but clearly, what these properties
+    mean and why they are satisfied for a relation when
+    they are. For any relation that
+    fails to satisfy a property, make sure to provide a specific
+    counterexample.
+
+  \end{subproblem}
+
+  \begin{solution}
+    Recall that a relation $R$ is:
+    \begin{itemize}
+    \item
+      \emph{reflexive} if for all $x$ it holds that $(x,x) \in R$;
+      
+    \item
+      \emph{symmetric} if whenever
+      $(x,y) \in R$
+      it also holds that
+      $(y,x) \in R$;
+
+    \item
+      \emph{anti-symmetric} if 
+      $(x,y) \in R$
+      and
+      $(y,x) \in R$ implies
+      $x=y$;
+      
+    \item
+      \emph{transitive} if whenever
+      $(x,y) \in R$
+      and
+      $(y,z) \in R$
+      it also holds that
+      $(x,z) \in R$.      
+    \end{itemize}
+
+    The relation~$R$ specified in the problem statement
+    is anti-symmetric
+    (simply since there is no pair $(x, y)$
+    such that
+    $(x, y) \in R$
+    and
+    $(y, x) \in R$)
+    and transitive
+    (which can be verified by case analysis, or by observing that
+    $R$ is the greater-than relation).
+    It is not reflexive since, e.g., 
+    $(1, 1) \notin R$,
+    and it is not symmetric since, e.g.,
+    $(2, 1) \in R$
+    but
+    $(1, 2) \notin R$.
+
+    The relation~$S$ is the identity relation,
+    which vacuously satisfies all the properties listed.
+
+    The relation~$T$ can be verified to be 
+    reflexive, symmetric, and transitive.
+    It is not anti-symmetric since
+    $(2,3) \in T$
+    and
+    $(3,2) \in T$
+    but
+    $2 \neq 3$.    
+\end{solution}
+
+%%% 10 points per correctly identified relation
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Which of the relations above, if any, are equivalence relations or
+    partial orders? Please make sure to justify your answers.
+  \end{subproblem}
+
+\begin{solution}
+  An \emph{equivalence relation} is a relation that is
+  reflexive, symmetric, and transitive.
+  The relations $S$ and~$T$ satisfy these conditions
+  as argued above.
+
+  A \emph{partial order}
+  is a reflexive, anti-symmetric, and transitive relation.
+  The identity relation~$S$ is formally speaking also a partial order,
+  since it satisfies all the  required properties
+  (but it is of course a very boring partial order). 
+
+  It might be worth pointing out that
+  the relation~$R$ is \emph{not} a partial order, since it is not reflexive.
+  This is just a special case of the general fact that
+  non-strict order relations define partial orders but strict order relations
+  do not.
+\end{solution}
+\end{problem}
+
+
+%%%
+%%% PROPOSITIONAL LOGIC
+%%%
+
+\begin{problem}%
+  \label{problem:logic}%
+  (60 p)  
+  For each of the propositional logic formulas below,
+  determine whether it is a tautology or not.
+  If the formula is not a tautology, show how to
+  add a single connective to make it into a tautology.
+  Please make sure to justify your answers
+  (e.g., by presenting truth tables, or by using rules for rewriting logic formulas
+  that we have learned in class).
+
+%%% TAUTOLOGY  
+  \begin{subproblem}%
+    \label{problem:formula-1}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \lnot \bigl(
+    ( p \limpl q) \lor r
+    \bigr)
+    \limpl
+    \bigl(
+    (\lnot q \land \lnot r) \land p
+    \bigr)
+    $
+  \end{subproblem}
+
+\begin{solution}
+  This formula is a tautology, i.e., it is always true.
+  To see this, note first that we know that
+  \begin{equation}
+    \label{eq:impl}
+    p \limpl q
+    \ \equiv \
+    \lnot p \lor q
+  \end{equation}
+  since the only way the implication
+  $p \limpl q$
+  can be false is that $p$ is true and $q$ is false,
+  and this is one of the basic equivalences we have learned in the course.
+  Furthermore, from De Morgan's laws it is easy to derive that
+  \begin{equation}
+    \label{eq:de-morgan}
+    \lnot ( a \lor b \lor c)
+    \ \equiv \
+    \lnot a \land \lnot b \land \lnot c
+  \end{equation}
+  (i.e., the only way a disjunction can be false is that all its
+  disjuncts are false).
+  
+  By combining
+  \eqref{eq:impl}
+  and~\eqref{eq:de-morgan},
+  and using that conjunction is commutative, we see that the premise
+  $
+  \lnot \bigl(
+  ( p \limpl q) \lor r
+  \bigr)
+  $
+  is in fact equivalent to the conclusion
+  $
+  (\lnot q \land \lnot r) \land p
+  $,
+  and so the implication
+  in Problem~\ref{problem:formula-1}
+  will always evaluate to true.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \bigl(
+    (p \land q) \limpl r
+    \bigr)
+    \lequiv
+    \bigl(
+    (q \lor r) \lor \lnot p
+%%% This should be    
+%       (\lnot q \lor r) \lor \lnot p
+    \bigr)
+    $    
+  \end{subproblem}
+
+\begin{solution}
+  This is not a tautology.
+  If we set $p$ and~$q$ to true
+  but $r$ to false, we get that
+  $
+  (p \land q) \limpl r
+  $
+  evaluates to  false but
+  $
+  (q \lor r) \lor \lnot p
+%%% This should be    
+%       (\lnot q \lor r) \lor \lnot p
+  $
+  evaluates to true, and so the whole formula is false.
+
+  If we change $q$ on the right-hand side to $\lnot q$,
+  we obtain the formula
+  \begin{equation}
+    \label{eq:patched}
+    \bigl(
+    (p \land q) \limpl r
+    \bigr)
+    \lequiv
+    \bigl(
+    (\lnot q \lor r) \lor \lnot p
+    \bigr)
+    \ ,
+  \end{equation}    
+  which is a tautology. To see this, we can rewrite the left-hand side
+  of~\eqref{eq:patched}
+  as
+  \begin{subequations}
+  \begin{align}
+    (p \land q) \limpl r
+    \ &\equiv \
+        \lnot (p \land q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot p \lor \lnot q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot q \lor r) \lor \lnot p
+  \end{align}
+  \end{subequations}
+  by using
+  the property~\eqref{eq:impl} of implication,
+  De Morgan's laws,
+  and commutativity of disjunction.
+  This show that the left-hand and right-hand sides of
+  of the formula~\eqref{eq:patched} are equivalent,
+  and so the formula will always evaluate to true.
+\end{solution}
+
+\end{problem}
+
+
+%%%
+%%% TRICKY INDUCTION PROBLEM: GCD OF FIBONACCI NUMBERS
+%%%
+
+\begin{problem}%
+  (80 p)
+  Recall that the Fibonacci numbers are defined as
+  \begin{align*}
+    F_1 &= 1 \\
+    F_2 &= 1 \\
+    F_n &= F_{n - 1} +  F_{n - 2} &&\text{for $n \geq 3$.}
+  \end{align*}
+  %
+  Prove that consecutive Fibonacci numbers
+  $F_{n+1}$
+  and
+  $F_{n}$
+  are relatively prime, and show that for  $n \geq 2$
+  the  Euclidean algorithm when run on $F_{n+1}$ and $F_n$
+  makes exactly $n-1$~function calls to determine that this is so
+  (i.e., it reaches remainder~$0$ after exactly $n-1$
+  function calls).
+
+\begin{solution}
+  We prove that two consecutive Fibonacci numbers are relatively
+  prime, i.e., that they have greatest common divisor~$1$, by using
+  the Euclidean algorithm. While doing so, we count the number of
+  function calls, i.e., the number of times the relation
+  $
+  \gcd (m, n) 
+  =
+  \gcd (n, m \bmod n) 
+  $
+  is applied before reaching the trivial base case where $n$
+  divides~$m$
+  and the remainder is~$0$.
+
+  \begin{description}
+  \item[\emph{Base case ($n=2$):}]
+    For
+    $F_3 = 2$
+    and
+    $F_2 = 1$,
+    we clearly have
+    $
+    \gcd ( 2, 1 ) = 1
+    $.
+    If we run the Euclidean algorithm, we get that
+    $
+    F_3 = 2 \cdot F_2 + 0
+    $,
+    and so we reach remainder~$0$ after a single step.
+    
+  \item[\emph{Induction step:}]
+    Suppose that for $n-1$ it holds that
+    $
+    \gcd ( F_{n - 1} , F_{n - 2}) = 1
+    $
+    and that the Euclidean algorithm reaches remainder~$0$ after
+    $(n-1) - 1 = n-2 $ function calls.
+
+    As a first step when computing
+    $
+    \gcd ( F_{n} ,  F_{n - 1})
+    $,
+    the Euclidean algorithm divides
+    $F_{n}$ by  $F_{n - 1}$
+    to compute the remainder.
+    This remainder is~$F_{n-2}$, since by the definition of Fibonacci
+    numbers we have that
+    $F_n = 1 \cdot F_{n - 1} +  F_{n - 2}$,
+    and so the equalities
+    \begin{equation}
+      \gcd ( F_{n} ,  F_{n - 1})
+      =
+      \gcd ( F_{n-1} , F_n \bmod F_{n - 1})
+      =
+      \gcd ( F_{n-1} ,  F_{n - 2})
+    \end{equation}
+    hold.
+    By the induction hypothesis,  the Euclidean algorithm
+    computes
+    $\gcd ( F_{n-1} ,  F_{n - 2}) = 1  $
+    with $n-2$ additional recursive calls. 
+    Hence, we conclude that the Euclidean algorithm will
+    determine that
+    $F_n$ and~$F_{n-1}$
+    are relatively prime after $n-1$ function calls.
+  \end{description}
+  The claim in the problem statement now follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+
+
+%%%
+%%% COMBINATORICS
+%%%
+
+\begin{problem}%
+  \label{problem:combinatorics}%
+  (90 p)
+  For a few years now the Copenhagen metropolitan area 
+  (including Lund) has had an unusually large number of researchers in 
+  computational complexity theory, and a team of such
+  researchers have decided to submit a joint grant application  to
+  create the
+  \emph{Copenhagen Computational Complexity Centre}
+  focusing on research in this scientific field.
+  Since gender balance is a serious issue in computer science, 
+  a noteworthy aspect of the team of co-applicants is that
+  the male professors
+  Amir, Jakob, and Srikanth at the University of Copenhagen
+  are balanced by the female professors
+  Nutan and Paloma at the IT University of Copenhagen and
+  Susanna at Lund University.
+
+  For the subproblems below, please make sure to answer not just with
+  numbers but with more combinatorial-looking expressions, and to expand these
+  expressions out to show that you understand the meaning of any
+  notation used. Also make sure to explain how you reason to reach
+  your answers.
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(50 p)}
+    {\ignorespaces}
+    Together with the application documents, the co-applicants are
+    planning to enclose a group photo, and much thought has gone into
+    how to choose the seating arrangement.
+%       for this photo.
+    All the researchers will be placed in a single row, but they have
+    agreed that a great way to highlight the gender
+    balance would be to make sure that male and female researchers
+    alternate, so that every second person in the row
+    is male or female, respectively.
+    In how many different ways can the $6$~researchers be arranged on
+    the photo to satisfy this constraint?
+  \end{subproblem}
+
+\begin{solution}
+  The seating arrangement is uniquely specified by determining whether
+  the leftmost person on the photo is male or female, and then by
+  specifying the internal order of the female and male researchers,
+  respectively.
+  This gives us:
+  \begin{itemize}
+  \item
+    $2$ choices for a male or female researcher at the leftmost position;
+  \item
+    $3! = 6$ ways of arranging the $3$~female researchers
+    from left to right;
+  \item
+    likewise
+    $3! = 6$ ways of arranging the $3$~male researchers
+    from left to right;
+  \end{itemize}
+  for a total of
+  $
+  2 \cdot 3! \cdot 3!
+  =
+  2 \cdot 6 \cdot 6
+  =
+  72
+  $
+  different arrangements.
+\end{solution}
+  
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+    Any serious research centre application these days should also
+    identify a steering committee for the centre.
+    After long deliberations, the co-applicants have decided that this
+    committee should:
+    \begin{compactitem}
+    \item
+      consist of $4$ persons all in all;
+
+    \item
+      include co-applicants representing all $3$ partner
+      institutions, i.e, 
+      the University of Copenhagen,
+      the IT University of Copenhagen,
+      and
+      Lund University;
+
+    \item
+      have perfect gender balance, i.e., two male and two female members.
+      
+    \end{compactitem}
+    %
+    In how many different ways can the steering committee be composed?
+    
+  \end{subproblem}
+
+\begin{solution}
+  Since Susanna is the only co-applicant from Lund University, she has
+  to be on the steering committee.
+
+  This means that we need exactly one more female committee member,
+  who will be from ITU,
+  and this gives us $2$~choices for either Nutan or Paloma.
+
+  Finally, we need two male members, who will both have to come from
+  the University of Copenhagen.
+  We can  think of choosing either two persons among Amir, Jakob, and
+  Srikanth in
+  $\binom{3}{2} = 3$ ways,
+  or choosing one person to leave out in
+  $\binom{3}{1} = 3$ ways.
+
+  Summing up (or, rather, multiplying together), we see that the
+  steering committee can be composed in
+  $
+  1 \cdot 2 \cdot \binom{3}{2}
+  =
+  1 \cdot 2  \cdot 3 = 6
+  $
+  ways.  
+\end{solution}
+  
+  
+\end{problem}
+
+
+%%%
+%%% GRAPH PROBLEM: SHORTEST PATH
+%%%
+
+\begin{problem}%
+  \label{problem:shortest-path}%
+  (90 p)
+  When Jakob has international visitors, he needs to give them travel
+  directions from Kastrup Airport to the
+  Department of Computer Science (DIKU) at Universitetsparken.  Jakob
+  is aware of the following relevant public transport options in
+  Copenhagen with travel times as stated
+%     (in either direction):
+  (in either direction, and with time for switching transport mode included):
+  \begin{compactitem}
+  \item
+    Between Kastrup Airport and Kongens Nytorv by metro: 13 minutes.
+    
+  \item
+    Between Kastrup Airport and København H by train: 20 minutes.
+    
+  \item
+    Between København H and Nørreport by train: 3 minutes.
+    
+  \item
+    Beween København H and Kongens Nytorv by metro: 4 minutes.
+    
+  \item
+    Between Kongens Nytorv and Vibenshus Runddel by metro: 10 minutes.
+
+  \item
+    Between Vibenshus Runddel and Universitetsparken by foot: 9 minutes.
+    
+  \item
+    Between Nørreport and Universitetsparken by bus: 8 minutes.
+
+  \end{compactitem}
+%
+  What is not so clear to Jakob is how he should use this information
+  to find
+%     a good route
+  as fast a route as possible
+  between the airport and DIKU to suggest to his
+  visitors.
+  
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    Help Jakob by modelling this problem as a graph.
+    Explain what the vertices and edges represent and what other
+    information you need to add to the graph.
+    Make sure to show concretely what graph you obtain
+    for Jakob's problem above.
+  \end{subproblem}
+
+
+\begin{solution}
+  We create a graph with $6$~vertices:
+  \begin{compactitem}
+  \item vertex 
+    $A$ for Kastrup Airport, 
+
+  \input{Figures/figPublicTransport.tex}
+    
+  \item vertex 
+    $K$ for Kongens Nytorv,
+
+  \item vertex 
+    $H$ for København H,
+
+  \item vertex 
+    $N$ for Nørreport,
+
+  \item vertex 
+    $V$ for Vibenshus Runddel,
+
+  \item vertex 
+    $U$ for Universitetsparken and DIKU.
+
+  \end{compactitem}
+%  
+  Between these vertices we add edges as specified by the travel options 
+%     in the problem statement
+  with weights equal to the travel
+  times, and these edges are undirected since 
+%     it is clearly stated that
+  the time given is for  travel in either direction:
+%     This yields the  following edges:
+  \begin{compactitem}
+  \item edge 
+    $(A, K)$ with weight~$13$,
+    
+  \item edge 
+    $(A, H)$ with weight~$20$,
+    
+  \item edge 
+    $(H, N)$ with weight~$3$,
+    
+  \item edge 
+    $(H, K)$ with weight~$4$,
+
+  \item edge 
+    $(K, V)$ with weight~$10$,
+
+  \item edge 
+    $(V, U)$ with weight~$9$,
+
+  \item edge 
+    $(N, U)$ with weight~$8$.
+  \end{compactitem}
+%
+  This yields the graph in
+  \reffig{fig:public-transport-graph}.
+  
+\end{solution}
+
+
+\begin{subproblem}
+  \ifthenelse{\boolean{versionwithsolutions}}
+    {(70 p)}
+    {\ignorespaces}
+    Propose a suitable graph algorithm to solve Jakob's problem.
+    Explain what this algorithm is and why it is the right choice for
+    this problem.  Make a dry-run of the algorithm and explain the
+    relevant steps in the execution (similarly to what has been done
+    in class and in the lecture notes).
+    
+    If your algorithm uses any auxiliary data structures, then explain in detail
+    for the first two vertices processed how these data structures
+    change. For the rest of the algorithm execution, just
+    report what the relevant outputs of the data structures are without
+    going into any details.
+
+    What travel directions for Jakob's visitors does your algorithm produce?    
+  \end{subproblem}
+  
+
+\begin{solution}
+  What Jakob is looking for is the fastest route from Kastrup to DIKU,
+  i.e., the shortest path in a graph where the edge weights are the
+  travel times between different locations.
+  We have learned in the course to compute such shortest paths by
+  using Dijkstra's algorithm.
+
+  \input{Figures/figHeapsPublicTransport.tex}
+
+%     
+%     We therefore run Dijkstra's algorithm on the graph in
+%     \reffig{fig:public-transport-graph}.
+%     The version of Dijkstra's algorithm that we have learned uses a
+%     priority queue implemented with the help of a min-heap.
+%   
+  Following the instructions in the problem statement,
+  when running Dijkstra's algorithm 
+%     on the graph in
+%     \reffig{fig:public-transport-graph}
+  we illustrate in
+  \reffig{fig:heaps-public-transport}
+  how the heap used for the priority queue changes during 
+%     the  execution of the algorithm.
+  algorithm execution,
+  using the
+%     We use the 
+  notation $v:k$
+%     in the heap when vertex $v$ has key value~$k$.
+  for a vertex $v$ with key value~$k$.
+  At the outset, the vertex $A$
+  corresponding to Kastrup Airport
+  has key~$0$ and all other
+  vertices have key~$\infty$ as in \reffig{fig:heaps-public-transport-1}.
+
+  \begin{enumerate}
+  \item 
+    After vertex $A$ has been dequeued, vertex~$V$ is moved to the top of the heap
+    and we have the configuration in
+    \reffig{fig:heaps-public-transport-2}.
+    Relaxing the edge $(A, H)$ gives value $20$ to~$H$ (\ie the weight
+    of the edge), and 
+    % so shifts $H$ to the top and pushes~$V$ down below it,
+    and the min-heap property is restored by letting $H$ bubble up above~$V$, 
+    yielding
+    \reffig{fig:heaps-public-transport-3}.
+    Relaxing~$(A, K)$
+    decreases the key of~$K$ to~$13$ and
+    makes $H$ bubble up above~$K$, yielding
+    \reffig{fig:heaps-public-transport-4}.
+%%
+    These are all edges incident to~$A$ that we need to consider for
+    relax operations.
+    
+  \item 
+    Since vertex $K$ is at the top of the heap, it is dequeued
+    next. This adds the edge~$(A,K)$ to the spanning tree,
+    which we indicate in
+    \reffig{fig:public-transport-spanning-tree}.
+    When $K$ is removed, $U$~is moved to the top. This violates the
+    min-heap property, since the key of~$U$ 
+    is not smaller than or equal to those of its
+    children.  Since $H$~has smaller key than~$V$, we swap $U$
+    and~$H$. This restores the heap property
+    (since the left subtree of the root was not changed, and~$U$~is
+    now the root of a singleton subheap), and so the
+    heap after removal of~$K$
+    looks as in 
+    \reffig{fig:heaps-public-transport-5}.    
+
+    \input{Figures/figPublicTransportSpanningTree.tex}
+        
+    Relaxing the edge~$(K, H)$ decreases the key value of~$H$ to~$17$.
+    Since~$H$~is already the root, the heap does not
+    change except for this key update and now looks like in
+    \reffig{fig:heaps-public-transport-6}.    
+%%
+    Relaxing~$(K, V)$  decreases the key value of~$V$ to~$23$,
+    but again does not lead to any structural changes in the heap
+    since $V$ still has a larger key than its parent~$H$
+    (see \reffig{fig:heaps-public-transport-7}).
+    There are no further edges incident to~$K$ to relax.
+%% 
+    According to the instructions in the problem statement, we do not
+    need to provide any further heap illustrations from this point on.
+    
+
+  \item
+    Since $H$ is now the vertex with the smallest key value it is dequeued next,
+    and the edge~$(K, H)$ is added to the spanning tree
+    (since the latest update of the key value of~$H$ was when relaxing
+    the edge~$(K, H)$).
+%%
+    When the edge $(H, N)$ is relaxed the key of~$N$ is updated to~$20$.
+
+  \item
+    Vertex~$N$ currently has the smallest key~$20$ and is dequeued next.
+    This adds the edge~$(H, N)$ to the spanning paths tree, since
+    the key of~$N$ was last updated when $(H, N)$ was relaxed.
+    Relaxing~$(N,U)$
+    updates the key of~$U$ to~$28$.
+
+  \item
+    Now vertex~$V$ has the smallest key~$23$ and so is dequeued,
+    adding~$(K, V)$ to the spanning tree.
+    When we relax~$(V,U)$
+    nothing happens since $23 + 9 \geq 28$.
+
+  \item
+    Finally, vertex~$U$ is dequeued,
+    adding the edge~$(N, U)$
+    to the spanning tree. The queue is now empty, and there is nothing
+    to relax.
+  \end{enumerate}
+%   
+  The shortest path spanning tree computed as described above is indicated
+  by the bold edges in 
+  \reffig{fig:public-transport-spanning-tree}.
+  From this tree we can read off that the fastest route for Jakob's
+  guests is
+  Kastrup Airport
+  --
+  Kongens Nytorv
+  --
+  København H
+  --
+  Nørreport
+  --
+  Universitetsparken/DIKU.
+\end{solution}
+
+\end{problem}
+
+
+
+%%%
+%%% GRAPH PROBLEM: IDENTIFY OUTPUT OF DIFFERENT ALGORITHMS
+%%%
+%   Give 10 points per correct answer.
+%   Give 20 extra points for a overview of how and why the algorithms process the vertices in this order.
+%   
+
+\begin{problem}%
+  \label{problem:graph-algorithm-outputs}%
+  (120 p)
+  Consider the graph in   
+  \reffig{fig:graph-algorithm-outputs}
+  and the following ordered sequences listing the vertices in this graph:
+%%%  
+%%% Random permutation: 3, 1, 4, 2
+%%%  
+  \begin{compactenum}
+    % 3. Dijkstra from a
+  \item%
+    \label{sequence-dijkstra}%    
+    $a$, $c$, $e$, $b$, $h$, $g$, $f$, $d$.
+
+%       \input{Figures/figGraphAlgorithmOutputs-25.tex}    
+        
+    % 1. BFS from a
+  \item%
+    \label{sequence-bfs}%    
+    $a$, $b$, $c$, $e$, $d$, $h$, $g$, $f$.
+
+    % 4. Spoiler        
+  \item%
+    \label{sequence-spoiler}%    
+    $a$, $c$, $b$, $e$, $h$, $g$, $f$, $d$.
+        
+    % 2. DFS from a
+  \item%
+    \label{sequence-dfs}%
+    $a$, $b$, $d$, $c$, $e$, $h$, $g$, $f$.
+    
+  \end{compactenum}
+  %
+  For each of the sequences above, determine whether it can be the result of:
+  \begin{compactenum}[(a)]
+  \item
+    a breadth-first search with vertices listed in order of visits;
+    
+  \item
+    a depth-first search with vertices listed in order of discovery;
+    
+  \item
+    a shortest-path computation with vertices listed in the order they
+    are removed from the priority queue.
+
+  \end{compactenum}
+%
+  Each sequence above is the output of at most one of the algorithms,
+  but since there are four sequences there could be a sequence that
+  cannot be produced by any of the algorithms.
+
+  Partial credit is given for matching algorithms and vertex sequences correctly.
+%
+  For full credit, you need to
+  give an overview of how and why the
+  algorithms process the vertices in the given order
+  (such as explaining the order of recursive calls, edges processed,
+  or similar),
+  or why none of the proposed algorithms could yield the sequence in
+  question,  
+  but you do not have to provide detailed information about any
+  auxiliary data structures used in the algorithms.
+
+\begin{solution}
+  Let us consider the different algorithms in the order listed and
+  try to find sequences that would match their outputs.
+  Since we are promised that each sequence is the output of at most
+  one algorithm, we are done with each sequence as soon as we find a
+  match.
+  
+  \textit{\textbf{Sequence~\ref{sequence-bfs}}}
+  is the result of breadth-first search starting with vertex~$a$.
+  To see this, consider how the different vertices are enqueued in and
+  dequeued from the queue if we start the breadth-first search in
+  vertex~$a$:
+
+  \medskip
+  \noindent
+  \begin{tabular}[]{|l|l|l|}
+    \hline
+    \textbf{Dequeued vertex}
+    &
+      \textbf{Enqueued vertices}
+    &
+      \textbf{Queue}
+    \\
+    \hline
+    ---
+    &
+      ---
+    &
+      $(a)$
+    \\
+    $a$
+    &
+      $\set{b, c, e}$
+    &
+      $(b, c, e)$
+      \\
+    $b$
+    &
+      $\set{d}$
+    &
+      $(c, e, d)$
+    \\
+    $c$
+    &
+      ---
+    &
+      $(e, d)$
+    \\
+    $e$
+    &
+      $\set{h}$
+    &
+      $(d, h)$
+    \\
+    $d$
+    &
+      ---
+    &
+      $(h)$
+    \\
+    $h$
+    &
+      $\set{g}$
+    &
+      $(g)$
+    \\
+    $g$
+    &
+      $\set{f}$
+    &
+      $(f)$
+    \\
+    $f$
+    &
+      ---
+    &
+      $()$
+    \\
+    \hline
+  \end{tabular}
+
+  \bigskip
+
+  
+  \textit{\textbf{Sequence~\ref{sequence-dfs}}}
+  is the result of depth-first
+  search starting with vertex~$a$.
+  Below follows an illustration of in which orders vertices are
+  discovered and finished: \\
+  \vspace{-6.0mm}
+  \begin{tabbing}
+    Disco\={}ver  $a$ --- undiscovered neighbours $b$, $c$ and~$e$
+    \\
+    \> Disco\={}ver  $b$ --- undiscovered neighbour $d$
+    \\
+    \> \> Disco\={}ver  $d$  --- undiscovered neighbour $c$
+    \\
+    \> \> \> Disco\={}ver  $c$ --- no undiscovered neighbours
+    \\
+    \> \> \> Finish $c$, since no undiscovered neighbours
+    \\
+    \> \> Finish $d$, since no undiscovered neighbours left
+    \\
+    \> Finish $b$, since no undiscovered neighbours left
+    \\
+    \> Discover $e$ --- undiscovered neighbour $h$
+    \\
+    \> \> Discover $h$  --- undiscovered neighbour $g$
+    \\
+    \> \> \> Discover $g$  --- undiscovered neighbour $f$
+    \\
+    \> \> \> \> Discover $f$ --- no undiscovered neighbours
+    \\
+    \> \> \> \> Finish $f$, since no undiscovered neighbours 
+    \\
+    \> \> \> Finish $g$, since no undiscovered neighbours left
+    \\
+    \> \> Finish $h$, since no undiscovered neighbours left
+    \\
+    \> Finish $e$, since no undiscovered neighbours left
+    \\
+    Finish $a$, since no undiscovered neighbours left
+  \end{tabbing}
+  
+  
+  \textit{\textbf{Sequence~\ref{sequence-dijkstra}}}
+  is the result of a call to Dijkstra's algorithm computing shortest
+  paths from vertex~$a$.
+  To see this, consider in which order the vertices are dequeued from
+  the priority queue and how vertex key values are updated as edges
+  are relaxed:
+
+  \medskip
+  \noindent
+  \begin{tabular}[]{|l|l|l|}
+    \hline
+    \textbf{Dequeued}
+    &
+%         \textbf{Vertex updates}
+      \textbf{Updates}
+    &
+      \textbf{Priority queue (after relaxations)}
+    \\
+    \hline
+    ---
+    &
+      ---
+    &
+      $
+      \set{
+      (a: 0),
+      (b: \infty),
+      (c: \infty),
+      (d: \infty),
+      (e: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $a$
+    &
+      $\set{b, c, e}$
+    &
+      $
+      \set{
+      (c: 2),
+      (e: 4),
+      (b: 6),
+      (d: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $c$
+    &
+      $\set{b}$
+    &
+      $
+      \set{
+      (e: 4),
+      (b: 5),
+      (d: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $e$
+    &
+      $\set{h}$
+    &
+      $
+      \set{
+      (b: 5),
+      (h: 6),      
+      (d: \infty),
+      (f: \infty),
+      (g: \infty)
+      }
+      $
+    \\
+    $b$
+    &
+      $\set{d}$
+    &
+      $
+      \set{
+      (h: 6),      
+      (d: 12),
+      (f: \infty),
+      (g: \infty)
+      }
+      $
+    \\
+    $h$
+    &
+      $\set{g}$
+    &
+      $
+      \set{
+      (g: 7),      
+      (d: 12),
+      (f: \infty)
+      }
+      $
+    \\
+    $g$
+    &
+      $\set{f}$
+    &
+      $
+      \set{
+      (f: 9),      
+      (d: 12)
+      }
+      $
+    \\
+    $f$
+    &
+      $\set{d}$
+    &
+      $
+      \set{
+      (d: 10)
+      }
+      $
+    \\
+    $d$
+    &
+      ---
+    &
+      $
+      \set{
+      }
+      $
+    \\
+    \hline
+  \end{tabular}
+
+  \bigskip
+  
+  \textit{\textbf{Sequence~\ref{sequence-spoiler}}}, finally,
+  is a spoiler sequence that cannot be the output of any of the
+  algorithms listed. To see this, consider the following case
+  analysis:
+  \begin{compactitem}
+  \item
+    If the sequence were the result of breadth-first search,
+    then it would list vertices in order of the number of directed
+    edges required to get to the vertex     from
+    the start vertex~$a$, but the first deviation from this is that
+    $g$ is listed before~$d$.
+    
+  \item
+    A depth-first search starting with $a$, $c$, $b$ would discover~$d$
+    next and not~$e$.
+        
+  \item
+    Finally, the sequence cannot be the output of Dijkstra's    algorithms,
+    since the vertices are not listed in increasing order of distance
+    from~$a$. The first deviation here is that $e$ should come
+    before~$b$ in a listing in increasing order of distance.
+    
+  \end{compactitem}
+
+  
+\end{solution}
+
+  \input{Figures/figGraphAlgorithmOutputs-25.tex}    
+
+  
+\end{problem}
+
+
+
+
+\end{document}
+
+

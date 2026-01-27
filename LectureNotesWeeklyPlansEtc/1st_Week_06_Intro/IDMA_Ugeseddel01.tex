@@ -1,0 +1,435 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+%   \usepackage[english,danish]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+%   \usepackage{multicols}
+   
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+
+% Course name
+\input{../course-name}
+
+
+% Dates
+\newcommand{\mondaylecturedate}{Monday Feb 3\xspace}
+\newcommand{\wednesdaylecturedate}{Wednesday Feb 5\xspace}
+\newcommand{\deadlinefirstpset}{Wednesday Feb 12 at 12:59 CET\xspace}
+
+
+\begin{document}
+\begin{center}
+  \textbf{\large \coursenameshort
+    \\[0.5em] -- Ugeseddel 1 -- \\[0.5em]}
+\end{center}
+\noindent
+
+\section*{Overview}
+
+Welcome to the
+\emph{\coursename{}}
+course!
+This first week we will talk about what discrete math and algorithms
+and then get started on algorithms for \textbf{sorting} and
+\textbf{searching} in data.
+We will also discuss some simple data structures such as 
+\textbf{stacks},
+\textbf{queues}, and
+\textbf{linked lists}.
+Later in the course we will often assume that we have access to
+efficient implementations of these kind of objects, but it is good to
+understand how they can be constructed from first principles.
+All of this  will also give us an opportunity to discuss what it means for an
+algorithm to be \emph{efficient}, and how we can compare the
+efficiency of different algorithms using
+\textbf{asymptotic analysis}.   
+
+{\it
+  Please note that the first problem set to be handed in
+%     has already been posted and  is due on
+  will be posted in the coming days and will be due on
+  \textbf{\deadlinefirstpset{}}.
+  Please make sure to familiarize yourself with the problem set rules
+  posted on Absalon.
+  In particular, 
+  you are welcome (and encouraged) to discuss the problems on the problem sets in
+  groups of two or three persons, but your solutions should be written
+  up individually, and you are not allowed to share any
+  text, formulas, or code with others (or to copy such material from
+  the internet or generate it via chatbots) when writing up your solution.
+  \textbf{Passing all problem sets is a requirement to be eligible for the
+    exam, so start working on the problems as soon as you can!}
+}
+
+\section*{Reading Material}
+
+Cormen, Leiserson, Rivest, and Stein (CLRS): Chapters 1--3 and 10.
+
+Please note that --- as a general rule --- 
+\emph{the lectures will not cover everything in the textbooks},
+so just attending the lecture without reading the assigned material in
+the textbook is not sufficient.
+%   
+%   However, not everything in the textbook is equally important, and
+%   during the lectures we will try to discuss how to prioritize.
+%   If in doubt, please do not hesitate to ask. 
+%   
+
+\section*{Plan for Lectures}
+
+\subsection*{\mondaylecturedate
+  at 13:15-15:00}
+
+\begin{itemize}
+\item 
+  Introduction
+\item 
+  RAM model (how do we think about what a computer is)
+\item 
+  Pseudocode
+%   \item 
+%     Searching
+%   \item
+%     Sorting
+\end{itemize}
+
+
+\subsection*{\wednesdaylecturedate
+  at 10:15-12:00
+  and 13:15-15:00
+}
+
+\begin{itemize}
+\item 
+  Searching
+\item
+  Sorting
+\item
+  Time complexity of algorithms
+\item
+  Stacks, queues, and lists
+\end{itemize}
+
+
+\section*{Software for Calculations and Visualisation}
+
+The math part of the course will actually not contain that many
+numerical calculations (just as the the algorithms part will not contain
+that much actual coding).
+Our main focus on this course is to make sure that you get a solid
+\emph{theoretical, mathematical} understanding (after which
+%   programming
+coding things up
+will become a breeze).
+We will, however, occasionally 
+%   ask 
+encourage
+you to calculate some function values
+or draw a graph to visualize a function. For this purpose, you can use
+whatever tools you are most comfortable with. It does not matter
+whether this is an app on your phone or math software on your
+computer.
+
+
+
+\section*{Exercises}
+
+\emph{Please note that the exercises below are
+  \textbf{just suggestions for you.}
+  At the end of the day, you have to read the material and work on it to
+  make sure that you understand what is going on. This might involve
+  solving fewer exercises than what is listed below, or might require
+  solving more exercises. Only you can tell when you feel that you have
+  mastered the material.}
+
+You can of course also work on the problem set problems from previous years
+that are posted on Absalon, and are highly encouraged to do so.
+But it is probably a good idea to first do some of the exercises below
+to make sure that you have understood the material.
+
+
+Exercises that might be  slightly tricky are marked by stars
+[*].
+
+\subsection*{Exercises on Algorithm Analysis, Searching,
+  and Sorting}
+
+\begin{enumerate}
+%   
+%   \item 
+%     Start on the problems in problem set 1 right away!
+%     You can expect to get that type of problems on the exam.
+%   
+
+\item In the following snippet of code \verb+A+ and \verb+B+ are
+  arrays indexed from $1$ to~$n$ and containing numbers.
+%   B[i] = 1 / i \cdot \sum_{j=1}^{i} A[i]
+\begin{verbatim}
+for (i := 1 upto n)
+    B[i] := A[1]
+    for (j := 2 upto i)
+        B[i] := B[i] + A[j]
+    B[i] := B[i] / i
+\end{verbatim}
+  
+\begin{enumerate}
+\item 
+  Explain in plain language what the algorithm above does.
+  In particular, what are the values computed and stored in the 
+  array~\verb+B+?
+
+\item
+  How does the running time of the function scale
+  as a function of the array size~$n$?
+  (Focus on the highest-order term and ignore constant factors.)
+
+\item
+    Can you improve the algorithm (i.e., change the pseudocode)
+    to run asymptotically faster while
+    retaining the same functionality?  
+%   If so, how much faster can you get the algorithm to run?
+%
+    In case you can design an asymptotically faster algorithm,
+    analyse the time complexity of your new algorithm. 
+%
+    For the best algorithm that you have---either your new one, or the
+    old one---can you prove that the running time of this algorithm is
+    asymptotically optimal?
+\end{enumerate}
+
+\item{} [*] 
+  In the following snippet of code \verb+A+ is an array
+  indexed from $1$ to~$n$
+  containing elements that can be compared using operators~$>$, 
+  $=$,  and~$>$.
+\begin{verbatim}
+flip1 := FALSE
+flip2 := FALSE
+for (i := 1 upto n-1)
+    if (A[i] > A[i+1] and not(flip1))
+        flip1 := TRUE
+    else if (A[i] < A[i+1] and flip1)
+        flip2 := TRUE
+if (flip1 and not(flip2))
+    return "success"
+else
+    return "failure"
+\end{verbatim}
+  
+\begin{enumerate}
+\item 
+  Explain in plain language what the algorithm above does.
+  (In particular, what does it mean that it achieves ``success''?)
+
+\item
+  How does the running time of the function scale
+  as a function of the array size~$n$?
+  (Focus on the highest-order term and ignore constant factors.)
+
+\item
+  Can you modify the algorithm so that it ``succeeds'' when 
+  it encounters an odd number of ``flips''?
+  What does the pseudo-code look like?
+  Does the time complexity change? If so, how?
+
+\end{enumerate}
+
+\item
+  Suppose we have the array
+  $
+  [
+  1, 3, 4, 5, 8, 10, 11, 14, 15, 18, 20
+  ]
+  $.
+
+  \begin{enumerate}
+
+  \item
+    Illustrate how the linear search algorithm searches for element
+    $16$ in this array and for element $18$.
+    
+    
+  \item
+    Perform the same searches for elements
+    $16$ and  $18$
+    but using binary search.
+
+%   
+%     \item
+%       Do the same exercise but with some small array that your study
+%       buddy gives to you in exchange for an array you give to your study
+%       buddy. 
+%       
+  \end{enumerate}
+  
+\item
+  Suppose we have the array elements as above, but permuted to
+  yield the array
+  $
+  [
+  1, 3, 
+  20,
+  10,   8, 
+  18,   15, 14,   11, 
+  4, 5
+  ]
+  $.
+
+  \begin{enumerate}
+
+  \item
+    Run the selection sort algorithm on
+    this array and illustrate (iteration by iteration)
+    how the array gets sorted.
+    
+  \item
+    Run merge sort on the same array. Illustrate the recursive calls
+    and how they are merged to form a sorted array.
+
+  \item{} [*]
+    Which algorithm of selection sort or merge sort is fastest on this
+    particular array?
+    
+  \end{enumerate}
+
+\item
+  CLRS 2.1-1 
+
+\item
+  CLRS  2.2-2
+
+\item
+  CLRS
+  2.3-1 
+%   and   2.3-2
+
+%   
+%   \item
+%     Can you modify the code for merge sort so that it
+%     stops without making a recursive call when the size of the list to
+%     sort is $\leq 2$?
+%   
+
+\item
+  {}[*] CLRS 2-2 
+  
+\item
+  CLRS 3.2-1
+
+\end{enumerate}
+
+\subsection*{More Exercises on Asymptotic Analysis}
+
+Unless explicitly stated otherwise, you are free to use theorems from
+the notes on Absalon without a proof, as well as make use of any
+previously solved exercises.
+
+\begin{enumerate}[(1)]
+
+  \item Two teams of computer science students compete in writing the most efficient algorithm to solve a task on an array with $N$ entries. Team~1 has constructed an algorithm that runs in
+\[
+f_1(N)=10\cdot N^{10}
+\]
+steps. Team 2 has constructed an algorithm that runs in
+\[
+f_2(N)=2^N
+\]
+steps. One of the following statements must hold: 
+\begin{enumerate}[(A)]
+\item Team 1's algorithm runs with fewer steps for all $N$.
+\item Team 2's algorithm runs with fewer steps for all $N$.
+\item Team 1's algorithm runs with fewer steps for some choices of $N$, while Team 2's algorithm runs with fewer steps for some other choices of $N$. 
+\end{enumerate}
+Draw the graphs of the functions. Which of the statements (A), (B), and (C) are true? 
+
+
+  \item Use the definition of big-$O$ to show that $x^3+12x-3$ is $O(x^3)$.
+
+  \item Use the definition of big-$O$ to show that $x^3+12x-3$ is \emph{not} $O(x^2)$.
+
+  \item Use the rules  (\emph{B1})--(\emph{B6}),
+    (\emph{L1})--(\emph{L6}), (\emph{M1})--(\emph{M4})
+    from the notes to determine which of the functions 
+    \[
+      x^2+2^x, (x+2)^2, (x+\log_{10}x)^2,x^3-x, x^2+\log_2 x
+    \]
+    are $\Theta(x^2)$. Keep in mind that you also need to provide a
+    justification whenever you claim that $f(x)$ is \emph{not}
+    $\Theta(x^2)$. 
+     
+  \item Sort the sequences
+    \begin{eqnarray*}
+      a_n&=&n2^n+n^7\\
+      b_n&=&3^n+n^5\\
+      c_n&=&\sum_{k=1}^n 2^k\\
+      d_n&=&\log_2n+n^7
+    \end{eqnarray*}
+    in increasing asymptotic order using only the results from this week's notes. 
+    
+\end{enumerate}
+
+\subsection*{Exercises on Stacks, Queues, and Lists}
+
+See the separate document with exercises on stacks, queues, and lists
+posted on Absalon.
+
+
+
+
+\subsection*{Some Additional Exercises (Possibly for Later)}
+
+Here are some extra exercises that might be useful if
+you want to repeat this material when preparing for the exam.
+%
+\begin{enumerate}
+
+\item
+  CLRS 1-1 (a bit tedious, but useful)
+
+\item
+  CLRS 2.1-2
+
+\item
+  {}[*] CLRS  2-3
+  
+\item
+  CLRS
+  3.1-2
+  
+\item
+  CLRS   3.2-2
+
+
+
+\end{enumerate}
+
+
+\end{document}

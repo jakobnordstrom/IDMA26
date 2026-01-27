@@ -1,0 +1,10 @@
+
+Flatten PDF to remove text information and make file non-searchable
+
+https://www.sejda.com/flatten-pdf
+
+jn@di.ku.dk
+A password for Jakob Nordström for flattening PDF
+
+I didn't get processing of multiple files to work in Firefox, but it worked in Chrome.
+
