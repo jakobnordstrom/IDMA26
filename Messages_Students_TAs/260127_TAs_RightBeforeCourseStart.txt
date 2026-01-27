@@ -1,0 +1,70 @@
+Florestan Brunck <flbr@di.ku.dk>
+Theo Fabris <thfa@di.ku.dk>
+Anton Friis <Antonwfriis@gmail.com>
+Christoffer Kassøe Juhl <lfx358@di.ku.dk>
+Cornelius Juul Mogensen <cony.juul@gmail.com>
+Cornelius Juul Mogensen <rtf466@di.ku.dk>
+Johanne Tang Reuss <jtre@di.ku.dk>
+Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
+
+IDMA 2026: Getting ready for course start
+IDMA: Getting ready for course start
+
+
+Hi all,
+
+The reason you are receiving this message is that to the best of my understanding you will be TAing on the Introduction to Discrete Mathematics and Algorithms (IDMA) course 2026, which starts next week.
+
+I have to start by apologizing for sending this message so very late. As some of you will know from last year, I have a somewhat complicated family situation which still makes it quite challenging for me to manage my workload at times, and in addition I have had a lot of travelling now in January. However, I hope and believe that it will still be possible to run this course reasonably smoothly, just as was the case last year.
+
+Here are some quick pieces of information and some action points for you:
+
+(1) E-MAIL ADDRESSES: It would be great if you could confirm (in a private reply to me only) that I got it right that you will be TAing on the course, and let me know if I am using your desired e-mail addresses or if there is any other e-mail address that you would prefer to use.
+
+(2) EMPLOYMENT: For all except Florestan and Theo, I assume that you have been contacted by DIKU HR and have received confirmation that you are hired. If you have any doubts or problems in this regard, please do let me know.
+
+(3) ABSALON: You should all be invited to the IDMA Absalon pages at https://absalon.ku.dk/courses/89165 now. Nothing much is there yet, but will change very soon (though perhaps not before my flight from Singapore lands in Copenhagen tomorrow morning).
+
+(4) COURSE PLAN: With this message I attach the current course plan. For those of you who are familiar with the IDMA 2025 course, there are essentially no changes from last year.
+
+(5) GMAIL ADDRESSES OR SIMILAR: Christoffer and Örn, I would need your Gmail addresses (or whatever username you use for Google) so that we can edit grading guidelines documents together. Please respond to me privately with this information. I think I already have the addresses for the rest of you (from last year or via your applications).
+
+(6) REGULAR MEETING TIME POLL: We need to find a time slot for a regular weekly meeting. To this end, please fill in the poll at https://www.when2meet.com/?34649592-EbyOT as soon as possible!
+
+(7) TA WORK: Exactly what the TA workload is this year is a bit unclear, since the UCPH administrative reform has changed quite a few things (and created confusion regarding other things that might or might not have changed). Let me share my current understanding of what your work consists of:
+(a) Doing exercise classes on Mondays 15:15-17:00 and Wednesdays 15:15-17:00 during weeks 6-13.
+(b) Meeting with me (probably on Zoom) for ca 1 hour per week. Please note that these meetings are a compulsory part of the job. These meetings are what we are trying to find a good time slot for in the poll mentioned above.
+(c) Grading 4 problem sets with resubmissions (and providing feedback on the psets before they are posted).
+(d) Grading the written exam on April 8 (and providing feedback on the exam before it is sent to exam administration).
+
+Now, it might be that you will be getting paid less hours than was the case last year (but this I don't know --- I have made the case to administration that we need your hours, but have not received any response). If we need to scale back your workload, then here is what we will likely do:
+(d) During previous years, the TAs have made sure with joint efforts to man 3 study cafees with TAs (1 cafe per TA). I don't expect the study cafes to happen this year.
+(e) During the latter half of the course, we might scale down the number of exercise classes and let you take turns running these classes.
+
+During the exercise classes, you are highly encouraged to be active instructors and spend maybe half of the time working out exercises on the board. On Absalon, I will make available to you problem sets from previous years with solutions, and you can use them in whichever way you see fit, except you should *not* hand out solutions to the students, because they should come to the exercise classes and interact with you instead. You should try to figure out which exercise class style works best for you --- we will encourage students to shop around and try to find TAs that work well for them.
+
+I should also inform you right away that we will need to grade the final problem set with deadline March 25 quite quickly, but the grading there will be a bit unusual in the following sense:
+- By noon Friday March 27, we will need to know which students at least made an honest attempt to solve the problems (which is used to determine exam eligibility).
+- Ideally, the students should then receive their graded psets back by Monday March 30, so that they can study the feedback as they prepare for the exam on Wednesday April 8.
+
+(8) TEXTBOOKS: As in previous years, we will be using two textbooks:
+- Kolman, Busby, and Ross: Discrete Mathematical Structures, University of Copenhagen version (KBR)
+- Cormen, Leiserson, Rivest, and Stein: Introduction to algorithms, 4th edition (CLRS)
+
+It is getting harder and harder to get inspection copies of the textbooks, so I will probably just put PDF copies of the textbooks on Absalon (strictly for your personal use for this course). This is one of these things that will happen in the coming days. For KBR, you can get some kind of electronic access via the university book store. I have reported your e-mail addresses there and expect to hear back from them in a somewhat near future.
+
+(9) REQUEST FOR COMMENTS: One final request, which I address to all of you, but especially to the non-PhD TAs:
+
+Thank you all for the nice words in your applications (this year or previous years) regarding how stimulating and inspirational and so on the IDMA course has been for you. This was very kind of you --- so thanks again!
+
+And these nice words worked, because you are now hired. ;-) Which means that now you can stop being nice, and I would instead like you to focus on what could and should be better with this course! Any suggestions for things that you think could or should be done differently (or perhaps stay the same) are very welcome! Please do let me know any thoughts you might have about things that should be changed regarding the lectures, exercise classes, problem sets, exam, or anything else. For any comments on this, you should feel free to do reply-all or send your messages only to me, whatever you prefer.
+
+FINALLY, although the usual creative chaos reigns these final days before the course starts, I will do my very best to give the students an interesting, stimulating, memorable, and useful (as well as somewhat well-organized) course, and I am very much looking forward to doing so together with you!
+
+Best regards, 
+Jakob
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +46 70 742 21 98 / +45 28 78 38 11
+http://www.jakobnordstrom.se

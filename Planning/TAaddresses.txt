@@ -1,3 +1,16 @@
+********** TA LIST OF NAMES **********
+
+Sorted by given name since I am not sure how to sort the Danish surnames...
+
+Anton Friis
+Christoffer Kassøe Juhl
+Cornelius Juul Mogensen
+Florestan Brunck
+Johanne Tang Reuss
+Theo Fabris
+Örn Steinar Sigurbjörnsson
+
+
 ********** TA E-MAIL ADDRESSES **********
 
 PhD students:
@@ -5,12 +18,13 @@ Florestan Brunck <flbr@di.ku.dk>
 Theo Fabris <thfa@di.ku.dk>
 
 Regular students:
-Magnus Aabech <mhaa@di.ku.dk>
-Monika Haubro <moha@math.ku.dk>
-Peter Trip Malmroes <petermalmroes@gmail.com>
-Johannes Reuss <johannestangreuss@gmail.com>
-Tove Eggert Olsen <tool@di.ku.dk>
-Anton Friis <antonwfriis@gmail.com>
+Anton Friis <Antonwfriis@gmail.com>
+Christoffer Kassøe Juhl <lfx358@di.ku.dk>
+Cornelius Juul Mogensen <cony.juul@gmail.com>
+Cornelius Juul Mogensen <rtf466@di.ku.dk>
+Johanne Tang Reuss <jtre@di.ku.dk>
+Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
+
 
 
 ********** TA KU USERNAMES **********
@@ -20,42 +34,23 @@ To add regular students to Absalon as TAs, their address should have suffix @alu
 Florestan Brunck <flbr@di.ku.dk>
 Theo Fabris <thfa@di.ku.dk>
 
-Magnus Aabech dkg322@alumni.ku.dk
-Anton Friis scj896@alumni.ku.dk
-Monika Haubro qhg541@alumni.ku.dk
-Peter Trip Malmroes wbl189@alumni.ku.dk
-Tove Eggert Olsen kxd956@alumni.ku.dk
-
-LEFT TO ADD
-
-Johannes Reuss 
+Anton Friis <scj896@alumni.ku.dk>
+Christoffer Kassøe Juhl <lfx358@alumni.ku.dk>
+Cornelius Juul Mogensen <rtf466@alumni.ku.dk>
+Johanne Tang Reuss <bkp334@alumni.ku.dk>
 Johannes Tang Reuss <jtre@di.ku.dk>
+Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
+
 
 
 ********** ADDRESSES TO SHARE FOR GOOGLE DOCUMENTS **********
 
-monika.haubro@gmail.com
-m.h.aabech@gmail.com
-tove.eggert@gmail.com
 antonwfriis@gmail.com
-petermalmroes@gmail.com
 johannestangreuss@gmail.com
 theo.fabris@gmail.com
 florestan.brunck@gmail.com
+cony.juul@gmail.com
 
-srinivasan.srikanth@gmail.com
-
-
-********** TEACHING ASSISTANTS SORTED BY SURNAME **********
-
-Magnus Aabech 
-Florestan Brunck
-Theo Fabris
-Anton Friis
-Monika Haubro 
-Peter Trip Malmroes
-Tove Eggert Olsen
-Johannes Reuss 
-
-
+Christoffer Kassøe Juhl
+Örn Steinar Sigurbjörnsson
 

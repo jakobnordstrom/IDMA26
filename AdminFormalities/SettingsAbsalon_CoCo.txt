@@ -1,0 +1,25 @@
+ABSALON SETTINGS FOR CoCo 2024
+==============================
+
+Right menu --> Choose home page and select "Course modules"
+
+Left menu --> Settings --> Navigation and disable everything except
+• Home
+• Announcements
+• Modules
+• Pages
+• Assignments
+• Files
+• Media Gallery
+• Quizzes
+• People
+
+• Discussions also kept for now(?)
+
+File folder strucure:
+• Course information: Mainly reference to external course webpage
+
+Added recorded lectures to the Media Gallery (and clicked "Publish" after selection):
+- Some CoCo lectures from 2023 (when I was in Berkeley)
+- LICS lectures from 2021 (for fun)
+
