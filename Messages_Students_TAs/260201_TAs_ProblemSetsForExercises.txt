@@ -1,0 +1,41 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Exercise classes, exercises, and textbooks
+
+Hi again, IDMA TAs,
+
+The partition into exercises classes has been a bit confusing, since we have 9 exercise groups (hold) but have only been assigned 7 TAs. I have discussed this back and forth with administration. The latest news, looking at https://kurser.ku.dk/course/ndab23002u/, is that we are down to 8 officially scheduled groups, though administration said last week that they would bring the number all the way down to match the 7 TAs that we have available. Well, well. 
+
+To have a concrete plan for tomorrow, I propose the following TA group assignments:
+
+Group 1: Anton Friis <Antonwfriis@gmail.com>
+Group 2: Christoffer Kassøe Juhl <lfx358@di.ku.dk>
+Group 3: Cornelius Juul Mogensen <cony.juul@gmail.com>
+Group 4: Florestan Brunck <flbr@di.ku.dk>
+Group 5: Johanne Tang Reuss <jtre@di.ku.dk>
+Group 6: Theo Fabris <thfa@di.ku.dk>
+Group 7: Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
+Group 8: Not available.  
+
+Please feel free to switch groups in between each other if you so wish (and if so, please e-mail each other directly without involving me). Please note, though, that I have no idea whether the study programs indicated for the groups actually reflect reality at this point.
+
+In any case, I will encourage the students to try out different TAs until they find a TA that they like. The official partition into groups is mostly so that you will need to grade roughly the same number of problem set submissions.
+
+During the exercise classes, you are highly encouraged to be active instructors and spend maybe half of the time working out exercises on the board.
+
+At https://absalon.ku.dk/courses/89165/files/folder/ProblemSetsCollection you find problem sets from previous years with solutions.
+
+Please feel free to use the problem sets from 2024 and 2025 in whichever way you see fit, except you should *not* hand out solutions to the students, because they should come to the exercise classes and interact with you instead. You should try to figure out which exercise class style works best for you --- we will encourage students to shop around and try to find TAs that work well for them. We could also try to have different levels of difficulty for different groups, e.g., advertising that the PhD students Florestan and Theo will go over advanced materials in their classes (if you are up for this --- this is something we can talk about when we have our first IDMA meeting).
+
+I might "release" problem set batches for other years than 2024 and 2025 for you soon as well, but I just need to make sure first that I don't tell you to use anything that I might recycle for the problem sets this year (which I might or might not do --- I just haven't finalized that planning yet).
+
+For the first week, you are highly encouraged to encourage the students to learn to run (pseudo)code by hand, as a way of understanding the code and figuring out what it does. There will probably be problems on this on the first problem set (which might or might not go live before the exercise session tomorrow). While you should of course not solve the problems for the students, you should feel free to help them develop their ability to read and understand code, and it would be perfectly fine to do dry-runs on the board even for the code snippets that are on the first problem set.
+
+Regarding the textbooks, since it is becoming increasingly complicated to arrange for instructor copies, I have put PDF copies (strictly for use for this course only) at https://absalon.ku.dk/courses/89165/files/folder/GeneralCourseMaterial .
+
+Jakob
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +46 70 742 21 98 / +45 28 78 38 11
+http://www.jakobnordstrom.se

@@ -1,0 +1,603 @@
+\documentclass{jn-pset}
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% To give a hint to a problem (after having completed the problem statement),
+% use the following LaTeX code for formatting consistency:
+%
+%    \smallskip
+%    \noindent
+%    \emph{Hint:}
+%    Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+\newcommand{\psetno}{1}
+\newcommand{\duedate}{Wednesday February 11 at 12:59 CET}
+
+\newcommand{\thresholdforpass}{$120$~points\xspace}
+
+\input{course-macros.tex}
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%    \usepackage{draftwatermark}
+%    % \SetWatermarkFontSize{20 cm}
+%    \SetWatermarkScale{5}
+
+% For METAPOST logo as \hologo{METAPOST}
+%   \usepackage{hologo}
+
+% For TikZ
+%   \input{Figures/tikz-packages.tex}
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: Problem Set \psetno}
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Pset_GeneralInstructions}
+
+%%% 
+%%% IDMA EXAM 2025 PROBLEM 1
+%%% Number representation problem
+%%% 
+
+\begin{problem}
+  (50 p)
+% 10 p for problem (a)
+% 20 p each for problems (b) and (c)
+%
+  This problem is about different representations of integers.
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(10 p)}
+  {\ignorespaces}
+  Write the binary number $(110)_2$ in decimal notation.
+\end{subproblem}
+
+\begin{solution}
+  We have
+  $(110)_2
+  =
+  1 \cdot 2^2 + 
+  1 \cdot 2^1 + 
+  0 \cdot 2^0
+  =
+  6
+  $.
+\end{solution}
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Write the decimal number $110$ in binary notation.
+\end{subproblem}
+
+\begin{solution}
+  Dividing by~$2$ and outputting the remainders will give us the
+  bits in the binary expansion in reverse order. We obtain 
+  \begin{align*}
+    110 &= 55 \cdot 2 + 0 \\
+    55  &= 27 \cdot 2 + 1 \\
+    27  &= 13 \cdot 2 + 1 \\
+    13  &=  6 \cdot 2 + 1 \\
+    6   &=  3 \cdot 2 + 0 \\
+    3   &=  1 \cdot 2 + 1 \\
+    1   &=  0 \cdot 2 + 1 
+  \end{align*}
+  from which we see that
+  $
+  (110)_{10}
+  = 
+  (1101110)_2
+  $.
+  Just to verify that we have not made any mistake, we can check our answer by 
+  computing
+  $
+  (1101110)_2
+  =
+  1 \cdot 2^6 + 
+  1 \cdot 2^5 + 
+  0 \cdot 2^4 + 
+  1 \cdot 2^3 + 
+  1 \cdot 2^2 + 
+  1 \cdot 2^1 + 
+  0 \cdot 2^0 
+  =
+  64 + 
+  32 + 
+  8 + 
+  4 + 
+  2
+  =
+  110
+  $.
+\end{solution}
+
+  
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Write the octal number $(2025)_8$ in decimal notation.
+\end{subproblem}
+
+\begin{solution}
+  We have
+ $(2025)_8
+ =
+ 2 \cdot 8^3 + 
+ 0 \cdot 8^2 + 
+ 2 \cdot 8^1 + 
+ 5 \cdot 8^0
+ =
+ 2 \cdot 512 + 
+ 2 \cdot 8 +
+ 5
+ = 
+ 1045
+ $.
+\end{solution}
+
+\end{problem}
+
+
+%%% 
+%%% IDMA EXAM 2025 PROBLEM 2 
+%%% GCD problem
+%%%
+
+\begin{problem}
+  (50 p)
+% 20 p for easy problem
+% 30 p for harder problem
+%
+%%% VERY EXPLICIT STATEMENT
+%     Run the Euclidean algorithm on the numbers
+%     $m$ and~$n$ below to find
+%     $d = \gcd (m, n)$, 
+%   %     showing all  steps in the execution,
+%     showing all recursive calls,
+%     and then express~$d$ as a linear combination of $m$ and~$n$.
+%%%     LESS EXPLICIT STATEMENT
+  Use the algorithm we have learned for determining
+  $d = \gcd (m, n)$ for the numbers below,
+  showing details of all function calls made, 
+  and then express~$d$ as a linear combination of $m$ and~$n$.
+  
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  $m = 38$ and $n=14$.
+\end{subproblem}
+
+\begin{solution}
+  We use the Euclidean algorithm, which is based on the observation
+  that
+  $
+  \gcd (m, n) 
+  =
+  \gcd (n, m \bmod n) 
+  $.
+  
+  For
+  $m = 38$
+  and
+  $n = 14$
+  we obtain
+  \begin{align*}   
+    38 &= 2 \cdot 14 + 10 \\
+    14 &= 1 \cdot 10 +  4 \\
+    10 &= 2 \cdot  4 +  2 \\
+    4  &= 2 \cdot  2 +  0
+  \end{align*}
+  from which we see that 
+  $
+  \gcd (38, 14) = 2
+  $.
+  By considering the above equalities in reverse order we
+  can write the greatest common divisor
+  \begin{align*}
+    2 &=
+        10 -  2 \cdot 4
+    \\
+      &=
+        10 -  2 \cdot ( 14 - 1 \cdot 10 )
+    \\
+      &=
+        3 \cdot 10 -  2 \cdot  14 
+    \\
+      &=
+        3 \cdot
+        ( 38 - 2 \cdot 14  )
+        -  2 \cdot  14 
+    \\
+      &=
+        3 \cdot 38
+        -  8 \cdot  14
+  \end{align*}
+  as a linear combination of
+  $38$ and~$14$ as desired.
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(30 p)}
+  {\ignorespaces}
+  $m = 117$ and $n=69$.
+\end{subproblem}
+
+\begin{solution}
+  For
+  $m = 117$
+  and
+  $n = 69$
+  we obtain
+  \begin{align*}   
+    117 &= 1 \cdot 69 + 48 \\
+    69  &= 1 \cdot 48 + 21 \\
+    48  &= 2 \cdot 21 +  6 \\
+    21  &= 3 \cdot 6 +  3 \\   
+    6  &= 2 \cdot  3 +  0
+  \end{align*}
+  from which we see that 
+  $
+  \gcd (117, 69) = 3
+  $.
+  Processing these equalities in reverse order we obtain
+  \begin{align*}
+     3 &= 
+         21 - 3 \cdot  6          
+    \\
+       &=
+         21 - 3 \cdot ( 48 - 2 \cdot 21 )
+    \\
+       &=
+         7 \cdot 21 - 3 \cdot  48    
+    \\
+       &=
+         7 \cdot ( 69 - 1 \cdot 48 )
+         - 3 \cdot  48
+    \\
+       &=
+         7 \cdot  69 - 10 \cdot  48
+    \\   
+       &=
+         7 \cdot  69 - 10 \cdot (117 - 1 \cdot 69 )         
+    \\   
+       &=
+         17 \cdot  69 - 10 \cdot 117 
+  \end{align*}
+  as a linear combination of
+  $117$ and~$69$ as desired.
+\end{solution}
+
+
+\end{problem}
+
+
+
+
+
+%%% 
+%%% NEW PROBLEM
+%%%
+%%% a: 30, b: 10, c: 20
+%%%
+
+\begin{problem}%
+  \label{problem:code-snippet-1}%
+  (60 p)
+  In the following snippet of code \verb+A+ is an array
+  indexed from~$1$ to~$n$ that
+%     is meant to contain 
+  contains numbers.
+\begin{verbatim}
+j := 1
+while (j <= n) {
+    A[j] := 0
+    for i := j downto 1 {
+        A[j] := A[j] + i * i
+    }
+    j := j + 1
+}
+\end{verbatim}
+
+  \begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+  Explain in plain language what the algorithm above does.
+  In particular, what are the numbers that are computed and
+  stored in the array \verb+A+?
+\end{subproblem}
+
+\begin{solution}
+
+  UPDATE
+
+  A[j] will contain the sum of the j first squares
+
+  
+  At termination we will have
+  $
+  B[i] = \prod_{j=1}^{i} A[i]
+  $,
+  i.e., 
+  $B[i]$ is the product of all entries
+  $A[1], \, A[2], \, \ldots, \, A[i-1], \, A[i]$.
+\end{solution}
+
+
+\begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(10 p)}
+    {\ignorespaces}
+  Provide an asymptotic analysis of the running time
+  as a function of the array size~$n$.
+  (That is, state how the worst-case running time scales with~$n$,
+  focusing only on the highest-order term, and ignoring the constant
+  factor in front of this term.)
+\end{subproblem}
+
+\begin{solution}
+  The algorithm has two nested for loops. 
+  The outer loop runs for $i$ from $1$ to $n$
+  and the inner loop runs from $1$ to $i$.
+  Inside the innermost loop a constant number of operations are performed.
+  The asymptotic time complexity is therefore determined by the total
+  number of times the inner loop is executed.
+
+  It follows from what is written above that the inner loop will run a
+  total of
+  $
+  \sum_{i=1}^{n} i
+  $
+  times, which is $\Bigtheta{n^2}$.
+  If we want to prove this from first principles, then we can observe that
+  $
+  \sum_{i=1}^{n} i
+  \leq
+  \sum_{i=1}^{n} n
+  = n^2
+  $,
+  which shows that the running time is $\Bigoh{n^2}$, 
+  and also that 
+  $
+  \sum_{i=1}^{n} i
+  \geq
+  \sum_{i=n/2}^{n} n/2
+  = n^2 / 4
+  $,
+  which shows that the running time is $\Bigomega{n^2}$.
+
+  In general, for this introductory course we do not care so much
+  about the distinction between big-oh and big-theta, so correct
+  answers with only big-oh bounds will also be acceptable unless
+  stated otherwise (and as long as these bounds are tight).
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Can you improve the code to run faster while retaining the same
+  functionality?
+%     Improve the code to run faster while retaining the same
+%     functionality.
+  How much faster can you get the algorithm to run?
+  Analyse the time complexity of your new algorithm.
+  Can you prove that it is asymptotically optimal?
+  (That is, that no algorithm solving this problem can run faster
+  except possibly for a constant factor in the highest-order term or
+  except for improvements in lower-order terms.)
+\end{subproblem}
+
+\begin{solution}
+  From our analysis of the algorithm above, it should be clear that
+  the snippet of code below has the same functionality.
+\begin{verbatim}
+B[1] := A[1]
+for i := 2 upto n {
+    B[i] := A[i] * B[i-1]
+}
+\end{verbatim}  
+It goes through the array only once, thus having a running time of
+$\bigoh{n}$.
+Since we need to store $n$ values in the array~$B$,
+it is clear that linear time is optimal. 
+\end{solution}
+
+\end{problem}
+
+
+
+%%% 
+%%% NEW PROBLEM
+%%%
+%%% a: 40, b: 10, c: 20
+%%%
+
+\begin{problem}%
+  \label{problem:code-snippet-1}%
+  (70 p)
+  In the following snippet of code \verb+A+ and \verb+B+ are arrays
+  indexed from~$1$ to~$n$ that contain numbers.
+\begin{verbatim}
+j    := n
+good := TRUE
+while (j >= 1 and good) {
+    s := A[j]
+    for i := j - 1 downto 1 {
+        s := s + A[i]
+    }
+    s := s / j
+    if (s > B[j]) {
+        good := FALSE
+    }
+    else
+    {
+        j := j - 1
+    }
+}
+return good
+\end{verbatim}
+
+  \begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+  Explain in plain language what the algorithm above does.
+  In particular, when does the algorithm return
+  \verb+TRUE+
+  or
+  \verb+FALSE+
+  and why?
+\end{subproblem}
+
+\begin{solution}
+
+  UPDATE
+
+  Algorithm checks if the average of the j first numbers in A
+  is less-equal B[j]
+
+
+  
+  At termination we will have
+  $
+  B[i] = \prod_{j=1}^{i} A[i]
+  $,
+  i.e., 
+  $B[i]$ is the product of all entries
+  $A[1], \, A[2], \, \ldots, \, A[i-1], \, A[i]$.
+\end{solution}
+
+
+\begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(10 p)}
+    {\ignorespaces}
+  Provide an asymptotic analysis of the running time
+  as a function of the array size~$n$.
+  (That is, state how the worst-case running time scales with~$n$,
+  focusing only on the highest-order term, and ignoring the constant
+  factor in front of this term.)
+\end{subproblem}
+
+\begin{solution}
+  The algorithm has two nested for loops. 
+  The outer loop runs for $i$ from $1$ to $n$
+  and the inner loop runs from $1$ to $i$.
+  Inside the innermost loop a constant number of operations are performed.
+  The asymptotic time complexity is therefore determined by the total
+  number of times the inner loop is executed.
+
+  It follows from what is written above that the inner loop will run a
+  total of
+  $
+  \sum_{i=1}^{n} i
+  $
+  times, which is $\Bigtheta{n^2}$.
+  If we want to prove this from first principles, then we can observe that
+  $
+  \sum_{i=1}^{n} i
+  \leq
+  \sum_{i=1}^{n} n
+  = n^2
+  $,
+  which shows that the running time is $\Bigoh{n^2}$, 
+  and also that 
+  $
+  \sum_{i=1}^{n} i
+  \geq
+  \sum_{i=n/2}^{n} n/2
+  = n^2 / 4
+  $,
+  which shows that the running time is $\Bigomega{n^2}$.
+
+  In general, for this introductory course we do not care so much
+  about the distinction between big-oh and big-theta, so correct
+  answers with only big-oh bounds will also be acceptable unless
+  stated otherwise (and as long as these bounds are tight).
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Can you improve the code to run faster while retaining the same
+  functionality?
+%     Improve the code to run faster while retaining the same
+%     functionality.
+  How much faster can you get the algorithm to run?
+  Analyse the time complexity of your new algorithm.
+  Can you prove that it is asymptotically optimal?
+  (That is, that no algorithm solving this problem can run faster
+  except possibly for a constant factor in the highest-order term or
+  except for improvements in lower-order terms.)
+\end{subproblem}
+
+\begin{solution}
+  From our analysis of the algorithm above, it should be clear that
+  the snippet of code below has the same functionality.
+\begin{verbatim}
+B[1] := A[1]
+for i := 2 upto n {
+    B[i] := A[i] * B[i-1]
+}
+\end{verbatim}  
+It goes through the array only once, thus having a running time of
+$\bigoh{n}$.
+Since we need to store $n$ values in the array~$B$,
+it is clear that linear time is optimal. 
+\end{solution}
+
+\end{problem}
+
+
+
+
+\end{document}
+
+
