@@ -1,0 +1,45 @@
+
+Holdsætning på Introduktion til diskret matematik og algoritmer (IDMA) NDAB23002U
+
+Dear Karina, Undervisning Frb+, and DVIP-NØRRE,
+
+I am writing this message with all of you in copy to try to help sort out some confusion regarding the division into groups for Introduktion til diskret matematik og algoritmer (IDMA) NDAB23002U. I had some correspondence with you separately before Christmas (and have then unfortunately been away travelling essentially all of January), and since there seems to be a bit of conflicting information from different sources it would be good if we could coordinate on how teaching resources for the IDMA course should be organized.
+
+My understanding is that the IDMA course has grown substantially this year, with a new study program in computational biology(?) also taking the course, and it is not clear to me whether the teaching resources are keeping up with this.
+
+From what I can understand right now, we have 9 groups (hold) on Absalon, but only 7 teaching assistants. Back in December I approved 6 regular student TAs and I also have 2 PhD student TAs, but it seems now that one of the regular student teaching assistants has disappeared along the way.
+
+In view of this, I have the following questions:
+
+(1) What is the current total number of registered students, and what would be the suggested number of study groups given this number of students? If we will have only 8 or even 7 study groups, then it would be very good to adjust the group partition on Absalon to reflect this.
+
+(2) What is the appropriate number of TAs in view of the number of registered students? Right now, my TA resources are:
+
+PhD students:
+- Florestan Brunck <flbr@di.ku.dk>
+- Theo Fabris <thfa@di.ku.dk>
+
+Regular students:
+- Anton Friis <Antonwfriis@gmail.com>
+- Christoffer Kassøe Juhl <lfx358@di.ku.dk>
+- Cornelius Juul Mogensen <rtf466@di.ku.dk>
+- Johanne Tang Reuss <jtre@di.ku.dk>
+- Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
+
+As far as I understand we would need at least one TA more, or possibly even two? Would it be possible to do anything about this?
+
+In previous correspondence, a former TA Monika Haubro <moha@math.ku.dk> has contacted me and asked if she could help out on the course part-time in any way. Would it be an option to contact her?
+
+(3) I would also like to understand for how many hours the TAs are getting. IDMA is a very teaching-heavy course. In addition to manning the exercise session, the TAs have also been providing detailed feedback on 4 rounds on hand-in problem sets, with resubmissions and a second round of feedback and have participated in study cafes, and they also spend 1-2 full working days after the course has ended on grading the exams.
+
+I have understood from my colleagues in the AC Section that as part of the recent changes, the TAs this year might not get paid for 135 hours as before, but only 100 hours. This seems quite unfortunate, as the IDMA TAs have been working very hard for their salary before, and since their workload this year seems to be increasing rather than decreasing (in view of the large number of students).
+
+So is there any way to make sure that the TAs get paid at the same level as before, since their workload actually seems to be increasing? Or should we adjust their workload by decreasing the number of exercise class hours offered?
+
+Venlig hilsen
+Jakob Nordström
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se

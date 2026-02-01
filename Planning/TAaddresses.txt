@@ -26,7 +26,6 @@ Johanne Tang Reuss <jtre@di.ku.dk>
 Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
 
 
-
 ********** TA KU USERNAMES **********
 
 To add regular students to Absalon as TAs, their address should have suffix @alumni.ku.dk
@@ -42,7 +41,6 @@ Johannes Tang Reuss <jtre@di.ku.dk>
 Örn Steinar Sigurbjörnsson <mlk577@alumni.ku.dk>
 
 
-
 ********** ADDRESSES TO SHARE FOR GOOGLE DOCUMENTS **********
 
 antonwfriis@gmail.com
@@ -50,7 +48,7 @@ johannestangreuss@gmail.com
 theo.fabris@gmail.com
 florestan.brunck@gmail.com
 cony.juul@gmail.com
+oddisteinar@gmail.com
 
-Christoffer Kassøe Juhl
-Örn Steinar Sigurbjörnsson
+Christoffer Kassøe Juhl christoffer@kassoejuhl.dk, or alternatively kassoejuhl@gmail.com
 

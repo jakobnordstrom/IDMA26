@@ -1,10 +1,6 @@
 ABSALON SETTINGS FOR IDMA
 =========================
 
-
-***** ERASE THIS FILE *****
-
-
 Right menu --> Choose home page and select "Course modules"
 
 Left menu --> Settings --> Navigation and disable everything except
