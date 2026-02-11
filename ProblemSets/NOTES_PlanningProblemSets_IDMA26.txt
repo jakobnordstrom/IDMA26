@@ -5,56 +5,54 @@ In 2025 I just recycled the problem sets for 2022.
 
 Sources of problems for 2026:
 (a) Exam problems in 2025
-(b) DMFS 2023 problem set 4 problem 3 (really hard)
-(c) Old note: DMFS 2023 pset 5:3 would be an option, but maybe we will save this for next year?
+
 
 
 PROBLEM SET 1
+1. Representation of numbers
+2. Euclidean algorithm
+3. Simple pseudocode
+4. More complicated pseudocode
 
-- Euclidean algorithm
-- Representation of numbers
-- Pseudocode
+PROBLEM SET 2
+1. Simple induction proofs
+2. Propositional logic
+3. Buggy induction proofs
+*** Add problem on "mergerunssort" with example & analysis? ***
 
+PROBLEM SET 3
+1. Relations: identifying different types of relations
+2. Tricky induction proof about Fibonacci numbers
+3. Combinatorics problem (DNRF centre application)
+4. Matrix multiplication and eigenvalues
 
+PROBLEM SET 4
+1. Shortest path
+2. Graph traversals: identify different orders
+*** Should I add one more problem? ***
 
+PLANNING FOR THE EXAM 2026
+==========================
 
-CANDIDATES TO SAVE FOR THE EXAM 2025
-====================================
+Pseudocode? (Didn't have this last year)
 
-Which of these did I already use for the IDMA exam in 2024?
+Some induction problem
 
-1. PSEUDOCODE
+Merge sort problem
+This was a long time ago now
 
-Or no?
+Exactly the same kind of relations problem?!
+Or do something that also involves closure?
 
-Maybe:
+Propositional logic
+Exactly the same kind of patching problem?
 
-1. Run Euclidean algorithm on two suitably large numbers M and N. Find d = GCD(M, N) and write it as a linear combination of M and N.
-Fibonacci numbers are good, rescaled along the way to get more interesting calculations
+Combinatorics: Something?
 
-M = 117
-N = 69
+Graphs: Identify traversals
+Maybe exactly the same type of problem as last year?
 
-2. Representation of numbers
-- Write the binary number 110 in decimal notation.
-- Write the decimal number 110 in binary notation.
-- Suppose that 2025 is an octal number. Write it in decimal notation.
-
-3. SORTING
-
-We had a heap sort problem in 2024
-
-4. RELATIONS
-
-In 2024 we had the relation < over 6 elements
-
-5. GRAPHS
-
-In 2024 we had:
-- a scheduling problem
-- a graph isomorphism problem
-
-Maybe strongly connected components
+Graphs: Maybe strongly connected components
 
 - Start with directed graph and view graph as edge relation.
 - Maybe even give small graph on 6 or 7 vertices as example
@@ -66,30 +64,37 @@ Maybe strongly connected components
 But this is probably very hard...
 
 
-6. PROPOSITIONAL LOGIC
-Ask students to patch formulas in simplest way possible to get tautologies?
-Something more creative than just producing truth tables...
+PLANNING FOR THE EXAM 2025
+==========================
 
-7. A COUPLE OF SIMPLE INDUCTION PROBLEMS
+1. Representation of numbers
+- Write the binary number 110 in decimal notation.
+- Write the decimal number 110 in binary notation.
+- Suppose that 2025 is an octal number. Write it in decimal notation.
 
-(Not the ones in the 2024 exam)
-Some induction problem from Vaderlind?
+2. Run Euclidean algorithm on two suitably large numbers M and N. Find d = GCD(M, N) and write it as a linear combination of M and N.
+Fibonacci numbers are good, rescaled along the way to get more interesting calculations
 
-Recall that the Fibonacci numbers are defined as
+3. INDUCTION PROOFS
 
-F_1 = F_2 = 1 and
-F_n = F_{n - 1} +  F_{n - 2} for n >= 3.
-Prove that the Fibonacci numbers F_{n+1} and F_n are relatively prime, and that for n >= 2 the
-Euclidean algorithm for F_{n+1} and F_n takes n-1 steps to determine this fact (i.e., it reaches remainder 0 after exactly n-1 steps)
+Some induction problem from Vaderlind? Ask ChatGPT?
 
+4. RELATIONS
 
+Identify different properties of relations
 
-Prove that for all n >=1 the number 4^n + 5 is divisible by 3
+5. PROPOSITIONAL LOGIC
 
-Define a_1 = 1, a_n = 2 a_{n-1} + 1. Prove that for all n a_n = 2^n - 1.
+Ask students to patch formulas in simplest way possible to get tautologies
 
+6. TRICKY INDUCTION PROBLEM
 
+7. COMBINATORICS
 
-8. COMBINATORICS
+Ways of organizing DNRF application aspects
+
+8. SHORTEST PATH
+
+9. IDENTIFY TRAVERSALS
 
 

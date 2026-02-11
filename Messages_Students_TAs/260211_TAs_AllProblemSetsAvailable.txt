@@ -1,0 +1,19 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+Today's exercise class + releasing all restrictions on usage of old problem sets
+
+Hi TAs,
+
+First quickly regarding today's exercise class: The students have now started seeing induction proofs. For now,  we are emphasizing the intuition how we build induction proofs and why this makes sense, rather than using magic words such as "induction hypothesis". A more formal treatment will follow, though.
+
+Today, we will also see the Euclidean algorithm and the proof that the GCD of a and b is the smallest positive linear combination of a and b. This is perhaps the first serious proof we do, and my impression is that many students get confused. It might be good for you to be prepared to address questions about this, and also to do some simple induction proofs. The notes for the lectures this week have some handwritten examples, and it might be an idea to go over these examples with the students. I have not done all of them (for instance, I did not have time for geometric sums.)
+
+Regarding the problem sets, as you will have seen on Absalon I have announced that all problem sets have been posted now.
+
+I might add one problem each to psets 2 and 4, but if so I will make up new problems.
+
+This means that you can freely use any material in the old problem sets for instructional purposes.
+
+Pretty high on my agenda is to produce solutions and grading guidelines for pset 1 --- unless my planning crashes completely, this is what we will talk about in the next TA meeting on Friday (so that you can get started with your grading as soon as the students submit on Monday).
+
+Jakob

@@ -1,0 +1,459 @@
+\documentclass{jn-pset}
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% To give a hint to a problem (after having completed the problem statement),
+% use the following LaTeX code for formatting consistency:
+%
+%    \smallskip
+%    \noindent
+%    \emph{Hint:}
+%    Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+\newcommand{\psetno}{2}
+\newcommand{\duedate}{Wednesday February 25 at 12:59 CET}
+
+\newcommand{\thresholdforpass}{$120$~points\xspace}
+
+\input{course-macros.tex}
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+\usepackage{draftwatermark}
+% \SetWatermarkFontSize{20 cm}
+\SetWatermarkScale{5}
+
+% For METAPOST logo as \hologo{METAPOST}
+%   \usepackage{hologo}
+
+% For TikZ
+%   \input{Figures/tikz-packages.tex}
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: Problem Set \psetno}
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Pset_GeneralInstructions}
+
+
+%%%
+%%% IDMA 2026 EXAM: PROBLEM 3
+%%% Mathematical induction problem
+%%%
+\begin{problem}
+  (60 p)
+  Provide formal proofs of the following claims
+  using proof techniques that we have learned during the course.
+
+
+  \begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Define
+    $a_1 = 1$
+    and
+    $a_n = 2 a_{n-1} + 1$
+    for
+    $n \geq 2$.
+    Prove that for all positive integers
+    $n \in \Nplus$
+    it holds that 
+    $a_n = 2^n - 1$.
+  \end{subproblem}
+
+\begin{solution}
+We prove this equality by induction over~$n$.
+
+\begin{description}
+\item[\emph{Base case ($n=1$):}]
+  We have
+  $a_1 = 1 = 2^1 - 1$
+  by definition.
+
+\item[\emph{Induction step:}]
+  Assume that the equality holds for $n-1$ and consider $n$.
+  We have
+  \begin{align*}
+    a_n &= 2 a_{n-1} + 1
+    \\                           
+    &= 2 \cdot (2 ^{n-1} - 1) + 1
+    &&[\text{by the induction hypothesis}]
+    \\
+    &= 2 ^{n} - 2 + 1    
+    \\
+    &= 2 ^{n} - 1
+  \end{align*}
+  which is the desired equality.
+\end{description}
+The claim now follows by the induction principle.  
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(30 p)}
+  {\ignorespaces}
+  Prove that for all non-negative integers
+  $n \in \N$
+  it holds that
+  $
+  3 \mid 4^n + 5 
+  $.
+\end{subproblem}
+
+\begin{solution}
+%     This is very similar to a problem we did in class, 
+%     and we will solve this one in the same way by arguing by
+  We prove this by 
+  induction over~$n$.
+  \begin{description}
+  \item[\emph{Base case ($n=0$):}]
+    For $n=0$ we have that
+    $
+    4^0 + 5 
+    =
+    6
+    $
+    is divisible by~$3$.
+    
+  \item[\emph{Induction step:}]
+    Suppose that
+    $
+    3 \mid 4^n + 5
+    $,
+    which is the same  as saying that
+    $
+    4^n + 5 = 3 \cdot M
+    $
+    for some integer~$M$.
+    Fixing this $M$, and
+    working on the expression \mbox{for $n+1$}, we get
+    \begin{align*}
+      4^{n+1} + 5
+      &= 
+        3 \cdot 4^{n}
+        + 
+        4^{n} + 5
+      &&[\text{since $4^{n+1} = (3 + 1) \cdot 4^n$}]
+      \\
+      &= 
+        3 \cdot 4^{n}
+        + 
+        3 \cdot M
+      &&[\text{by the induction hypothesis}]
+      \\
+      &=
+        3 \cdot ( 4^{n} + M )
+    \end{align*}
+    which shows that this expression is divisible by~$3$.
+  \end{description}
+  The claim follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+%%%
+%%% IDMA EXAM 2026: PROBLEM 5
+%%% PROPOSITIONAL LOGIC
+%%%
+
+\begin{problem}%
+  \label{problem:logic}%
+  (60 p)  
+  For each of the propositional logic formulas below,
+  determine whether it is a tautology or not.
+  If the formula is not a tautology, show how to
+  add a single connective to make it into a tautology.
+  Please make sure to justify your answers
+  (e.g., by presenting truth tables, or by using rules for rewriting logic formulas
+  that we have learned in class).
+
+%%% TAUTOLOGY  
+  \begin{subproblem}%
+    \label{problem:formula-1}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \lnot \bigl(
+    ( p \limpl q) \lor r
+    \bigr)
+    \limpl
+    \bigl(
+    (\lnot q \land \lnot r) \land p
+    \bigr)
+    $
+  \end{subproblem}
+
+\begin{solution}
+  This formula is a tautology, i.e., it is always true.
+  To see this, note first that we know that
+  \begin{equation}
+    \label{eq:impl}
+    p \limpl q
+    \ \equiv \
+    \lnot p \lor q
+  \end{equation}
+  since the only way the implication
+  $p \limpl q$
+  can be false is that $p$ is true and $q$ is false,
+  and this is one of the basic equivalences we have learned in the course.
+  Furthermore, from De Morgan's laws it is easy to derive that
+  \begin{equation}
+    \label{eq:de-morgan}
+    \lnot ( a \lor b \lor c)
+    \ \equiv \
+    \lnot a \land \lnot b \land \lnot c
+  \end{equation}
+  (i.e., the only way a disjunction can be false is that all its
+  disjuncts are false).
+  
+  By combining
+  \eqref{eq:impl}
+  and~\eqref{eq:de-morgan},
+  and using that conjunction is commutative, we see that the premise
+  $
+  \lnot \bigl(
+  ( p \limpl q) \lor r
+  \bigr)
+  $
+  is in fact equivalent to the conclusion
+  $
+  (\lnot q \land \lnot r) \land p
+  $,
+  and so the implication
+  in Problem~\ref{problem:formula-1}
+  will always evaluate to true.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \bigl(
+    (p \land q) \limpl r
+    \bigr)
+    \lequiv
+    \bigl(
+    (q \lor r) \lor \lnot p
+%%% This should be    
+%       (\lnot q \lor r) \lor \lnot p
+    \bigr)
+    $    
+  \end{subproblem}
+
+\begin{solution}
+  This is not a tautology.
+  If we set $p$ and~$q$ to true
+  but $r$ to false, we get that
+  $
+  (p \land q) \limpl r
+  $
+  evaluates to  false but
+  $
+  (q \lor r) \lor \lnot p
+%%% This should be    
+%       (\lnot q \lor r) \lor \lnot p
+  $
+  evaluates to true, and so the whole formula is false.
+
+  If we change $q$ on the right-hand side to $\lnot q$,
+  we obtain the formula
+  \begin{equation}
+    \label{eq:patched}
+    \bigl(
+    (p \land q) \limpl r
+    \bigr)
+    \lequiv
+    \bigl(
+    (\lnot q \lor r) \lor \lnot p
+    \bigr)
+    \ ,
+  \end{equation}    
+  which is a tautology. To see this, we can rewrite the left-hand side
+  of~\eqref{eq:patched}
+  as
+  \begin{subequations}
+  \begin{align}
+    (p \land q) \limpl r
+    \ &\equiv \
+        \lnot (p \land q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot p \lor \lnot q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot q \lor r) \lor \lnot p
+  \end{align}
+  \end{subequations}
+  by using
+  the property~\eqref{eq:impl} of implication,
+  De Morgan's laws,
+  and commutativity of disjunction.
+  This show that the left-hand and right-hand sides of
+  of the formula~\eqref{eq:patched} are equivalent,
+  and so the formula will always evaluate to true.
+\end{solution}
+
+\end{problem}
+
+
+%%%
+%%% DMFS 2023 PROBLEM SET 5: IDMA 2026 EXAM: PROBLEM 3
+%%% Buggy induction proofs
+%%%
+
+\begin{problem} (60 p)
+  When constructing this problem set, Jakob ran into some very unfortunate problems.
+  When he wanted to add a couple of more examples illustrating
+  the power of inductive proofs, the proofs
+  turned out to be a little bit too powerful.
+  Specifically, Jakob was able to use mathematical induction to
+  show
+  \begin{enumerate}
+  \item
+    that all swans have the same colour (presumably white, so that there
+    are no black swans after all), and
+    
+  \item
+    that all positive integers are in fact equal.
+  \end{enumerate}
+  %
+  Both of these claims are fairly disturbing from a mathematical point
+  of view.
+  Please help Jakob by pointing out clearly what goes wrong in his
+  induction proofs below.
+
+  \begin{subproblem}
+    \textbf{Theorem.} All swans have the same colour.
+
+    \smallskip
+    \noindent
+    \emph{Proof.} We prove by induction over~$n$
+    that any set of~$n$ swans have the same colour.
+    
+    For the base case, if we have a set of $n=1$ swan, then this swan
+    vacuously has the same colour as itself.
+
+    For the induction step, assume as our induction hypothesis  that
+    all sets of $n$~swans have the same colour, and consider a set of
+    $n+1$~swans. Fix some swan~$S_1$ in this set. If we remove~$S_1$,
+    then we have $n$~swans left, and by the induction hypothesis they
+    all have the same colour. Let~$C$ be this colour.
+
+    Now consider another swan~$S_2$ in the set. If we remove~$S_2$
+    from our set of $n+1$~swans instead of $S_1$, then we again have
+    $n$~swans left, and they all have the same colour by the induction
+    hypothesis. Since $S_1$ is one of the swans in this set, it must
+    have the same colour~$C$ as all the others. Hence, all $n+1$~swans
+    have the same colour.
+
+    It follows by the principle of mathematical induction that any set
+    of $n$~swans must always have the same colour.    
+  \end{subproblem}
+
+\begin{solution}
+  The base case is correct.
+  
+  The induction step is also correct for all $n \geq 3$.
+  It is true that if I have a set of $n \geq 3$~objects with the property
+  that any  subset of $n-1$ objects must all have the same colour,
+  then the only way this can happen is that all $n$~objects have the
+  same colour. 
+
+  
+  However, for $n=2$ there is a gap in the argument, and this is why
+  we can ``prove'' a false theorem. If we remove swan~$S_2$ from the
+  set, then there is only swan~$S_1$ left. This swan~$S_1$ could have a
+  different colour, contrary to what the induction step argument
+  claims.
+
+  
+  
+\end{solution}
+  
+  \begin{subproblem}
+    \textbf{Theorem.} All positive integers are equal.
+    
+    \smallskip
+    \noindent
+    \emph{Proof.} By induction over~$n$.
+    
+    For the base case, the positive integer~$1$ is equal to itself.
+
+    For the induction step, assume as our induction hypothesis that
+    $n - 1 = n$.
+    Adding~$1$ to both sides of this equality, we derive that
+    $n = n + 1$.
+
+    It follows from this by the principle of mathematical induction
+    that for all integers~$n$ the equality $n = n + 1$ holds. But then
+    by transitivity we obtain that all integers are equal, and the
+    claim in the theorem statement has thus been established.    
+  \end{subproblem}
+  
+\begin{solution}
+  The induction step in this proof is just fine, but the base case is
+  wrong.
+
+  Since the induction hypothesis is that
+  $n - 1 = n$,
+  for the base case we would need to prove that
+  $0=1$
+  or
+  $1=2$
+  or something.
+  But in the base case in the ``proof'' above, we are not
+  proving a base case of the form $n-1=n$, but rather $n=n$.
+  This is of course true, but this does not match what we need when we
+  want to use the base case as induction hypothesis for our first
+  induction step.
+\end{solution}
+  
+  
+\end{problem}
+
+
+
+\end{document}
+
+

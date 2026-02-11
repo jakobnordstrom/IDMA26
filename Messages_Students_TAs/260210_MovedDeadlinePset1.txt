@@ -1,0 +1,14 @@
+
+Deadline for problem set 1 moved to Monday February 16
+
+Hi all,
+
+As announced in class, the deadline for problem set 1 has been moved to Monday February 16.
+
+Please note that we do not expect the deadlines for the other problem sets to shift --- this is a one-off event, just because we have only covered a limited amount of material so far, and some of the problems I wanted you to work on relate to topics that we will cover only on Wednesday. Also, note that in the worst case, we will not have time to talk in detail about how to represent integers in different bases this week (figuring out things like that 13 = (1101)_2), but this material is straightforward enough that you will be asked to read up on it on your own (or with the assistance of your eminent TAs) if needed.
+
+As per the instructions on Absalon, you are expected to type up your problem set nicely. The strongly recommended way of doing this is to use LaTeX, which is the de facto typesetting standard in computer science and mathematics.
+
+In the Absalon "Course information and material" module on the page "Information about LaTeX resources for problem sets" (https://absalon.ku.dk/courses/89165/pages/information-about-latex-resources-for-problem-sets?module_item_id=2988626) you find a generous helping of LaTeX-related information. The intention was also to provide a possible problem set template, but apparently that link has gone bad --- my apologies. I believe that the new link https://www.overleaf.com/read/cqdpxkgdkrdw#1f0569 should work, but please let me know if this is not the case. Note that this is *not* an official template in any way, and you can format your problem sets in many different ways, but the hope is that what is presented on Absalon will be helpful for you to get started.
+
+Jakob

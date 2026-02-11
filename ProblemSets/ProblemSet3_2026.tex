@@ -1,0 +1,1020 @@
+\documentclass{jn-pset}
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% To give a hint to a problem (after having completed the problem statement),
+% use the following LaTeX code for formatting consistency:
+%
+%    \smallskip
+%    \noindent
+%    \emph{Hint:}
+%    Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+
+\newcommand{\psetno}{3}
+\newcommand{\duedate}{Wednesday March 11 at 12:59 CET}
+
+\newcommand{\thresholdforpass}{$120$~points\xspace}
+
+% Compact lists
+\usepackage{paralist}
+
+\input{course-macros.tex}
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
+
+% For METAPOST logo as \hologo{METAPOST}
+%   \usepackage{hologo}
+
+% For TikZ
+%   \input{Figures/tikz-packages.tex}
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: Problem Set \psetno}
+
+\begin{document}
+
+\maketitle
+
+\input{IDMA_Pset_GeneralInstructions}
+
+
+%%%
+%%% IDMA EXAM 2026: PROBLEM 4
+%%% RELATIONS
+%%%
+
+\begin{problem}%
+  \label{problem:relations}%
+  (90 p)  
+  Let
+  $A = \set{1, 2, 3, 4}$
+  and consider the following binary relations on $A$:
+  \begin{align*}
+    R &= \set{ (2,1), (3,1), (3,2), (4,1), (4,2), (4,3) } \\
+    S &= \set{ (1,1), (2,2), (3,3), (4,4) } \\
+    T &= \set{ (1,1), (1, 4), (2,2), (2,3), (3,2), (3,3), (4,1), (4,4) }
+  \end{align*}
+
+%%% 5 points per correctly identified property
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(60 p)}
+    {\ignorespaces}
+    For each of the relations above, determine whether it is
+    \begin{compactenum}
+    \item
+      reflexive,      
+    \item
+      symmetric,
+    \item
+      antisymmetric,
+    \item
+      transitive.
+    \end{compactenum}
+    Please make sure to explain, briefly but clearly, what these properties
+    mean and why they are satisfied for a relation when
+    they are. For any relation that
+    fails to satisfy a property, make sure to provide a specific
+    counterexample.
+
+  \end{subproblem}
+
+  \begin{solution}
+    Recall that a relation $R$ is:
+    \begin{itemize}
+    \item
+      \emph{reflexive} if for all $x$ it holds that $(x,x) \in R$;
+      
+    \item
+      \emph{symmetric} if whenever
+      $(x,y) \in R$
+      it also holds that
+      $(y,x) \in R$;
+
+    \item
+      \emph{anti-symmetric} if 
+      $(x,y) \in R$
+      and
+      $(y,x) \in R$ implies
+      $x=y$;
+      
+    \item
+      \emph{transitive} if whenever
+      $(x,y) \in R$
+      and
+      $(y,z) \in R$
+      it also holds that
+      $(x,z) \in R$.      
+    \end{itemize}
+
+    The relation~$R$ specified in the problem statement
+    is anti-symmetric
+    (simply since there is no pair $(x, y)$
+    such that
+    $(x, y) \in R$
+    and
+    $(y, x) \in R$)
+    and transitive
+    (which can be verified by case analysis, or by observing that
+    $R$ is the greater-than relation).
+    It is not reflexive since, e.g., 
+    $(1, 1) \notin R$,
+    and it is not symmetric since, e.g.,
+    $(2, 1) \in R$
+    but
+    $(1, 2) \notin R$.
+
+    The relation~$S$ is the identity relation,
+    which vacuously satisfies all the properties listed.
+
+    The relation~$T$ can be verified to be 
+    reflexive, symmetric, and transitive.
+    It is not anti-symmetric since
+    $(2,3) \in T$
+    and
+    $(3,2) \in T$
+    but
+    $2 \neq 3$.    
+\end{solution}
+
+%%% 10 points per correctly identified relation
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Which of the relations above, if any, are equivalence relations or
+    partial orders? Please make sure to justify your answers.
+  \end{subproblem}
+
+\begin{solution}
+  An \emph{equivalence relation} is a relation that is
+  reflexive, symmetric, and transitive.
+  The relations $S$ and~$T$ satisfy these conditions
+  as argued above.
+
+  A \emph{partial order}
+  is a reflexive, anti-symmetric, and transitive relation.
+  The identity relation~$S$ is formally speaking also a partial order,
+  since it satisfies all the  required properties
+  (but it is of course a very boring partial order). 
+
+  It might be worth pointing out that
+  the relation~$R$ is \emph{not} a partial order, since it is not reflexive.
+  This is just a special case of the general fact that
+  non-strict order relations define partial orders but strict order relations
+  do not.
+\end{solution}
+\end{problem}
+
+
+
+%%%
+%%% IDMA EXAM 2026: PROBLEM 6
+%%% TRICKY INDUCTION PROBLEM: GCD OF FIBONACCI NUMBERS
+%%%
+
+\begin{problem}%
+  (80 p)
+  Recall that the Fibonacci numbers are defined as
+  \begin{align*}
+    F_1 &= 1 \\
+    F_2 &= 1 \\
+    F_n &= F_{n - 1} +  F_{n - 2} &&\text{for $n \geq 3$.}
+  \end{align*}
+  %
+  Prove that consecutive Fibonacci numbers
+  $F_{n+1}$
+  and
+  $F_{n}$
+  are relatively prime, and show that for  $n \geq 2$
+  the  Euclidean algorithm when run on $F_{n+1}$ and $F_n$
+  makes exactly $n-1$~function calls to determine that this is so
+  (i.e., it reaches remainder~$0$ after exactly $n-1$
+  function calls).
+
+\begin{solution}
+  We prove that two consecutive Fibonacci numbers are relatively
+  prime, i.e., that they have greatest common divisor~$1$, by using
+  the Euclidean algorithm. While doing so, we count the number of
+  function calls, i.e., the number of times the relation
+  $
+  \gcd (m, n) 
+  =
+  \gcd (n, m \bmod n) 
+  $
+  is applied before reaching the trivial base case where $n$
+  divides~$m$
+  and the remainder is~$0$.
+
+  \begin{description}
+  \item[\emph{Base case ($n=2$):}]
+    For
+    $F_3 = 2$
+    and
+    $F_2 = 1$,
+    we clearly have
+    $
+    \gcd ( 2, 1 ) = 1
+    $.
+    If we run the Euclidean algorithm, we get that
+    $
+    F_3 = 2 \cdot F_2 + 0
+    $,
+    and so we reach remainder~$0$ after a single step.
+    
+  \item[\emph{Induction step:}]
+    Suppose that for $n-1$ it holds that
+    $
+    \gcd ( F_{n - 1} , F_{n - 2}) = 1
+    $
+    and that the Euclidean algorithm reaches remainder~$0$ after
+    $(n-1) - 1 = n-2 $ function calls.
+
+    As a first step when computing
+    $
+    \gcd ( F_{n} ,  F_{n - 1})
+    $,
+    the Euclidean algorithm divides
+    $F_{n}$ by  $F_{n - 1}$
+    to compute the remainder.
+    This remainder is~$F_{n-2}$, since by the definition of Fibonacci
+    numbers we have that
+    $F_n = 1 \cdot F_{n - 1} +  F_{n - 2}$,
+    and so the equalities
+    \begin{equation}
+      \gcd ( F_{n} ,  F_{n - 1})
+      =
+      \gcd ( F_{n-1} , F_n \bmod F_{n - 1})
+      =
+      \gcd ( F_{n-1} ,  F_{n - 2})
+    \end{equation}
+    hold.
+    By the induction hypothesis,  the Euclidean algorithm
+    computes
+    $\gcd ( F_{n-1} ,  F_{n - 2}) = 1  $
+    with $n-2$ additional recursive calls. 
+    Hence, we conclude that the Euclidean algorithm will
+    determine that
+    $F_n$ and~$F_{n-1}$
+    are relatively prime after $n-1$ function calls.
+  \end{description}
+  The claim in the problem statement now follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+
+
+%%%
+%%% IDMA EXAM 2026: PROBLEM 7
+%%% COMBINATORICS
+%%%
+
+\begin{problem}%
+  \label{problem:combinatorics}%
+  (90 p)
+  For a few years now the Copenhagen metropolitan area 
+  (including Lund) has had an unusually large number of researchers in 
+  computational complexity theory, and a team of such
+  researchers have decided to submit a joint grant application  to
+  create the
+  \emph{Copenhagen Computational Complexity Centre}
+  focusing on research in this scientific field.
+  Since gender balance is a serious issue in computer science, 
+  a noteworthy aspect of the team of co-applicants is that
+  the male professors
+  Amir, Jakob, and Srikanth at the University of Copenhagen
+  are balanced by the female professors
+  Nutan and Paloma at the IT University of Copenhagen and
+  Susanna at Lund University.
+
+  For the subproblems below, please make sure to answer not just with
+  numbers but with more combinatorial-looking expressions, and to expand these
+  expressions out to show that you understand the meaning of any
+  notation used. Also make sure to explain how you reason to reach
+  your answers.
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(50 p)}
+    {\ignorespaces}
+    Together with the application documents, the co-applicants are
+    planning to enclose a group photo, and much thought has gone into
+    how to choose the seating arrangement.
+%       for this photo.
+    All the researchers will be placed in a single row, but they have
+    agreed that a great way to highlight the gender
+    balance would be to make sure that male and female researchers
+    alternate, so that every second person in the row
+    is male or female, respectively.
+    In how many different ways can the $6$~researchers be arranged on
+    the photo to satisfy this constraint?
+  \end{subproblem}
+
+\begin{solution}
+  The seating arrangement is uniquely specified by determining whether
+  the leftmost person on the photo is male or female, and then by
+  specifying the internal order of the female and male researchers,
+  respectively.
+  This gives us:
+  \begin{itemize}
+  \item
+    $2$ choices for a male or female researcher at the leftmost position;
+  \item
+    $3! = 6$ ways of arranging the $3$~female researchers
+    from left to right;
+  \item
+    likewise
+    $3! = 6$ ways of arranging the $3$~male researchers
+    from left to right;
+  \end{itemize}
+  for a total of
+  $
+  2 \cdot 3! \cdot 3!
+  =
+  2 \cdot 6 \cdot 6
+  =
+  72
+  $
+  different arrangements.
+\end{solution}
+  
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+    Any serious research centre application these days should also
+    identify a steering committee for the centre.
+    After long deliberations, the co-applicants have decided that this
+    committee should:
+    \begin{compactitem}
+    \item
+      consist of $4$ persons all in all;
+
+    \item
+      include co-applicants representing all $3$ partner
+      institutions, i.e, 
+      the University of Copenhagen,
+      the IT University of Copenhagen,
+      and
+      Lund University;
+
+    \item
+      have perfect gender balance, i.e., two male and two female members.
+      
+    \end{compactitem}
+    %
+    In how many different ways can the steering committee be composed?
+    
+  \end{subproblem}
+
+\begin{solution}
+  Since Susanna is the only co-applicant from Lund University, she has
+  to be on the steering committee.
+
+  This means that we need exactly one more female committee member,
+  who will be from ITU,
+  and this gives us $2$~choices for either Nutan or Paloma.
+
+  Finally, we need two male members, who will both have to come from
+  the University of Copenhagen.
+  We can  think of choosing either two persons among Amir, Jakob, and
+  Srikanth in
+  $\binom{3}{2} = 3$ ways,
+  or choosing one person to leave out in
+  $\binom{3}{1} = 3$ ways.
+
+  Summing up (or, rather, multiplying together), we see that the
+  steering committee can be composed in
+  $
+  1 \cdot 2 \cdot \binom{3}{2}
+  =
+  1 \cdot 2  \cdot 3 = 6
+  $
+  ways.  
+\end{solution}
+  
+  
+\end{problem}
+
+
+
+%%%
+%%% DMFS 2023 problem set 4 problem 3
+%%% Matrix multiplication and eigen vectors (really hard)
+%%%
+
+
+\providecommand{\vecx}{\vec{x}}
+\providecommand{\vecy}{\vec{y}}
+
+\begin{problem}%
+  \label{problem:graph-eigen}%
+  (150 p)
+  We have learned in class about matrix multiplication, 
+  but there is also a way of multiplying matrices (or vectors) by just
+  a number, which is called  \emph{scalar multiplication}.
+  To multiply a matrix~$A$ by a number~$c$,
+  we multiply each entry~$a_{i,j}$ in the matrix
+  with the number~$c$ so that
+  \begin{equation*}
+    c \cdot A
+    =
+    c \cdot
+    \begin{pmatrix}
+      a_{1,1} & a_{1,2} & \cdots & a_{1, n} \\
+      a_{2,1} & a_{2,2} & \cdots & a_{2, n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{m,1} & a_{m,2} & \cdots & a_{m, n} \\
+    \end{pmatrix}    
+    =
+    \begin{pmatrix}
+      c \cdot a_{1,1} & c \cdot a_{1,2} & \cdots & c \cdot a_{1, n} \\
+      c \cdot a_{2,1} & c \cdot a_{2,2} & \cdots & c \cdot a_{2, n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      c \cdot a_{m,1} & c \cdot a_{m,2} & \cdots & c \cdot a_{m, n} \\
+    \end{pmatrix}    
+  \end{equation*}
+  is the result of the scalar multiplication.
+
+  An intriguing phenomenon that sometimes arises  is that for some pairs of
+  matrices and vectors   matrix multiplication and scalar
+  multiplication give the same   result. 
+  As an example of this, we have
+  \begin{equation}
+    \label{eq:graph-4-vertices}
+    \begin{pmatrix}
+      0 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 0 \\
+      0 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 0 
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+      1 \\
+      1 \\
+      1 \\
+      1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      2 \\
+      2 \\
+      2 \\
+      2
+    \end{pmatrix}
+    =
+    \ 2 \cdot 
+    \begin{pmatrix}
+      1 \\
+      1 \\
+      1 \\
+      1
+    \end{pmatrix}
+  \end{equation}
+  and another example is
+  \begin{equation}
+    \label{eq:graph-6-vertices}
+    \begin{pmatrix}
+      0 & 1 & 0 & 0 & 1 & 1 \\
+      1 & 0 & 1 & 1 & 0 & 0 \\
+      0 & 1 & 0 & 1 & 0 & 1 \\
+      0 & 1 & 1 & 0 & 1 & 0 \\ 
+      1 & 0 & 0 & 1 & 0 & 1 \\ 
+      1 & 0 & 1 & 0 & 1 & 0 
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+      1 \\
+      1 \\
+      1 \\
+      1 \\
+      1 \\
+      1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      3 \\
+      3 \\
+      3 \\
+      3 \\
+      3 \\
+      3
+    \end{pmatrix}
+    =
+    \ 3 \cdot
+    \begin{pmatrix}
+      1 \\
+      1 \\
+      1 \\
+      1 \\
+      1 \\
+      1
+    \end{pmatrix}
+    \eqperiod
+  \end{equation}
+  % 
+  When for a square matrix~$A$ there is a vector~$\vecx$
+  (with not all entries equal to zero)
+  and a number~$\lambda$ such that
+  \begin{equation}
+    A \cdot \vecx = \lambda \cdot \vecx
+    \eqcomma
+  \end{equation}
+  %     as in \refeq{eq:graph-4-vertices}--\refeq{eq:graph-6-vertices}
+  %     above, 
+  such a vector~$\vecx$ is called an \emph{eigenvector}
+  of the matrix~$A$  with  \emph{eigenvalue}~$\lambda$.
+  We see that the matrix in~\refeq{eq:graph-4-vertices}
+  has the all-ones vector as eigenvector with eigenvalue~$2$,
+  and the matrix in~\refeq{eq:graph-6-vertices}
+  also has the all-ones vector as eigenvector but with eigenvalue~$3$.
+  %%
+  %%
+  In this problem, we want to develop our skills of matrix
+  multiplication by studying such eigenvalues and eigenvectors,
+  and also to establish some non-obvious connections between
+  eigenvalues and -vectors on the one hand and graphs on the other
+  hand.
+
+  \input{Figures/fig-graphs-eigenvalues.tex}
+
+  We say that an undirected, simple graph is \emph{$d$-regular} if
+  every vertex is incident to exactly $d$~edges, or, in other words,
+  has exactly~$d$ neighbours.
+  For two illustrations of this, the graph in
+  \reffig{fig:graph-eigen-1}
+  is \mbox{$2$-regular}
+  and the graph in
+  \reffig{fig:graph-eigen-2}
+  is \mbox{$3$-regular}.
+  Now, a fun fact is that the 
+  \mbox{$2$-regular} graph in 
+  \reffig{fig:graph-eigen-1}
+  has the adjacency matrix in~\refeq{eq:graph-4-vertices}, 
+  which has eigenvalue~$2$,
+  and the 
+  \mbox{$3$-regular} graph in 
+  \reffig{fig:graph-eigen-2}
+  has the adjacency matrix in~\refeq{eq:graph-6-vertices}
+  with eigenvalue~$3$.
+  Your task is to show that this is not a coincidence,
+  and to derive some other interesting connections between
+  \mbox{$d$-regular} graphs
+  and the eigenvalues and -vectors of their  adjacency matrices.
+
+  %   
+  %     \reffig{fig:graph-eigen-1}
+  %     \refeq{eq:graph-4-vertices}
+  %     
+  %     \reffig{fig:graph-eigen-2}
+  %     \refeq{eq:graph-6-vertices}
+  %   
+
+  \begin{subproblem}
+    (10 p)
+    If $\vecx$ is an eigenvector of~$A$
+    corresponding to some eigenvalue~$\lambda$, then so
+    is $c \cdot \vecx$ for any $c \neq 0$.
+    Explain why this is so.
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    This should be easy---just use the definitions above.
+  \end{subproblem}
+
+\begin{solution}
+    Suppose that $A$ is an $n \times n$ matrix, just to fix the dimension.
+    By definition, coordinate~$i$ in the vector
+    $A \vecx$
+    is
+    $\sum_{j=1}^{n} a_{i,j} x_j$.
+    If $\lambda$ is an eigenvalue with eigenvector~$\vecx$, it holds that
+    $
+    \sum_{j=1}^{n} a_{i,j} x_j
+    =
+    \lambda x_i
+    $.
+    But then for the vector $c \vecx$ we get that coordinate~$i$ in the vector
+    $A (c \cdot \vecx)$
+    is
+    $
+    \sum_{j=1}^{n} a_{i,j} (c x_j)
+    =
+    c \sum_{j=1}^{n} a_{i,j} x_j
+    =
+    c \cdot (\lambda x_i)
+    =
+    \lambda (c \cdot x_i)
+    $,
+    so clearly
+    $c \cdot \vecx$
+    is also an eigenvector.
+
+    Just explaining briefly that
+    $
+    A (c \vecx)
+    =
+    c (A \vecx)
+    =
+    c \cdot (\lambda \cdot \vecx)
+    =
+    \lambda (c \cdot x_i)
+    $
+    is also fine.  
+\end{solution}
+
+  \begin{subproblem}
+    (20 p)
+    Show that if $G$ is a  
+    \mbox{$d$-regular} graph, 
+    then its adjacency matrix~$A_G$
+    always has $d$ as an eigenvalue.    
+  \end{subproblem}
+
+  \newcommand{\vecone}{\boldsymbol{1}}
+
+\begin{solution}
+    For this and the following problems, an important
+    first observation is that if we identify the vertices
+    $v_1, v_2, \ldots, v_n$ of~$G$ with the integers
+    $1, 2, \ldots, n$
+    (as in \reffig{fig:graph-eigen}),
+    then the $i$th entry of
+    $A_G \vecx$ 
+    is
+    \begin{equation}
+      \label{eq:neighbour-sum}
+      \bigl ( A_G \vecx \bigr)_i
+      =
+      \sum_{j=1}^{n} a_{i,j} x_j
+      =
+      \sum_{j \in N(i)}  x_j
+      \eqcomma    
+    \end{equation}
+    where as usual $N(\cdot)$ denotes the set of neighbours of a vertex.
+    This is so since $a_{i,j}$ is~$1$ when vertices~$i$ and~$j$ are
+    neighbours and is~$0$  otherwise.
+
+    If we follow the examples in the problem statement and let 
+    $\vecx = \vecone$
+    be the all-ones vector,
+    then we see from~\refeq{eq:neighbour-sum} that
+    $
+    \bigl ( A_G \vecone) \bigr)_i
+    =
+    \sum_{j \in N(i)}  1
+    $
+    will simply count the number of neighbours of vertex~$i$.
+    Since all vertices have $d$~neighbours in a $d$-regular graph,
+    we have
+    $
+    \bigl ( A_G \vecone \bigr)_i
+    = d = d \cdot 1
+    $,
+    and so it follows that $\vecone$ is an eigenvector with eigenvalue~$d$.
+\end{solution}
+
+  \begin{subproblem}
+    (20 p)
+    Show that if $G$ is a  
+    \mbox{$d$-regular} graph, 
+    then its adjacency matrix~$A_G$
+    can never have an eigenvalue~$\lambda$ such that
+    $\abs{\lambda} > d $.
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    Suppose that there is an eigenvector~$\vecx$ with
+    eigenvalue~$\lambda$ such that
+    $\abs{\lambda} > d $.
+    Rescale the entries in~$\vecx$ by some~$c \neq 0$ so that the largest
+    entry has value~$1$ and all other entries have absolute value at
+    most~$1$. Consider the product $A_G \cdot \vecx$, focus on a
+    largest entry in~$\vecx$, and argue by contradiction.
+  \end{subproblem}
+
+\begin{solution}
+    Follow the hint and rescale the vector~$\vecx$, so that
+    $x_i = 1$ for the largest entry~$i$
+    and
+    $\abs{x_j} \leq 1$ for all~$j$. Then we get 
+    \begin{equation}
+      \label{eq:d-is-max}
+      \Abs{\bigl ( A_G \vecx \bigr)_i}
+      =
+      \ABS{\sum_{j \in N(i)}  x_j}
+      \leq
+      \sum_{j \in N(i)}  \abs{x_j}
+      \leq
+      \sum_{j \in N(i)} \!\! 1 
+      \leq d
+      <
+      \abs{\lambda}
+      \eqcomma
+    \end{equation}
+    and so $\abs{\lambda}$ is just too large to possibly be the absolute
+    value of an eigenvalue of~$A_G$.
+\end{solution}
+
+  \begin{subproblem}%
+    \label{problem:connected-implies-mult-1}%
+    (30 p)
+    Show that if the
+    \mbox{$d$-regular} graph
+    $G$ is connected,
+    so that there is a path between any two vertices $u$ and~$v$
+    in~$V(G)$,
+    then any eigenvector~$\vecx$ of the
+    adjacency matrix~$A_G$
+    with eigenvalue~$d$
+    must have all entries equal
+    (\ie $\vecx$ is the all-ones vector or some multiple of the all-ones vector).
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    Suppose $\vecx$ is an eigenvector of~$A_G$
+    with eigenvalue~$d$ in which not all entries are equal.
+    Rescale the entries in~$\vecx$ by some~$c \neq 0$ so that the largest
+    entry has value~$1$ and all other entries have absolute value at
+    most~$1$, and consider the product $A_G \cdot \vecx$.
+  \end{subproblem}
+
+\begin{solution}
+    Again we rescale the vector~$\vecx$ so that
+    the largest entry has value~$1$ and so that
+    $\abs{x_j} \leq 1$ holds for all~$j$. 
+    Suppose that $i^*$ is a coordinate such that
+    $x_{i^*} = 1$  but there is a neighbour~$j^*$ of~$i^*$ such that $x_{j^*} < 1$.
+    (If there are no such $i^*$ and~$j^*$, then all entries in the
+    vector are the same---note that we are using here the assumption
+    that the graph is connected.)  
+    We now have
+    \begin{equation}
+      \label{eq:all-entries-equal}
+      \bigl ( A_G \vecx \bigr)_{i^*}
+      =
+      \sum_{j \in N(i^*)}  x_j
+      <
+      \sum_{j \in N(i^*)} \!\! 1 
+      = d
+      \eqcomma
+    \end{equation}
+    where we get a strict inequality  since
+    $x_j \leq 1$ holds for all~$j$ and for the particular
+    neighbour~$j^*$ we have  strict inequality
+    $x_{j^*} < 1$. This shows that $\vecx$ is not an eigenvector
+    of~$A_G$ with eigenvalue~$d$.
+\end{solution}
+
+
+
+  \begin{subproblem}%
+    \label{problem:mult-1implies-connected}%
+    (30 p)
+    Show that if the
+    \mbox{$d$-regular} graph
+    $G$ is \emph{not} connected,
+    so that there exist two vertices
+    $u$ and~$v$ in~$V(G)$ with no path between them,
+    then there is in fact is an eigenvector~$\vecx$ of the
+    adjacency matrix~$A_G$
+    with eigenvalue~$d$
+    in which not all entries are equal.
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    Consider the different connected components of~$G$ and
+    use them to define interesting vectors for which $d$~is an eigenvalue.
+  \end{subproblem}
+  
+\begin{solution}
+  Fix some connected component~$C$ and define a
+  vector~$\vecx$ such that $x_i = 1$ for $i \in C$
+  and $x_i = 0$ for $i \notin C$.
+%%
+  We know from 
+  \refeq{eq:neighbour-sum}
+  that
+  $  
+  \bigl ( A_G \vecx \bigr)_i
+  =
+  \sum_{j \in N(i)}  x_j
+  $.
+  Since for every vertex~$i$ it holds that
+  $i$ and~$N(i)$ lie in the same connected component, we get for all
+  $i' \notin C$ that
+  $  
+  \bigl ( A_G \vecx \bigr)_{i'}
+  =
+  \sum_{j \in N(i')}  x_j
+  =
+  \sum_{j \in N(i')}  0
+  = 0 = d \cdot x_{i'}
+  $.
+  For vertices $i'' \in C$ we get that $C$ must contain all the
+  $d$~neighbours, and so in this case it holds that
+  $  
+  \bigl ( A_G \vecx \bigr)_{i''}
+  =
+  \sum_{j \in N(i'')}  x_j
+  =
+  \sum_{j \in N(i')}  1
+  = d =  d \cdot x_{i'}
+  $.
+  Hence, $\vecx$ is an eigenvector with eigenvalue~$d$.  
+\end{solution}
+
+  \begin{subproblem}%
+    \label{problem:bipartite-eigen}%
+    (40 p)
+    We say that an undirected graph~$G = (V,E)$ is
+    \emph{bipartite}
+    if there is a bipartition
+    $V = V_1 \disjunion V_2$
+    (where     $\disjunion$ denotes \emph{disjoint union},
+    so that 
+    $V_1 \union V_2 = V$
+    but
+    $V_1 \intersection V_2 = \emptyset$)
+    such that any edge in~$G$ has one endpoint in~$V_1$ and one
+    endpoint in~$V_2$, but there are no edges connecting vertices 
+    in~$V_1$ to each other or vertices in~$V_2$ to each other.
+    (Just to give examples for this definition,
+    it is not hard to verify that the graph in
+    \reffig{fig:graph-eigen-1}
+    is bipartite but that the graph in
+    \reffig{fig:graph-eigen-2}
+    is not.)
+
+    Show that if the \mbox{$d$-regular} graph $G$ is bipartite and 
+    the adjacency matrix~$A_G$     has
+    an eigenvector~$\vecx$ with eigenvalue~$\lambda$,
+    then $-\lambda$ is also an eigenvalue for~$A_G$.
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    Consider the bipartition
+    $V = V_1 \disjunion V_2$
+    and use it to modify the eigenvector~$\vecx$
+    in some interesting way.
+%%    
+    (This connection between bipartiteness and negated eigenvalues is
+    actually an if and only if---it holds that
+    $-\lambda$ is also an eigenvalue only if $G$ is bipartite---but
+    you definitely do not need to prove this.)
+  \end{subproblem}
+%%
+%%
+\begin{solution}
+  Suppose that $G$ is a bipartite \mbox{$d$-regular} graph
+  with bipartition
+  $V = V_1 \disjunion V_2$, and that
+  $\vecx$~is an eigenvector  with eigenvalue~$\lambda$.
+  Define the vector~$\vecy$ by
+  \begin{equation}
+    \label{eq:def-y}
+    y_i =
+    \begin{cases}
+      x_i & \text{if $i \in V_1$,} \\
+      -x_i & \text{if $i \in V_2$.} \\
+    \end{cases}
+  \end{equation}
+  %%
+  We are again going to use that
+  $  
+  \bigl ( A_G \vecy \bigr)_i
+  =
+  \sum_{j \in N(i)}  y_j
+  $
+  according to~\refeq{eq:neighbour-sum}.
+
+  Consider first a vertex $i \in V_1$.
+  Note that for all its neighbours
+  $j \in N(i)$
+  it holds that $j \in V_2$ because of bipartiteness, and so
+%     for all $j \in N(i)$ we have
+  $y_j = -x_j$ by our construction of~$\vecy$ in~\refeq{eq:def-y}.  
+  This means that
+  \begin{equation}
+    \bigl ( A_G \vecy \bigr)_i
+    =
+    \sum_{j \in N(i)}  y_j
+    =
+    \sum_{j \in N(i)}  -x_j
+    =
+    -\lambda x_i
+    =
+    (-\lambda) \cdot  y_i
+  \end{equation}
+  (where we used that
+  $
+  \sum_{j \in N(i)}  x_j
+  =
+  \lambda x_i
+  $
+  by assumption, since $\vecx$ is an eigenvector with eigenvalue~$\lambda$).
+
+  In exactly the same way, for $i \in V_2$ we have that
+  $y_i = -x_i$
+  but that the neighbours
+  $j \in N(i)$
+  have vector entries
+  $y_j = x_i$
+  since $j \in V_1$. The calculation
+  \begin{equation}
+    \bigl ( A_G \vecy \bigr)_i
+    =
+    \sum_{j \in N(i)}  y_j
+    =
+    \sum_{j \in N(i)}  x_j
+    =
+    \lambda x_i
+    =
+    (-\lambda) \cdot y_i
+  \end{equation}
+  completes the proof that $\vecy$ is an eigenvector with
+  eigenvalue~$-\lambda$. 
+
+\bigskip
+
+\end{solution}
+%%
+%%
+  Note that
+  Problems~\ref{problem:connected-implies-mult-1}
+  and~\ref{problem:mult-1implies-connected}
+  say that a 
+  \mbox{$d$-regular} graph~$G$ is connected if and only if
+  the only eigenvectors of the adjacency matrix~$A_G$
+  with eigenvalue~$d$ are multiples of the
+  all-ones vector, and 
+  Problem~\ref{problem:bipartite-eigen}
+  says that $G$ is bipartite only if the 
+  eigenvalues of~$A_G$ are symmetric \wrt~$0$.
+  We are in fact only scratching the surface here, in that the
+  eigenvalues of~$A_G$ can tell us much more about the properties
+  of~$G$.
+  Perhaps the most important connection is that
+  the second largest eigenvalue~$\lambda_2$ in absolute value
+%     tells  us
+  is a measure of
+  how well-connected the graph is---if the gap between $d$
+  and $\abs{\lambda_2}$ is large, then $G$ is an \emph{expander graph}
+  in which  there are short paths between
+  any two vertices. These and other highly nontrivial
+  facts are further studied in
+  \emph{spectral graph theory}.
+  
+  
+
+
+\end{problem}
+
+
+\end{document}
+
+

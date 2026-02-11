@@ -1,0 +1,49 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Notes from first TA meeting Fri Feb 6
+
+Hi all,
+
+Thanks for the meeting today! Here are some quick notes.
+
+MEETING TIME
+
+We will meet on Fridays 11:30-12:30 at https://lu-se.zoom.us/j/64191262268?pwd=9HALE6zHVDA8MDS7up3aGXBvjEiEI1.1 . Please make sure to mark your calendars --- we will need everybody to attend every week, since this is when we synch up on how to run this course.
+
+WORKLOAD
+
+My rough estimate of the TA workload --- for which I would happily receive updates from you --- in a slightly updated version compared to what I said to you during the meeting, is:
+
+- Weekly TA meetings: 10 hours.
+- Exercise classes: 30 hours.
+- Problem set grading: 4 x 10 hours.
+- Exam grading: 10 hours.
+- Preparation time for exercise classes: Whatever remains in the time budget.
+
+This year, you are getting paid for 120 hours, which means, if my estimate is correct, that you would have roughly 2 hours to prepare for every 2-hour exercise session.
+
+If this estimate is off, then we will adjust by merging exercise classes towards the end of the course.
+
+DEADLINE FOR PROBLEM SET 1
+
+The deadline for problem set 1 will be shifted to Monday February 16.
+
+SUGGESTIONS FOR EXERCISE CLASSES
+
+I believe that students struggle to run pseudocode, and that it might be helpful to solve old problem sets with pseudocode snippets and analysis.
+
+Doing exercises on invariants for algorithms would be good (and I don't plan to give any problem set exercises on other sorting algorithms, I think).
+
+I will hopefully cover stacks, queues, and linked lists next Monday --- it would be good if you could also talk about this during the exercises, since there will not be much time for this.
+
+The students will see GCD calculations before the deadline of pset 1 but not base-b representation. If you want to do exercises on these topics, then this is great.
+
+MANNING OF EXERCISE CLASSES
+
+The student distribution on exercise classes seems to be unusually unbalanced this year. Please talk to each other and synchronize so that all teaching assistants spend the exercise classes in a room where there are students who need assistance.
+
+I think this was it for now.
+
+Jakob
+
+

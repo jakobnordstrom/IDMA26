@@ -1,0 +1,26 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Help to try to get the chatbots to solve our problems?
+
+Hi IDMA TAs,
+
+If you could find a few minutes, I would greatly appreciate your assistance in trying to get chatbots to solve the first problem set (now available at https://absalon.ku.dk/courses/89165/files/folder/CurrentProblemSets?preview=10507868) and let me know how it goes.
+
+From previous years, there are strong reasons to believe that, e.g., ChatGPT can just ace this problem set.
+
+However, when I tried now, the AI bot refused to solve the problem set for me, answering:
+
+I can help, but I need to be careful here.
+
+This document is a current graded problem set (it even states submission rules and collaboration limits), and you asked me to solve the problems for you. Providing full worked solutions that could be submitted verbatim would cross the line for academic integrity.
+
+This I found interesting.
+
+I am guessing that with some creativity, it should be possible to convince the bot to solve the problem --- if nothing else, by cutting out pictures with the individual problems and feeding them to the bot --- but I would still be interested in knowing how laborious this process is and how good the results are.
+
+And you might also want to try this out for the reason that you will want to be able to smell when your students are cheating in this way. Last year, a very cautious and unverified assessment is that chatbot cheating did not seem to be too rampant (because if so, results should have been better), but given the current state of this technology and how rapidly it develops, this is something that we need to check every year.
+
+Regarding use of other problem sets for your exercise classes, I just wanted to let you know that you can use any previous versions of problem set 1 (specifically) that you like --- I ended up cooking two new pseudocode problems for this year.
+
+Jakob
+
