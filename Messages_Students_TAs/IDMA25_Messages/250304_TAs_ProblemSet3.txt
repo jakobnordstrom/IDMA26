@@ -1,9 +1,0 @@
-IDMA problem set 3
-
-Hi all,
-
-Regarding problem set 3, one student pointed out to me yesterday that there is a subtlety in what counts as a straight in the first problem. Just to be clear, it seems standard in the context of poker straights that the ace can be counted both as 1 and 14. This means that not only is the  sequence ace-king-queen-jack-10 a straight, but so is ace-2-3-4-5. (However, e.g., queen-king-ace-1-2 is *not* a straight.) I have updated the wording in problem set 3 to make this clear.
-
-Jakob
-
-
