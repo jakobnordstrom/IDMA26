@@ -1,0 +1,99 @@
+GRADING GUIDELINES FOR IDMA 2026 PROBLEM SET 1
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1h-EU58_gN5Nh2W7DHEL6oQK28gXyCKdHx8yRpNHS4vo/edit ***
+*** Current version copied February 11, 2026 ***
+
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+General comments on pseudocode problems: 
+(1) When we ask the students what an algorithm does, and how to make the algorithm more efficient, we focus on what the main idea behind the algorithm, not on that every single detail should be exactly the same. For instance, if the pseudocode checks if there are duplicates in an array and returns one duplicate, then any solution returning a duplicate is fine — it does not have to be exactly the same pair as in the given pseudocode.
+(2) The students need to explain what the algorithm does, and why their improved pseudocode does the same thing. However, it is perfectly in order to give this information anywhere in the solution. That is, if for the first (a)-problem the student explains clearly what the algorithm does, and the student’s own pseudocode in the (c)-problem clearly follows this description, then this is sufficient for a full score.
+
+General comment on usage of hash tables or dictionaries: No material like this has been covered in the course, so any students who use such material have to make sure that the solution is understandable to a fellow student, as per the problem set instructions. Also, hash tables and dictionaries do not provide the provable worst-case upper bounds that we are after. If the solution assumes idealized properties of hashing, then we deduct points for that, and if the solution does not explain carefully so that a fellow student on the course can fully understand, then we deduct further points for that.
+
+
+PROBLEM 1: REPRESENTATION OF INTEGERS
+
+GENERAL GUIDELINES
+Clear and correct solutions to this problem give full scores, regardless of what “methods” are used.
+
+PROBLEM 1a (10 p)
+Method seems correct, but minor slip-ups in calculations: -5p
+
+PROBLEM 1b (20 p)
+Method seems correct, but minor slip-ups in calculations: -5p
+General approach makes sense, but the details are wrong: -10 p
+Exhibits basic understanding of what binary representation means, but not more: 5 p
+Correct method, but writes binary number in wrong order: 5 p
+
+PROBLEM 1c (20 p)
+Method seems correct, but slip-ups in calculations: -5p
+General approach makes sense, but the details are wrong: -10 p
+Exhibits basic understanding of what octal representation means, but not more: 5 p
+
+
+PROBLEM 2: GCD CALCULATIONS
+
+GENERAL GUIDELINES FOR BOTH SUBPROBLEMS
+Understands that Euclidean algorithm should be used, but not more: 10 p (given only once)
+Basic understanding of Euclidean algorithm, but failure to apply to problems at hand: 15 p (given only once)
+Determines GCD by whatever means and show convincingly that this is the GCD: 5 p (per subproblem)
+Writes GCD as linear combination of the numbers by whatever means: 5 p (per subproblem)
+
+PROBLEM 2a (20 p)
+Correctly executed Euclidean algorithm: 10 p
+Mostly correctly executed Euclidean algorithm, but minor slip-ups: 5p
+Correct use of algorithm execution to write GCD as linear combination: 10 p
+Describes clearly how to write the GCD as linear combination, but does not do it: 5 p (given only once)
+
+PROBLEM 2b (30 p)
+Correctly executed Euclidean algorithm: 15 p
+Mostly correctly executed Euclidean algorithm, but minor slip-ups: -5p
+Correct use of algorithm execution to write GCD as linear combination: 15 p
+Describes clearly how to write the GCD as linear combination, but does not do it: 5 p (given only once)
+
+
+PROBLEM 3: PSEUDOCODE
+
+PROBLEM 3a (30 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect -20 p
+Just a brief (but correct) answer what the algorithm does with no explanation of or connection to the pseudocode: -25 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -25 p
+
+PROBLEM 3b (10 p)
+General grading guidelines for this type of (60-70) = (30-40) + 10 + 20 problems:
+- Correct answer but not full justification (why n^2 if this is the correct running time)? -5 p
+- Big-oh notation including also lower-order terms: 0 p
+- Unclear answer that does not clearly state complexity O(n^2) 0 p
+- Just stating the time complexity without any motivation 0 p
+Students need to provide a clear argument about the number of iterations. It is not sufficient to just state O(n^2) --- we want to see that the students understand that the number of iterations is 1 + 2 + 3 + 4 + ... and that this is O(n^2)
+Students don’t need to prove Omega(n^2), but it is a bonus to provide an argument for a matching lower bound for the algorithm, and students should get nice, encouraging comments if they do so.
+
+PROBLEM 3c (20 p; 15 p for optimal algorithm; 5 p for proof of optimality)
+General grading guidelines for this type of problems:
+- Improvement only by constant factor, not asymptotically 5 p
+- Asymptotic improvement, but not optimal 10 p
+- Essentially optimal solution, but off-by-one errors or similar in code -5 p
+- Some meaningful attempt at improvement that displays some understanding, but details wrong -10 p
+- Nowhere in the full solution of the problem is there enough information to display that the student understands what the pseudocode does -10 p
+- Missing argument for optimality (i.e., linear time is needed to read the input and compute the output) -5 p
+
+
+PROBLEM 4: MORE COMPLICATED PSEUDOCODE
+
+Problem 4a (40 p)
+Clear display of understanding, but description not fully correct -10 p
+Display of some kind of relevant understanding, but description is vague or incorrect -25 p
+Just a brief (but correct) answer what the algorithm does with no explanation of or connection to the pseudocode: -30 p
+"Explanation" is just a code-line-to-words translation; no essential difference from pseudocode: -35 p
+
+PROBLEM 4b AND 4c: Graded as for Problem 3.

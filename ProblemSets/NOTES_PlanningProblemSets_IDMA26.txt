@@ -35,8 +35,17 @@ PLANNING FOR THE EXAM 2026
 ==========================
 
 Pseudocode? (Didn't have this last year)
+Maybe have algorithms for
+- insertion in a doubly linked list
+- removal in a doubly linked list
+- lookup in a doubly linked list
+and ask to match the code snippets to these alternatives (with explanations)
 
-Some induction problem
+All code snippets would "return" something just to obfuscate a little bit.
+
+Some induction problem: Try to come with something with genAI?
+
+Combinatorics: Try to come with something with genAI?
 
 Merge sort problem
 This was a long time ago now
@@ -46,8 +55,6 @@ Or do something that also involves closure?
 
 Propositional logic
 Exactly the same kind of patching problem?
-
-Combinatorics: Something?
 
 Graphs: Identify traversals
 Maybe exactly the same type of problem as last year?

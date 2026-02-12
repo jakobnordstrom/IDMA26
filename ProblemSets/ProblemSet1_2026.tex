@@ -351,19 +351,21 @@ while (j <= n) {
 \end{subproblem}
 
 \begin{solution}
-
-  UPDATE
-
-  A[j] will contain the sum of the j first squares
-
-  
-  At termination we will have
+  We have an outer while loop where $j$ goes from~$i$ to $n$.
+  In every iteration, the inner loop will sum up all squares
   $
-  B[i] = \prod_{j=1}^{i} A[i]
-  $,
-  i.e., 
-  $B[i]$ is the product of all entries
-  $A[1], \, A[2], \, \ldots, \, A[i-1], \, A[i]$.
+  j^2, (j-1)^2, (j-2)^2, \ldots
+  2^2, 1^2
+  $
+  (in decreasing order)
+  and store this sum in~$A[j]$.
+  That is,
+  when the algorithm terminates
+  the $j$th element in the array will contain the sum
+  $
+  \sum_{i=1}^{j} i^2
+  $
+  of the $j$~first squares for $j \in [n]$.
 \end{solution}
 
 
@@ -379,9 +381,9 @@ while (j <= n) {
 \end{subproblem}
 
 \begin{solution}
-  The algorithm has two nested for loops. 
-  The outer loop runs for $i$ from $1$ to $n$
-  and the inner loop runs from $1$ to $i$.
+  The algorithm has two nested while loops. 
+  The outer loop runs for $j$ from $1$ to $n$
+  and the inner loop runs from $j$ down to $1$.
   Inside the innermost loop a constant number of operations are performed.
   The asymptotic time complexity is therefore determined by the total
   number of times the inner loop is executed.
@@ -389,25 +391,39 @@ while (j <= n) {
   It follows from what is written above that the inner loop will run a
   total of
   $
-  \sum_{i=1}^{n} i
+  \sum_{j=1}^{n} j
   $
   times, which is $\Bigtheta{n^2}$.
-  If we want to prove this from first principles, then we can observe that
+  If we would want to prove this from first principles, then we can observe that
   $
-  \sum_{i=1}^{n} i
+  \sum_{j=1}^{n} j
   \leq
-  \sum_{i=1}^{n} n
+  \sum_{j=1}^{n} n
   = n^2
   $,
   which shows that the running time is $\Bigoh{n^2}$, 
   and also that 
   $
-  \sum_{i=1}^{n} i
+  \sum_{j=1}^{n} j
   \geq
-  \sum_{i=n/2}^{n} n/2
+  \sum_{j=n/2}^{n} n/2
   = n^2 / 4
   $,
   which shows that the running time is $\Bigomega{n^2}$.
+  Since the running time is both
+  $\Bigoh{n^2}$
+  and
+  $\Bigomega{n^2}$,
+  this means that we have a asymptotically precise bound
+  $\Bigtheta{n^2}$.
+
+  Instead of doing the above calculations, we can appeal to that we have
+  learned in class that
+  $
+  \sum_{j=1}^{n} j = \frac{n(n+1)}{2}
+  $,
+  and it is perfectly fine to use this as a known fact without proof
+  (as long as there is an explanation that this is what is happening).
 
   In general, for this introductory course we do not care so much
   about the distinction between big-oh and big-theta, so correct
@@ -433,18 +449,41 @@ while (j <= n) {
 \end{subproblem}
 
 \begin{solution}
-  From our analysis of the algorithm above, it should be clear that
-  the snippet of code below has the same functionality.
+  From our analysis of the algorithm above,
+  we know that
+  $
+  A[j] =
+  \sum_{i=1}^{j} i^2  
+  $.
+  But this means that we can compute
+  $A[j]$ as
+  \begin{equation}
+    \label{eq:square-sum}
+  A[j]
+  =
+  \sum_{i=1}^{j-1} i^2  + j^2
+  =
+  A[j-1] + j^2
+  \eqperiod    
+  \end{equation}
+  Therefore, the snippet of code
 \begin{verbatim}
-B[1] := A[1]
-for i := 2 upto n {
-    B[i] := A[i] * B[i-1]
+A[1] := 1
+j    := 2
+while (j <= n) {
+    A[j] := A[j-1] + j * j
+    j := j + 1
 }
-\end{verbatim}  
-It goes through the array only once, thus having a running time of
-$\bigoh{n}$.
-Since we need to store $n$ values in the array~$B$,
-it is clear that linear time is optimal. 
+\end{verbatim}
+  will compute the same result.
+  This code goes through the array only once
+  and does a constant amount of work per
+  array element~$A[j]$
+  (assuming that integer arithmetic is constant-time,
+  which is a simplifying assumption that we make in this course).
+  Therefore, the total running time is~$\bigoh{n}$.
+  Since we need to store $n$ values in the array~$A$,
+  it is clear that linear time is optimal. 
 \end{solution}
 
 \end{problem}
@@ -458,7 +497,7 @@ it is clear that linear time is optimal.
 %%%
 
 \begin{problem}%
-  \label{problem:code-snippet-1}%
+  \label{problem:code-snippet-2}%
   (70 p)
   In the following snippet of code \verb+A+ and \verb+B+ are arrays
   indexed from~$1$ to~$n$ that contain numbers.
@@ -495,21 +534,42 @@ return good
 \end{subproblem}
 
 \begin{solution}
+  Cutting straight to the chase, this algorithm checks if the
+  average (\ie arithmetic mean) of the $j$~first numbers in~$A$
+  is less than or equal to the number stored in~$B[j]$.
+  If this is the case for all $j \in [n]$,
+  then \verb+TRUE+ is returned, and otherwise the
+  algorithm returns~\verb+FALSE+.
 
-  UPDATE
+  In a bit more detail, we have an outer while loop in which
+  $j$ goes from~$n$ down to~$1$, except that the outer loop is
+  terminated
+  if \verb+good+, which is initialized to~\verb+TRUE+,
+  is ever assigned \verb+FALSE+.
 
-  Algorithm checks if the average of the j first numbers in A
-  is less-equal B[j]
-
-
-  
-  At termination we will have
-  $
-  B[i] = \prod_{j=1}^{i} A[i]
-  $,
-  i.e., 
-  $B[i]$ is the product of all entries
-  $A[1], \, A[2], \, \ldots, \, A[i-1], \, A[i]$.
+  For every value of $j$ in the outer loop, 
+  we have an inner for loop  that computes
+  $s = \sum_{i=1}^{j} A[i]$
+  (but in decreasing order of the index~$i$).
+  After the end of the for loop this value is divided by~$j$, so that
+  the final result is
+  $s = \frac{1}{j} \sum_{i=1}^{j} A[i]$,
+  \ie the arithmetic mean of the numbers
+  $ A[1], A[2],\ldots, A[j] $.
+  If it holds that
+  $s > B[j]$,
+  then
+  \verb+good+ is set to 
+  \verb+FALSE+, which will make the while loop terminate so that the
+  algorithm returns~\verb+FALSE+.
+  Otherwise $j$ will be decremented, and the next while loop will then compare
+  $\frac{1}{j-1} \sum_{i=1}^{j-1} A[i]$
+  to~$B[j-1]$, and so on.
+  If for every $j \in [n]$ it holds that
+  $\frac{1}{j} \sum_{i=1}^{j-1} A[i] \leq B[j]$,
+  then
+  \verb+good+ will keep the value \verb+TRUE+,
+  which is what the algorithm will finally return.  
 \end{solution}
 
 
@@ -525,37 +585,34 @@ return good
 \end{subproblem}
 
 \begin{solution}
-  The algorithm has two nested for loops. 
-  The outer loop runs for $i$ from $1$ to $n$
-  and the inner loop runs from $1$ to $i$.
-  Inside the innermost loop a constant number of operations are performed.
+  The algorithm has two nested loops. 
+  The outer while loop runs for $j$ from $n$ down to $1$ in the worst case
+  (namely, when all the checks are successful).
+  The inner for loop runs from~$j$ down to~$1$.
+  Before the while loop starts, and outside of the inner for loop,
+  there is a constant number of operations. 
   The asymptotic time complexity is therefore determined by the total
-  number of times the inner loop is executed.
+  number of times the inner for loop is executed.
 
   It follows from what is written above that the inner loop will run a
   total of
   $
-  \sum_{i=1}^{n} i
+  \sum_{j=1}^{n} j
+  =
+  \frac{n(n+1)}{2}
+  =
+  \Bigtheta{n^2}
   $
-  times, which is $\Bigtheta{n^2}$.
-  If we want to prove this from first principles, then we can observe that
-  $
-  \sum_{i=1}^{n} i
-  \leq
-  \sum_{i=1}^{n} n
-  = n^2
-  $,
-  which shows that the running time is $\Bigoh{n^2}$, 
-  and also that 
-  $
-  \sum_{i=1}^{n} i
-  \geq
-  \sum_{i=n/2}^{n} n/2
-  = n^2 / 4
-  $,
-  which shows that the running time is $\Bigomega{n^2}$.
+  times in the worst case, and so the the time complexity of the
+  algorithm
+  is~$  \Bigtheta{n^2}$.
+  This analysis is very similar to that in  
+  Problem~\ref{problem:code-snippet-1}.
 
-  In general, for this introductory course we do not care so much
+  Just as for
+  Problem~\ref{problem:code-snippet-1},
+  it is the case that
+  for this introductory course we do not care so much
   about the distinction between big-oh and big-theta, so correct
   answers with only big-oh bounds will also be acceptable unless
   stated otherwise (and as long as these bounds are tight).
@@ -579,23 +636,45 @@ return good
 \end{subproblem}
 
 \begin{solution}
-  From our analysis of the algorithm above, it should be clear that
-  the snippet of code below has the same functionality.
+  From our analysis of the algorithm above,
+  it follows that we can just sum up the elements in the
+  array~$A$ as we go and for every step compare
+  this sum to $c \cdot B[j]$
+  (since multiplying both sides of the comparison by~$j$ does not
+  change the outcome).
+  Therefore, the snippet of code
 \begin{verbatim}
-B[1] := A[1]
-for i := 2 upto n {
-    B[i] := A[i] * B[i-1]
+j    := 1
+sum  := 0
+good := TRUE
+while (j <= n and good) {
+    sum := sum + A[j]
+    if (sum > j * B[j]) {
+        good := FALSE
+    }
+    else
+    {
+        j := j + 1
+    }
 }
-\end{verbatim}  
-It goes through the array only once, thus having a running time of
-$\bigoh{n}$.
-Since we need to store $n$ values in the array~$B$,
-it is clear that linear time is optimal. 
+return good
+\end{verbatim}
+  will give exactly the same result.
+  This piece of code goes through the array only once, thus having a
+  running time of~$\bigoh{n}$.
+  Since we need to check
+  $n$~values, namely for all numbers
+  $
+  B[1],
+  B[2],
+  \ldots,
+  B[n]
+  $,
+  it is not possible to run faster than in linear time, so this
+  is asymptotically optimal.
 \end{solution}
 
 \end{problem}
-
-
 
 
 \end{document}

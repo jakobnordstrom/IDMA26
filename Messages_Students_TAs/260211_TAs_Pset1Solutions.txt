@@ -1,0 +1,18 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Solutions and grading guidelines for problem set 1
+
+Hi all,
+
+With this message, please find attached my proposed solutions for problem set 1.
+
+As always, all help with pointing out typos or mistakes would be very much appreciated. (Or if you have any questions, please don't hesitate a second to shoot me an e-mail.)
+
+At https://docs.google.com/document/d/1h-EU58_gN5Nh2W7DHEL6oQK28gXyCKdHx8yRpNHS4vo/edit you find proposed grading guidelines.
+
+The intention is that you should be able to read and comment on this document, but not edit it. If these settings turn out to be too restrictive, then we can adjust this.
+
+In our meeting on Friday, I will want to have a quick round of reports from your exercise classes, but then I expect to spend most of the time talking about the grading of problem set 1 (so that you can get started with your grading right away when the deadline has passed on Monday at 13:00).
+
+Jakob
+

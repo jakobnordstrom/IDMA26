@@ -7,7 +7,7 @@ DIARY FOR IDMA 2026
 1ST WEEK
 --------
 
-TO FIX FOR UGESEDDEL 1 IN 2027 (SHOULD HAVE BEEN DONE ALREADY IN 2025): 
+*** To fix for ugeseddel 1 in 2027 (SHOULD HAVE BEEN DONE ALREADY IN 2025): ***
 - In Ugeseddel 1, exercise 4, the students are asked to run Selection Sort on an array and compare with Merge Sort. However, selection sort is only mentioned in CLRS exercise 2.2-2, which is set later on the list of exercises, and here they are asked to come up with pseudo-code for selection sort. This confused me for a while - I can spin it for the TA session, but students that just go at the exercises chronologically might hit a wall here, since they don't actually have the selection sort algorithm at hand.
 - Frederik: The pseudocode examples in the beginning are too hard. (Was this fixed?)
 
@@ -34,26 +34,36 @@ The merge sort analysis got quite rushed towards the end.
 I did not manage to cover the material on stacks, queues and linked lists. Srikanth also did not get this far in 2025.
 It would be good to revise the planning.
 
-***** This means that we should delay the deadline for problem set 1, since students need to see the GCD algorithm. *****
+*** This means that we should delay the deadline for problem set 1, since students need to see the GCD algorithm. ***
 
+*** It would be good to send out a summary on Absalon what we covered during week 1. ***
 
-***** NOTES FROM 2025 *****
 
 2ND WEEK
 --------
 
 MONDAY
-Went according to plan.
+Went mostly according to plan.
 The first part of the lecture takes a lot of time. Would it be better to have slides for this?
-I had time to do two induction proofs (but forgot to emphasize the punchline what our argument was like, so I did that as an Absalon post.
-Several students seemed to be confused about asymptotic notation, so I did an improvised explanation of the difference between big-oh and little-oh, basically saying that big-oh is f(n) / g(n) <= constant and little-oh is f(n) / g(n) -> 0.
+In 2026, I only had time for one induction proof.
+In 2025, I had time to do two induction proofs (but forgot to emphasize the punchline what our argument was like, so I did that as an Absalon post.
+Several students seemed to be confused about asymptotic notation, so I did an improvised explanation of the difference between big-oh and little-oh, basically saying that big-oh is f(n) / g(n) <= constant and little-oh is f(n) / g(n) -> 0 (in both 2025 and 2026)
+
+*** Maybe I should repeat the above Absalon post(s) in 2026? Every year? ***
 
 WEDNESDAY
-The new detailed GCD proof took much more time, but this was probably a good thing. When the structure of the proof was made much clearer, it unfortunately also became much clearer how much the students struggled even with simpler aspects of the proof (like: what are we proving in the first place?).
-But I should probably have tried to go a bit faster anyway.
-I went 5 minutes over time, and still was not able to talk about base-b expansion.
-I will have to talk about base-b expansion first thing Monday morning, and then move on to induction.
+Before the break, I managed to get to the GCD proof and do the overview of it. Many students were clearly struggling to understand what was happening and how we were planning to do a proof.
+After the break, I did the full proof and the Euclidean algorithm with one example.
+I covered primes, prime factorization, and relatively prime numbers extremly quickly.
+Also, I did base-b expansion extremly quickly, but went 5 minute over time.
+I could remove the final pages in the notes on intuition for induction.
 
+*** I ran out of time for the Wednesday lecture in both 2025 and 2026. ***
+
+*** It would be good to send out a summary on Absalon what we covered during week 2. ***
+
+
+***** NOTES FROM 2025 *****
 
 3RD WEEK
 --------
