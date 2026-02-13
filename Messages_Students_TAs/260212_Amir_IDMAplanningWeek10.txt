@@ -1,0 +1,36 @@
+
+IDMA planning for week 10
+
+Hi Amir,
+
+Apologies in advance if I am repeating things from other messages, but I felt I wanted to have this collected in one message with a descriptive subject line to be sure that we have communicated about this and are on the same page.
+
+Please confirm to me that you have received this message, and let me know if what follows below sounds OK or if we should talk about anything!
+
+On IDMA, you will do the following lectures:
+- Monday March 2 13:15-15:00 in Lundbeck Auditoriet, Biocenter, Ole Maaløes Vej 5
+- Wednesday March 4 10:15-12:00 in Aud 01, H.C. Ørsted Building, Universitetsparken 5
+- Wednesday March 4 13:15-15:00 in Aud 01, H.C. Ørsted Building, Universitetsparken 5
+
+As per the attached course planning, the topics of these lectures are relations (including functions), trees, and partial orders.
+
+I can share the relevant textbook chapters with you, but I really don't use it much.
+
+I attach my lecture notes just to give you a sense of what I try to cover:
+- Basics of matrix algebra (if I haven't gotten there before).
+- Boolean matrices.
+- Graphs represented as adjacency matrices, and what it means to multiply such adjacency matrices.
+- Cartesian products.
+- Basic properties of relations (symmetry, reflexivity, transitivity) and ways to represent relations.
+- Functions and notions like injectivity, surjectivity, bijectivity.
+- Equivalence relations and proofs that they correspond to partitions (this students find challenging).
+- Operations on relations such as union, intersection, complement, inverse relation, closures w.r.t. symmetry, transitivity, reflexivity.
+- Partially ordered sets.
+- Hasse diagrams.
+- Lattices.
+- Basic properties of directed trees, in particular, that the number of edges is one less than the number of vertices and that there are no cycles.
+
+This is a lot of material, and I usually struggle to cover all of it. Hasse diagrams and lattices I do very superficially --- maybe this should just be skipped. I will be happy to talk about it.
+
+Jakob
+

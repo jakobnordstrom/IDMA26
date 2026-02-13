@@ -1,0 +1,25 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: TA meeting today Fri Feb 13
+
+Hi all,
+
+Here comes a reminder that we are meeting today at 11:30 at https://lu-se.zoom.us/j/64191262268?pwd=9HALE6zHVDA8MDS7up3aGXBvjEiEI1.1 .
+
+Just to make sure we are on the same page, we will always use this Zoom meeting link, and we will meet every Friday at 11:30 up until Friday March 27 unless stated otherwise, so going forward I will not be sending out specific reminders every Friday.
+
+Normally, the two main items on our meeting agenda will be:
+(1) A round of reports from your TA classes, including sharing tips and tricks and feedback to me on how the students are doing.
+(2) Grading of the problem sets.
+
+Since we have not yet had any problem set deadline, we will not need to talk about (2) today, except if you have any questions.
+
+You should have received suggested solutions to problem set 1. At the risk of stating the obvious, these are just suggestions, and there might well be other ways of solving the problems. You should grade the problem solutions not according to whether they follow my template or not, but according to whether they are correct or not. ;-)
+
+You should all be able to read the grading guidelines at https://docs.google.com/document/d/1h-EU58_gN5Nh2W7DHEL6oQK28gXyCKdHx8yRpNHS4vo/edit . We might need to add or clarify some items depending on exactly what the students submit this time, but the hope is that what is already in the document should cover at least 95% of cases.
+
+If you have any questions about the problem set grading, then please let me know and we can talk about it at the meeting.
+
+Jakob
+
+
