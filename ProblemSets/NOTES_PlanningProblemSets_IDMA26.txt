@@ -1,35 +1,41 @@
-IDEAS FOR PROBLEM SETS FOR IDMA 2026
-====================================
+PLANNING OF PROBLEM SETS FOR IDMA 2026
+======================================
 
 In 2025 I just recycled the problem sets for 2022.
+In 2026 I used:
+- Exam problems in 2025.
+- Some old, hard problems from DMFS 2023 problem sets and the DMFS 2021 exam.
+- A few new problems.
 
-Sources of problems for 2026:
-(a) Exam problems in 2025
+*** In 2027, should I recycle the DMFS 2023 problems, and get ***
+*** rid of all traces of the DMFS course once and for all?    ***
+*** (And also use exam 2026 problems, of course.)             ***
 
 
-
-PROBLEM SET 1
+PROBLEM SET 1 2026
 1. Representation of numbers
 2. Euclidean algorithm
 3. Simple pseudocode
 4. More complicated pseudocode
 
-PROBLEM SET 2
+PROBLEM SET 2 2026
 1. Simple induction proofs
 2. Propositional logic
-3. Buggy induction proofs
-*** Add problem on "mergerunssort" with example & analysis? ***
+3. Merge runs sort algorithm that runs in quadratic time
+4. Buggy induction proofs (DMFS 2023 problem set 5, problem 3)
 
 PROBLEM SET 3
 1. Relations: identifying different types of relations
 2. Tricky induction proof about Fibonacci numbers
 3. Combinatorics problem (DNRF centre application)
-4. Matrix multiplication and eigenvalues
+4. Matrix multiplication and eigenvalues (DMFS 2023 problem set 4, problem 3)
 
 PROBLEM SET 4
 1. Shortest path
 2. Graph traversals: identify different orders
-*** Should I add one more problem? ***
+3. Combinatorics problem about radio cars (DMFS exam 2021)
+4. Combinatorics problem about legos (DMFS exam 2021)
+
 
 PLANNING FOR THE EXAM 2026
 ==========================
@@ -39,8 +45,7 @@ Maybe have algorithms for
 - insertion in a doubly linked list
 - removal in a doubly linked list
 - lookup in a doubly linked list
-and ask to match the code snippets to these alternatives (with explanations)
-
+and ask to match the code snippets to these alternatives (with explanations).
 All code snippets would "return" something just to obfuscate a little bit.
 
 Some induction problem: Try to come with something with genAI?
@@ -84,7 +89,7 @@ Fibonacci numbers are good, rescaled along the way to get more interesting calcu
 
 3. INDUCTION PROOFS
 
-Some induction problem from Vaderlind? Ask ChatGPT?
+Some simple induction problems
 
 4. RELATIONS
 
@@ -103,5 +108,4 @@ Ways of organizing DNRF application aspects
 8. SHORTEST PATH
 
 9. IDENTIFY TRAVERSALS
-
 

@@ -1,5 +1,9 @@
 \documentclass{jn-pset}
 %   \documentclass[solutions]{jn-pset}
+%%%
+%%% NB! ALSO MAKE SURE to set "versionwithsolutions" to "true" below in 
+%%% order to show all information relevant to the document with solutions.
+%%%
 
 \usepackage{ifthen}
 \newboolean{versionwithsolutions}
@@ -49,9 +53,9 @@
 
 % For getting watermark "DRAFT" across all pages (for instance, 
 % when posting preliminary version of problem set)
-\usepackage{draftwatermark}
-% \SetWatermarkFontSize{20 cm}
-\SetWatermarkScale{5}
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
 
 % For METAPOST logo as \hologo{METAPOST}
 %   \usepackage{hologo}
@@ -203,15 +207,21 @@
     Propose a suitable graph algorithm to solve Jakob's problem.
     Explain what this algorithm is and why it is the right choice for
     this problem.  Make a dry-run of the algorithm and explain the
-    relevant steps in the execution (similarly to what has been done
-    in class and in the lecture notes).
-    
+    relevant steps in the
+%       execution.
+%   
+    execution (similarly to what has been done in class and in the
+    lecture notes).
+%       
+%       What travel directions for Jakob's visitors does your algorithm produce?    
+%   
+
     If your algorithm uses any auxiliary data structures, then explain in detail
     for the first two vertices processed how these data structures
     change. For the rest of the algorithm execution, just
     report what the relevant outputs of the data structures are without
     going into any details.
-
+   
     What travel directions for Jakob's visitors does your algorithm produce?    
   \end{subproblem}
   
@@ -719,6 +729,270 @@
 
   
 \end{problem}
+
+
+\begin{problem}
+  (50 p)
+%     
+%     Computer science exams can only be held virtually, but 
+%     the Copenhagen Tivoli Gardens amusement park is apparently about to 
+%     open for physical visits by the
+%     general public. This means that students frustrated by 
+%   %   the lock-down
+%     Zoom lectures and \emph{Digital eksamen} exams 
+%     will soon be able to head to the \emph{bumper cars}
+%     (\emph{radiobiler}) and let go of 
+%     some steam by trying to bump into as many other cars (or as few
+%     cars) as possible.
+%   
+  Back in 2021 during the pandemic, all classes and exams were held virtually, but
+  the Copenhagen Tivoli Gardens amusement park was  open for physical visits by the
+  general public. This meant that students frustrated by 
+%   the lock-down
+  Zoom lectures and \emph{Digital eksamen} exams 
+  were able to head to the \emph{bumper cars}
+  (\emph{radiobiler}) and let go of 
+  some steam by trying to bump into as many other cars (or as few
+  cars) as possible.
+
+  Suppose that there are $n \geq 2$~bumper cars sharing an area of 
+  $m > n^2 / 2$ square meters.%
+  \footnote{In reality, 
+    there are $18$ bumper cars 
+    in the Copenhagen Tivoli Gardens
+    sharing an area of
+    $280$ square meters, but this is not too relevant for this problem.
+  }
+  An amazing mathematical fact is that after every bumper car round
+  has finished, there are two different bumper cars that have bumped
+  with exactly the same number of other (distinct) cars.
+%     (this is counting the
+%     \emph{number of cars}, not the total number of bumps). 
+  Prove this!
+\end{problem}
+
+
+\begin{solution}
+  We start by making three quick observations:
+  \begin{enumerate}
+    \item
+      The area of course has nothing to do with this, and can just be ignored.
+
+    \item
+      ``Bumping'' is a symmetric relation, in that bumper car~$A$
+      can only have a bump with bumper car~$B$ if car~$B$ also had a
+      bump with car~$A$. (This is clear from context, since otherwise
+      the claim in the problem statement would be obviously false for
+      two bumper cars.) 
+
+    \item
+      Each one of the $n$~bumper cars can bump with at most $n-1$
+      other cars. If one car bumps with all other cars, then there is
+      no car without bumps, and if there is a car without bumps, then
+      no car can bump with all other cars.
+      (Here we are using the symmetry of the bumping relation.)
+
+  \end{enumerate}
+%
+  Now we can think of each car as being a pigeon
+  ($n$~of them) and each pigeonhole as being labelled by a number of
+  bumps ($n-1$ possibilities, as discussed above, since
+  we cannot have $0$~bumps and $n-1$~bumps at the same time).
+  Clearly, by the pigeonhole principle there have to be two bumper cars
+  that have the same number   of bumps.
+\end{solution}
+
+\begin{problem}%
+  \label{problem:lego}%
+  (60 p)
+%     
+%     Another way in which  Danish computer science students have been
+%     able to entertain 
+%     themselves---already during lock-down---is to play with legos.
+%   
+  Another way in which Danish computer science students were able to entertain 
+  themselves during the lock-down was to play with legos
+  (or maybe not, but we need a story for this problem, so let us assume they did).
+%   
+  In order to make this 
+  kind of 
+  activity more relevant from the point
+  of view of  discrete mathematics,
+  rumour has it that the students often considered different sets of lego
+  pieces (like the one in    \reffig{fig:lego-1})
+  and investigated 
+  in how many different ways cuboids
+%     how cuboids
+%     for different ways of building cuboids
+  (rectangular parallelepipeds)
+  can be built
+  from such pieces.
+
+%   \input{Figures/figLego.tex}
+
+
+  Inspired by this, let us consider
+  the lego pieces in 
+  \reffig{fig:lego-1},
+  which as we observe  all have different colours.
+%
+  In this particular problem we want to build cuboids that are three
+  layers high.
+  The pieces should be put together in the standard lego way, with
+  the lego studs pointing upwards and being fitted into the holes
+  of any pieces above. 
+%%% Clarification added during exam.
+  All pieces should be used.
+  Constructions like the one in 
+  \reffig{fig:lego-2}
+  are not valid---this particular construction does have three layers,
+  and the studs point upwards and are fitted into the holes above when
+  possible, but the   resulting  geometric shape is not a  cuboid.
+
+  Two cuboids are considered to be the same if they can be rotated so
+  that they become similar. Thus, the constructions in 
+  \reftwofigs{fig:lego-3}{fig:lego-4} are both valid, but are
+  considered to be the same cuboid, since rotating
+  \reffig{fig:lego-3}
+  yields
+  \reffig{fig:lego-4}.
+
+  How many \emph{different} cuboids can you build with the lego pieces in
+  \reffig{fig:lego-1}
+  satisfying the restrictions described above?
+  Please make sure to explain clearly how you reason to reach your answer.
+
+\begin{solution}
+%     We first note, for the record, that the fact that all lego bricks
+%     have to be used was not stated quite so explicitly in the original
+%     problem statement, but it was intended to be clear from context and
+%     was also explained at an early stage during the exam.
+%   
+  Let us start by computing how many cuboids can be built without
+  considering rotational symmetry (so that, for the moment, we consider
+  \reffig{fig:lego-3}
+  and
+  \reffig{fig:lego-4}
+  to be different cuboids). Once we have this number, it is clear that
+  we should divide by~$2$ to get the number of constructions
+  as asked for in the problem statement. This is so since it is not
+  possible to build a cuboid in accordance with the rules that is
+  symmetric under rotation. Hence, every cuboid can be paired up with
+  exactly one other different cuboid so that the two are obtained from each
+  other by rotation.
+
+  Counting the number of studs, there are:
+  \begin{itemize}
+  \item 
+    one $4 \times 2$ brick;
+  \item 
+    three $2 \times 2$ bricks;
+  \item 
+    two $2 \times 1$ bricks.
+  \end{itemize}
+%
+  Let us analyse how the cuboids can be constructed.
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{\input{Figures/figLego.tex}}
+{}
+  
+  Once the $4 \times 2$ brick is placed somewhere, all the other
+  pieces have to be used in other layers, 
+  since otherwise we cannot get a cuboid.
+  The layer with a single
+  $4 \times 2$ brick can be chosen in $3$~ways.
+
+  Then there will be a layer with two $2 \times 2$ bricks.
+  Once we have decided on the $4 \times 2$ layer, the position for the
+  layer with two  $2 \times 2$ bricks can be chosen in $2$~ways. 
+  Since there is a total of three $2 \times 2$ bricks,
+  the left  $2 \times 2$ brick can be chosen in $3$~ways, after which
+  the right 
+  $2 \times 2$ brick can be chosen in $2$~ways.
+
+  So far, we have built two layers in our cuboid in a total of
+  $
+  3 \cdot (2 \cdot 3 \cdot 2)
+  =
+  36 
+  $
+  ways.
+
+  For the third layer, we obtain a case analysis as follows,
+  considering the lego bricks from left to right:
+  \begin{enumerate}
+  \item 
+    \label{item:layer-3-1}
+    A $2 \times 1$ brick,
+    then a  $2 \times 2$ brick,
+    and finally a  $2 \times 1$ brick
+    (as in \reffig{fig:lego-3}
+    and
+    \reffig{fig:lego-4}).
+    Given the choices already made, there are $2$~choices for this
+    alternative,
+    namely in which order the
+    $2 \times 1$ bricks appear.
+    (Note that there is only one $2 \times 2$ brick left by now, so
+    there is no flexibility there.)
+
+  \item 
+    \label{item:layer-3-2}
+    As in 
+    case~\ref{item:layer-3-1}
+    above, but with both $2 \times 1$ bricks appearing farthest to the left
+    in the same orientation as in \reffig{fig:lego-3}.
+    There are  again
+    $2$~choices for this
+    alternative, depending on in which order the
+    $2 \times 1$ bricks appear.
+
+
+  \item 
+    \label{item:layer-3-3}
+    As in 
+    case~\ref{item:layer-3-2},
+    but both $2 \times 1$ bricks appearing rotated as in
+    \reffig{fig:lego-2}.
+    This gives 
+    $2$~more choices, depending on in which order the
+    $2 \times 1$ bricks appear.
+
+  \item 
+    \label{item:layer-3-4}
+    As in 
+    case~\ref{item:layer-3-2},
+    but with the
+    $2 \times 1$ bricks appearing farthest to the right:
+    $2$~more choices.
+
+
+  \item 
+    \label{item:layer-3-5}
+    Finally, as in 
+    case~\ref{item:layer-3-3}
+    but with the
+    $2 \times 1$ bricks appearing farthest to the right:
+    $2$~more choices.
+
+  \end{enumerate}
+  We see that we get a total of $10$~ways of constructing the third layer, 
+  yielding a total number of $360$~constructions.
+  Since we do not distinguish between cuboids that are rotationally
+  symmetric,  however,
+  we should divide by~$2$ to get the final answer 
+  that there are $360 / 2 = 180$
+  different cuboids that can be constructed.
+\end{solution}
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{}
+{\input{Figures/figLego.tex}}
+
+\end{problem}
+
+
 
 
 \end{document}

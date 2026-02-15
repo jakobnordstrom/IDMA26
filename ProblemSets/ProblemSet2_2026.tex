@@ -1,5 +1,9 @@
 \documentclass{jn-pset}
 %   \documentclass[solutions]{jn-pset}
+%%%
+%%% NB! ALSO MAKE SURE to set "versionwithsolutions" to "true" below in 
+%%% order to show all information relevant to the document with solutions.
+%%%
 
 \usepackage{ifthen}
 \newboolean{versionwithsolutions}
@@ -46,9 +50,9 @@
 
 % For getting watermark "DRAFT" across all pages (for instance, 
 % when posting preliminary version of problem set)
-\usepackage{draftwatermark}
-% \SetWatermarkFontSize{20 cm}
-\SetWatermarkScale{5}
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
 
 % For METAPOST logo as \hologo{METAPOST}
 %   \usepackage{hologo}
@@ -337,17 +341,415 @@ The claim now follows by the induction principle.
 \end{problem}
 
 %%%
-%%%
+%%% NEW PROBLEM: UNBALANCED MERGE-LIKE SORT IN QUADRATIC TIME
 %%%
 
-\begin{problem} (60 p)
-  Maybe a problem on analyzing ``merge runs sort''
-  which recursively merges the first run with the rest
-  of the array recursively sorted
+\begin{problem} (80 p)
+  One slightly annoying feature of the \emph{merge sort} algorithm
+  is that it ignores long runs of elements that are already
+  sorted. Jakob has therefore devised an algorithm that will make use
+  of already sorted runs, and your task in this problem is to help him
+  analyse this algorithm.
+
+  The \emph{merge} part of the algorithm would be essentially the same
+  as before:
+%%%
+\begin{verbatim}
+merge (L, R)
+    m := length (L)
+    n := length (R)
+    M := new array of length m + n
+    i := 1
+    j := 1
+    for k := 1 upto m + n {
+        if (i <= m) {
+            if (j <= n and R[j] <= L[i]) {
+                M[k] := R[j]
+                j    := j + 1
+            }
+            else {
+                M[k] := L[i]
+                i    := i + 1
+            }
+        else {
+            M[k] := L[j]
+            j    := j + 1
+        }
+    }
+    return M
+\end{verbatim}
+%%%
+%     For the main recursive \emph{merge sort} method, however, the
+%     intention is to not split the array into subarrays blindly,
+%     but only when we detect the first element that is not in sorted
+%     order, which Jakob is trying to achieve as follows:
+%     
+  For the main recursive sorting method, however,
+  the array should be split only when we detect the first element that is not in sorted
+  order, which Jakob is trying to achieve as follows:
+%%%
+\begin{verbatim}
+mergerunssort (A)
+    n := length (A)
+    i := 1
+    while (i < n and A[i] <= A[i + 1] {
+        i := i + 1
+    }
+    if (i < n) {
+        L := new array of length i
+        R := new array of length n - i
+        for j := 1 upto i {
+            L[j] := A[j]
+        }
+        for j := 1 upto n - i {
+            R[j] := A[i + j]
+        }
+        R := mergerunssort (R)
+        A := merge (L, R)
+    }
+    return A
+\end{verbatim}
+
+%%% CORRECTNESS   
+  \begin{subproblem}%
+    \label{problem:mrs-correctness}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Is the pseudocode algorithm above correct in that for any input
+    array~\verb+A+ it will be the case that \verb+mergerunssort(A)+
+    returns the same array but sorted in increasing order?
+\end{subproblem}
+
+\begin{solution}
+  Let us first argue about the correctness
+  of the \emph{merge} method that merges two sorted arrays into a
+  larger sorted array.
+  This is essentially the same algorithm that was
+  covered in class, except we have removed the (perhaps confusing)
+  infinitely large elements at the end of the arrays, but let us
+  nevertheless argue correctness from first principles.
+  (To be clear, though, if it is explained convincingly in a solution why this
+  algorithm has already been covered in class, then this is sufficient).
+
+  The assumption for \emph{merge} is that the input arrays~$L$ and~$R$
+  are already sorted. The main for loop fills in the elements from~$L$
+  and~$R$ in~$M$ in sorted order.
+  We have the following invariants at the top of the for loop:
+  \begin{enumerate}
+  \item
+    \label{item:mrs1}    
+    The elements
+    $L[1], L[2], \ldots, L[i-1]$
+    and
+    $R[1], R[2], \ldots, R[j-1]$
+    have been copied to the output array positions
+    $M[1], M[2], \ldots, M[k-1]$
+    sorted in increasing order.
+    
+%    
+%     \item    
+%       The elements
+%       $M[1], M[2], \ldots, M[k-1]$ are sorted in increasing order.
+%       
+
+  \item
+    \label{item:mrs2}
+    The elements~$L[i]$ and~$R[j]$ are greater than or equal to all
+    elements inserted in~$M$ in previous iterations.
+    
+  \item%
+    \label{item:mrs3}
+    The element~$L[i]$
+    is less than or equal to all elements
+    $L[i+1], L[i+2], \ldots, L[m]$
+    and~$R[j]$ is less then or equal to all elements
+    $R[j+1], R[j+2], \ldots, R[n]$.
+  \end{enumerate}  
+%%%
+  Invariants~\ref{item:mrs1} and~\ref{item:mrs2}
+  are vacuously true the first time we enter the for loop (since
+  nothing has been copied to~$M$).
+  Invariant~\ref{item:mrs3}
+  remains true throughout the algorithm since~$L$ and~$R$ are assumed
+  to be sorted, so we do not need to argue about how to maintain it.
+  If we can show that the
+  invariant~\ref{item:mrs1} and~\ref{item:mrs2}
+  are maintained after every iteration of the loop, then
+  this implies that right after the final iteration of the
+  foor loop (where we can mentally think of $k$ as being $k = m + n + 1$)
+  the array~$M$ contains all elements in~$L$ and~$R$ correctly sorted.
+
+  A special case to handle is that  when we get to a point where
+  the check
+  $i \leq m$
+  fails
+  (or
+  $j \leq n$
+  fails),
+  then we know that we have emptied the whole array~$L$ (or~$R$,
+  respectively).
+  By
+  invariants~\ref{item:mrs2} and~\ref{item:mrs3},
+  this means that it is correct to just copy  the remaining elements from
+  the other array.
+  This is exactly what will happen after the first time the check
+  $i \leq m$
+  (or
+  $j \leq n$)
+  fails inside the for loop, since the same check will keep failing in
+  all future iterations.
+  We can also note that it can never happen that both checks fail
+  simultaneously, since the for loop only runs for $m + n$ steps and
+  the arrays~$L$ and~$R$ together contain that many elements,
+  so they cannot both be emptied before the for loop has run all iterations.
+
+  If both
+  $i \leq m$
+  or
+  $j \leq n$
+  hold,
+  so that we get to line~$10$ in the algorithm,
+  then the smallest element of~$L[i]$ and~$R[j]$
+  is inserted next in~$M$ in position~$k$.
+  By   invariants~\ref{item:mrs2}
+  and~\ref{item:mrs3}
+  this must be the $k$th smallest element.
+%%%%
+  Suppose first that this smallest element is~$L[i]$. 
+  Since
+  $L[i] \leq R[j]$
+  and
+  both arrays~$L$ and~$R$ are sorted in increasing order
+  (invariant~\ref{item:mrs3}),
+  this means that the smallest remaining element was copied to~$M$
+  but that this element was also greater than or equal to all
+  previously copied elements
+  (invariant~\ref{item:mrs2}).
+  After $i$ has been incremented to~$i+1$,
+  this means that
+  invariants~\ref{item:mrs1} 
+  and~\ref{item:mrs2} have been restored.
+  The other case, when the smallest element in~$R[j]$, is symmetric.
+
+%     
+%     Invariant~\ref{item:mrs1}
+%     Invariant~\ref{item:mrs2}
+%     Invariant~\ref{item:mrs3}
+%   
+
+  Let us now discuss the main \emph{merge runs sort} method.
+  We will show by induction over the length of the array that this is
+  a correct sorting algorithm.
+  Arrays of length~$1$ are covered by the more general base case of
+  arrays of any positive length~$n$ that are already sorted in increasing
+  order.
+  For such an input array~$A$, the while loop
+  will scan through~$A$ until $i = n$
+  (since for all $i < n$  it holds that
+  $A[i] \leq A[i+1]$),
+  after which it will return the input array~$A$ unchanged. This
+  is clearly correct.
+  
+  For the induction step, we adopt as our inductive hypothesis that
+  \emph{merge runs sort} sorts
+  arrays of length less than~$n$ correctly. Let~$A$ be an array of
+  length~$n$ that is not already sorted in increasing order.
+  After the end of the first while loop,  the elements
+  $A[1], A[2], \ldots, A[i]$
+  are sorted in increasing order, since this is what the while loop
+  checks,
+  and these elements are copied to~$L$, which will thus be an array
+  sorted in increasing order.
+  The array~$R$ is not necessarily sorted, but it has length strictly
+  smaller than~$n$, and so by the induction hypothesis
+  \emph{merge run sort} will sort~$R$ correctly in the fourth-to-last
+  line of the algorithm. This means that on the next line
+  \emph{merge} will be run on two sorted arrays, and so the output~$A$
+  will be correctly sorted.
+  
+  The correctness of the \emph{merge runs sort} algorithm now follows
+  by the principle of mathematical induction.
+\end{solution}
+  
+%%% TIME COMPLEXITY
+\begin{subproblem}%
+    \label{problem:mrs-complexity}%  
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Regardless of whether the sorting algorithm is correct or not,
+    does it always terminate (assuming that the input is an array of
+    elements that can be compared with \verb+<=+) and, if so, what is
+    the worst-case time complexity?
+\end{subproblem}
+
+\begin{solution}
+  The algorithm will always terminate, since all recursive calls are
+  made on arrays of strictly smaller size, and if an array has
+  size~$1$, then no recursive call will be made.
+
+  It follows from the careful proof of correctness for \emph{merge}
+  in our solution to
+  Problem~\ref{problem:mrs-correctness}
+  (or from what has been said in class) that this subroutine runs in
+  time linear in the sums of the array lengths.
+
+  For \emph{merge runs sort}, let the worst-case running time for
+  arrays of length~$n$ be~$T(n)$.
+  Except for the calls to
+  \verb+merge+
+  and
+  \verb+mergerunssort+,
+  the running time is linear in~$n$, dominated by the
+  cost of copying the   array~$A$
+  to~$L$ and~$R$. As just discussed, 
+  \verb+merge+ also runs in linear time.
+  For
+  \verb+mergerunssort+,
+  in the worst case the size of the array~$R$ could be $n-1$,
+  which leads to a worst-case running time estimate
+  \begin{equation}
+    \label{eq:mrs-recursive-running-time}
+    T(n) = K n + T(n-1)
+  \end{equation}
+  for some constant~$K$.
+  If we pick this constant~$K$ so that $K \geq T(1)$
+  (which we can always do if we like),
+  and use the equality~\eqref{eq:mrs-recursive-running-time}
+  to substitute~$T(n-1)$ on the right, and then continue 
+  to substitute for~$T(n-2)$, et cetera, then we get
+  \begin{subequations}
+    \begin{align}
+      \label{eq:mrs-recursive-running-time-expanded}
+      T(n)
+      &=
+      K n + T(n-1)
+      \\
+      &=
+      K n + K (n-1) +  T(n-2)
+      \\
+      &= K n + K (n-1) + K (n-2) +  T(n-3)
+      \\
+      &= K n + K (n-1) + K (n-2) + K(n-3) +  T(n-4)
+      \\
+      &= \cdots 
+      \\
+      &= 
+        \textstyle \textstyle \sum_{i=2}^{n} K i \ + T(1) 
+      \\
+      &= 
+      K \textstyle \sum_{i=1}^{n} i 
+      \\
+      &= 
+        K \frac{n(n+1)}{2}
+      \\
+      &= 
+        \Bigoh{n^2}
+        \eqcomma
+    \end{align}      
+  \end{subequations}
+  resulting in a worst-case asymptotic running time 
+  $\Bigoh{n^2}$.
+  As we will see in
+  Problem~\ref{problem:mrs-best-and-worst},
+  unfortunately there are worst-case inputs triggering
+  this quadratic running time, so this analysis is tight.
+
+  \smallskip
+
+  \noindent
+  \emph{Remark:}
+  The general idea of making use of already sorted runs is very good,
+  however, so if you want an additional exercise, you can think about
+  how to take this idea and turn it into a version of \emph{merge
+    sort} that will always run in time~$\bigoh{n \log n}$ but will be
+  faster on sorted or almost sorted arrays.
+\end{solution}
+  
+%%% BEST CASE AND WORST CASE
+  \begin{subproblem}%
+    \label{problem:mrs-best-and-worst}%  
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    Can you give any example of a family of input arrays of growing
+    size for which Jakob's \emph{merge runs sort} algorithm will
+    output a correctly sorted array and be asymptotically faster than the
+    \emph{merge sort} algorithm that we have covered in class?
+    Can you give any example of a family of input arrays of growing
+    size for which \emph{merge runs sort} will be asymptotically slower
+    than standard \emph{merge sort}?
+\end{subproblem}
+
+\begin{solution}
+  If the input is an array
+  $
+  A =
+  \set{1, 2, 3, \ldots, n-2, n-1, n}
+  $
+  that is already sorted in order, then
+  (as already discussed above in our solution to
+  Problem~\ref{problem:mrs-correctness})    
+  \emph{merge runs sort}
+  will just scan through the array once until $i = n$
+  (since for all $i < n$
+  it will always be the case that
+  $A[i] \leq A[i+1]$),
+  after which it will return the input array~$A$ unchanged. This
+  is correct, since~$A$ is already sorted, and will only take linear
+  time~$\bigoh{n}$.
+  The standard \emph{merge sort} algorithm that we have covered in the
+  course, however, will always take time~$\bigomega{n \log n}$, since
+  there will be $\bigomega{\log n}$ levels of recursive calls, and at
+  each level the total time required for all \emph{merge} operations
+  is linear even if everything is already perfectly sorted. Hence,
+  \emph{merge runs sort}
+  is asymptotically faster
+  for an already sorted array.
+
+  If the input is instead an array
+  $
+  A =
+  \set{n, n - 1, n - 2, \ldots, 3,  2, 1}
+  $
+  sorted in decreasing order,
+  then
+  \emph{merge runs sort}
+  will be called recursively on all subarrays
+  $A[2, n], \, A[3, n], \, A[4, n],\, \ldots$
+  (where we use the notation $A[j,k]$ for the subarray of~$A$ between
+  positions~$j$ and~$k$ inclusive),
+  since in each recursive call the very first check
+  $A[i] \leq A[i+1]$
+  will fail.
+  For every array of size $n-i$ for $i = 1, 2, \ldots$,
+  the ensuing \emph{merge} call will then take linear time
+  (as it always does). This means that the total running time will  
+  scale like
+  $
+  \sum_{i=1}^{n} (n-i)
+  =
+  \frac{(n-1)n}{2}
+  =
+  \Bigtheta{n^2}
+  $
+  (matching our analysis of
+  Equation~\eqref{eq:mrs-recursive-running-time}
+  in
+  Problem~\ref{problem:mrs-complexity}),
+  so
+  \emph{merge runs sort}
+  will run in quadratic time whereas
+  \emph{merge sort}
+  always runs in time
+  $\bigoh{n \log n}$.
+\end{solution}
+  
 \end{problem}
 
 %%%
-%%% DMFS 2023 PROBLEM SET 5: IDMA 2026 EXAM: PROBLEM 3
+%%% DMFS 2023 PROBLEM SET 5: PROBLEM 3
 %%% Buggy induction proofs
 %%%
 

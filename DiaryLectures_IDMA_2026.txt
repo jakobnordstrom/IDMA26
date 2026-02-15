@@ -10,6 +10,7 @@ DIARY FOR IDMA 2026
 *** To fix for ugeseddel 1 in 2027 (SHOULD HAVE BEEN DONE ALREADY IN 2025): ***
 - In Ugeseddel 1, exercise 4, the students are asked to run Selection Sort on an array and compare with Merge Sort. However, selection sort is only mentioned in CLRS exercise 2.2-2, which is set later on the list of exercises, and here they are asked to come up with pseudo-code for selection sort. This confused me for a while - I can spin it for the TA session, but students that just go at the exercises chronologically might hit a wall here, since they don't actually have the selection sort algorithm at hand.
 - Frederik: The pseudocode examples in the beginning are too hard. (Was this fixed?)
+*** For 2027, give students good examples of efficient pseudocode to analyse in the exercises, and not just funky code that is doing slightly strange things and might therefore be harder to analyse. ***
 
 MONDAY
 New material on algorithm and complexity
@@ -42,6 +43,13 @@ It would be good to revise the planning.
 2ND WEEK
 --------
 
+*** It might be good to help students practice the notation that they have learned, such as:
+- Deciding whether x \in A or x \notin A for some examples of x and A.
+- Computing A \cup B, A \cap B, A \ B, et cetera for some small sets.
+- Computing a mod b and deciding whether a and b are relatively prime
+- Decide whether m | n or not for some numbers m and n.
+- Starting next week, checking that students can parse simple propositional logic formulas. ***
+
 MONDAY
 Went mostly according to plan.
 The first part of the lecture takes a lot of time. Would it be better to have slides for this?
@@ -59,7 +67,6 @@ Also, I did base-b expansion extremly quickly, but went 5 minute over time.
 I could remove the final pages in the notes on intuition for induction.
 
 *** I ran out of time for the Wednesday lecture in both 2025 and 2026. ***
-
 *** It would be good to send out a summary on Absalon what we covered during week 2. ***
 
 
@@ -92,7 +99,7 @@ The pace was quite rushed in the second half, and I went 5 minutes over time.
 I think it would be hard to go much faster than I did today.
 This was probably a fairly difficult lecture (but then maybe some lectures have to be difficult).
 
-WEDNESDAY (ONLINE)
+WEDNESDAY (ONLINE, SRIKANTH(?))
 Did lots of online questions with sendsteps. The lecture went well. (More than 100 attending and at least 60 responded to each question. Lots of errors in the answers, though.)
 
 

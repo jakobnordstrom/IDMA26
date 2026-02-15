@@ -1,0 +1,15 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+Solutions for problem sets 2 and 3
+
+Hi TAs,
+
+I have now added a problem to problem set 2 and published what I intended to be the final version of this problem set.
+
+With this message I attached suggested solutions to problem set 2 and problem set 3 (for which the final version was already posted a few days ago).
+
+Any help with discovering and correcting typos would be much appreciated.
+
+Also, if you think that the worked-out solutions could be written in a more helpful way, then I am also interested in this kind of feedback. I spend quite a bit of time on typing up the solutions, and the intention is that they should be helpful for the students as they prepare for the exam. Therefore, if you see ways in which the pset solutions could be made more helpful, then I am interested in hearing about this.
+
+Jakob

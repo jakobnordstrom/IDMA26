@@ -1,0 +1,41 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Notes after second TA meeting Fri Feb 13
+
+Hi all,
+
+Here are some notes from the brief meeting we had yesterday.
+
+PROBLEM SET 1
+
+- The deadline is on Monday.
+- You have received suggested solutions and grading guidelines, so that you can get started right away.
+- If you have any questions about things not covered by the grading guidelines, then consider the following options in this order:
+  (a) ask one of the TAs from last year if the grading guidelines should be interpreted as already covering this,
+  (b) put a question in the grading guidelines document,
+  (c) alert me by e-mail if I don't react quickly enough.
+- On Friday we will discuss any outstanding issues, and I will also be interested in what you see of student strengths and weaknesses based on the psets.  
+- The graded pset solutions should be returned next Monday. You should coordinate so that this happens during roughly the same time of day (morning, afternoon, or evening).
+
+NOTATION
+
+It might be good to help students practice the notation that they have learned, such as:
+- Deciding whether x \in A or x \notin A for some examples of x and A.
+- Computing A \cup B, A \cap B, A \ B, et cetera for some small sets.
+- Decide whether m | n or not for some numbers m and n.
+- Starting next week, checking that students can parse simple propositional logic formulas.
+
+EXERCISE SESSIONS AND LECTURES NOT BEING FULLY IN SYNCH
+
+The course plan says that we should have done induction last Wednesday. That was the plan, but we didn't get to it (and since I also didn't last year, I should probably revise the plan).
+
+This means that some of you did exercises on induction before the students have seen the formal set-up in the lectures. My impression during our meeting wass that you had not perceived that this was a serious problem, and I also don't think this is anything negative. Especially since this is a difficult topic, it might even be helpful that the students come to the lecture having been a bit prepared in advance.
+
+EXAMPLES OF GOOD PSEUDOCODE
+
+It was pointed out that for next year I should consider giving the students the problem of analysis good examples of efficient pseudocode in the exercises, and not just funky code that is doing slightly strange things and might therefore be harder to analyse.
+
+See you at https://lu-se.zoom.us/j/64191262268?pwd=9HALE6zHVDA8MDS7up3aGXBvjEiEI1.1 next Friday 11:30-12:30!
+
+Jakob
+
