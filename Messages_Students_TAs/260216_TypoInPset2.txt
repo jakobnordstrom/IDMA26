@@ -1,0 +1,9 @@
+Typo in problem set 2, problem 3
+
+Hi all,
+
+Just a quick message that it was pointed out to me today that there was an annoying typo in the pseudocode in problem 3 on problem set 2.
+
+This should now be fixed.
+
+Jakob

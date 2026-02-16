@@ -7,9 +7,11 @@ In 2026 I used:
 - Some old, hard problems from DMFS 2023 problem sets and the DMFS 2021 exam.
 - A few new problems.
 
-*** In 2027, should I recycle the DMFS 2023 problems, and get ***
-*** rid of all traces of the DMFS course once and for all?    ***
-*** (And also use exam 2026 problems, of course.)             ***
+*** In 2027, should I recycle the DMFS 2023 problems, and get rid   ***
+*** of all traces of the DMFS course once and for all?              ***
+*** (And also use exam 2026 problems, of course.)                   ***
+*** The DMFS 2022 exam problems are anyway on the 2023 problem set. ***
+*** The DMFS 2023 exam problems are anyway on the 2024 problem set. ***
 
 
 PROBLEM SET 1 2026

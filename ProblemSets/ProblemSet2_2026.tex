@@ -345,11 +345,18 @@ The claim now follows by the induction principle.
 %%%
 
 \begin{problem} (80 p)
-  One slightly annoying feature of the \emph{merge sort} algorithm
-  is that it ignores long runs of elements that are already
-  sorted. Jakob has therefore devised an algorithm that will make use
-  of already sorted runs, and your task in this problem is to help him
-  analyse this algorithm.
+%     
+%     One slightly annoying feature of the \emph{merge sort} algorithm
+%     is that it ignores long runs of elements that are already
+%     sorted. Jakob has therefore devised an algorithm that will make use
+%     of already sorted runs, and your task in this problem is to help him
+%     analyse this algorithm.
+%   
+  One annoying feature of \emph{merge sort} is that it ignores long
+  runs of already sorted elements.  Your task in this problem is to
+  analyse a modified algorithm by Jakob
+  % that changes this.
+  intended to fix this.
 
   The \emph{merge} part of the algorithm would be essentially the same
   as before:
@@ -371,8 +378,9 @@ merge (L, R)
                 M[k] := L[i]
                 i    := i + 1
             }
+        }
         else {
-            M[k] := L[j]
+            M[k] := R[j]
             j    := j + 1
         }
     }
