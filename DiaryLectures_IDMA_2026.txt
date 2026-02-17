@@ -70,13 +70,16 @@ I could remove the final pages in the notes on intuition for induction.
 *** It would be good to send out a summary on Absalon what we covered during week 2. ***
 
 
-***** NOTES FROM 2025 *****
-
 3RD WEEK
 --------
 
 MONDAY
-Base-b expansion and induction proofs. Managed to do one strong induction proof, but no asymptotic analysis for recursive algorithms (as usual).
+No base-b expansion and induction proofs (done during 2nd week).
+Good lecture at leisurely pace. 
+Managed to do two strong induction proofs, but no asymptotic analysis for recursive algorithms (as usual).
+
+
+***** NOTES FROM 2025 *****
 
 WEDNESDAY MORNING
 Propositional and predicate logic.
