@@ -42,7 +42,12 @@
 % Dates
 \newcommand{\mondaylecturedate}{Monday Feb 2\xspace}
 \newcommand{\wednesdaylecturedate}{Wednesday Feb 4\xspace}
-\newcommand{\deadlinefirstpset}{Wednesday Feb 11 at 12:59 CET\xspace}
+\newcommand{\deadlinefirstpset}{%
+  \sout{Wednesday Feb 11}
+  Monday Feb 16
+  at 12:59 CET\xspace}
+
+\usepackage[normalem]{ulem}
 
 
 \begin{document}
@@ -91,7 +96,26 @@ efficiency of different algorithms using
 
 \section*{Reading Material}
 
-Cormen, Leiserson, Rivest, and Stein (CLRS): Chapters 1--3 and 10.
+The reading material for this week includes:
+\begin{itemize}
+\item
+  Cormen, Leiserson, Rivest, and Stein (CLRS): Chapters 1--3 and 10.
+  
+\item
+  Notes no functions and asymptotic analysis.
+  
+\item
+  Some slides (in Danish) on stacks, queues, and (linked) lists.
+  
+\item
+  And all of the lecturers handwritten notes, if they are helpful for you.
+  (Typically, the handwritten lecture notes will cover slightly more than
+  what is actually said in class.)
+  
+\end{itemize}
+%
+Note that all the material is collected in a module for this week
+on the Absalon course pages.
 
 Please note that --- as a general rule --- 
 \emph{the lectures will not cover everything in the textbooks},
@@ -274,12 +298,16 @@ else
 
   \item
     Illustrate how the linear search algorithm searches for element
-    $16$ in this array and for element $18$.
+%       $16$
+    $9$
+    in this array and for element $18$.
     
     
   \item
     Perform the same searches for elements
-    $16$ and  $18$
+%       $16$
+    $9$
+    and  $18$
     but using binary search.
 
 %   
@@ -305,21 +333,6 @@ else
 
   \begin{enumerate}
 
-  \item
-    Run the selection sort algorithm on
-    this array and illustrate (iteration by iteration)
-    how the array gets sorted.
-    
-  \item
-    Run merge sort on the same array. Illustrate the recursive calls
-    and how they are merged to form a sorted array.
-
-  \item{} [*]
-    Which algorithm of selection sort or merge sort is fastest on this
-    particular array?
-    
-  \end{enumerate}
-
 \item
   CLRS 2.1-1 
 
@@ -331,18 +344,34 @@ else
   2.3-1 
 %   and   2.3-2
 
-%   
-%   \item
-%     Can you modify the code for merge sort so that it
-%     stops without making a recursive call when the size of the list to
-%     sort is $\leq 2$?
-%   
+   
+\item
+  Can you modify the code for merge sort so that it
+  stops without making a recursive call when the size of the list to
+  sort is $\leq 2$?
+  
 
 \item
   {}[*] CLRS 2-2 
   
 \item
   CLRS 3.2-1
+
+  \item
+    Run selection sort 
+    (the sorting algorithm mentioned in CLRS \mbox{exercise 2.2-2})
+    on this array and illustrate iteration by iteration how the
+    array gets sorted.
+    
+  \item
+    Run merge sort on the same array. Illustrate the recursive calls
+    and how they are merged to form a sorted array.
+
+  \item{} [*]
+    Which algorithm of selection sort or merge sort is fastest on this
+    particular array?
+    
+  \end{enumerate}
 
 \end{enumerate}
 

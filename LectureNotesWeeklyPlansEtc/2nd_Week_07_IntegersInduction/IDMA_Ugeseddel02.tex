@@ -44,7 +44,15 @@
 % Dates
 \newcommand{\mondaylecturedate}{Monday Feb 9\xspace}
 \newcommand{\wednesdaylecturedate}{Wednesday Feb 11\xspace}
-\newcommand{\deadlinefirstpset}{Wednesday Feb 11 at 12:59 CET\xspace}
+
+\newcommand{\deadlinefirstpset}{%
+  \sout{Wednesday Feb~11}
+  Monday Feb~16
+  at 12:59 CET\xspace}
+
+\usepackage[normalem]{ulem}
+
+
 
 \begin{document}
 
@@ -133,7 +141,7 @@ likely you are already familiar with most of it.
 
 Towards the end of the week, 
 %   On \textbf{Wednesday afternoon}
-we will reach 
+we will encounter for the first time
 \emph{one of the most important topics in this whole course},
 namely
 \textbf{mathematical induction}. This will be our preferred method to prove
@@ -145,7 +153,9 @@ statements  such as
 \]
 (which is, strictly speaking,  a sequence of
 statements $P(n)$ parameterized by the positive integer~$n$).
-We will discuss how to set up and execute a proof by induction, and we
+%%% Adjusted planning for induction
+During this and next week, 
+we will discuss how to set up and execute a proof by induction, and we
 will see that this type of argument is well-suited for proving
 statements about recursive algorithms.
 
@@ -238,7 +248,7 @@ it later
   really study, and study hard (not just for this course). 
 
 \item
-  \textbf{Notes:}
+  \textbf{Some Notes on Mathematical Induction:}
   There are also notes posted on Absalon which mostly overlap with
   the material above.  It is recommended to read these notes to see a
   second exposition of the same material, and thus double your chances

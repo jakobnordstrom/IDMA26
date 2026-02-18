@@ -1,15 +1,15 @@
 DIARY FOR IDMA 2026
 ===================
 
+*** Make Absalon messages with learning goals for every week ***
+
 !!!!! TO FIX FOR ALL UGESEDDLER IN 2026: Mention explicitly the extra reading in the weeks that have extra reading. !!!!!
 
 
 1ST WEEK
 --------
 
-*** To fix for ugeseddel 1 in 2027 (SHOULD HAVE BEEN DONE ALREADY IN 2025): ***
-- In Ugeseddel 1, exercise 4, the students are asked to run Selection Sort on an array and compare with Merge Sort. However, selection sort is only mentioned in CLRS exercise 2.2-2, which is set later on the list of exercises, and here they are asked to come up with pseudo-code for selection sort. This confused me for a while - I can spin it for the TA session, but students that just go at the exercises chronologically might hit a wall here, since they don't actually have the selection sort algorithm at hand.
-- Frederik: The pseudocode examples in the beginning are too hard. (Was this fixed?)
+*** To fix for ugeseddel 1 in 2027: ***
 *** For 2027, give students good examples of efficient pseudocode to analyse in the exercises, and not just funky code that is doing slightly strange things and might therefore be harder to analyse. ***
 
 MONDAY
@@ -74,22 +74,26 @@ I could remove the final pages in the notes on intuition for induction.
 --------
 
 MONDAY
-No base-b expansion and induction proofs (done during 2nd week).
+No base-b expansion and induction proofs (done already during 2nd week).
 Good lecture at leisurely pace. 
 Managed to do two strong induction proofs, but no asymptotic analysis for recursive algorithms (as usual).
 
 
-***** NOTES FROM 2025 *****
-
 WEDNESDAY MORNING
 Propositional and predicate logic.
 Lots of writing on the board, but my feeling is that it was good to write on the board and go slowly, because students seemed to be struggling to follow even this tempo.
-I went slightly over time, and still did not manage to cover all of predicate logic.
+2025: I went slightly over time, and still did not manage to cover all of predicate logic.
+2026: I did all of propositional logic and talked briefly about SAT and TAUT, but no predicate logic.
 
 WEDNESDAY AFTERNOON
-I did the last bit of predicate logic plus proof techniques.
-I proved that sqrt(2) is irrational and also that there are infinitely many primes, but not the two final exercises/theorems in the notes.
-I went slightly over time, but could have finished in time with better time management.
+2026: All of predicate logic plus proof techniques.
+2025: I did the last bit of predicate logic plus proof techniques.
+2026: I proved that sqrt(2) is irrational, but no theorems after that. Ended essentially on time.
+2025: I proved that sqrt(2) is irrational and also that there are infinitely many primes, but not the two final exercises/theorems in the notes.
+2025: I went slightly over time, but could have finished in time with better time management.
+
+
+***** NOTES FROM 2025 *****
 
 
 4TH WEEK
