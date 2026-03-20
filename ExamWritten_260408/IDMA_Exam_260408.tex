@@ -291,8 +291,8 @@ The claim now follows by the induction principle.
   Note that there is one spoiler piece of code that does none of the
   above.  You receive 10 points for each correct match and 10 more
   points for a brief but convincing explanation why the piece of code
-  does what you claim it does (or for why the spoiler piece of code
-  does something else.
+  does what you claim it does (or, for the spoiler piece of code, why it
+  does something else).
 
 \begin{solution}
   SOLUTION HERE
@@ -795,7 +795,6 @@ max-heap-find-min (A, i)
     \label{sequence-dijkstra}%    
     $a$, $d$, $c$, $b$, $f$, $h$, $e$, $g$.
 
-\input{Figures/figGraphAlgorithmOutputs-26.tex}    
         
 % 4. Spoiler        
   \item%
@@ -826,6 +825,8 @@ max-heap-find-min (A, i)
   Each sequence above is the output of at most one of the algorithms,
   but since there are four sequences there could be a sequence that
   cannot be produced by any of the algorithms.
+
+  \input{Figures/figGraphAlgorithmOutputs-26.tex}    
 
   Partial credit is given for matching algorithms and vertex sequences correctly.
 %
@@ -1156,7 +1157,9 @@ max-heap-find-min (A, i)
   in counting the number of multisets of size $r$.  Jakob has a new
   idea for showing that the number of multisets is
   $\binom{n + r - 1}{n-1}$ by translating every multiset to a standard
-  subset of $[n + r - 1]$ of size $n-1$ as follows:
+  subset of $[n + r - 1]$ of size $n-1$ by running the following piece
+  of code (which assumes that the elements in the multiset are sorted
+  in increasing order): 
 \begin{verbatim}
 PSEUDO-CODE HERE
 \end{verbatim}
@@ -1181,7 +1184,7 @@ PSEUDO-CODE HERE
     {(40 p)}
     {\ignorespaces}
 %%%
-    Is Jakob's new algorithm correct? Can you prove that Jakob's
+    Is Jakob's new algorithm correct? Can you prove that the
     algorithm provides a
     translation that shows that the number of multisets of size $r$ from
     a universe of size $n$ is $\binom{n + r - 1}{n-1}$? Or if there is an
@@ -1213,14 +1216,15 @@ PSEUDO-CODE HERE
     For fixed positive integers $n$ and~$r$, let us say that the Boolean predicate
     $T_{n,r}(M,S)$
     is true if the multiset $M$ can be translated to the standard
-    subset $S$ by the method we studied in class and is false
-    otherwise. 
-%%%
+    subset $S$ by the method we studied in class and that
+    $T_{n,r}(M,S)$
+    is false otherwise.
+    
     What properties does this predicate $T_{n,r}$ have? Please indicate
-    for all alternatives below whether $T_{n,r}$ has this property or
-    not. For each property, you get points if you give a correct
+    for all alternatives below whether $T_{n,r}$ satisfies this property or
+    not. For each property, you get points for a  correct
     answer whether $T_{n,r}$ has the property or not, a deduction for
-    every wrong answer, and no points and no deduction if you do not
+    a wrong answer, and no change in your score if you do not
     indicate an answer for a specific property:
     \begin{enumerate}  %  [(i)]
     \item
