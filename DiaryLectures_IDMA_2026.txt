@@ -4,13 +4,14 @@ DIARY FOR IDMA 2026
 *** Make Absalon messages with learning goals for every week ***
 
 !!!!! TO FIX FOR ALL UGESEDDLER IN 2026: Mention explicitly the extra reading in the weeks that have extra reading. !!!!!
+!!!!! DONE UP TO AND INCLUDING WEEK 5.                                                                              !!!!!
 
 
 1ST WEEK
 --------
 
 *** To fix for ugeseddel 1 in 2027: ***
-*** For 2027, give students good examples of efficient pseudocode to analyse in the exercises, and not just funky code that is doing slightly strange things and might therefore be harder to analyse. ***
+*** Give students good examples of efficient pseudocode to analyse in the exercises, and not just funky code that is doing slightly strange things and might therefore be harder to analyse. ***
 
 MONDAY
 New material on algorithm and complexity
@@ -72,6 +73,8 @@ I could remove the final pages in the notes on intuition for induction.
 
 3RD WEEK
 --------
+
+*** For 2027: rewrite the notes to de-emphasize the difference between normal induction and strong induction (which students find confusing). ***
 
 MONDAY
 No base-b expansion and induction proofs (done already during 2nd week).

@@ -1,0 +1,13 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Grading guidelines for problem set 2
+
+Hi all,
+
+At https://docs.google.com/document/d/1gpdMCKTFsprZy0Z9MtTEyLArWNnKmmUgovTYI-vZUSs/edit you find the proposed grading guidelines for problem set 2. We will talk about these guidelines on Friday.
+
+Please try to make sure to have studied a fair number of problem set submissions before Friday, so that we can know what aspects of the student solutions we need to discuss.
+
+In particular, please focus on problem 3 (mergerunssort), since this is a new problem, and for such problems it is hard to know in advance exactly what can happen in the solutions.
+
+Jakob

@@ -1,0 +1,23 @@
+
+Stacks, queues, and linked lists
+
+Hi all,
+
+My apologies for being a bit rushed towards the end.
+
+To read more about stacks, queues, and linked lists, please have a look at CLRS Chapter 10 "Elementary Data Structures".
+
+The slides we looked at are in the module "1st week (week 6): Introduction, sorting, searching" at https://absalon.ku.dk/courses/89165/files/10507185?module_item_id=2988667 (and there is also an English version at https://absalon.ku.dk/courses/89165/files/10507222?module_item_id=2988668).
+
+Importantly, you need to understand how to insert and remove elements (as showed for a doubly linked list at the slide "Hvordan fungerer insert?", and also how this translates into pseudocode, as in the different versions for singly and doubly linked lists in the methods LIST-INSERT, LIST-DELETE, and LIST-SEARCH in CLRS Chapter 10.
+
+Once you understand how linked lists work in general, it should also be clear how we could use them to implement stacks and queues.
+
+We are also going to use later in the course that we can represent more general structurs such as trees using linked data structures, as discussed in CLRS Section 10.3.
+
+As usual, the TAs are your friends when it comes to understanding new concepts, so make sure to ask them about anything that is unclear, and maybe to do dry-runs with list insertions and deletions with the CLRS code if that is helpful.
+
+Jakob
+
+
+

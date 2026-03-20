@@ -71,9 +71,9 @@
 \input{../ProblemSets/course-macros.tex}
 
 \ifthenelse{\boolean{versionwithsolutions}}
-{\newcommand{\examheading}{\mbox{Exam April 2, 2025} \\
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026} \\
     Problems and Solutions}}
-{\newcommand{\examheading}{\mbox{Exam April 2, 2025}}}
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026}}}
 
 
 % For getting watermark "DRAFT" across all pages (for instance, 
@@ -127,131 +127,90 @@
 {\input{IDMA_Exam_GeneralInstructions.tex}}
 
 %%%
-%%% NUMBER REPRESENTATION PROBLEM
+%%% PSEUDOCODE PROBLEM LINKED LISTS
 %%%
 
 \begin{problem}
-  (50 p)
-% 10 p for problem (a)
-% 20 p each for problems (b) and (c)
-%
-  This problem is about different representations of integers.
+  (80 p)
+  In this problem we consider linked lists sorted in increasing order.
+  The records in our list datatype have four attributes:
+  \begin{itemize}
+  \item
+    \verb+data+: the data stored (which we will not care about, as usual),
+    
+  \item
+    \verb+key+: used for sorting elements in the list.
+    
+  \item
+    \verb+prev+: link to previous element.
+    
+  \item
+    \verb+next+: link to next element.
+    
+  \end{itemize}
+%%%
+  The link is initialized with two sentinel records
+  \verb+head+
+  and
+  \verb+tail+
+  such that
+  \begin{itemize}
+  \item
+    \verb+head.key+ $=$ \verb+-INFINITY+,
+    \verb+head.prev+ $=$ \verb+NULL+,
+    and
+    \verb+head.next+ $=$ \verb+tail+;
+    
+  \item
+    \verb+tail.key+ $=$ \verb*+INFINITY*,
+    \verb+tail.prev+ $=$ \verb+NULL+,
+    and
+    \verb+tail.next+ $=$ \verb+NULL+;
+  
+  \end{itemize}
+%%%
+  This ensures that \verb+head+ will always be the first element and
+  \verb+tail+ will always be the last element in the linked list.
 
-\begin{subproblem}%
-  \ifthenelse{\boolean{versionwithsolutions}}
-  {(10 p)}
-  {\ignorespaces}
-  Write the binary number $(110)_2$ in decimal notation.
-\end{subproblem}
+  Below you find four pseudocode functions for operating on the list.
+  Please identify which piece of code:
+  \begin{enumerate}
+  \item
+    \textbf{Inserts} an element
+    identified by a key value
+    in the list.
+    
+  \item
+    \textbf{Removes} an element
+    identified by a key value
+    from the list.
 
-\begin{solution}
-  We have
-  $(110)_2
-  =
-  1 \cdot 2^2 + 
-  1 \cdot 2^1 + 
-  0 \cdot 2^0
-  =
-  6
-  $.
-\end{solution}
+  \item
+    \textbf{Looks up and returns}
+    an element
+    identified by a key value
+    from the list.
 
-\begin{subproblem}%
-  \ifthenelse{\boolean{versionwithsolutions}}
-  {(20 p)}
-  {\ignorespaces}
-  Write the decimal number $110$ in binary notation.
-\end{subproblem}
+  \end{enumerate}
+%%%
+  Note that there is one spoiler piece of code that does none of the above.
+  You receive 10 points for each correct match and 10 more points for a brief but convincing
+  explanation
 
-\begin{solution}
-  Dividing by~$2$ and outputting the remainders will give us the
-  bits in the binary expansion in reverse order. We obtain 
-  \begin{align*}
-    110 &= 55 \cdot 2 + 0 \\
-    55  &= 27 \cdot 2 + 1 \\
-    27  &= 13 \cdot 2 + 1 \\
-    13  &=  6 \cdot 2 + 1 \\
-    6   &=  3 \cdot 2 + 0 \\
-    3   &=  1 \cdot 2 + 1 \\
-    1   &=  0 \cdot 2 + 1 
-  \end{align*}
-  from which we see that
-  $
-  (110)_{10}
-  = 
-  (1101110)_2
-  $.
-  Just to verify that we have not made any mistake, we can check our answer by 
-  computing
-  $
-  (1101110)_2
-  =
-  1 \cdot 2^6 + 
-  1 \cdot 2^5 + 
-  0 \cdot 2^4 + 
-  1 \cdot 2^3 + 
-  1 \cdot 2^2 + 
-  1 \cdot 2^1 + 
-  0 \cdot 2^0 
-  =
-  64 + 
-  32 + 
-  8 + 
-  4 + 
-  2
-  =
-  110
-  $.
-\end{solution}
+  16:21
+
 
   
-\begin{subproblem}%
-  \ifthenelse{\boolean{versionwithsolutions}}
-  {(20 p)}
-  {\ignorespaces}
-  Write the octal number $(2025)_8$ in decimal notation.
-\end{subproblem}
+  Algorithms for
+- insertion in a doubly linked list
+- removal in a doubly linked list
+- lookup in a doubly linked list
+- and a spoiler
+and ask to match the code snippets to these alternatives (with explanations).
+All code snippets would "return" something just to obfuscate a little bit.
+10 p for correct match, 10 p for brief explanation
 
-\begin{solution}
-  We have
- $(2025)_8
- =
- 2 \cdot 8^3 + 
- 0 \cdot 8^2 + 
- 2 \cdot 8^1 + 
- 5 \cdot 8^0
- =
- 2 \cdot 512 + 
- 2 \cdot 8 +
- 5
- = 
- 1045
- $.
-\end{solution}
-
-\end{problem}
-
-%%%
-%%% GCD PROBLEM
-%%%
-
-\begin{problem}
-  (50 p)
-% 20 p for easy problem
-% 30 p for harder problem
-%
-%%% VERY EXPLICIT STATEMENT
-%     Run the Euclidean algorithm on the numbers
-%     $m$ and~$n$ below to find
-%     $d = \gcd (m, n)$, 
-%   %     showing all  steps in the execution,
-%     showing all recursive calls,
-%     and then express~$d$ as a linear combination of $m$ and~$n$.
-%%%     LESS EXPLICIT STATEMENT
-  Use the algorithm we have learned for determining
-  $d = \gcd (m, n)$ for the numbers below,
-  showing details of all function calls made, 
-  and then express~$d$ as a linear combination of $m$ and~$n$.
+  
   
 \begin{subproblem}%
   \ifthenelse{\boolean{versionwithsolutions}}

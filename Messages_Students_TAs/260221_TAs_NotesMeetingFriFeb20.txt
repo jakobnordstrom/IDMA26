@@ -1,0 +1,70 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Notes from TA meeting Fri Feb 20
+
+Hi all,
+
+Here are my take-aways from our meeting yesterday.
+
+PROBLEM SET 1
+
+Submissions are under control. There were a few late submissions, but nothing unmanageable.
+
+You will make sure to coordinate who grades which group/hold, and will let me know if there are any problems.
+
+We are on track to return the psets to the students on Monday. Ideally, this will happen before the exercise classes, but the main thing is that you TAs coordinate so that students get their psets back at roughly the same time of day.
+
+I am trying to answer grading questions that come up in the grading guidelines at https://docs.google.com/document/d/1h-EU58_gN5Nh2W7DHEL6oQK28gXyCKdHx8yRpNHS4vo/edit . Ping me by e-mail if I don't react quickly enough (I try to check every 6-8 hours or so).
+
+LATE SUBMISSIONS POLICY
+
+For problem set 1, we grade all problem sets, even those that were submitted one day late (which seems to have been the maximum).
+
+When you grade clearly late submissions, you could and should give the feedback thiat this was a late submission, that you are grading it to be nice, and that the student can absolutely not expect this to happen again.
+
+For future problem sets, the policy I suggest (but that we can discuss as needed) is roughly as follows:
+(a) Less than half an hour late: Don't even mention it.
+(b) Before the end of exercise class, i.e., less than 4 hours late: I assume this is not a problem for you, but you can point out to the student that this was a late submission which is against the rules.
+(c) If the submission is later than this, and definitely if it is not even made on the right date, then I suggest the following:
+- Tell the student that they have to contact the main instructor (i.e., me) to explain why they submitted late and ask for an exception to be made.
+- But if the submission is not more than 24 hours late, and if this would not break your own workflow, please be prepared to grade the submission anyway if possible.
+
+As I see it, we want the following:
+- We need the students to submit at the same time, because otherwise your work will be a mess.
+- We also want the students to learn to keep deadlines. This is an important and relevant life skill.
+- But we are not out to get the students. We want them to pass this course. And sometimes they might have reasons for the delay.
+
+What item (c) is meant to do is to increase the cost for the students. It should become a real hassle for them to submit late. They should understand that this is bad. They will have to negotiate with the professor, with (a priori) no guarantee of a positive outcome. They will presumably not want to do this, and so they will have a strong incentive to submit on time for future problem sets.
+
+But I also want us to be pragmatic. So as long as we can make things work, then it is great if you grade. However, you need to be able to plan your work, and so if a problem set is so late that it would incur significant overhead for you to deal with it, you should just let me know.
+
+CHATBOT USAGE
+
+Based on what you said, my impression is that chatbots are probably being used, but not excessively so.
+
+If you strongly suspect that chatbots have been used to write the solutions, then you can warn the students. If you feel bad about this, then you can blame me, inserting a phrase a long the lines of "the main instructor has asked us to remind students that it is not allowed to use chatbots for solving the problem sets, and that you will not have access to such tools at the exam, so this would hurt your exam preparations." Or whatever.
+
+My assessment is that we will not be able to file any formal complaints about students using chatbots.
+
+PLAGIARISM
+
+One other thing to check for (which I forgot about) is plagiarism. This is also strictly forbidden, but we usually have a couple of cases each year. What we try to do then, if students A and B seem to have copied from each other, is that we give the feedback to both students A and B that plagiarism is forbidden, and that this incident will be reported to the head of their study program. You should then report this to me, including names and KU user IDs, and attaching pset submissions, and I will indeed report it to the head of the relevant study program. What happens then, at least sometimes, is that these students will need to have a somewhat unpleasant communication with this person.
+
+THOUGHTS ABOUT EXERCISE CLASSES
+
+I get the impression that total attendance is in the ball park of 100 students, which, if correct, is a good number.
+
+The number of students actually taking the written exam in April was 154 in 2024 and 183 in 2025, so it would seem that more then half of the students expected to take the exam this year are attending classes. Of course, a higher number would be even better, but I believe we are doing well compared to previous years.
+
+Regarding aspects that student struggle with, and that you can help them with, I believe the most important skill for them to develop is how to reason correctly and write proofs.
+
+In particular, induction proofs are usually superhard, so if you can help them to understand this, then this would be great. Note that there are many examples of problems with induction (at different hardness levels) in the problem sets.
+
+A note to self is that the distinction between "normal induction" and "strong induction" is not so helpful for the students. I should maybe try to explain this differently, or just sweep it under the rug, next year. At the end of the day, strong induction and normal induction are actually the same --- the only difference is in the induction hypothesis --- although for some reason the standard approach seems to be to teach as if they are different.
+
+For asymptotic analysis, what I want students to understand is that the asymptotic running time identifies the largest term as input size goes to infinity, and then ignores the constant factor in front of this largest term. If the students understand this, and can analyse standard algorithms running in time O(log n), O(n), O(n log n), O(n^2), et cetera, using this understanding, then I am happy.
+
+If in addition you can help them understand that this is what the formal definition means ("there are constants N and K such that for all n >= N it holds that..."), then this is great. And in case it is useful to show formally why, say, 4 n^3  - 10 n^2 + 100,000 n + 1,000,000 is O(n^3), then by all means do so. But the really important thing here, as I see it, is the understanding of what big-oh notation actually means, as opposed to the formal symbol pushing. I am not so happy with how the textbook teaches this, because my feeling is that the topic is made much more mysterious than would have to be the case.
+
+Jakob
+

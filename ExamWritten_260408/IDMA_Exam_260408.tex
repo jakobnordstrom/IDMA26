@@ -1,0 +1,1265 @@
+% VERSION WITHOUT SOLUTIONS
+\documentclass{jn-pset}
+% Uncomment to get VERSION WITH SOLUTIONS and also do
+%   \setboolean{versionwithsolutions}{true}
+% a few lines down
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+% *** NOT USED FOR EXAM ***
+%
+% \newcommand{\psetno}{5}
+%%% The formatting macro \duedate is not used for the exam
+%   \newcommand{\duedate}{Wednesday April 10 at 13:00 CET}
+% Dummy formatting for draft versions
+%   \newcommand{\thresholdA}{$\langle A \rangle$~points\xspace}
+%   \newcommand{\thresholdB}{$\langle B \rangle$~points\xspace}
+%   \newcommand{\thresholdC}{$\langle C \rangle$~points\xspace}
+%   \newcommand{\thresholdD}{$\langle D \rangle$~points\xspace}
+%   \newcommand{\thresholdE}{$\langle E \rangle$~points\xspace}
+% Add actual grading thresholds here with \renewcommand 
+%   \renewcommand{\thresholdA}{$200$~points\xspace}
+%   \renewcommand{\thresholdB}{$170$~points\xspace}
+%   \renewcommand{\thresholdC}{$140$~points\xspace}
+%   \renewcommand{\thresholdD}{$110$~points\xspace}
+%   \renewcommand{\thresholdE}{$80$~points\xspace}
+
+% Threshold guaranteed to pass the exam
+\newcommand{\thresholdforpass}{$220$~points\xspace}
+
+
+% Compact lists
+\usepackage{paralist}
+
+% COURSE-SPECIFIC MACROS
+
+\input{../ProblemSets/course-macros.tex}
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026} \\
+    Problems and Solutions}}
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026}}}
+
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
+
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: 
+  \examheading}
+
+
+
+\begin{document}
+
+\maketitle
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{
+\noindent
+\emph{%
+  Please note that the main purpose of this document is to explain
+  what the correct solutions are and how to arrive at them.  Thus,
+  while the text below is certainly intended to provide good examples
+  of how to solve problems and reason about solutions, these examples
+  do not necessarily specify exactly how the handed-in exams were
+  expected to look like.
+%
+  This is especially so since for many problems there are more than
+  one correct way of solving them.  
+%   
+%     In general, the solutions provided below tend to be much more
+%     detailed than what would be expected for the exam submissions.
+%   
+  As communicated during the course, the course notes
+  published on Absalon, which contain many problems that we worked out
+  in class, are probably the best indicator of what level of detail is
+  expected from the exam solutions.
+}
+
+
+}
+{\input{IDMA_Exam_GeneralInstructions.tex}}
+
+%%%
+%%% COMBINATORICS
+%%%
+
+\begin{problem}
+  (60 p)
+  As Jakob was preparing this year's instalment of the IDMA course in
+  early $2026$, he realized that he had been teaching discrete
+  mathematics and algorithms in Copenhagen for $6$~years.  For some
+  reason that is not so easy to explain, this made Jakob wonder what the
+  largest positive integer~$n$ is such that
+  $26! / 6^n$
+  is also an integer.
+  Could you help Jakob figure this out?  Jakob does not
+  really trust calculators, so he would very much like to see a clean
+  solution by hand that just uses what we learned during the IDMA course.
+\end{problem}
+
+
+%%%
+%%%   MATHEMATICAL INDUCTION PROBLEM
+%%%
+\begin{problem}
+  (60 p)
+%     Provide formal proofs of the following claims using proof
+  Solve the following problems using
+  techniques that we have learned during the course.
+  Please make sure to provide not just intuition but also formal proofs.
+
+  \begin{subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    Prove that if
+    $x_1, x_2, \ldots, x_n$
+    are non-negative real numbers, then
+    it always holds that
+%       the inequality
+    \begin{equation*}
+      (1 + x_1) (1 + x_2) \cdots  (1 + x_n)
+      \geq
+      1 + x_1 + x_2 + \cdots + x_n
+      \eqperiod
+    \end{equation*}
+%       always holds.
+  \end{subproblem}
+
+\begin{solution}
+We prove this equality by induction over~$n$.
+
+\begin{description}
+\item[\emph{Base case ($n=1$):}]
+
+\item[\emph{Induction step:}]
+\end{description}
+The claim now follows by the induction principle.  
+\end{solution}
+
+
+\begin{subproblem}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(30 p)}
+  {\ignorespaces}
+  Prove that every integer
+  $n \geq 12$
+  can be written as
+  $4a + 5b$ for $a$ and $b$ non-negative integers.
+\end{subproblem}
+
+\begin{solution}
+%     This is very similar to a problem we did in class, 
+%     and we will solve this one in the same way by arguing by
+  We prove this by 
+  induction over~$n$.
+  \begin{description}
+  \item[\emph{Base case ($n=0$):}]
+    
+  \item[\emph{Induction step:}]
+  \end{description}
+  The claim follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+
+%%% 
+%%% PSEUDOCODE PROBLEM LINKED LISTS
+%%%
+
+\begin{problem}
+  (80 p)
+  In this problem we consider linked lists.
+  The records in our list datatype have four attributes:
+  \begin{itemize}
+  \item
+    \verb+data+: the data stored (which we will not care about, as usual),
+    
+  \item
+    \verb+key+: used for sorting elements in the list.
+    
+  \item
+    \verb+prev+: link to previous element.
+    
+  \item
+    \verb+next+: link to next element.
+    
+  \end{itemize}
+%%%
+  The lists are sorted in increasing order based on
+  \verb+key+ values.
+  We assume that distinct records have distinct
+  \verb+key+ values, so that every value identifies a unique record.
+  To make the coding easier, every list is initialized with two
+  sentinel records  
+  \verb+head+
+  and
+  \verb+tail+
+  such that
+  \begin{itemize}
+  \item
+    \verb+head.key+ $=$ \verb+-INFINITY+,
+    \verb+head.prev+ $=$ \verb+NULL+,
+    and
+    \verb+head.next+ $=$ \verb+tail+;
+    
+  \item
+    \verb+tail.key+ $=$ \verb|+INFINITY|,
+    \verb+tail.prev+ $=$ \verb+head+,
+    and
+    \verb+tail.next+ $=$ \verb+NULL+;
+  
+  \end{itemize}
+%%%
+  This ensures that \verb+head+ will always be the first element
+  in the list since
+  \verb|-INFINITY|$= - \infty$ is smaller than any \verb|key|
+  and
+  \verb+tail+ will always be the last element in the linked list since
+  \verb|+INFINITY|$= +\infty$ is larger than any \verb|key|.
+
+  Below you find four pseudocode functions for operating on the list.
+  Please identify which piece of code:
+  \begin{enumerate}
+  \item
+    \textbf{Inserts} an element
+    identified by a key value
+    in the list.
+    
+  \item
+    \textbf{Removes} an element
+    identified by a key value
+    from the list.
+
+  \item
+    \textbf{Looks up and returns}
+    an element
+    identified by a key value
+    from the list.
+
+  \end{enumerate}
+%%%
+  Note that there is one spoiler piece of code that does none of the
+  above.  You receive 10 points for each correct match and 10 more
+  points for a brief but convincing explanation why the piece of code
+  does what you claim it does (or for why the spoiler piece of code
+  does something else.
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+
+\end{problem}
+
+%%% 
+%%% HEAPSORT
+%%%
+
+\providecommand{\buildmaxheap}{\textsc{Build-Max-Heap}\xspace}
+\providecommand{\maxheapify}{\textsc{Max-Heapify}\xspace}
+
+\begin{problem}
+  (70 p)
+  In this problem we want to study heaps and how they can be used for sorting.
+
+\begin{subproblem}%
+  \label{problem:heap-sort}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(50 p)}
+  {\ignorespaces}
+  Run heapsort by hand on the array
+%%%
+  $
+  A =
+  [ 11, 3, 19, 5, 17, 2, 13, 7 ]
+  $
+%%%
+  to sort the array in increasing order
+  and give a detailed explanation of the first few steps of the
+  algorithm.
+  Specifically,
+  show how the original heap is built, and how the first two numbers
+  in the array are sorted into their correct final positions.
+  Make sure to explain what calls to the heap are made from the
+  sorting algorithm and what comparisons are made, 
+  and illustrate how the heap and array have changed at the
+  end of every ``heapify'' or ``bubble'' call (after all recursive
+  subcalls have been taken  care of).
+
+  \smallskip
+  \noindent
+  \emph{Remark:}
+  Please note that
+%     you do \emph{not} have to
+  there is no need to
+  run the whole sorting
+  algorithm.
+%     , since this might be quite time-consuming.
+  Just showing the initial steps
+  as described above is fully sufficient.
+\end{subproblem}
+
+\begin{solution}
+  ***  UPDATE ***
+  We illustrate in
+  \reffig{fig:sorting-heaps}
+  how the heap used for sorting the array is built
+  and then modified as the first two numbers are extracted.
+%
+  \begin{enumerate}
+  \item 
+    The input array is shown in a heap structure in
+    \reffig{fig:sorting-heap-1}.
+    
+    \input{Figures/figHeapsSort.tex}  
+    
+  \item 
+    We need to run \buildmaxheap, which builds max-heaps bottom-up
+    using the \maxheapify method. The $6$th through $10$th nodes
+    vacuously constitute max-heaps of size~$1$, so the first time
+    \maxheapify is run is on the $5$th node containing~$3$.
+    Since the child~$10$ is larger, the elements
+    $3$ and~$10$ swap places as shown in
+    \reffig{fig:sorting-heap-2}.
+    When \maxheapify is called for the subheap rooted at the $10$th
+    node, it returns immediately, since that subheap has size~$1$
+    and so is a correct max-heap vacuously. 
+
+  \item 
+    \maxheapify is then run on the $4$th node. The largest child~$9$
+    is larger than the number~$7$ stored in the $4$th node, so they
+    trade places as shown in
+    \reffig{fig:sorting-heap-3}. Again, the second recursive
+    \maxheapify call returns immediately.
+
+  \item 
+    For the $3$rd node, the number~$4$ is smaller than the largest
+    child~$8$, so the two numbers are swapped and the recursive
+    \maxheapify call returns immediately, resulting in the heap in
+    \reffig{fig:sorting-heap-4}.
+
+  \item 
+    For the $2$nd node, the number~$6$ is smaller than the largest
+    child~$10$, so they exchange positions with $6$ being shifted to
+    the $5$th node.
+    For the recursive \maxheapify call on the $5$th node, the
+    number~$6$ is larger than the only child~$3$ and so the subheap is
+    in order. After this the heap looks as in
+    \reffig{fig:sorting-heap-5}.
+
+  \item 
+    In the final \maxheapify call of \buildmaxheap, the number~$5$ at the
+    root is compared to both children of the root. The largest
+    child~$10$  is moved to the root and$5$~is shifted down to the
+    $2$nd~node. 
+    In the first recursive \maxheapify call, $5$ is compared to the
+    children $9$ and~$6$, and the largest child~$9$ is moved up and
+    $5$~is shifted down to the $4$th~node.
+    In the next \maxheapify call for the $4$th~node,
+    $5$ is swapped with the largest child~$7$. The final recursive call
+    for the $8$th node terminates since the subheap has size~$1$.
+    The max-heap resulting from the \buildmaxheap call is shown in
+    \reffig{fig:sorting-heap-6}.
+
+  \item
+    The heapsort algorithm now repeatedly removes the root, places
+    the last element in the heap in the root position, and runs
+    \maxheapify.
+    Right after $10$ has been removed and $3$ has been put in the root
+    position, we have the heap structure in    
+    \reffig{fig:sorting-heap-7}.
+    A sequence of recursive \maxheapify calls compare
+    $3$  first  to the largest of the two children $9$ and~$8$ of the
+    root,
+    moving up~$9$ and moving down~$3$ to the $2$nd node,
+    then to the largest of the two children $7$ and~$6$,
+    moving up~$7$ and moving~$3$ further down to the $4$th~node, 
+    and finally to the largest of the two children $5$ and~$1$, 
+    swapping $3$ and~$5$.
+    This yields the max-heap on nine elements in
+    \reffig{fig:sorting-heap-8}.
+
+  \item
+    Right after $9$ has been removed and $1$ has been put in the root
+    position, we have the heap structure in    
+    \reffig{fig:sorting-heap-9}.
+    The recursive \maxheapify calls compare
+    $1$  first  to the largest of the two children $7$ and~$8$ of the root,
+    changing places of $1$ and $8$, 
+    and then to the largest of the two children $4$ and~$2$, 
+    changing places of $1$ and $4$. 
+    The resulting  max-heap on eight elements is depicted in
+    \reffig{fig:sorting-heap-8}.
+
+  \end{enumerate}
+%
+  This completes the description of how the first two numbers $10$ and
+  $9$ are extracted from the heap during heapsort, which is what we
+  were asked to explain and illustrate.
+\end{solution}
+
+
+\begin{subproblem}
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Jakob thinks he has figured out a nifty way
+  of finding the \emph{minimal} element in a max-heap by calling the
+  following recursive algorithm with index $i = 1$:
+\begin{verbatim}
+max-heap-find-min (A, i)
+    if (2 * i > A.heapsize)
+        smallest = i
+    else
+        smallest = 2 * i
+    if (2 * i + 1 <= A.heapsize AND A[2 * i + 1] < A[smallest])
+        smallest = 2 * i + 1
+    if (smallest == i)
+        return (A[i])
+    else
+        return (max-heap-find-min (A, smallest))  
+\end{verbatim}
+%
+  Is Jakob right that this will always return the smallest element
+  (assuming that $A$ is a correct max-heap)?
+  Please provide either a proof of correctness or a counterexample
+  where the input is a max-heap but Jakob's algorithm fails to find the
+  minimal element. 
+\end{subproblem}
+
+\begin{solution}
+  No, this is not true.
+
+*** UPDATE ***
+
+  If we consider the array from our max-heap in 
+  Problem~\ref{problem:heap-sort},
+  it looks like
+  $
+  10,9,8,7,6,4,2,5,1,3
+  $
+  (see again \reffig{fig:sorting-heap-6}).
+  If we take the array in the reverse order to get
+  $
+  3,1,5,2,4,6,7,8,9,10
+  $,
+  then we have that $1$ is the left child of the root $3$, which
+  violates the min-heap property. 
+\end{solution}
+
+
+\end{problem}
+
+
+%%%
+%%% PROPOSITIONAL LOGIC
+%%%
+
+\begin{problem}%
+  \label{problem:logic}%
+  (60 p)  
+  For each of the propositional logic formulas below,
+  determine whether it is a tautology or not.
+  If the formula is not a tautology, show how to
+  add a single connective
+  $\land$, $\lor$, or $\lnot$
+  to make it into a tautology.
+  Please make sure to justify your answers
+  (e.g., by presenting truth tables, or by using rules for rewriting logic formulas
+  that we have learned in class).
+
+%%% TAUTOLOGY  
+  \begin{subproblem}%
+    \label{problem:formula-1}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \bigl(
+    ( p \limpl q ) \limpl r 
+    \bigr)
+    \lor
+    \bigl(
+    (\lnot p \land \lnot r)
+    \lor
+    (q \land \lnot r)
+    \bigr)
+    $
+  \end{subproblem}
+
+\begin{solution}
+  This formula is a tautology, i.e., it is always true.
+
+  *** UPDATE ***
+  
+  To see this, note first that we know that
+  \begin{equation}
+    \label{eq:impl}
+    p \limpl q
+    \ \equiv \
+    \lnot p \lor q
+  \end{equation}
+  since the only way the implication
+  $p \limpl q$
+  can be false is that $p$ is true and $q$ is false,
+  and this is one of the basic equivalences we have learned in the course.
+  Furthermore, from De Morgan's laws it is easy to derive that
+  \begin{equation}
+    \label{eq:de-morgan}
+    \lnot ( a \lor b \lor c)
+    \ \equiv \
+    \lnot a \land \lnot b \land \lnot c
+  \end{equation}
+  (i.e., the only way a disjunction can be false is that all its
+  disjuncts are false).
+  
+  By combining
+  \eqref{eq:impl}
+  and~\eqref{eq:de-morgan},
+  and using that conjunction is commutative, we see that the premise
+  $
+  \lnot \bigl(
+  ( p \limpl q) \lor r
+  \bigr)
+  $
+  is in fact equivalent to the conclusion
+  $
+  (\lnot q \land \lnot r) \land p
+  $,
+  and so the implication
+  in Problem~\ref{problem:formula-1}
+  will always evaluate to true.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(30 p)}
+    {\ignorespaces}
+    $
+    \bigl(
+    p \limpl (q \lor r)
+    \bigr)
+    \lequiv
+    \bigl(
+    (p \lor q)
+%%% This should be    
+%       (\lnot p \lor q)
+    \lor
+    (p \land r)
+    \bigr)
+    $    
+  \end{subproblem}
+
+\begin{solution}
+  This is not a tautology.
+
+  *** UPDATE ***
+  If we set $p$ and~$q$ to true
+  but $r$ to false, we get that
+  $
+  (p \land q) \limpl r
+  $
+  evaluates to  false but
+  $
+  (q \lor r) \lor \lnot p
+%%% This should be    
+%       (\lnot q \lor r) \lor \lnot p
+  $
+  evaluates to true, and so the whole formula is false.
+
+  If we change $q$ on the right-hand side to $\lnot q$,
+  we obtain the formula
+  \begin{equation}
+    \label{eq:patched}
+    \bigl(
+    (p \land q) \limpl r
+    \bigr)
+    \lequiv
+    \bigl(
+    (\lnot q \lor r) \lor \lnot p
+    \bigr)
+    \ ,
+  \end{equation}    
+  which is a tautology. To see this, we can rewrite the left-hand side
+  of~\eqref{eq:patched}
+  as
+  \begin{subequations}
+  \begin{align}
+    (p \land q) \limpl r
+    \ &\equiv \
+        \lnot (p \land q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot p \lor \lnot q) \lor r
+    \\
+    \ &\equiv \
+        (\lnot q \lor r) \lor \lnot p
+  \end{align}
+  \end{subequations}
+  by using
+  the property~\eqref{eq:impl} of implication,
+  De Morgan's laws,
+  and commutativity of disjunction.
+  This show that the left-hand and right-hand sides of
+  of the formula~\eqref{eq:patched} are equivalent,
+  and so the formula will always evaluate to true.
+\end{solution}
+
+\end{problem}
+
+
+%%%
+%%% STRONGLY CONNECTED COMPONENTS
+%%%
+
+\begin{problem}%
+  \label{problem:ssc}%
+  (80 p)  
+%%%
+%%% a: 10 p
+%%% b: 10 p
+%%% c: 20 p
+%%% d: 40 p
+
+
+  
+  Start with small directed graph on 6 vertices
+  
+  (a) Say that the relation E(u,v) holds for two vertices u and v in the graph if there is a directed edge from u to v.
+  Please present the matrix representation of this relation
+  
+  
+  (b) Take the reflexive closure R of (a).
+  What is this? Give matrix representation.
+  
+  (c) Take the transitive closure T of the relation R in (b)
+  What is this? Give matrix representation.
+  
+  (d)
+  Define new relation S(u,v) such at S(u,v) holds precisely when
+  R(u,v) and R(v,u) both hold.
+  This gives a particular type of relation that we discussed in class.
+  What is this type of relation called?
+  Explain, briefly but clearly, why we are guaranteed to always get
+  this type of relation when performing the steps above.
+  
+%%%%
+%%%% WILL IT JUST BE TOO MUCH TO ASK THEM TO RUN SSC?
+%%%%
+%   
+%   - In fact, we have even seen an algorithm for computing this
+%   relation. Run this algorithm on our small example graph, in the same
+%   way as we did in class,
+%   
+\end{problem}
+
+
+
+%%%
+%%% TRICKY INDUCTION PROBLEM INVOLVING FIBONACCI NUMBERS
+%%%
+
+\begin{problem}%
+  (80 p)
+  In this problem we want to count the number of ways of tiling a
+  $2 \times n$ grid
+  with
+  $2 \times 1$ tiles (that can be rotated so that they have either
+  height~$2$ and length~$1$
+  or
+  height~$1$ and length~$2$).
+  It is not so hard to see that there are:
+  \begin{itemize}
+  \item
+    $1$ tiling for a $2 \times 1$ grid;
+  \item
+    $2$ different tilings for a $2 \times 2$ grid;
+  \item
+    $3$ different tilings for a $2 \times 3$ grid.
+  \end{itemize}
+
+  \begin{subproblem}
+      \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    How many different tilings are there for a $2 \times 4$ grid?    
+  \end{subproblem}
+
+  \begin{subproblem}
+      \ifthenelse{\boolean{versionwithsolutions}}
+    {(60 p)}
+    {\ignorespaces}
+    How many different tilings are there for a $2 \times n$ grid?
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    We want to find a nice formula for this number
+    in terms of concepts we have learned in class.
+  \end{subproblem}
+
+
+\begin{solution}
+
+
+  \begin{description}
+  \item[\emph{Base case ($n=2$):}]
+
+    
+  \item[\emph{Induction step:}]
+
+  \end{description}
+%%%  
+  The claim in the problem statement now follows by the induction principle.
+\end{solution}
+
+
+\end{problem}
+
+
+
+%%%
+%%% GRAPH PROBLEM: IDENTIFY OUTPUT OF DIFFERENT ALGORITHMS
+%%%
+%   Give 10 points per correct answer.
+%   Give 20 extra points for a overview of how and why the algorithms process the vertices in this order.
+%   
+
+\begin{problem}%
+  \label{problem:graph-algorithm-outputs}%
+  (120 p)
+  Consider the graph in   
+  \reffig{fig:graph-algorithm-outputs}
+  and the following ordered sequences listing the vertices in this graph:
+%%%  
+%%% Random permutation: 1, 3, 4, 2
+%%%
+  \begin{compactenum}
+% 1. BFS from a
+  \item%
+    \label{sequence-bfs}%    
+    $a$, $d$, $b$, $c$, $e$, $f$, $g$, $h$.
+    
+% 3. Dijkstra from a
+  \item%
+    \label{sequence-dijkstra}%    
+    $a$, $d$, $c$, $b$, $f$, $h$, $e$, $g$.
+
+\input{Figures/figGraphAlgorithmOutputs-26.tex}    
+        
+% 4. Spoiler        
+  \item%
+    \label{sequence-spoiler}%    
+    $a$, $d$, $c$, $b$, $e$, $g$, $h$, $f$.
+        
+% 2. DFS from a
+  \item%
+    \label{sequence-dfs}%
+    $a$, $d$, $b$, $c$, $e$, $g$, $f$, $h$.
+
+  \end{compactenum}
+  %
+  For each of the sequences above, determine whether it can be the result of:
+  \begin{compactenum}[(a)]
+  \item
+    a breadth-first search with vertices listed in order of visits;
+    
+  \item
+    a depth-first search with vertices listed in order of discovery;
+    
+  \item
+    a shortest-path computation with vertices listed in the order they
+    are removed from the priority queue.
+
+  \end{compactenum}
+%
+  Each sequence above is the output of at most one of the algorithms,
+  but since there are four sequences there could be a sequence that
+  cannot be produced by any of the algorithms.
+
+  Partial credit is given for matching algorithms and vertex sequences correctly.
+%
+  For full credit, you need to
+  also
+  give a
+  brief
+  overview of how and why the
+  algorithms process the vertices in the given order
+  (such as explaining the order of recursive calls, edges processed,
+  or similar),
+  or why none of the proposed algorithms could yield the sequence in
+  question,  
+  but you do not have to provide detailed information about any
+  auxiliary data structures used in the algorithms.
+
+  \begin{solution}
+    *** UPDATE ***
+    
+  Let us consider the different algorithms in the order listed and
+  try to find sequences that would match their outputs.
+  Since we are promised that each sequence is the output of at most
+  one algorithm, we are done with each sequence as soon as we find a
+  match.
+  
+  \textit{\textbf{Sequence~\ref{sequence-bfs}}}
+  is the result of breadth-first search starting with vertex~$a$.
+  To see this, consider how the different vertices are enqueued in and
+  dequeued from the queue if we start the breadth-first search in
+  vertex~$a$:
+
+  \medskip
+  \noindent
+  \begin{tabular}[]{|l|l|l|}
+    \hline
+    \textbf{Dequeued vertex}
+    &
+      \textbf{Enqueued vertices}
+    &
+      \textbf{Queue}
+    \\
+    \hline
+    ---
+    &
+      ---
+    &
+      $(a)$
+    \\
+    $a$
+    &
+      $\set{b, c, e}$
+    &
+      $(b, c, e)$
+      \\
+    $b$
+    &
+      $\set{d}$
+    &
+      $(c, e, d)$
+    \\
+    $c$
+    &
+      ---
+    &
+      $(e, d)$
+    \\
+    $e$
+    &
+      $\set{h}$
+    &
+      $(d, h)$
+    \\
+    $d$
+    &
+      ---
+    &
+      $(h)$
+    \\
+    $h$
+    &
+      $\set{g}$
+    &
+      $(g)$
+    \\
+    $g$
+    &
+      $\set{f}$
+    &
+      $(f)$
+    \\
+    $f$
+    &
+      ---
+    &
+      $()$
+    \\
+    \hline
+  \end{tabular}
+
+  \bigskip
+
+  
+  \textit{\textbf{Sequence~\ref{sequence-dfs}}}
+  is the result of depth-first
+  search starting with vertex~$a$.
+  Below follows an illustration of in which orders vertices are
+  discovered and finished: \\
+  \vspace{-6.0mm}
+  \begin{tabbing}
+    Disco\={}ver  $a$ --- undiscovered neighbours $b$, $c$ and~$e$
+    \\
+    \> Disco\={}ver  $b$ --- undiscovered neighbour $d$
+    \\
+    \> \> Disco\={}ver  $d$  --- undiscovered neighbour $c$
+    \\
+    \> \> \> Disco\={}ver  $c$ --- no undiscovered neighbours
+    \\
+    \> \> \> Finish $c$, since no undiscovered neighbours
+    \\
+    \> \> Finish $d$, since no undiscovered neighbours left
+    \\
+    \> Finish $b$, since no undiscovered neighbours left
+    \\
+    \> Discover $e$ --- undiscovered neighbour $h$
+    \\
+    \> \> Discover $h$  --- undiscovered neighbour $g$
+    \\
+    \> \> \> Discover $g$  --- undiscovered neighbour $f$
+    \\
+    \> \> \> \> Discover $f$ --- no undiscovered neighbours
+    \\
+    \> \> \> \> Finish $f$, since no undiscovered neighbours 
+    \\
+    \> \> \> Finish $g$, since no undiscovered neighbours left
+    \\
+    \> \> Finish $h$, since no undiscovered neighbours left
+    \\
+    \> Finish $e$, since no undiscovered neighbours left
+    \\
+    Finish $a$, since no undiscovered neighbours left
+  \end{tabbing}
+  
+  
+  \textit{\textbf{Sequence~\ref{sequence-dijkstra}}}
+  is the result of a call to Dijkstra's algorithm computing shortest
+  paths from vertex~$a$.
+  To see this, consider in which order the vertices are dequeued from
+  the priority queue and how vertex key values are updated as edges
+  are relaxed:
+
+  \medskip
+  \noindent
+  \begin{tabular}[]{|l|l|l|}
+    \hline
+    \textbf{Dequeued}
+    &
+%         \textbf{Vertex updates}
+      \textbf{Updates}
+    &
+      \textbf{Priority queue (after relaxations)}
+    \\
+    \hline
+    ---
+    &
+      ---
+    &
+      $
+      \set{
+      (a: 0),
+      (b: \infty),
+      (c: \infty),
+      (d: \infty),
+      (e: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $a$
+    &
+      $\set{b, c, e}$
+    &
+      $
+      \set{
+      (c: 2),
+      (e: 4),
+      (b: 6),
+      (d: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $c$
+    &
+      $\set{b}$
+    &
+      $
+      \set{
+      (e: 4),
+      (b: 5),
+      (d: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $e$
+    &
+      $\set{h}$
+    &
+      $
+      \set{
+      (b: 5),
+      (h: 6),      
+      (d: \infty),
+      (f: \infty),
+      (g: \infty)
+      }
+      $
+    \\
+    $b$
+    &
+      $\set{d}$
+    &
+      $
+      \set{
+      (h: 6),      
+      (d: 12),
+      (f: \infty),
+      (g: \infty)
+      }
+      $
+    \\
+    $h$
+    &
+      $\set{g}$
+    &
+      $
+      \set{
+      (g: 7),      
+      (d: 12),
+      (f: \infty)
+      }
+      $
+    \\
+    $g$
+    &
+      $\set{f}$
+    &
+      $
+      \set{
+      (f: 9),      
+      (d: 12)
+      }
+      $
+    \\
+    $f$
+    &
+      $\set{d}$
+    &
+      $
+      \set{
+      (d: 10)
+      }
+      $
+    \\
+    $d$
+    &
+      ---
+    &
+      $
+      \set{
+      }
+      $
+    \\
+    \hline
+  \end{tabular}
+
+  \bigskip
+  
+  \textit{\textbf{Sequence~\ref{sequence-spoiler}}}, finally,
+  is a spoiler sequence that cannot be the output of any of the
+  algorithms listed. To see this, consider the following case
+  analysis:
+  \begin{compactitem}
+  \item
+    If the sequence were the result of breadth-first search,
+    then it would list vertices in order of the number of directed
+    edges required to get to the vertex     from
+    the start vertex~$a$, but the first deviation from this is that
+    $g$ is listed before~$d$.
+    
+  \item
+    A depth-first search starting with $a$, $c$, $b$ would discover~$d$
+    next and not~$e$.
+        
+  \item
+    Finally, the sequence cannot be the output of Dijkstra's    algorithms,
+    since the vertices are not listed in increasing order of distance
+    from~$a$. The first deviation here is that $e$ should come
+    before~$b$ in a listing in increasing order of distance.
+    
+  \end{compactitem}
+
+  
+\end{solution}
+
+%     \input{Figures/figGraphAlgorithmOutputs-26.tex}    
+
+  
+\end{problem}
+
+
+
+%%%
+%%% TRICKY COMBINATORICS
+%%%
+
+\begin{problem}%
+  \label{problem:multisets}%
+  (100 p)  
+%%%
+  Suppose that we have a universe of $n$ elements and are interested
+  in counting the number of multisets of size $r$.  Jakob has a new
+  idea for showing that the number of multisets is
+  $\binom{n + r - 1}{n-1}$ by translating every multiset to a standard
+  subset of $[n + r - 1]$ of size $n-1$ as follows:
+\begin{verbatim}
+PSEUDO-CODE HERE
+\end{verbatim}
+
+  \begin{subproblem}%
+    \label{problem:multiset-1}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    Suppose that we have $n = 5$ elements in the universe and are interested in
+    multisets of size $r = 6$.  Describe what subset the multiset
+    $[1, 1, 2, 5, 5, 5]$ is translated to by Jakob's algorithm.
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+  \begin{subproblem}%
+    \label{problem:multiset-2}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+%%%
+    Is Jakob's new algorithm correct? Can you prove that Jakob's
+    algorithm provides a
+    translation that shows that the number of multisets of size $r$ from
+    a universe of size $n$ is $\binom{n + r - 1}{n-1}$? Or if there is an
+    error in Jakob's algorithm, then what is it?
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    A proof of correctness would need to go through essentially the
+    same kind of steps that we did in class. If Jakob's method is in
+    fact incorrect, then just one small counter-example is sufficient.
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+
+  \begin{subproblem}%
+    \label{problem:multiset-3}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+    Consider the original translation from multisets of size $r$ from a
+    universe of size $n$ to subsets of size $r$ from a universe of
+    size
+    $n + r - 1$ that we used in class, and that we proved to be correct.
+
+    For fixed positive integers $n$ and~$r$, let us say that the Boolean predicate
+    $T_{n,r}(M,S)$
+    is true if the multiset $M$ can be translated to the standard
+    subset $S$ by the method we studied in class and is false
+    otherwise. 
+%%%
+    What properties does this predicate $T_{n,r}$ have? Please indicate
+    for all alternatives below whether $T_{n,r}$ has this property or
+    not. For each property, you get points if you give a correct
+    answer whether $T_{n,r}$ has the property or not, a deduction for
+    every wrong answer, and no points and no deduction if you do not
+    indicate an answer for a specific property:
+    \begin{enumerate}  %  [(i)]
+    \item
+      $T_{n,r}$ describes a relation.
+      
+    \item
+      $T_{n,r}$ describes a function.
+      
+    \item
+      $T_{n,r}$ is surjective.
+      
+    \item
+      $T_{n,r}$ is reflexive.
+  
+    \item
+      $T_{n,r}$ is a partial order.
+      
+    \item
+      $T_{n,r}$ is injective.
+      
+    \item
+      $T_{n,r}$ is symmetric.
+      
+    \item
+      $T_{n,r}$ is an equivalence relation.
+      
+    \end{enumerate}
+    
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+\end{problem}
+
+
+
+
+\end{document}
+
+

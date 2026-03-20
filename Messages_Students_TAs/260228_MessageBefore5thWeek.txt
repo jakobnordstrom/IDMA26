@@ -1,0 +1,28 @@
+Planning for the 5th IDMA week
+
+Hi all,
+
+Here are some notes as we prepare for the 5th week of the IDMA course.
+
+PROBLEM SET 1
+
+Please note that the resubmission deadline is this coming Monday March 2 (at any time of day). You should then expect to get your graded resubmissions back by Monday March 9 or so.
+
+If you are resubmitting pset 1, then please do make use of all the assistance the TAs can provide as you make the finishing touches of your solutions.
+
+Also, to simplify the life of your TAs, it would be great if you could highlight new or changed text in some other colour by writing \textcolor{blue}{this is my new text} or something similar.
+
+PROBLEM SET 2
+
+For problem set 2, we hope and expect to be able to return your graded problem sets by Wednesday.
+
+TOPICS FOR EXERCISE CLASSES
+
+If there are any topics, or any type of problems, so far in the course that you find particularly challenging, then please do attend the exercise classes, and make sure to let your TA know about these challenging aspects. Then the TAs can help you to understand better, e.g., by going over problem sets from previous years, or by making dry-runs of algorithms on the board, or whatever. 
+
+LECTURES NEXT WEEK
+
+Next week my colleague Amir Yehudayoff will be giving the lectures for you. I will be back on Monday in a week from now to talk about graph theory.
+
+Jakob
+

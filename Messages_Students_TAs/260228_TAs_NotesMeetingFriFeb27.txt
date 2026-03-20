@@ -1,0 +1,56 @@
+
+Oh, one more thing that I should have said:
+
+STACKS, QUEUES, AND LINKED LISTS
+
+I finally went over the slides on stacks, queues, and linked lists on Wednesday, but the presentation was (much) more rushed than I would have liked.
+
+It would be great if you could go over this material again, and also explain to the students what the actual code looks like for inserting or removing elements in, say, a doubly linked list.
+
+Jakob
+
+**********
+
+
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Notes from TA meeting Fri Feb 27
+
+Hi all,
+
+Here are some notes from our meeting yesterday, plus some things that I forgot to say.
+
+PROBLEM SET 1
+
+The resubmission deadline is this coming Monday March 2. The students should then get their final results for pset 1 within a week. Since there is no resubmission clock that starts ticking, it is not so important to coordinate the returns of resubmissions (though it could still be a nice touch, of course).
+
+PROBLEM SET 2
+
+Grading of problem set 2 seems to be under control, or at least I haven't seen any new questions in the grading guidelines document.
+
+Students should get their graded problem set 2 back by Wednesday. Ideally, this should happen before the exercise classes, but the most important aspect is that you coordinate.
+
+ENCOURAGE STUDENTS TO WORK ON THE PROBLEM SETS
+
+After we have graded the resubmissions for problem set 1, we will probably have our first failing students.
+
+Usually, a number of students will stop following the course after the first problem set, so this is normal.
+
+However, for students who tried to resubmit but still failed, it is important that you encourage them to keep working.
+
+Tell them to try to get extra points on future problem sets. If you have a few extra points on later problem sets, then this can compensate for a few missing points on an earlier problem set.
+
+(Also, one thing that you should not tell them, but that will happen, is that once we see what the results are of all the four problem sets, I will lower the thresholds a little bit so that all students who clearly tried will be deemed to be eligible for the exam.)
+
+TOPICS FOR EXERCISE CLASSES
+
+Based on experience, counting combinations is tricky.
+
+Please consider going over some poker hand probabilities with your students. Also, you could do dry-runs on translating between r-sized multisets from a universe of size n and standard r-sized sets from a universe of size n + r - 1, in both directions.
+
+NEXT WEEK
+
+Next week my colleague Amir Yehudayoff will be giving the lectures, but I will still run our TA meeting on Friday.
+
+Jakob
+

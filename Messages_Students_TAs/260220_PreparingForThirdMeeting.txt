@@ -1,0 +1,36 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Questions for the TA meeting today Fri Feb 20
+
+Hi all,
+
+For the first time we have problem set submissions to talk about when we meet today in a little less than an hour from now at 11:30 at https://lu-se.zoom.us/j/64191262268?pwd=9HALE6zHVDA8MDS7up3aGXBvjEiEI1.1 .
+
+It would be good if we could discuss the following.
+
+PRACTICAL PROBLEM SET QUESTIONS
+
+(a) How many submissions did you get? Is the load-balancing between TAs working? (And re-assignment of solutions in Danish?)
+(b) Have you had any problems with late submissions, or are things under control? (I am aware of a couple of late-night Monday submissions, not nothing else.)
+(c) Do you have any questions about how to grade different aspects of problems? (I have tried to answer the questions in the grading guidelines at https://docs.google.com/document/d/1h-EU58_gN5Nh2W7DHEL6oQK28gXyCKdHx8yRpNHS4vo/edit
+to the best of my ability.)
+(d) Are we on track to release results on Monday?
+
+CONTENT-RELATED PROBLEM SET QUESTIONS
+
+(e) Are there any clear indications of what students are good at or what they are struggling with?
+(f) Do you get any sense of how common chatbot usage is? (My current understanding is that chatbots will be able to solve anything we throw at them during IDMA, unless we carefully obfuscate the problem statements to make them strange and difficult to understand, but that kind of defeats the point of having problem sets in the first place.)
+(g) Have you found any typos or unclear aspects in the proposed worked-out solutions that you think I could/should improve?
+
+QUESTIONS ABOUT THE EXERCISE CLASSES
+
+Finally, just as in previous weeks, I will be interested in hearing about:
+- attendance at your TA classes,
+- tips and tricks on what worked well or perhaps not so well,
+- any feedback to me how the students are doing; what they find easy or hard; and what might be good things to keep in mind for future lectures.
+
+As always --- though I might not have said this clearly --- you should always let me know if there is something that *you* think would be good to talk about that I have not listed, and we will make sure to address that as well.
+
+Jakob
+
+

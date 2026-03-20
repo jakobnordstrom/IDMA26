@@ -1,0 +1,14 @@
+
+Solutions and grading guidelines for problem set 1
+
+Hi all,
+
+In the "Course information and material" module you now find the grading guidelines we used for problem set 1. You should expect any similar problems on the exam to be graded in a similar way.
+
+In the (slightly renamed) module "Problem sets from DMFS 2023 and IDMA 2024-2026 (with some solutions)" you can now find solutions to all problem sets 1 for the years 2023-2026. Please note that what is presented in the suggested solutions is definitely not the only way to solve the problems, but the worked-out solutions are intended both to help you understand the problems and to provide a model for how you yourselves and write up your solutions.
+
+Jakob
+
+
+
+

@@ -1,0 +1,22 @@
+
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Preparing for meeting tomorrow Fri Mar 6
+
+Hi all,
+
+For the meeting tomorrow, my most important questions are:
+
+(1) How many of your students are failing problem set 1, now that all resubmissions have been submitted and graded? I am interested in:
+(a) Near-misses: Students who nearly passed after resubmission --- those we can always save if they keep working.
+(b) Clear misses after resubmission: If there are any students who are clearly trying hard but failing, we need to think about whether there is anything we can do to help them.
+(c) Students who didn't even resubmit: Presumably they have given up on the course.
+
+(2) Do you have any students who have not yet re-submitted problem 1, but are expected to do so? I am assuming that the answer is no, but I want to know for sure before I start releasing solutions for problem set 1 for this and previous years and also the grading guidelines.
+
+(3) Apart from this, we will also talk about how the exercise classes are going, and if there is anything else that you think I should know.
+
+See you tomorrow Friday at 11:30!
+
+Jakob
+

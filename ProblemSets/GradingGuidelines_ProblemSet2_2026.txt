@@ -1,0 +1,99 @@
+GRADING GUIDELINES FOR IDMA 2026 PROBLEM SET 2
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1gpdMCKTFsprZy0Z9MtTEyLArWNnKmmUgovTYI-vZUSs/edit ***
+*** Current version copied February 25, 2026 ***
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+General comments on pseudocode problems: 
+(1) When we ask the students what an algorithm does, and how to make the algorithm more efficient, we focus on what the main idea behind the algorithm, not on that every single detail should be exactly the same. For instance, if the pseudocode checks if there are duplicates in an array and returns one duplicate, then any solution returning a duplicate is fine — it does not have to be exactly the same pair as in the given pseudocode.
+(2) The students need to explain what the algorithm does, and why their improved pseudocode does the same thing. However, it is perfectly in order to give this information anywhere in the solution. That is, if for the first (a)-problem the student explains clearly what the algorithm does, and the student’s own pseudocode in the (c)-problem clearly follows this description, then this is sufficient for a full score.
+
+General comment on usage of hash tables or dictionaries: No material like this has been covered in the course, so any students who use such material have to make sure that the solution is understandable to a fellow student, as per the problem set instructions. Also, hash tables and dictionaries do not provide the provable worst-case upper bounds that we are after. If the solution assumes idealized properties of hashing, then we deduct points for that, and if the solution does not explain carefully so that a fellow student on the course can fully understand, then we deduct further points for that.
+
+
+PROBLEM 1: MATHEMATICAL INDUCTION
+
+GENERAL GUIDELINES FOR BOTH SUBPROBLEMS:
+- No mention at all of base case: -10 p
+- Base case clearly mentioned, but never verified (not even pointed out as obvious): - 5 p
+- Unclear where/how induction hypothesis is used (important to state clearly): -10 p
+- Missing details, but broad outlines OK (clear base case, IH use explicit): -5 p
+- Doing several base cases (unnecessarily) but whole proof as such is OK: no deduction
+- Base case correct, but nothing else: 5 p
+- Base case correct; induction hypothesis stated; but no further progress: 10 p
+- Base case wrong, induction hypothesis stated correctly; but no further progress: 5 p
+- Induction step fully correct, but serious issues with base case or missing first case: 20 p
+    
+PROBLEM 1a (30 p)
+Missing base case n=1: -5 p
+
+PROBLEM 1b (30 p)
+Base case n=0 missing (starting from n=1): -5 p
+
+
+PROBLEM 2: PROPOSITIONAL LOGIC
+
+PROBLEM 2a (30 p)
+Correct answer with some kind of convincing argument, but not fully correct/complete: 15 p
+Truth table filled in almost completely correctly, but wrong answer due to minor slip-ups: 20 p
+Truth table provided that is somewhat correct, but with significant mistakes: 10 p
+Argument by almost completely correctly rewriting subformulas,  but wrong answer due to minor slip-ups: 20 p
+Argument by somewhat correctly rewriting subformulas, but with significant mistakes: 10 p
+Not understanding that three variables requires a truth table with 2^3 = 8 rows: 0 p
+
+PROBLEM 2b (30 p)
+[10 p for correctly saying that formula is not tautology; 20 p for fixing it]
+Minor mistake in truth table: 5p
+Mistakes in falsifying assignment, but proposed assignment still makes some sense: 5 p
+Fixed formula certified with truth table filled in almost completely correctly: 15 p
+Fixed formula certified with truth table that is somewhat correct: 10 p
+Fixed formula certified by almost completely correctly rewriting subformulas: 15 p
+Fixed formula certified by rewriting subformulas, but with significant mistakes: 10 p
+Fixed formula, but no argument certifying that the formulas has been fixed: 0p
+Fixing formula by changing a connective rather than adding one: 10 p
+Fixing formula by adding two connectives: 5p
+Fixing by adding three connectives: 0p
+
+
+PROBLEM 3: MERGE RUNS SORT
+
+Problem 3a (30 p)
+10 p for arguing correctness of merge 
+20 pr for arguing correctness of mergrunssort (given that merge is correct)
+Half of the points for a partially correct argument for either subproblem
+A clear explanation that we have seen merge in class, and this algorithm is essentially correct, is sufficient for correctness of merge.
+For mergerunssort, we don't need any formal induction proof, but we want to see a clear inductive argument that:
+- The first subarray is sorted because the codes just generates the longest already sorted array.
+- The second array will be sorted after the recursive call, since by induction smaller arrays are sorted correctly.
+- Since merge is correct, all of the array will be sorted correctly.
+
+Problem 3b (30 p)
+Correct argument for termination: 10 p
+Correct complexity analysis / running time: 20 p
+Claims running time O(n log n): - 20 p
+Correct running time recursion T(n) = Kn + T(n-1) but not more: 10 p
+Correct running time O(n^2) but no discussion of whether this worst case can actually happen (anywhere in the solution of Problem 3): -5 p
+
+Problem 3c (20 p)
+10 p for example where standard mergesort is faster
+10 p for example where mergerunssort is faster
+
+
+PROBLEM 4: BUGGY INDUCTION
+
+Problem 4a (30 p)
+For full score, identify that induction step fails for n=2 (but not for other cases)
+Convincing argument that induction step fails, but claims this is the case for all n: -10 p
+Some kind of argument that induction step fails, but at most half right: -20 p
+
+Problem 4b (30 p)
+Convincing argument that base case is wrong, but not fully correct explanation: -10 p
+

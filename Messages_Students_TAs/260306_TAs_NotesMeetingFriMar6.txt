@@ -1,0 +1,58 @@
+IDMA TA mailing list <idma@cs.lth.se>
+
+IDMA: Notes from TA meeting Fri Mar 6
+
+Hi all,
+
+Here are some notes from our meeting today.
+
+PROBLEM SET GRADING AND RESUBMISSIONS
+
+Resubmissions for pset 1 have been graded and returned. We have some failing students, but my impression that this number is lower than usual. So far there are few resubmissions --- something like a factor 10 less than the first-round submissions.
+
+Everything is ready for releasing solutions and grading guidelines for pset 1 this year, together with solutions for the first problem set on previous years.
+
+We decided that we don't need to adjust the resubmission deadlines --- it is fine that they are on the same date as the deadline for the next problem set (though resubmissions do not have to happen before the start of the lecture). This means that resubmissions for problem set 2 are due are due on March 11, just as the first-round submissions for problem set 3.
+
+We talked about that grading problem sets can take a lot of time. In general, you probably will not have time to read through the students solutions carefully from start to finish, especially not if they are verbose. You need to start by skimming through the solutions and checking if they look correct or wrong. Based on this initial assessment, you can then search in the solution for either (a) confirmation that the solution seems to cover everything that we are asking for, in case it seems correct, or (b) where the solution goes seriously wrong, in case the answer looks incorrect.
+
+If a student solution is unreadable or impossible to understand, then you should complain (and deduct points). In order to get points, the students should clearly show how they are solving the problem and why this is correct. If a student is unable to explain what the solution is supposed to be doing, then it is very important for the student to get the feedback that the presentation needs to improve.
+
+CHATBOTS
+
+Students seem to make use of chatbots, but it doesn't seem like solutions are just copy-pasted. As long as they are actively working on the problem sets and learning from this process, then I am reasonably happy. As before, when we strongly suspect chatbot usage students should get a warning about this.
+
+IMPORTANT MATERIAL COVERED
+
+As I mentioned before, the coverage of stacks, queues, and linked lists was quite rushed during the lecture. It would be good if you could go over how to operate with, e.g., insertions and deletions in a linked list, including pseudocode.
+
+From this week on relations and functions, the most important material is:
+- The notions of reflexivity, symmetry, and transitivity.
+- Equivalence relations and that they correspond to partitions.
+- Partially ordered sets.
+- Closure of relations with respect to reflexivity, symmetry, and transitivity.
+- Representation of relations (and graphs, which are relations) as matrices.
+
+Some less important topics are:
+- Hasse diagrams.
+- Lattices.
+
+IMPORTANT MATERIAL *NOT* COVERED
+
+As Christoffer pointed out (and for which I am very grateful), there seems to have been some miscommunication between Amir and me in that functions were not covered at all.
+
+I will need to think about how to deal with this.
+
+After this course, students definitely need to know the following notions:
+- The definition of what a function is (i.e., a relation R(x,y) such that y is uniquely determined by x).
+- Injectivity.
+- Surjectivity.
+- Bijectivity.
+
+EXAM GRADING
+
+We decided that the exam will be graded on Thursday April 16. I hope that we will be able to do this at the AC Section in Vibenshuset, but I will get back to you about this.
+
+I think that was more or less it for today.
+
+Jakob

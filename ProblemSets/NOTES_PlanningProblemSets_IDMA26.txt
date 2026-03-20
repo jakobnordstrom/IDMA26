@@ -39,75 +39,29 @@ PROBLEM SET 4
 4. Combinatorics problem about legos (DMFS exam 2021)
 
 
-PLANNING FOR THE EXAM 2026
-==========================
+PLANNING FOR PROBLEM SETS AND THE EXAM IN 2027
+==============================================
 
-Pseudocode? (Didn't have this last year)
-Maybe have algorithms for
-- insertion in a doubly linked list
-- removal in a doubly linked list
-- lookup in a doubly linked list
-and ask to match the code snippets to these alternatives (with explanations).
-All code snippets would "return" something just to obfuscate a little bit.
+Recycle exam problems from the IDMA 2026 exam
 
-Some induction problem: Try to come with something with genAI?
+Possibly recycle some isolated DMFS 2023 problem set problems
+- If so, write down which DMFS 2023 problem set problems "are still left".
+- Maybe use the problems that are still left in 2028.
 
-Combinatorics: Try to come with something with genAI?
+Make some new problems for the 2027 problem sets. 
+- Some induction problem from Vaderlind?
+- Some combinatorics problem from Vaderlind?
+
+
+
+Ideas for 2027 exam:
 
 Merge sort problem
 This was a long time ago now
 
-Exactly the same kind of relations problem?!
-Or do something that also involves closure?
+Do the old kind of relations problem
 
 Propositional logic
-Exactly the same kind of patching problem?
-
-Graphs: Identify traversals
-Maybe exactly the same type of problem as last year?
-
-Graphs: Maybe strongly connected components
-
-- Start with directed graph and view graph as edge relation.
-- Maybe even give small graph on 6 or 7 vertices as example
-- Take transitive closure T  of this relation. What is this? Give matrix representation.
-- Take reflexive closure R of (a). What is this? Give matrix representation.
-- Define new relation S(u,v) such at S(u,v) holds precisely with R(u,v) and R(v,u) holds. This gives a particular type of relation that we discussed in class. What is this type of relation called? Prove that we indeed get this type of relation.
-- In fact, we have even seen an algorithm for computing this relation. Run this algorithm on our small example graph, in the same way as we did in class, 
-
-But this is probably very hard...
-
-
-PLANNING FOR THE EXAM 2025
-==========================
-
-1. Representation of numbers
-- Write the binary number 110 in decimal notation.
-- Write the decimal number 110 in binary notation.
-- Suppose that 2025 is an octal number. Write it in decimal notation.
-
-2. Run Euclidean algorithm on two suitably large numbers M and N. Find d = GCD(M, N) and write it as a linear combination of M and N.
-Fibonacci numbers are good, rescaled along the way to get more interesting calculations
-
-3. INDUCTION PROOFS
-
-Some simple induction problems
-
-4. RELATIONS
-
-Identify different properties of relations
-
-5. PROPOSITIONAL LOGIC
-
-Ask students to patch formulas in simplest way possible to get tautologies
-
-6. TRICKY INDUCTION PROBLEM
-
-7. COMBINATORICS
-
-Ways of organizing DNRF application aspects
-
-8. SHORTEST PATH
-
-9. IDENTIFY TRAVERSALS
+Should we have a patching problem for the third year in a row?
+Or some predicate logic problem
 

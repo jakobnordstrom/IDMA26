@@ -1,0 +1,81 @@
+
+Halfway through the IDMA course: Taking stock
+
+Hi again,
+
+Since we are now halfway through the IDMA course, let me try to summarize the course so far.
+
+SPEED OF LECTURES AND THE BENEFIT OF INDEPENDENT STUDY
+
+As I think you might have noticed, we are getting deeper into the mathematical contents of the course, and the speed of the lectures is picking up.
+
+In this context, it is important to be aware of that in order to learn the material on this course, it is not sufficient to just show up for the lectures. You should also:
+- Try to read the relevant material before the lecture (as per the instructions in the course plan https://absalon.ku.dk/courses/89165/files/10534546?module_item_id=2988726 and the ugesedler).
+- Go over your notes, and/or the course notes posted online, after the lecture to try to understand the material covered in class, and repeat it so that you learn it.
+- Also, read the relevant passages in the textbooks again. I apologize for repeating myself, but the course also contains material that we do not have time to cover in class.
+- Work on the suggested exercises (not just the problem sets) to learn how to use the material.
+
+In order to give yourself a fair chance to be successful on this course, you should make sure to digest and memorize all concepts introduced, and all pieces of notation, so that you have no problems parsing what is written on the board. When you see pieces of notation such as, say, \( d | n \), \( A \subseteq B \), \( A \cap B \), \( \forall x P(x) \), or \( \exists y Q(y)\), you should never have to look up in the textbook or your notes what this means. When we have come this far in the course, you need to have internalized the meaning of notation like this, so that you don't have to spend precious mental effort on parsing what a problem statement says, but can instead focus on how to solve the problem described by the notation.
+
+When you see pseudocode on the board, as we have done in several lectures, you need to be able to read and interpret it, so that you can yourselves reproduce the dry-run examples in the lecture notes, and also do your own dry-runs with other examples of inputs.
+
+I am saying all of this because I know that we are covering a lot of material, and I realize that there is a risk that this can be a bit overwhelming. But I am confident that you will be able to handle this. And it is important that you keep up your good work, because the course will only keep picking up speed from here onwards, and to be able to follow the advanced material covered during the final weeks of the course, you need to be comfortable with what we have already learned.
+
+And, also repeating what I have already said several times before, this is not just about the IDMA course. What you learn in this course will serve as a foundation for many later courses. Learning the IDMA material properly will help you will all these other courses, and every hour invested on the IDMA course will pay back massively later during your studies.
+
+WHAT YOU SHOULD KNOW AS OF THIS WEEK
+
+Just to help you assess how you are doing, and referring to the course contents at https://absalon.ku.dk/courses/89165/files/10507252?module_item_id=2988727 , what we have covered so far on the course is as follows:
+
+THE BASIC COMPUTER MODEL
+RAM model (memory consisting of big array of fixed-size words)
+Unit time cost for (essentially) all simple operations that can be performed on a single word
+
+ASYMPTOTIC ANALYSIS
+Big-oh notation: Meaning and use
+Complexity analysis for algorithms (algorithms covered in the course + simple algorithms in exercises)
+
+BASIC DATA STRUCTURES
+Stacks
+Queues 
+Lists (implemented as arrays and as singly or doubly linked lists)
+
+SORTING AND SEARCHING
+Linear search
+Binary search
+Insertion sort
+Merge sort 
+
+BASIC ARITHMETIC AND SET THEORY
+Quotient, remainder, mod function, divisibility
+Prime numbers and prime factorization
+Greatest common divisor (GCD), Euclidean algorithm
+Least common multiple (LCM)
+Representation of numbers in different bases (decimal, binary, octal, hexadecimal)
+Sets, subsets, power sets, intersection, union, complement, Venn diagrams
+Inclusion-exclusion principle
+Different functions: polynomials, exponentials, logarithms
+Sequences and sums and ways to specify them (explicit, recursive)
+Connections to asymptotic analysis
+Sums of n first numbers, n first squares, n first cubes; geometric sums
+
+LOGIC, MATHEMATICAL PROOFS, AND PROOF TECHNIQUES
+Propositional logic, connectives, truth tables, satisfiability, tautologies, contradictions
+Predicate logic, universal and existential quantifiers
+Direct proofs
+Proofs by contraposition
+Proofs by contradiction
+Mathematical induction (and reasoning with invariants)
+
+COMBINATORICS AND PROBABILITY
+Multiplication principle
+How to choose k elements out of k with and without repetition and caring or not caring about order
+Sequences, permutations, multisets, sets
+Binomial coefficients ("n choose k")
+Combinatorial proofs (show that two sets have the same size by exhibiting a bijection)
+Pigeonhole principle
+Basic probability theory (for uniform distribution, with outcomes equally likely, this is just counting)
+
+Good luck with your continued work on the course! We won't meet this coming week, but I look forward to seeing you again on Monday March 9!
+
+Jakob
