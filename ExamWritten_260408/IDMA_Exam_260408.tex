@@ -127,25 +127,6 @@
 {\input{IDMA_Exam_GeneralInstructions.tex}}
 
 %%%
-%%% COMBINATORICS
-%%%
-
-\begin{problem}
-  (60 p)
-  As Jakob was preparing this year's instalment of the IDMA course in
-  early $2026$, he realized that he had been teaching discrete
-  mathematics and algorithms in Copenhagen for $6$~years.  For some
-  reason that is not so easy to explain, this made Jakob wonder what the
-  largest positive integer~$n$ is such that
-  $26! / 6^n$
-  is also an integer.
-  Could you help Jakob figure this out?  Jakob does not
-  really trust calculators, so he would very much like to see a clean
-  solution by hand that just uses what we learned during the IDMA course.
-\end{problem}
-
-
-%%%
 %%%   MATHEMATICAL INDUCTION PROBLEM
 %%%
 \begin{problem}
@@ -212,6 +193,25 @@ The claim now follows by the induction principle.
 \end{problem}
 
 
+%%%
+%%% COMBINATORICS
+%%%
+
+\begin{problem}
+  (60 p)
+  As Jakob was preparing this year's instalment of the IDMA course in
+  early $2026$, he realized that he had been teaching discrete
+  mathematics and algorithms in Copenhagen for $6$~years.  For some
+  reason that is not so easy to explain, this made Jakob wonder what the
+  largest positive integer~$n$ is such that
+  $26! / 6^n$
+  is also an integer.
+  Could you help Jakob figure this out?  Jakob does not
+  really trust calculators, so he would very much like to see a clean and simple
+  solution by hand that just uses what we learned during the IDMA course.
+\end{problem}
+
+
 %%% 
 %%% PSEUDOCODE PROBLEM LINKED LISTS
 %%%
@@ -222,28 +222,29 @@ The claim now follows by the induction principle.
   The records in our list datatype have four attributes:
   \begin{itemize}
   \item
-    \verb+data+: the data stored (which we will not care about, as usual),
+    \verb+data+: the data stored in the record (which we will not care about, as usual);
     
   \item
-    \verb+key+: used for sorting elements in the list.
+    \verb+key+: used for sorting the records in the list;
     
   \item
-    \verb+prev+: link to previous element.
+    \verb+prev+: link to the previous element in the list;
     
   \item
-    \verb+next+: link to next element.
+    \verb+next+: link to the next element in the list.
     
   \end{itemize}
 %%%
-  The lists are sorted in increasing order based on
-  \verb+key+ values.
-  We assume that distinct records have distinct
-  \verb+key+ values, so that every value identifies a unique record.
+  The lists are sorted in increasing order based on the key values in
+  \verb+key+.
+  We assume that distinct records in our list have distinct
+  key values, so that every value identifies a unique record in a list.
   To make the coding easier, every list is initialized with two
-  sentinel records  
+  dummy records  
   \verb+head+
   and
   \verb+tail+
+  that do not contain any data but are
   such that
   \begin{itemize}
   \item
@@ -256,20 +257,19 @@ The claim now follows by the induction principle.
     \verb+tail.key+ $=$ \verb|+INFINITY|,
     \verb+tail.prev+ $=$ \verb+head+,
     and
-    \verb+tail.next+ $=$ \verb+NULL+;
-  
+    \verb+tail.next+ $=$ \verb+NULL+.
   \end{itemize}
-%%%
+  %%% 
   This ensures that \verb+head+ will always be the first element
   in the list since
-  \verb|-INFINITY|$= - \infty$ is smaller than any \verb|key|
-  and
-  \verb+tail+ will always be the last element in the linked list since
-  \verb|+INFINITY|$= +\infty$ is larger than any \verb|key|.
+  \verb|-INFINITY|$= - \infty$ is smaller than any key value
+  and that 
+  \verb+tail+ will always be last  since
+  \verb|+INFINITY|$= +\infty$ is larger than any key value.
 
-  Below you find four pseudocode functions for operating on the list.
-  Please identify which piece of code:
-  \begin{enumerate}
+  Below you find four pseudocode methods for operating on the list.
+  Please identify which method:
+  \begin{enumerate}[(a)]
   \item
     \textbf{Inserts} an element
     identified by a key value
@@ -289,214 +289,85 @@ The claim now follows by the induction principle.
   \end{enumerate}
 %%%
   Note that there is one spoiler piece of code that does none of the
-  above.  You receive 10 points for each correct match and 10 more
+  above.
+  All four pieces of code start with exactly the same while loop,
+  and all of them have a return statement regardless of whether
+  this is needed or not (since it would be too easy to
+  distinguish the methods otherwise).
+
+  You receive 10 points for each correct match and 10 more
   points for a brief but convincing explanation why the piece of code
   does what you claim it does (or, for the spoiler piece of code, why it
-  does something else).
+  does something else and why this does not make any sense).
+
+%%% REMOVAL
+\begin{verbatim}
+METHOD1 (record) 
+    current := head
+    while record.key > current.key {
+        current := current.next
+    }
+    if record.key == current.key {
+        previous      := current.prev
+        current       := current.next
+        previous.next := current
+        current.prev  := previous
+    }
+    return record
+\end{verbatim}
+
+%%% LOOK-UP
+\begin{verbatim}
+METHOD2 (record) 
+    current := head
+    while record.key > current.key {
+        current := current.next
+    }
+    if record.key != current.key {
+        current := NULL
+    }
+    return current
+\end{verbatim}
+
+
+%%% SPOILER
+\begin{verbatim}
+METHOD3 (record) 
+    current := head
+    while record.key > current.key {
+        current := current.next
+    }
+    if record.key >= current.key {
+        previous      := current.prev
+        current.prev  := previous.next
+        previous      := previous.next
+        current.next  := previous
+    }
+    return current
+\end{verbatim}
+
+%%% INSERTION 
+\begin{verbatim}
+METHOD4 (record) 
+    current := head
+    while record.key > current.key {
+        current := current.next
+    }
+    if record.key < current.key {
+        previous      := current.prev
+        previous.next := record
+        record.prev   := previous
+        record.next   := current
+        current.prev  := record
+    }
+    return record
+\end{verbatim}
+
+
 
 \begin{solution}
   SOLUTION HERE
 \end{solution}
-
-
-\end{problem}
-
-%%% 
-%%% HEAPSORT
-%%%
-
-\providecommand{\buildmaxheap}{\textsc{Build-Max-Heap}\xspace}
-\providecommand{\maxheapify}{\textsc{Max-Heapify}\xspace}
-
-\begin{problem}
-  (70 p)
-  In this problem we want to study heaps and how they can be used for sorting.
-
-\begin{subproblem}%
-  \label{problem:heap-sort}%
-  \ifthenelse{\boolean{versionwithsolutions}}
-  {(50 p)}
-  {\ignorespaces}
-  Run heapsort by hand on the array
-%%%
-  $
-  A =
-  [ 11, 3, 19, 5, 17, 2, 13, 7 ]
-  $
-%%%
-  to sort the array in increasing order
-  and give a detailed explanation of the first few steps of the
-  algorithm.
-  Specifically,
-  show how the original heap is built, and how the first two numbers
-  in the array are sorted into their correct final positions.
-  Make sure to explain what calls to the heap are made from the
-  sorting algorithm and what comparisons are made, 
-  and illustrate how the heap and array have changed at the
-  end of every ``heapify'' or ``bubble'' call (after all recursive
-  subcalls have been taken  care of).
-
-  \smallskip
-  \noindent
-  \emph{Remark:}
-  Please note that
-%     you do \emph{not} have to
-  there is no need to
-  run the whole sorting
-  algorithm.
-%     , since this might be quite time-consuming.
-  Just showing the initial steps
-  as described above is fully sufficient.
-\end{subproblem}
-
-\begin{solution}
-  ***  UPDATE ***
-  We illustrate in
-  \reffig{fig:sorting-heaps}
-  how the heap used for sorting the array is built
-  and then modified as the first two numbers are extracted.
-%
-  \begin{enumerate}
-  \item 
-    The input array is shown in a heap structure in
-    \reffig{fig:sorting-heap-1}.
-    
-    \input{Figures/figHeapsSort.tex}  
-    
-  \item 
-    We need to run \buildmaxheap, which builds max-heaps bottom-up
-    using the \maxheapify method. The $6$th through $10$th nodes
-    vacuously constitute max-heaps of size~$1$, so the first time
-    \maxheapify is run is on the $5$th node containing~$3$.
-    Since the child~$10$ is larger, the elements
-    $3$ and~$10$ swap places as shown in
-    \reffig{fig:sorting-heap-2}.
-    When \maxheapify is called for the subheap rooted at the $10$th
-    node, it returns immediately, since that subheap has size~$1$
-    and so is a correct max-heap vacuously. 
-
-  \item 
-    \maxheapify is then run on the $4$th node. The largest child~$9$
-    is larger than the number~$7$ stored in the $4$th node, so they
-    trade places as shown in
-    \reffig{fig:sorting-heap-3}. Again, the second recursive
-    \maxheapify call returns immediately.
-
-  \item 
-    For the $3$rd node, the number~$4$ is smaller than the largest
-    child~$8$, so the two numbers are swapped and the recursive
-    \maxheapify call returns immediately, resulting in the heap in
-    \reffig{fig:sorting-heap-4}.
-
-  \item 
-    For the $2$nd node, the number~$6$ is smaller than the largest
-    child~$10$, so they exchange positions with $6$ being shifted to
-    the $5$th node.
-    For the recursive \maxheapify call on the $5$th node, the
-    number~$6$ is larger than the only child~$3$ and so the subheap is
-    in order. After this the heap looks as in
-    \reffig{fig:sorting-heap-5}.
-
-  \item 
-    In the final \maxheapify call of \buildmaxheap, the number~$5$ at the
-    root is compared to both children of the root. The largest
-    child~$10$  is moved to the root and$5$~is shifted down to the
-    $2$nd~node. 
-    In the first recursive \maxheapify call, $5$ is compared to the
-    children $9$ and~$6$, and the largest child~$9$ is moved up and
-    $5$~is shifted down to the $4$th~node.
-    In the next \maxheapify call for the $4$th~node,
-    $5$ is swapped with the largest child~$7$. The final recursive call
-    for the $8$th node terminates since the subheap has size~$1$.
-    The max-heap resulting from the \buildmaxheap call is shown in
-    \reffig{fig:sorting-heap-6}.
-
-  \item
-    The heapsort algorithm now repeatedly removes the root, places
-    the last element in the heap in the root position, and runs
-    \maxheapify.
-    Right after $10$ has been removed and $3$ has been put in the root
-    position, we have the heap structure in    
-    \reffig{fig:sorting-heap-7}.
-    A sequence of recursive \maxheapify calls compare
-    $3$  first  to the largest of the two children $9$ and~$8$ of the
-    root,
-    moving up~$9$ and moving down~$3$ to the $2$nd node,
-    then to the largest of the two children $7$ and~$6$,
-    moving up~$7$ and moving~$3$ further down to the $4$th~node, 
-    and finally to the largest of the two children $5$ and~$1$, 
-    swapping $3$ and~$5$.
-    This yields the max-heap on nine elements in
-    \reffig{fig:sorting-heap-8}.
-
-  \item
-    Right after $9$ has been removed and $1$ has been put in the root
-    position, we have the heap structure in    
-    \reffig{fig:sorting-heap-9}.
-    The recursive \maxheapify calls compare
-    $1$  first  to the largest of the two children $7$ and~$8$ of the root,
-    changing places of $1$ and $8$, 
-    and then to the largest of the two children $4$ and~$2$, 
-    changing places of $1$ and $4$. 
-    The resulting  max-heap on eight elements is depicted in
-    \reffig{fig:sorting-heap-8}.
-
-  \end{enumerate}
-%
-  This completes the description of how the first two numbers $10$ and
-  $9$ are extracted from the heap during heapsort, which is what we
-  were asked to explain and illustrate.
-\end{solution}
-
-
-\begin{subproblem}
-  \ifthenelse{\boolean{versionwithsolutions}}
-  {(20 p)}
-  {\ignorespaces}
-  Jakob thinks he has figured out a nifty way
-  of finding the \emph{minimal} element in a max-heap by calling the
-  following recursive algorithm with index $i = 1$:
-\begin{verbatim}
-max-heap-find-min (A, i)
-    if (2 * i > A.heapsize)
-        smallest = i
-    else
-        smallest = 2 * i
-    if (2 * i + 1 <= A.heapsize AND A[2 * i + 1] < A[smallest])
-        smallest = 2 * i + 1
-    if (smallest == i)
-        return (A[i])
-    else
-        return (max-heap-find-min (A, smallest))  
-\end{verbatim}
-%
-  Is Jakob right that this will always return the smallest element
-  (assuming that $A$ is a correct max-heap)?
-  Please provide either a proof of correctness or a counterexample
-  where the input is a max-heap but Jakob's algorithm fails to find the
-  minimal element. 
-\end{subproblem}
-
-\begin{solution}
-  No, this is not true.
-
-*** UPDATE ***
-
-  If we consider the array from our max-heap in 
-  Problem~\ref{problem:heap-sort},
-  it looks like
-  $
-  10,9,8,7,6,4,2,5,1,3
-  $
-  (see again \reffig{fig:sorting-heap-6}).
-  If we take the array in the reverse order to get
-  $
-  3,1,5,2,4,6,7,8,9,10
-  $,
-  then we have that $1$ is the left child of the root $3$, which
-  violates the min-heap property. 
-\end{solution}
-
 
 \end{problem}
 
@@ -658,49 +529,214 @@ max-heap-find-min (A, i)
 \end{problem}
 
 
-%%%
-%%% STRONGLY CONNECTED COMPONENTS
+
+%%% 
+%%% HEAPSORT
 %%%
 
-\begin{problem}%
-  \label{problem:ssc}%
-  (80 p)  
+\providecommand{\buildmaxheap}{\textsc{Build-Max-Heap}\xspace}
+\providecommand{\maxheapify}{\textsc{Max-Heapify}\xspace}
+
+\begin{problem}
+  (70 p)
+  In this problem we wish to study heaps and how they can be used for sorting.
+
+\begin{subproblem}%
+  \label{problem:heap-sort}%
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(50 p)}
+  {\ignorespaces}
+  Run heapsort by hand to sort the array
 %%%
-%%% a: 10 p
-%%% b: 10 p
-%%% c: 20 p
-%%% d: 40 p
+  $
+  A =
+  [ 11, 3, 19, 5, 17, 2, 13, 7 ]
+  $
+%%%
+  in increasing order
+  and give a detailed explanation of the first few steps of the
+  algorithm.
+  Specifically,
+  show how the
+  % original
+  heap is built and how the first two numbers
+%     in the array
+  are sorted into their correct final positions.
+  Make sure to explain what calls to the heap are made from the
+  sorting algorithm and what comparisons are made, 
+  and illustrate how the heap and array have changed at the
+  end of every ``heapify'' or ``bubble'' call (after all recursive
+  subcalls have been taken  care of).
+
+  \smallskip
+  \noindent
+  \emph{Remark:}
+  Please note that
+%     you do \emph{not} have to
+  there is no need to
+  present the entire execution of the sorting algorithm.
+%     , since this might be quite time-consuming.
+  Just showing the initial steps
+  as described above is fully sufficient.
+\end{subproblem}
+
+\begin{solution}
+  ***  UPDATE ***
+  We illustrate in
+  \reffig{fig:sorting-heaps}
+  how the heap used for sorting the array is built
+  and then modified as the first two numbers are extracted.
+%
+  \begin{enumerate}
+  \item 
+    The input array is shown in a heap structure in
+    \reffig{fig:sorting-heap-1}.
+    
+    \input{Figures/figHeapsSort.tex}  
+    
+  \item 
+    We need to run \buildmaxheap, which builds max-heaps bottom-up
+    using the \maxheapify method. The $6$th through $10$th nodes
+    vacuously constitute max-heaps of size~$1$, so the first time
+    \maxheapify is run is on the $5$th node containing~$3$.
+    Since the child~$10$ is larger, the elements
+    $3$ and~$10$ swap places as shown in
+    \reffig{fig:sorting-heap-2}.
+    When \maxheapify is called for the subheap rooted at the $10$th
+    node, it returns immediately, since that subheap has size~$1$
+    and so is a correct max-heap vacuously. 
+
+  \item 
+    \maxheapify is then run on the $4$th node. The largest child~$9$
+    is larger than the number~$7$ stored in the $4$th node, so they
+    trade places as shown in
+    \reffig{fig:sorting-heap-3}. Again, the second recursive
+    \maxheapify call returns immediately.
+
+  \item 
+    For the $3$rd node, the number~$4$ is smaller than the largest
+    child~$8$, so the two numbers are swapped and the recursive
+    \maxheapify call returns immediately, resulting in the heap in
+    \reffig{fig:sorting-heap-4}.
+
+  \item 
+    For the $2$nd node, the number~$6$ is smaller than the largest
+    child~$10$, so they exchange positions with $6$ being shifted to
+    the $5$th node.
+    For the recursive \maxheapify call on the $5$th node, the
+    number~$6$ is larger than the only child~$3$ and so the subheap is
+    in order. After this the heap looks as in
+    \reffig{fig:sorting-heap-5}.
+
+  \item 
+    In the final \maxheapify call of \buildmaxheap, the number~$5$ at the
+    root is compared to both children of the root. The largest
+    child~$10$  is moved to the root and$5$~is shifted down to the
+    $2$nd~node. 
+    In the first recursive \maxheapify call, $5$ is compared to the
+    children $9$ and~$6$, and the largest child~$9$ is moved up and
+    $5$~is shifted down to the $4$th~node.
+    In the next \maxheapify call for the $4$th~node,
+    $5$ is swapped with the largest child~$7$. The final recursive call
+    for the $8$th node terminates since the subheap has size~$1$.
+    The max-heap resulting from the \buildmaxheap call is shown in
+    \reffig{fig:sorting-heap-6}.
+
+  \item
+    The heapsort algorithm now repeatedly removes the root, places
+    the last element in the heap in the root position, and runs
+    \maxheapify.
+    Right after $10$ has been removed and $3$ has been put in the root
+    position, we have the heap structure in    
+    \reffig{fig:sorting-heap-7}.
+    A sequence of recursive \maxheapify calls compare
+    $3$  first  to the largest of the two children $9$ and~$8$ of the
+    root,
+    moving up~$9$ and moving down~$3$ to the $2$nd node,
+    then to the largest of the two children $7$ and~$6$,
+    moving up~$7$ and moving~$3$ further down to the $4$th~node, 
+    and finally to the largest of the two children $5$ and~$1$, 
+    swapping $3$ and~$5$.
+    This yields the max-heap on nine elements in
+    \reffig{fig:sorting-heap-8}.
+
+  \item
+    Right after $9$ has been removed and $1$ has been put in the root
+    position, we have the heap structure in    
+    \reffig{fig:sorting-heap-9}.
+    The recursive \maxheapify calls compare
+    $1$  first  to the largest of the two children $7$ and~$8$ of the root,
+    changing places of $1$ and $8$, 
+    and then to the largest of the two children $4$ and~$2$, 
+    changing places of $1$ and $4$. 
+    The resulting  max-heap on eight elements is depicted in
+    \reffig{fig:sorting-heap-8}.
+
+  \end{enumerate}
+%
+  This completes the description of how the first two numbers $10$ and
+  $9$ are extracted from the heap during heapsort, which is what we
+  were asked to explain and illustrate.
+\end{solution}
 
 
-  
-  Start with small directed graph on 6 vertices
-  
-  (a) Say that the relation E(u,v) holds for two vertices u and v in the graph if there is a directed edge from u to v.
-  Please present the matrix representation of this relation
-  
-  
-  (b) Take the reflexive closure R of (a).
-  What is this? Give matrix representation.
-  
-  (c) Take the transitive closure T of the relation R in (b)
-  What is this? Give matrix representation.
-  
-  (d)
-  Define new relation S(u,v) such at S(u,v) holds precisely when
-  R(u,v) and R(v,u) both hold.
-  This gives a particular type of relation that we discussed in class.
-  What is this type of relation called?
-  Explain, briefly but clearly, why we are guaranteed to always get
-  this type of relation when performing the steps above.
-  
-%%%%
-%%%% WILL IT JUST BE TOO MUCH TO ASK THEM TO RUN SSC?
-%%%%
-%   
-%   - In fact, we have even seen an algorithm for computing this
-%   relation. Run this algorithm on our small example graph, in the same
-%   way as we did in class,
-%   
+\begin{subproblem}
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {(20 p)}
+  {\ignorespaces}
+  Jakob thinks he has figured out a nifty way
+  of finding the \emph{minimal} element in a max-heap by calling the
+  following recursive algorithm with index $i = 1$:
+\begin{verbatim}
+MAX-HEAP-FIND-MIN (A, i)
+    if (2 * i > A.heapsize) {
+        smallest := i
+    }
+    else {
+        smallest := 2 * i
+    }
+    if (2 * i + 1 <= A.heapsize AND A[2 * i + 1] < A[smallest]) {
+        smallest := 2 * i + 1
+    }
+    if (smallest == i) {
+        return (A[i])
+    }
+    else {
+        return (MAX-HEAP-FIND-MIN (A, smallest))
+    }
+\end{verbatim}
+%
+  Is Jakob right that this will always return the smallest element
+  (assuming that $A$ is a correct max-heap)?
+  Please provide either a proof of correctness or a counterexample
+  where the input is a max-heap but
+%     Jakob's algorithm
+  \verb+MAX-HEAP-FIND-MIN+
+  fails to find the
+  minimal element. 
+\end{subproblem}
+
+\begin{solution}
+  No, this is not true.
+
+*** UPDATE ***
+
+  If we consider the array from our max-heap in 
+  Problem~\ref{problem:heap-sort},
+  it looks like
+  $
+  10,9,8,7,6,4,2,5,1,3
+  $
+  (see again \reffig{fig:sorting-heap-6}).
+  If we take the array in the reverse order to get
+  $
+  3,1,5,2,4,6,7,8,9,10
+  $,
+  then we have that $1$ is the left child of the root $3$, which
+  violates the min-heap property. 
+\end{solution}
+
+
 \end{problem}
 
 
@@ -710,42 +746,79 @@ max-heap-find-min (A, i)
 %%%
 
 \begin{problem}%
+  \label{problem:grid-tilings}%
   (80 p)
-  In this problem we want to count the number of ways of tiling a
+  In this problem we wish to count the number of ways of tiling a
   $2 \times n$ grid
+  (as in
+  \reffig{fig:tiling-2-by-n-grid-example})  
   with
-  $2 \times 1$ tiles (that can be rotated so that they have either
-  height~$2$ and length~$1$
-  or
-  height~$1$ and length~$2$).
-  It is not so hard to see that there are:
-  \begin{itemize}
-  \item
-    $1$ tiling for a $2 \times 1$ grid;
-  \item
-    $2$ different tilings for a $2 \times 2$ grid;
-  \item
-    $3$ different tilings for a $2 \times 3$ grid.
-  \end{itemize}
+  $2 \times 1$ tiles
+  so that every cell in the grid is covered by exactly one tile.
+%%%  
+%     (that can be rotated so that they have either
+%     height~$2$ and length~$1$
+%     or
+%     height~$1$ and length~$2$).
+%%%
+%     It is not so hard to see that there are:
+%     \begin{itemize}
+%         
+%     \item
+%       $1$ tiling for a $2 \times 1$ grid
+%       (\reffig{fig:tiling-2-by-1-grid});
+%     \item
+%       $2$ different tilings for a $2 \times 2$ grid
+%       (\reftwofigs{fig:tiling-2-by-2-grid-a}{fig:tiling-2-by-2-grid-b});
+%       
+%     \item
+%       $3$ different tilings for a $2 \times 3$ grid
+%       (\refthreefigs
+%       {fig:tiling-2-by-3-grid-a}
+%       {fig:tiling-2-by-3-grid-b}
+%       {fig:tiling-2-by-3-grid-c}).
+%       
+%     \end{itemize}
+%   
+%%%
+%     It is not so hard to see that there is
+  There is
+  $1$ such tiling for a $2 \times 1$ grid
+  (\reffig{fig:tiling-2-by-1-grid});
+  exactly $2$~different tilings for a $2 \times 2$ grid
+  (\reftwofigs{fig:tiling-2-by-2-grid-a}{fig:tiling-2-by-2-grid-b});
+  and
+  exactly
+  $3$~different tilings for a $2 \times 3$ grid
+  (\refthreefigs
+  {fig:tiling-2-by-3-grid-a}
+  {fig:tiling-2-by-3-grid-b}
+  {fig:tiling-2-by-3-grid-c}).
 
+  \input{Figures/fig-tiling-2-by-n-grid}
+  
   \begin{subproblem}
       \ifthenelse{\boolean{versionwithsolutions}}
     {(20 p)}
     {\ignorespaces}
-    How many different tilings are there for a $2 \times 4$ grid?    
+    How many different tilings are there for a $2 \times 4$ grid?
+    Make sure to explain how you compute this number so that we can
+    follow your reasoning.
   \end{subproblem}
 
   \begin{subproblem}
       \ifthenelse{\boolean{versionwithsolutions}}
     {(60 p)}
     {\ignorespaces}
-    How many different tilings are there for a $2 \times n$ grid?
+    How many different tilings are there for a $2 \times n$ grid
+    for a positive integer~$n$?
 
     \smallskip
     \noindent
     \emph{Hint:}
-    We want to find a nice formula for this number
-    in terms of concepts we have learned in class.
+%       We want to find
+    Find a nice formula for this number
+    in terms of concepts we learned in class.
   \end{subproblem}
 
 
@@ -769,6 +842,282 @@ max-heap-find-min (A, i)
 
 
 %%%
+%%% STRONGLY CONNECTED COMPONENTS (AND RELATIONS)
+%%%
+
+\begin{problem}%
+  \label{problem:scc}%
+  (80 p)  
+%%%
+%%% a: 10 p
+%%% b: 10 p
+%%% c: 20 p
+%%% d: 40 p
+  This problems is about relations in general and
+  graphs in particular.
+%   
+%     We will focus on the graph in
+%     \reffig{fig:scc}.
+%   
+%     \input{Figures/fig-scc-26.tex}    
+%   
+  
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(10 p)}
+    {\ignorespaces}
+  \label{problem:scc-a}%
+    Say that the relation $E(u,v)$ holds for two vertices $u$ and $v$
+    in a directed graph if there is
+%       a directed
+    an
+    edge from $u$ to~$v$.   
+    Present the matrix representation
+%       of this relation
+    of~$E$
+    for the graph in
+    \reffig{fig:scc}.
+%       (with rows and columns sorted in lexicographic order of the vertices).
+  \end{subproblem}
+
+  \input{Figures/fig-scc-26.tex}    
+  
+\begin{solution}
+  SOLUTION HERE.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(10 p)}
+    {\ignorespaces}
+    \label{problem:scc-b}%
+    Take the reflexive closure $R$ of the relation~$E$ in
+    Problem~\ref{problem:scc-a}
+    and 
+    present the matrix representation of this relation.
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    \label{problem:scc-c}%
+%       
+    Take the transitive closure $T$ of the relation~$R$ in
+    Problem~\ref{problem:scc-b}
+    and 
+    present the matrix representation of this relation.
+%
+%       Present the matrix representation of
+%       the transitive closure $T$ of the relation~$R$ in
+%       Problem~\ref{problem:scc-b}.
+  \end{subproblem}
+
+  
+\begin{solution}
+  SOLUTION HERE.
+\end{solution}
+
+  \begin{subproblem}
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    \label{problem:scc-d}%
+    Now consider a new relation $S(u,v)$
+    where we define 
+    $S(u,v)$ to hold for two vertices $u$ and~$v$ precisely when
+    $T(u,v)$ and~$T(v,u)$ both hold
+    for the relation~$T$ defined as in 
+    Problem~\ref{problem:scc-c}.
+        
+    This gives a particular type of relation that we discussed in class.
+    What is this type of relation called?
+    Explain, briefly but clearly, why we are guaranteed to always get
+    this type of relation when performing the steps described in
+    Problems~%
+    \ref{problem:scc-b},
+    \ref{problem:scc-c},
+    and~%
+    \ref{problem:scc-d}.
+
+    Also, this relation~$S$ groups the vertices of the graph in a
+    particular way. What is the technical term that we use for such
+    groups of vertices in a graph?    
+
+    \smallskip
+    \noindent
+    \emph{Remark:}
+    Note that you do \emph{not} have to present any matrix
+    representation for this relation~$S$.
+%       We are just looking for answers to the questions above.
+    
+  \end{subproblem}
+
+  
+
+  
+%%%%
+%%%% WILL IT JUST BE TOO MUCH TO ASK THEM TO RUN SCC?
+%%%%
+%   
+%   - In fact, we have even seen an algorithm for computing this
+%   relation. Run this algorithm on our small example graph, in the same
+%   way as we did in class,
+%   
+\end{problem}
+
+
+
+%%%
+%%% TRICKY COMBINATORICS
+%%%
+
+\begin{problem}%
+  \label{problem:multisets}%
+  (100 p)  
+%%%
+  Suppose that we have a universe of $n$ elements and are interested
+  in counting the number of multisets of size $r$.
+  Jakob claims to have figured out that the number of such multisets is~%
+  $\binom{n + r - 1}{n-1}$.
+  His idea is to prove this by
+  using the following algorithm to translate
+  any given size-$r$ multiset~$M$ of~$[n]$
+  to a standard subset~$S$ of $[n + r - 1]$ of size $n-1$:
+%     (which assumes that the elements in the multiset are sorted
+%     in increasing order): 
+\begin{verbatim}
+MULTISET2SET (M)
+    elem := 1
+    S    := empty-set
+    for i := 1 upto n - 1 {
+        c := number of copies of element i in M
+        for j := 1 upto c {
+            elem := elem + 1
+        }
+        S := S union {elem}
+        elem := elem + 1
+    }
+    return S
+\end{verbatim}
+
+  \begin{subproblem}%
+    \label{problem:multiset-1}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(20 p)}
+    {\ignorespaces}
+    Suppose that we have $n = 5$ elements in the universe and are interested in
+    multisets of \mbox{size $r = 6$}.
+%   
+%       Describe what subset $S$ the multiset $M = [1, 1, 2, 5, 5, 5]$ is
+%       translated to by Jakob's algorithm.
+%   
+    Describe what subset $S$ is returned when the algorithm
+    \verb+MULTISET2SET+
+    above is run with the multiset $M = [1, 1, 2, 5, 5, 5]$ as input.
+    Make sure to explain, briefly but clearly,
+    how this set is computed.
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+  \begin{subproblem}%
+    \label{problem:multiset-2}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+%%%
+    Is Jakob's new algorithm
+    \verb+MULTISET2SET+
+    correct? Can you prove that the
+    algorithm provides a
+    translation that shows that the number of multisets of size $r$ from
+    a universe of size $n$ is exactly $\binom{n + r - 1}{n-1}$? Or if there is an
+    error in Jakob's algorithm, then what is it?
+
+    \smallskip
+    \noindent
+    \emph{Hint:}
+    A proof of correctness would need to go through essentially the
+    same kind of steps that we did in class. If Jakob's method is in
+    fact incorrect, then just one small counterexample is sufficient.
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+
+  \begin{subproblem}%
+    \label{problem:multiset-3}%
+    \ifthenelse{\boolean{versionwithsolutions}}
+    {(40 p)}
+    {\ignorespaces}
+    Consider the original translation from multisets of size $r$ from a
+    universe of size $n$ to subsets of size $r$ from a universe of
+    size
+    $n + r - 1$ that we used in class, and that we proved to be correct.
+%%%
+    For fixed positive integers $n$ and~$r$, let us say that the Boolean predicate
+    $T_{n,r}(M,S)$
+    is true if the multiset $M$ can be translated to the standard
+    subset $S$ by the method we studied in class, and that
+    $T_{n,r}(M,S)$
+    is false otherwise.
+    
+%       What properties does this predicate $T_{n,r}$ have?
+    Please indicate
+    for all alternatives below whether $T_{n,r}$ satisfies this property or
+    not. For each property, you get points for the correct
+    answer,
+%       whether $T_{n,r}$ has the property or not,
+    a deduction for
+    a wrong answer, and no change in your score if you do not
+    indicate an answer for a specific property.
+    \begin{enumerate}  %  [(i)]
+    \item
+      $T_{n,r}$ describes a relation.
+      
+    \item
+      $T_{n,r}$ describes a function.
+      
+    \item
+      $T_{n,r}$ is surjective.
+      
+    \item
+      $T_{n,r}$ is reflexive.
+  
+    \item
+      $T_{n,r}$ is a partial order.
+      
+    \item
+      $T_{n,r}$ is injective.
+      
+    \item
+      $T_{n,r}$ is symmetric.
+      
+    \item
+      $T_{n,r}$ is an equivalence relation.
+      
+    \end{enumerate}
+    
+  \end{subproblem}
+
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
+
+\end{problem}
+
+
+
+%%% 
 %%% GRAPH PROBLEM: IDENTIFY OUTPUT OF DIFFERENT ALGORITHMS
 %%%
 %   Give 10 points per correct answer.
@@ -1143,123 +1492,6 @@ max-heap-find-min (A, i)
   
 \end{problem}
 
-
-
-%%%
-%%% TRICKY COMBINATORICS
-%%%
-
-\begin{problem}%
-  \label{problem:multisets}%
-  (100 p)  
-%%%
-  Suppose that we have a universe of $n$ elements and are interested
-  in counting the number of multisets of size $r$.  Jakob has a new
-  idea for showing that the number of multisets is
-  $\binom{n + r - 1}{n-1}$ by translating every multiset to a standard
-  subset of $[n + r - 1]$ of size $n-1$ by running the following piece
-  of code (which assumes that the elements in the multiset are sorted
-  in increasing order): 
-\begin{verbatim}
-PSEUDO-CODE HERE
-\end{verbatim}
-
-  \begin{subproblem}%
-    \label{problem:multiset-1}%
-    \ifthenelse{\boolean{versionwithsolutions}}
-    {(20 p)}
-    {\ignorespaces}
-    Suppose that we have $n = 5$ elements in the universe and are interested in
-    multisets of size $r = 6$.  Describe what subset the multiset
-    $[1, 1, 2, 5, 5, 5]$ is translated to by Jakob's algorithm.
-  \end{subproblem}
-
-\begin{solution}
-  SOLUTION HERE
-\end{solution}
-
-  \begin{subproblem}%
-    \label{problem:multiset-2}%
-    \ifthenelse{\boolean{versionwithsolutions}}
-    {(40 p)}
-    {\ignorespaces}
-%%%
-    Is Jakob's new algorithm correct? Can you prove that the
-    algorithm provides a
-    translation that shows that the number of multisets of size $r$ from
-    a universe of size $n$ is $\binom{n + r - 1}{n-1}$? Or if there is an
-    error in Jakob's algorithm, then what is it?
-
-    \smallskip
-    \noindent
-    \emph{Hint:}
-    A proof of correctness would need to go through essentially the
-    same kind of steps that we did in class. If Jakob's method is in
-    fact incorrect, then just one small counter-example is sufficient.
-  \end{subproblem}
-
-\begin{solution}
-  SOLUTION HERE
-\end{solution}
-
-
-  \begin{subproblem}%
-    \label{problem:multiset-3}%
-    \ifthenelse{\boolean{versionwithsolutions}}
-    {(40 p)}
-    {\ignorespaces}
-    Consider the original translation from multisets of size $r$ from a
-    universe of size $n$ to subsets of size $r$ from a universe of
-    size
-    $n + r - 1$ that we used in class, and that we proved to be correct.
-
-    For fixed positive integers $n$ and~$r$, let us say that the Boolean predicate
-    $T_{n,r}(M,S)$
-    is true if the multiset $M$ can be translated to the standard
-    subset $S$ by the method we studied in class and that
-    $T_{n,r}(M,S)$
-    is false otherwise.
-    
-    What properties does this predicate $T_{n,r}$ have? Please indicate
-    for all alternatives below whether $T_{n,r}$ satisfies this property or
-    not. For each property, you get points for a  correct
-    answer whether $T_{n,r}$ has the property or not, a deduction for
-    a wrong answer, and no change in your score if you do not
-    indicate an answer for a specific property:
-    \begin{enumerate}  %  [(i)]
-    \item
-      $T_{n,r}$ describes a relation.
-      
-    \item
-      $T_{n,r}$ describes a function.
-      
-    \item
-      $T_{n,r}$ is surjective.
-      
-    \item
-      $T_{n,r}$ is reflexive.
-  
-    \item
-      $T_{n,r}$ is a partial order.
-      
-    \item
-      $T_{n,r}$ is injective.
-      
-    \item
-      $T_{n,r}$ is symmetric.
-      
-    \item
-      $T_{n,r}$ is an equivalence relation.
-      
-    \end{enumerate}
-    
-  \end{subproblem}
-
-\begin{solution}
-  SOLUTION HERE
-\end{solution}
-
-\end{problem}
 
 
 

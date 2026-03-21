@@ -1,5 +1,9 @@
 % Tiling a 2^n x 2^n grid with L-shaped tiles
 %
+% NOTE that rows and columns are switched in the code below!
+% A corrected version can be found in the file
+% "tiling-2-by-n-grid.mp"
+%
 % Compile the figures by doing:
 %
 %    mpost tiling-L.mp

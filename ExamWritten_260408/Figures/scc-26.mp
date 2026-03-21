@@ -3,14 +3,13 @@
 %
 % Used in this file to draw directed graphs for different graph algorithm outputs
 %
-%    Compile by doing "mpost graph-algorithm-oputputs-26.mp"
+%    Compile by doing "mpost ssc-26.mp"
 %
 
 color gray;
 pen   fatedgepen;
  
 fatedgepen = pencircle scaled 2.0;
-
 
 gray          :=  0.80 white;
 csize         :=  6.0 mm;        % diameter of nodes
@@ -30,13 +29,13 @@ timelbloffset :=  5.2;
 %%%
 
 %
-% Define graph nodes for 2 x 4 grid
+% Define graph nodes for 2 x 3 grid
 %
 def definegraphnodes =
   i := 0;
 
   % Define points
-  for col := 1 upto 4:
+  for col := 1 upto 3:
     for row := 1 upto 2:
       i := i + 1;
       z[i] = origin + ((col -1) * hdist, -(row - 1) * vdist);
@@ -44,7 +43,7 @@ def definegraphnodes =
   endfor
 
   % Define nodes 
-  for i := 1 upto 8:
+  for i := 1 upto 6:
     c[i] = fullcircle scaled csize shifted z[i];
   endfor
 enddef;
@@ -54,7 +53,7 @@ enddef;
 % Draw graph nodes  for 2 x 4 grid
 %
 def drawgraphnodes =
-  for i := 1 upto 8:
+  for i := 1 upto 6:
     draw c[i];
     fill c[i] withcolor white;
   endfor
@@ -71,8 +70,8 @@ def labelgraphvertices =
   label(btex $d$ etex , z[4]);
   label(btex $e$ etex , z[5]);
   label(btex $f$ etex , z[6]);
-  label(btex $g$ etex , z[7]);
-  label(btex $h$ etex , z[8]);
+%     label(btex $g$ etex , z[7]);
+%     label(btex $h$ etex , z[8]);
 enddef;
 
 %
@@ -83,48 +82,48 @@ def drawgraphedges =
   pair midpt;
 
   % Edges from vertex 1 / a  
+  drawstraightdiredge (1, 2,
+      true, btex etex, -1, 0.5);
+  drawstraightdiredge (1, 3,
+      true, btex etex, -1, 0.55);
   drawstraightdiredge (1, 4,
-      true, btex $5$ etex, -1, 0.55);
+      true, btex etex, -1, 0.5);
 
   % Edges from vertex 2 / b
-%     drawstraightdiredge (2, 4,
-%         true, btex $7$ etex, 1, 0.5);
+     drawstraightdiredge (2, 3,
+      true, btex  etex, 1, 0.5);
+     drawstraightdiredge (2, 4,
+      true, btex  etex, 1, 0.5);
 
   % Edges from vertex 3 / c
-  drawstraightdiredge (3, 1, 
-      true, btex $2$ etex, -1, 0.5);
-  drawstraightdiredge (3, 5, 
-      true, btex $6$ etex, 1, 0.5);
-  drawstraightdiredge (3, 6, 
-      true, btex $1$ etex, 1, 0.45);
+  drawcurveddiredge (3, 6, +1,
+      true, btex etex, -1, 0.37);
 
   % Edges from vertex 4 / d
-  drawstraightdiredge (4, 3, 
-      true, btex $3$ etex, -1, 0.5);
-  drawstraightdiredge (4, 2, 
-      true, btex $4 $ etex, -1, 0.5);
+  drawcurveddiredge (4, 5, +1,
+      true, btex etex, -1, 0.37);
   
   % Edges from vertex 5 / e
-  drawstraightdiredge (5, 7,
-      true, btex $5$ etex, 1, 0.5);      
-  drawcurveddiredge (5, 8, -1,
-      true, btex $8$ etex, -1, 0.37);
+  drawcurveddiredge (5, 4, +1,
+      true, btex etex, -1, 0.37);
+%     drawstraightdiredge (5, 7,
+%         true, btex $5$ etex, 1, 0.5);      
+%     drawcurveddiredge (5, 8, -1,
+%         true, btex $8$ etex, -1, 0.37);
   
   % Edges from vertex 6 / f
-  drawstraightdiredge (6, 5,
-      true, btex $3$ etex, 1, 0.5);
-  drawstraightdiredge (6, 4,
-      true, btex $1$ etex, -1, 0.5);
-%     drawcurveddiredge (6, 2, 2, 
-%         true, btex $2$ etex, 1, 0.5);
-  drawstraightdiredge (6, 8,
-      true, btex $7$ etex, -1, 0.5);
+  drawcurveddiredge (6, 3, +1,
+      true, btex etex, -1, 0.37);
+  drawcurveddiredge (6, 2, 2, 
+      true, btex  etex, 1, 0.5);
+%     drawstraightdiredge (6, 8,
+%         true, btex $7$ etex, -1, 0.5);
   
   % Edges from vertex 7 / g
-  drawcurveddiredge (7, 6, 1, 
-      true, btex $7$ etex, 1, 0.37);
-  drawstraightdiredge (7, 8, 
-      true, btex $1$ etex, +1, 0.5);
+%     drawcurveddiredge (7, 6, 1, 
+%         true, btex $7$ etex, 1, 0.37);
+%     drawstraightdiredge (7, 8, 
+%         true, btex $1$ etex, +1, 0.5);
 
   % Edges from vertex 8 / h
   
