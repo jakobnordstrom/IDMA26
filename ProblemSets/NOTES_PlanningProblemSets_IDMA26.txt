@@ -52,6 +52,10 @@ Make some new problems for the 2027 problem sets.
 - Some induction problem from Vaderlind?
 - Some combinatorics problem from Vaderlind?
 
+Problem set 1:
+Add number representation problem and GCD problem as on 2025 exam
+
+
 
 
 Ideas for 2027 exam:
@@ -65,3 +69,4 @@ Propositional logic
 Should we have a patching problem for the third year in a row?
 Or some predicate logic problem
 
+Something on strongly connected components would be nice

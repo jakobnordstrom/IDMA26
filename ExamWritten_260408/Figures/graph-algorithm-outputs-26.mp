@@ -96,33 +96,39 @@ def drawgraphedges =
   drawstraightdiredge (3, 5, 
       true, btex $6$ etex, 1, 0.5);
   drawstraightdiredge (3, 6, 
-      true, btex $1$ etex, 1, 0.45);
+      true, btex $1$ etex, -1, 0.55);
 
   % Edges from vertex 4 / d
   drawstraightdiredge (4, 3, 
       true, btex $3$ etex, -1, 0.5);
   drawstraightdiredge (4, 2, 
-      true, btex $4 $ etex, -1, 0.5);
+      true, btex $4 $ etex, 1, 0.5);
   
   % Edges from vertex 5 / e
   drawstraightdiredge (5, 7,
       true, btex $5$ etex, 1, 0.5);      
-  drawcurveddiredge (5, 8, -1,
-      true, btex $8$ etex, -1, 0.37);
+  drawcurveddiredge (5, 8, +1,
+      true, btex $8$ etex, -1,
+%         0.37
+      0.70
+      );
   
   % Edges from vertex 6 / f
   drawstraightdiredge (6, 5,
       true, btex $3$ etex, 1, 0.5);
   drawstraightdiredge (6, 4,
-      true, btex $1$ etex, -1, 0.5);
+      true, btex $1$ etex, 1, 0.5);
 %     drawcurveddiredge (6, 2, 2, 
 %         true, btex $2$ etex, 1, 0.5);
   drawstraightdiredge (6, 8,
       true, btex $7$ etex, -1, 0.5);
   
   % Edges from vertex 7 / g
-  drawcurveddiredge (7, 6, 1, 
-      true, btex $7$ etex, 1, 0.37);
+  drawcurveddiredge (7, 6, -1, 
+      true, btex $7$ etex, 1,
+%         0.37
+      0.70
+      );
   drawstraightdiredge (7, 8, 
       true, btex $1$ etex, +1, 0.5);
 

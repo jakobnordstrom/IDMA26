@@ -1,0 +1,132 @@
+% VERSION WITHOUT SOLUTIONS
+\documentclass{jn-pset}
+% Uncomment to get VERSION WITH SOLUTIONS and also do
+%   \setboolean{versionwithsolutions}{true}
+% a few lines down
+%   \documentclass[solutions]{jn-pset}
+
+\usepackage{ifthen}
+\newboolean{versionwithsolutions}
+% Uncomment to insert text that should only be there in version WITH solutions
+\setboolean{versionwithsolutions}{true}
+% Uncomment to insert text that should only be there in version WITHOUT solutions
+\setboolean{versionwithsolutions}{false}
+
+
+
+%%%%
+%%%% QUICK INSTRUCTIONS FOR FORMATTING OF PROBLEMS
+%%%%
+%    
+% Code a problem by
+%    \begin{problem}
+%    \end{problem}
+%
+% Code a subproblem inside a problem by (note the percent signs!)
+%    \begin{subproblem}%
+%        \label{problem:labelhere}%
+%        Text here
+%    \end{subproblem}
+%
+% Get a small vertical space by issuing the command
+%    \smallskip
+%
+% For instance, to give a hint to a problem (after having completed
+% the problem statement) code in the following way:
+%
+%    \smallskip
+%     \noindent
+%     \emph{Hint:}
+%     Consider the following super-useful hint for this particular problem...
+%
+
+% PROBLEM-SET-SPECIFIC MACROS (UPDATE FOR EACH PROBLEM SET)
+% *** NOT USED FOR EXAM ***
+%
+% \newcommand{\psetno}{5}
+%%% The formatting macro \duedate is not used for the exam
+%   \newcommand{\duedate}{Wednesday April 10 at 13:00 CET}
+% Dummy formatting for draft versions
+%   \newcommand{\thresholdA}{$\langle A \rangle$~points\xspace}
+%   \newcommand{\thresholdB}{$\langle B \rangle$~points\xspace}
+%   \newcommand{\thresholdC}{$\langle C \rangle$~points\xspace}
+%   \newcommand{\thresholdD}{$\langle D \rangle$~points\xspace}
+%   \newcommand{\thresholdE}{$\langle E \rangle$~points\xspace}
+% Add actual grading thresholds here with \renewcommand 
+%   \renewcommand{\thresholdA}{$200$~points\xspace}
+%   \renewcommand{\thresholdB}{$170$~points\xspace}
+%   \renewcommand{\thresholdC}{$140$~points\xspace}
+%   \renewcommand{\thresholdD}{$110$~points\xspace}
+%   \renewcommand{\thresholdE}{$80$~points\xspace}
+
+% Threshold guaranteed to pass the exam
+\newcommand{\thresholdforpass}{$220$~points\xspace}
+
+
+% Compact lists
+\usepackage{paralist}
+
+% COURSE-SPECIFIC MACROS
+
+\input{../ProblemSets/course-macros.tex}
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026} \\
+    Problems and Solutions}}
+{\newcommand{\examheading}{\mbox{Exam April 8, 2026}}}
+
+
+% For getting watermark "DRAFT" across all pages (for instance, 
+% when posting preliminary version of problem set)
+%   \usepackage{draftwatermark}
+%   % \SetWatermarkFontSize{20 cm}
+%   \SetWatermarkScale{5}
+
+
+%%%
+%%% TITLE
+%%%
+
+\author{\courseinstructor}
+\course{\coursenamelong{}}
+\semester{\courseperiod}
+\title{\coursenameshort: 
+  \examheading}
+
+
+
+\begin{document}
+
+\maketitle
+
+\ifthenelse{\boolean{versionwithsolutions}}
+{
+\noindent
+\emph{%
+  Please note that the main purpose of this document is to explain
+  what the correct solutions are and how to arrive at them.  Thus,
+  while the text below is certainly intended to provide good examples
+  of how to solve problems and reason about solutions, these examples
+  do not necessarily specify exactly how the handed-in exams were
+  expected to look like.
+%
+  This is especially so since for many problems there are more than
+  one correct way of solving them.  
+%   
+%     In general, the solutions provided below tend to be much more
+%     detailed than what would be expected for the exam submissions.
+%   
+  As communicated during the course, the course notes
+  published on Absalon, which contain many problems that we worked out
+  in class, are probably the best indicator of what level of detail is
+  expected from the exam solutions.
+}
+
+
+}
+{\input{IDMA_Exam_GeneralInstructions.tex}}
+
+
+\end{document}
+
+

@@ -29,23 +29,37 @@ SUMMARY OF IDMA EXAM 2025
 PROBLEMS FOR THE IDMA EXAM 2026
 ===============================
 
-VERY ROUGH (AND PROBABLY TOO HARSH) THRESHOLDS *** UPDATE!!! ***
+VERY ROUGH (AND PROBABLY TOO HARSH) THRESHOLDS
 ----------------------------------------------
 
 PROBLEM	   MAX	A-STUDENT    E-STUDENT
-1	    50	 40	      20
-2	    50	 40	      20
-3	    60	 50	      30	
-4	    90	 60	      30
-5	    60	 40	      30
-6	    80	 20	       0
-7	    90	 60	      30
-8	    90	 60	      30
-9	   120	 90	      30
-SUM	   690	370	     220
+1	    60	 50	      30
+2	    60	 40	      20
+3	    80	 50	      20	
+4	    60	 50	      30
+5	    70	 40	      20
+6	    80	 40	      20
+7	    80	 60	      30
+8	   100	 50	      20
+9	   120	 80	      30
+SUM	   710	460	     220
 
 
-1. PSEUDOCODE
+1. INDUCTION PROOFS
+
+(a) Prove that if x_1, x_2, ..., x_n are non-negative real numbers, then it holds that
+
+(1 + x_1) (1 + x_2) \cdots  (1 + x_n) >= 1 + x_1 + x_2 + \cdots + x_n .
+
+(b) Prove that every integer n >= 12 can be written as 4a + 5b for a and b non-negative integers.
+
+
+2.COMBINATORICS
+
+What is the largest positive integer n such that 26!/6^n is also an integer?
+
+
+3. PSEUDOCODE
 
 Algorithms for
 - insertion in a doubly linked list
@@ -53,29 +67,7 @@ Algorithms for
 - lookup in a doubly linked list
 - and a spoiler
 and ask to match the code snippets to these alternatives (with explanations).
-All code snippets would "return" something just to obfuscate a little bit.
 10 p for correct match, 10 p for brief explanation
-
-
-2. INDUCTION PROOFS
-
-(a) Prove that if x_1, x_2, ..., x_n are non-negative real numbers, then the inequality
-
-(1 + x_1) (1 + x_2) \cdots  (1 + x_n) >= 1 + x_1 + x_2 + \cdots + x_n
-
-always holds.
-
-(b) Prove that every integer n >= 12 can be written as 4a + 5b for a and b non-negative integers.
-
-
-3.COMBINATORICS
-
-As Jakob was preparing this year's instalment of the IDMA course in early 2026, he realized
-that he had been teaching discrete mathematics and algorithms in Copenhagen for 6 years.
-For some reason that is not easy to explain, this made Jakob wonder what the largest positive
-integer n is such that 26!/6^n is also an integer. Could you help Jakob figure this out?
-Jakob does not really trust calculators, so he would very much like to see a clean solution by hand
-that just uses what we learned during the course.
 
 
 4. LOGIC
@@ -89,86 +81,67 @@ Same type of problem as last year
 (b) One formula that can be made into tautology by negating a variable.
 
 
-5. TRICKY COMBINATORICS
+5. HEAPSORT
 
-Suppose that we have a universe of n elements and are interested in counting the number of multisets of size r.
-Jakob has a new idea for showing that the number of multisets is \binom{n + r - 1}{n-1}
-by translating every multiset to a standard subset of [n + r - 1] of size n-1 as follows:
+(a) Run heapsort on the array 11, 3, 19, 5, 17, 2, 13, 7
 
-PSEUDO-CODE HERE
-
-(a) Suppose that we have  n = 5 elements and are interested in multisets of size r = 6.
-Please describe what subset the multiset [1, 1, 2, 5, 5, 5] is translated to by Jakob's algorithm.
-
-(b) Is Jakob correct? Can you prove that Jakob's algorithm gives a translation that shows that the number of multisets of size r from a universe of size n is \binom{n + r - 1}{n-1}? Or if there is an error in Jakob's algorithm, then what is it?
-Hint: A proof of correctness would need to go through essentially the same kind of steps that we did in class. If Jakob's method is in fact incorrect, then just one small counter-example is sufficient.
-
-(c) Consider the original translation from multisets of size r from a universe of size n to subsets of size r from a universe of size n + r - 1 that we used in class, and that we proved to be correct.
-
-For a fixed n and r, Let us say that the Boolean predicate T_{n,r}(M,S) is true if the multiset M can be translated to the standard subset T by the method we studied in class and is false otherwise.
-
-what properties does this predicate T_{n,r} have? Please indicate for all alternatives below whether T_{n,r} has this property or not. For each property, you get points if you give a correct answer whether T_{n,r} has the property or not, a deduction for every wrong answer, and no points and no deduction if you do not indicate an answer for a specific property.
-
-T_{n,r} describes a relation
-T_{n,r} describes a function
-T_{n,r} is surjective
-T_{n,r} is reflexive
-T_{n,r} is a partial order
-T_{n,r} is injective
-T_{n,r} is symmetric
-T_{n,r} is an equivalence relation
+(b) Does going to the smallest child in a max-heap and finally returning a leaf always yield the smallest element? (No.)
 
 
-6. HEAPSORT
-
-(a) Please run heapsort on the array 11, 3, 19, 5, 17, 2, 13, 7
-
-(b) Jakob thinks he has figured out a way to also find the minimal element in a max-heap efficiently.
-
-Always go to smallest child 
-Return leaf
-
-Ia Jakob right? Please provide either a proof of correctness or a counterexample where the input is a maxheap but Jakob's algorithm fails to find the minimal element.
-
-
-7. TRICKY INDUCTION
-
-Describe what it means to tile an 2 \times n grids.
-Show that there is:
-- 1 tiling for  a 2 \times 1 grid
-- 2 tilings for  a 2 \times 2 grid
-- 3 tilings for  a 2 \times 3 grid
+6. TRICKY INDUCTION
 
 (a) How many different tilings are there for a 2 \times 4 grid?
 
 (b) How many different tilings are there for a 2 \times n grid?
 
-Hint: We want to find a formula for this in terms of concepts we have learned in class.
 
-
-8. OUTPUT FROM DIFFERENT GRAPH ALGORITHMS
-
-Do this again?
-
-Sequence 1: Dijkstra shortest path starting in a.
-Sequence 2: BFS starting in a.
-Sequence 3: Spoiler sequence.
-Sequence 4: DFS starting in a.
-
-
-9. STRONGLY CONNECTED COMPONENTS
+7. STRONGLY CONNECTED COMPONENTS
 
 Start with small directed graph on 6 vertices
 
 (a) Say that the relation E(u,v) holds for two vertices u and v in the graph if there is a directed edge from u to v.
-Please present the matrix representation of this relation
+What is the the matrix representation of this relation
+
+(b) Take reflexive closure.
+
+(c) Then take transitive closure.
+
+(d) Define new relation S(u,v) such at S(u,v) holds precisely when T(u,v) and T(v,u) holds.
+This gives a particular type of relation that we discussed in class.
+What is this type of relation called? Prove that we indeed get this type of relation.
 
 
-- Start with directed graph and view graph as edge relation.
-- Maybe even give small graph on 6 or 7 vertices as example
-- Take transitive closure T  of this relation. What is this? Give matrix representation.
-- Take reflexive closure R of (a). What is this? Give matrix representation.
-- Define new relation S(u,v) such at S(u,v) holds precisely with R(u,v) and R(v,u) holds. This gives a particular type of relation that we discussed in class. What is this type of relation called? Prove that we indeed get this type of relation.
-- In fact, we have even seen an algorithm for computing this relation. Run this algorithm on our small example graph, in the same way as we did in class, 
+8. TRICKY COMBINATORICS
+
+Suppose that we have a universe of n elements and are interested in counting the number of multisets of size r.
+Jakob has a new idea for showing that the number of multisets is \binom{n + r - 1}{n-1}
+by translating every multiset to a standard subset of [n + r - 1] of size n-1 as follows:
+
+(a) Suppose that we have  n = 5 elements and are interested in multisets of size r = 6.
+Please describe what subset the multiset [1, 1, 2, 5, 5, 5] is translated to by Jakob's algorithm.
+
+(b) Is Jakob correct? Can you prove that Jakob's algorithm gives a translation that shows that the number of multisets of size r from a universe of size n is \binom{n + r - 1}{n-1}? Or if there is an error in Jakob's algorithm, then what is it?
+
+(c) Consider the original translation from multisets of size r from a universe of size n to subsets of size r from a universe of size n + r - 1 that we used in class, and that we proved to be correct.
+
+For a fixed n and r, let us say that the Boolean predicate T_{n,r}(M,S) is true if the multiset M can be translated to the standard subset T by the method we studied in class and is false otherwise.
+
+Indicate true/false:
+- T_{n,r} describes a relation
+- T_{n,r} describes a function
+- T_{n,r} is surjective
+- T_{n,r} is reflexive
+- T_{n,r} is a partial order
+- T_{n,r} is injective
+- T_{n,r} is symmetric
+- T_{n,r} is an equivalence relation
+
+
+8. OUTPUT FROM DIFFERENT GRAPH ALGORITHMS
+
+- Dijkstra shortest path starting in a.
+- BFS starting in a.
+- Spoiler sequence.
+- DFS starting in a.
 
 
