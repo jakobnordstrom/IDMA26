@@ -60,6 +60,8 @@ Add number representation problem and GCD problem as on 2025 exam
 
 Ideas for 2027 exam:
 
+Some problem on invariants would be nice
+
 Merge sort problem
 This was a long time ago now
 
@@ -70,3 +72,9 @@ Should we have a patching problem for the third year in a row?
 Or some predicate logic problem
 
 Something on strongly connected components would be nice
+
+Predicate logic encoding simple statements about graphs
+- No vertex has degree > 2
+- There is a vertex with degree >= 3
+- There is a triangle in the graph
+- Any two vertices in the graph are connected (spoiler)

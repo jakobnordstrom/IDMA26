@@ -1,0 +1,43 @@
+Some information about the problem sets and exam
+
+Hi all,
+
+As we are approaching the end of the IDMA course, here come some pieces of information about the problem sets and the exam.
+
+My apologies in advance that this is a bit of a long message, but please read through all of it.
+
+(1) FIRST PAGE OF EXAM: In the module "Course information and material" you now find the first page of the IDMA exam. Please make sure to read it through in advance, so that you know what to expect at the exam.
+
+(2) GRADING GUIDELINES: In the same module, you also find the grading guidelines for problem sets 1 and 2. Any similar problems on the exam will be graded in a similar way, so these guidelines are intended to help you calibrate and know what aspects of solutions are more or less important.
+
+(3) SOLUTIONS TO OLD PROBLEM SETS: In the module "Problem sets from DMFS 2023 and IDMA 2024-2026 (with solutions)", I have now released solutions for all problem sets except for psets 3 and 4 this year, which you are still working on. Again, the idea is that this will help you prepare for the exam. Most of these problems are old exam problems, and so an excellent way to prepare should be to first try to solve the problems on your own, and then --- once you have given them a serious attempt --- to read through the solutions to see what you got right and where there might be room for improvements.
+
+Note that you are *not* allowed to bring these typewritten solutions to the actual exam, but I hope that they will be really, really helpful for you as you prepare for the exam (and I also hope that you will all agree that the alternative of not releasing this kind of solutions at all would be worse).
+
+Closer to the exam, you will also be able to find solutions to old exam problems on Absalon.
+
+(4) EXAM ELIGIBILITY: First and foremost, note that you have to submit problem set 4 to be eligible to take the exam!
+
+Second, we will only be able to report exam eligibility after the deadline for problem set 4. You should expect to be able to see in the system around April 1 or so whether you have been registered as eligible for the exam or not. The exam itself is on Wednesday April 8. I am not involved in any of the exam practicalities, so please check with study administration if you have any questions about the time or location for the exam.
+
+What do you do if you have failed a problem set? You try to work extra hard on problem sets 3 and 4. We will look at student results for all problem sets, and if you have a some points missing on one problem sets but some extra points on another problem set, then extra points can compensate for missing points.
+
+Note, in particular, that you have an excellent opportunity to get lots of extra points for problem set 4. As communicated in the course information, there is no resubmission for pset 4, and what is required to pass this pset is to reach the threshold applied to the other problem sets for allowing a resubmission. So if you get a solid score on the pset 4 and get a pass on the first (and only) attempt, then this extra margin can help to compensate for missing points on other psets. At the end of the day, the problem sets are meant to help you prepare for the exam, and so for all students that have worked hard on the problem set we will also make very hard to find a way to make you eligible for the exam.
+
+(5) EXAM AIDS: Since there have been questions about this, let me again repeat the official information about exam aids that you have received before, and that you find posted on the official course webpage https://kurser.ku.dk/course/ndab23002u/:
+
+Skriftlige hjælpemidler tilladt.
+Udskrifter (fx af løsninger til gamle eksamener) er ikke tilladt mens håndskrevne noter og lærebøger er tilladt.
+Skriftlige hjælpemidler inkluderer ikke e-bøger og internetadgang.
+
+Just to help again with interpretation:
+- Bringing the KBR and CLRS textbooks in paper form to the exam is OK.
+- Electronic textbooks or any other pieces of IT equipment are not OK (except possibly for students with special permission).
+- Any notes that are handwritten are allowed.
+- Any typewritten papers are not allowed (so, in particular, please make heavy use of all the worked-out problem set solutions that you now find on Absalon as you prepare for the exam, but you cannot bring print-outs of these solutions to the exam, and also no other typewritten papers, since the people administering the exam have not taken the IDMA course and so cannot tell the difference).
+
+See https://absalon.ku.dk/courses/89165/pages/flowchart-for-allowed-exam-aids-+-why-these-rules?module_item_id=2988630 for more information about this.
+
+Jakob
+
+

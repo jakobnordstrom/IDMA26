@@ -1,0 +1,20 @@
+
+Final week of lectures
+
+Hi again,
+
+Here is some information about the final week of lectures.
+
+On Monday we are having the final lecture on graph theory. As has been mentioned before in class, the material we cover in graph theory is some of the hardest in this course, and also the most important. Much of what we have been doing during the first five weeks of the course is to collect the tools and techniques needed to be able to reason about graph problems and algorithms. You can expect a significant fraction of problems related to graphs on the exam, providing a large fraction of the potential points that will decide your score.
+
+To help you study, in addition to my handwritten lecture notes, and in addition to what you can find in the CLRS textbook, there is a wealth of notes and slides (in English and Danish) on Absalon. The material includes proofs for several theorems that we do not have time to cover in class, but where understanding these proofs is very much part of the curriculum. The additional material we provide is meant to provide extra help for you, but all the details that you need can ultimately be found in CLRS.
+
+On Wednesday, the very final lecture is not intended to be a lecture (unless there is something that we fail to cover on Monday). Instead, most or all of it will be a Q&A session. If there is anything in particular that you would like to see, and that would need to be prepared in advance, then you need to send me messages about this on Absalon. I will do my best to react to any requests, but realistically I will need your input at the latest on Tuesday for anything that needs more serious preparations.
+
+As you are thinking about what to ask about at the Q&A session, perhaps it can be helpful to look at the summary of the IDMA course contents at https://absalon.ku.dk/courses/89165/files/10507252?module_item_id=2988727 (in the "Course information and material" module).
+
+Again, I am aware that the course has been getting increasingly harder over the last couple of weeks, as we have started doing proper mathematical reasoning with proofs. For many of you, this might be the first time you encounter rigorous mathematical reasoning, and this can take some effort getting used to. But this effort is well worth it! The point is that if you can understand what we are doing in this course, and develop your mathematical thinking, then this will turn into a superpower that will not only help you to ace this course, but pretty much any other course you will take during your studies at the University of Copenhagen. Because, at the end of the day, whatever topic the course is about, you tend to need to be able to perform creative but rigorous thinking in order to solve problems, and helping you develop such skills is exactly what this course is about.
+
+Now keep up the good work as we are approaching the end of the course, and are switching to preparations for the exam when you will have the opportunity to show us how well you have learned all the material we have covered! ;-)
+
+Jakob

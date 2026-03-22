@@ -1,0 +1,118 @@
+Amir Yehudayoff <amir.yehudayoff@gmail.com>,
+Florestan Brunck <flbr@di.ku.dk>,
+Theo Fabris <thfa@di.ku.dk>
+
+Sanity check for final version of IDMA exam
+
+Hi Amir, Flo, and Theo,
+
+With apologies for the short notice, I would be supergrateful if you could help with a final sanity check of the complete IDMA exam (in particular, what what I claim to be correct answers seems to be correct).
+
+As usual, I am fighting deadlines --- the exam should have been submitted this last Friday, but I have promised to send in a proof-read version as early as possible on Monday. (In fact, I already sent in a version last night, but as I discovered when preparing this message, I had screwed up the final problem with the graph traversal algorithms.)
+
+The tentative threshold of 220 points for pass, which is probably too harsh but intended to be a guaranteed upper bound for what is needed, is based on the following rough estimate of what an A-student and an E-student could/should score:
+
+PROBLEM	   MAX	A-STUDENT    E-STUDENT
+1	    60	 50	      30
+2	    60	 40	      20
+3	    80	 50	      20	
+4	    60	 50	      30
+5	    70	 40	      20
+6	    80	 40	      20
+7	    80	 60	      30
+8	   100	 50	      20
+9	   120	 80	      30
+SUM	   710	460	     220
+
+This will probably need to be adjusted downwards once we see the submitted exam solutions --- it can often be hard to assess in advance how hard or easy a problem is.
+
+Below follow a summary of the problems what what (I believe) are the solutions.
+
+Florestan, Theo: At the risk of stating the obvious, please make sure during the last week of exercise classes to not leak any information about what type of problems that exam focuses on this year. (This is also why I don't share it with the other TAs --- they should feel free to give as helpful advice as they can without having to worry about inadvertently revealing any secrets.)
+
+Please do let me know if you find any unclear wordings, typos, stupid mistakes, or whatever!
+
+Jakob
+
+
+OVERVIEW OF PROBLEMS AND SOLUTIONS
+
+
+1. INDUCTION PROOFS
+
+Problem (a) should be very straightforward. For (b) the tricky part is to realize that we need four base cases for 12, 13, 14, and 15 before induction kicks in.
+
+
+2.COMBINATORICS
+
+Determining the largest n such that 26! / 6^n is an integer boils down to checking what the highest power of 3 is that divides 26!, which should be 26/3 + 26/9 = 10 (where both divisions are rounded down).
+
+
+3. PSEUDOCODE
+
+Operations on sorted doubly-linked lists:
+- METHOD1 removes the record with the given key if it is in the list.
+- METHOD2 returns the record with the given key if it is in the list.
+- METHOD3 is the spoiler. If a record with the key is there, the prev and next pointers of this record are changed to point to the record, so that we get a self-loop.
+- METHOD4 inserts the current record unless a record with that key is already there.
+
+
+4. LOGIC
+
+(a) This formula is a tautology.
+
+(b) This formula can be made into a tautology by negating the first p on the right-hand side of the equivalence.
+
+
+5. HEAPSORT
+
+(a) Just running heapsort on an array by hand.
+
+(b) No, recursively going to the smallest child in a max-heap and finally returning a leaf does *not* always yield the smallest element. It should be easy to find a counterexample.
+
+
+6. TRICKY INDUCTION
+
+(a) How many different tilings are there for a 2 \times 4 grid? This is just to force students to start thinking about the problem.
+
+(b) How many different tilings are there for a 2 \times n grid? These are the Fibonacci numbers. Suppose that F(n) is the number of ways of tiling a 2-by-n grid. Then:
+- If the rightmost tile is one vertical tile, we can tile the rest of the grid in F(n-1) ways.
+- If the rightmost tiles are two horizontal tiles, we can tile the rest of the grid in F(n-2) ways.
+- Hence, we get F(n) = F(n - 1) + F(n - 2).
+
+
+7. RELATIONS AND STRONGLY CONNECTED COMPONENTS
+
+Problems (a), (b), (c) are just about giving matrix representations and explaining why they are correct.
+
+In (d), students should realize that we get an equivalence relation, and that this relation is just determining the strongly connected components of the graph.
+
+
+8. TRICKY COMBINATORICS
+
+(a) Just do a dry-run of the algorithm.
+
+(b) The algorithm should be correct. If we view the algorithm as marking boxes in a row of boxes of length n + r - 1, then the number of boxes before the first marked box is the number of copies of element 1 in the multi-set, the next interval identifies the number of copies of element 2, et cetera. If there are two marked boxes in a row, then there are no copies of the corresponding element in the multi-set. The number of unmarked boxes after the last marked box is the number of copies of the last element n in the multi-set.
+
+(c) For the original original translation from multi-sets of size r from a universe of size n to subsets of size r from a universe of size n + r - 1, we have that:
+
+- T_{n,r} describes a relation: Yes.
+- T_{n,r} describes a function: Yes.
+- T_{n,r} is surjective: Yes.
+- T_{n,r} is reflexive: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is a partial order: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is injective: Yes.
+- T_{n,r} is symmetric: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is an equivalence relation: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+
+
+9. OUTPUT FROM DIFFERENT GRAPH ALGORITHMS
+
+Sequence 1 should be breadth-first search from vertex a.
+Sequence 2 should be Dijkstra shortest path computation starting in vertex a.
+Sequence 4 should be depth-first search from vertex a.
+Sequence 3 is a spoiler:
+- Not Dijkstra, because b is further away than f.   
+- Not DFS, because after c a neighbour of c would have been visited.
+- Not BFS, because we would have f after e, not g.   
+

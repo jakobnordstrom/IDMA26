@@ -1,18 +1,6 @@
 GRADING GUIDELINES FOR IDMA 2026 PROBLEM SET 2
 ==============================================
 
-*** This document lives at https://docs.google.com/document/d/1gpdMCKTFsprZy0Z9MtTEyLArWNnKmmUgovTYI-vZUSs/edit ***
-*** Current version copied March 22, 2026 ***
-
-
-GENERAL COMMENTS
-When you grade, use the comments as an opportunity to teach the students how to write:
-- Point out what was good (positive feedback is important).
-- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
-- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
-
-If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
-
 
 PROBLEM 1: MATHEMATICAL INDUCTION
 
@@ -89,7 +77,6 @@ Problem 4a (30 p)
 For full score, identify that induction step fails for n=2 (but not for other cases)
 Convincing argument that induction step fails, but claims this is the case for all n: -10 p
 Some kind of argument that induction step fails, but at most half right: -20 p
-
 Problem 4b (30 p)
 Convincing argument that base case is wrong, but not fully correct explanation: -10 p
 Just claiming that reasoning is circular without identifying the base case as problematic: 0 p

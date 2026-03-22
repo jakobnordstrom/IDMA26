@@ -3,7 +3,7 @@
 % Uncomment to get VERSION WITH SOLUTIONS and also do
 %   \setboolean{versionwithsolutions}{true}
 % a few lines down
-%   \documentclass[solutions]{jn-pset}
+%  cumentclass[solutions]{jn-pset}
 
 \usepackage{ifthen}
 \newboolean{versionwithsolutions}
@@ -155,11 +155,18 @@
   \end{subproblem}
 
 \begin{solution}
-We prove this equality by induction over~$n$.
+We prove this inequality by induction over~$n$.
 
 \begin{description}
 \item[\emph{Base case ($n=1$):}]
-
+  In this case we have that equality
+  $
+  1 + x_1
+  =
+  1 + x_1
+  $
+  holds between the left-hand side and the right-hand side.
+  
 \item[\emph{Induction step:}]
 \end{description}
 The claim now follows by the induction principle.  
@@ -182,7 +189,9 @@ The claim now follows by the induction principle.
   We prove this by 
   induction over~$n$.
   \begin{description}
-  \item[\emph{Base case ($n=0$):}]
+  \item[\emph{Base cases:}]
+    Here we need to consider several base cases:
+    
     
   \item[\emph{Induction step:}]
   \end{description}
@@ -211,6 +220,9 @@ The claim now follows by the induction principle.
   solution by hand that just uses what we learned during the IDMA course.
 \end{problem}
 
+\begin{solution}
+  SOLUTION HERE
+\end{solution}
 
 %%% 
 %%% PSEUDOCODE PROBLEM LINKED LISTS
@@ -883,7 +895,18 @@ MAX-HEAP-FIND-MIN (A, i)
   \input{Figures/fig-scc-26.tex}    
   
 \begin{solution}
-  SOLUTION HERE.
+  \begin{equation}
+    \label{eq:adjacency-matrix}
+    M_E =
+    \begin{pmatrix}
+       0 & 1 & 1 & 1 & 0 & 0 \\
+       0 & 0 & 1 & 1 & 0 & 0 \\
+       0 & 0 & 0 & 0 & 0 & 1 \\
+       0 & 0 & 0 & 0 & 1 & 0 \\
+       0 & 0 & 0 & 1 & 0 & 0 \\
+       0 & 1 & 1 & 0 & 0 & 0 
+    \end{pmatrix}
+  \end{equation}
 \end{solution}
 
   \begin{subproblem}
@@ -898,7 +921,18 @@ MAX-HEAP-FIND-MIN (A, i)
   \end{subproblem}
 
 \begin{solution}
-  SOLUTION HERE.
+  \begin{equation}
+    \label{eq:adjacency-matrix-reflexive-closure}
+    M_R =
+    \begin{pmatrix}
+       1 & 1 & 1 & 1 & 0 & 0 \\
+       0 & 1 & 1 & 1 & 0 & 0 \\
+       0 & 0 & 1 & 0 & 0 & 1 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 1 & 1 & 0 & 0 & 1 
+    \end{pmatrix}
+  \end{equation}
 \end{solution}
 
   \begin{subproblem}
@@ -919,7 +953,18 @@ MAX-HEAP-FIND-MIN (A, i)
 
   
 \begin{solution}
-  SOLUTION HERE.
+  \begin{equation}
+    \label{eq:adjacency-matrix-transitive-closure}
+    M_T =
+    \begin{pmatrix}
+       1 & 1 & 1 & 1 & 1 & 1 \\
+       0 & 1 & 1 & 1 & 1 & 1 \\
+       0 & 1 & 1 & 1 & 1 & 1 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 1 & 1 & 1 & 1 & 1 
+    \end{pmatrix}
+  \end{equation}
 \end{solution}
 
   \begin{subproblem}
@@ -957,8 +1002,21 @@ MAX-HEAP-FIND-MIN (A, i)
     
   \end{subproblem}
 
-  
-
+  \begin{solution}
+    Let us give the matrix to be helpful
+  \begin{equation}
+    \label{eq:adjacency-matrix-transitive-closure}
+    M_S =
+    \begin{pmatrix}
+       1 & 0 & 0 & 0 & 0 & 0 \\
+       0 & 1 & 1 & 0 & 0 & 1 \\
+       0 & 1 & 1 & 0 & 0 & 1 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 0 & 0 & 1 & 1 & 0 \\
+       0 & 1 & 1 & 0 & 0 & 1 
+    \end{pmatrix}
+  \end{equation}
+\end{solution}
   
 %%%%
 %%%% WILL IT JUST BE TOO MUCH TO ASK THEM TO RUN SCC?
@@ -1131,26 +1189,28 @@ MULTISET2SET (M)
   \reffig{fig:graph-algorithm-outputs}
   and the following ordered sequences listing the vertices in this graph:
 %%%  
-%%% Random permutation: 1, 3, 4, 2
+%%% Random permutation: A, C, D, B
 %%%
   \begin{compactenum}
-% 1. BFS from a
+% 1=A. BFS from vertex a %%% Verified 26-03-22
   \item%
     \label{sequence-bfs}%    
     $a$, $d$, $b$, $c$, $e$, $f$, $g$, $h$.
     
-% 3. Dijkstra from a
+% 2=C. Dijkstra from vertex a %%% Verified 26-03-22
   \item%
     \label{sequence-dijkstra}%    
-    $a$, $d$, $c$, $b$, $f$, $h$, $e$, $g$.
-
+    $a$, $d$, $c$, $f$, $b$, $e$, $g$, $h$.
         
-% 4. Spoiler        
+% 3=D. Spoiler        
   \item%
     \label{sequence-spoiler}%    
     $a$, $d$, $c$, $b$, $e$, $g$, $h$, $f$.
+%%% Not Dijkstra, because b is further away than f   
+%%% Not DFS, because after c a neighbour of c would have been visited   
+%%% Not BFS, because we would have f after e, not g   
         
-% 2. DFS from a
+% 4=B. DFS from vertex a %%% Verified 26-03-22
   \item%
     \label{sequence-dfs}%
     $a$, $d$, $b$, $c$, $e$, $g$, $f$, $h$.

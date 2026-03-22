@@ -69,16 +69,21 @@ Algorithms for
 and ask to match the code snippets to these alternatives (with explanations).
 10 p for correct match, 10 p for brief explanation
 
+Operations on sorted doubly-linked lists:
+- METHOD1 removes the record with the given key if it is in the list.
+- METHOD2 returns the record with the given key if it is in the list.
+- METHOD3 is the spoiler. If a record with the key is there, the prev and next pointers of this record are changed to point to the record, so that we get a self-loop.
+- METHOD4 inserts the current record unless a record with that key is already there.
+
 
 4. LOGIC
 
 Ask whether formulas are tautologies, or can be patched by adding a single connective AND, OR, or NOT to make them tautologies.
+Same type of problem as last year.
 
-Same type of problem as last year
+(a) This formula is a tautology.
 
-(a) One tautology.
-
-(b) One formula that can be made into tautology by negating a variable.
+(b) This formula can be made into a tautology by negating the first p on the right-hand side of the equivalence.
 
 
 5. HEAPSORT
@@ -92,7 +97,10 @@ Same type of problem as last year
 
 (a) How many different tilings are there for a 2 \times 4 grid?
 
-(b) How many different tilings are there for a 2 \times n grid?
+(b) How many different tilings are there for a 2 \times n grid? These are the Fibonacci numbers. Suppose that F(n) is the number of ways of tiling a 2-by-n grid. Then:
+- If the rightmost tile is one vertical tile, we can tile the rest of the grid in F(n-1) ways.
+- If the rightmost tiles are two horizontal tiles, we can tile the rest of the grid in F(n-2) ways.
+- Hence, we get F(n) = F(n - 1) + F(n - 2).
 
 
 7. STRONGLY CONNECTED COMPONENTS
@@ -122,26 +130,30 @@ Please describe what subset the multiset [1, 1, 2, 5, 5, 5] is translated to by 
 
 (b) Is Jakob correct? Can you prove that Jakob's algorithm gives a translation that shows that the number of multisets of size r from a universe of size n is \binom{n + r - 1}{n-1}? Or if there is an error in Jakob's algorithm, then what is it?
 
-(c) Consider the original translation from multisets of size r from a universe of size n to subsets of size r from a universe of size n + r - 1 that we used in class, and that we proved to be correct.
+The algorithm should be correct. If we view the algorithm as marking boxes in a row of boxes of length n + r - 1, then the number of boxes before the first marked box is the number of copies of element 1 in the multi-set, the next interval identifies the number of copies of element 2, et cetera. If there are two marked boxes in a row, then there are no copies of the corresponding element in the multi-set. The number of unmarked boxes after the last marked box is the number of copies of the last element n in the multi-set.
 
-For a fixed n and r, let us say that the Boolean predicate T_{n,r}(M,S) is true if the multiset M can be translated to the standard subset T by the method we studied in class and is false otherwise.
+(c) For the original original translation from multi-sets of size r from a universe of size n to subsets of size r from a universe of size n + r - 1, we have that:
 
-Indicate true/false:
-- T_{n,r} describes a relation
-- T_{n,r} describes a function
-- T_{n,r} is surjective
-- T_{n,r} is reflexive
-- T_{n,r} is a partial order
-- T_{n,r} is injective
-- T_{n,r} is symmetric
-- T_{n,r} is an equivalence relation
+- T_{n,r} describes a relation: Yes.
+- T_{n,r} describes a function: Yes.
+- T_{n,r} is surjective: Yes.
+- T_{n,r} is reflexive: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is a partial order: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is injective: Yes.
+- T_{n,r} is symmetric: No (and this doesn't make sense anyway, since it is a relation between two different sets).
+- T_{n,r} is an equivalence relation: No (and this doesn't make sense anyway, since it is a relation between two different sets).
 
 
 8. OUTPUT FROM DIFFERENT GRAPH ALGORITHMS
 
-- Dijkstra shortest path starting in a.
-- BFS starting in a.
-- Spoiler sequence.
-- DFS starting in a.
+Match ordered sequence of vertices with graph traversal algorithms.
+Same type of problem as last year.
 
+Sequence 1 should be breadth-first search from vertex a.
+Sequence 2 should be Dijkstra shortest path computation starting in vertex a.
+Sequence 4 should be depth-first search from vertex a.
+Sequence 3 is a spoiler:
+- Not Dijkstra, because b is further away than f.   
+- Not DFS, because after c a neighbour of c would have been visited.
+- Not BFS, because we would have f after e, not g.   
 
