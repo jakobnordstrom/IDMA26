@@ -1,0 +1,78 @@
+﻿GRADING GUIDELINES FOR IDMA 2025 PROBLEM SET 4
+==============================================
+
+*** This document lives at
+https://docs.google.com/document/d/1_-_gsdxc15do27IUMq0YKCQbDOXKMNEIwUI2QKFyra4/edit?usp=sharing ***
+*** Current version copied March 22, 2026 ***
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1: GRAPH PROBLEM: SHORTEST PATH (IDMA EXAM 2025, PROBLEM 8)
+
+PROBLEM 1a (20 p)
+Displays understanding that edge weights are related to travel times, but not much more: 5 p
+Models problem as directed graph: -10 p
+Correct graph modelling except for typos in edge weights or similar: -5 p
+Isolated typo(s) in edge weights: No deduction
+Adds random constant to account for waiting times: -10 p
+
+PROBLEM 1b (70 p)
+[Choice of algorithm 20 p; Overall execution of algorithm 30 p; heap operations 20 p]
+Correct execution but of wrong algorithm: 0 p
+Unclear motivation why Dijkstra should be used: -10 p
+Completely missing heap and/or completely misunderstood heap operations: -20 p
+Heap operations mostly OK, but with significant mistakes: -10 p
+Heap configurations correct, but no explanation other than pictures: -10 p
+Description of algorithm execution mostly OK, but with significant mistakes: -10 p
+Description of algorithm execution very hard to understand due to lack of details: -20 p
+Not stating clearly final answer or explaining how this is found: -10 p
+No algorithm execution, but the shortest path found by hand and somewhat convincingly argued: 10 p
+Running Dijkstra correctly, but on wrong graph: max 15 p for execution, max 10 p for heap.
+
+
+PROBLEM 2: GRAPH PROBLEM: IDENTIFY OUTPUT OF DIFFERENT ALGORITHMS (IDMA EXAM 2025, PROBLEM 9)
+[30 p per correctly identified sequence]
+
+For the spoiler sequence 3, 10 p/each for explaining why this is not BFS, DFS, or Dijkstra
+For the other sequences where there is a correct answer for an algorithm:
+- Correct answer, no argument: 10 p
+- Correct answer, meaningful argument: 20 p
+- Correct answer, fully correct and detailed argument: 30 p
+
+
+PROBLEM 3: TIVOLI GARDENS (DMFS EXAM 2021, PROBLEM 3)
+50 p
+
+Correctly solves the problem without mentioning of the pigeonhole principle [no deduction]
+Vague statements without obvious relevance to the problem at hand 0 p
+Recognises that pigeonhole principle is applicable; but does nothing more 5 p
+Very vague solution, but possible to discern that some kind of pigeonhole principle argument is attempted -35 p
+Claims pigeonhole principle without arguing why cases 0 and n-1 cannot both apply, or by forgetting that 0 bumps is a possibility -25 p
+Correct solution, but embedded into a flawed induction proof -15 p
+Essentially correct solution, but minor flaws or unclarities -10 p
+
+
+PROBLEM 4: LEGO (DMFS EXAM 2021, PROBLEM 4)
+60 p
+
+Uses some counting argument/formula that is unrelated to the problem at hand 0 p
+Correct answer, but argument unrelated to this answer 0 p
+Simply multiplies all possible positions (of each brick in isolation) of all bricks 0 p
+Adding number of combinations instead of multiplying (but layers analysed correctly) 10 p 
+Allows rotations of individual single layers when considering symmetries -30 p
+1-brick layer correct (and correctly combined with the rest) +10 p
+1-brick layer partially correct (and correctly combined with the rest) +5 p
+2-brick layer correct (and correctly combined with the rest) +20 p
+2-brick layer partially correct (and correctly combined with the rest) +10 p
+3-brick layer correct +30 p
+3-brick layer partially correct +10 p
+Mistakes in adjusting count due to symmetry -10 p
+Other minor mistake in calculations -5 p
+

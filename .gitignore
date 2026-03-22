@@ -37,3 +37,6 @@ auto
 *.aux
 *.log
 /Messages_Students_TAs/IDMA25_Messages
+*.mpx
+*.out
+comment.cut
