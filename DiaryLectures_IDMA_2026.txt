@@ -149,23 +149,28 @@ MONDAY
 Applications of DFS
 Did topological sort fairly carefully, including proof of correctness.
 For strongly connected component, I just did a dry-run to show how the algorithm works, but did not argue correctness. (I think this is as previous years.)
+Same in 2026
 
 WEDNESDAY MORNING
 Spanning tree lecture.
-Spent 10-15 minutes at the beginning talking about the course and the exam in general --- maybe I should not have done this.
+NOT IN 2026: Spent 10-15 minutes at the beginning talking about the course and the exam in general --- maybe I should not have done this.
 Then tried to get more questions and interaction regarding MST, which succeeded, but also slowed me down.
-I did *not* have time to do Kruskal.
+I did *not* have time to do Kruskal. Also not in 2026, but I did say briefly what the idea was.
 
 WEDNESDAY AFTERNOON
-Started with presentation of Kruskal (except how to implement union-find).
+NOT IN 2026: Started with presentation of Kruskal (except how to implement union-find).
 Then did heaps.
 Didn't have time to finish the material on how to implement priority queues, but I showed how to implement dequeueing efficiently.
-
+REVISE NOTES in 2027 to make notation consistent (data vs key --- maybe we should always do A[i].key? Or (key(A[i])? But then maybe sorting is confusing?
 
 8TH WEEK
 --------
 
 MONDAY
+Change notes to:
+- Have a smaller example.
+- Avoid proof by contradiction.
+
 Dijkstra with Amir
 
 WEDNESDAY MORNING

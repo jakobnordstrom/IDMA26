@@ -1,0 +1,19 @@
+
+********** William Debes Johansen <rbj866@alumni.ku.dk> **********
+
+Q1: Can you explain the Dijkstra algorithm when you implement heaps? We are some student that didn't quite understand what you meant during yesterday's lecture.
+
+
+Q2: And we still dont understand "if the formula is not a tautology, show how to add a single connective to make it into a tautology" in logic proof.
+
+
+
+********** Celina Holbæk Hansen, Ditlev Rasmussen <lmb813@alumni.ku.dk> **********
+
+Would it be possible for you to go over question 4 c,d,e and f from assignment 3, I think a few of us struggled with these, it could be really helpful.
+
+Is it possible that you could go through our assignment 3 question 4 c, d, e, f. While I did do c the other that build on top of it is still mystic to me, even after asking for help on it after the assignment.
+
+!!! Resubmissions for problem set 3 have the due date after the lecture !!!
+
+

@@ -1,0 +1,32 @@
+
+IDMA: Planning for problem sets and exam
+
+Hi TAs,
+
+As you will have seen, I have sent out three messages about the IDMA course to the students today. Please read these message carefully and let me know if you have any questions, so that we can give consistent information to the students.
+
+Here are some notes following up on our meeting last Friday.
+
+(1) Grading guidelines for pset 2 have been released, and also all pset solutions except for psets 3 and 4 this year.
+
+(2) I will need you to grade pset 4 and resubmissions for pset 3 as quickly as possible to be able to report exam eligibility. For pset 4, here is the procedure:
+
+- By Friday March 27 I need to see a 0 in the grading system if there was no submission (and if you have students who passed psets 1-3 and didn't submit pset 4, then please remind them right away, since pset 4 is also compulsory).
+- If there is a serious submission that would lead to a pass after a hypothetical resubmission, then the score should be at least 1.
+- As soon as you have graded pset 4, which should ideally happen by March 31, please fill in the actual score.
+
+The grading guidelines for pset 4 are at https://docs.google.com/document/d/1_-_gsdxc15do27IUMq0YKCQbDOXKMNEIwUI2QKFyra4/ and should hopefully be readable for you.
+
+(3) I have just finished composing the exam. Just so that you know, I have asked Flo and Theo to help proof-read it. For the rest of you, I am proposing to do as in previous years and *not* let you see the exam in advance. In this way, you can keep sharing whatever pro tips you have for the students, without worrying that you are accidentally leaking secret information about what will be on the exam (or try to determine difficult trade-offs regarding what you might have said unless you happened to know that problem X happened to be on the exam).
+
+(4) Please remind the students to fill in the course evaluation at https://evaluering.ku.dk/ .
+
+I would also be very grateful for feedback from you TAs on what you think have worked well or not so well on this course, and what things you think would be good to change (or keep the same) for next year. Please try to collect your thoughts and send me a message with your comments (privately or on the list, whatever you prefer).
+
+(5) We will meet next Friday March 27 at 11:30, but I don't expect that we will need a full hour since all lectures and exercise classes will be over by then.
+
+(6) We have agreed to grade the IDMA exams on Thursday April 16. We will do this at the Algorithm and Complexity Section in Vibenshuset. Please see https://jakobnordstrom.se/visitor-info/ for directions.
+
+Please let me know if you have questions about any of the above, or about things that I forgot to mention.
+
+Jakob

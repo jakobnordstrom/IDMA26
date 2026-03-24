@@ -57,8 +57,7 @@ Add number representation problem and GCD problem as on 2025 exam
 
 
 
-
-Ideas for 2027 exam:
+IDEAS FOR 2027 EXAM:
 
 Some problem on invariants would be nice
 
@@ -67,14 +66,36 @@ This was a long time ago now
 
 Do the old kind of relations problem
 
-Propositional logic
-Should we have a patching problem for the third year in a row?
-Or some predicate logic problem
-
-Something on strongly connected components would be nice
-
-Predicate logic encoding simple statements about graphs
+Logic: Predicate logic encoding simple statements about graphs
 - No vertex has degree > 2
 - There is a vertex with degree >= 3
 - There is a triangle in the graph
 - Any two vertices in the graph are connected (spoiler)
+
+Graph traversals: Same type of problem as last two years, but ask about spanning trees, not vertex order!
+
+Give code that bubbles all elements from largest index to smallest index.
+Ask for time complexity
+Ask if this builds a min-heap
+(Maybe give the code to ChatGPT and ask about all of these questions?)
+
+
+Something on strongly connected components would be nice
+
+
+********** IDEAS FROM CORNELIUS **********
+
+1) proving that each prime number, greater than three, squared and minus one, is divisible by 24. This requires a bit of knowledge of mod, gcd, and is a direct proof (not induction, which I think will throw some people off, in a good way!) 
+
+2) proving that each graph with more than two vertices have at least two vertices with equal degrees 
+2a) show with counter example that this is not the case for a directed graph
+
+3) prove that in any graph, the number of vertices with odd degree is even
+
+4) prove that the sum of 0 to n of (n choose k) is 2^n 
+
+5) then of course running algorithms we have seen in the course (prims, kruskals, dijsktras) 
+
+6) present a new graph algorithm and let them prove the time complexity of it - for an example you could make a janky prims or similar
+
+
