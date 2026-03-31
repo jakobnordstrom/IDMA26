@@ -1,0 +1,99 @@
+﻿GRADING GUIDELINES FOR IDMA 2026 PROBLEM SET 3
+==============================================
+
+*** This document lives at https://docs.google.com/document/d/1PcRq5ewlmE09gVPImgvK6YDDK7IkdNY-_qIEnSVziVo/edit?tab=t.0 ***
+*** Current version copied March 27, 2026 ***
+
+
+GENERAL COMMENTS
+When you grade, use the comments as an opportunity to teach the students how to write:
+- Point out what was good (positive feedback is important).
+- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
+- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
+
+If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
+
+
+PROBLEM 1: RELATIONS
+
+PROBLEM 1a (60 p)
+[3 relations R, S, T and 4 properties: 5 p per correctly determined and argued property]
+[Note that if a relation does *not* have a property, then a concrete counterexample is required]
+[It is worth 10 p to describe all properties correctly, but the total score can never exceed 60 p. That is, if all properties are correctly determined, but there is no description of what these properties are, then this cannot yield more than 50 p]
+
+Shows understanding of what properties mean (by describing correctly), but nothing more: 10 p
+No description of what properties mean: -10 p
+Represents relations as matrices and argues about properties of these matrices: This is perfectly OK if correctly argued.
+Argues about properties of these matrices or graphs, but does not explicitly show the matrix representations or graphs: Half the points rounded up.
+
+PROBLEM 1b (30 p)
+[3 concrete relations R, S, T and 2 types of relations:  5 p per correct and correctly argued answer]
+[In order to argue correctly, there needs to be a description of what equivalence relations and partial orders are]
+[It is worth 10 p to describe equivalence relations and partial orders correctly, but this is not added on top of the 5 p per correct answer but is meant to make sure that a student who answers nothing else secures at least 10 p.]
+
+Shows understanding of what the mentioned types of relations are (by describing correctly), but nothing more: 10 p
+No description of what the mentioned types of relations are: -10 p
+
+
+PROBLEM 2: INDUCTION PROBLEM FOR FIBONACCI NUMBERS (80 p)
+Showing understanding of what relatively prime means, but nothing more: 5 p
+No mention at all of base case or serious issues with base case -20 p
+Base case clearly mentioned, but never verified (not even pointed out as obvious): -10 p
+Unclear where or how induction hypothesis is used: -20 p
+Missing details, but broad outlines OK (clear base case, IH use explicit): -10 p
+Doing several base cases (unnecessarily) but whole proof as such is OK: no deduction
+Base case correct, but nothing more: 10 p
+Base case correct; induction hypothesis stated; but no further progress: 30 p
+Base case wrong, induction hypothesis stated correctly; but no further progress: 10 p
+Completely missing argument why n-1 function calls are made: -30 p
+Basically valid arguments, but arguing informally without any use of induction: -40 p
+Some use of induction for part of the problem, but not making clear where actual inductive proofs are being made: -20 p
+    
+
+PROBLEM 3: COMBINATORICS
+
+PROBLEM 3a (50 p)
+Forgetting factor 2 for choice of male or female leftmost/rightmost, but otherwise correct: -10 p
+Understands factor 2 for choice of male or female leftmost/rightmost: +10 p
+Understands that factors 3! come into play for arranging female and male researchers: +20 p
+Claim of 6! ways of arranging all researchers: Max 10 p
+Brute force analysis that gives correct answer but with limited explanation: 30 p
+Error in final calculation: -10p
+
+PROBLEM 3b (40 p)
+General approach seems sound, but details are wrong: 20 p
+Brute force analysis that gives correct answer but with limited explanation: 20 p
+
+
+PROBLEM 4: SPECTRAL GRAPH THEORY
+
+Note that this is intended to be a very hard problem, as shown by the scoring of the problem. It is perfectly possible to get a top grade on the course without solving this problem.
+
+Arguments only by examples, and no attempts at a general arguments: 0 p
+A correct general argument is kind of there, but it’s supported only by concrete examples and not by general reasoning: Half of the points for 3a, 3b, or 3c.
+Implicitly assuming that eigenvectors can only be 0-1 valued: Max 5 p per subproblem
+Correct and non-trivial examples for 3d-3f, but only examples and no general arguments: Max 10 p/subproblem
+
+PROBLEM 3a (10 p)
+Clear, convincing answer: 10 p
+Vague hand-waving: 0 p
+
+PROBLEM 4b (20 p)
+Only examples and no argument: 0 p 
+Arguing why statement should hold, but missing details: 10 p
+
+PROBLEM 4c (20 p)
+Only examples and no argument: 0 p
+Somewhat convincing argument that we can never reach largest value, but details missing: 10 p
+
+PROBLEM 4d (30 p)
+Only examples and no argument: 0 p
+Somewhat convincing argument that vertex with strictly larger value than neighbours leads to contradiction, but details missing: 15 p
+
+PROBLEM 4e (30 p)
+Only examples and no argument: 0 p
+Somewhat convincing argument, but details missing: 15 p   
+
+PROBLEM 4f (40 p)
+Only examples and no argument: 0 p 
+Somewhat convincing argument, but details missing: 15 p

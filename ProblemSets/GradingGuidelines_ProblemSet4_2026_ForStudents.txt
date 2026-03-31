@@ -1,17 +1,6 @@
 ﻿GRADING GUIDELINES FOR IDMA 2026 PROBLEM SET 4
 ==============================================
 
-*** This document lives at https://docs.google.com/document/d/1_-_gsdxc15do27IUMq0YKCQbDOXKMNEIwUI2QKFyra4/edit?tab=t.0 ***
-*** Current version copied March 27, 2026 ***
-
-GENERAL COMMENTS
-When you grade, use the comments as an opportunity to teach the students how to write:
-- Point out what was good (positive feedback is important).
-- Point out which parts are wrong. Make sure to write a brief but understandable comment *what* is wrong.
-- If you find parts of the solutions that could be skipped because they are simply irrelevant, then be helpful and point that out as well (in a positive way, along the lines of "thank you for providing this information, but your solution would have been even better without it since this is not so relevant for the problem at hand" or something).
-
-If in doubt whether to deduct points or not: On the problem sets we prefer to be harsh rather than nice in the grading. This is so that students will learn and can resubmit correct solutions, and will not make the same mistake on the exam. In particular, please note that students have to provide textual explanations of what is going on --- just drawing a picture, or stating the right answer, or doing something similar without explaining will never be enough (except possibly in specific scenarios, which will then be clear from context), and it is important to use the problem sets to provide this kind of feedback if it is warranted.
-
 
 PROBLEM 1: GRAPH PROBLEM: SHORTEST PATH (IDMA EXAM 2025, PROBLEM 8)
 

@@ -59,12 +59,15 @@ Add number representation problem and GCD problem as on 2025 exam
 
 IDEAS FOR 2027 EXAM:
 
+Draw some set operations and ask to match them with Venn diagrams.
+4 operations, 4 Venn diagrams, one spoiler.
+
 Some problem on invariants would be nice
 
 Merge sort problem
 This was a long time ago now
 
-Do the old kind of relations problem
+Do the old kind of relations problem?
 
 Logic: Predicate logic encoding simple statements about graphs
 - No vertex has degree > 2
@@ -73,6 +76,7 @@ Logic: Predicate logic encoding simple statements about graphs
 - Any two vertices in the graph are connected (spoiler)
 
 Graph traversals: Same type of problem as last two years, but ask about spanning trees, not vertex order!
+And then do it for undirected graphs. Also, skip the spoiler sequence in that case, probably?
 
 Give code that bubbles all elements from largest index to smallest index.
 Ask for time complexity
