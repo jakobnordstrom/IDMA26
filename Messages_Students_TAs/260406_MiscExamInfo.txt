@@ -1,0 +1,25 @@
+Miscellaneous information about the IDMA exam
+
+Hi all,
+
+Here is some mixed information about the exam that has been useful for some students in previous years.
+
+WRITING TOOLS
+
+When you are writing your solutions for the IDMA exam problems, you can use either pen or pencil. As long as we can read your solutions, any writing tool is fine.
+
+EDITIONS OF OFFICIAL TEXTBOOKS
+
+Any edition of the two official textbooks on the IDMA course are fine to bring to the exam. For CLRS, this means that not only the 4th but also the 3rd edition (or earlier editions) can be used. For KBR, you don't need to have the special University of Copenhagen edition --- if you have the full textbook, then this is also fine. But, as mentioned previously, you can only bring physical books, and not electronic books.
+
+EXAM LANGUAGE
+
+You can write your answers to the IDMA exam problems in either English or Danish. All problem statements will be in English (just as for the problem sets). Note that you already have the first page of the exam available on Absalon --- please take a look at it, so that you know all the information there before you come to the actual exam.
+
+CALCULATORS
+
+You will not need (and should not use) calculators or similar for the exam. If the correct answer to a problem is 42!, for instance, then we expect you to answer in this form and not expanded out as 1405006117752879898543142606244511569936384000000000.
+
+Jakob
+
+
