@@ -1,6 +1,6 @@
 %!PS
-%%BoundingBox: -1 -1 284 29 
-%%HiResBoundingBox: -0.49814 -0.49814 283.96219 28.84454 
+%%BoundingBox: -2 -2 284 30 
+%%HiResBoundingBox: -1.4944 -1.4944 283.96219 29.8408 
 %%Creator: MetaPost 2.02
 %%CreationDate: 2026.04.14:0014
 %%Pages: 1
@@ -58,5 +58,23 @@ newpath 269.29085 0 moveto
 269.29085 28.3464 lineto stroke
 newpath 283.46405 0 moveto
 283.46405 28.3464 lineto stroke
+ 0 2.98878 dtransform truncate idtransform setlinewidth pop
+newpath 272.83415 3.5433 moveto
+272.83415 24.8031 lineto
+279.92075 24.8031 lineto
+279.92075 3.5433 lineto
+ closepath stroke
+ 0.9 0.9 0.9 setrgbcolor
+newpath 272.83415 3.5433 moveto
+272.83415 24.8031 lineto
+279.92075 24.8031 lineto
+279.92075 3.5433 lineto
+ closepath fill
+ 0 0 0 setrgbcolor
+newpath 0 0 moveto
+269.29085 0 lineto
+269.29085 28.3464 lineto
+0 28.3464 lineto
+ closepath stroke
 showpage
 %%EOF

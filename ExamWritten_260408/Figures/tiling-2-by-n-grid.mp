@@ -355,4 +355,52 @@ beginfig(10);
 endfig;
  
 
+% FIG 11: Inductive case 1
+beginfig(11);
+  pair gridpoints[][];
+
+  nrows := 2; 
+  ncols := 20; 
+  
+  definerectanglegrid (nrows, ncols);
+  drawrectanglegridlines (nrows, ncols);
+
+%     drawdominotile (1, 1, 0);
+%     drawdominotile (2, 1, 0);
+  drawdominotile (1, 20, 90);
+
+  draw
+    gridpoints[0][0]--
+    gridpoints[0][19]--
+    gridpoints[2][19]--
+    gridpoints[2][0]--
+    cycle
+    withpen tilepen;
+endfig;
+ 
+
+% FIG 12: Inductive case 2
+beginfig(12);
+  pair gridpoints[][];
+
+  nrows := 2; 
+  ncols := 20; 
+  
+  definerectanglegrid (nrows, ncols);
+  drawrectanglegridlines (nrows, ncols);
+
+  drawdominotile (1, 19, 0);
+  drawdominotile (2, 19, 0);
+%     drawdominotile (1, 20, 90);
+
+  draw
+    gridpoints[0][0]--
+    gridpoints[0][18]--
+    gridpoints[2][18]--
+    gridpoints[2][0]--
+    cycle
+    withpen tilepen;  
+endfig;
+ 
+
 end

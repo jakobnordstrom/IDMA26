@@ -1,16 +1,16 @@
 % VERSION WITHOUT SOLUTIONS
-\documentclass{jn-pset}
+%   \documentclass{jn-pset}
 % Uncomment to get VERSION WITH SOLUTIONS and also do
 %   \setboolean{versionwithsolutions}{true}
 % a few lines down
-%  cumentclass[solutions]{jn-pset}
+\documentclass[solutions]{jn-pset}
 
 \usepackage{ifthen}
 \newboolean{versionwithsolutions}
 % Uncomment to insert text that should only be there in version WITH solutions
 \setboolean{versionwithsolutions}{true}
 % Uncomment to insert text that should only be there in version WITHOUT solutions
-\setboolean{versionwithsolutions}{false}
+%   \setboolean{versionwithsolutions}{false}
 
 
 
@@ -168,8 +168,50 @@ We prove this inequality by induction over~$n$.
   holds between the left-hand side and the right-hand side.
   
 \item[\emph{Induction step:}]
+  Assume as our induction hypothesis that
+  \begin{equation}
+    \label{eq:ih-problem-1}
+    (1 + x_1) (1 + x_2) \cdots  (1 + x_n)
+    \geq
+    1 + x_1 + x_2 + \cdots + x_n
+  \end{equation}
+  holds.
+  By
+%     immediately
+  applying
+%     this induction hypothesis
+  \eqref{eq:ih-problem-1}
+  to the product
+  $
+  (1 + x_1) (1 + x_2) \cdots  (1 + x_n) (1 + x_{n+1})
+  $,
+  for the induction step we get
+  \begin{subequations}
+  \begin{align}
+    \label{eq:istep-problem-1}
+    &(1 + x_1) (1 + x_2) \cdots  (1 + x_n)  (1 + x_{n+1})
+    \\
+    \geq\ 
+    &(1 + x_1 + x_2 + \cdots + x_n)  (1 + x_{n+1})
+%       &&[\text{by the induction hypothesis}]
+    \\
+    \geq\ 
+    &(1 + x_1 + x_2 + \cdots + x_n)
+      +
+      (x_{n+1} +  x_1 x_{n+1} + \cdots + x_n x_{n+1} )  
+    \\
+    \geq\ 
+    &1 + x_1 + x_2 + \cdots + x_n
+      +
+      x_{n+1}
+      \eqcomma
+  \end{align}
+  \end{subequations}  
+  where the last inequality holds since all the terms
+  $x_i x_{n+1}$
+  are non-negative by assumption.
 \end{description}
-The claim now follows by the induction principle.  
+The claim follows by the induction principle.  
 \end{solution}
 
 
@@ -184,16 +226,42 @@ The claim now follows by the induction principle.
 \end{subproblem}
 
 \begin{solution}
-%     This is very similar to a problem we did in class, 
-%     and we will solve this one in the same way by arguing by
   We prove this by 
   induction over~$n$.
   \begin{description}
   \item[\emph{Base cases:}]
     Here we need to consider several base cases:
-    
+    \begin{itemize}
+    \item
+      For $n=12$ we have
+      $12 = 4 \cdot 3 + 5 \cdot 0$.
+      
+    \item
+      For $n=13$ we have
+      $13 = 4 \cdot 2 + 5 \cdot 1$.
+      
+    \item
+      For $n=14$ we have
+      $14 = 4 \cdot 1 + 5 \cdot 2$.
+      
+    \item
+      Finally, for $n=15$ we have
+      $15 = 4 \cdot 0 + 5 \cdot 3$.
+      
+    \end{itemize}
     
   \item[\emph{Induction step:}]
+    Suppose that $n \geq 16$. Our induction hypothesis is that $n-4$ can be written as
+    $n-4 = 4a + 5b$ for $a,b \geq 0$. Then clearly it holds that
+    \begin{equation}
+      \label{eq:induction-step-problem-1b}
+      n =
+      (n-4) + 4 =
+      4a + 5b + 4 =
+      4(a+1) + 5
+      \eqcomma
+    \end{equation}
+    and so $n$ can also be written on this form.
   \end{description}
   The claim follows by the induction principle.
 \end{solution}
@@ -221,7 +289,41 @@ The claim now follows by the induction principle.
 \end{problem}
 
 \begin{solution}
-  SOLUTION HERE
+  The number
+  $26! / 6^n$
+  is an integer precisely when
+  $6^n$ divides $26! = 26 \cdot 25  \cdot 24  \cdots 3  \cdot 2  \cdot 1$.
+  Since $2$ and $3$ are prime numbers, for any number~$M$ it holds that
+  $6^n | M$
+  if and only if
+  $2^n | M$
+  and
+  $3^n | M$.
+  That is, we just need to figure out how many factors of $2$ and~$3$ there are in~$26!$.
+
+  There are
+  $\floor{26/3} = 8$
+  positive numbers less than or equal to~$26$
+  that are divisible by~$3$
+  (namely 
+  $
+  3, 6, 9, 12, 15, 18, 21, 24
+  $).
+  Out of these, there are
+  $\floor{26/3^2} = 2$
+  numbers  that are divisible by~$9$, and so contribute an extra
+  factor~$3$
+  (namely $9$ and~$18$).
+  Since $3^3 = 27 > 26$, no number can contribute more that two factors~$3$.
+  This means that the largest~$n$ such that $3^n$ divides $26!$ is
+  $n= 10$.
+  
+  It is easy to check that $2^{10}$ divides~$26!$, since enough factors
+  of~$2$ are contributed already by $2, 4, 6, 8, 10,$ and~$12$.
+
+  We can conclude that the largest~$n$ such that
+  $26! / 6^n$
+  is an integer is $n = 10$.  
 \end{solution}
 
 %%% 
@@ -378,7 +480,125 @@ METHOD4 (record)
 
 
 \begin{solution}
-  SOLUTION HERE
+  The four pseudocode methods do the following:
+  \begin{enumerate}
+  \item
+    \verb+METHOD1+
+    removes an item from the list.
+    
+  \item
+    \verb+METHOD2+
+    looks up an element in the list.
+
+  \item
+    \verb+METHOD3+
+    is a spoiler piece of code that does nothing sensible.
+
+  \item
+    \verb+METHOD4+
+    inserts an element in the list.
+
+  \end{enumerate}
+
+  Here comes a more detailed explanation. As pointed out in the
+  problem statement, all methods have the same
+  initial while loop. This loop finds the first element in the list
+  that has a key that is larger than or equal to the key in the record
+  passed as an argument to the method.
+  In other words, at the end of the while loop,
+  it holds that
+  \verb+current+
+  is  the first list element such that
+  \verb+current.key+ $\geq$
+  \verb+record.key+.
+  What this means is the following:
+  \begin{itemize}
+  \item
+    If there is an element in the list with key value
+    \verb+record.key+,
+    then this element is
+    \verb+current+.
+
+  \item
+    Otherwise, if
+    \verb+record+
+    is to be inserted in the list, then it should be inserted right before
+    \verb+current+.
+    
+  \end{itemize}
+%  
+  Once we have made these observations, it is not too complicated to
+  figure out what the different methods do.
+
+
+  \verb+METHOD1+
+  does not do anything unless
+  \verb+record.key == current.key+,
+  i.e., unless the key value is already there in the list.
+  If the key value is there, the 
+  \verb+next+
+  pointer of the element before
+  \verb+current+
+  is changed to point to the element after
+  \verb+current+,
+  and the element after current has its
+  \verb+prev+
+  pointer changed to refer to the element before
+  \verb+current+.
+  In other words, the element
+  \verb+current+,
+  is \textbf{removed} from the list.
+  
+
+  For
+  \verb+METHOD2+,
+  if
+  \verb+record.key == current.key+,
+  which is the case precisely when an element with key value
+  \verb+record.key+
+  is in the list,
+  then the method  returns the record
+  \verb+current+.
+  Otherwise it returns 
+  \verb+NULL+.
+  That is to say that the method locates the list element with key value
+  \verb+record.key+
+  or returns
+  \verb+NULL+
+  if there is no such element, which is a \textbf{look-up}.
+  
+  \verb+METHOD3+
+  also locates the list element with key value
+  \verb+record.key+
+  if such an element exists.
+  But then the method overwrites the
+  \verb+prev+
+  and
+  \verb+next+
+  pointers of this element to point to the element itself,
+  which destroys the list.
+  
+  \verb+METHOD4+,
+  finally, \textbf{inserts}
+  \verb+record+
+  in the correct place right before
+  \verb+current+
+  (unless it holds that 
+  \verb+record.key == current.key+,
+  in which case nothing is done since the key is already there in the
+  list).
+  This is achieved by making 
+  \verb+previous == current.prev+
+  point to \verb+record+ as its next element
+  (with the \verb+prev+ pointer of \verb+record+ pointing back)
+  and then making
+  \verb+current+
+  point to 
+  \verb+record+
+  as its previous element
+  (with the
+  \verb+next+ pointer of
+  \verb+record+ pointing back).
 \end{solution}
 
 \end{problem}
@@ -423,45 +643,39 @@ METHOD4 (record)
 \begin{solution}
   This formula is a tautology, i.e., it is always true.
 
-  *** UPDATE ***
-  
-  To see this, note first that we know that
-  \begin{equation}
-    \label{eq:impl}
-    p \limpl q
-    \ \equiv \
-    \lnot p \lor q
-  \end{equation}
-  since the only way the implication
+  To see this, look first at the left-hand side
+  $ ( p \limpl q ) \limpl r $
+  of the disjunction.
+  We know that
+  $A \limpl B$
+  is false precisely when
+  $A$ is true and $B$ is false. This means that
+  $    ( p \limpl q ) \limpl r $
+  is false when
+  $r$~is false and
   $p \limpl q$
-  can be false is that $p$ is true and $q$ is false,
-  and this is one of the basic equivalences we have learned in the course.
-  Furthermore, from De Morgan's laws it is easy to derive that
-  \begin{equation}
-    \label{eq:de-morgan}
-    \lnot ( a \lor b \lor c)
-    \ \equiv \
-    \lnot a \land \lnot b \land \lnot c
-  \end{equation}
-  (i.e., the only way a disjunction can be false is that all its
-  disjuncts are false).
-  
-  By combining
-  \eqref{eq:impl}
-  and~\eqref{eq:de-morgan},
-  and using that conjunction is commutative, we see that the premise
+  is true.
+  We have that
+  $p \limpl q$
+  is true, in turn,
+  when either
+  $p$~is false or $q$~is true.
+  But from this we can conclude that whenever the left-hand side
+  $ ( p \limpl q ) \limpl r $
+  is false, it must hold that
   $
-  \lnot \bigl(
-  ( p \limpl q) \lor r
-  \bigr)
+  (\lnot p \lor q) \land \lnot r
   $
-  is in fact equivalent to the conclusion
+  is true, and using distributivity we can rewrite this to 
   $
-  (\lnot q \land \lnot r) \land p
+  (\lnot p \land \lnot r)
+  \lor
+  (q \land \lnot r)
   $,
-  and so the implication
-  in Problem~\ref{problem:formula-1}
-  will always evaluate to true.
+  which is the right-hand side.
+
+  We conclude that either the left-hand side or the right-hand side of
+  the disjunction is always true, so the formula is a tautology as claimed.
 \end{solution}
 
   \begin{subproblem}
@@ -485,55 +699,88 @@ METHOD4 (record)
 
 \begin{solution}
   This is not a tautology.
-
-  *** UPDATE ***
-  If we set $p$ and~$q$ to true
-  but $r$ to false, we get that
+%%%
+  If we set $p$ and~$q$ to false
+  and $r$ to true, we get that
   $
-  (p \land q) \limpl r
+  p \limpl (q \lor r)
   $
-  evaluates to  false but
+  evaluates to true but
   $
-  (q \lor r) \lor \lnot p
+  (p \lor q)
 %%% This should be    
-%       (\lnot q \lor r) \lor \lnot p
-  $
-  evaluates to true, and so the whole formula is false.
+%       (\lnot p \lor q)
+  \lor
+  (p \land r)
+  $    
+  evaluates to false,
+  and so the whole formula evaluates to false.
 
-  If we change $q$ on the right-hand side to $\lnot q$,
+  If we change the first~$p$ on the right-hand side to $\lnot p$,
   we obtain the formula
   \begin{equation}
     \label{eq:patched}
     \bigl(
-    (p \land q) \limpl r
+    p \limpl (q \lor r)
     \bigr)
     \lequiv
     \bigl(
-    (\lnot q \lor r) \lor \lnot p
+%%% WRONG    
+%       (p \lor q)
+%%% FIXED
+    (\lnot p \lor q)
+    \lor
+    (p \land r)
     \bigr)
     \ ,
   \end{equation}    
-  which is a tautology. To see this, we can rewrite the left-hand side
+  which is a tautology.
+
+  To see this, recall that
+  \begin{equation}
+    \label{eq:impl}
+    A \limpl B
+    \ \equiv \
+    \lnot A \lor B
+  \end{equation}
+  since the only way the implication
+  $A \limpl B$
+  can be false is that $A$ is true and $B$ is false,
+  as we have learned in the course.
+  We can now rewrite the left-hand side
   of~\eqref{eq:patched}
   as
   \begin{subequations}
   \begin{align}
-    (p \land q) \limpl r
+    p \limpl (q \lor r )
     \ &\equiv \
-        \lnot (p \land q) \lor r
+        \lnot p \lor ( q \lor r ) 
     \\
     \ &\equiv \
-        (\lnot p \lor \lnot q) \lor r
+        (\lnot p \lor  q ) \lor r 
     \\
     \ &\equiv \
-        (\lnot q \lor r) \lor \lnot p
+        (\lnot p \lor  q ) \lor (p \land r) 
   \end{align}
   \end{subequations}
   by using
   the property~\eqref{eq:impl} of implication,
-  De Morgan's laws,
-  and commutativity of disjunction.
-  This show that the left-hand and right-hand sides of
+  associativity of disjunction,
+  and the (slightly stupid) fact that if
+  $\lnot p \lor  q $
+  is not already true,
+  then
+  this means that $p$ is guaranteed to be true, so that
+  the subformulas
+  $r$
+  and 
+  $p \land r$ 
+  evaluate to the same truth value.
+  (If there is any uncertainty about an argument like this,
+  it is always safe to fall back to truth tables and check
+  that what is claimed is in fact true.)
+
+  This line of reasoning show that the left-hand and right-hand sides of
   of the formula~\eqref{eq:patched} are equivalent,
   and so the formula will always evaluate to true.
 \end{solution}
@@ -593,7 +840,8 @@ METHOD4 (record)
 \end{subproblem}
 
 \begin{solution}
-  ***  UPDATE ***
+  \textbf{!!!  REMAINS TO WRITE UP AND PRODUCE FIGURES FOR !!!}
+  
   We illustrate in
   \reffig{fig:sorting-heaps}
   how the heap used for sorting the array is built
@@ -731,21 +979,6 @@ MAX-HEAP-FIND-MIN (A, i)
 \begin{solution}
   No, this is not true.
 
-*** UPDATE ***
-
-  If we consider the array from our max-heap in 
-  Problem~\ref{problem:heap-sort},
-  it looks like
-  $
-  10,9,8,7,6,4,2,5,1,3
-  $
-  (see again \reffig{fig:sorting-heap-6}).
-  If we take the array in the reverse order to get
-  $
-  3,1,5,2,4,6,7,8,9,10
-  $,
-  then we have that $1$ is the left child of the root $3$, which
-  violates the min-heap property. 
 \end{solution}
 
 
@@ -810,13 +1043,42 @@ MAX-HEAP-FIND-MIN (A, i)
   \input{Figures/fig-tiling-2-by-n-grid}
   
   \begin{subproblem}
-      \ifthenelse{\boolean{versionwithsolutions}}
+    \label{problem:tiling-subproblem}%
+    \ifthenelse{\boolean{versionwithsolutions}}
     {(20 p)}
     {\ignorespaces}
     How many different tilings are there for a $2 \times 4$ grid?
     Make sure to explain how you compute this number so that we can
     follow your reasoning.
   \end{subproblem}
+
+\begin{solution}
+  Do a case analysis for the  right-most tile(s).
+  
+  If the right-most tile is a vertical $2 \times 1$ tile,
+  then this tile can be combined with the tilings in 
+  \refthreefigs
+  {fig:tiling-2-by-3-grid-a}
+  {fig:tiling-2-by-3-grid-b}
+  {fig:tiling-2-by-3-grid-c}
+  of the first $3$~columns
+  to yield $3$~solutions.
+
+  If the right-most tiles are two horizontal
+  $1 \times 2$ tiles on top of one another,
+  then these two tiles can be combined with the tilings
+  \reftwofigs{fig:tiling-2-by-2-grid-a}{fig:tiling-2-by-2-grid-b}
+  of the first $2$~columns
+  to yield $2$~more solutions.
+
+  We can never get the same solution from the two difference cases,
+  since the right-most end of the tiling is different in the two cases.
+  All in all, we therefore get a total of
+  $2 + 3 = 5$
+  different tilings for the 
+  $2 \times 4$ grid.
+\end{solution}
+  
 
   \begin{subproblem}
       \ifthenelse{\boolean{versionwithsolutions}}
@@ -835,22 +1097,98 @@ MAX-HEAP-FIND-MIN (A, i)
 
 
 \begin{solution}
+  Looking at the case analysis we did for
+  Problem~\ref{problem:tiling-subproblem},
+  we see that the number of tilings seem to behave like the Fibonacci
+  numbers.
+  In one sentence, 
+  all we need to do to prove this is to turn the solution of
+  Problem~\ref{problem:tiling-subproblem}
+  into the inductive step in an induction proof.
 
-
+  In a bit more detail, let us write
+  write $T_n$ to denote the number of different tilings of 
+  a $2 \times n$ grid.
+  We claim that
+  $T_n = F_{n+1}$,
+  where
+  $F_n$ denotes the Fibonacci numbers defined by
+  $F_1 = F_2 = 1$
+  and
+  $F_n = F_{n-1} +  F_{n-2}$
+  for
+  $n \geq 3$.
+  Let us prove this by induction over~$n$.
+  
   \begin{description}
-  \item[\emph{Base case ($n=2$):}]
+  \item[\emph{Base cases:}]
+    We have seen from the case analysis in the problem statement that
+    we have
+    \begin{subequations}
+      \begin{align}
+        T_1 &= 1
+        \\
+        T_2 &= 2
+        \\
+        \shortintertext{and}
+        T_3 &= 3
+              \ ,
+      \end{align}
+    \end{subequations}
+    which shows that
+    $T_n = F_{n+1}$
+    for $n=1, 2, 3$.
 
+\input{Figures/fig-tiling-2-by-n-grid-inductive}
     
   \item[\emph{Induction step:}]
-
+    Suppose as our induction hypothesis that
+    $T_{n-1} = F_{n}$
+    and
+    $T_{n-2} = F_{n-1}$,
+    and consider~$T_n$.
+    We do a case analysis for the right-most tile(s) in the grid.
+    
+    If the right-most tile is a vertical $2 \times 1$ tile
+    (as in
+    \reffig{fig:tiling-2-by-n-grid-inductive-1}),
+    then the rest of the grid can be tiled in
+    $T_{n-1}$~ways.
+%%
+    If the right-most tiles are two horizontal
+    $1 \times 2$ tiles on top of one another
+    (as in
+    \reffig{fig:tiling-2-by-n-grid-inductive-2}),
+    then the rest of the grid can be tiled in
+    $T_{n-2}$~ways.
+%%
+    There are no overlaps between these two different types of tilings,
+    since the right-most column is covered by a vertical tile
+    in all tilings in the first case in 
+    \reffig{fig:tiling-2-by-n-grid-inductive-1}
+    and by two horizontal tiles in the second case
+    in
+    \reffig{fig:tiling-2-by-n-grid-inductive-2}.
+%%    
+    Therefore, the total number of tilings is
+    $
+    T_n =
+    T_{n-1} + T_{n-2} =
+    F_{n} + F_{n-1} =
+    F_{n+1}
+    $
+    (using the induction hypothesis for
+    $T_{n-1}$ and~$T_{n-2}$).
   \end{description}
 %%%  
-  The claim in the problem statement now follows by the induction principle.
+  It now follows by the principle of mathematical induction that the
+  number of different tilings
+  $T_n$ of a $2 \times n$ grid
+  is the $(n+1)$st Fibonacci number
+  $F_{n+1}$.
 \end{solution}
 
-
 \end{problem}
-
 
 
 %%%
@@ -894,7 +1232,16 @@ MAX-HEAP-FIND-MIN (A, i)
 
   \input{Figures/fig-scc-26.tex}    
   
-\begin{solution}
+  \begin{solution}
+    We identify the rows and columns
+    $1, 2, \ldots, 6$
+    with the vertices
+    $a, b, \ldots, f$
+    in that order,
+    and then
+    add a~$1$ in the matrix in every position~$(i,j)$
+    such that there is an edge from~$i$ to~$j$ in the graph, 
+    which yields the matrix
   \begin{equation}
     \label{eq:adjacency-matrix}
     M_E =
@@ -907,6 +1254,8 @@ MAX-HEAP-FIND-MIN (A, i)
        0 & 1 & 1 & 0 & 0 & 0 
     \end{pmatrix}
   \end{equation}
+  for the graph in
+  \reffig{fig:scc}.
 \end{solution}
 
   \begin{subproblem}
@@ -920,7 +1269,8 @@ MAX-HEAP-FIND-MIN (A, i)
     present the matrix representation of this relation.
   \end{subproblem}
 
-\begin{solution}
+  \begin{solution}
+    *** HERE HERE HERE ***
   \begin{equation}
     \label{eq:adjacency-matrix-reflexive-closure}
     M_R =
@@ -1253,7 +1603,7 @@ MULTISET2SET (M)
   auxiliary data structures used in the algorithms.
 
   \begin{solution}
-    *** UPDATE ***
+  \textbf{!!!  REMAINS TO WRITE UP AND PRODUCE FIGURES FOR !!!}
     
   Let us consider the different algorithms in the order listed and
   try to find sequences that would match their outputs.
