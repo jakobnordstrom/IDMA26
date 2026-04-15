@@ -40,3 +40,5 @@ auto
 *.mpx
 *.out
 comment.cut
+/ExamWritten_260408/IDMA_Exam_260408_WithoutSolutions.pdf
+*.mp~

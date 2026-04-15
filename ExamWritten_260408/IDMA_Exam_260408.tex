@@ -1,16 +1,16 @@
 % VERSION WITHOUT SOLUTIONS
-%   \documentclass{jn-pset}
+\documentclass{jn-pset}
 % Uncomment to get VERSION WITH SOLUTIONS and also do
 %   \setboolean{versionwithsolutions}{true}
 % a few lines down
-\documentclass[solutions]{jn-pset}
+%   \documentclass[solutions]{jn-pset}
 
 \usepackage{ifthen}
 \newboolean{versionwithsolutions}
 % Uncomment to insert text that should only be there in version WITH solutions
 \setboolean{versionwithsolutions}{true}
 % Uncomment to insert text that should only be there in version WITHOUT solutions
-%   \setboolean{versionwithsolutions}{false}
+\setboolean{versionwithsolutions}{false}
 
 
 
@@ -854,86 +854,72 @@ METHOD4 (record)
     
   \item 
     We need to run \buildmaxheap, which builds max-heaps bottom-up
-    using the \maxheapify method. The $6$th through $10$th nodes
+    using the \maxheapify method. The $5$th through $8$th nodes
     vacuously constitute max-heaps of size~$1$, so the first time
-    \maxheapify is run is on the $5$th node containing~$3$.
-    Since the child~$10$ is larger, the elements
-    $3$ and~$10$ swap places as shown in
+    \maxheapify is run is on the $4$th node containing~$5$.
+    Since the child~$7$ is larger, the elements
+    $5$ and~$7$ swap places as shown in
     \reffig{fig:sorting-heap-26-2}.
-    When \maxheapify is called for the subheap rooted at the $10$th
+    When \maxheapify is called for the subheap rooted at the $8$th
     node, it returns immediately, since that subheap has size~$1$
     and so is a correct max-heap vacuously. 
 
   \item 
-    \maxheapify is then run on the $4$th node. The largest child~$9$
-    is larger than the number~$7$ stored in the $4$th node, so they
-    trade places as shown in
-    \reffig{fig:sorting-heap-26-3}. Again, the second recursive
-    \maxheapify call returns immediately.
-
+    \maxheapify is then run on the $3$rd node,
+    but since $19$ is larger than both of its children~$2$
+    and~$13$ nothing changes, and we still have the heap in
+    \reffig{fig:sorting-heap-26-2}.
+    
   \item 
-    For the $3$rd node, the number~$4$ is smaller than the largest
-    child~$8$, so the two numbers are swapped and the recursive
+    For the $2$nd node, the number~$3$ is smaller than the largest
+    child~$17$, so the two numbers are swapped and the recursive
     \maxheapify call returns immediately, resulting in the heap in
-    \reffig{fig:sorting-heap-26-4}.
+    \reffig{fig:sorting-heap-26-3}.
 
   \item 
-    For the $2$nd node, the number~$6$ is smaller than the largest
-    child~$10$, so they exchange positions with $6$ being shifted to
-    the $5$th node.
-    For the recursive \maxheapify call on the $5$th node, the
-    number~$6$ is larger than the only child~$3$ and so the subheap is
-    in order. After this the heap looks as in
-    \reffig{fig:sorting-heap-26-5}.
-
-  \item 
-    In the final \maxheapify call of \buildmaxheap, the number~$5$ at the
+    In the final \maxheapify call of \buildmaxheap, the number~$11$ at the
     root is compared to both children of the root. The largest
-    child~$10$  is moved to the root and$5$~is shifted down to the
-    $2$nd~node. 
-    In the first recursive \maxheapify call, $5$ is compared to the
-    children $9$ and~$6$, and the largest child~$9$ is moved up and
-    $5$~is shifted down to the $4$th~node.
-    In the next \maxheapify call for the $4$th~node,
-    $5$ is swapped with the largest child~$7$. The final recursive call
-    for the $8$th node terminates since the subheap has size~$1$.
+    child~$19$  is moved to the root and $11$~is shifted down to the
+    $3$rd~node. 
+    In the first recursive \maxheapify call, $11$ is compared to the
+    children $2$ and~$13$, and the largest child~$13$ is moved up and
+    $11$~is shifted down to the $7$th~node.
+    The final recursive call
+    for the $7$th node terminates since the subheap has size~$1$.
     The max-heap resulting from the \buildmaxheap call is shown in
-    \reffig{fig:sorting-heap-26-6}.
+    \reffig{fig:sorting-heap-26-4}.
 
   \item
     The heapsort algorithm now repeatedly removes the root, places
     the last element in the heap in the root position, and runs
     \maxheapify.
-    Right after $10$ has been removed and $3$ has been put in the root
+    Right after $19$ has been removed and $5$ has been put in the root
     position, we have the heap structure in    
-    \reffig{fig:sorting-heap-26-7}.
+    \reffig{fig:sorting-heap-26-5}.
     A sequence of recursive \maxheapify calls compare
-    $3$  first  to the largest of the two children $9$ and~$8$ of the
+    $5$  first  to the largest of the two children $17$ and~$13$ of the
     root,
-    moving up~$9$ and moving down~$3$ to the $2$nd node,
-    then to the largest of the two children $7$ and~$6$,
-    moving up~$7$ and moving~$3$ further down to the $4$th~node, 
-    and finally to the largest of the two children $5$ and~$1$, 
-    swapping $3$ and~$5$.
-    This yields the max-heap on nine elements in
-    \reffig{fig:sorting-heap-26-8}.
+    moving up~$17$ and moving down~$5$ to the $2$nd node,
+    then to the largest of the two children $7$ and~$3$,
+    moving up~$7$ and moving~$5$ further down to the $4$th~node. 
+    This yields the max-heap on seven elements in
+    \reffig{fig:sorting-heap-26-6}.
 
   \item
-    Right after $9$ has been removed and $1$ has been put in the root
+    Right after $17$ has been removed and $11$ has been put in the root
     position, we have the heap structure in    
-    \reffig{fig:sorting-heap-26-9}.
+    \reffig{fig:sorting-heap-26-7}.
     The recursive \maxheapify calls compare
-    $1$  first  to the largest of the two children $7$ and~$8$ of the root,
-    changing places of $1$ and $8$, 
-    and then to the largest of the two children $4$ and~$2$, 
-    changing places of $1$ and $4$. 
-    The resulting  max-heap on eight elements is depicted in
+    $11$  to the largest of the two children $7$ and~$13$ of the root,
+    changing places of $11$ and $13$,
+    but then we terminate since $11$ is larger than~$2$.
+    The resulting  max-heap on six elements is depicted in
     \reffig{fig:sorting-heap-26-8}.
 
   \end{enumerate}
 %
-  This completes the description of how the first two numbers $10$ and
-  $9$ are extracted from the heap during heapsort, which is what we
+  This completes the description of how the first two numbers $19$ and
+  $17$ are extracted from the heap during heapsort, which is what we
   were asked to explain and illustrate.
 \end{solution}
 
@@ -976,7 +962,13 @@ MAX-HEAP-FIND-MIN (A, i)
 
 \begin{solution}
   No, this is not true.
-
+  The algorithm recursively picks the smallest child and descends into
+  that subtree, but there is no reason why the globally smallest
+  element should reside in this subtree. For counter-examples, see,
+  e.g., the heaps in  
+  \reftwofigs
+  {fig:sorting-heap-26-6}
+  {fig:sorting-heap-26-8}.  
 \end{solution}
 
 
@@ -1228,7 +1220,9 @@ MAX-HEAP-FIND-MIN (A, i)
 %       (with rows and columns sorted in lexicographic order of the vertices).
   \end{subproblem}
 
-  \input{Figures/fig-scc-26.tex}    
+  \ifthenelse{\boolean{versionwithsolutions}}
+  {\input{Figures/fig-scc-26-top.tex}}    
+  {\input{Figures/fig-scc-26.tex}}    
   
   \begin{solution}
     We identify the rows and columns
@@ -1312,18 +1306,19 @@ MAX-HEAP-FIND-MIN (A, i)
     The transitive closure~$T$ of~$R$ is the smallest
     relation $T \supseteq R$ such that
     if
-    $(i, j) \in R$
+    $(i, j) \in T$
     and
-    $(j, k) \in R$
+    $(j, k) \in T$
     both hold, then
-    $(i, k) \in R$
+    $(i, k) \in T$
     also holds.
 
-    If we use that the relation~$R$ is just a directed graph (with self-loops),
+    If we use that the relation~$R$ is a directed graph (with self-loops),
     then we see that the transitive closure is just the relation~$T$
     such that
     $(i, j) \in T$
-    if there is a path from~$i$ to~$j$ in the graph.
+    if there is a path from~$i$ to~$j$ in the graph
+    (or if $i = j $ is one and the same vertex).
     If we go over all ordered pairs of vertices~$(i,j)$
     and add a~$1$ in position~$(i,j)$ in the matrix
     precisely when there is a path from~$i$ to~$j$, it can be verified that this yields the
@@ -1407,7 +1402,7 @@ MAX-HEAP-FIND-MIN (A, i)
   reflexive and transitive closure of~$E$, so $T$ is definitely
   reflexive and transitive by construction. This relation is not
   symmetric, however.
-
+%%%
   But $S$ is defined as
   $S = T \intersection T^{-1}$,
   which means that $S$ is a symmetric relation by construction.
@@ -1606,7 +1601,7 @@ MULTISET2SET (M)
   $S = \set{3, 5, 6, 7}$
   in 
   \reffig{fig:selecting-boxes},
-  we can reconstruct the multiset
+  then we can reconstruct the multiset
   $M = [1, 1, 2, 5, 5, 5]$
   as follows:
   \begin{itemize}
