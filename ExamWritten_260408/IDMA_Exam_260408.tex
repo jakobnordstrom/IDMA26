@@ -840,19 +840,17 @@ METHOD4 (record)
 \end{subproblem}
 
 \begin{solution}
-  \textbf{!!!  REMAINS TO WRITE UP AND PRODUCE FIGURES FOR !!!}
-  
   We illustrate in
-  \reffig{fig:sorting-heaps}
+  \reffig{fig:sorting-heaps-26}
   how the heap used for sorting the array is built
   and then modified as the first two numbers are extracted.
 %
   \begin{enumerate}
   \item 
     The input array is shown in a heap structure in
-    \reffig{fig:sorting-heap-1}.
+    \reffig{fig:sorting-heap-26-1}.
     
-    \input{Figures/figHeapsSort.tex}  
+    \input{Figures/figHeapsSort-26.tex}  
     
   \item 
     We need to run \buildmaxheap, which builds max-heaps bottom-up
@@ -861,7 +859,7 @@ METHOD4 (record)
     \maxheapify is run is on the $5$th node containing~$3$.
     Since the child~$10$ is larger, the elements
     $3$ and~$10$ swap places as shown in
-    \reffig{fig:sorting-heap-2}.
+    \reffig{fig:sorting-heap-26-2}.
     When \maxheapify is called for the subheap rooted at the $10$th
     node, it returns immediately, since that subheap has size~$1$
     and so is a correct max-heap vacuously. 
@@ -870,14 +868,14 @@ METHOD4 (record)
     \maxheapify is then run on the $4$th node. The largest child~$9$
     is larger than the number~$7$ stored in the $4$th node, so they
     trade places as shown in
-    \reffig{fig:sorting-heap-3}. Again, the second recursive
+    \reffig{fig:sorting-heap-26-3}. Again, the second recursive
     \maxheapify call returns immediately.
 
   \item 
     For the $3$rd node, the number~$4$ is smaller than the largest
     child~$8$, so the two numbers are swapped and the recursive
     \maxheapify call returns immediately, resulting in the heap in
-    \reffig{fig:sorting-heap-4}.
+    \reffig{fig:sorting-heap-26-4}.
 
   \item 
     For the $2$nd node, the number~$6$ is smaller than the largest
@@ -886,7 +884,7 @@ METHOD4 (record)
     For the recursive \maxheapify call on the $5$th node, the
     number~$6$ is larger than the only child~$3$ and so the subheap is
     in order. After this the heap looks as in
-    \reffig{fig:sorting-heap-5}.
+    \reffig{fig:sorting-heap-26-5}.
 
   \item 
     In the final \maxheapify call of \buildmaxheap, the number~$5$ at the
@@ -900,7 +898,7 @@ METHOD4 (record)
     $5$ is swapped with the largest child~$7$. The final recursive call
     for the $8$th node terminates since the subheap has size~$1$.
     The max-heap resulting from the \buildmaxheap call is shown in
-    \reffig{fig:sorting-heap-6}.
+    \reffig{fig:sorting-heap-26-6}.
 
   \item
     The heapsort algorithm now repeatedly removes the root, places
@@ -908,7 +906,7 @@ METHOD4 (record)
     \maxheapify.
     Right after $10$ has been removed and $3$ has been put in the root
     position, we have the heap structure in    
-    \reffig{fig:sorting-heap-7}.
+    \reffig{fig:sorting-heap-26-7}.
     A sequence of recursive \maxheapify calls compare
     $3$  first  to the largest of the two children $9$ and~$8$ of the
     root,
@@ -918,19 +916,19 @@ METHOD4 (record)
     and finally to the largest of the two children $5$ and~$1$, 
     swapping $3$ and~$5$.
     This yields the max-heap on nine elements in
-    \reffig{fig:sorting-heap-8}.
+    \reffig{fig:sorting-heap-26-8}.
 
   \item
     Right after $9$ has been removed and $1$ has been put in the root
     position, we have the heap structure in    
-    \reffig{fig:sorting-heap-9}.
+    \reffig{fig:sorting-heap-26-9}.
     The recursive \maxheapify calls compare
     $1$  first  to the largest of the two children $7$ and~$8$ of the root,
     changing places of $1$ and $8$, 
     and then to the largest of the two children $4$ and~$2$, 
     changing places of $1$ and $4$. 
     The resulting  max-heap on eight elements is depicted in
-    \reffig{fig:sorting-heap-8}.
+    \reffig{fig:sorting-heap-26-8}.
 
   \end{enumerate}
 %
@@ -1270,7 +1268,14 @@ MAX-HEAP-FIND-MIN (A, i)
   \end{subproblem}
 
   \begin{solution}
-    *** HERE HERE HERE ***
+    The reflexive closure~$R$ of the relation~$E$ is the smallest
+    relation $R \supseteq E$ such that
+    $(i, i) \in R$ holds for all~$i$.
+    We obtain the reflexive closure of~$E$ by adding all such pairs, i.e.,
+    by setting
+    $R = E \union \Setdescr{(i, i)}{i \in \set{a, b, c, d, e, f}}$.
+    In terms of matrix representations, this corresponds to adding
+    $1$s along the diagonal, yielding the matrix    
   \begin{equation}
     \label{eq:adjacency-matrix-reflexive-closure}
     M_R =
@@ -1283,6 +1288,7 @@ MAX-HEAP-FIND-MIN (A, i)
        0 & 1 & 1 & 0 & 0 & 1 
     \end{pmatrix}
   \end{equation}
+  (which, in terms of graphs, corresponds to adding self-loop edges to all vertices).
 \end{solution}
 
   \begin{subproblem}
@@ -1302,7 +1308,26 @@ MAX-HEAP-FIND-MIN (A, i)
   \end{subproblem}
 
   
-\begin{solution}
+  \begin{solution}
+    The transitive closure~$T$ of~$R$ is the smallest
+    relation $T \supseteq R$ such that
+    if
+    $(i, j) \in R$
+    and
+    $(j, k) \in R$
+    both hold, then
+    $(i, k) \in R$
+    also holds.
+
+    If we use that the relation~$R$ is just a directed graph (with self-loops),
+    then we see that the transitive closure is just the relation~$T$
+    such that
+    $(i, j) \in T$
+    if there is a path from~$i$ to~$j$ in the graph.
+    If we go over all ordered pairs of vertices~$(i,j)$
+    and add a~$1$ in position~$(i,j)$ in the matrix
+    precisely when there is a path from~$i$ to~$j$, it can be verified that this yields the
+    matrix representation
   \begin{equation}
     \label{eq:adjacency-matrix-transitive-closure}
     M_T =
@@ -1315,6 +1340,7 @@ MAX-HEAP-FIND-MIN (A, i)
        0 & 1 & 1 & 1 & 1 & 1 
     \end{pmatrix}
   \end{equation}
+  for the transitive closure~$T$ of~$R$.
 \end{solution}
 
   \begin{subproblem}
@@ -1353,7 +1379,8 @@ MAX-HEAP-FIND-MIN (A, i)
   \end{subproblem}
 
   \begin{solution}
-    Let us give the matrix to be helpful
+    Although this is not necessary (as explained in the problem
+    statement), let us start by giving the matrix  representation
   \begin{equation}
     \label{eq:adjacency-matrix-transitive-closure}
     M_S =
@@ -1366,10 +1393,69 @@ MAX-HEAP-FIND-MIN (A, i)
        0 & 1 & 1 & 0 & 0 & 1 
     \end{pmatrix}
   \end{equation}
+  just to be helpful. We see that this partitions the vertex set into
+  the subsets
+  $\set{a}$,
+  $\set{b, c, f}$,
+  and
+  $\set{d,e}$,
+  where in each subset all pairs of vertices are related. In other
+  words, $S$ is an equivalence relation, i.e., a relation that
+  is reflexive, transitive, and symmetric.
+
+  To see why this is guaranteed to be the case, note that~$T$ is the
+  reflexive and transitive closure of~$E$, so $T$ is definitely
+  reflexive and transitive by construction. This relation is not
+  symmetric, however.
+
+  But $S$ is defined as
+  $S = T \intersection T^{-1}$,
+  which means that $S$ is a symmetric relation by construction.
+  (If
+  $(i,j) \in S$,
+  then by definition both
+  $(i,j) \in T$
+  and
+  $(i,j) \in T^{-1}$
+  hold,
+  and the second property is just the same thing as saying
+  $(j,i) \in T$,
+  from which it again follows by the definition of~$S$ that 
+  $(j,i) \in S$.)
+  Also, it is straightforward to verify directly from the definitions
+  that
+  if $T$ is a transitive relation, then so is
+  $T \intersection T^{-1}$,  
+  and the same obviously holds for reflexivity.
+  This shows that $S$ is guaranteed to be an equivalence relation.
+
+  Recall that we observed in our solution to
+  Problem~\ref{problem:scc-c}
+  that
+  $(i,j) \in T$
+  if and only if there is a path from~$i$ to~$j$ in the graph.
+  Since
+  $S = T \intersection T^{-1}$,
+  we have that
+  $(i,j) \in S$
+  holds
+  if and only if there are paths in both directions between~$i$
+  and~$j$ in the graph,
+  i.e., if the two vertices are in the same
+  \emph{strongly connected  component},
+  which is the technical term we are looking for.
+  We can conclude that
+  the relation~$S$  partitions the vertices of the graph into
+  the strongly connected components
+  $\set{a}$,
+  $\set{b, c, f}$,
+  and
+  $\set{d,e}$.
 \end{solution}
   
 %%%%
 %%%% WILL IT JUST BE TOO MUCH TO ASK THEM TO RUN SCC?
+%%%% YES!
 %%%%
 %   
 %   - In fact, we have even seen an algorithm for computing this
@@ -1426,13 +1512,50 @@ MULTISET2SET (M)
 %   
     Describe what subset $S$ is returned when the algorithm
     \verb+MULTISET2SET+
-    above is run with the multiset $M = [1, 1, 2, 5, 5, 5]$ as input.
+    above is run with the multiset
+    $M = [1, 1, 2, 5, 5, 5]$
+    as input.
     Make sure to explain, briefly but clearly,
     how this set is computed.
   \end{subproblem}
 
 \begin{solution}
-  SOLUTION HERE
+  \verb+MULTISET2SET+ starts by setting
+  \verb+elem+ $=1$
+  and
+  $S = \emptyset$.
+  
+  Since there are two copies of element~$1$ in~$M$,
+  in the first iteration of the for loop
+  \verb+elem+ is incremented to~$3$,
+  after which $3$ is added to~$S$.
+  Finally
+  \verb+elem+ is incremented again to~$4$.
+
+  In the second iteration of the for loop, 
+  \verb+elem+ is incremented to~$5$
+  since there is one copy of element~$2$ in~$M$.
+  After this, 
+  $5$ is added to~$S$
+  and  \verb+elem+ is incremented again to~$6$.
+
+\input{Figures/fig-selecting-boxes}  
+  
+  Since there are no copies of the elements $3$ or~$4$ in~$M$,
+  the next two iterations add
+  $6$ and~$7$ to~$S$,
+  and then the for loop ends
+  (since it only runs to $n-1 = 4$).
+  Hence,
+  the set that is returned
+  for input
+  $M = [1, 1, 2, 5, 5, 5]$
+  is
+  $
+  S = \set{3, 5, 6, 7}
+  $,
+  as illustrated in
+  \reffig{fig:selecting-boxes}.  
 \end{solution}
 
   \begin{subproblem}%
@@ -1458,7 +1581,123 @@ MULTISET2SET (M)
   \end{subproblem}
 
 \begin{solution}
-  SOLUTION HERE
+  Yes,
+  the algorithm
+  \verb+MULTISET2SET+
+  translates 
+  multisets of size~$r$ from
+  a universe of size~$n$
+  to standard subsets of size~$n - 1$ from a universe of size
+  $n + r - 1$.
+  (Note that in class we translated to standard subsets of size~$r$ instead,
+  but this is no big difference since the equality
+  $
+  \binom{n + r - 1}{r}
+  =
+  \binom{n + r - 1}{(n + r - 1 ) - r}
+  =
+  \binom{n + r - 1}{n-1}
+  $
+  holds.)
+  
+  The intuition is that the chosen elements in~$S$ tell us when we
+  should skip to the next element in the multiset~$M$.
+  If we look at the set
+  $S = \set{3, 5, 6, 7}$
+  in 
+  \reffig{fig:selecting-boxes},
+  we can reconstruct the multiset
+  $M = [1, 1, 2, 5, 5, 5]$
+  as follows:
+  \begin{itemize}
+  \item
+    Include two copies of~$1$ and then shift to~$2$
+    because of the chosen element/box~$3$.
+    
+  \item
+    Include one copy of~$2$ and then shift to~$3$
+    because of the chosen element/box~$5$.
+    
+  \item
+    Skip~$3$ and shift to~$4$
+    because the next box~$6$ is chosen.
+    
+  \item
+    Skip~$4$ and shift to~$5$
+    because the next box~$7$ is also chosen.
+    
+  \item
+    Finally, include three copies of~$5$
+    corresponding to the last three boxes.
+  \end{itemize}
+%
+  But we need to argue this a little bit more formally.
+
+  First, we claim that two different multisets~$M$ and~$M'$
+  must be translated to different subsets~$S$ and~$S'$.
+  To see this, look at the smallest element~$i$
+  such that the number of copies of~$i$ in~$M$ and~$M'$
+  are different.
+  At that point, the  algorithm
+  \verb+MULTISET2SET+
+  will select different elements for~$S$ and~$S'$,
+  and since
+  \verb+elem+ is always increased this means that
+  $S$ and~$S'$
+  will stay different after this point.
+  This shows that the translation function computed by
+  \verb+MULTISET2SET+
+  is injective.
+
+  To argue that the translation function is surjective,
+  we describe how we can invert the function to  translate any
+  subset~$S$ back to a multiset~$M$.
+  Briefly, the inverse translation is as follows
+  (where it might be helpful to refer to the illustration in
+  \reffig{fig:selecting-boxes}
+  again):
+  \begin{itemize}
+  \item
+    The leftmost number of unchosen elements/boxes tells us how many elements~$1$ we
+    have in the multiset.
+    If box number~$1$ is chosen, \ie if
+    $1 \in S$, then there are no copies of the element~$1$ in the
+    multiset~$M$
+    that we construct.
+    
+  \item
+    We then look at the number of unchosen elements/boxes between each
+    consecutive pair of chosen boxes,
+    and this is the number of copies of the next element~$i$
+    for
+    $i = 2, 3, \ldots, n-1$.
+    If there are two chosen boxes next to each other, then this means
+    there is no copy of the corresponding element in~$M$.
+ 
+    
+  \item
+    Finally, the rightmost number of unchosen elements/boxes
+    shows the number of copies of the element~$n$ in~$M$.
+    
+  \end{itemize}
+%
+  Since there are $n-1$ chosen elements/boxes in~$S$, all elements
+  added to~$M$ in this way are between~$1$ and~$n$.
+  Since the total number of unchosen boxes is
+  $
+  n + r - 1 - (n-1) = r
+  $,
+  the constructed multiset~$M$ will contain~$r$ elements.
+  It is straightforward to verify that if we run the translation function
+  \verb+MULTISET2SET+
+  on this multiset~$M$, then the result is exactly the set~$S$ that we
+  started with. This shows that the translation function is surjective.
+
+  Since the translation function
+  \verb+MULTISET2SET+
+  is both injective and surjective, which is to say it is bijective,
+  this shows that the number of multisets of size $r$ from
+  a universe of size $n$ is exactly~$\binom{n + r - 1}{n-1}$.  
 \end{solution}
 
 
@@ -1518,7 +1757,52 @@ MULTISET2SET (M)
   \end{subproblem}
 
 \begin{solution}
-  SOLUTION HERE
+  The translation will convert any multiset into exactly one set, so
+  $T_{n,r}$ is a function (and therefore also a relation).
+  We proved in class that this function is injective and surjective.
+
+  Asking about partial orders
+  and equivalence relations only makes sense for relations
+  $R \subseteq A \times A$
+  on a single set~$A$
+  and not for relations
+  $R \subseteq A \times B$
+  from a set~$A$ to another set~$B$.
+  Therefore,   
+  $T_{n,r}$ is
+  \emph{not}
+  a partial order or equivalence relation, and
+  for the same reason it is not reflexive or symmetric.
+
+  Summarizing, we obtain the following answers:
+    \begin{enumerate}  %  [(i)]
+    \item
+      $T_{n,r}$ describes a relation. \textbf{YES}
+      
+    \item
+      $T_{n,r}$ describes a function. \textbf{YES}
+      
+    \item
+      $T_{n,r}$ is surjective. \textbf{YES}
+      
+    \item
+      $T_{n,r}$ is reflexive. \textbf{\textit{NO}}
+  
+    \item
+      $T_{n,r}$ is a partial order. \textbf{\textit{NO}}
+      
+    \item
+      $T_{n,r}$ is injective. \textbf{YES}
+      
+    \item
+      $T_{n,r}$ is symmetric. \textbf{\textit{NO}}
+      
+    \item
+      $T_{n,r}$ is an equivalence relation. \textbf{\textit{NO}}
+      
+    \end{enumerate}
+  
+  
 \end{solution}
 
 \end{problem}
@@ -1603,8 +1887,6 @@ MULTISET2SET (M)
   auxiliary data structures used in the algorithms.
 
   \begin{solution}
-  \textbf{!!!  REMAINS TO WRITE UP AND PRODUCE FIGURES FOR !!!}
-    
   Let us consider the different algorithms in the order listed and
   try to find sequences that would match their outputs.
   Since we are promised that each sequence is the output of at most
@@ -1636,47 +1918,47 @@ MULTISET2SET (M)
     \\
     $a$
     &
-      $\set{b, c, e}$
-    &
-      $(b, c, e)$
-      \\
-    $b$
-    &
       $\set{d}$
     &
-      $(c, e, d)$
+      $(d)$
+      \\
+    $d$
+    &
+      $\set{b, c}$
+    &
+      $(b, c)$
     \\
-    $c$
+    $b$
     &
       ---
     &
-      $(e, d)$
+      $(c)$
+    \\
+    $c$
+    &
+      $\set{e, f}$
+    &
+      $(e, f)$
     \\
     $e$
     &
-      $\set{h}$
+      $\set{g, h}$
     &
-      $(d, h)$
+      $(f, g, h)$
     \\
-    $d$
+    $f$
+    &
+      ---
+    &
+      $(g, h)$
+    \\
+    $g$
     &
       ---
     &
       $(h)$
     \\
     $h$
-    &
-      $\set{g}$
-    &
-      $(g)$
-    \\
-    $g$
-    &
-      $\set{f}$
-    &
-      $(f)$
-    \\
-    $f$
     &
       ---
     &
@@ -1687,47 +1969,6 @@ MULTISET2SET (M)
 
   \bigskip
 
-  
-  \textit{\textbf{Sequence~\ref{sequence-dfs}}}
-  is the result of depth-first
-  search starting with vertex~$a$.
-  Below follows an illustration of in which orders vertices are
-  discovered and finished: \\
-  \vspace{-6.0mm}
-  \begin{tabbing}
-    Disco\={}ver  $a$ --- undiscovered neighbours $b$, $c$ and~$e$
-    \\
-    \> Disco\={}ver  $b$ --- undiscovered neighbour $d$
-    \\
-    \> \> Disco\={}ver  $d$  --- undiscovered neighbour $c$
-    \\
-    \> \> \> Disco\={}ver  $c$ --- no undiscovered neighbours
-    \\
-    \> \> \> Finish $c$, since no undiscovered neighbours
-    \\
-    \> \> Finish $d$, since no undiscovered neighbours left
-    \\
-    \> Finish $b$, since no undiscovered neighbours left
-    \\
-    \> Discover $e$ --- undiscovered neighbour $h$
-    \\
-    \> \> Discover $h$  --- undiscovered neighbour $g$
-    \\
-    \> \> \> Discover $g$  --- undiscovered neighbour $f$
-    \\
-    \> \> \> \> Discover $f$ --- no undiscovered neighbours
-    \\
-    \> \> \> \> Finish $f$, since no undiscovered neighbours 
-    \\
-    \> \> \> Finish $g$, since no undiscovered neighbours left
-    \\
-    \> \> Finish $h$, since no undiscovered neighbours left
-    \\
-    \> Finish $e$, since no undiscovered neighbours left
-    \\
-    Finish $a$, since no undiscovered neighbours left
-  \end{tabbing}
-  
   
   \textit{\textbf{Sequence~\ref{sequence-dijkstra}}}
   is the result of a call to Dijkstra's algorithm computing shortest
@@ -1767,14 +2008,29 @@ MULTISET2SET (M)
     \\
     $a$
     &
-      $\set{b, c, e}$
+      $\set{d}$
     &
       $
       \set{
-      (c: 2),
-      (e: 4),
-      (b: 6),
-      (d: \infty),
+      (d: 4),
+      (b: \infty),
+      (c: \infty),
+      (e: \infty),
+      (f: \infty),
+      (g: \infty),
+      (h: \infty)
+      }
+      $
+    \\
+    $d$
+    &
+      $\set{b, c}$
+    &
+      $
+      \set{
+      (c: 7),
+      (b: 9),
+      (e: \infty),
       (f: \infty),
       (g: \infty),
       (h: \infty)
@@ -1783,80 +2039,65 @@ MULTISET2SET (M)
     \\
     $c$
     &
-      $\set{b}$
+      $\set{e, f}$
     &
       $
       \set{
-      (e: 4),
-      (b: 5),
-      (d: \infty),
-      (f: \infty),
+      (f: 8),
+      (b: 9),
+      (e: 13),
       (g: \infty),
       (h: \infty)
       }
       $
     \\
-    $e$
+    $f$
     &
-      $\set{h}$
+      $\set{e, h}$
     &
       $
       \set{
-      (b: 5),
-      (h: 6),      
-      (d: \infty),
-      (f: \infty),
+      (b: 9),
+      (e: 11),
+      (h: 15),      
       (g: \infty)
       }
       $
     \\
     $b$
     &
-      $\set{d}$
+      ---
     &
       $
       \set{
-      (h: 6),      
-      (d: 12),
-      (f: \infty),
+      (e: 11),
+      (h: 15),      
       (g: \infty)
       }
       $
     \\
-    $h$
+    $e$
     &
       $\set{g}$
     &
       $
       \set{
-      (g: 7),      
-      (d: 12),
-      (f: \infty)
+      (g: 13),
+      (h: 15)   
       }
       $
     \\
     $g$
     &
-      $\set{f}$
+      $\set{h}$
     &
       $
       \set{
-      (f: 9),      
-      (d: 12)
+      (h: 14)   
       }
       $
     \\
-    $f$
-    &
-      $\set{d}$
-    &
-      $
-      \set{
-      (d: 10)
-      }
-      $
-    \\
-    $d$
+    $h$
     &
       ---
     &
@@ -1869,31 +2110,80 @@ MULTISET2SET (M)
   \end{tabular}
 
   \bigskip
+
+%%% Not Dijkstra, because b is further away than f   
+%%% Not DFS, because after c a neighbour of c would have been visited   
+%%% Not BFS, because we would have f after e, not g   
   
-  \textit{\textbf{Sequence~\ref{sequence-spoiler}}}, finally,
+  \textit{\textbf{Sequence~\ref{sequence-spoiler}}}
+%     , finally,
   is a spoiler sequence that cannot be the output of any of the
   algorithms listed. To see this, consider the following case
   analysis:
   \begin{compactitem}
   \item
-    If the sequence were the result of breadth-first search,
-    then it would list vertices in order of the number of directed
-    edges required to get to the vertex     from
-    the start vertex~$a$, but the first deviation from this is that
-    $g$ is listed before~$d$.
-    
+    The sequence cannot be the output of Dijkstra's algorithm,
+    since the vertices are not listed in increasing order of distance.
+    Starting with $a$, $d$, $c$ is in order,
+    but $b$ should not be listed before~$f$ since 
+    vertex~$b$ is further away from~$a$ than vertex~$f$ is.
+
   \item
-    A depth-first search starting with $a$, $c$, $b$ would discover~$d$
-    next and not~$e$.
-        
+    A depth-first search starting with $a$, $d$, $c$
+    would next visit an undiscovered neighbour of~$c$ and not~$b$.
+
   \item
-    Finally, the sequence cannot be the output of Dijkstra's    algorithms,
-    since the vertices are not listed in increasing order of distance
-    from~$a$. The first deviation here is that $e$ should come
-    before~$b$ in a listing in increasing order of distance.
+    In a breadth-first search starting with
+    $a$, $d$, $c$, $b$, $e$,
+    the next element would then be the other neighbour~$f$ of~$c$
+    and not~$g$.
     
   \end{compactitem}
 
+  \medskip
+
+  \textit{\textbf{Sequence~\ref{sequence-dfs}}},
+  finally,
+  is the result of depth-first
+  search starting with vertex~$a$.
+  Below follows an illustration of in which orders vertices are
+  discovered and finished: \\
+  \vspace{-6.0mm}
+  \begin{tabbing}
+    Disco\={}ver  $a$ --- undiscovered neighbour $d$
+    \\
+    \> Disco\={}ver  $d$ --- undiscovered neighbours $b, c$
+    \\
+    \> \> Disco\={}ver  $b$  --- no undiscovered neighbours
+    \\
+    \> \> Finish $b$, since no undiscovered neighbours
+    \\
+    \> \> Discover $c$  --- undiscovered neighbours $e, f$
+    \\
+    \> \> \> Disco\={}ver  $e$  --- undiscovered neighbours $g, h$
+    \\
+    \> \> \> \> Disco\={}ver  $g$  --- undiscovered neighbours $f, h$
+    \\
+    \> \> \> \> \> Disco\={}ver  $f$ --- undiscovered neighbour $h$
+    \\
+    \> \> \> \> \> \> Disco\={}ver $h$   --- no undiscovered neighbours
+    \\
+    \> \> \> \> \> \> Finish $h$, since no undiscovered neighbours
+    \\
+    \> \> \> \> \> Finish $f$, since no undiscovered neighbours left
+    \\
+    \> \> \> \> Finish $g$, since no undiscovered neighbours left
+    \\
+    \> \> \> Finish $e$, since no undiscovered neighbours left
+    \\
+    \> \> Finish $c$, since no undiscovered neighbours left
+    \\
+    \> Finish $d$, since no undiscovered neighbours left
+    \\
+    Finish $a$, since no undiscovered neighbours left
+  \end{tabbing}
+  
+  
   
 \end{solution}
 
