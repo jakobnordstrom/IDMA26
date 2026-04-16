@@ -195,7 +195,8 @@ We prove this inequality by induction over~$n$.
     &(1 + x_1 + x_2 + \cdots + x_n)  (1 + x_{n+1})
 %       &&[\text{by the induction hypothesis}]
     \\
-    \geq\ 
+    =\ 
+%       \geq\ 
     &(1 + x_1 + x_2 + \cdots + x_n)
       +
       (x_{n+1} +  x_1 x_{n+1} + \cdots + x_n x_{n+1} )  
@@ -251,7 +252,7 @@ The claim follows by the induction principle.
     \end{itemize}
     
   \item[\emph{Induction step:}]
-    Suppose that $n \geq 16$. Our induction hypothesis is that $n-4$ can be written as
+    Suppose that $n \geq 16$. Our induction hypothesis is that $n-4 \geq 12$ can be written as
     $n-4 = 4a + 5b$ for $a,b \geq 0$. Then clearly it holds that
     \begin{equation}
       \label{eq:induction-step-problem-1b}
@@ -316,7 +317,7 @@ The claim follows by the induction principle.
   (namely $9$ and~$18$).
   Since $3^3 = 27 > 26$, no number can contribute more that two factors~$3$.
   This means that the largest~$n$ such that $3^n$ divides $26!$ is
-  $n= 10$.
+  $n = 8 + 2 =  10$.
   
   It is easy to check that $2^{10}$ divides~$26!$, since enough factors
   of~$2$ are contributed already by $2, 4, 6, 8, 10,$ and~$12$.
@@ -660,7 +661,7 @@ METHOD4 (record)
   is true, in turn,
   when either
   $p$~is false or $q$~is true.
-  But from this we can conclude that whenever the left-hand side
+  From this we can conclude that whenever the left-hand side
   $ ( p \limpl q ) \limpl r $
   is false, it must hold that
   $
@@ -705,7 +706,7 @@ METHOD4 (record)
   $
   p \limpl (q \lor r)
   $
-  evaluates to true but
+  evaluates to true but that
   $
   (p \lor q)
 %%% This should be    
@@ -735,8 +736,9 @@ METHOD4 (record)
     \ ,
   \end{equation}    
   which is a tautology.
-
-  To see this, recall that
+%%
+  To see why this is so, recall that
+  we have the equivalence
   \begin{equation}
     \label{eq:impl}
     A \limpl B
@@ -1340,7 +1342,7 @@ MAX-HEAP-FIND-MIN (A, i)
 
   \begin{subproblem}
     \ifthenelse{\boolean{versionwithsolutions}}
-    {(20 p)}
+    {(40 p)}
     {\ignorespaces}
     \label{problem:scc-d}%
     Now consider a new relation $S(u,v)$
@@ -1579,9 +1581,8 @@ MULTISET2SET (M)
   Yes,
   the algorithm
   \verb+MULTISET2SET+
-  translates 
-  multisets of size~$r$ from
-  a universe of size~$n$
+  is correct in that it   translates 
+  multisets of size~$r$ from   a universe of size~$n$
   to standard subsets of size~$n - 1$ from a universe of size
   $n + r - 1$.
   (Note that in class we translated to standard subsets of size~$r$ instead,
