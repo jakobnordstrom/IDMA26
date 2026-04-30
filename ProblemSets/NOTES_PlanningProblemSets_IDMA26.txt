@@ -68,6 +68,7 @@ Merge sort problem
 This was a long time ago now
 
 Do the old kind of relations problem?
+Or same sort of problem as in 2025
 
 Logic: Predicate logic encoding simple statements about graphs
 - No vertex has degree > 2
@@ -75,14 +76,13 @@ Logic: Predicate logic encoding simple statements about graphs
 - There is a triangle in the graph
 - Any two vertices in the graph are connected (spoiler)
 
-Graph traversals: Same type of problem as last two years, but ask about spanning trees, not vertex order!
-And then do it for undirected graphs. Also, skip the spoiler sequence in that case, probably?
+Graphs: Same type of problem as last two years, but ask about spanning trees, not vertex order!
+And then do it for undirected graphs. Also, skip the spoiler sequence in that case, probably, and do: (a) BFS, (b) DFS, (c) Dijkstra, (d) MST
 
 Give code that bubbles all elements from largest index to smallest index.
 Ask for time complexity
 Ask if this builds a min-heap
 (Maybe give the code to ChatGPT and ask about all of these questions?)
-
 
 Something on strongly connected components would be nice
 

@@ -29,8 +29,8 @@ SUMMARY OF IDMA EXAM 2025
 PROBLEMS FOR THE IDMA EXAM 2026
 ===============================
 
-VERY ROUGH (AND PROBABLY TOO HARSH) THRESHOLDS
-----------------------------------------------
+FIRST VERY ROUGH (AND PROBABLY TOO HARSH) THRESHOLDS
+----------------------------------------------------
 
 PROBLEM	   MAX	A-STUDENT    E-STUDENT
 1	    60	 50	      30
@@ -43,6 +43,22 @@ PROBLEM	   MAX	A-STUDENT    E-STUDENT
 8	   100	 50	      20
 9	   120	 80	      30
 SUM	   710	460	     220
+
+
+REVISED THRESHOLDS AFTER THE EXAM
+---------------------------------
+
+PROBLEM	   MAX	A-STUDENT    E-STUDENT
+1	    60	 40	      20
+2	    60	 30	      10
+3	    80	 40	      10	
+4	    60	 50	      30
+5	    70	 40	      20
+6	    80	 40	      20
+7	    80	 40	      20
+8	   100	 40	       0
+9	   120	 80	      30
+SUM	   710	400	     160
 
 
 1. INDUCTION PROOFS

@@ -1,0 +1,195 @@
+GRADING GUIDELINES FOR DMFS EXAM APRIL 8, 2026
+===============================================
+
+PAGE TITLE
+
+Exam solutions, grading guidelines, and statistics for the IDMA exam April 8, 2026
+
+PAGE CONTENTS
+
+
+For reference, here are PDF copies of the IDMA exam on April 8, 2026 and of suggested solutions to the exam problems. Statistics for the exam results and grading guidelines follow below.
+
+
+GENERAL COMMENTS
+
+Please note that just giving the right answer is never enough unless the problem statement explicitly says so. Normally, just stating a correct solution without explanation gives zero points. Students have to provide explanations of how they solved the problems and why their solutions are correct. Just referring to a figure or table or whatever is not enough (although if some kind of material that partly explains the answer has been given, then this material should be graded and can give points).
+
+
+GRADE DISTRIBUTION 
+
+12 = A:  9.78% (18 students); threshold: 380 pts
+10 = B: 11.41% (21 students); threshold: 325 pts
+7 = C:  14.13% (26 students); threshold: 270 pts
+4 = D:  25.54% (47 students); threshold: 215 pts
+2 = E:  12.50% (23 students); threshold: 160 pts
+0 = Fx: 12.50% (23 students); threshold: 100 pts
+-3 = F:  3.80%  (7 students)
+U:      10,33% (19 students)
+
+# results reported: 184
+Maximal possible score on exam: 710 pts
+Actual best score on exam: 590 pts
+
+Please note that these are the true aggregated statistics for all students taking the IDMA course --- DIKU splits students into two different groups for administrative reasons.
+
+
+GRADING GUIDELINES
+
+
+PROBLEM 1: MATHEMATICAL INDUCTION
+
+GENERAL GUIDELINES FOR BOTH SUBPROBLEMS:
+- Identifies that induction is needed; nothing more: 5 p
+- No mention at all of base case: -10 p
+- Base case clearly mentioned, but never verified (not even pointed out as obvious): - 5 p
+- Unclear where/how induction hypothesis is used (important to state clearly): -10 p
+- Missing details, but broad outlines OK (clear base case, IH use explicit): -5 p
+- Doing several base cases (unnecessarily) but whole proof as such is OK: no deduction
+- Base case correct, but nothing else: 5 p
+- Base case correct; induction hypothesis stated; but no further progress: 10 p
+- Base case wrong, induction hypothesis stated correctly; but no further progress: 5 p
+- Induction step fully correct, but serious issues with base case or missing first case: 20 p
+- Induction step argues from n+1 to n: -10 p
+
+PROBLEM 1a (30 p)
+Missing base case n=1: -5 p
+Intuitive proof sketch but without setting up any induction: 15 p
+
+PROBLEM 1b (30 p)
+Not enough base cases to make induction go through: -15 p
+Sets up sufficient number of base cases, but fails to carry out induction step: 15 p
+OK inductive proof, but for a and b potentially negative: 15 p
+
+
+PROBLEM 2: COMBINATORICS (60 p)
+Realizing that this can be solved by factoring: 5 p
+Realizing that the question is whether 6^n | 26!, but nothing more: 10 p
+Brute-force solution, but fully correct and verifiable: No deduction
+
+
+PROBLEM 3: LINKED LISTS
+80 p in total 
+10 p per correct answer
+10 p per convincing motivation (which can be high-level and brief)
+Less than two correct answers, but general discussion of the code that reveals non-trivial understanding: max 20 p
+
+
+PROBLEM 4: PROPOSITIONAL LOGIC
+
+PROBLEM 4a (30 p)
+Correct answer with some kind of convincing argument, but not fully correct/complete: 15 p
+Truth table filled in almost completely correctly, but wrong answer due to minor slip-ups: 20 p
+Truth table provided that is somewhat correct, but with significant mistakes: 10 p
+Argument by almost completely correctly rewriting subformulas, but wrong answer due to minor slip-ups: 20 p
+Argument by somewhat correctly rewriting subformulas, but with significant mistakes: 10 p
+Not understanding that three variables requires a truth table with 2^3 = 8 rows: 0 p
+
+PROBLEM 4b (30 p)
+[10 p for correctly saying that formula is not tautology (and exhibiting falsifying assignment); 20 p for fixing it]
+Minor mistake in truth table: 5p
+Mistakes in falsifying assignment, but proposed assignment still makes some sense: 5 p
+Fixed formula certified with truth table filled in almost completely correctly: 15 p
+Fixed formula certified with truth table that is somewhat correct: 10 p
+Fixed formula certified by almost completely correctly rewriting subformulas: 15 p
+Fixed formula certified by rewriting subformulas, but with significant mistakes: 10 p
+Fixed formula, but no argument certifying that the formulas has been fixed: 0p
+Fixing formula by changing a connective rather than adding one: 10 p
+Fixing formula by adding two connectives: 5p
+Fixing by adding three connectives: 0p
+
+
+PROBLEM 5: HEAPSORT
+
+PROBLEM 5a (50 p)
+[Correct build-max-heap: 30 p; correct extractions of first two elements: 20 p]
+Completely missing heap and/or completely misunderstood heap representation: -40 p
+Correct result of build-max-heap, but no explanation of how this was done: -20 p
+Tries to run build-max-heap by heapifying top-down rather than bottom-up: -25 p
+Missing recursive calls in max-heapify: -20 p
+
+Minor glitches in heap operations, but overall approach sound and well explained: -10 p
+Explanations very hard to understand due to lack of details: -20 p
+Fully correct heap operations, but min-heap instead of max-heap is used: 20 p (in total)
+
+PROBLEM 5b (20 p)
+A clear counter-example is required for a full score.
+Somewhat convincing argument for the right answer: 10 p
+
+
+PROBLEM 6: INDUCTION PROBLEM YIELDING FIBONACCI NUMBERS (80 p)
+
+Problem 6a (20 p)
+Lists 5 solutions but does not argue that there cannot be more tilings: 10 p
+If the solution for problem 6b also clearly answers 6a, then this is sufficient. But some kind of (numeric) answer to the question in Problem 6a is needed.
+
+Problem 6b (60 p)
+Mentioning that these are Fibonacci numbers, but nothing more: 10 p
+Clean argument T(n) = T(n-1) + T(n-2) plus base cases that allows to compute the Fibonacci sequence, but the word “Fibonacci” is not mentioned: 60 p (full score)
+Arguing T(n) = T(n-1) + T(n-2) correctly but not connecting to Fibonacci numbers or clarifying what the number of tilings is (as the problem asks): 40 p
+Claiming T(n) = T(n-1) + T(n-2) but very unclear argument: 20 p
+Unclear where or how induction hypothesis is used: -20 p
+Missing details, but broad outlines OK (clear base case, IH use explicit): -10 p
+Base case(s) correctly identified, but nothing more: 10 p
+Base cases correct; induction hypothesis stated; but no further progress: 30 p
+Base cases wrong, induction hypothesis stated correctly; but no further progress: 10 p
+Induction step fully correct, but serious issues with base case or missing first case: -30 p
+Only a single base case though two base cases are needed: -20 p
+Off-by-one issues in the numbering, not stating that the number of tilings for n is F_{n+1}: just -5 p if everything else is correct
+
+
+PROBLEM 7: RELATIONS AND GRAPHS
+
+Max deduction from minor slip-ups that accumulate: -10 p
+Consistently using the transpose of the correct matrix in 7a: no deduction (note, though, that this is *very* generously graded — it should be clear from the course literature and lecture what the adjacency matrix of a directed graph looks like)
+
+PROBLEM 7a (10 p)
+Correct matrix is sufficient for a full score of 10 p
+Minor slip-ups (say, missing edge): - 5p
+
+PROBLEM 7b (10 p)
+Correct matrix: 5 p
+Correct explanation: 5 p
+Minor slip-ups: - 5p
+Only brief explanation of reflexivity but not of reflexive closure or how to calculate it and no matrix : 0p
+
+PROBLEM 7c (20 p)
+Correct matrix: 5 p
+Fully correct explanation: 15 p
+Only explaining transitivity but not transitive closure: 5 p (out of the 15 p for the explanation)
+5p for a half-correct explanation
+5p for knowing how to compute the transitive closure but not being able to follow through
+Minor slip-ups: -5 p
+
+PROBLEM 7d (40 p)
+10 p for clearly identifying that this is an equivalence relation
+20 p for arguing clearly that this sequence of operations will always yield an equivalence relation; 10 p for an incomplete or unclear argument
+10 p for realizing that we are asking about strongly connected component (but 0 p for just saying that the relation groups vertices into equivalence questions)
+In general, a half-right solution for one of the aspects above gets half of the score set aside for that aspect
+
+
+PROBLEM 8: COMBINATORICS
+
+PROBLEM 8a (20 p)
+Just correct answer but no explanation: 0 p
+Correct answer but poor explanation: 10 p
+
+PROBLEM 8b (40 p)
+20 p for proving that the translation is injective
+20 p for proving that the translation is surjective (by inverting the translation to recover M from S)
+Statement that we need to prove that the translation function is injective and surjective, but nothing more: 10 p
+
+PROBLEM 8c (40 p)
+5 p per correct answer (no motivation needed).
+-5 p per incorrect answer.
+
+
+PROBLEM 9: GRAPH ALGORITHMS
+[30 p per correctly identified sequence]
+
+For the spoiler sequence, 10 p/each for explaining why this is not BFS, DFS, or Dijkstra
+For the other sequences where there is a correct answer for an algorithm:
+- Correct answer, no argument: 10 p
+- Correct answer, meaningful argument: 20 p
+- Correct answer, fully correct and detailed argument: 30 p
+
