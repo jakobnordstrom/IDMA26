@@ -1,0 +1,23 @@
+Information about IDMA exam grades and re-examination
+
+TL;DR: IDMA exam results are reported and should be visible tomorrow. Exam solutions, grading guidelines, and exam statistics are available on the Absalon page https://absalon.ku.dk/courses/89165/pages/exam-solutions-grading-guidelines-and-statistics-for-the-idma-exam-april-2-2026 .
+
+Dear all,
+
+This message is to provide information about the IDMA exam grading and the re-exam.
+
+I apologize that you have not yet received your results. Your amazing TAs did the exam grading just fine, but then there have been delays further up the chain for the results to be formally approved and reported. When there was finally more clarity about the situation, and a slightly less crazy work overload so that I would have been able to share information, the Canvas hack made it hard to post messages on Absalon. But regardless of all of this, you should have received your results already, and I am sorry for the delay.
+
+The exam results were reported from my side last week. I have been e-mailing with Eksamen Nørre since then, and they now say that you should see the exam results tomorrow Wednesday.
+
+While you are waiting to get your grades, you can look at the page "Exam solutions, grading guidelines, and statistics for the IDMA exam April 8, 2026" (https://absalon.ku.dk/courses/89165/pages/exam-solutions-grading-guidelines-and-statistics-for-the-idma-exam-april-2-2026) in the "Course information and material" module to see suggested solutions to the exam problems and grading guidelines that explain how your exams have been assessed. At the same page you can also find statistics for the grade distribution. Regarding the suggested solutions to the exam problems, it should be stressed that what you find there is not necessarily the only correct way to solve the problems, but rather one possible way that would give a full score.
+
+As a general comments, my impression is that the exam results are quite good. We had a record low number of exam failures this year, and I do not think that is because the exam was easier than usual. My congratulations to all of you who put in hard work and had it rewarded! As I repeated several times during the course --- perhaps too often, even --- I believe that every minute you spent on this course will prove to be a very profitable investment as you continue your studies at the University of Copenhagen.
+
+If you enjoyed this course and scored a 12 or 10 on the exam, please do consider applying for an IDMA TA position next year! We have seen from your course evaluations, this year as well as previous years, that the teaching assistants have played a very important role for many of you. We need your assistance to ensure that this will be the case for next year's students as well! We crucially need all help we can get from you students to keep the aspects that are good about this course and to work on aspects that, saying it politely, still leave room for improvement.
+
+In case you failed the exam, then as previously announced we will try to have the re-exam on Monday June 29. I am aware that the administrative system has another date, and we will be in contact with all registered students to make sure that they get to do the re-exam on a date that works for them.
+
+The re-exam will be a 30-minute oral exam without preparation. This means that students will get asked technical questions about problems quite similar to those on the exam in April, but easier since they are supposed to be solved online, for ca 20 minutes. After this, the two co-examiners will confer for ca 5 minutes before announcing the grade. 
+
+Jakob

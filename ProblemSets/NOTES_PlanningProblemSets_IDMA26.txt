@@ -79,6 +79,8 @@ Logic: Predicate logic encoding simple statements about graphs
 Graphs: Same type of problem as last two years, but ask about spanning trees, not vertex order!
 And then do it for undirected graphs. Also, skip the spoiler sequence in that case, probably, and do: (a) BFS, (b) DFS, (c) Dijkstra, (d) MST
 
+Do BFS from several vertices to find shortest path to one of a given set of vertices in a set (in an undirected graph).
+
 Give code that bubbles all elements from largest index to smallest index.
 Ask for time complexity
 Ask if this builds a min-heap

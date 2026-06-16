@@ -1,0 +1,25 @@
+Eligibility for IDMA re-exam 2026
+
+Hej,
+
+This message is being sent to students who wish to take the IDMA re-exam 2026 but have not previously passed the eligibility requirements.
+
+This year, in order to become eligible for the exam, you need to hand in solutions to, and pass, the four problem sets given on the IDMA 2024 course.
+
+Please submit your solutions by e-mail to jn@di.ku.dk. Use the subject line "IDMA 2026: Problem sets for eligibility for re-exam". It is sufficient if you submit your solutions by Thursday June 18.
+
+Please note that you are not allowed to use any material from any solutions shared with students on the IDMA course or from solutions prepared by your fellow students. The use of generative AI is also forbidden. Your solutions will be checked for plagiarism and chatbot usage.
+
+As previously announced, we will try to have the re-exam on Monday June 29. I am aware that the administrative system has another date, and we will be in contact with all registered students to make sure that they get to do the re-exam on a date that works for them.
+
+The re-exam will be a 30-minute oral exam without preparation. (The official information is: "Mundtlig eksamen uden forberedelse i fuldt pensum. 30 minutter inklusive votering.") This means that you will get asked technical questions about problems quite similar to those on a regular written exam, but easier since you are asked to solve them on the spot, for about 20 minutes. After this, the two co-examiners will confer for ca 5 minutes before announcing the grade. 
+
+For students who submitted solutions to the problem sets from IDMA 2024 to become eligible for the oral re-exam, we might also ask specific questions about the problem set solutions. Any such questions you will be expected to be able to answer on the spot, since they concern your own solutions for problems that you worked on very recently.
+
+The schedule for the exam will be announced something like the week before or so. You cannot ask for a specific time during the day, so please make sure to block out all of Monday June 29 in your calendar if you are planning to take the IDMA re-exam.
+
+I believe that the best way of preparing for the re-exam is the same as for the regular exam: Read the textbooks carefully; go over your notes; work on old problem sets and exam problems, and carefully read the suggested solutions to make sure you understand them.
+
+I wish you the best of luck with your work to qualify for the IDMA re-exam!
+
+Jakob

@@ -1,0 +1,136 @@
+E-MAIL MESSAGE
+==============
+
+Julius Willestofte Berg <fkx388@alumni.ku.dk>
+Kian Kaarup Bøgh <rwl997@alumni.ku.dk>
+Nicklas Germann Didriksen <zrh830@alumni.ku.dk>
+Michelle Madeleine Dimo <zqs981@alumni.ku.dk>
+Oliver Fisker Gleerup <cgq654@alumni.ku.dk>
+Lauritz Tørholm Jørgensen <fqm630@alumni.ku.dk>
+Sevval Zana Kilic <chv630@alumni.ku.dk>
+Theodor Kristensen <ghp118@alumni.ku.dk>
+Frej Berri Lejre <hrt999@alumni.ku.dk>
+Lea Skov Rasmussen <dps824@alumni.ku.dk>
+Abel Asrat Ridgewell <npz178@alumni.ku.dk>
+Bastian Rønfeldt Thomsen <prk315@alumni.ku.dk>
+
+Oscar Beyer-Nielsen <hmf512@alumni.ku.dk>
+Kevin Jessen Kinsella <keki@di.ku.dk>
+LWH753@alumni.ku.dk
+Lucas Ullerup Marshall <dqr746@alumni.ku.dk>
+Emma-Maria Marup <zbt570@alumni.ku.dk>
+Gustav Ingels Mollerup <zjm580@alumni.ku.dk>
+Siw Foged Møller <vjz343@alumni.ku.dk>
+Noah Gyldenløve Skovborg <tzq775@alumni.ku.dk>
+Søren Strøyberg <lds147@alumni.ku.dk>
+grl379 grl379 <grl379@alumni.ku.dk>
+
+Karl August Krogh Nybo <kcj878@alumni.ku.dk>
+Emil Roer Thorlund <gpv679@alumni.ku.dk>
+
+TO:
+Jakob Nordström <jn@di.ku.dk>
+NOT Srikanth Srinivasan <srsr@di.ku.dk>
+
+
+IDMA re-exam: Please confirm attendance
+
+Hi all,
+
+SHORT VERSION: Please send a message to jn@di.ku.dk as soon as possible, but at the latest on Thursday June 18, where you specify:
+(1) Whether you intend to take the IDMA oral re-exam (assuming that you are eligible).
+(2) If the exam date Wednesday June 24 works for you.
+(3) If the exam date Monday June 29 works for you.
+(4) If you have any clear preference between these two dates.
+
+We will then try to publish the exam schedule on Friday June 19.
+
+LONGER VERSION: 
+
+My apologies for sending out this information so late. Unfortunately, I have had a bit of a planning crash due to work overload, and it turns out there are also some problem on the administrative side with the exam registration files (which I should have discovered earlier, if I had planned better). We will probably have this sorted out very soon, though.
+
+The purpose of this message is to fix the plans for the oral re-exam for the Introduction to Discrete Mathematics and Algorithms (IDMA) course. In particular, it is important for us to know which students will actually attend the exam. There are often up to one-third of no-shows at oral exams, and this makes the planning quite challenging. It greatly simplifies matters for us, and makes the oral re-exam a much smoother experience for the students, if we know in advance which students will actually show up.
+
+Therefore, please respond to this message as soon as possible (by private reply) as per the instructions above. It is especially important for us to know what date constraints there might be on your side, so that we can plan accordingly.
+
+We are hoping that by Thursday June 18 we can get responses from everybody who intends to take the exam, and will then try to publish the exam schedule on Friday June 19.
+
+If you know someone on the list of recipients who might not be able to access KU e-mail at present, then please help us by alerting this person.
+
+The oral re-exam will be held in the Algorithms and Complexity Section premises at Vibenshuset. Please see below for directions.
+
+If your plans have changed after registering, so that you will not attend the exam, then we are asking that you let us know about this as soon as possible, and otherwise that you confirm that you are indeed coming. Thanks for your assistance and understanding, and good luck on the exam!
+
+Best regards,
+Jakob 
+
+
+DIRECTIONS TO VIBENSHUSET
+
+Due to renovations, the Algorithms and Complexity Section is currently located at Vibenshuset at Lyngbyvej 2, right at the metro station Vibenshus Runddel.
+
+As you exit the metro station, Vibenshuset is the building just across the street to your right on the corner. The offices of the Algorithms and Complexity Section are on the 4th floor (four flights of stairs above the ground floor).
+
+After you have entered Vibenshuset, go straight through the building (past the reception area) until the end (at a coffee shop), where you turn right and walk down the hallway until you reach the lift to your right. Take the lift (or the stairs just behind it) to the 4th floor. As you exit the lift, turn right and walk to the door, which should have signs for BARC and QMATH. This door requires an access card, but you can ring the BARC doorbell to get someone to open.
+
+When you have entered, walk straight through the first open space and continue through the kitchen area, and then you have reached the premises of the Algorithm and Complexity Section. There are lots of table close to a second kitchen area, and if you wait there we will come and pick you up for the exam. 
+
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se
+
+
+**********
+
+ABSALON MESSAGE
+===============
+
+PLEASE CONFIRM if you will attend the IDMA oral re-exam 
+
+Hi all,
+
+SHORT VERSION: For those of you who have registered for the IDMA oral re-exam, please send a message to jn@di.ku.dk as soon as possible, but at the latest on Thursday June 18, where you specify:
+(1) Whether you intend to take the re-exam.
+(2) If the exam date Wednesday June 24 works for you.
+(3) If the exam date Monday June 29 works for you.
+(4) If you have any clear preference between these two dates.
+
+We will then try to publish the exam schedule on Friday June 19.
+
+LONGER VERSION: 
+
+My apologies for posting this information so late. Unfortunately, I have had a bit of a planning crash due to work overload, and it turns out there are also some problem on the administrative side with the exam registration files (which I should have discovered earlier, if I had planned better). We will probably have this sorted out very soon, though.
+
+The purpose of this message is to fix the plans for the oral re-exam for the Introduction to Discrete Mathematics and Algorithms (IDMA) course. In particular, it is important for us to know which students will actually attend the exam. There are often up to one-third of no-shows at oral exams, and this makes the planning quite challenging. It greatly simplifies matters for us, and makes the oral re-exam a much smoother experience for the students, if we know in advance which students will actually show up.
+
+Therefore, if you have registered for the exam, then please respond to this message as soon as possible (by private reply) as per the instructions above. It is especially important for us to know what date constraints there might be on your side, so that we can plan accordingly.
+
+We are hoping that by Thursday June 18 we can get responses from everybody who intends to take the exam, and will then try to publish the exam schedule on Friday June 19.
+
+If you know someone else who might also be planning to take the IDMA re-exam, then please help us by alerting such persons to this message.
+
+The oral re-exam will be held in the Algorithms and Complexity Section premises at Vibenshuset. Please see below for directions.
+
+If your plans have changed after registering, so that you will not attend the exam, then we are asking that you let us know about this as soon as possible, and otherwise that you confirm that you are indeed coming. Thanks for your assistance and understanding, and good luck on the exam!
+
+Best regards,
+Jakob 
+
+
+DIRECTIONS TO VIBENSHUSET
+
+Due to renovations, the Algorithms and Complexity Section is currently located at Vibenshuset at Lyngbyvej 2, right at the metro station Vibenshus Runddel.
+
+As you exit the metro station, Vibenshuset is the building just across the street to your right on the corner. The offices of the Algorithms and Complexity Section are on the 4th floor (four flights of stairs above the ground floor).
+
+After you have entered Vibenshuset, go straight through the building (past the reception area) until the end (at a coffee shop), where you turn right and walk down the hallway until you reach the lift to your right. Take the lift (or the stairs just behind it) to the 4th floor. As you exit the lift, turn right and walk to the door, which should have signs for BARC and QMATH. This door requires an access card, but you can ring the BARC doorbell to get someone to open.
+
+When you have entered, walk straight through the first open space and continue through the kitchen area, and then you have reached the premises of the Algorithm and Complexity Section. There are lots of table close to a second kitchen area, and if you wait there we will come and pick you up for the exam. 
+
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se
