@@ -1,0 +1,290 @@
+EKSAMEN-NØRRE <eksamen-noerre@adm.ku.dk>
+
+Re: SV: Tilmeldingsliste og opsætning af mundtlig reeksamen i Introduktion til diskret matematik og algoritmer NDAB23002E- blok 3 2025/26 - Deadline 8. juni 2026
+
+
+Hej Sarah,
+
+Please find below (an excerpt of) the information that has been sent to the students taking the IDMA oral re-exam on June 24 or June 29. I have double-checked the exam dates with all students, and have scheduled them on dates taking their calendar constraints into consideration.
+
+Venlig hilsen
+Jakob Nordström
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 24, 2026
+
+Time	User ID	Name
+09:00	ZJM580	Gustav Ingels Mollerup 
+09:30	DQR746	Lucas Ullerup Marshall 
+10:00	NPZ178	Abel Asrat Ridgewell 
+10:30	GHP118	Theodor Kristensen 
+11:00	RWL997	Kian Kaarup Bøgh 
+11:30	DPS824	Lea Skov Rasmussen
+
+
+IDMA ORAL EXAM SCHEDULE JUNE 29, 2026
+
+Time	User ID	Name
+09:00	CGQ654	Oliver Fisker Gleerup
+09:30	HMF512	Oscar Beyer-Nielsen
+10:00	CHV630	Sevval Zana Kilic
+10:30	LWH753	Kevin Jessen Kinsella
+11:00	LDS147	Søren Strøyberg
+11:30	KCJ878	Karl August Krogh Nybo
+12:00	HRT999	Frej Berri Lejre 
+12:00	TZQ775	Noah Gyldenløve Skovborg
+12:30	VJZ343	Siw Foged Møller
+13:00	FKX388	Julius Willestofte Berg
+13:30	FQM630	Lauritz Tørholm Jørgensen
+14:00	ZBT570	Emma-Maria Marup
+14:30	GPV679	Emil Roer Thorlund
+
+
+EXAM INSTRUCTIONS
+
+The oral re-exam will be held in the Algorithms and Complexity Section premises at Vibenshuset at Lyngbyvej 2, right at the metro station Vibenshus Runddel.
+
+As you exit the metro station, Vibenshuset is the building just across the street to your right on the corner. The offices of the Algorithms and Complexity Section are on the 4th floor (four flights of stairs above the ground floor).
+
+After you have entered Vibenshuset, go straight through the building (past the reception area) until the end (at a coffee shop), where you turn right and walk down the hallway until you reach the lift to your right. Take the lift (or the stairs just behind it) to the 4th floor. As you exit the lift, turn right and walk to the door, which should have signs for BARC and QMATH. This door requires an access card, but you can ring the BARC doorbell to get someone to open.
+
+When you have entered, walk straight through the first open space and continue through the kitchen area, and then you have reached the premises of the Algorithm and Complexity Section. There are lots of tables close to a second kitchen area, and if you wait there we will come and pick you up for the exam. 
+
+Please make sure to arrive for your exam 5-10 minutes in advance, so that we can start on time. Also please note that although it can be hard to stick exactly to the schedule during a long exam day like this, you have to show up in time for your exam --- late arrival counts as a no-show.
+
+
+Jakob Nordström, Professor
+University of Copenhagen and Lund University
+Phone: +45 28 78 38 11 / +46 70 742 21 98
+https://jakobnordstrom.se
+
+
+**********
+
+
+
+On 2026-06-17 09:00, EKSAMEN-NØRRE wrote:
+>
+> Dear Jakob
+>
+>
+> I have attached the students list for course NDAB23002E. Let me know if you experience any trouble opening the document.
+>
+>  
+>
+> Could you please confirm the exam date? Is it still the 24th, or has it been changed to the 29th? Or is it a two-day examination?
+>
+>  
+>
+> Student Kevin LWH753 has an exam on the 24th, so it is important that he is scheduled for a different date. I think he mentioned that he has also contacted you about this.
+>
+>  
+>
+> Looking forward hearing from you.
+>
+>  
+>
+>  
+>
+>  
+>
+> Fra: Jakob Nordström <jn@di.ku.dk>
+> Sendt: 16. juni 2026 01:06
+> Til: EKSAMEN-NØRRE <eksamen-noerre@adm.ku.dk>
+> Emne: Re: Tilmeldingsliste og opsætning af mundtlig reeksamen i Introduktion til diskret matematik og algoritmer NDAB23002E- blok 3 2025/26 - Deadline 8. juni 2026
+> Prioritet: Høj
+>
+>  
+>
+> Kære Sarah,
+>
+> I apologize for reacting so very late to this --- somehow this slipped through the cracks --- but for this registration list, too, there seems to be the same error: The list only specifies KU IDs, but there are no names anywhere. This makes it pretty much impossible to search for the students in my previous records and on Absalon. 
+>
+> Could you please send an updated list including also student names as soon as possible, and I will fill it in as soon as I possibly can.
+>
+> As I wrote in my previous message, I will do the IDMA oral exams together with Srikanth Srinivasan (srsr@di.ku.dk), and we will hold the exams in the AC Section premises at Vibenshuset.
+>
+> Venlig hilsen
+> Jakob Nordström
+>
+> On 2026-05-29 09:34, EKSAMEN-NØRRE wrote:
+>
+>     Kære Karl Jakob
+>
+>      
+>
+>     Her er tilmeldingslisten til din blok 3 reeksamen eksamen i Introduktion til diskret matematik og algoritmer.
+>
+>      
+>
+>     Hvis du er i tvivl om hvad eksamensforudsætningerne indebærer, kan du finde information i kursusbeskrivelsen.
+>
+>
+>     Deadline: 8. juni 2026
+>
+>         Gennemgå vedhæftede liste
+>         Markér studerende, der ikke opfylder forudsætningerne, med “MF” i kolonne K
+>         Lad feltet være tomt for øvrige studerende
+>         Bemærk: Studerende fra tidligere blokke kan stadig være berettigede
+>         Returnér listen til os 
+>
+>      
+>
+>     Vi afmelder de markerede studerende fra eksamen og registrerer at de har brugt et eksamensforsøg. De studerende bliver informeret om, at de er afmeldt eksamen.
+>
+>      
+>
+>     Eksamen er en mundtlig eksamen
+>
+>     Eksamen afvikles d. 24. Juni 2026 jf. Eksamensdatoskemaet og administreres i Digital Eksamen. 
+>
+>     Du kan finde eksamensdatoen på dette link: Eksamensdatoer – Københavns Universitet.
+>
+>      
+>
+>     Vi har brug for følgende fra dig:
+>
+>     Hvad
+>     	
+>
+>     Hvornår (deadline)
+>     	
+>
+>     Hvordan
+>
+>     Skriv til os hvis vi skal booke lokale
+>     	
+>
+>     8. juni 2026
+>
+>     kl. 12.00
+>     	
+>
+>     eksamen-noerre@adm.ku.dk
+>
+>     Send os tilmeldingsliste
+>     	
+>
+>     8. juni 2026
+>
+>     kl. 12.00
+>     	
+>
+>     Udfyld MF i Excelark og send til eksamen-noerre@adm.ku.dk
+>
+>     Send os navne på bedømmere
+>     	
+>
+>     8. juni 2026
+>
+>     kl. 12.00
+>     	
+>
+>     eksamen-noerre@adm.ku.dk
+>
+>     Send os mundtlig eksamensplan
+>     	
+>
+>     8. juni 2026
+>
+>     kl. 12.00
+>     	
+>
+>     Send eksamensplan til eksamen-noerre@adm.ku.dk
+>
+>      
+>
+>      
+>
+>     Hvis du kan se, at du får svært ved at nå deadline, så send os en e-mail med dato for hvornår du kan fremsende de forskellige elementer.
+>
+>      
+>
+>      
+>
+>     Lokaler til den mundtlige reeksamen
+>
+>     Hvis du skal bruge lokaler til din mundtlige reeksamen, send følgende oplysninger til eksamen-noerre@adm.ku.dk og vi sørger for at booke lokale(r): Dato, tidsrum, antal lokaler, samt om der er nogle specifikke ønsker til udstyret i lokalet.
+>
+>      
+>
+>     Hvad skal du gøre?
+>
+>     For at vi kan opsætte kursuseksamen i Digital Eksamen har vi brug for følgende informationer fra dig:   
+>
+>     Bedømmere
+>
+>     Du bedes sende os navne og e-mails på eksaminator(er) samt interne medbedømmer(e).
+>
+>     OBS. Som udgangspunkt vil alle de nævnte bedømmere blive tilknyttet alle studerende. Hvis det ikke skal være sådan, skal du angive hvordan bedømmerne skal fordeles blandt de studerende. 
+>
+>      
+>
+>     Eksamensplan
+>
+>     Eksamensplanen for mundtlige prøver skal offentliggøres i Digital Eksamen senest 7 dage før den mundtlige eksamen.  
+>
+>     Eksamensplanen skal indeholde:
+>
+>             Lokale(-r) for eksamen og evt. forberedelse.
+>             Studerendes navn og eller KU-id
+>             Studerendes eksamenstidspunkt (og evt. forberedelsestidspunkt) 
+>
+>      
+>
+>     Vejledning til Digital Eksamen kan findes her: Vejledning til Digital Eksamen.
+>
+>      
+>
+>     Har du spørgsmål til afvikling af kursuseksamen i Digital Eksamen, er du altid velkommen til at kontakte os.
+>
+>      
+>
+>     Bedste hilsner
+>
+>     Eksamensteamet, Nørre Campus
+>
+>      
+>
+>      
+>
+>     Sarah Hachem
+>
+>     Fuldmægtig
+>
+>      
+>
+>     Københavns Universitet
+>
+>     Campusadministration Nørre
+>     Uddannelse
+>
+>     Blegdamsvej 3B
+>
+>     København N
+>
+>      
+>
+>     DIR 35 32 87 14
+>
+>     sarah.hachem@adm.ku.dk
+>
+>      
+>
+>     Logo for Københavns Universitet 
+>
+>      
+>
+>     Sådan beskytter vi persondata
+>
+>      
+>
+>      
+>
+>      
+>
+>      
+>
+>      
+>
+>  
