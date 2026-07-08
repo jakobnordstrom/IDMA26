@@ -1,0 +1,388 @@
+June 24
+=======
+
+Gustav Mollerup
+---------------
+
+Exam number: 3
+
+Combinatorics: Matches 1-(a) (incorrect reasoning). Correctly understands denominator (binomial coefficient in words as well as factorial expression). Matches 2-(b) correctly (correct reasoning). Matches 3-(c) incorrectly. Has the right idea but confused by initial wrong choice. With some help, writes down the expression and corrects to 3-(a). Can't finish completely. Skips rest.
+
+Graph algos: Implements DFS run correctly. 
+Q: What is the spanning tree?
+A: Draws correctly.
+Implements Dijkstra correctly. Draws spanning tree incorrectly (connects a-e), confused with heap.
+Q: How does Dijkstra get shortest path?
+A: Fixes tree.
+Q: How do you know the edges to add?
+A: Choose edges used by algo.
+
+Grade: 4
+
+
+Lucas Ullerup Marshall
+----------------------
+
+Exam number: 1
+
+Algo analysis: Can implement correctly and says in words. 
+Q: For running time, number of times innermost line executes?
+A: Writes 1+2+...+n = n(n+1)/2. Quadratic runtime.
+Q: Can you make it run faster?
+A: Has the right idea but gives wrong pseudocode (adds A[i] to A[i-1]). Fixes with some discussion.
+
+Combinatorics: Knows what a binomial coefficient means in words but not factorial formula. Matches 1-(a) incorrectly. Matches 2-(b) correctly (generous help with reasoning here but incomplete). Unable to match 3.
+
+Grade: 02
+
+
+Abel Ridgewell
+--------------
+
+Exam number: 2
+
+Merge sort: Implements recursion correctly. Understands how merging works. 
+Q: Runtime?
+A: O(n log n). Some high-level reasoning.
+Q: Best or worst-case?
+A: Best-case. 
+
+Relations: M1 = reflexive closure. M2 = not possible. M3 = transitive closure of inverse. 
+Q: Prove that M2 = impossible?
+A: Can't turn 1st two rows to 0.
+
+Propositional logic: 
+1. Truth table written and argued correctly.
+2. Truth table written and argued correctly.
+
+Combinatorics: Binomial coefficient in words and factorials. Matches 2-(b) correctly (correct reasoning). Matches 3-(a) correctly (correct reasoning). Guesses 1-(c) but not clear on explanation.
+
+Grade: 12
+
+
+Theodor Kristensen
+------------------
+
+Exam number: 4
+
+Propositional logic: 
+1. Truth table: implication TT incorrectly written (confuses implication with equivalence). Gets tautology. JN fixes implication TT. Skips to next question.
+
+Graph algos: 
+1. DFS: does DFS run correctly (no start or finish times). Draws spanning tree correctly.
+2. Dijkstra: runs ad hoc. 
+Q: How do you maintain values?
+A: Priority queue. 
+Q: How to change values?
+A: Update neighbours. But implementation is incorrect. (Updates neighbour of b while processing d). 
+Q: Operations on a priority queue?
+A: Last-in-first-out.
+Q: How to use priority?
+A: No answer.
+Overall implementation is ad-hoc, and not clear on how exactly the algorithm updates vertex distances.
+Spanning tree drawn incorrectly.
+Q: Information in Spanning tree?
+A: Shortest paths found in ST. Fixes ST.
+Q: How does algo produce ST?
+A: Tries to explain. Some elements are correct, but edges added to ST in wrong order.
+
+Grade: 00
+
+
+Kian Kaarup Bøgh
+----------------
+
+Exam number: 2
+
+Merge sort: Implements recursion correctly. Not exactly clear on how merging works.
+Q: Runtime?
+A: O(n^2) because of nested loops.
+
+Relations: M1 = reflexive closure, M2 = transitive and symmetric closure?, M3 = inverse and symmetric? (correct reasoning but wrong answer)
+Q: matrix of a symmetric closure?
+A: unclear answer.
+Q: Define symmetric matrix?
+A: unable to define, defined for him.
+Q: Is the matrix of symmetric closure symmetric?
+A: No. 
+
+Propositional logic: Knows definitions of tautology and contradiction. TT of implication written correctly. Gets the right answer for 1 though TT is not quite right.
+
+Grade: 00
+
+
+Lea Rasmussen
+--------------
+
+Grade: U
+
+
+June 29
+=======
+
+Oliver Gleerup
+--------------
+
+Exam number: 3
+
+Combinatorics: Knows the meaning of binomial coefficient. Looks up factorial defn in the notes. Matches 1-(a) incorrectly with wrong reasoning. Matches 2-(b) correctly (with incomplete reasoning). Unable to continue. Skips.
+
+Graph algos: Looks up DFS algo in notes. Mistake in implementing DFS. Returns recursion from c to a (should be to b). 
+Q: Explain the notion of "visit".
+A: Reasonable answer.
+After some discussion, confused about whether recursion returns to b. Comes round to the idea of starting with b. Continues with the rest of the algorithm.
+Q: Spanning tree.
+A: Satisfactory answer.
+Dijkstra: algo in notes. Reads out algo.
+Q: what kind of queue?
+A: Unclear. Skips.
+
+Algorithm analysis: given a length-4 example input. Is able to execute on this input. Can give an informal description of the algo. Running time is quadratic (wrong reasoning).
+
+Grade: 00
+
+
+
+Frej
+----
+
+Grade: U
+
+
+Oscar Beyer-Nielsen
+-------------------
+
+Exam number: 3
+
+Combinatorics: Skips.
+
+Graph algos: Implements DFS correctly on input.
+Q: Spanning tree?
+A: Unsure about ST. Draws a path (incorrect).
+Starts to implement Dijkstra. 
+Q: how to find least weight vertex at any point?
+A: Unclear. linear search?
+Wrong RELAX implementation in Dijkstra. Gives wrong implementation as a result.
+Q: How to find shortest paths from output?
+A: Unclear.
+
+Algorithm analysis: Nested loop implies quadratic time.
+Q: Explain?
+A: Confuses Running time with correctness. Moves on to explanation of algorithm output.
+Q: what is output on example input?
+A: Confuses with checking something. 
+
+Grade: 00
+
+
+Sevval Zana Kilic
+------------------
+
+Exam number: 3
+
+Combinatorics: Knows binomial coefficients. Skips.
+
+Graph algos: Explains DFS. Implements DFS correctly. Gives asymptotic running time. 
+Q: ST?
+A: Draws correctly.
+Dijkstra. To compute shortest paths on weighted graphs. Implements Dijkstra correctly and shows ST.
+Q: How to use ST to find shortest path?
+A: Shows correctly.
+
+Algorithm analysis: Struggles with analyzing small example.
+
+Grade: 00
+
+
+Kevin Kinsella
+--------------
+
+Exam number: 2
+
+Merge sort: Doesn't sort array of size 2 before merging with an array of size 3. But first compares the two elements in array of size 2.
+Q: What is the base case of recursion?
+A: Will split further if we have two arrays of length 2, but not an array of length 2 with array of length 1. 
+After some discussion, fixes to say recursion stops at length 1.  Shows how to merge (small inaccuracies).
+Q: Time complexity of merge sort?
+A: O(n log n) best-case.
+Q: Worst case?
+A: Same.
+
+Relations: Says correctly that M1 = reflexive closure. M3 = inverse of transitive closure. M2 = not possible. Some case analysis given. Good answer.
+
+Propositional logic: Knows definitions of tautology and contradiction.
+Truth table for first function written correctly. Correct conclusion for first function.
+Right answer for second function.
+
+Grade: 10
+
+
+Søren Strøyberg
+----------------
+
+Exam number: 3
+
+Combinatorics: Knows the meaning of binomial coefficient. Gets the formula after discussion. Matches 1-(a) incorrectly (wrong reasoning). Guesses 2-(b) (reasoning from pattern matching, not quite clear). Skips.
+
+Graph algos: DFS. Puts many more nodes on stack than neighbours. Go to b.
+Q: Why b?
+A: using weight (wrong). Confused about directed/undirected graphs.
+Q: How to convert undirected to directed?
+A: Unclear how to. (Answer given by Jakob)
+After help, corrects stack. Now pops b (correct). 
+Q: Do we use edge weights?
+A: Yes. Want to compute MST.
+Q: Does DFS computes MST?
+A: Yes.
+Confused about adding d to stack from b. 
+Skips.
+
+Analysis of algorithms: wrong implementation of algo on small example.
+
+Grade: 00
+
+
+Karl Nybo
+---------
+
+Exam number: 3
+
+Combinatorics: Knows binomial coefficients and how to calculate them. Matches 1-(a) incorrectly (wrong reasoning). Skips.
+
+Graph algos: Implements DFS with weights?
+Q: What if the graph is unweighted?
+A: Knows the difference.
+Q: How to run DFS on a weighted graph?
+A: Continues to use weights. But otherwise consistent with this misconception.
+Q: Spanning tree?
+A: Can draw ST.
+Q: Time stamps?
+A: Uses weights to compute time stamps.
+Dijkstra: priority queue. Implements first step incorrectly (picks b instead of d based on alphabetical order instead of using weights).
+Q: what is priority queue after a?
+A: Shows correctly and now picks d correctly.
+Implements the rest correctly (modulo minor inaccuracies).
+Q: Draw ST?
+A: shown incorrectly (one tiebreaker was wrong, fixed after some discussion; and wrong edge between b and f) 
+Q: How are these edges computed?
+A: When edge weights are updated. 
+Q: Shortest path to f?
+A: Fixes the errors in shortest path to f.
+
+Algorithm analysis: Can implement first iteration of loop on small example. Second iteration implemented incorrectly, but fixes after some thinking.
+
+
+Grade: 00
+
+
+Siw Møller
+----------
+
+Exam number: 1
+
+Algorithm analysis: Given small example. Implements correctly on this example. Gives an informal interpretation of algorithm. Running time analysis done correctly. Faster implementation should take time O(n). Gets it with some help.
+
+Combinatorics: Matches 2-(b) correctly (reasoning given). Matches 1-(a) incorrectly, 3-(d) incorrectly. Skips.
+
+Merge Sort: Recursion tree given correctly. Merging done correctly.
+Q: Run time of Merge sort?
+A: O(n log n) with some reasoning.
+Q: What if array already sorted?
+A: No change.
+
+Propositional logic: wrong statement about implication (F->T false).
+Q: Truth table of implication?
+A: incorrect.
+ 
+Grade: 7
+
+
+Julius Berg
+-----------
+
+Exam number: 4
+
+Propositional logic: Truth table of implication incorrect (fixed by Jakob). Gets the first one almost right after this (but final answer correct). Gets the second one without a problem.
+
+Graph algos: DFS order given correctly. 
+Q: Does it terminate when it gets to f?
+A: Because no vertices are left to be discovered through backtracking (but not completely clear).
+Dijkstra implemented high-level.
+Q: Formal details?
+A: Cannot reconstructed pseudocode.
+Skips.
+
+Relations: M1 = reflexive closure of MR. M2, M3 unclear. Knows definitions of reflexive, symmetric, transitive. Inverse incorrectly defined (negate each entry). Fixed by Jakob.
+
+Merge Sort: Recursion done correctly. Merging done correctly.
+Q: running time?
+A: O(n log n) without correct reasoning.
+Q: Runtime on sorted array?
+A: No change.
+
+Grade: 4
+
+
+Lauritz Jørgensen
+------------------
+
+Grade: U
+
+
+
+Emma-Maria Marup
+----------------
+
+Exam number: 4
+
+Propositional logic: definition of contradiction unclear. -> confused with equivalence?
+Q: What is -> called?
+A: Unclear (answer given by Jakob).
+Q: Truth table of p->q?
+A: wrong truth table (truth table of equivalence written). Correct TT given by Jakob.
+Q: Fix TT of p->q and q->p?
+A: Changes incorrectly. Fixed by Jakob.
+Q: Given this info, answer for first formula?
+A: Contradiction [wrong]
+Q: Second formula?
+A: Writes wrong truth table for AND and p->(NOT q). Tautology. (Gets this after lots of help.)
+
+Graph algos: (almost out of time)
+Q: What does Dijkstra do?
+A: Finds order of jumps between vertices? On given example, points out least weight edges.
+
+Grade: -3
+
+
+Emil Thorlund
+--------------
+
+Exam number: 3
+
+Combinatorics: Definition of binomial coefficient given correctly both math formula and in words. Matches 1-(a) incorrectly. Matches 2-(b) correctly (qualified guess). Matches 3-(d) incorrectly. Skips.
+
+Graph algos: Skips.
+
+Algorithm analysis: On small example, runs first iteration correctly. Second iteration incorrectly done at first but then fixes with prodding. 
+Q: Informal description of output?
+A: Given correctly.
+Q: Time complexity?
+A: Worst case (?!) O(n^2). Justified with reasonable help.
+Q: More efficient way?
+A: Can do it in linear time but don't know how. (Generous amount of help from Jakob.) Gets idea for adding A[i] to B[i-1] in an example.
+Q: Pseudocode?
+A: Does it.
+Q: Running time?
+A: O(n)
+
+Grade: 00
+
+
+Noah
+----
+
+Grade: U
+
+
+
+
